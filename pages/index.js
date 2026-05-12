@@ -9,7 +9,7 @@ import AppContentContext from '@/components/layout/appcontentcontext';
 import Topbar from '@/components/layout/topbar';
 import { useMountEffect } from '@/components/lib/primereact.all';
 import { classNames } from '@/components/lib/utils/Utils';
-import NewsSection from '@/components/news/newssection';
+// import NewsSection from '@/components/news/newssection';
 import Head from 'next/head';
 import { useContext } from 'react';
 
@@ -46,7 +46,7 @@ export default function Home() {
                 <meta property="og:image" content="https://primefaces.org/static/social/primereact-preview.jpg" />
                 <meta property="og:ttl" content="604800" />
             </Head>
-            <NewsSection />
+            {/* <NewsSection /> */}
             <Topbar onDarkSwitchClick={toggleDarkMode} />
             <HeroSection />
             <FeaturesSection />

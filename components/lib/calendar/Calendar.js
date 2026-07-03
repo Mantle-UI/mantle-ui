@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, localeOption, localeOptions } from '../api/Api';
+import MantleUI, { MantleContext, localeOption, localeOptions } from '../api/Api';
 import { Button } from '../button/Button';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useOverlayListener, usePrevious, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -18,7 +18,7 @@ import { CalendarPanel } from './CalendarPanel';
 export const Calendar = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = CalendarBase.getProps(inProps, context);
         const [focusedState, setFocusedState] = React.useState(false);
         const [overlayVisibleState, setOverlayVisibleState] = React.useState(false);
@@ -83,7 +83,7 @@ export const Calendar = React.memo(
                         if (!isOverlayClicked.current && !isNavIconClicked(event.target)) {
                             hide('outside');
                         }
-                    } else if ((context && context.hideOverlaysOnDocumentScrolling) || PrimeReact.hideOverlaysOnDocumentScrolling) {
+                    } else if ((context && context.hideOverlaysOnDocumentScrolling) || MantleUI.hideOverlaysOnDocumentScrolling) {
                         hide();
                     } else if (!DomHandler.isDocument(event.target)) {
                         alignOverlay();
@@ -1940,7 +1940,7 @@ export const Calendar = React.memo(
             if (props.autoZIndex) {
                 const key = props.touchUI ? 'modal' : 'overlay';
 
-                ZIndexUtils.set(key, overlayRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex[key]) || PrimeReact.zIndex[key]);
+                ZIndexUtils.set(key, overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex[key]) || MantleUI.zIndex[key]);
             }
 
             if (!props.touchUI && overlayRef && overlayRef.current && inputRef && inputRef.current && !appendDisabled()) {
@@ -1983,7 +1983,7 @@ export const Calendar = React.memo(
         };
 
         const appendDisabled = () => {
-            const appendTo = props.appendTo || (context && context.appendTo) || PrimeReact.appendTo;
+            const appendTo = props.appendTo || (context && context.appendTo) || MantleUI.appendTo;
 
             return appendTo === 'self' || props.inline;
         };
@@ -1992,7 +1992,7 @@ export const Calendar = React.memo(
             if (props.touchUI) {
                 enableModality();
             } else if (overlayRef && overlayRef.current && inputRef && inputRef.current) {
-                DomHandler.alignOverlay(overlayRef.current, inputRef.current, props.appendTo || (context && context.appendTo) || PrimeReact.appendTo);
+                DomHandler.alignOverlay(overlayRef.current, inputRef.current, props.appendTo || (context && context.appendTo) || MantleUI.appendTo);
 
                 if (appendDisabled()) {
                     DomHandler.relativePosition(overlayRef.current, inputRef.current);
@@ -4449,8 +4449,8 @@ export const Calendar = React.memo(
             'p-datepicker-multiple-month': props.numberOfMonths > 1,
             'p-datepicker-monthpicker': currentView === 'month',
             'p-datepicker-touch-ui': props.touchUI,
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         });
         const content = createContent();
         const datePicker = createDatePicker();
@@ -4506,3 +4506,4 @@ export const Calendar = React.memo(
 );
 
 Calendar.displayName = 'Calendar';
+

@@ -367,13 +367,13 @@ export interface DataViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - DataViewLayoutOptions**
+ * **MantleUI - DataViewLayoutOptions**
  *
  * _DataView displays data in grid or list layout with pagination and sorting features._
  *
  * [Live Demo](https://www.primereact.org/dataview/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  *
@@ -386,3 +386,4 @@ export declare class DataView extends React.Component<DataViewProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

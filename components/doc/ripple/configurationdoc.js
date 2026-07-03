@@ -6,7 +6,7 @@ export function ConfigurationDoc(props) {
     const code = {
         basic: `
 //_app.js
-import { PrimeReactProvider } from 'primereact/api';
+import { MantleProvider } from 'primereact/api';
 
 export default function MyApp({ Component }) {
     const value = {
@@ -15,9 +15,9 @@ export default function MyApp({ Component }) {
     };
 
     return (
-        <PrimeReactProvider value={value}>
+        <MantleProvider value={value}>
             <App />
-        </PrimeReactProvider>
+        </MantleProvider>
     );
 }
         `
@@ -34,3 +34,4 @@ export default function MyApp({ Component }) {
         </>
     );
 }
+

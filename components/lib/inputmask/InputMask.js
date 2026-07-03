@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useMountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { InputText } from '../inputtext/InputText';
 import { DomHandler, ObjectUtils, classNames } from '../utils/Utils';
@@ -7,7 +7,7 @@ import { InputMaskBase } from './InputMaskBase';
 
 export const InputMask = React.memo(
     React.forwardRef((inProps, ref) => {
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = InputMaskBase.getProps(inProps, context);
         const elementRef = React.useRef(null);
         const firstNonMaskPos = React.useRef(null);
@@ -666,3 +666,4 @@ export const InputMask = React.memo(
 );
 
 InputMask.displayName = 'InputMask';
+

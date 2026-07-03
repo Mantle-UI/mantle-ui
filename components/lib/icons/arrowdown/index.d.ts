@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface ArrowDownIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - ArrowDownIcon**
+ * **MantleUI - ArrowDownIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class ArrowDownIcon extends React.Component<ArrowDownIconProps, any> {}
+

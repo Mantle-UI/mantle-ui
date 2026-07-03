@@ -23,13 +23,13 @@ module.exports = {
     };
     const code2 = {
         basic: `
-import { PrimeReactProvider } from "primereact/api";
+import { MantleProvider } from "primereact/api";
 
 ...
 return(
-    <PrimeReactProvider value={{ unstyled: true, pt: {} }}>
+    <MantleProvider value={{ unstyled: true, pt: {} }}>
         <App />
-    </PrimeReactProvider>
+    </MantleProvider>
 )
  
 `
@@ -37,14 +37,14 @@ return(
 
     const code3 = {
         basic: `
-import { PrimeReactProvider } from "primereact/api";
+import { MantleProvider } from "primereact/api";
 import Tailwind from 'primereact/passthrough/tailwind';
 
 ...
 return(
-    <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
+    <MantleProvider value={{ unstyled: true, pt: Tailwind }}>
         <App />
-    </PrimeReactProvider>
+    </MantleProvider>
 )
  
 `
@@ -52,14 +52,14 @@ return(
 
     const code4 = {
         basic: `
-import { PrimeReactProvider } from "primereact/api";
+import { MantleProvider } from "primereact/api";
 import { twMerge } from 'tailwind-merge';
 
 ...
 return(
-    <PrimeReactProvider value={{ unstyled: true, pt: {}, ptOptions: { mergeSections: true, mergeProps: true, classNameMergeFunction: twMerge } }}>
+    <MantleProvider value={{ unstyled: true, pt: {}, ptOptions: { mergeSections: true, mergeProps: true, classNameMergeFunction: twMerge } }}>
         <App />
-    </PrimeReactProvider>
+    </MantleProvider>
 )
  
 `
@@ -67,7 +67,7 @@ return(
 
     const code5 = {
         basic: `
-import { PrimeReactProvider } from "primereact/api";
+import { MantleProvider } from "primereact/api";
 
 export default function MyApp({ Component, pageProps }) {
     
@@ -120,9 +120,9 @@ export default function MyApp({ Component, pageProps }) {
     };
 
     return (
-        <PrimeReactProvider value={{ unstyled: true, pt: MyDesignSystem }}>
+        <MantleProvider value={{ unstyled: true, pt: MyDesignSystem }}>
             <Component {...pageProps} />
-        </PrimeReactProvider>
+        </MantleProvider>
     );
 }
  
@@ -139,7 +139,7 @@ export default function MyApp({ Component, pageProps }) {
                 <p className="flex align-items-start gap-2">
                     <Badge value="1" />
                     <span>
-                        Tailwind uses PurgeCSS internally to remove unused classes, as PrimeReact components are loaded from <i>node_modules</i> the <i>content</i> property at <i>tailwind.config.js</i> needs to be aware of PrimeReact, otherwise the
+                        Tailwind uses PurgeCSS internally to remove unused classes, as MantleUI components are loaded from <i>node_modules</i> the <i>content</i> property at <i>tailwind.config.js</i> needs to be aware of MantleUI, otherwise the
                         classes utilized in the theme will be removed as well.
                     </span>
                 </p>
@@ -180,3 +180,4 @@ export default function MyApp({ Component, pageProps }) {
         </>
     );
 }
+

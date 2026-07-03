@@ -380,13 +380,13 @@ export interface GalleriaProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - Galleria**
+ * **MantleUI - Galleria**
  *
  * _Galleria is a content gallery component._
  *
  * [Live Demo](https://www.primereact.org/galleria/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -417,3 +417,4 @@ export declare class Galleria extends React.Component<GalleriaProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { classNames } from '../utils/Utils';
@@ -8,7 +8,7 @@ import { SkeletonBase } from './SkeletonBase';
 export const Skeleton = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = SkeletonBase.getProps(inProps, context);
         const { ptm, cx, sx, isUnstyled } = SkeletonBase.setMetaData({
             props
@@ -41,3 +41,4 @@ export const Skeleton = React.memo(
 );
 
 Skeleton.displayName = 'Skeleton';
+

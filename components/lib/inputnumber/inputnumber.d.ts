@@ -345,13 +345,13 @@ export interface InputNumberProps extends Omit<React.DetailedHTMLProps<React.HTM
 }
 
 /**
- * **PrimeReact - InputNumber**
+ * **MantleUI - InputNumber**
  *
  * _InputNumber is an input component to provide numerical input._
  *
  * [Live Demo](https://www.primereact.org/inputnumber/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -376,3 +376,4 @@ export declare class InputNumber extends React.Component<InputNumberProps, any> 
      */
     public getInput(): typeof InputText | null;
 }
+

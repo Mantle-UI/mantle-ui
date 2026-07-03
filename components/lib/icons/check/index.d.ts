@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface CheckIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - CheckIcon**
+ * **MantleUI - CheckIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class CheckIcon extends React.Component<CheckIconProps, any> {}
+

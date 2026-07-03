@@ -292,13 +292,13 @@ export interface ChipsProps extends Omit<React.DetailedHTMLProps<React.InputHTML
 }
 
 /**
- * **PrimeReact - Chips**
+ * **MantleUI - Chips**
  *
  * _Chips is used to enter multiple values on an input field._
  *
  * [Live Demo](https://www.primereact.org/chips/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -318,3 +318,4 @@ export declare class Chips extends React.Component<ChipsProps, any> {
      */
     public getInput(): HTMLInputElement;
 }
+

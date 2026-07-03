@@ -59,8 +59,8 @@ const animationFeaturesData1 = [
     },
     {
         id: 3,
-        title: 'PrimeIcons',
-        description: 'Ultima ships with PrimeIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
+        title: 'MantleIcons',
+        description: 'Ultima ships with MantleIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/apollo/features-animation-icons.png'
     },
     {
@@ -69,7 +69,7 @@ const animationFeaturesData1 = [
         description: (
             <>
                 Ultima uses Figma as the design tool. It will be possible to download the Figma file after your purchase. You can{' '}
-                <a href="https://www.figma.com/file/ijQrxq13lxacgkb6XHlLxA/Preview-%7C-Ultima-2022?node-id=354%3A7715&t=gjWHprUDE5RJIg78-1">preview the Figma file</a> before the purchase. Note that PrimeReact UI components are excluded from the
+                <a href="https://www.figma.com/file/ijQrxq13lxacgkb6XHlLxA/Preview-%7C-Ultima-2022?node-id=354%3A7715&t=gjWHprUDE5RJIg78-1">preview the Figma file</a> before the purchase. Note that MantleUI UI components are excluded from the
                 Ultima Figma file as they are available in <Link href="/uikit">PrimeOne for Figma</Link> only.
             </>
         ),
@@ -207,3 +207,4 @@ const UltimaPage = () => {
 };
 
 export default UltimaPage;
+

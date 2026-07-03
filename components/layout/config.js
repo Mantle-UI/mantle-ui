@@ -1,5 +1,5 @@
 import AppContentContext from '@/components/layout/appcontentcontext';
-import { PrimeReactContext } from '@/components/lib/api/PrimeReactContext';
+import { MantleContext } from '@/components/lib/api/MantleContext';
 import { Button } from '@/components/lib/button/Button';
 import { InputSwitch } from '@/components/lib/inputswitch/InputSwitch';
 import { SelectButton } from '@/components/lib/selectbutton/SelectButton';
@@ -12,7 +12,7 @@ export default function Config(props) {
     const [scales, setScales] = useState([12, 13, 14, 15, 16]);
     const [compactMaterial, setCompactMaterial] = useState(false);
     const { theme, darkMode, changeTheme } = useContext(AppContentContext);
-    const { ripple, inputStyle, setRipple, setInputStyle } = useContext(PrimeReactContext);
+    const { ripple, inputStyle, setRipple, setInputStyle } = useContext(MantleContext);
     const lightOnlyThemes = ['fluent-light', 'mira', 'nano'];
 
     const decrementScale = () => {
@@ -366,3 +366,4 @@ export default function Config(props) {
         </Sidebar>
     );
 }
+

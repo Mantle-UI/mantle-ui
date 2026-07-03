@@ -175,13 +175,13 @@ export interface DockProps extends Omit<React.DetailedHTMLProps<React.HTMLAttrib
 }
 
 /**
- * **PrimeReact - Dock**
+ * **MantleUI - Dock**
  *
  * _Dock is a navigation component consisting of menuitems._
  *
  * [Live Demo](https://www.primereact.org/dock/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -192,3 +192,4 @@ export declare class Dock extends React.Component<DockProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

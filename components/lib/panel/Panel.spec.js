@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { snapshot } from '../../test';
-import { PrimeReactProvider } from '../api/Api';
+import { MantleProvider } from '../api/Api';
 import { Panel } from './Panel';
 
 const template = (options) => {
@@ -22,36 +22,36 @@ const template = (options) => {
 
 describe('Panel', () => {
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Panel />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'default'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Panel id="Panel" header="Simple Panel">
                 Content
             </Panel>
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'header'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Panel headerTemplate={template} toggleable>
                 Content
             </Panel>
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'headerTemplate'
     );
     test('when Panel is toggleable it will toggle when clicked', async () => {
         // Arrange
         const toggleOn = jest.fn();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Panel header="Toggleable" toggleable onToggle={toggleOn}>
                     <p>Lorem ipsum dolor sit amet</p>
                 </Panel>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const toggler = container.getElementsByClassName('p-panel-toggler')[0];
 
@@ -69,11 +69,11 @@ describe('Panel', () => {
         const expandOn = jest.fn();
         const collapseOn = jest.fn();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Panel header="Expand/Collapse" toggleable onExpand={expandOn} onCollapse={collapseOn}>
                     <p>Lorem ipsum dolor sit amet</p>
                 </Panel>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const toggler = container.getElementsByClassName('p-panel-toggler')[0];
 
@@ -100,3 +100,4 @@ describe('Panel', () => {
         });
     });
 });
+

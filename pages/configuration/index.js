@@ -102,14 +102,15 @@ const InstallationPage = () => {
 
     return (
         <DocComponent
-            title="Configuration - PrimeReact"
+            title="Configuration - MantleUI"
             header="Configuration"
             description="Global configuration options of the components."
             componentDocs={docs}
             apiDocs={['API']}
-            apiExclude={{ interfaces: ['PrimeIconsOptions'], types: 'excludeAll' }}
+            apiExclude={{ interfaces: ['MantleIconsOptions'], types: 'excludeAll' }}
         />
     );
 };
 
 export default InstallationPage;
+

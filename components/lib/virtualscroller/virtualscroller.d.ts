@@ -491,13 +491,13 @@ export interface VirtualScrollerProps {
 }
 
 /**
- * **PrimeReact - VirtualScroller**
+ * **MantleUI - VirtualScroller**
  *
  * _VirtualScroller is a performant approach to handle huge data efficiently._
  *
  * [Live Demo](https://www.primereact.org/virtualscroller/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -530,3 +530,4 @@ export declare class VirtualScroller extends React.Component<VirtualScrollerProp
      */
     public getRenderedRange(): VirtualScrollerRenderedRange;
 }
+

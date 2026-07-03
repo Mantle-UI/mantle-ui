@@ -684,13 +684,13 @@ export interface TreeProps {
 }
 
 /**
- * **PrimeReact - Tree**
+ * **MantleUI - Tree**
  *
  * _Tree is used to display hierarchical data._
  *
  * [Live Demo](https://www.primereact.org/tree/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -706,3 +706,4 @@ export declare class Tree extends React.Component<TreeProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

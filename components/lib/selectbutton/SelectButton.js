@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { Tooltip } from '../tooltip/Tooltip';
@@ -10,7 +10,7 @@ import { SelectButtonItem } from './SelectButtonItem';
 export const SelectButton = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = SelectButtonBase.getProps(inProps, context);
 
         const [focusedIndex, setFocusedIndex] = React.useState(0);
@@ -161,3 +161,4 @@ export const SelectButton = React.memo(
 );
 
 SelectButton.displayName = 'SelectButton';
+

@@ -34,7 +34,7 @@ import './assets/theme.css';
                     <i>themes</i> folder import the base and define the SCSS variables. The <i>themes</i> folder also contains all the built-in themes so you can customize their code as well.
                 </p>
                 <p>
-                    To create your own theme, <a href="https://github.com/primefaces/primereact-sass-theme/releases">download</a> the release matching your PrimeReact version and access the <i>themes/mytheme</i> folder. The sass variables to
+                    To create your own theme, <a href="https://github.com/primefaces/primereact-sass-theme/releases">download</a> the release matching your MantleUI version and access the <i>themes/mytheme</i> folder. The sass variables to
                     customize are available under the
                     <i>variables</i> folder. The <i>_fonts</i> file can be used to define a custom font for your project whereas the optional <i>_extensions</i> file is provided to add overrides to the components designs. The <i>theme.scss</i> file
                     imports the theme files along with the <i>theme-base</i> folder at the root to combine everything together. Next step would be compilation of the scss that can either be command line or within your project.
@@ -60,3 +60,4 @@ import './assets/theme.css';
         </>
     );
 }
+

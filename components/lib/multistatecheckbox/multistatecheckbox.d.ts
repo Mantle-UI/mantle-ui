@@ -256,13 +256,13 @@ export interface MultiStateCheckboxProps extends Omit<React.DetailedHTMLProps<Re
 }
 
 /**
- * **PrimeReact - MultiStateCheckbox**
+ * **MantleUI - MultiStateCheckbox**
  *
  * _MultiStateCheckbox is used to select a state from given multiple states._
  *
  * [Live Demo](https://www.primereact.org/multistatecheckbox/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -277,3 +277,4 @@ export declare class MultiStateCheckbox extends React.Component<MultiStateCheckb
      */
     public getElement(): HTMLDivElement | null;
 }
+

@@ -160,14 +160,15 @@ export interface InputOtpProps extends Omit<React.DetailedHTMLProps<React.InputH
 }
 
 /**
- * **PrimeReact - InputOtp**
+ * **MantleUI - InputOtp**
  *
  * _InputOtp is an extension to standard input element with theming and keyfiltering._
  *
  * [Live Demo](https://www.primereact.org/inputotp/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare const InputOtp: React.ForwardRefExoticComponent<InputOtpProps & React.RefAttributes<HTMLInputElement>>;
+

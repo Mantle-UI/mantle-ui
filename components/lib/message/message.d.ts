@@ -90,13 +90,13 @@ export interface MessageProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - Message**
+ * **MantleUI - Message**
  *
  * _Message is used to display inline message with various severities._
  *
  * [Live Demo](https://www.primereact.org/message/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -107,3 +107,4 @@ export declare class Message extends React.Component<MessageProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

@@ -80,13 +80,13 @@ export interface BadgeProps extends Omit<React.DetailedHTMLProps<React.HTMLAttri
 }
 
 /**
- * **PrimeReact - Badge**
+ * **MantleUI - Badge**
  *
  * _Badge represents people using icons, labels and images._
  *
  * [Live Demo](https://www.primereact.org/badge/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -97,3 +97,4 @@ export declare class Badge extends React.Component<BadgeProps, any> {
      */
     public getElement(): HTMLSpanElement | null;
 }
+

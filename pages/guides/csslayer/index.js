@@ -22,7 +22,7 @@ const AccessibilityDoc = () => {
         {
             id: 'libraries',
             label: 'Libraries',
-            description: 'Compatibility between PrimeReact and CSS libraries.',
+            description: 'Compatibility between MantleUI and CSS libraries.',
             children: [
                 {
                     id: 'tailwind',
@@ -46,14 +46,14 @@ const AccessibilityDoc = () => {
     return (
         <div>
             <Head>
-                <title>CSS Layer - PrimeReact</title>
-                <meta name="description" content="Best practices for the PrimeReact cascade layer in styled mode." />
+                <title>CSS Layer - MantleUI</title>
+                <meta name="description" content="Best practices for the MantleUI cascade layer in styled mode." />
             </Head>
             <div className="doc">
                 <div className="doc-main">
                     <div className="doc-intro">
                         <h1>CSS Layer</h1>
-                        <p>Best practices for the PrimeReact cascade layer in styled mode.</p>
+                        <p>Best practices for the MantleUI cascade layer in styled mode.</p>
                     </div>
                     <DocSections docs={docs} />
                 </div>
@@ -64,3 +64,4 @@ const AccessibilityDoc = () => {
 };
 
 export default AccessibilityDoc;
+

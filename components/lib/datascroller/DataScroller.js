@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext, localeOption } from '../api/Api';
+import { MantleContext, localeOption } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { ObjectUtils, classNames } from '../utils/Utils';
@@ -8,7 +8,7 @@ import { DataScrollerBase } from './DataScrollerBase';
 export const DataScroller = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = DataScrollerBase.getProps(inProps, context);
 
         const [dataToRenderState, setDataToRenderState] = React.useState([]);
@@ -259,3 +259,4 @@ export const DataScroller = React.memo(
 );
 
 DataScroller.displayName = 'DataScroller';
+

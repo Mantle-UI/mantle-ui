@@ -133,14 +133,15 @@ export interface InputTextProps extends Omit<React.DetailedHTMLProps<React.Input
 }
 
 /**
- * **PrimeReact - InputText**
+ * **MantleUI - InputText**
  *
  * _InputText is an extension to standard input element with theming and keyfiltering._
  *
  * [Live Demo](https://www.primereact.org/inputtext/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare const InputText: React.ForwardRefExoticComponent<InputTextProps & React.RefAttributes<HTMLInputElement>>;
+

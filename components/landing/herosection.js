@@ -111,7 +111,7 @@ const HeroSection = () => {
                         The Most Complete UI Suite for <span className="font-bold text-primary">React.js</span>
                     </h1>
                     <p className="section-detail xl:text-left text-center px-0 mt-0 mb-5">
-                        Elevate your web applications with PrimeReact's comprehensive suite of customizable, feature-rich UI components. With PrimeReact, turning your development vision into reality has never been easier.
+                        Elevate your web applications with MantleUI's comprehensive suite of customizable, feature-rich UI components. With MantleUI, turning your development vision into reality has never been easier.
                     </p>
                     <div className="flex align-items-center gap-3">
                         <Link href="/installation">
@@ -234,3 +234,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

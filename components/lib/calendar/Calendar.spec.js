@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import { PrimeReactProvider } from '../api/Api';
+import { MantleProvider } from '../api/Api';
 import { Calendar } from './Calendar';
 
 describe('Calendar', () => {
@@ -21,9 +21,9 @@ describe('Calendar', () => {
 
     test('When the days of the year are disabled, then the years and month should be disabled', async () => {
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Calendar value={new Date(2023, 11, 15)} inline view="year" disabledDates={getAllDatesOfYear(2023)} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
 
         const years = container.querySelectorAll('.p-yearpicker-year');
@@ -39,9 +39,9 @@ describe('Calendar', () => {
         }
 
         const { container: monthContainer } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Calendar value={new Date(2023, 11, 15)} inline view="month" disabledDates={getAllDatesOfYear(2023)} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
 
         const months = monthContainer.querySelectorAll('.p-monthpicker-month');
@@ -60,9 +60,9 @@ describe('Calendar', () => {
         disabledDates.pop();
 
         const { container: yearContainer } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Calendar value={new Date(2023, 11, 15)} inline view="year" disabledDates={disabledDates} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const years = yearContainer.querySelectorAll('.p-yearpicker-year');
 
@@ -73,9 +73,9 @@ describe('Calendar', () => {
 
         // month
         const { container: monthContainer } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Calendar value={new Date(2023, 11, 15)} inline view="month" disabledDates={disabledDates} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
 
         const months = monthContainer.querySelectorAll('.p-monthpicker-month');
@@ -91,3 +91,4 @@ describe('Calendar', () => {
         });
     });
 });
+

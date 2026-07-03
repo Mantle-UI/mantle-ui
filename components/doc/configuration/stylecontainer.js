@@ -5,7 +5,7 @@ export function StyleContainer(props) {
     const code = {
         basic: `
 //_app.js
-import { PrimeReactProvider } from 'primereact/api';
+import { MantleProvider } from 'primereact/api';
 
 root.attachShadow({ mode: 'open' }); // Open the shadowRoot
 const mountHere = root.shadowRoot;
@@ -14,9 +14,9 @@ const options = { appendTo: mountHere, styleContainer: mountHere};
 
 ReactDOM.createRoot(mountHere).render(
   <React.StrictMode>
-    <PrimeReactProvider value={options}>
+    <MantleProvider value={options}>
       <App />
-    </PrimeReactProvider>
+    </MantleProvider>
   </React.StrictMode>
 );
 `
@@ -37,3 +37,4 @@ ReactDOM.createRoot(mountHere).render(
         </>
     );
 }
+

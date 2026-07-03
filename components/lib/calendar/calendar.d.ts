@@ -991,13 +991,13 @@ export interface CalendarProps<TMode extends CalendarSelectionMode = 'single', T
 }
 
 /**
- * **PrimeReact - Calendar**
+ * **MantleUI - Calendar**
  *
  * _Calendar also known as DatePicker, is a form component to work with dates._
  *
  * [Live Demo](https://www.primereact.org/calendar/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -1046,3 +1046,4 @@ export declare class Calendar<TMode extends CalendarSelectionMode = 'single', TV
      */
     public updateViewDate(event: React.SyntheticEvent | null, value: Nullable<TValue>): void;
 }
+

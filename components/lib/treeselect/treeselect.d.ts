@@ -660,13 +660,13 @@ export interface TreeSelectProps extends Omit<React.DetailedHTMLProps<React.Inpu
 }
 
 /**
- * **PrimeReact - TreeSelect**
+ * **MantleUI - TreeSelect**
  *
  * _TreeSelect is a form component to choose from hierarchical data._
  *
  * [Live Demo](https://www.primereact.org/treeselect/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -693,3 +693,4 @@ export declare class TreeSelect extends React.Component<TreeSelectProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

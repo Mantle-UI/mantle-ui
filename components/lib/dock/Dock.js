@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { Ripple } from '../ripple/Ripple';
@@ -12,7 +12,7 @@ export const Dock = React.memo(
         const [focused, setFocused] = React.useState(false);
         const [focusedOptionIndex, setFocusedOptionIndex] = React.useState(-1);
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = DockBase.getProps(inProps, context);
         const [idState, setIdState] = React.useState(props.id);
         const { ptm, cx, isUnstyled } = DockBase.setMetaData({
@@ -354,3 +354,4 @@ export const Dock = React.memo(
 );
 
 Dock.displayName = 'Dock';
+

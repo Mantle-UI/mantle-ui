@@ -1,4 +1,4 @@
-import PrimeReact from './PrimeReact';
+import MantleUI from './MantleUI';
 
 let locales = {
     en: {
@@ -136,11 +136,11 @@ let locales = {
 };
 
 function locale(locale) {
-    locale && (PrimeReact.locale = locale);
+    locale && (MantleUI.locale = locale);
 
     return {
-        locale: PrimeReact.locale,
-        options: locales[PrimeReact.locale]
+        locale: MantleUI.locale,
+        options: locales[MantleUI.locale]
     };
 }
 
@@ -165,7 +165,7 @@ function updateLocaleOptions(options, locale) {
         throw new Error('Unsafe locale detected');
     }
 
-    const _locale = locale || PrimeReact.locale;
+    const _locale = locale || MantleUI.locale;
 
     locales[_locale] = { ...locales[_locale], ...options };
 }
@@ -175,7 +175,7 @@ function localeOption(key, locale) {
         throw new Error('Unsafe key detected');
     }
 
-    const _locale = locale || PrimeReact.locale;
+    const _locale = locale || MantleUI.locale;
 
     try {
         return localeOptions(_locale)[key];
@@ -201,7 +201,7 @@ function ariaLabel(ariaKey, options) {
         throw new Error('Unsafe ariaKey detected');
     }
 
-    const _locale = PrimeReact.locale;
+    const _locale = MantleUI.locale;
 
     try {
         let ariaLabel = localeOptions(_locale).aria[ariaKey];
@@ -221,7 +221,7 @@ function ariaLabel(ariaKey, options) {
 }
 
 function localeOptions(locale) {
-    const _locale = locale || PrimeReact.locale;
+    const _locale = locale || MantleUI.locale;
 
     if (_locale.includes('__proto__') || _locale.includes('prototype')) {
         throw new Error('Unsafe locale detected');
@@ -231,3 +231,5 @@ function localeOptions(locale) {
 }
 
 export { addLocale, ariaLabel, locale, localeOption, localeOptions, updateLocaleOption, updateLocaleOptions };
+
+

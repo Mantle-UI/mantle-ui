@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FilterMatchMode } from './FilterMatchMode';
-import MantleUI from './PrimeReact';
+import MantleUI from './MantleUI';
 
 export const MantleContext = React.createContext();
 
@@ -121,3 +121,4 @@ export const MantleProvider = (props) => {
 
     return <MantleContext.Provider value={value}>{props.children}</MantleContext.Provider>;
 };
+

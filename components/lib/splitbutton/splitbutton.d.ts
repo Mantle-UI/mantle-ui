@@ -256,13 +256,13 @@ export interface SplitButtonState {
 }
 
 /**
- * **PrimeReact - SplitButton**
+ * **MantleUI - SplitButton**
  *
  * _SplitButton groups a set of commands in an overlay with a default command._
  *
  * [Live Demo](https://www.primereact.org/splitbutton/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -281,3 +281,4 @@ export declare class SplitButton extends React.Component<SplitButtonProps, any> 
      */
     public getElement(): HTMLDivElement | null;
 }
+

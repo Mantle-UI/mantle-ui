@@ -2,7 +2,7 @@ const FeaturesSection = () => {
     return (
         <section className="landing-features py-8">
             <div className="section-header">Features</div>
-            <p className="section-detail">PrimeReact is the most complete solution for your UI requirements.</p>
+            <p className="section-detail">MantleUI is the most complete solution for your UI requirements.</p>
             <div className=" mt-7 px-3 lg:px-8">
                 <div className="features-container">
                     <div className="grid">
@@ -70,3 +70,4 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
+

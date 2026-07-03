@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext, localeOption } from '../api/Api';
+import { MantleContext, localeOption } from '../api/Api';
 import { ariaLabel } from '../api/Locale';
 import { Dropdown } from '../dropdown/Dropdown';
 import { useMergeProps } from '../hooks/Hooks';
@@ -8,7 +8,7 @@ import { RowsPerPageDropdownBase } from './PaginatorBase';
 
 export const RowsPerPageDropdown = React.memo((inProps) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = RowsPerPageDropdownBase.getProps(inProps, context);
 
     const hasOptions = props.options && props.options.length > 0;
@@ -54,3 +54,4 @@ export const RowsPerPageDropdown = React.memo((inProps) => {
 });
 
 RowsPerPageDropdown.displayName = 'RowsPerPageDropdown';
+

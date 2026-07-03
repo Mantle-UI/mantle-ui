@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { Badge } from '../badge/Badge';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ import { ButtonBase } from './ButtonBase';
 export const Button = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ButtonBase.getProps(inProps, context);
         const disabled = props.disabled || props.loading;
 
@@ -140,3 +140,4 @@ export const Button = React.memo(
 );
 
 Button.displayName = 'Button';
+

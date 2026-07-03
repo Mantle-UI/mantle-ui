@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { ObjectUtils, classNames } from '../utils/Utils';
@@ -7,7 +7,7 @@ import { CardBase } from './CardBase';
 
 export const Card = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = CardBase.getProps(inProps, context);
 
     const elementRef = React.useRef(ref);
@@ -114,3 +114,4 @@ export const Card = React.forwardRef((inProps, ref) => {
 });
 
 Card.displayName = 'Card';
+

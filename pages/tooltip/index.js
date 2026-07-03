@@ -111,7 +111,7 @@ const TooltipDemo = () => {
         <DocComponent
             title="React Tooltip Component"
             header="Tooltip"
-            description="Tooltip functionality is integrated within various PrimeReact components."
+            description="Tooltip functionality is integrated within various MantleUI components."
             componentDocs={docs}
             apiDocs={['Tooltip', 'TooltipOptions']}
             ptDocs={ptDocs}
@@ -121,3 +121,4 @@ const TooltipDemo = () => {
 };
 
 export default TooltipDemo;
+

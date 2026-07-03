@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface SearchIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - SearchIcon**
+ * **MantleUI - SearchIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class SearchIcon extends React.Component<SearchIconProps, any> {}
+

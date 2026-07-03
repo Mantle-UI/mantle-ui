@@ -45,7 +45,7 @@ const AccessibilityDoc = () => {
     return (
         <div>
             <Head>
-                <title>Accessibility - PrimeReact</title>
+                <title>Accessibility - MantleUI</title>
                 <meta name="description" content="Accessible React UI Components." />
             </Head>
             <div className="doc">
@@ -63,3 +63,4 @@ const AccessibilityDoc = () => {
 };
 
 export default AccessibilityDoc;
+

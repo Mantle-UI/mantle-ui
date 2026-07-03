@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { AngleRightIcon } from '../icons/angleright';
 import { Ripple } from '../ripple/Ripple';
@@ -9,7 +9,7 @@ export const CascadeSelectSub = React.memo((props) => {
     const [activeOptionState, setActiveOptionState] = React.useState(null);
     const elementRef = React.useRef(null);
     const shouldFocusSubmenu = React.useRef(false);
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const { ptm, cx } = props;
 
     const getPTOptions = (key, options) => {
@@ -325,3 +325,4 @@ export const CascadeSelectSub = React.memo((props) => {
 
     return element;
 });
+

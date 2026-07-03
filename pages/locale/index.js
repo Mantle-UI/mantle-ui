@@ -30,14 +30,15 @@ const LocalePage = () => {
 
     return (
         <DocComponent
-            title="Locale - PrimeReact"
+            title="Locale - MantleUI"
             header="Internationalization and Localization"
             description="The Locale API allows setting i18n and l7n options globally for the components."
             componentDocs={docs}
             apiDocs={['API']}
-            apiExclude={{ interfaces: ['PrimeIconsOptions', 'APIOptions', 'ContextAPIOptions', 'FilterMatchModeOptions', 'ZIndexOptions', 'PrimeReactPTOptions'], types: 'excludeAll' }}
+            apiExclude={{ interfaces: ['MantleIconsOptions', 'APIOptions', 'ContextAPIOptions', 'FilterMatchModeOptions', 'ZIndexOptions', 'MantleUIPTOptions'], types: 'excludeAll' }}
         />
     );
 };
 
 export default LocalePage;
+

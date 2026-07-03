@@ -7,18 +7,18 @@ const UIKitPage = (props) => {
         <>
             <div>
                 <Head>
-                    <title>UI Kit - PrimeReact</title>
-                    <meta name="description" content="Design files for PrimeReact Components." />
+                    <title>UI Kit - MantleUI</title>
+                    <meta name="description" content="Design files for MantleUI Components." />
                 </Head>
                 <div>
                     <div style={{ borderRadius: '50px', maxHeight: '500px' }} className="overflow-hidden mb-5 flex align-items-center">
-                        <img alt="PrimeReact Designer" src={`https://primefaces.org/cdn/primereact/images/uikit/primeone-cover-${props.dark ? 'dark' : 'light'}.jpeg`} className="w-full" />
+                        <img alt="MantleUI Designer" src={`https://primefaces.org/cdn/primereact/images/uikit/primeone-cover-${props.dark ? 'dark' : 'light'}.jpeg`} className="w-full" />
                     </div>
 
                     <div className="card mb-5" style={{ borderRadius: '50px' }}>
                         <div className="flex flex-column md:flex-row align-items-center gap-4 md:gap-8 mb-8">
                             <div className="w-full md:w-6">
-                                <img alt="PrimeReact Designer" src="https://primefaces.org/cdn/primereact/images/uikit/uikit-figma.png" className="w-full" />
+                                <img alt="MantleUI Designer" src="https://primefaces.org/cdn/primereact/images/uikit/uikit-figma.png" className="w-full" />
                             </div>
                             <div className="w-full md:w-6">
                                 <div className="text-primary font-bold mb-2">UP-TO-DATE</div>
@@ -79,12 +79,12 @@ const UIKitPage = (props) => {
                                 </ul>
                             </div>
                             <div className="w-full md:w-6">
-                                <img alt="PrimeReact Designer" src="https://primefaces.org/cdn/primereact/images/uikit/uikit-system.png" className="w-full" />
+                                <img alt="MantleUI Designer" src="https://primefaces.org/cdn/primereact/images/uikit/uikit-system.png" className="w-full" />
                             </div>
                         </div>
                         <div className="flex flex-column md:flex-row align-items-center gap-4 md:gap-8 mb-8">
                             <div className="w-full md:w-6">
-                                <img alt="PrimeReact Designer" src="https://primefaces.org/cdn/primereact/images/uikit/uikit-themes.png" className="w-full" />
+                                <img alt="MantleUI Designer" src="https://primefaces.org/cdn/primereact/images/uikit/uikit-themes.png" className="w-full" />
                             </div>
                             <div className="w-full md:w-6">
                                 <div className="text-primary font-bold mb-2">DARK MODE</div>
@@ -374,3 +374,4 @@ const UIKitPage = (props) => {
 };
 
 export default UIKitPage;
+

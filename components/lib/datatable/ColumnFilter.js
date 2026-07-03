@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { FilterMatchMode, FilterOperator, PrimeReactContext, localeOption } from '../api/Api';
+import MantleUI, { FilterMatchMode, FilterOperator, MantleContext, localeOption } from '../api/Api';
 import { ariaLabel } from '../api/Locale';
 import { Button } from '../button/Button';
 import { ColumnBase } from '../column/ColumnBase';
@@ -27,7 +27,7 @@ export const ColumnFilter = React.memo((props) => {
     const mergeProps = useMergeProps();
     const getColumnProp = (name) => ColumnBase.getCProp(props.column, name);
     const getColumnProps = () => ColumnBase.getCProps(props.column);
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const { ptm, ptmo, cx } = props.ptCallbacks;
 
     const getColumnPTOptions = (key, params) => {
@@ -64,7 +64,7 @@ export const ColumnFilter = React.memo((props) => {
                 } else if (context.hideOverlaysOnDocumentScrolling) {
                     hide();
                 } else if (!DomHandler.isDocument(event.target)) {
-                    DomHandler.alignOverlay(overlayRef.current, iconRef.current, (context && context.appendTo) || PrimeReact.appendTo, false);
+                    DomHandler.alignOverlay(overlayRef.current, iconRef.current, (context && context.appendTo) || MantleUI.appendTo, false);
                 }
             }
         },
@@ -95,7 +95,7 @@ export const ColumnFilter = React.memo((props) => {
         return (
             getColumnProp('filterMatchModeOptions') ||
             (context && context.filterMatchModeOptions[findDataType()].map((key) => ({ label: localeOption(key), value: key }))) ||
-            PrimeReact.filterMatchModeOptions[findDataType()].map((key) => ({ label: localeOption(key), value: key }))
+            MantleUI.filterMatchModeOptions[findDataType()].map((key) => ({ label: localeOption(key), value: key }))
         );
     };
 
@@ -149,14 +149,14 @@ export const ColumnFilter = React.memo((props) => {
     const findDataType = () => {
         const dataType = getColumnProp('dataType');
         const matchMode = getColumnProp('filterMatchMode');
-        const hasMatchMode = (key) => (context && context.filterMatchModeOptions[key].some((mode) => mode === matchMode)) || PrimeReact.filterMatchModeOptions[key].some((mode) => mode === matchMode);
+        const hasMatchMode = (key) => (context && context.filterMatchModeOptions[key].some((mode) => mode === matchMode)) || MantleUI.filterMatchModeOptions[key].some((mode) => mode === matchMode);
 
         if (matchMode === 'custom' && !hasMatchMode(dataType)) {
-            (context && context.filterMatchModeOptions[dataType].push(FilterMatchMode.CUSTOM)) || PrimeReact.filterMatchModeOptions[dataType].push(FilterMatchMode.CUSTOM);
+            (context && context.filterMatchModeOptions[dataType].push(FilterMatchMode.CUSTOM)) || MantleUI.filterMatchModeOptions[dataType].push(FilterMatchMode.CUSTOM);
 
             return dataType;
         } else if (matchMode) {
-            return Object.keys((context && context.filterMatchModeOptions) || PrimeReact.filterMatchModeOptions).find((key) => hasMatchMode(key)) || dataType;
+            return Object.keys((context && context.filterMatchModeOptions) || MantleUI.filterMatchModeOptions).find((key) => hasMatchMode(key)) || dataType;
         }
 
         return dataType;
@@ -396,9 +396,9 @@ export const ColumnFilter = React.memo((props) => {
     };
 
     const onOverlayEnter = () => {
-        ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.overlay) || PrimeReact.zIndex.overlay);
+        ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
         DomHandler.addStyles(overlayRef.current, { position: 'absolute', top: '0', left: '0' });
-        DomHandler.alignOverlay(overlayRef.current, iconRef.current, (context && context.appendTo) || PrimeReact.appendTo, false);
+        DomHandler.alignOverlay(overlayRef.current, iconRef.current, (context && context.appendTo) || MantleUI.appendTo, false);
 
         overlayEventListener.current = (e) => {
             if (!isOutsideClicked(e.target)) {
@@ -483,7 +483,7 @@ export const ColumnFilter = React.memo((props) => {
 
     useUpdateEffect(() => {
         if (props.display === 'menu' && overlayVisibleState) {
-            DomHandler.alignOverlay(overlayRef.current, iconRef.current, (context && context.appendTo) || PrimeReact.appendTo, false);
+            DomHandler.alignOverlay(overlayRef.current, iconRef.current, (context && context.appendTo) || MantleUI.appendTo, false);
         }
     });
 
@@ -954,3 +954,4 @@ export const ColumnFilter = React.memo((props) => {
 });
 
 ColumnFilter.displayName = 'ColumnFilter';
+

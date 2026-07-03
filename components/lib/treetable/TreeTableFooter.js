@@ -4,12 +4,12 @@ import { ColumnGroupBase } from '../columngroup/ColumnGroupBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { RowBase } from '../row/RowBase';
 import { ObjectUtils } from '../utils/Utils';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 
 export const TreeTableFooter = React.memo((props) => {
     const mergeProps = useMergeProps();
     const { ptm, ptmo, cx } = props.ptCallbacks;
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
 
     const getColumnProp = (column, name) => {
         return ColumnBase.getCProp(column, name);
@@ -98,3 +98,4 @@ export const TreeTableFooter = React.memo((props) => {
 });
 
 TreeTableFooter.displayName = 'TreeTableFooter';
+

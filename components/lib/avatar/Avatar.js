@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { DomHandler, IconUtils, ObjectUtils, classNames } from '../utils/Utils';
@@ -7,7 +7,7 @@ import { AvatarBase } from './AvatarBase';
 
 export const Avatar = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = AvatarBase.getProps(inProps, context);
 
     const elementRef = React.useRef(null);
@@ -105,3 +105,4 @@ export const Avatar = React.forwardRef((inProps, ref) => {
 });
 
 Avatar.displayName = 'Avatar';
+

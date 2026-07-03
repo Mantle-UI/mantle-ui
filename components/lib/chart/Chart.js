@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useUnmountEffect } from '../hooks/Hooks';
 import { classNames } from '../utils/Utils';
@@ -14,10 +14,10 @@ const ChartJS = (function () {
     }
 })();
 
-const PrimeReactChart = React.memo(
+const MantleUIChart = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ChartBase.getProps(inProps, context);
 
         const { ptm, cx, sx, isUnstyled } = ChartBase.setMetaData({
@@ -122,6 +122,7 @@ const PrimeReactChart = React.memo(
     (prevProps, nextProps) => prevProps.data === nextProps.data && prevProps.options === nextProps.options && prevProps.type === nextProps.type
 );
 
-PrimeReactChart.displayName = 'Chart';
+MantleUIChart.displayName = 'Chart';
 
-export { PrimeReactChart as Chart };
+export { MantleUIChart as Chart };
+

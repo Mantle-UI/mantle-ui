@@ -83,13 +83,13 @@ export interface DividerProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - Divider**
+ * **MantleUI - Divider**
  *
  * _Divider is used to separate contents._
  *
  * [Live Demo](https://www.primereact.org/divider/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -100,3 +100,4 @@ export declare class Divider extends React.Component<DividerProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

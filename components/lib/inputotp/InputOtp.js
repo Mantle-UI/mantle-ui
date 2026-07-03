@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from 'react';
-import { PrimeReactContext, ariaLabel } from '../api/Api';
+import { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useUpdateEffect } from '../hooks/Hooks';
 import { InputText } from '../inputtext/InputText';
@@ -10,7 +10,7 @@ export const InputOtp = React.memo(
     React.forwardRef((inProps, ref) => {
         const elementRef = useRef(ref);
         const mergeProps = useMergeProps();
-        const context = useContext(PrimeReactContext);
+        const context = useContext(MantleContext);
         const props = InputOtpBase.getProps(inProps, context);
         const { ptm, cx, isUnstyled } = InputOtpBase.setMetaData({
             props,
@@ -261,3 +261,4 @@ export const InputOtp = React.memo(
 );
 
 InputOtp.displayName = 'InputOtp';
+

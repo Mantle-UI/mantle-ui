@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { KeyFilter } from '../keyfilter/KeyFilter';
@@ -10,7 +10,7 @@ import { InputTextBase } from './InputTextBase';
 export const InputText = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = InputTextBase.getProps(inProps, context);
 
         const { ptm, cx, isUnstyled } = InputTextBase.setMetaData({
@@ -101,3 +101,4 @@ export const InputText = React.memo(
 );
 
 InputText.displayName = 'InputText';
+

@@ -104,13 +104,13 @@ export interface ProgressBarProps extends Omit<React.DetailedHTMLProps<React.HTM
 }
 
 /**
- * **PrimeReact - ProgressBar**
+ * **MantleUI - ProgressBar**
  *
  * _ProgressBar is a process status indicator._
  *
  * [Live Demo](https://www.primereact.org/progressbar/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -121,3 +121,4 @@ export declare class ProgressBar extends React.Component<ProgressBarProps, any> 
      */
     public getElement(): HTMLDivElement | null;
 }
+

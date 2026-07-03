@@ -72,15 +72,16 @@ export interface FloatLabelProps {
 }
 
 /**
- * **PrimeReact - FloatLabel**
+ * **MantleUI - FloatLabel**
  *
  * _FloatLabel appears on top of the input field when focused._
  *
  * [Live Demo](https://www.primereact.org/inputtext/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  *
  */
 export declare const FloatLabel: React.ForwardRefExoticComponent<FloatLabelProps & React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
+

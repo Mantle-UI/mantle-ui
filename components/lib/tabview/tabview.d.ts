@@ -440,13 +440,13 @@ export interface TabViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - TabPanel**
+ * **MantleUI - TabPanel**
  *
  * _TabView is a container component to group content with tabs._
  *
  * [Live Demo](https://www.primereact.org/tabview/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  *
@@ -463,3 +463,4 @@ export declare class TabView extends React.Component<TabViewProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

@@ -433,13 +433,13 @@ export interface ListBoxProps extends Omit<React.DetailedHTMLProps<React.InputHT
 }
 
 /**
- * **PrimeReact - ListBox**
+ * **MantleUI - ListBox**
  *
  * _ListBox is used to select one or more values from a list of items._
  *
  * [Live Demo](https://www.primereact.org/listbox/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -459,3 +459,4 @@ export declare class ListBox extends React.Component<ListBoxProps, any> {
      */
     public getVirtualScroller(): VirtualScroller | null;
 }
+

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useOverlayScrollListener, useResizeListener, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { Portal } from '../portal/Portal';
@@ -9,7 +9,7 @@ import { TooltipBase } from './TooltipBase';
 export const Tooltip = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = TooltipBase.getProps(inProps, context);
         const [visibleState, setVisibleState] = React.useState(false);
         const [positionState, setPositionState] = React.useState(props.position || 'right');
@@ -150,7 +150,7 @@ export const Tooltip = React.memo(
                 const { pageX: x, pageY: y } = currentMouseEvent.current;
 
                 if (props.autoZIndex && !ZIndexUtils.get(elementRef.current)) {
-                    ZIndexUtils.set('tooltip', elementRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex.tooltip) || PrimeReact.zIndex.tooltip);
+                    ZIndexUtils.set('tooltip', elementRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex.tooltip) || MantleUI.zIndex.tooltip);
                 }
 
                 elementRef.current.style.left = '';
@@ -569,3 +569,4 @@ export const Tooltip = React.memo(
 );
 
 Tooltip.displayName = 'Tooltip';
+

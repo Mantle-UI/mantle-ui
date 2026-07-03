@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { classNames } from '../utils/Utils';
@@ -8,7 +8,7 @@ import { ProgressBarBase } from './ProgressBarBase';
 export const ProgressBar = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ProgressBarBase.getProps(inProps, context);
         const { ptm, cx, isUnstyled } = ProgressBarBase.setMetaData({
             props,
@@ -118,3 +118,4 @@ export const ProgressBar = React.memo(
 );
 
 ProgressBar.displayName = 'ProgressBar';
+

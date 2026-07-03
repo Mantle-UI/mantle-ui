@@ -1,12 +1,12 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames } from '../utils/Utils';
 
 const classes = {
     root: ({ props, context }) =>
         classNames('p-overlaypanel p-component', {
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     closeIcon: 'p-overlaypanel-close-icon',
     closeButton: 'p-overlaypanel-close p-link',
@@ -120,3 +120,4 @@ export const OverlayPanelBase = ComponentBase.extend({
         styles
     }
 });
+

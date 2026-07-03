@@ -30,9 +30,9 @@ const ContextMenuDemo = () => {
 
     return (
         <DocComponent
-            title="Custom Icons - PrimeReact"
+            title="Custom Icons - MantleUI"
             header="Custom Icons"
-            description="PrimeReact components can be used with any icon library using the templating features. Icons are passed the <i>iconProps</i> of the original icon and the <i>props</i> of the component."
+            description="MantleUI components can be used with any icon library using the templating features. Icons are passed the <i>iconProps</i> of the original icon and the <i>props</i> of the component."
             componentDocs={docs}
             hideTabMenu
         />
@@ -40,3 +40,4 @@ const ContextMenuDemo = () => {
 };
 
 export default ContextMenuDemo;
+

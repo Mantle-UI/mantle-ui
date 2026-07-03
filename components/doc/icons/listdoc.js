@@ -60,7 +60,7 @@ export function ListDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    Here is the full list of PrimeIcons. More icons will be added periodically and you may also <a href="https://github.com/primefaces/primeicons/issues">request new icons</a> at the issue tracker.
+                    Here is the full list of MantleIcons. More icons will be added periodically and you may also <a href="https://github.com/primefaces/primeicons/issues">request new icons</a> at the issue tracker.
                 </p>
             </DocSectionText>
 
@@ -86,3 +86,4 @@ export function ListDoc(props) {
         </>
     );
 }
+

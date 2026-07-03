@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useOverlayListener, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -13,7 +13,7 @@ import { SlideMenuSub } from './SlideMenuSub';
 export const SlideMenu = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = SlideMenuBase.getProps(inProps, context);
 
         const [idState, setIdState] = React.useState(props.id);
@@ -97,7 +97,7 @@ export const SlideMenu = React.memo(
 
         const onEnter = () => {
             if (props.autoZIndex) {
-                ZIndexUtils.set('menu', menuRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex.menu) || PrimeReact.zIndex.menu);
+                ZIndexUtils.set('menu', menuRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex.menu) || MantleUI.zIndex.menu);
             }
 
             DomHandler.addStyles(menuRef.current, { position: 'absolute', top: '0', left: '0' });
@@ -257,3 +257,4 @@ export const SlideMenu = React.memo(
 );
 
 SlideMenu.displayName = 'SlideMenu';
+

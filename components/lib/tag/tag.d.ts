@@ -91,13 +91,13 @@ export interface TagProps extends Omit<React.DetailedHTMLProps<React.HTMLAttribu
 }
 
 /**
- * **PrimeReact - Tag**
+ * **MantleUI - Tag**
  *
  * _Tag component is used to categorize content._
  *
  * [Live Demo](https://www.primereact.org/tag/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -108,3 +108,4 @@ export declare class Tag extends React.Component<TagProps, any> {
      */
     public getElement(): HTMLSpanElement | null;
 }
+

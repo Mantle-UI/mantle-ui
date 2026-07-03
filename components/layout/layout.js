@@ -3,7 +3,7 @@ import Config from '@/components/layout/config';
 import Footer from '@/components/layout/footer';
 import Menu from '@/components/layout/menu';
 import Topbar from '@/components/layout/topbar';
-import { MantleContext } from '@/components/lib/api/PrimeReactContext';
+import { MantleContext } from '@/components/lib/api/MantleContext';
 import { DomHandler, classNames } from '@/components/lib/utils/Utils';
 import NewsSection from '@/components/news/newssection';
 import Head from 'next/head';
@@ -90,3 +90,4 @@ export default function Layout({ children }) {
         </div>
     );
 }
+

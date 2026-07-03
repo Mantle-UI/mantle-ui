@@ -27,14 +27,14 @@ const IconsDoc = () => {
     return (
         <div>
             <Head>
-                <title>Color System - PrimeReact</title>
-                <meta name="description" content="Each PrimeReact theme exports its own color palette." />
+                <title>Color System - MantleUI</title>
+                <meta name="description" content="Each MantleUI theme exports its own color palette." />
             </Head>
             <div className="doc">
                 <div className="doc-main">
                     <div className="doc-intro">
                         <h1>Color System</h1>
-                        <p>Each PrimeReact theme exports its own color palette.</p>
+                        <p>Each MantleUI theme exports its own color palette.</p>
                     </div>
                     <DocSections docs={docs} />
                 </div>
@@ -45,3 +45,4 @@ const IconsDoc = () => {
 };
 
 export default IconsDoc;
+

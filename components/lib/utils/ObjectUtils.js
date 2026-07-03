@@ -293,7 +293,7 @@ export default class ObjectUtils {
                     const messageTypes = validTypes ? validTypes : [type];
 
                     console.error(
-                        `PrimeReact: Unexpected type; '${childType}'. Parent component expects a ${messageTypes.map((t) => `${t}`).join(' or ')} component or a component with the ${messageTypes
+                        `MantleUI: Unexpected type; '${childType}'. Parent component expects a ${messageTypes.map((t) => `${t}`).join(' or ')} component or a component with the ${messageTypes
                             .map((t) => `__TYPE="${t}"`)
                             .join(' or ')} property as a child component.`
                     );
@@ -657,3 +657,4 @@ export default class ObjectUtils {
         return true;
     }
 }
+

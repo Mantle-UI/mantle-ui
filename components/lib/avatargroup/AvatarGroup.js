@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { classNames } from '../utils/Utils';
@@ -7,7 +7,7 @@ import { AvatarGroupBase } from './AvatarGroupBase';
 
 export const AvatarGroup = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = AvatarGroupBase.getProps(inProps, context);
 
     const { ptm, cx, isUnstyled } = AvatarGroupBase.setMetaData({
@@ -37,3 +37,4 @@ export const AvatarGroup = React.forwardRef((inProps, ref) => {
 });
 
 AvatarGroup.displayName = 'AvatarGroup';
+

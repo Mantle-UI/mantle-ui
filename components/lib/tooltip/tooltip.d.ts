@@ -1,6 +1,6 @@
 /**
  *
- * Tooltip functionality is integrated within various PrimeReact components.
+ * Tooltip functionality is integrated within various MantleUI components.
  *
  * [Live Demo](https://www.primereact.org/tooltip/)
  *
@@ -130,13 +130,13 @@ export interface TooltipProps extends TooltipOptions {
 }
 
 /**
- * **PrimeReact - Tooltip**
+ * **MantleUI - Tooltip**
  *
- * _Tooltip functionality is integrated within various PrimeReact components._
+ * _Tooltip functionality is integrated within various MantleUI components._
  *
  * [Live Demo](https://www.primereact.org/tooltip/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -177,3 +177,4 @@ export declare class Tooltip extends React.Component<TooltipProps, any> {
      */
     public hide(event?: TooltipEvent): null;
 }
+

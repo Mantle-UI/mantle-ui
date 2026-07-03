@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useMergeProps, useMountEffect, useStyle, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { DomHandler, classNames } from '../utils/Utils';
 import { RippleBase } from './RippleBase';
@@ -10,9 +10,9 @@ export const Ripple = React.memo(
         const inkRef = React.useRef(null);
         const targetRef = React.useRef(null);
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = RippleBase.getProps(inProps, context);
-        const isRippleActive = (context && context.ripple) || PrimeReact.ripple;
+        const isRippleActive = (context && context.ripple) || MantleUI.ripple;
 
         const metaData = {
             props
@@ -127,3 +127,4 @@ export const Ripple = React.memo(
 );
 
 Ripple.displayName = 'Ripple';
+

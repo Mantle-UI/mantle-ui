@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface AngleDoubleLeftIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - AngleDoubleLeftIcon**
+ * **MantleUI - AngleDoubleLeftIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class AngleDoubleLeftIcon extends React.Component<AngleDoubleLeftIconProps, any> {}
+

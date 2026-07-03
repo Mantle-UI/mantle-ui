@@ -151,13 +151,13 @@ export interface OverlayPanelProps extends Omit<React.DetailedHTMLProps<React.HT
 }
 
 /**
- * **PrimeReact - OverlayPanel**
+ * **MantleUI - OverlayPanel**
  *
  * _OverlayPanel, also known as Popover, is a container component that can overlay other components on page._
  *
  * [Live Demo](https://www.primereact.org/overlaypanel/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -193,3 +193,4 @@ export declare class OverlayPanel extends React.Component<OverlayPanelProps, any
      */
     public getElement(): HTMLDivElement | null;
 }
+

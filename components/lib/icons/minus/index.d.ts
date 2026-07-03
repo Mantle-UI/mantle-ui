@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface MinusIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - MinusIcon**
+ * **MantleUI - MinusIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class MinusIcon extends React.Component<MinusIconProps, any> {}
+

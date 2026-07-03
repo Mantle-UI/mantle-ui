@@ -6,7 +6,7 @@ import { CustomDoc } from '@/components/doc/ripple/customdoc';
 import { ImportDoc } from '@/components/doc/ripple/importdoc';
 import { StyledDoc } from '@/components/doc/ripple/theming/styleddoc';
 import { TailwindDoc } from '@/components/doc/ripple/theming/tailwinddoc';
-import { PrimeReactContext } from '@/components/lib/api/PrimeReactContext';
+import { MantleContext } from '@/components/lib/api/MantleContext';
 import { useContext, useEffect, useRef } from 'react';
 
 const RippleDemo = () => {
@@ -37,7 +37,7 @@ const RippleDemo = () => {
             component: AccessibilityDoc
         }
     ];
-    const { ripple, setRipple } = useContext(PrimeReactContext);
+    const { ripple, setRipple } = useContext(MantleContext);
     const userRippleValue = useRef(ripple);
 
     useEffect(() => {
@@ -75,3 +75,4 @@ const RippleDemo = () => {
 };
 
 export default RippleDemo;
+

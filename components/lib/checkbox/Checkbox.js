@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { CheckIcon } from '../icons/check';
@@ -10,7 +10,7 @@ import { CheckboxBase } from './CheckboxBase';
 export const Checkbox = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = CheckboxBase.getProps(inProps, context);
         const [focusedState, setFocusedState] = React.useState(false);
         const { ptm, cx, isUnstyled } = CheckboxBase.setMetaData({
@@ -179,3 +179,4 @@ export const Checkbox = React.memo(
 );
 
 Checkbox.displayName = 'Checkbox';
+

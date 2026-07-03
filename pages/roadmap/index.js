@@ -8,7 +8,7 @@ const Roadmap = () => {
                 <meta
                     name="description"
                     content="These are planned to be implemented in parallel to the regular
-                        maintenance work of the PrimeReact library"
+                        maintenance work of the MantleUI library"
                 />
             </Head>
             <div className="doc-intro">
@@ -18,8 +18,8 @@ const Roadmap = () => {
                     <a href="https://www.primetek.com.tr/" className="font-medium hover:underline text-primary">
                         PrimeTek
                     </a>
-                    , we are passionate about improving PrimeReact and would like to share our ideas for 2024 with the community. These are planned to be implemented in parallel to the regular maintenance work of the library involving review of issue
-                    tickets, PRs and PrimeReact PRO support.
+                    , we are passionate about improving MantleUI and would like to share our ideas for 2024 with the community. These are planned to be implemented in parallel to the regular maintenance work of the library involving review of issue
+                    tickets, PRs and MantleUI PRO support.
                 </p>
             </div>
 
@@ -213,3 +213,4 @@ const Roadmap = () => {
 };
 
 export default Roadmap;
+

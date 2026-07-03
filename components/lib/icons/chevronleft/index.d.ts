@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface ChevronLeftIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - ChevronLeftIcon**
+ * **MantleUI - ChevronLeftIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class ChevronLeftIcon extends React.Component<ChevronLeftIconProps, any> {}
+

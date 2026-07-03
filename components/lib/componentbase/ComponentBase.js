@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { useMountEffect, useStyle, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { ObjectUtils, classNames, mergeProps } from '../utils/Utils';
 
@@ -505,7 +505,7 @@ export const ComponentBase = {
             const ptmo = (obj = {}, key = '', params = {}) => getPTValue(obj, key, params, false);
 
             const isUnstyled = () => {
-                return ComponentBase.context.unstyled || PrimeReact.unstyled || props.unstyled;
+                return ComponentBase.context.unstyled || MantleUI.unstyled || props.unstyled;
             };
 
             const cx = (key = '', params = {}) => {
@@ -586,11 +586,11 @@ const _usePT = (pt, callback, key, params) => {
 };
 
 const getGlobalPT = () => {
-    return _getPT(ComponentBase.context.pt || PrimeReact.pt, undefined, (value) => ObjectUtils.getItemValue(value, ComponentBase.cParams));
+    return _getPT(ComponentBase.context.pt || MantleUI.pt, undefined, (value) => ObjectUtils.getItemValue(value, ComponentBase.cParams));
 };
 
 const getDefaultPT = () => {
-    return _getPT(ComponentBase.context.pt || PrimeReact.pt, undefined, (value) => getOptionValue(value, ComponentBase.cName, ComponentBase.cParams) || ObjectUtils.getItemValue(value, ComponentBase.cParams));
+    return _getPT(ComponentBase.context.pt || MantleUI.pt, undefined, (value) => getOptionValue(value, ComponentBase.cName, ComponentBase.cParams) || ObjectUtils.getItemValue(value, ComponentBase.cParams));
 };
 
 const _useGlobalPT = (callback, key, params) => {
@@ -648,3 +648,4 @@ export const useHandleStyle = (styles, _isUnstyled = () => {}, config) => {
         hook('useUnmountEffect');
     });
 };
+

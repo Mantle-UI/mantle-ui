@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useMountEffect, useStyle } from '../hooks/Hooks';
 import { DomHandler } from '../utils/Utils';
 import { FocusTrapBase } from './FocusTrapBase';
@@ -9,7 +9,7 @@ export const FocusTrap = React.memo(
         const targetRef = React.useRef(null);
         const firstFocusableElementRef = React.useRef(null);
         const lastFocusableElementRef = React.useRef(null);
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = FocusTrapBase.getProps(inProps, context);
 
         const metaData = {
@@ -126,3 +126,4 @@ export const FocusTrap = React.memo(
 );
 
 export default FocusTrap;
+

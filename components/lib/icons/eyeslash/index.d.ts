@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface EyeSlashIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - EyeSlashIcon**
+ * **MantleUI - EyeSlashIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class EyeSlashIcon extends React.Component<EyeSlashIconProps, any> {}
+

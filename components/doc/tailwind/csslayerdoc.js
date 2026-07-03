@@ -6,7 +6,7 @@ export function CSSLayerDoc(props) {
         basic: `
 @layer tailwind-base, primereact, tailwind-utilities;
 
-/* VITE ONLY: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
+/* VITE ONLY: In "styled" mode you must add the MantleUI Theme here. Do NOT include in "unstyled" mode */
 @import 'primereact/resources/themes/lara-light-blue/theme.css';
 
 /* NEXT.JS ONLY: In "styled" mode you must also add the layer(primereact) */
@@ -27,7 +27,7 @@ export function CSSLayerDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    Tailwind CSS can be used with styled or unstyled modes of PrimeReact. In both cases, <a href="https://tailwindcss.com/docs/preflight">preflight</a> mode may break styling of the core functionality so <i>@layer</i> configuration in
+                    Tailwind CSS can be used with styled or unstyled modes of MantleUI. In both cases, <a href="https://tailwindcss.com/docs/preflight">preflight</a> mode may break styling of the core functionality so <i>@layer</i> configuration in
                     your style file that includes tailwind styles is necessary for compatibility.
                 </p>
                 <DocSectionCode code={code1} hideToggleCode import hideStackBlitz />
@@ -35,3 +35,4 @@ export function CSSLayerDoc(props) {
         </>
     );
 }
+

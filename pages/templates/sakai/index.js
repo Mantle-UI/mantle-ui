@@ -45,8 +45,8 @@ const animationFeaturesData1 = [
     },
     {
         id: 3,
-        title: 'PrimeIcons',
-        description: 'Atlantis ships with PrimeIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
+        title: 'MantleIcons',
+        description: 'Atlantis ships with MantleIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/babylon/features-animation-icons.png'
     }
 ];
@@ -154,3 +154,4 @@ const BabylonPage = () => {
 };
 
 export default BabylonPage;
+

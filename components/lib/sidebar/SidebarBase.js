@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames } from '../utils/Utils';
 
@@ -29,8 +29,8 @@ const classes = {
     icons: 'p-sidebar-icons',
     root: ({ props, context }) =>
         classNames('p-sidebar p-component', {
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     transition: 'p-sidebar'
 };
@@ -292,3 +292,4 @@ export const SidebarBase = ComponentBase.extend({
         inlineStyles
     }
 });
+

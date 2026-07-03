@@ -87,13 +87,13 @@ export interface ProgressSpinnerProps extends Omit<React.DetailedHTMLProps<React
 }
 
 /**
- * **PrimeReact - ProgressSpinner**
+ * **MantleUI - ProgressSpinner**
  *
  * _ProgressSpinner is a process status indicator._
  *
  * [Live Demo](https://www.primereact.org/progressspinner/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -104,3 +104,4 @@ export declare class ProgressSpinner extends React.Component<ProgressSpinnerProp
      */
     public getElement(): HTMLDivElement | null;
 }
+

@@ -225,13 +225,13 @@ export interface SidebarProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - Sidebar**
+ * **MantleUI - Sidebar**
  *
  * _Sidebar is a panel component displayed as an overlay._
  *
  * [Live Demo](https://www.primereact.org/sidebar/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -252,3 +252,4 @@ export declare class Sidebar extends React.Component<SidebarProps, any> {
      */
     public getCloseIcon(): HTMLButtonElement | null;
 }
+

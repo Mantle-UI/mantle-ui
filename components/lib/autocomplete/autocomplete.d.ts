@@ -558,13 +558,13 @@ export interface AutoCompleteProps<T = any, M extends boolean = false> extends O
 }
 
 /**
- * **PrimeReact - AutoComplete**
+ * **MantleUI - AutoComplete**
  *
  * _AutoComplete is an input component that provides real-time suggestions while being typed._
  *
  * [Live Demo](https://www.primereact.org/autocomplete/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -609,3 +609,4 @@ export declare class AutoComplete<T = any, M extends boolean = false> extends Re
      */
     public getVirtualScroller(): VirtualScroller | null;
 }
+

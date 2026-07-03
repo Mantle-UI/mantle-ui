@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { TimesCircleIcon } from '../icons/timescircle';
@@ -9,7 +9,7 @@ import { ChipBase } from './ChipBase';
 export const Chip = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ChipBase.getProps(inProps, context);
         const elementRef = React.useRef(null);
         const [visibleState, setVisibleState] = React.useState(true);
@@ -144,3 +144,4 @@ export const Chip = React.memo(
 );
 
 Chip.displayName = 'Chip';
+

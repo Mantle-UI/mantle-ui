@@ -644,13 +644,13 @@ interface FileUploadProps {
 }
 
 /**
- * **PrimeReact - FileUpload**
+ * **MantleUI - FileUpload**
  *
  * _FileUpload is an advanced uploader with dragdrop support, multi file uploads, auto uploading, progress tracking and validations._
  *
  * [Live Demo](https://www.primereact.org/fileupload/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -704,3 +704,4 @@ export declare class FileUpload extends React.Component<FileUploadProps, any> {
      */
     public setUploadedFiles(files: FileUploadFile[]): void;
 }
+

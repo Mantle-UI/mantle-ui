@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useEventListener, useMergeProps } from '../hooks/Hooks';
 import { DomHandler, ObjectUtils, classNames } from '../utils/Utils';
@@ -8,7 +8,7 @@ import { SliderBase } from './SliderBase';
 export const Slider = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = SliderBase.getProps(inProps, context);
 
         const elementRef = React.useRef(null);
@@ -374,3 +374,4 @@ export const Slider = React.memo(
 );
 
 Slider.displayName = 'Slider';
+

@@ -5,7 +5,7 @@ export function ExampleDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    As an example, <a href="https://getbootstrap.com/docs/4.0/components/modal/">Modal</a> and <a href="https://getbootstrap.com/docs/4.0/components/buttons/">Button</a> styles of Bootstrap are used to style PrimeReact Button and
+                    As an example, <a href="https://getbootstrap.com/docs/4.0/components/modal/">Modal</a> and <a href="https://getbootstrap.com/docs/4.0/components/buttons/">Button</a> styles of Bootstrap are used to style MantleUI Button and
                     Dialog.
                 </p>
 
@@ -16,3 +16,4 @@ export function ExampleDoc(props) {
         </>
     );
 }
+

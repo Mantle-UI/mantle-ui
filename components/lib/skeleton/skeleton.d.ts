@@ -93,13 +93,13 @@ export interface SkeletonProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - Skeleton**
+ * **MantleUI - Skeleton**
  *
  * _Skeleton is a placeholder to display instead of the actual content._
  *
  * [Live Demo](https://www.primereact.org/skeleton/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -110,3 +110,4 @@ export declare class Skeleton extends React.Component<SkeletonProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

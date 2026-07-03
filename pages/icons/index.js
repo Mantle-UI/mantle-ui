@@ -58,7 +58,8 @@ const IconsDoc = () => {
         }
     ];
 
-    return <DocComponent title="React Icon Library - PrimeReact" header="Icons" description="PrimeIcons is the default icon library of PrimeReact." componentDocs={docs} hideTabMenu />;
+    return <DocComponent title="React Icon Library - MantleUI" header="Icons" description="MantleIcons is the default icon library of MantleUI." componentDocs={docs} hideTabMenu />;
 };
 
 export default IconsDoc;
+

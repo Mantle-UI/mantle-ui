@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { FilterService, PrimeReactContext, localeOption } from '../api/Api';
+import MantleUI, { FilterService, MantleContext, localeOption } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useDebounce, useMergeProps, useMountEffect, useOverlayListener, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { ChevronDownIcon } from '../icons/chevrondown';
@@ -15,7 +15,7 @@ import { DropdownPanel } from './DropdownPanel';
 export const Dropdown = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = DropdownBase.getProps(inProps, context);
         const [filterValue, filterState, setFilterState] = useDebounce('', props.filterDelay || 0);
         const [focusedState, setFocusedState] = React.useState(false);
@@ -33,7 +33,7 @@ export const Dropdown = React.memo(
         const searchValue = React.useRef(null);
         const isLazy = props.virtualScrollerOptions && props.virtualScrollerOptions.lazy;
         const hasFilter = ObjectUtils.isNotEmpty(filterState);
-        const appendTo = props.appendTo || (context && context.appendTo) || PrimeReact.appendTo;
+        const appendTo = props.appendTo || (context && context.appendTo) || MantleUI.appendTo;
         const { ptm, cx, sx, isUnstyled } = DropdownBase.setMetaData({
             props,
             ...props.__parentMetadata,
@@ -809,7 +809,7 @@ export const Dropdown = React.memo(
         };
 
         const onOverlayEnter = (callback) => {
-            ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.overlay) || PrimeReact.zIndex.overlay);
+            ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
             DomHandler.addStyles(overlayRef.current, { position: 'absolute', top: '0', left: '0' });
             alignOverlay();
             callback && callback();
@@ -837,7 +837,7 @@ export const Dropdown = React.memo(
         };
 
         const alignOverlay = () => {
-            DomHandler.alignOverlay(overlayRef.current, inputRef.current.parentElement, props.appendTo || (context && context.appendTo) || PrimeReact.appendTo);
+            DomHandler.alignOverlay(overlayRef.current, inputRef.current.parentElement, props.appendTo || (context && context.appendTo) || MantleUI.appendTo);
         };
 
         const scrollInView = () => {
@@ -1300,3 +1300,4 @@ export const Dropdown = React.memo(
 );
 
 Dropdown.displayName = 'Dropdown';
+

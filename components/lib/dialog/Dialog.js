@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, ariaLabel } from '../api/Api';
+import MantleUI, { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import FocusTrap from '../focustrap/FocusTrap';
@@ -14,7 +14,7 @@ import { DialogBase } from './DialogBase';
 
 export const Dialog = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = DialogBase.getProps(inProps, context);
 
     const uniqueId = props.id ? props.id : UniqueComponentId();
@@ -340,7 +340,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
     };
 
     const createStyle = () => {
-        styleElement.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+        styleElement.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
 
         let innerHTML = '';
 
@@ -400,7 +400,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
 
     useUpdateEffect(() => {
         if (maskVisibleState) {
-            ZIndexUtils.set('modal', maskRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex.modal) || PrimeReact.zIndex.modal);
+            ZIndexUtils.set('modal', maskRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex.modal) || MantleUI.zIndex.modal);
             setVisibleState(true);
         }
     }, [maskVisibleState]);
@@ -715,3 +715,4 @@ export const Dialog = React.forwardRef((inProps, ref) => {
 });
 
 Dialog.displayName = 'Dialog';
+

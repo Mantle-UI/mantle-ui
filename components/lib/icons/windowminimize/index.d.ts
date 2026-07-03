@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface WindowMinimizeIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - WindowMinimizeIcon**
+ * **MantleUI - WindowMinimizeIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class WindowMinimizeIcon extends React.Component<WindowMinimizeIconProps, any> {}
+

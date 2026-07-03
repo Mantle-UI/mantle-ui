@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { localeOption, PrimeReactContext } from '../api/Api';
+import { localeOption, MantleContext } from '../api/Api';
 import { Button } from '../button/Button';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useUpdateEffect } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ export const InplaceContent = (props) => props.children;
 
 export const Inplace = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = InplaceBase.getProps(inProps, context);
 
     const [activeState, setActiveState] = React.useState(props.active);
@@ -168,3 +168,4 @@ InplaceDisplay.displayName = 'InplaceDisplay';
 InplaceContent.displayName = 'InplaceContent';
 
 Inplace.displayName = 'Inplace';
+

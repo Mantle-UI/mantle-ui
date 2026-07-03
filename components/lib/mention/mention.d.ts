@@ -295,13 +295,13 @@ export interface MentionProps extends Omit<React.DetailedHTMLProps<React.Textare
 }
 
 /**
- * **PrimeReact - Mention**
+ * **MantleUI - Mention**
  *
  * _Mention component is used to refer someone or something._
  *
  * [Live Demo](https://www.primereact.org/mention/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -334,3 +334,4 @@ export declare class Mention extends React.Component<MentionProps, any> {
      */
     public getOverlay(): HTMLElement | null;
 }
+

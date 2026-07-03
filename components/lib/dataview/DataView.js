@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { localeOption, PrimeReactContext } from '../api/Api';
+import MantleUI, { localeOption, MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { BarsIcon } from '../icons/bars';
@@ -12,7 +12,7 @@ import { DataViewBase, DataViewLayoutOptionsBase } from './DataViewBase';
 
 export const DataViewLayoutOptions = React.memo((inProps) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = DataViewLayoutOptionsBase.getProps(inProps, context);
     const { ptm, cx } = DataViewLayoutOptionsBase.setMetaData({
         props
@@ -79,7 +79,7 @@ export const DataViewItem = React.memo((props) => {
 export const DataView = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = DataViewBase.getProps(inProps, context);
         const [firstState, setFirstState] = React.useState(props.first);
         const [rowsState, setRowsState] = React.useState(props.rows);
@@ -157,7 +157,7 @@ export const DataView = React.memo(
             if (props.value) {
                 // performance optimization to prevent resolving field data in each loop
                 const lookupMap = new Map();
-                const comparator = ObjectUtils.localeComparator((context && context.locale) || PrimeReact.locale);
+                const comparator = ObjectUtils.localeComparator((context && context.locale) || MantleUI.locale);
                 const value = [...props.value];
 
                 for (let item of value) {
@@ -168,7 +168,7 @@ export const DataView = React.memo(
                     let value1 = lookupMap.get(data1);
                     let value2 = lookupMap.get(data2);
 
-                    return ObjectUtils.sort(value1, value2, props.sortOrder, comparator, (context && context.nullSortOrder) || PrimeReact.nullSortOrder);
+                    return ObjectUtils.sort(value1, value2, props.sortOrder, comparator, (context && context.nullSortOrder) || MantleUI.nullSortOrder);
                 });
 
                 return value;
@@ -353,3 +353,4 @@ DataViewLayoutOptions.displayName = 'DataViewLayoutOptions';
 DataViewItem.displayName = 'DataViewItem';
 
 DataView.displayName = 'DataView';
+

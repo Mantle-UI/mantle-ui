@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { Button } from '../button/Button';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useEventListener, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -19,7 +19,7 @@ export const SpeedDial = React.memo(
         const elementRef = React.useRef(null);
         const listRef = React.useRef(null);
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = SpeedDialBase.getProps(inProps, context);
         const visible = props.onVisibleChange ? props.visible : visibleState;
         const speedDialDisplayOrder = useDisplayOrder('speed-dial', visible);
@@ -614,3 +614,4 @@ export const SpeedDial = React.memo(
 );
 
 SpeedDial.displayName = 'SpeedDial';
+

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { KeyFilter } from '../keyfilter/KeyFilter';
@@ -10,7 +10,7 @@ import { InputTextareaBase } from './InputTextareaBase';
 export const InputTextarea = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = InputTextareaBase.getProps(inProps, context);
 
         const elementRef = React.useRef(ref);
@@ -162,3 +162,4 @@ export const InputTextarea = React.memo(
 );
 
 InputTextarea.displayName = 'InputTextarea';
+

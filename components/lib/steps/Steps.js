@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { DomHandler, IconUtils, ObjectUtils, UniqueComponentId, classNames } from '../utils/Utils';
@@ -8,7 +8,7 @@ import { StepsBase } from './StepsBase';
 export const Steps = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = StepsBase.getProps(inProps, context);
 
         const [idState, setIdState] = React.useState(props.id);
@@ -324,3 +324,4 @@ export const Steps = React.memo(
 );
 
 Steps.displayName = 'Steps';
+

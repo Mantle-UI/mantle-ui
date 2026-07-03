@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useMergeProps } from '../hooks/Hooks';
 import { RowBase } from './RowBase';
 
 export const Row = (inProps) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = RowBase.getProps(inProps, context);
     //@todo Pass Parent MetaData
     const { ptm } = RowBase.setMetaData({
@@ -25,3 +25,4 @@ export const Row = (inProps) => {
 };
 
 Row.displayName = 'Row';
+

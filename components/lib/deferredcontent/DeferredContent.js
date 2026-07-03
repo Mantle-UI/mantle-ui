@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useEventListener, useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { DeferredContentBase } from './DeferredContentBase';
 
 export const DeferredContent = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = DeferredContentBase.getProps(inProps, context);
 
     const [loadedState, setLoadedState] = React.useState(false);
@@ -68,3 +68,4 @@ export const DeferredContent = React.forwardRef((inProps, ref) => {
 });
 
 DeferredContent.displayName = 'DeferredContent';
+

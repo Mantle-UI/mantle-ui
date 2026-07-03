@@ -186,13 +186,13 @@ export interface FieldsetProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - Fieldset**
+ * **MantleUI - Fieldset**
  *
  * _Fieldset is an input component that provides real-time suggestions when being typed._
  *
  * [Live Demo](https://www.primereact.org/fieldset/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -208,3 +208,4 @@ export declare class Fieldset extends React.Component<FieldsetProps, any> {
      */
     public getContent(): HTMLDivElement | null;
 }
+

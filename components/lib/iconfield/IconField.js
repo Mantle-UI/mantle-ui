@@ -1,5 +1,5 @@
 import React, { Children, cloneElement, useContext, useRef } from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useMergeProps } from '../hooks/Hooks';
 import { classNames } from '../utils/Utils';
 import { IconFieldBase } from './IconFieldBase';
@@ -8,7 +8,7 @@ export const IconField = React.memo(
     React.forwardRef((inProps, ref) => {
         const elementRef = useRef(ref);
         const mergeProps = useMergeProps();
-        const context = useContext(PrimeReactContext);
+        const context = useContext(MantleContext);
         const props = IconFieldBase.getProps(inProps, context);
 
         const { ptm, cx } = IconFieldBase.setMetaData({
@@ -40,3 +40,4 @@ export const IconField = React.memo(
 );
 
 IconField.displayName = 'IconField';
+

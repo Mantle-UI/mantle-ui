@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ import { StepperSeparator } from './StepperSeparator';
 export const Stepper = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = StepperBase.getProps(inProps, context);
         const start = ObjectUtils.getJSXElement(props.start, props);
         const end = ObjectUtils.getJSXElement(props.end, props);
@@ -352,3 +352,4 @@ export const Stepper = React.memo(
 );
 
 StepperBase.displayName = 'StepperBase';
+

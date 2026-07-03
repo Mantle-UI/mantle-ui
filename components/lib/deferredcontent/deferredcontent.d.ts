@@ -77,13 +77,13 @@ export interface DeferredContentProps extends Omit<React.DetailedHTMLProps<React
 }
 
 /**
- * **PrimeReact - DeferredContent**
+ * **MantleUI - DeferredContent**
  *
  * _DeferredContent postpones the loading the content that is initially not in the viewport until it becomes visible on scroll._
  *
  * [Live Demo](https://www.primereact.org/deferredcontent/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -94,3 +94,4 @@ export declare class DeferredContent extends React.Component<DeferredContentProp
      */
     public getElement(): HTMLDivElement | null;
 }
+

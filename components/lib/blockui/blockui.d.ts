@@ -121,13 +121,13 @@ export interface BlockUIProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - BlockUI**
+ * **MantleUI - BlockUI**
  *
  * _BlockUI represents people using icons, labels and images._
  *
  * [Live Demo](https://www.primereact.org/blockui/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -140,3 +140,4 @@ export declare class BlockUI extends React.Component<BlockUIProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

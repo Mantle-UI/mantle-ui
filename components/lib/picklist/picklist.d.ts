@@ -504,13 +504,13 @@ export interface PickListProps {
 }
 
 /**
- * **PrimeReact - PickList**
+ * **MantleUI - PickList**
  *
  * _PickList is used to reorder items between different lists._
  *
  * [Live Demo](https://www.primereact.org/picklist/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -521,3 +521,4 @@ export declare class PickList extends React.Component<PickListProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

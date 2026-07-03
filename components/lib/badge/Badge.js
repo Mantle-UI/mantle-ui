@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { classNames } from '../utils/Utils';
@@ -8,7 +8,7 @@ import { BadgeBase } from './BadgeBase';
 export const Badge = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = BadgeBase.getProps(inProps, context);
 
         const { ptm, cx, isUnstyled } = BadgeBase.setMetaData({
@@ -40,3 +40,4 @@ export const Badge = React.memo(
 );
 
 Badge.displayName = 'Badge';
+

@@ -138,13 +138,13 @@ export interface InputMaskProps extends Omit<InputTextProps, 'onChange' | 'pt'> 
 }
 
 /**
- * **PrimeReact - InputMask**
+ * **MantleUI - InputMask**
  *
  * _InputMask component is used to enter input in a certain format such as numeric, date, currency, email and phone._
  *
  * [Live Demo](https://www.primereact.org/inputmask/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -159,3 +159,4 @@ export declare class InputMask extends React.Component<InputMaskProps, any> {
      */
     public getElement(): typeof InputText | null;
 }
+

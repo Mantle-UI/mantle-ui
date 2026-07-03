@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useOverlayListener, useUnmountEffect } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ import { MenuBase } from './MenuBase';
 export const Menu = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = MenuBase.getProps(inProps, context);
         const [idState, setIdState] = React.useState(props.id);
         const [visibleState, setVisibleState] = React.useState(!props.popup);
@@ -263,7 +263,7 @@ export const Menu = React.memo(
 
         const onEnter = () => {
             DomHandler.addStyles(menuRef.current, { position: 'absolute', top: '0', left: '0' });
-            ZIndexUtils.set('menu', menuRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex.menu) || PrimeReact.zIndex.menu);
+            ZIndexUtils.set('menu', menuRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex.menu) || MantleUI.zIndex.menu);
             DomHandler.absolutePosition(menuRef.current, targetRef.current, props.popupAlignment);
 
             if (props.popup) {
@@ -515,3 +515,4 @@ export const Menu = React.memo(
 );
 
 Menu.displayName = 'Menu';
+

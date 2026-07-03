@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { ObjectUtils, classNames } from '../utils/Utils';
 import { MeterGroupBase } from './MeterGroupBase';
 
 export const MeterGroup = (inProps) => {
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = MeterGroupBase.getProps(inProps, context);
     const { values, min, max, orientation, labelPosition, start, end, meter, labelList } = props;
 
@@ -160,3 +160,4 @@ export const MeterGroup = (inProps) => {
         </div>
     );
 };
+

@@ -17,7 +17,7 @@ const TemplatesPage = () => {
                     </a>
                     ,{' '}
                     <a href="https://primereact.org" className="text-primary hover:underline font-medium">
-                        PrimeReact
+                        MantleUI
                     </a>{' '}
                     and{' '}
                     <a href="https://primevue.org" className="text-primary hover:underline font-medium">
@@ -86,3 +86,4 @@ const TemplatesPage = () => {
 };
 
 export default TemplatesPage;
+

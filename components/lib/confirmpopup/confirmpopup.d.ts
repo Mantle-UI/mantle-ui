@@ -312,13 +312,13 @@ interface ConfirmPopupReturn {
 }
 
 /**
- * **PrimeReact - ConfirmPopup**
+ * **MantleUI - ConfirmPopup**
  *
  * _ConfirmPopup displays a confirmation overlay displayed relatively to its target._
  *
  * [Live Demo](https://www.primereact.org/confirmpopup/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -331,3 +331,4 @@ export declare class ConfirmPopup extends React.Component<ConfirmPopupProps, any
 }
 
 export declare function confirmPopup(props: ConfirmPopupProps): ConfirmPopupReturn;
+

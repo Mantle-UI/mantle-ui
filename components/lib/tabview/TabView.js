@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext, ariaLabel } from '../api/Api';
+import { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { ChevronLeftIcon } from '../icons/chevronleft';
@@ -13,7 +13,7 @@ export const TabPanel = () => {};
 
 export const TabView = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = TabViewBase.getProps(inProps, context);
 
     const [idState, setIdState] = React.useState(props.id);
@@ -617,3 +617,4 @@ export const TabView = React.forwardRef((inProps, ref) => {
 TabPanel.displayName = 'TabPanel';
 
 TabView.displayName = 'TabView';
+

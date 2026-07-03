@@ -205,13 +205,13 @@ export interface MenubarProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - Menubar**
+ * **MantleUI - Menubar**
  *
  * _Manubar is an input component that provides real-time suggestions when being typed._
  *
  * [Live Demo](https://www.primereact.org/menubar/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -234,3 +234,4 @@ export declare class Menubar extends React.Component<MenubarProps, any> {
      */
     public getMenuButton(): HTMLElement | null;
 }
+

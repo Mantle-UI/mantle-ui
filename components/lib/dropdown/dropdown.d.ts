@@ -588,13 +588,13 @@ export interface DropdownProps extends Omit<React.DetailedHTMLProps<React.InputH
 }
 
 /**
- * **PrimeReact - Dropdown**
+ * **MantleUI - Dropdown**
  *
  * _Dropdown also known as Select, is used to choose an item from a collection of options._
  *
  * [Live Demo](https://www.primereact.org/dropdown/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -641,3 +641,4 @@ export declare class Dropdown extends React.Component<DropdownProps, any> {
      */
     public getVirtualScroller(): VirtualScroller | null;
 }
+

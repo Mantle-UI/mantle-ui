@@ -21,7 +21,7 @@ export default function TailwindDemo() {
         "
       >
         <h1 className="text-4xl text-black dark:text-white font-bold text-center">
-          Tailwind CSS + PrimeReact
+          Tailwind CSS + MantleUI
         </h1>
         <Panel header="Default Preset">
           <p>
@@ -74,3 +74,4 @@ export default function TailwindDemo() {
         </>
     );
 }
+

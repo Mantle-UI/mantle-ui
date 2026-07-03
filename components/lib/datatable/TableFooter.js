@@ -4,13 +4,13 @@ import { ColumnGroupBase } from '../columngroup/ColumnGroupBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { RowBase } from '../row/RowBase';
 import { FooterCell } from './FooterCell';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 
 export const TableFooter = React.memo((props) => {
     const { ptm, ptmo, cx } = props.ptCallbacks;
     const mergeProps = useMergeProps();
     const getRowProps = (row) => ColumnGroupBase.getCProps(row);
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
 
     const getColumnGroupProps = () => {
         return props.footerColumnGroup ? ColumnGroupBase.getCProps(props.footerColumnGroup) : undefined;
@@ -112,3 +112,4 @@ export const TableFooter = React.memo((props) => {
 });
 
 TableFooter.displayName = 'TableFooter';
+

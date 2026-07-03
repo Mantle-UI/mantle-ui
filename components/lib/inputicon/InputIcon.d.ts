@@ -65,14 +65,15 @@ export interface InputIconProps extends React.DetailedHTMLProps<React.InputHTMLA
 }
 
 /**
- * **PrimeReact - InputIcon**
+ * **MantleUI - InputIcon**
  *
  * _InputIcon is an extension to standard input element with theming and keyfiltering._
  *
  * [Live Demo](https://www.primereact.org/inputtext/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare const InputIcon: React.ForwardRefExoticComponent<InputIconProps & React.RefAttributes<HTMLInputElement>>;
+

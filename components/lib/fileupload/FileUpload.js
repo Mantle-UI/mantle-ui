@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { localeOption, PrimeReactContext } from '../api/Api';
+import { localeOption, MantleContext } from '../api/Api';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
 import { useHandleStyle } from '../componentbase/ComponentBase';
@@ -16,7 +16,7 @@ import { FileUploadBase } from './FileUploadBase';
 export const FileUpload = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = FileUploadBase.getProps(inProps, context);
         const [uploadedFilesState, setUploadedFilesState] = React.useState([]);
         const [filesState, setFilesState] = React.useState([]);
@@ -759,3 +759,4 @@ export const FileUpload = React.memo(
 );
 
 FileUpload.displayName = 'FileUpload';
+

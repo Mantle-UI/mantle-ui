@@ -2,94 +2,94 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { snapshot } from '../../test';
-import { PrimeReactProvider } from '../api/Api';
+import { MantleProvider } from '../api/Api';
 import { Button } from './Button';
 
 describe('Button', () => {
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button label={'test'} visible={false} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when visible is false Button return null'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button label={'test'} visible={true} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when visible is true Button render correctly'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button label={'test'} iconPos={'bottom'} visible={true} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when iconPos is bottom Button is vertical'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button visible={true} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when label is empty it returns empty button'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button badge={'test'} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when badge is true it renders Button with badge'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when badge is null it renders Button without badge'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button loading={'test'} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when click the button if loading is true it renders Button with loading icon'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when click the button if loading is false it renders Button without loading icon'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when label is true it renders Button with default aria label'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button label={'test'} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when aria-label prop is not exist aria-label prop should be equal to label prop '
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button aria-label={'test'} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when label prop is not exist label prop should be equal to aria-label prop'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button label={'test'} badge={'lost'} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when using badge and label the aria-label should contain both values'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Button label={'test'} badge={'lost'} />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'when using badge and label the aria-label should contain both values'
     );
     test('when using tooltip make sure the tooltip is rendered', async () => {
         // Arrange
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Button label={'test'} tooltip="Jest Tooltip" />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const button = container.getElementsByClassName('p-button')[0];
         const tooltipText = /Jest Tooltip/i;
@@ -113,9 +113,9 @@ describe('Button', () => {
         // Arrange
         const clickOn = jest.fn();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Button onClick={clickOn} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const button = container.getElementsByClassName('p-button')[0];
 
@@ -130,9 +130,9 @@ describe('Button', () => {
         // Arrange
         const clickOn = jest.fn();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Button onClick={clickOn} disabled />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const button = container.getElementsByClassName('p-button')[0];
 
@@ -148,9 +148,9 @@ describe('Button', () => {
         const clickOn = jest.fn();
 
         const { container } = render(
-            <PrimeReactProvider ripple={true}>
+            <MantleProvider ripple={true}>
                 <Button onClick={clickOn} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const button = container.getElementsByClassName('p-button')[0];
 
@@ -163,3 +163,4 @@ describe('Button', () => {
         expect(container).toMatchSnapshot();
     });
 });
+

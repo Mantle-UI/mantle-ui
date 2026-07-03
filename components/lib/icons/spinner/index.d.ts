@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface SpinnerIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - SpinnerIcon**
+ * **MantleUI - SpinnerIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class SpinnerIcon extends React.Component<SpinnerIconProps, any> {}
+

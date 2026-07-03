@@ -4,10 +4,10 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function SwitchThemesDoc(props) {
     const code1 = {
         basic: `
-import { PrimeReactContext } from 'primereact/api';
+import { MantleContext } from 'primereact/api';
 
 //Use in a component
-const { changeTheme } = useContext(PrimeReactContext);
+const { changeTheme } = useContext(MantleContext);
 
 changeTheme(currentTheme: string, newTheme: string, linkElementId: string, callback: Function)
         `
@@ -34,8 +34,8 @@ changeTheme(currentTheme: string, newTheme: string, linkElementId: string, callb
                     Solution below works however there is room for improvement. The upcoming styling api will greatly improve dynamic theme switching ability, eliminates the prerequisites with the introduction of CSS variables and dynamic imports.
                 </p>
                 <p>
-                    Themes can be dynamically changed using the <i>changeTheme</i> function in <i>PrimeReactContext</i>. For this feature to work, there are two prerequisites. To begin with, the themes should be publicly available under the{' '}
-                    <i>public</i> folder in your project by copying them from PrimeReact <i>resources/themes</i> folder. Second part is making the theme.css accessible via a link element so that the id of the link can be provided as the 3rd parameter
+                    Themes can be dynamically changed using the <i>changeTheme</i> function in <i>MantleContext</i>. For this feature to work, there are two prerequisites. To begin with, the themes should be publicly available under the{' '}
+                    <i>public</i> folder in your project by copying them from MantleUI <i>resources/themes</i> folder. Second part is making the theme.css accessible via a link element so that the id of the link can be provided as the 3rd parameter
                     to the <i>changeTheme</i> function.
                 </p>
             </DocSectionText>
@@ -56,3 +56,4 @@ changeTheme(currentTheme: string, newTheme: string, linkElementId: string, callb
         </>
     );
 }
+

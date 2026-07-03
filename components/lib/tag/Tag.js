@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { IconUtils, classNames } from '../utils/Utils';
@@ -7,7 +7,7 @@ import { TagBase } from './TagBase';
 
 export const Tag = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = TagBase.getProps(inProps, context);
     const { ptm, cx, isUnstyled } = TagBase.setMetaData({
         props
@@ -58,3 +58,4 @@ export const Tag = React.forwardRef((inProps, ref) => {
 });
 
 Tag.displayName = 'Tag';
+

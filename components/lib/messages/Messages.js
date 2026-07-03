@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TransitionGroup } from 'react-transition-group';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps } from '../hooks/Hooks';
@@ -13,7 +13,7 @@ let messageIdx = 0;
 export const Messages = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = MessagesBase.getProps(inProps, context);
         const [messagesState, setMessagesState] = React.useState([]);
         const elementRef = React.useRef(null);
@@ -133,3 +133,4 @@ export const Messages = React.memo(
 );
 
 Messages.displayName = 'Messages';
+

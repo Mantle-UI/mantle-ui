@@ -200,13 +200,13 @@ export interface ToggleButtonProps extends Omit<React.DetailedHTMLProps<React.In
 }
 
 /**
- * **PrimeReact - ToggleButton**
+ * **MantleUI - ToggleButton**
  *
  * _ToggleButton is used to select a boolean value using a button._
  *
  * [Live Demo](https://www.primereact.org/togglebutton/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -221,3 +221,4 @@ export declare class ToggleButton extends React.Component<ToggleButtonProps, any
      */
     public getElement(): HTMLDivElement | null;
 }
+

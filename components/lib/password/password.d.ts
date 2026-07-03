@@ -307,13 +307,13 @@ export interface PasswordProps extends Omit<React.DetailedHTMLProps<React.InputH
 }
 
 /**
- * **PrimeReact - Password**
+ * **MantleUI - Password**
  *
  * _Password displays strength indicator for password fields._
  *
  * [Live Demo](https://www.primereact.org/password/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -342,3 +342,4 @@ export declare class Password extends React.Component<PasswordProps, any> {
      */
     public getOverlay(): HTMLElement | null;
 }
+

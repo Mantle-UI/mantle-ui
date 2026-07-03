@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { localeOption, PrimeReactContext } from '../api/Api';
+import { localeOption, MantleContext } from '../api/Api';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps } from '../hooks/Hooks';
 import { Portal } from '../portal/Portal';
@@ -13,7 +13,7 @@ export const MultiSelectPanel = React.memo(
         const virtualScrollerRef = React.useRef(null);
         const filterInputRef = React.useRef(null);
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const { ptm, cx, sx, isUnstyled } = props;
 
         const getPTOptions = (key, options) => {
@@ -349,3 +349,4 @@ export const MultiSelectPanel = React.memo(
 );
 
 MultiSelectPanel.displayName = 'MultiSelectPanel';
+

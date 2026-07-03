@@ -1,6 +1,6 @@
 import { DocSectionCode } from '@/components/doc/common/docsectioncode';
 import { DocSectionText } from '@/components/doc/common/docsectiontext';
-import PrimeReact, { PrimeReactContext } from '@/components/lib/api/Api';
+import MantleUI, { MantleContext } from '@/components/lib/api/Api';
 import { Dialog } from '@/components/lib/dialog/Dialog';
 import { Dock } from '@/components/lib/dock/Dock';
 import { Galleria } from '@/components/lib/galleria/Galleria';
@@ -22,7 +22,7 @@ export function AdvancedDoc(props) {
     const toast = useRef(null);
     const toast2 = useRef(null);
     const galleria = useRef(null);
-    const context = useContext(PrimeReactContext);
+    const context = useContext(MantleContext);
 
     const dockItems = [
         {
@@ -258,7 +258,7 @@ export function AdvancedDoc(props) {
         if (context) {
             context.setAppendTo('self');
         } else {
-            PrimeReact.appendTo = 'self';
+            MantleUI.appendTo = 'self';
         }
 
         return () => {
@@ -268,7 +268,7 @@ export function AdvancedDoc(props) {
             if (context) {
                 context.setAppendTo(null);
             } else {
-                PrimeReact.appendTo = null;
+                MantleUI.appendTo = null;
             }
         };
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -293,7 +293,7 @@ export function AdvancedDoc(props) {
     <Toast ref={toast2} position="top-center" />
     <Dock model={dockItems} />
     <Dialog visible={displayTerminal} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw' }} onHide={() => setDisplayTerminal(false)} maximizable blockScroll={false}>
-        <Terminal welcomeMessage="Welcome to PrimeReact (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
+        <Terminal welcomeMessage="Welcome to MantleUI (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
     </Dialog>
     <Dialog visible={displayFinder} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw', height: '18rem' }} onHide={() => setDisplayFinder(false)} maximizable blockScroll={false}>
         <Tree value={nodes} />
@@ -587,7 +587,7 @@ export default function AdvanceDemo() {
                 <Toast ref={toast2} position="top-center" />
                 <Dock model={dockItems} />
                 <Dialog visible={displayTerminal} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw' }} onHide={() => setDisplayTerminal(false)} maximizable blockScroll={false}>
-                    <Terminal welcomeMessage="Welcome to PrimeReact (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
+                    <Terminal welcomeMessage="Welcome to MantleUI (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
                 </Dialog>
                 <Dialog visible={displayFinder} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw', height: '18rem' }} onHide={() => setDisplayFinder(false)} maximizable blockScroll={false}>
                     <Tree value={nodes} />
@@ -885,7 +885,7 @@ export default function AdvanceDemo() {
                 <Toast ref={toast2} position="top-center" />
                 <Dock model={dockItems} />
                 <Dialog visible={displayTerminal} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw' }} onHide={() => setDisplayTerminal(false)} maximizable blockScroll={false}>
-                    <Terminal welcomeMessage="Welcome to PrimeReact (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
+                    <Terminal welcomeMessage="Welcome to MantleUI (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
                 </Dialog>
                 <Dialog visible={displayFinder} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw', height: '18rem' }} onHide={() => setDisplayFinder(false)} maximizable blockScroll={false}>
                     <Tree value={nodes} />
@@ -1035,7 +1035,7 @@ export default function AdvanceDemo() {
                     <Dock model={dockItems} />
 
                     <Dialog visible={displayTerminal} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw' }} onHide={() => setDisplayTerminal(false)} maximizable blockScroll={false}>
-                        <Terminal welcomeMessage="Welcome to PrimeReact (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
+                        <Terminal welcomeMessage="Welcome to MantleUI (cmd: 'date', 'greet {0}', 'random' and 'clear')" prompt="primereact $" />
                     </Dialog>
 
                     <Dialog visible={displayFinder} breakpoints={{ '960px': '50vw', '600px': '75vw' }} style={{ width: '30vw', height: '18rem' }} onHide={() => setDisplayFinder(false)} maximizable blockScroll={false}>
@@ -1049,3 +1049,4 @@ export default function AdvanceDemo() {
         </>
     );
 }
+

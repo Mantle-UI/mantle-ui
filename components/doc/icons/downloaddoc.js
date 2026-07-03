@@ -11,9 +11,10 @@ npm install primeicons
     return (
         <>
             <DocSectionText {...props}>
-                <p>PrimeIcons is available at npm, run the following command to download it to your project.</p>
+                <p>MantleIcons is available at npm, run the following command to download it to your project.</p>
             </DocSectionText>
             <DocSectionCode code={code} hideToggleCode import hideStackBlitz />
         </>
     );
 }
+

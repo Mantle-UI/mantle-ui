@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { StepperPanelBase } from './StepperPanelBase';
 
 export const StepperPanel = React.memo(
     React.forwardRef((inProps, ref) => {
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = StepperPanelBase.getProps(inProps, context);
         const { isUnstyled } = StepperPanelBase.setMetaData({
             props
@@ -18,3 +18,4 @@ export const StepperPanel = React.memo(
 );
 
 StepperPanel.displayName = 'StepperPanel';
+

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, ariaLabel } from '../api/Api';
+import MantleUI, { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useEventListener, useMatchMedia, useMergeProps, useMountEffect, useResizeListener, useUpdateEffect } from '../hooks/Hooks';
 import { AngleDownIcon } from '../icons/angledown';
@@ -12,7 +12,7 @@ import { MegaMenuBase } from './MegaMenuBase';
 export const MegaMenu = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = MegaMenuBase.getProps(inProps, context);
 
         const [idState, setIdState] = React.useState(props.id);
@@ -225,7 +225,7 @@ export const MegaMenu = React.memo(
                 hide();
             } else {
                 setMobileActiveState(true);
-                ZIndexUtils.set('menu', menubarRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.menu) || PrimeReact.zIndex.menu);
+                ZIndexUtils.set('menu', menubarRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.menu) || MantleUI.zIndex.menu);
                 setTimeout(() => {
                     show();
                 }, 1);
@@ -286,7 +286,7 @@ export const MegaMenu = React.memo(
                 bindListeners();
 
                 if (!isMobileMode) {
-                    ZIndexUtils.set('menu', currentPanel, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.menu) || PrimeReact.zIndex.menu);
+                    ZIndexUtils.set('menu', currentPanel, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.menu) || MantleUI.zIndex.menu);
                 }
             } else {
                 unbindListeners();
@@ -1002,7 +1002,7 @@ export const MegaMenu = React.memo(
 
         const createStyle = () => {
             if (!styleElementRef.current) {
-                styleElementRef.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+                styleElementRef.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
 
                 const selector = `${attributeSelectorState}`;
 
@@ -1303,3 +1303,4 @@ export const MegaMenu = React.memo(
 );
 
 MegaMenu.displayName = 'MegaMenu';
+

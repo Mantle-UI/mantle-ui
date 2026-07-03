@@ -322,13 +322,13 @@ export interface AccordionProps extends Omit<React.DetailedHTMLProps<React.HTMLA
 }
 
 /**
- * **PrimeReact - Accordion**
+ * **MantleUI - Accordion**
  *
  * _Accordion groups a collection of contents in tabs._
  *
  * [Live Demo](https://www.primereact.org/accordion/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -340,3 +340,4 @@ export declare class Accordion extends React.Component<AccordionProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
+

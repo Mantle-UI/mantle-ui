@@ -152,13 +152,13 @@ export interface TriStateCheckboxProps extends Omit<React.DetailedHTMLProps<Reac
 }
 
 /**
- * **PrimeReact - TriStateCheckbox**
+ * **MantleUI - TriStateCheckbox**
  *
  * _TriStateCheckbox is used to select either "true", "false" or "null" as the value._
  *
  * [Live Demo](https://www.primereact.org/tristatecheckbox/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -173,3 +173,4 @@ export declare class TriStateCheckbox extends React.Component<TriStateCheckboxPr
      */
     public getElement(): HTMLDivElement | null;
 }
+

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { Ripple } from '../ripple/Ripple';
@@ -10,7 +10,7 @@ import { ToggleButtonBase } from './ToggleButtonBase';
 export const ToggleButton = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ToggleButtonBase.getProps(inProps, context);
         const elementRef = React.useRef(null);
         const { ptm, cx, isUnstyled } = ToggleButtonBase.setMetaData({
@@ -155,3 +155,4 @@ export const ToggleButton = React.memo(
 );
 
 ToggleButton.displayName = 'ToggleButton';
+

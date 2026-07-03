@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TransitionGroup } from 'react-transition-group';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -14,7 +14,7 @@ let messageIdx = 0;
 export const Toast = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ToastBase.getProps(inProps, context);
 
         const [messagesState, setMessagesState] = React.useState([]);
@@ -98,7 +98,7 @@ export const Toast = React.memo(
         };
 
         useUpdateEffect(() => {
-            ZIndexUtils.set('toast', containerRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex.toast) || PrimeReact.zIndex.toast);
+            ZIndexUtils.set('toast', containerRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex.toast) || MantleUI.zIndex.toast);
         }, [messagesState, props.baseZIndex]);
 
         useUnmountEffect(() => {
@@ -179,3 +179,4 @@ export const Toast = React.memo(
 );
 
 Toast.displayName = 'Toast';
+

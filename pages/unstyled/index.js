@@ -28,7 +28,8 @@ const UnstyledDemo = () => {
         }
     ];
 
-    return <DocComponent title="Unstyled - PrimeReact" header="Unstyled Mode" description="Styling PrimeReact with your favorite CSS library." componentDocs={docs} hideTabMenu />;
+    return <DocComponent title="Unstyled - MantleUI" header="Unstyled Mode" description="Styling MantleUI with your favorite CSS library." componentDocs={docs} hideTabMenu />;
 };
 
 export default UnstyledDemo;
+

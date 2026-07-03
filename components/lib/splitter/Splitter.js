@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useEventListener, useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { DomHandler, ObjectUtils, UniqueComponentId, classNames } from '../utils/Utils';
@@ -10,7 +10,7 @@ export const SplitterPanel = () => {};
 export const Splitter = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = SplitterBase.getProps(inProps, context);
 
         const idState = React.useRef('');
@@ -491,3 +491,4 @@ export const Splitter = React.memo(
 SplitterPanel.displayName = 'SplitterPanel';
 
 Splitter.displayName = 'Splitter';
+

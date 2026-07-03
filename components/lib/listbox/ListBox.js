@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FilterService, PrimeReactContext, localeOption } from '../api/Api';
+import { FilterService, MantleContext, localeOption } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { Tooltip } from '../tooltip/Tooltip';
@@ -12,7 +12,7 @@ import { ListBoxItem } from './ListBoxItem';
 export const ListBox = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ListBoxBase.getProps(inProps, context);
         const [focusedOptionIndex, setFocusedOptionIndex] = React.useState(null);
         const searchTimeout = React.useRef(null);
@@ -929,3 +929,4 @@ export const ListBox = React.memo(
 );
 
 ListBox.displayName = 'ListBox';
+

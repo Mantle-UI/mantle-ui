@@ -1,6 +1,6 @@
 import { DocSectionCode } from '@/components/doc/common/docsectioncode';
 import { DocSectionText } from '@/components/doc/common/docsectiontext';
-import { PrimeIcons } from '@/components/lib/api/PrimeIcons';
+import { MantleIcons } from '@/components/lib/api/MantleIcons';
 import { Menu } from '@/components/lib/menu/Menu';
 
 export function ConstantsDoc(props) {
@@ -8,8 +8,8 @@ export function ConstantsDoc(props) {
         {
             label: 'File',
             items: [
-                { label: 'New', icon: PrimeIcons.PLUS },
-                { label: 'Open', icon: PrimeIcons.DOWNLOAD }
+                { label: 'New', icon: MantleIcons.PLUS },
+                { label: 'Open', icon: MantleIcons.DOWNLOAD }
             ]
         }
     ];
@@ -18,15 +18,15 @@ export function ConstantsDoc(props) {
         basic: `
 import React from 'react'; 
 import { Menu } from 'primereact/menu';
-import { PrimeIcons } from 'primereact/api';
+import { MantleIcons } from 'primereact/api';
 
 export default function ConstantsDemo() {
     const items = [
         {
             label: 'File',
             items: [
-                { label: 'New', icon: PrimeIcons.PLUS },
-                { label: 'Open', icon: PrimeIcons.DOWNLOAD }
+                { label: 'New', icon: MantleIcons.PLUS },
+                { label: 'Open', icon: MantleIcons.DOWNLOAD }
             ]
         }
     ];
@@ -50,3 +50,4 @@ export default function ConstantsDemo() {
         </>
     );
 }
+

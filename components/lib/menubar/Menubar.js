@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, ariaLabel } from '../api/Api';
+import MantleUI, { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useEventListener, useMergeProps, useMountEffect, useResizeListener, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { BarsIcon } from '../icons/bars';
@@ -10,7 +10,7 @@ import { MenubarSub } from './MenubarSub';
 export const Menubar = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = MenubarBase.getProps(inProps, context);
 
         const [idState, setIdState] = React.useState(props.id);
@@ -524,7 +524,7 @@ export const Menubar = React.memo(
             if (mobileActiveState) {
                 bindOutsideClickListener();
                 bindResizeListener();
-                ZIndexUtils.set('menu', rootMenuRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.menu) || PrimeReact.zIndex.menu);
+                ZIndexUtils.set('menu', rootMenuRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.menu) || MantleUI.zIndex.menu);
             } else {
                 unbindResizeListener();
                 unbindOutsideClickListener();
@@ -697,3 +697,4 @@ export const Menubar = React.memo(
 );
 
 Menubar.displayName = 'Menubar';
+

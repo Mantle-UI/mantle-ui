@@ -82,14 +82,15 @@ export interface IconFieldProps extends Omit<React.DetailedHTMLProps<React.Input
 }
 
 /**
- * **PrimeReact - IconField**
+ * **MantleUI - IconField**
  *
  * _IconField is an extension to standard input element with theming and keyfiltering._
  *
  * [Live Demo](https://www.primereact.org/inputtext/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare const IconField: React.ForwardRefExoticComponent<IconFieldProps & React.RefAttributes<HTMLInputElement>>;
+

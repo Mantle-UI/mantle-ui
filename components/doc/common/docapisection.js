@@ -320,7 +320,7 @@ export function DocApiSection(props) {
             <div className="doc-main">
                 <div className="doc-intro">
                     <h1>{header} API</h1>
-                    <p>API defines helper props, events and others for the PrimeReact {header} module.</p>
+                    <p>API defines helper props, events and others for the MantleUI {header} module.</p>
                 </div>
                 <DocSections docs={docs} />
             </div>
@@ -328,3 +328,4 @@ export function DocApiSection(props) {
         </>
     );
 }
+

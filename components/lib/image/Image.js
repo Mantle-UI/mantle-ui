@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, localeOption } from '../api/Api';
+import MantleUI, { MantleContext, localeOption } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { ESC_KEY_HANDLING_PRIORITIES, useGlobalOnEscapeKey, useMergeProps, useUnmountEffect } from '../hooks/Hooks';
@@ -17,7 +17,7 @@ import { ImageBase } from './ImageBase';
 export const Image = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ImageBase.getProps(inProps, context);
 
         const [maskVisibleState, setMaskVisibleState] = React.useState(false);
@@ -142,7 +142,7 @@ export const Image = React.memo(
         };
 
         const onEntering = () => {
-            ZIndexUtils.set('modal', maskRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.modal) || PrimeReact.zIndex.modal);
+            ZIndexUtils.set('modal', maskRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.modal) || MantleUI.zIndex.modal);
         };
 
         const onEntered = () => {
@@ -401,3 +401,4 @@ export const Image = React.memo(
 );
 
 Image.displayName = 'Image';
+

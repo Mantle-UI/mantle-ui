@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface AngleUpIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - AngleUpIcon**
+ * **MantleUI - AngleUpIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class AngleUpIcon extends React.Component<AngleUpIconProps, any> {}
+

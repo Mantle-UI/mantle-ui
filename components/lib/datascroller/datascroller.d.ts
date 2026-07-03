@@ -159,13 +159,13 @@ export interface DataScrollerProps extends Omit<React.DetailedHTMLProps<React.HT
 }
 
 /**
- * **PrimeReact - DataScroller**
+ * **MantleUI - DataScroller**
  *
  * _DataScroller displays data with on demand loading using scroll._
  *
  * [Live Demo](https://www.primereact.org/datascroller/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
@@ -180,3 +180,4 @@ export declare class DataScroller extends React.Component<DataScrollerProps, any
      */
     public getElement(): HTMLDivElement | null;
 }
+

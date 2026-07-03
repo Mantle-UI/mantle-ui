@@ -8,12 +8,13 @@ import { IconBaseProps } from '../../iconbase';
 export interface InfoCircleIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - InfoCircleIcon**
+ * **MantleUI - InfoCircleIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
  *
  * @group Component
  */
 export declare class InfoCircleIcon extends React.Component<InfoCircleIconProps, any> {}
+

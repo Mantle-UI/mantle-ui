@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { TimesCircleIcon } from '../icons/timescircle';
@@ -11,7 +11,7 @@ import { ChipsBase } from './ChipsBase';
 export const Chips = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ChipsBase.getProps(inProps, context);
         const [focusedState, setFocusedState] = React.useState(false);
         const [focusedIndex, setFocusedIndex] = React.useState(null);
@@ -470,3 +470,4 @@ export const Chips = React.memo(
 );
 
 Chips.displayName = 'Chips';
+

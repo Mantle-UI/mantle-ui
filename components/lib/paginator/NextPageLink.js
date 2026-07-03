@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ariaLabel, PrimeReactContext } from '../api/Api';
+import { ariaLabel, MantleContext } from '../api/Api';
 import { useMergeProps } from '../hooks/Hooks';
 import { AngleRightIcon } from '../icons/angleright';
 import { Ripple } from '../ripple/Ripple';
@@ -8,7 +8,7 @@ import { NextPageLinkBase } from './PaginatorBase';
 
 export const NextPageLink = React.memo((inProps) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = NextPageLinkBase.getProps(inProps, context);
     const { ptm, cx } = props;
 
@@ -69,3 +69,4 @@ export const NextPageLink = React.memo((inProps) => {
 });
 
 NextPageLink.displayName = 'NextPageLink';
+

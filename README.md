@@ -8,9 +8,11 @@
 
 [![PrimeReact Hero](https://www.primefaces.org/static/social/primereact-preview.jpg)](https://www.primereact.org)
 
-# PrimeReact
+# Mantle UI
 
-PrimeReact is a rich set of open source UI Components for React. See [PrimeReact homepage](https://primereact.org/) for live showcase and documentation. 
+Mantle UI is an independent community-maintained React component library continued from the MIT-licensed PrimeReact v10 codebase.
+
+Mantle UI is not affiliated with PrimeTek, PrimeReact, or ngrok.
 
 ## Download
 

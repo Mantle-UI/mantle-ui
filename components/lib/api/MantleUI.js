@@ -1,9 +1,9 @@
 import { FilterMatchMode } from './FilterMatchMode';
 
 /**
- * @deprecated please use PrimeReactContext
+ * @deprecated please use MantleContext
  */
-export default class PrimeReact {
+export default class MantleUI {
     static ripple = false;
 
     static inputStyle = 'outlined';

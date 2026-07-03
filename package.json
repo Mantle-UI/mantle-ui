@@ -1,5 +1,5 @@
 {
-    "name": "primereact",
+    "name": "@mantle-ui/react",
     "private": false,
     "version": "10.9.8",
     "scripts": {

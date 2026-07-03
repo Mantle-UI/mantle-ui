@@ -6,9 +6,9 @@ export default function Footer() {
     return (
         <div className="layout-footer">
             <div>
-                <span>PrimeReact {version} by </span>
-                <a href="http://www.primetek.com.tr" target="_blank" rel="noopener noreferrer">
-                    PrimeTek
+                <span>Mantle UI {version}</span>
+                <a href="https://github.com/Mantle-UI/mantle-ui" target="_blank" rel="noopener noreferrer">
+                    {' '}on GitHub
                 </a>
             </div>
         </div>

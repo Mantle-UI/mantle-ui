@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { FilterMatchMode } from './FilterMatchMode';
-import PrimeReact from './PrimeReact';
+import MantleUI from './PrimeReact';
 
-export const PrimeReactContext = React.createContext();
+export const MantleContext = React.createContext();
 
-export const PrimeReactProvider = (props) => {
+export const MantleProvider = (props) => {
     const propsValue = props.value ?? {};
 
     const [ripple, setRipple] = useState(propsValue.ripple ?? false);
@@ -68,21 +68,21 @@ export const PrimeReactProvider = (props) => {
      * @deprecated
      */
     React.useEffect(() => {
-        PrimeReact.ripple = ripple;
+        MantleUI.ripple = ripple;
     }, [ripple]);
 
     /**
      * @deprecated
      */
     React.useEffect(() => {
-        PrimeReact.inputStyle = inputStyle;
+        MantleUI.inputStyle = inputStyle;
     }, [inputStyle]);
 
     /**
      * @deprecated
      */
     React.useEffect(() => {
-        PrimeReact.locale = locale;
+        MantleUI.locale = locale;
     }, [locale]);
 
     const value = {
@@ -119,5 +119,5 @@ export const PrimeReactProvider = (props) => {
         setUnstyled
     };
 
-    return <PrimeReactContext.Provider value={value}>{props.children}</PrimeReactContext.Provider>;
+    return <MantleContext.Provider value={value}>{props.children}</MantleContext.Provider>;
 };

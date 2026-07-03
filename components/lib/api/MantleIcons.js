@@ -1,4 +1,4 @@
-export const PrimeIcons = Object.freeze({
+export const MantleIcons = Object.freeze({
     ADDRESS_BOOK: 'pi pi-address-book',
     ALIGN_CENTER: 'pi pi-align-center',
     ALIGN_JUSTIFY: 'pi pi-align-justify',

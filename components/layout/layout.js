@@ -3,7 +3,7 @@ import Config from '@/components/layout/config';
 import Footer from '@/components/layout/footer';
 import Menu from '@/components/layout/menu';
 import Topbar from '@/components/layout/topbar';
-import { PrimeReactContext } from '@/components/lib/api/PrimeReactContext';
+import { MantleContext } from '@/components/lib/api/PrimeReactContext';
 import { DomHandler, classNames } from '@/components/lib/utils/Utils';
 import NewsSection from '@/components/news/newssection';
 import Head from 'next/head';
@@ -13,7 +13,7 @@ import { useContext, useEffect, useState } from 'react';
 export default function Layout({ children }) {
     const [sidebarActive, setSidebarActive] = useState(false);
     const [configActive, setConfigActive] = useState(false);
-    const { ripple, inputStyle } = useContext(PrimeReactContext);
+    const { ripple, inputStyle } = useContext(MantleContext);
     const { theme, darkMode, newsActive, changeTheme } = useContext(AppContentContext);
     const router = useRouter();
 
@@ -62,22 +62,21 @@ export default function Layout({ children }) {
     return (
         <div className={wrapperClassName} data-p-theme={theme}>
             <Head>
-                <title>PrimeReact - React UI Component Library</title>
+                <title>Mantle UI - React Component Library</title>
                 <meta charSet="UTF-8" />
-                <meta name="description" content="The ultimate collection of design-agnostic, flexible and accessible React UI Components." />
+                <meta name="description" content="Mantle UI is a flexible and accessible React component library." />
                 <meta name="robots" content="index, follow" />
                 <meta name="viewport" content="initial-scale=1, width=device-width" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@primereact" />
-                <meta name="twitter:title" content="PrimeReact | React UI Component Library" />
-                <meta name="twitter:description" content="The ultimate collection of design-agnostic, flexible and accessible React UI Components." />
+                <meta name="twitter:title" content="Mantle UI | React Component Library" />
+                <meta name="twitter:description" content="Mantle UI is a flexible and accessible React component library." />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="PrimeReact | React UI Component Library" />
-                <meta property="og:url" content="https://primereact.org" />
-                <meta property="og:description" content="The ultimate collection of design-agnostic, flexible and accessible React UI Components." />
-                <meta property="og:image" content="https://www.primefaces.org/static/social/primereact-preview.jpg" />
+                <meta property="og:title" content="Mantle UI | React Component Library" />
+                <meta property="og:url" content="https://github.com/Mantle-UI/mantle-ui" />
+                <meta property="og:description" content="Mantle UI is a flexible and accessible React component library." />
+                <meta property="og:image" content="/images/logo-100.png" />
                 <meta property="og:ttl" content="604800" />
-                <link rel="icon" href="https://primefaces.org/cdn/primereact/images/favicon.ico" type="image/x-icon" />
+                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
             </Head>
             <NewsSection />
             <Topbar showConfigurator showMenuButton onMenuButtonClick={() => setSidebarActive(true)} onConfigButtonClick={() => setConfigActive(true)} onDarkSwitchClick={toggleDarkMode} />

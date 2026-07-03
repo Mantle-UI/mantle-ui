@@ -9,19 +9,9 @@ export default function Topbar(props) {
     const versionsRef = useRef(null);
     const versions = [
         {
-            name: 'v11',
-            version: '11.0.0',
-            url: 'https://v11.primereact.org'
-        },
-        {
-            name: `v${pkg.version.split('.')[0]}`,
+            name: 'main',
             version: pkg.version,
-            url: 'https://www.primereact.org'
-        },
-        {
-            name: 'v9',
-            version: '9.6.3',
-            url: 'https://v9.primereact.org'
+            url: 'https://github.com/Mantle-UI/mantle-ui'
         }
     ];
 
@@ -95,7 +85,7 @@ export default function Topbar(props) {
             <div className="layout-topbar-inner">
                 <div className="layout-topbar-logo-container">
                     <Link href="/">
-                        <a className="layout-topbar-logo" aria-label="PrimeReact logo">
+                        <a className="layout-topbar-logo" aria-label="Mantle UI logo">
                             <svg width="146" height="35" viewBox="0 0 146 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     fillRule="evenodd"
@@ -138,7 +128,7 @@ export default function Topbar(props) {
                             </svg>
                         </a>
                     </Link>
-                    <Link href="/" aria-label="PrimeReact logo">
+                    <Link href="/" aria-label="Mantle UI logo">
                         <a className="layout-topbar-icon">
                             <svg width="32" height="35" viewBox="0 0 32 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <mask id="mask0_2642_813" className="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="35">
@@ -174,11 +164,11 @@ export default function Topbar(props) {
 
                 <ul className="flex list-none m-0 p-0 gap-2 align-items-center">
                     <li>
-                        <DocSearch appId="SCRI13XXZO" apiKey="ea9e6c8a983c5646d6b9079921d4aed7" indexName="primereact" container="" debug={false} transformItems={handleDocSearchTransformItems} />
+                        <DocSearch appId="SCRI13XXZO" apiKey="ea9e6c8a983c5646d6b9079921d4aed7" indexName="mantle-ui" container="" debug={false} transformItems={handleDocSearchTransformItems} />
                     </li>
                     <li>
                         <a
-                            href="https://github.com/primefaces/primereact"
+                            href="https://github.com/Mantle-UI/mantle-ui"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex flex-shrink-0 px-link border-1 border-solid w-2rem h-2rem surface-border border-round surface-card align-items-center justify-content-center transition-all transition-duration-300 hover:border-primary"
@@ -198,7 +188,7 @@ export default function Topbar(props) {
                     </li>
                     <li>
                         <a
-                            href="https://github.com/orgs/primefaces/discussions"
+                            href="https://github.com/Mantle-UI/mantle-ui/discussions"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex flex-shrink-0 px-link border-1 border-solid w-2rem h-2rem surface-border border-round surface-card align-items-center justify-content-center transition-all transition-duration-300 hover:border-primary"

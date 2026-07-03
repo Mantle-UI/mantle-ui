@@ -564,7 +564,7 @@ export interface AutoCompleteProps<T = any, M extends boolean = false> extends O
  *
  * [Live Demo](https://www.primereact.org/autocomplete/)
  * --- ---
- * ![MantleUI](/images/mantle-ui-logo.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

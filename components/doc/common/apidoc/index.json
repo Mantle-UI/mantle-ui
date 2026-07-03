@@ -27822,7 +27822,7 @@
     "icons/angledoubledown": {
         "components": {
             "AngleDoubleDownIcon": {
-                "description": "**MantleUI - AngleDoubleDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27863,7 +27863,7 @@
     "icons/angledoubleleft": {
         "components": {
             "AngleDoubleLeftIcon": {
-                "description": "**MantleUI - AngleDoubleLeftIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27904,7 +27904,7 @@
     "icons/angledoubleright": {
         "components": {
             "AngleDoubleRightIcon": {
-                "description": "**MantleUI - AngleDoubleRightIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27945,7 +27945,7 @@
     "icons/angledoubleup": {
         "components": {
             "AngleDoubleUpIcon": {
-                "description": "**MantleUI - AngleDoubleUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27986,7 +27986,7 @@
     "icons/angledown": {
         "components": {
             "AngleDownIcon": {
-                "description": "**MantleUI - AngleDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28027,7 +28027,7 @@
     "icons/angleleft": {
         "components": {
             "AngleLeftIcon": {
-                "description": "**MantleUI - AngleLeftIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28068,7 +28068,7 @@
     "icons/angleright": {
         "components": {
             "AngleRightIcon": {
-                "description": "**MantleUI - AngleRightIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28109,7 +28109,7 @@
     "icons/angleup": {
         "components": {
             "AngleUpIcon": {
-                "description": "**MantleUI - AngleUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28150,7 +28150,7 @@
     "icons/arrowdown": {
         "components": {
             "ArrowDownIcon": {
-                "description": "**MantleUI - ArrowDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28191,7 +28191,7 @@
     "icons/arrowup": {
         "components": {
             "ArrowUpIcon": {
-                "description": "**MantleUI - ArrowUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28232,7 +28232,7 @@
     "icons/ban": {
         "components": {
             "BanIcon": {
-                "description": "**MantleUI - BanIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28273,7 +28273,7 @@
     "icons/bars": {
         "components": {
             "BarsIcon": {
-                "description": "**MantleUI - BarsIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28314,7 +28314,7 @@
     "icons/blank": {
         "components": {
             "BlankIcon": {
-                "description": "**MantleUI - BlankIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28355,7 +28355,7 @@
     "icons/calendar": {
         "components": {
             "CalendarIcon": {
-                "description": "**MantleUI - CalendarIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28396,7 +28396,7 @@
     "icons/check": {
         "components": {
             "CheckIcon": {
-                "description": "**MantleUI - CheckIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28437,7 +28437,7 @@
     "icons/chevrondown": {
         "components": {
             "ChevronDownIcon": {
-                "description": "**MantleUI - ChevronDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28478,7 +28478,7 @@
     "icons/chevronleft": {
         "components": {
             "ChevronLeftIcon": {
-                "description": "**MantleUI - ChevronLeftIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28519,7 +28519,7 @@
     "icons/chevronright": {
         "components": {
             "ChevronRightIcon": {
-                "description": "**MantleUI - ChevronRightIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28560,7 +28560,7 @@
     "icons/chevronup": {
         "components": {
             "ChevronUpIcon": {
-                "description": "**MantleUI - ChevronUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28601,7 +28601,7 @@
     "icons/download": {
         "components": {
             "DownloadIcon": {
-                "description": "**MantleUI - DownloadIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28642,7 +28642,7 @@
     "icons/exclamationtriangle": {
         "components": {
             "ExclamationTriangleIcon": {
-                "description": "**MantleUI - ExclamationTriangleIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28683,7 +28683,7 @@
     "icons/eye": {
         "components": {
             "EyeIcon": {
-                "description": "**MantleUI - EyeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28724,7 +28724,7 @@
     "icons/eyeslash": {
         "components": {
             "EyeSlashIcon": {
-                "description": "**MantleUI - EyeSlashIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28765,7 +28765,7 @@
     "icons/filter": {
         "components": {
             "FilterIcon": {
-                "description": "**MantleUI - FilterIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28806,7 +28806,7 @@
     "icons/filterslash": {
         "components": {
             "FilterSlashIcon": {
-                "description": "**MantleUI - FilterSlashIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28847,7 +28847,7 @@
     "icons/infocircle": {
         "components": {
             "InfoCircleIcon": {
-                "description": "**MantleUI - InfoCircleIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28888,7 +28888,7 @@
     "icons/minus": {
         "components": {
             "MinusIcon": {
-                "description": "**MantleUI - MinusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28929,7 +28929,7 @@
     "icons/pencil": {
         "components": {
             "PencilIcon": {
-                "description": "**MantleUI - PencilIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28970,7 +28970,7 @@
     "icons/plus": {
         "components": {
             "PlusIcon": {
-                "description": "**MantleUI - PlusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29011,7 +29011,7 @@
     "icons/refresh": {
         "components": {
             "RefreshIcon": {
-                "description": "**MantleUI - RefreshIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29052,7 +29052,7 @@
     "icons/search": {
         "components": {
             "SearchIcon": {
-                "description": "**MantleUI - SearchIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29093,7 +29093,7 @@
     "icons/searchminus": {
         "components": {
             "SearchMinusIcon": {
-                "description": "**MantleUI - SearchMinusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29134,7 +29134,7 @@
     "icons/searchplus": {
         "components": {
             "SearchPlusIcon": {
-                "description": "**MantleUI - SearchPlusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29175,7 +29175,7 @@
     "icons/sortalt": {
         "components": {
             "SortAltIcon": {
-                "description": "**MantleUI - SortAltIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29216,7 +29216,7 @@
     "icons/sortamountdown": {
         "components": {
             "SortAmountDownIcon": {
-                "description": "**MantleUI - SortAmountDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29257,7 +29257,7 @@
     "icons/sortamountupalt": {
         "components": {
             "SortAmountUpAltIcon": {
-                "description": "**MantleUI - SortAmountUpAltIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29298,7 +29298,7 @@
     "icons/spinner": {
         "components": {
             "SpinnerIcon": {
-                "description": "**MantleUI - SpinnerIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29339,7 +29339,7 @@
     "icons/star": {
         "components": {
             "StarIcon": {
-                "description": "**MantleUI - StarIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29380,7 +29380,7 @@
     "icons/starfill": {
         "components": {
             "StarFillIcon": {
-                "description": "**MantleUI - StarFillIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29421,7 +29421,7 @@
     "icons/thlarge": {
         "components": {
             "ThLargeIcon": {
-                "description": "**MantleUI - ThLargeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29462,7 +29462,7 @@
     "icons/times": {
         "components": {
             "TimesIcon": {
-                "description": "**MantleUI - TimesIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29503,7 +29503,7 @@
     "icons/timescircle": {
         "components": {
             "TimesCircleIcon": {
-                "description": "**MantleUI - TimesCircleIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29544,7 +29544,7 @@
     "icons/trash": {
         "components": {
             "TrashIcon": {
-                "description": "**MantleUI - TrashIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29585,7 +29585,7 @@
     "icons/undo": {
         "components": {
             "UndoIcon": {
-                "description": "**MantleUI - UndoIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29626,7 +29626,7 @@
     "icons/upload": {
         "components": {
             "UploadIcon": {
-                "description": "**MantleUI - UploadIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29667,7 +29667,7 @@
     "icons/windowmaximize": {
         "components": {
             "WindowMaximizeIcon": {
-                "description": "**MantleUI - WindowMaximizeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29708,7 +29708,7 @@
     "icons/windowminimize": {
         "components": {
             "WindowMinimizeIcon": {
-                "description": "**MantleUI - WindowMinimizeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![MantleUI](/images/mantle-ui-logo.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []

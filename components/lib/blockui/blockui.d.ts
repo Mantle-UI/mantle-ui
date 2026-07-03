@@ -127,7 +127,7 @@ export interface BlockUIProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
  *
  * [Live Demo](https://www.primereact.org/blockui/)
  * --- ---
- * ![MantleUI](/images/mantle-ui-logo.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

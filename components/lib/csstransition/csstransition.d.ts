@@ -31,7 +31,7 @@ export type CSSTransitionProps<Ref extends undefined | HTMLElement = undefined> 
  *
  * [Live Demo](https://www.primereact.org/dropdown/)
  * --- ---
- * ![MantleUI](/images/mantle-ui-logo.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

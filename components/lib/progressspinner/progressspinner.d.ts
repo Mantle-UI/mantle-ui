@@ -93,7 +93,7 @@ export interface ProgressSpinnerProps extends Omit<React.DetailedHTMLProps<React
  *
  * [Live Demo](https://www.primereact.org/progressspinner/)
  * --- ---
- * ![MantleUI](/images/mantle-ui-logo.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

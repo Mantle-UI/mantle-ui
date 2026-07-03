@@ -373,7 +373,7 @@ export interface DataViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
  *
  * [Live Demo](https://www.primereact.org/dataview/)
  * --- ---
- * ![MantleUI](/images/mantle-ui-logo.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  *

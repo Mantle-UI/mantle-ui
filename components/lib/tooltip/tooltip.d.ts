@@ -136,7 +136,7 @@ export interface TooltipProps extends TooltipOptions {
  *
  * [Live Demo](https://www.primereact.org/tooltip/)
  * --- ---
- * ![MantleUI](/images/mantle-ui-logo.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

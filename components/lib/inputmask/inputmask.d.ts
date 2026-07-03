@@ -144,7 +144,7 @@ export interface InputMaskProps extends Omit<InputTextProps, 'onChange' | 'pt'> 
  *
  * [Live Demo](https://www.primereact.org/inputmask/)
  * --- ---
- * ![MantleUI](/images/mantle-ui-logo.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

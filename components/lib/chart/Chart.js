@@ -125,4 +125,3 @@ const MantleUIChart = React.memo(
 MantleUIChart.displayName = 'Chart';
 
 export { MantleUIChart as Chart };
-

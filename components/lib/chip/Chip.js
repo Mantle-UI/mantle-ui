@@ -144,4 +144,3 @@ export const Chip = React.memo(
 );
 
 Chip.displayName = 'Chip';
-

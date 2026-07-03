@@ -86,4 +86,3 @@ export const useSessionStorage = (initialValue, key) => {
     return useStorage(initialValue, key, 'session');
 };
 /* eslint-enable */
-

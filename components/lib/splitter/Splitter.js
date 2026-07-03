@@ -491,4 +491,3 @@ export const Splitter = React.memo(
 SplitterPanel.displayName = 'SplitterPanel';
 
 Splitter.displayName = 'Splitter';
-

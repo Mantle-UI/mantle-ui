@@ -63,4 +63,3 @@ const AccessibilityDoc = () => {
 };
 
 export default AccessibilityDoc;
-

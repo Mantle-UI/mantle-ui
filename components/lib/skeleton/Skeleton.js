@@ -41,4 +41,3 @@ export const Skeleton = React.memo(
 );
 
 Skeleton.displayName = 'Skeleton';
-

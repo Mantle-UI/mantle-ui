@@ -220,4 +220,3 @@ export const Rating = React.memo(
 );
 
 Rating.displayName = 'Rating';
-

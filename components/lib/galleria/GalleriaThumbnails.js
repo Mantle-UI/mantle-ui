@@ -610,4 +610,3 @@ export const GalleriaThumbnails = React.memo(
 
 GalleriaThumbnailItem.displayName = 'GalleriaThumbnailItem';
 GalleriaThumbnails.displayName = 'GalleriaThumbnails';
-

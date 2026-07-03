@@ -954,4 +954,3 @@ export const ColumnFilter = React.memo((props) => {
 });
 
 ColumnFilter.displayName = 'ColumnFilter';
-

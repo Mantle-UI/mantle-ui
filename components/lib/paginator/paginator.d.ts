@@ -733,7 +733,7 @@ export interface PaginatorProps extends Omit<React.DetailedHTMLProps<React.HTMLA
  *
  * [Live Demo](https://www.primereact.org/paginator/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -744,4 +744,3 @@ export declare class Paginator extends React.Component<PaginatorProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

@@ -422,4 +422,3 @@ export const ConfirmPopup = React.memo(
 );
 
 ConfirmPopup.displayName = 'ConfirmPopup';
-

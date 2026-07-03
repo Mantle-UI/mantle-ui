@@ -136,4 +136,3 @@ describe('Stepper', () => {
         assertSelectedStep(1);
     });
 });
-

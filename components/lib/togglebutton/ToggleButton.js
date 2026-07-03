@@ -155,4 +155,3 @@ export const ToggleButton = React.memo(
 );
 
 ToggleButton.displayName = 'ToggleButton';
-

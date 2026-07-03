@@ -666,7 +666,7 @@ export interface TreeSelectProps extends Omit<React.DetailedHTMLProps<React.Inpu
  *
  * [Live Demo](https://www.primereact.org/treeselect/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -693,4 +693,3 @@ export declare class TreeSelect extends React.Component<TreeSelectProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

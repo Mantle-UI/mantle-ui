@@ -307,4 +307,3 @@ export const AutoCompletePanel = React.memo(
 );
 
 AutoCompletePanel.displayName = 'AutoCompletePanel';
-

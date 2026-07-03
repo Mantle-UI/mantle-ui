@@ -38,4 +38,3 @@ const TailwindDemo = () => {
 };
 
 export default TailwindDemo;
-

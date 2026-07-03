@@ -221,4 +221,3 @@ export const AutoCompleteBase = ComponentBase.extend({
         styles
     }
 });
-

@@ -97,7 +97,7 @@ export interface TagProps extends Omit<React.DetailedHTMLProps<React.HTMLAttribu
  *
  * [Live Demo](https://www.primereact.org/tag/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -108,4 +108,3 @@ export declare class Tag extends React.Component<TagProps, any> {
      */
     public getElement(): HTMLSpanElement | null;
 }
-

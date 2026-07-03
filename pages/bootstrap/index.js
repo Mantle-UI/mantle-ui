@@ -26,4 +26,3 @@ const BootstrapDemo = () => {
 };
 
 export default BootstrapDemo;
-

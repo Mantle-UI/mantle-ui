@@ -93,7 +93,7 @@ export interface ProgressSpinnerProps extends Omit<React.DetailedHTMLProps<React
  *
  * [Live Demo](https://www.primereact.org/progressspinner/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -104,4 +104,3 @@ export declare class ProgressSpinner extends React.Component<ProgressSpinnerProp
      */
     public getElement(): HTMLDivElement | null;
 }
-

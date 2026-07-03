@@ -4506,4 +4506,3 @@ export const Calendar = React.memo(
 );
 
 Calendar.displayName = 'Calendar';
-

@@ -12,9 +12,8 @@ export interface BarsIconProps extends IconBaseProps {}
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare class BarsIcon extends React.Component<BarsIconProps, any> {}
-

@@ -87,7 +87,7 @@ export interface ScrollPanelProps extends Omit<React.DetailedHTMLProps<React.HTM
  *
  * [Live Demo](https://www.primereact.org/scrollpanel/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -113,4 +113,3 @@ export declare class ScrollPanel extends React.Component<ScrollPanelProps, any> 
      */
     public getYBar(): HTMLDivElement | null;
 }
-

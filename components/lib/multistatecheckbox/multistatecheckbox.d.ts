@@ -262,7 +262,7 @@ export interface MultiStateCheckboxProps extends Omit<React.DetailedHTMLProps<Re
  *
  * [Live Demo](https://www.primereact.org/multistatecheckbox/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -277,4 +277,3 @@ export declare class MultiStateCheckbox extends React.Component<MultiStateCheckb
      */
     public getElement(): HTMLDivElement | null;
 }
-

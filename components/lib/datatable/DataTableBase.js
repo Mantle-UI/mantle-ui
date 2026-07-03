@@ -581,4 +581,3 @@ export const DataTableBase = ComponentBase.extend({
         inlineStyles
     }
 });
-

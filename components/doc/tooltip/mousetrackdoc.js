@@ -22,7 +22,7 @@ export default function MouseTrackDemo() {
             <Button type="button" label="Save" icon="pi pi-check" tooltip="Save" tooltipOptions={{ position: 'bottom', mouseTrack: true, mouseTrackTop: 15 }} />
 
             <Tooltip target=".logo" mouseTrack mouseTrackLeft={10} />
-            <img className="logo" alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
+            <img className="logo" alt="logo" src="/images/mantle-ui-logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
         </div>
     );
 }
@@ -38,7 +38,7 @@ export default function MouseTrackDemo() {
             <Button type="button" label="Save" icon="pi pi-check" tooltip="Save" tooltipOptions={{ position: 'bottom', mouseTrack: true, mouseTrackTop: 15 }} />
 
             <Tooltip target=".logo" mouseTrack mouseTrackLeft={10} />
-            <img className="logo" alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
+            <img className="logo" alt="logo" src="/images/mantle-ui-logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
         </div>
     );
 }
@@ -56,10 +56,9 @@ export default function MouseTrackDemo() {
                 <Button type="button" label="Save" icon="pi pi-check" tooltip="Save" tooltipOptions={{ position: 'bottom', mouseTrack: true, mouseTrackTop: 15 }} />
 
                 <Tooltip target=".logo" mouseTrack mouseTrackLeft={10} />
-                <img className="logo" alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
+                <img className="logo" alt="logo" src="/images/mantle-ui-logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
             </div>
             <DocSectionCode code={code} />
         </>
     );
 }
-

@@ -298,7 +298,7 @@ export interface ChipsProps extends Omit<React.DetailedHTMLProps<React.InputHTML
  *
  * [Live Demo](https://www.primereact.org/chips/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -318,4 +318,3 @@ export declare class Chips extends React.Component<ChipsProps, any> {
      */
     public getInput(): HTMLInputElement;
 }
-

@@ -650,7 +650,7 @@ interface FileUploadProps {
  *
  * [Live Demo](https://www.primereact.org/fileupload/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -704,4 +704,3 @@ export declare class FileUpload extends React.Component<FileUploadProps, any> {
      */
     public setUploadedFiles(files: FileUploadFile[]): void;
 }
-

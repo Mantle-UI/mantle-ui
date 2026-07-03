@@ -683,4 +683,3 @@ export const ColorPicker = React.memo(
 );
 
 ColorPicker.displayName = 'ColorPicker';
-

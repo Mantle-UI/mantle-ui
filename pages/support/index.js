@@ -118,8 +118,7 @@ const SupportPage = () => {
                             <li>
                                 <div className="font-semibold mb-2">6. Delivery</div>
                                 <span className="line-height-3">
-                                    If the issue requires an update in the library, it gets published to npm by as part of the public MantleUI package. A patch update on an older version can also be requested if you are not using the latest
-                                    version.
+                                    If the issue requires an update in the library, it gets published to npm by as part of the public MantleUI package. A patch update on an older version can also be requested if you are not using the latest version.
                                 </span>
                             </li>
                         </ul>
@@ -291,4 +290,3 @@ const SupportPage = () => {
 };
 
 export default SupportPage;
-

@@ -110,7 +110,7 @@ export interface ProgressBarProps extends Omit<React.DetailedHTMLProps<React.HTM
  *
  * [Live Demo](https://www.primereact.org/progressbar/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -121,4 +121,3 @@ export declare class ProgressBar extends React.Component<ProgressBarProps, any> 
      */
     public getElement(): HTMLDivElement | null;
 }
-

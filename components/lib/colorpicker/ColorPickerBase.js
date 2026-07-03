@@ -153,4 +153,3 @@ export const ColorPickerBase = ComponentBase.extend({
         styles
     }
 });
-

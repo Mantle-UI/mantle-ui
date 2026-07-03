@@ -212,7 +212,7 @@ export interface ContextMenuProps extends Omit<React.DetailedHTMLProps<React.HTM
  *
  * [Live Demo](https://www.primereact.org/contextmenu/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -233,4 +233,3 @@ export declare class ContextMenu extends React.Component<ContextMenuProps, any> 
      */
     public getElement(): HTMLDivElement | null;
 }
-

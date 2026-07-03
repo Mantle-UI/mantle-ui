@@ -1173,9 +1173,8 @@ export interface ColumnProps {
  *
  * [Live Demo](https://www.primereact.org/column/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare class Column extends React.Component<ColumnProps, any> {}
-

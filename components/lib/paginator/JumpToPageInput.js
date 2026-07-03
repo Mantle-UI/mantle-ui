@@ -41,4 +41,3 @@ export const JumpToPageInput = React.memo((inProps) => {
 });
 
 JumpToPageInput.displayName = 'JumpToPageInput';
-

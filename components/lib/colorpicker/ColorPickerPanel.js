@@ -50,4 +50,3 @@ export const ColorPickerPanel = React.forwardRef((props, ref) => {
 });
 
 ColorPickerPanel.displayName = 'ColorPickerPanel';
-

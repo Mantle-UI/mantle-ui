@@ -162,4 +162,3 @@ export const InputTextarea = React.memo(
 );
 
 InputTextarea.displayName = 'InputTextarea';
-

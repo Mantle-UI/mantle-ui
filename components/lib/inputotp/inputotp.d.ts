@@ -166,9 +166,8 @@ export interface InputOtpProps extends Omit<React.DetailedHTMLProps<React.InputH
  *
  * [Live Demo](https://www.primereact.org/inputotp/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare const InputOtp: React.ForwardRefExoticComponent<InputOtpProps & React.RefAttributes<HTMLInputElement>>;
-

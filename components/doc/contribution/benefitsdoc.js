@@ -12,4 +12,3 @@ export function BenefitsDoc(props) {
         </DocSectionText>
     );
 }
-

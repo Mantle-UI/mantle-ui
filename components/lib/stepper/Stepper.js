@@ -352,4 +352,3 @@ export const Stepper = React.memo(
 );
 
 StepperBase.displayName = 'StepperBase';
-

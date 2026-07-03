@@ -291,4 +291,3 @@ export const MultiSelectBase = ComponentBase.extend({
         inlineStyles
     }
 });
-

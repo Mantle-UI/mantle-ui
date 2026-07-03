@@ -164,7 +164,7 @@ export interface RadioButtonProps extends Omit<React.DetailedHTMLProps<React.Inp
  *
  * [Live Demo](https://www.primereact.org/radiobutton/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -189,4 +189,3 @@ export declare class RadioButton extends React.Component<RadioButtonProps, any> 
      */
     public getInput(): HTMLInputElement | null;
 }
-

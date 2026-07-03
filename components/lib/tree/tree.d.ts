@@ -690,7 +690,7 @@ export interface TreeProps {
  *
  * [Live Demo](https://www.primereact.org/tree/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -706,4 +706,3 @@ export declare class Tree extends React.Component<TreeProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

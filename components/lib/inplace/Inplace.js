@@ -168,4 +168,3 @@ InplaceDisplay.displayName = 'InplaceDisplay';
 InplaceContent.displayName = 'InplaceContent';
 
 Inplace.displayName = 'Inplace';
-

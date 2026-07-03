@@ -349,4 +349,3 @@ describe('Tooltip', () => {
         expect(hideOn).toHaveBeenCalledTimes(0);
     });
 });
-

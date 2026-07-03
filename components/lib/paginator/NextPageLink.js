@@ -69,4 +69,3 @@ export const NextPageLink = React.memo((inProps) => {
 });
 
 NextPageLink.displayName = 'NextPageLink';
-

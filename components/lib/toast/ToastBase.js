@@ -143,4 +143,3 @@ export const ToastBase = ComponentBase.extend({
         inlineStyles
     }
 });
-

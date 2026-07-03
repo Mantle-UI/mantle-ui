@@ -594,7 +594,7 @@ export interface DropdownProps extends Omit<React.DetailedHTMLProps<React.InputH
  *
  * [Live Demo](https://www.primereact.org/dropdown/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -641,4 +641,3 @@ export declare class Dropdown extends React.Component<DropdownProps, any> {
      */
     public getVirtualScroller(): VirtualScroller | null;
 }
-

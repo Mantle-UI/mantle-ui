@@ -98,4 +98,3 @@ export const TreeTableFooter = React.memo((props) => {
 });
 
 TreeTableFooter.displayName = 'TreeTableFooter';
-

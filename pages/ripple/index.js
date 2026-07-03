@@ -75,4 +75,3 @@ const RippleDemo = () => {
 };
 
 export default RippleDemo;
-

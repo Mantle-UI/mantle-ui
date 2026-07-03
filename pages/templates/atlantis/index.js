@@ -209,4 +209,3 @@ const AtlantisPage = () => {
 };
 
 export default AtlantisPage;
-

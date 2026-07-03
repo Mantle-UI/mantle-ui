@@ -219,4 +219,3 @@ export const SplitButton = React.memo(
 );
 
 SplitButton.displayName = 'SplitButton';
-

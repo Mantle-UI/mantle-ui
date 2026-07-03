@@ -154,4 +154,3 @@ const BabylonPage = () => {
 };
 
 export default BabylonPage;
-

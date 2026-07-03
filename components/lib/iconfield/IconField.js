@@ -40,4 +40,3 @@ export const IconField = React.memo(
 );
 
 IconField.displayName = 'IconField';
-

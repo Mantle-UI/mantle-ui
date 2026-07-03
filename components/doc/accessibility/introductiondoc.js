@@ -5,8 +5,8 @@ export function IntroductionDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p className="notification">
-                    Accessibility is a major concern of the Prime UI libraries and MantleUI is no exception. PrimeTek teams have initiated a significant process to review and enhance the accessibility features of the components. This guide
-                    documents the foundation of the general guidelines that MantleUI will follow and each component documentation will have a separate <b>Accessibility</b> section that states the keyboard support, screen reader compatibility, the
+                    Accessibility is a major concern of the Prime UI libraries and MantleUI is no exception. PrimeTek teams have initiated a significant process to review and enhance the accessibility features of the components. This guide documents
+                    the foundation of the general guidelines that MantleUI will follow and each component documentation will have a separate <b>Accessibility</b> section that states the keyboard support, screen reader compatibility, the
                     implementation details along with tips to achieve WCAG compliancy. This work has been completed for PrimeVue and PrimeNG and currently being ported to MantleUI to be finalized in Q4 2023.
                 </p>
                 <p>
@@ -54,4 +54,3 @@ export function IntroductionDoc(props) {
         </>
     );
 }
-

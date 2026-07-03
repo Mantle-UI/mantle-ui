@@ -259,4 +259,3 @@ export const DataScroller = React.memo(
 );
 
 DataScroller.displayName = 'DataScroller';
-

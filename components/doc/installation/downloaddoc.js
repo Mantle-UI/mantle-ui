@@ -23,4 +23,3 @@ yarn add primereact
         </>
     );
 }
-

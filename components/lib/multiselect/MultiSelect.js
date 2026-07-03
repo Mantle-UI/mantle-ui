@@ -1266,4 +1266,3 @@ export const MultiSelect = React.memo(
 );
 
 MultiSelect.displayName = 'MultiSelect';
-

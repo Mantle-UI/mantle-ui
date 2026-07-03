@@ -145,7 +145,7 @@ export interface AvatarProps extends Omit<React.DetailedHTMLProps<React.HTMLAttr
  *
  * [Live Demo](https://www.primereact.org/avatar/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -156,4 +156,3 @@ export declare class Avatar extends React.Component<AvatarProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

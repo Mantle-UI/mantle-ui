@@ -68,4 +68,3 @@ const ContributionPage = () => {
 };
 
 export default ContributionPage;
-

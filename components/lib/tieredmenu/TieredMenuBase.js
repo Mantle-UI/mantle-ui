@@ -107,4 +107,3 @@ export const TieredMenuBase = ComponentBase.extend({
         inlineStyles
     }
 });
-

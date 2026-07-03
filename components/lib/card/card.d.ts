@@ -111,9 +111,8 @@ export interface CardProps extends Omit<React.DetailedHTMLProps<React.HTMLAttrib
  *
  * [Live Demo](https://www.primereact.org/card/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare class Card extends React.Component<CardProps, any> {}
-

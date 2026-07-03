@@ -17,4 +17,3 @@ npm install primeicons
         </>
     );
 }
-

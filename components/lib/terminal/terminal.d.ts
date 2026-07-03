@@ -126,7 +126,7 @@ export interface TerminalProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
  *
  * [Live Demo](https://www.primereact.org/terminal/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -141,4 +141,3 @@ export declare class Terminal extends React.Component<TerminalProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

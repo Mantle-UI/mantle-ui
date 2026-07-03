@@ -617,4 +617,3 @@ export const TabView = React.forwardRef((inProps, ref) => {
 TabPanel.displayName = 'TabPanel';
 
 TabView.displayName = 'TabView';
-

@@ -715,4 +715,3 @@ export const Dialog = React.forwardRef((inProps, ref) => {
 });
 
 Dialog.displayName = 'Dialog';
-

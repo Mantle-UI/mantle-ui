@@ -354,4 +354,3 @@ export const Dock = React.memo(
 );
 
 Dock.displayName = 'Dock';
-

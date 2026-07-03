@@ -274,4 +274,3 @@ export const Editor = React.memo(
 );
 
 Editor.displayName = 'Editor';
-

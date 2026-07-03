@@ -31,9 +31,8 @@ export type CSSTransitionProps<Ref extends undefined | HTMLElement = undefined> 
  *
  * [Live Demo](https://www.primereact.org/dropdown/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare class CSSTransition<Ref extends undefined | HTMLElement> extends React.Component<CSSTransitionProps<Ref>, any> {}
-

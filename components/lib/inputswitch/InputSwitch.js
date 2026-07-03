@@ -123,4 +123,3 @@ export const InputSwitch = React.memo(
 );
 
 InputSwitch.displayName = 'InputSwitch';
-

@@ -439,7 +439,7 @@ export interface ListBoxProps extends Omit<React.DetailedHTMLProps<React.InputHT
  *
  * [Live Demo](https://www.primereact.org/listbox/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -459,4 +459,3 @@ export declare class ListBox extends React.Component<ListBoxProps, any> {
      */
     public getVirtualScroller(): VirtualScroller | null;
 }
-

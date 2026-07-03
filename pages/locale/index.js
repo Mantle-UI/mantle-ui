@@ -41,4 +41,3 @@ const LocalePage = () => {
 };
 
 export default LocalePage;
-

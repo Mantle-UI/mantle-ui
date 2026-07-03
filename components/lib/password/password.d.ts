@@ -313,7 +313,7 @@ export interface PasswordProps extends Omit<React.DetailedHTMLProps<React.InputH
  *
  * [Live Demo](https://www.primereact.org/password/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -342,4 +342,3 @@ export declare class Password extends React.Component<PasswordProps, any> {
      */
     public getOverlay(): HTMLElement | null;
 }
-

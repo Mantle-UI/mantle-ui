@@ -160,4 +160,3 @@ export const MeterGroup = (inProps) => {
         </div>
     );
 };
-

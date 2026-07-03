@@ -1098,4 +1098,3 @@ img.flag {
 };
 
 export { getVite };
-

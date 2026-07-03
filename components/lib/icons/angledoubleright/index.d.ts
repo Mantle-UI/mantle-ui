@@ -12,9 +12,8 @@ export interface AngleDoubleRightIconProps extends IconBaseProps {}
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare class AngleDoubleRightIcon extends React.Component<AngleDoubleRightIconProps, any> {}
-

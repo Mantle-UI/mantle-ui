@@ -151,9 +151,8 @@ export interface StepperPanelProps {
  *
  * [Live Demo](https://www.primereact.org/stepper/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare const StepperPanel: React.FC<React.PropsWithChildren<StepperPanelProps>>;
-

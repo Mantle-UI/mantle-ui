@@ -54,4 +54,3 @@ export const CurrentPageReport = React.memo((inProps) => {
 });
 
 CurrentPageReport.displayName = 'CurrentPageReport';
-

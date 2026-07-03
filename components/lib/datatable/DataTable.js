@@ -2120,4 +2120,3 @@ export const DataTable = React.forwardRef((inProps, ref) => {
 });
 
 DataTable.displayName = 'DataTable';
-

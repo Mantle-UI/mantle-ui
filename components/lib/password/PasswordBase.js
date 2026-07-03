@@ -111,4 +111,3 @@ export const PasswordBase = ComponentBase.extend({
         styles
     }
 });
-

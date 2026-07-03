@@ -37,4 +37,3 @@ ReactDOM.createRoot(mountHere).render(
         </>
     );
 }
-

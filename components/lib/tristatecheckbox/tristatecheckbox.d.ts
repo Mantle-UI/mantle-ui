@@ -158,7 +158,7 @@ export interface TriStateCheckboxProps extends Omit<React.DetailedHTMLProps<Reac
  *
  * [Live Demo](https://www.primereact.org/tristatecheckbox/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -173,4 +173,3 @@ export declare class TriStateCheckbox extends React.Component<TriStateCheckboxPr
      */
     public getElement(): HTMLDivElement | null;
 }
-

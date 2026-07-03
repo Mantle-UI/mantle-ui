@@ -79,7 +79,7 @@ export interface StyleClassProps {
  *
  * [Live Demo](https://www.primereact.org/styleclass/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -95,4 +95,3 @@ export declare class StyleClass extends React.Component<StyleClassProps, any> {
      */
     public getTarget(): HTMLElement | null;
 }
-

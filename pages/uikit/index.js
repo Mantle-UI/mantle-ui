@@ -374,4 +374,3 @@ const UIKitPage = (props) => {
 };
 
 export default UIKitPage;
-

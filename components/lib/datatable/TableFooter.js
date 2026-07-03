@@ -112,4 +112,3 @@ export const TableFooter = React.memo((props) => {
 });
 
 TableFooter.displayName = 'TableFooter';
-

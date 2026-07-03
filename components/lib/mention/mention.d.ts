@@ -301,7 +301,7 @@ export interface MentionProps extends Omit<React.DetailedHTMLProps<React.Textare
  *
  * [Live Demo](https://www.primereact.org/mention/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -334,4 +334,3 @@ export declare class Mention extends React.Component<MentionProps, any> {
      */
     public getOverlay(): HTMLElement | null;
 }
-

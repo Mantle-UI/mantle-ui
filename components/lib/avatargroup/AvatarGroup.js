@@ -37,4 +37,3 @@ export const AvatarGroup = React.forwardRef((inProps, ref) => {
 });
 
 AvatarGroup.displayName = 'AvatarGroup';
-

@@ -222,4 +222,3 @@ export const Terminal = React.memo(
 );
 
 Terminal.displayName = 'Terminal';
-

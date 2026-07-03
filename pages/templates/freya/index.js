@@ -204,4 +204,3 @@ const FreyaPage = () => {
 };
 
 export default FreyaPage;
-

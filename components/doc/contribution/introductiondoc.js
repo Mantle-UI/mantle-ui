@@ -31,8 +31,8 @@ npm run dev
     return (
         <DocSectionText {...props}>
             <p>
-                MantleUI is a popular React library maintained by PrimeTek, a company renowned for its comprehensive set of UI components for various frameworks. PrimeTek is dedicated to providing high-quality, versatile, and accessible UI
-                components that help developers build better applications faster.
+                MantleUI is a popular React library maintained by PrimeTek, a company renowned for its comprehensive set of UI components for various frameworks. PrimeTek is dedicated to providing high-quality, versatile, and accessible UI components
+                that help developers build better applications faster.
             </p>
             <h3>Development Setup</h3>
             <p>To begin with, clone the MantleUI repository from GitHub</p>
@@ -47,4 +47,3 @@ npm run dev
         </DocSectionText>
     );
 }
-

@@ -666,4 +666,3 @@ export const InputMask = React.memo(
 );
 
 InputMask.displayName = 'InputMask';
-

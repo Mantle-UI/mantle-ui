@@ -95,4 +95,3 @@ export const useStyle = (css, options = {}) => {
         isLoaded
     };
 };
-

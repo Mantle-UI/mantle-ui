@@ -18,4 +18,3 @@ export const StepperPanel = React.memo(
 );
 
 StepperPanel.displayName = 'StepperPanel';
-

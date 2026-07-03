@@ -261,4 +261,3 @@ export const InputOtp = React.memo(
 );
 
 InputOtp.displayName = 'InputOtp';
-

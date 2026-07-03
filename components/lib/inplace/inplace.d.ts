@@ -157,7 +157,7 @@ export interface InplaceProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
  *
  * [Live Demo](https://www.primereact.org/inplace/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -204,4 +204,3 @@ export declare class InplaceDisplay extends React.Component<InplaceDisplayProps,
  */
 // tslint:disable-next-line:max-classes-per-file
 export declare class InplaceContent extends React.Component<InplaceContentProps, any> {}
-

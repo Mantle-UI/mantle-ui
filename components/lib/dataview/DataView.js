@@ -353,4 +353,3 @@ DataViewLayoutOptions.displayName = 'DataViewLayoutOptions';
 DataViewItem.displayName = 'DataViewItem';
 
 DataView.displayName = 'DataView';
-

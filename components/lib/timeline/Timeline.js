@@ -111,4 +111,3 @@ export const Timeline = React.memo(
 );
 
 Timeline.displayName = 'Timeline';
-

@@ -177,7 +177,7 @@ export interface InputSwitchProps extends Omit<React.DetailedHTMLProps<React.Inp
  *
  * [Live Demo](https://www.primereact.org/inputswitch/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -197,4 +197,3 @@ export declare class InputSwitch extends React.Component<InputSwitchProps, any> 
      */
     public getInput(): HTMLInputElement | null;
 }
-

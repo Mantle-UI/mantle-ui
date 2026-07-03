@@ -16,4 +16,3 @@ export function FigmaDoc(props) {
         </>
     );
 }
-

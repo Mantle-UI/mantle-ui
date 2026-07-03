@@ -42,4 +42,3 @@ describe('Ripple', () => {
         expect(container).toMatchSnapshot();
     });
 });
-

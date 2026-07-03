@@ -255,7 +255,7 @@ export interface ColorPickerProps extends Omit<React.DetailedHTMLProps<React.Inp
  *
  * [Live Demo](https://www.primereact.org/colorpicker/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -288,4 +288,3 @@ export declare class ColorPicker extends React.Component<ColorPickerProps, any> 
      */
     public getOverlay(): HTMLElement | null;
 }
-

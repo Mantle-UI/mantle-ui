@@ -193,7 +193,7 @@ export interface SelectButtonProps extends Omit<React.DetailedHTMLProps<React.In
  *
  * [Live Demo](https://www.primereact.org/selectbutton/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -208,4 +208,3 @@ export declare class SelectButton extends React.Component<SelectButtonProps, any
      */
     public focus(): void;
 }
-

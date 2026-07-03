@@ -62,4 +62,3 @@ primereact/resources/themes/arya-purple/theme.css
         </>
     );
 }
-

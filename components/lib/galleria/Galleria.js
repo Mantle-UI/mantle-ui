@@ -346,4 +346,3 @@ export const Galleria = React.memo(
 );
 
 Galleria.displayName = 'Galleria';
-

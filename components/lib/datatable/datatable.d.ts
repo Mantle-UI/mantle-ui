@@ -1944,7 +1944,7 @@ export type DataTableProps<TValue extends DataTableValueArray> = DataTablePropsS
  *
  * [Live Demo](https://www.primereact.org/datatable/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -2067,4 +2067,3 @@ export declare class DataTable<TValue extends DataTableValueArray> extends React
      */
     public getProcessedData(): TValue;
 }
-

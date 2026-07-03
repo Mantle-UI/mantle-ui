@@ -216,4 +216,3 @@ const AvalonPage = () => {
 };
 
 export default AvalonPage;
-

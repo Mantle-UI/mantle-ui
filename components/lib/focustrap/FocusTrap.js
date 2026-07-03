@@ -126,4 +126,3 @@ export const FocusTrap = React.memo(
 );
 
 export default FocusTrap;
-

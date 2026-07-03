@@ -106,9 +106,17 @@ const GLOBAL_DEPENDENCIES = {
     'react-transition-group': 'ReactTransitionGroup'
 };
 
+const toIifeGlobalName = (moduleName) => {
+    if (moduleName.startsWith('@mantle-ui/react/')) {
+        return `MantleUI.${moduleName.replace('@mantle-ui/react/', '').replaceAll('/', '.')}`;
+    }
+
+    return moduleName.replaceAll('/', '.');
+};
+
 const GLOBAL_COMPONENT_DEPENDENCIES = {
     ...GLOBAL_DEPENDENCIES,
-    ...(NPM_LINK ? [] : ALIAS_COMPONENT_ENTRIES.reduce((acc, cur) => ({ ...acc, [cur.replacement]: cur.replacement.replaceAll('/', '.') }), {}))
+    ...(NPM_LINK ? [] : ALIAS_COMPONENT_ENTRIES.reduce((acc, cur) => ({ ...acc, [cur.replacement]: toIifeGlobalName(cur.replacement) }), {}))
 };
 
 // externals
@@ -325,7 +333,7 @@ function addPassThrough() {
 }
 
 function addMantleUI() {
-    const input = process.env.INPUT_DIR + 'primereact.all.js';
+    const input = process.env.INPUT_DIR + 'mantle-ui-react.all.js';
     const output = process.env.OUTPUT_DIR + 'mantle-ui-react.all';
 
     addEntry('MantleUI', input, output, false);

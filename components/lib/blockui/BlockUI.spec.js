@@ -91,4 +91,3 @@ describe('BlockUI', () => {
         'container style and className'
     );
 });
-

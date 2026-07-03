@@ -267,4 +267,3 @@ export const Panel = React.forwardRef((inProps, ref) => {
 });
 
 Panel.displayName = 'Panel';
-

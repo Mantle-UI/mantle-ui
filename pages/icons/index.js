@@ -62,4 +62,3 @@ const IconsDoc = () => {
 };
 
 export default IconsDoc;
-

@@ -157,7 +157,7 @@ export interface TabMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
  *
  * [Live Demo](https://www.primereact.org/tabmenu/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -168,4 +168,3 @@ export declare class TabMenu extends React.Component<TabMenuProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

@@ -325,4 +325,3 @@ export const Paginator = React.memo(
 );
 
 Paginator.displayName = 'Paginator';
-

@@ -71,4 +71,3 @@ export const CSSTransition = React.forwardRef((inProps, ref) => {
 });
 
 CSSTransition.displayName = 'CSSTransition';
-

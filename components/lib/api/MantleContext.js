@@ -121,4 +121,3 @@ export const MantleProvider = (props) => {
 
     return <MantleContext.Provider value={value}>{props.children}</MantleContext.Provider>;
 };
-

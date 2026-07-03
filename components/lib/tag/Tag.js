@@ -58,4 +58,3 @@ export const Tag = React.forwardRef((inProps, ref) => {
 });
 
 Tag.displayName = 'Tag';
-

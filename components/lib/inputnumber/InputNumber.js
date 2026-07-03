@@ -1415,4 +1415,3 @@ export const InputNumber = React.memo(
 );
 
 InputNumber.displayName = 'InputNumber';
-

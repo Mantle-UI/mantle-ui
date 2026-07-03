@@ -65,4 +65,3 @@ export const FirstPageLink = React.memo((inProps) => {
 });
 
 FirstPageLink.displayName = 'FirstPageLink';
-

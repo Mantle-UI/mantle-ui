@@ -157,7 +157,7 @@ export interface OverlayPanelProps extends Omit<React.DetailedHTMLProps<React.HT
  *
  * [Live Demo](https://www.primereact.org/overlaypanel/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -193,4 +193,3 @@ export declare class OverlayPanel extends React.Component<OverlayPanelProps, any
      */
     public getElement(): HTMLDivElement | null;
 }
-

@@ -374,4 +374,3 @@ export const Slider = React.memo(
 );
 
 Slider.displayName = 'Slider';
-

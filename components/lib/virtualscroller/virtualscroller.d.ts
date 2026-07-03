@@ -497,7 +497,7 @@ export interface VirtualScrollerProps {
  *
  * [Live Demo](https://www.primereact.org/virtualscroller/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -530,4 +530,3 @@ export declare class VirtualScroller extends React.Component<VirtualScrollerProp
      */
     public getRenderedRange(): VirtualScrollerRenderedRange;
 }
-

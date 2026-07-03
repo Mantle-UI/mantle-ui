@@ -191,4 +191,3 @@ const GenesisPage = () => {
 };
 
 export default GenesisPage;
-

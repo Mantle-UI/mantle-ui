@@ -429,4 +429,3 @@ export const TreeTableHeader = React.memo((props) => {
 });
 
 TreeTableHeader.displayName = 'TreeTableHeader';
-

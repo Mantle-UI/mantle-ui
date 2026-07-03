@@ -803,4 +803,3 @@ export const VirtualScroller = React.memo(
 );
 
 VirtualScroller.displayName = 'VirtualScroller';
-

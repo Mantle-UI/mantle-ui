@@ -38,4 +38,3 @@ export const InputIcon = React.memo(
 );
 
 InputIcon.displayName = 'InputIcon';
-

@@ -232,4 +232,3 @@ const ApolloPage = () => {
 };
 
 export default ApolloPage;
-

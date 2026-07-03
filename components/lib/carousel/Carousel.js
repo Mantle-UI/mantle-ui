@@ -839,4 +839,3 @@ export const Carousel = React.memo(
 CarouselItem.displayName = 'CarouselItem';
 
 Carousel.displayName = 'Carousel';
-

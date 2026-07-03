@@ -101,4 +101,3 @@ export const InputText = React.memo(
 );
 
 InputText.displayName = 'InputText';
-

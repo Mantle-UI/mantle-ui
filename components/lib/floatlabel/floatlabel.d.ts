@@ -78,10 +78,9 @@ export interface FloatLabelProps {
  *
  * [Live Demo](https://www.primereact.org/inputtext/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  *
  */
 export declare const FloatLabel: React.ForwardRefExoticComponent<FloatLabelProps & React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
-

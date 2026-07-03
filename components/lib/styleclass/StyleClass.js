@@ -225,4 +225,3 @@ export const StyleClass = React.forwardRef((inProps, ref) => {
 });
 
 StyleClass.displayName = 'StyleClass';
-

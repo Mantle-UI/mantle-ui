@@ -111,7 +111,7 @@ export interface BreadCrumbProps extends Omit<React.DetailedHTMLProps<React.HTML
  *
  * [Live Demo](https://www.primereact.org/breadcrumb/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -122,4 +122,3 @@ export declare class BreadCrumb extends React.Component<BreadCrumbProps, any> {
      */
     public getElement(): HTMLElement | null;
 }
-

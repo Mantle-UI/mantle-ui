@@ -1303,4 +1303,3 @@ export const MegaMenu = React.memo(
 );
 
 MegaMenu.displayName = 'MegaMenu';
-

@@ -54,4 +54,3 @@ export const RowsPerPageDropdown = React.memo((inProps) => {
 });
 
 RowsPerPageDropdown.displayName = 'RowsPerPageDropdown';
-

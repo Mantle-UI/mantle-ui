@@ -179,7 +179,7 @@ export interface StepsProps extends Omit<React.DetailedHTMLProps<React.HTMLAttri
  *
  * [Live Demo](https://www.primereact.org/steps/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -190,4 +190,3 @@ export declare class Steps extends React.Component<StepsProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

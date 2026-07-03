@@ -15,7 +15,7 @@ export function TemplateDoc(props) {
                 sticky: true,
                 content: (
                     <React.Fragment>
-                        <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="32" />
+                        <img alt="logo" src="/images/mantle-ui-logo.png" width="32" />
                         <div className="ml-2">Always bet on Prime.</div>
                     </React.Fragment>
                 )
@@ -52,7 +52,7 @@ export default function TemplateDemo() {
                 sticky: true,
                 content: (
                     <React.Fragment>
-                        <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="32" />
+                        <img alt="logo" src="/images/mantle-ui-logo.png" width="32" />
                         <div className="ml-2">Always bet on Prime.</div>
                     </React.Fragment>
                 )
@@ -80,7 +80,7 @@ export default function TemplateDemo() {
         msgs.current?.show({
             severity: 'info', sticky: true, content: (
                 <React.Fragment>
-                    <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="32" />
+                    <img alt="logo" src="/images/mantle-ui-logo.png" width="32" />
                     <div className="ml-2">Always bet on Prime.</div>
                 </React.Fragment>
             )

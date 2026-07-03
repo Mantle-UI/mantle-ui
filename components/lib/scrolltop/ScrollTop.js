@@ -138,4 +138,3 @@ export const ScrollTop = React.memo(
 );
 
 ScrollTop.displayName = 'ScrollTop';
-

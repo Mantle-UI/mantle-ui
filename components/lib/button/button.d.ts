@@ -192,9 +192,8 @@ export interface ButtonProps extends Omit<React.DetailedHTMLProps<React.ButtonHT
  *
  * [Live Demo](https://www.primereact.org/button/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare class Button extends React.Component<ButtonProps, any> {}
-

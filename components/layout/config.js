@@ -366,4 +366,3 @@ export default function Config(props) {
         </Sidebar>
     );
 }
-

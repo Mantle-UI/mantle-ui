@@ -12,4 +12,3 @@ export const useMergeProps = () => {
         return mergeProps(props, context?.ptOptions);
     };
 };
-

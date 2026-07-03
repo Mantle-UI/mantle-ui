@@ -25,4 +25,3 @@ export const Row = (inProps) => {
 };
 
 Row.displayName = 'Row';
-

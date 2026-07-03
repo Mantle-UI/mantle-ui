@@ -279,7 +279,7 @@ interface ConfirmDialogReturn {
  *
  * [Live Demo](https://www.primereact.org/confirmdialog/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -292,4 +292,3 @@ export declare class ConfirmDialog extends React.Component<ConfirmDialogProps, a
 }
 
 export declare function confirmDialog(props: ConfirmDialogProps): ConfirmDialogReturn;
-

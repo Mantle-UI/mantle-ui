@@ -114,4 +114,3 @@ export const Card = React.forwardRef((inProps, ref) => {
 });
 
 Card.displayName = 'Card';
-

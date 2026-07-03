@@ -126,4 +126,3 @@ const CustomTailwind = usePassThrough(
         </>
     );
 }
-

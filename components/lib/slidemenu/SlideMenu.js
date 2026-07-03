@@ -257,4 +257,3 @@ export const SlideMenu = React.memo(
 );
 
 SlideMenu.displayName = 'SlideMenu';
-

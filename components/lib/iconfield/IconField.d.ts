@@ -88,9 +88,8 @@ export interface IconFieldProps extends Omit<React.DetailedHTMLProps<React.Input
  *
  * [Live Demo](https://www.primereact.org/inputtext/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare const IconField: React.ForwardRefExoticComponent<IconFieldProps & React.RefAttributes<HTMLInputElement>>;
-

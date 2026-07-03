@@ -127,4 +127,3 @@ export const Ripple = React.memo(
 );
 
 Ripple.displayName = 'Ripple';
-

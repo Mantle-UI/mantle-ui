@@ -446,4 +446,3 @@ export const PanelMenu = React.memo(
 );
 
 PanelMenu.displayName = 'PanelMenu';
-

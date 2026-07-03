@@ -231,5 +231,3 @@ function localeOptions(locale) {
 }
 
 export { addLocale, ariaLabel, locale, localeOption, localeOptions, updateLocaleOption, updateLocaleOptions };
-
-

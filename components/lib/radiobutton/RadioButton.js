@@ -186,4 +186,3 @@ export const RadioButton = React.memo(
 );
 
 RadioButton.displayName = 'RadioButton';
-

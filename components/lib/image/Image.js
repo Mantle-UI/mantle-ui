@@ -401,4 +401,3 @@ export const Image = React.memo(
 );
 
 Image.displayName = 'Image';
-

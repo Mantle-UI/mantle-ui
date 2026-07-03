@@ -184,4 +184,3 @@ export const TriStateCheckbox = React.memo(
 );
 
 TriStateCheckbox.displayName = 'TriStateCheckbox';
-

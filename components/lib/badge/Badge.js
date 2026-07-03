@@ -40,4 +40,3 @@ export const Badge = React.memo(
 );
 
 Badge.displayName = 'Badge';
-

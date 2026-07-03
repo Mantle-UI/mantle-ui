@@ -11,4 +11,3 @@ import { MantleContext, MantleProvider } from './MantleContext';
 export default MantleUI;
 
 export { locale, addLocale, ariaLabel, localeOption, localeOptions, updateLocaleOption, updateLocaleOptions, MantleIcons, MessageSeverity, FilterMatchMode, FilterOperator, FilterService, SortOrder, MantleProvider, MantleContext };
-

@@ -288,4 +288,3 @@ export const TableHeader = React.memo((props) => {
 });
 
 TableHeader.displayName = 'TableHeader';
-

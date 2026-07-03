@@ -318,7 +318,7 @@ interface ConfirmPopupReturn {
  *
  * [Live Demo](https://www.primereact.org/confirmpopup/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -331,4 +331,3 @@ export declare class ConfirmPopup extends React.Component<ConfirmPopupProps, any
 }
 
 export declare function confirmPopup(props: ConfirmPopupProps): ConfirmPopupReturn;
-

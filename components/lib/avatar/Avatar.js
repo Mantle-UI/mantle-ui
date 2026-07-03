@@ -105,4 +105,3 @@ export const Avatar = React.forwardRef((inProps, ref) => {
 });
 
 Avatar.displayName = 'Avatar';
-

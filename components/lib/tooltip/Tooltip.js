@@ -569,4 +569,3 @@ export const Tooltip = React.memo(
 );
 
 Tooltip.displayName = 'Tooltip';
-

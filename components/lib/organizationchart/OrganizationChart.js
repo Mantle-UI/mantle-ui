@@ -110,4 +110,3 @@ export const OrganizationChart = React.memo(
 );
 
 OrganizationChart.displayName = 'OrganizationChart';
-

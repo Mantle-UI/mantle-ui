@@ -8,7 +8,8 @@ export default function Footer() {
             <div>
                 <span>Mantle UI {version}</span>
                 <a href="https://github.com/Mantle-UI/mantle-ui" target="_blank" rel="noopener noreferrer">
-                    {' '}on GitHub
+                    {' '}
+                    on GitHub
                 </a>
             </div>
         </div>

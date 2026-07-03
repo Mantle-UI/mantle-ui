@@ -351,7 +351,7 @@ export interface InputNumberProps extends Omit<React.DetailedHTMLProps<React.HTM
  *
  * [Live Demo](https://www.primereact.org/inputnumber/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -376,4 +376,3 @@ export declare class InputNumber extends React.Component<InputNumberProps, any> 
      */
     public getInput(): typeof InputText | null;
 }
-

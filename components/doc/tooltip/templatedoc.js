@@ -21,7 +21,7 @@ export default function TemplateDemo() {
     return (
         <div className="card flex justify-content-center">
             <Tooltip target=".custom-tooltip-btn">
-                <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
+                <img alt="logo" src="/images/mantle-ui-logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
             </Tooltip>
 
             <Button className="custom-tooltip-btn" type="button" label="Save" icon="pi pi-check" />
@@ -38,7 +38,7 @@ export default function TemplateDemo() {
     return (
         <div className="card flex justify-content-center">
             <Tooltip target=".custom-tooltip-btn">
-                <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
+                <img alt="logo" src="/images/mantle-ui-logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
             </Tooltip>
 
             <Button className="custom-tooltip-btn" type="button" label="Save" icon="pi pi-check" />
@@ -57,7 +57,7 @@ export default function TemplateDemo() {
             </DocSectionText>
             <div className="card flex justify-content-center">
                 <Tooltip target=".custom-tooltip-btn">
-                    <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
+                    <img alt="logo" src="/images/mantle-ui-logo.png" data-pr-tooltip="MantleUI-Logo" height="80px" />
                 </Tooltip>
 
                 <Button className="custom-tooltip-btn" type="button" label="Save" icon="pi pi-check" />
@@ -66,4 +66,3 @@ export default function TemplateDemo() {
         </>
     );
 }
-

@@ -18,4 +18,3 @@ export function NextJSDoc(props) {
         </>
     );
 }
-

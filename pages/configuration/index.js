@@ -113,4 +113,3 @@ const InstallationPage = () => {
 };
 
 export default InstallationPage;
-

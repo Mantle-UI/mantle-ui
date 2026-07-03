@@ -1525,4 +1525,3 @@ export declare namespace FilterService {
     };
     export function register(rule: string, fn: (...arg: any[]) => boolean): void;
 }
-

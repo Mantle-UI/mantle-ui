@@ -324,4 +324,3 @@ export const Steps = React.memo(
 );
 
 Steps.displayName = 'Steps';
-

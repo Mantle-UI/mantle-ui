@@ -25,4 +25,3 @@ const BulmaDemo = () => {
 };
 
 export default BulmaDemo;
-

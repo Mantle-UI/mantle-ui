@@ -211,7 +211,7 @@ export interface MenubarProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
  *
  * [Live Demo](https://www.primereact.org/menubar/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -234,4 +234,3 @@ export declare class Menubar extends React.Component<MenubarProps, any> {
      */
     public getMenuButton(): HTMLElement | null;
 }
-

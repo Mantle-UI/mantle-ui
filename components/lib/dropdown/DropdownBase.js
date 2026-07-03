@@ -242,4 +242,3 @@ export const DropdownBase = ComponentBase.extend({
         inlineStyles
     }
 });
-

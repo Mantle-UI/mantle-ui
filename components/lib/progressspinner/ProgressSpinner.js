@@ -70,4 +70,3 @@ export const ProgressSpinner = React.memo(
 );
 
 ProgressSpinner.displayName = 'ProgressSpinner';
-

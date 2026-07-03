@@ -65,4 +65,3 @@ export const LastPageLink = React.memo((inProps) => {
 });
 
 LastPageLink.displayName = 'LastPageLink';
-

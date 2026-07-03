@@ -62,4 +62,3 @@ export default function Home() {
 Home.getLayout = function getLayout(page) {
     return page;
 };
-

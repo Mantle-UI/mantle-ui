@@ -373,7 +373,7 @@ export interface DataViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
  *
  * [Live Demo](https://www.primereact.org/dataview/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  *
@@ -386,4 +386,3 @@ export declare class DataView extends React.Component<DataViewProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

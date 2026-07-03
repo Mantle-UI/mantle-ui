@@ -274,7 +274,7 @@ export interface PanelProps extends Omit<React.DetailedHTMLProps<React.HTMLAttri
  *
  * [Live Demo](https://www.primereact.org/panel/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -305,4 +305,3 @@ export declare class Panel extends React.Component<PanelProps, any> {
      */
     public collapse(event: React.SyntheticEvent | undefined): void;
 }
-

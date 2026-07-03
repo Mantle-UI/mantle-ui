@@ -347,4 +347,3 @@ export const Accordion = React.forwardRef((inProps, ref) => {
 AccordionTab.displayName = 'AccordionTab';
 
 Accordion.displayName = 'Accordion';
-

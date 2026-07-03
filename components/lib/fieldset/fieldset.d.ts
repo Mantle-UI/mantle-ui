@@ -192,7 +192,7 @@ export interface FieldsetProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
  *
  * [Live Demo](https://www.primereact.org/fieldset/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -208,4 +208,3 @@ export declare class Fieldset extends React.Component<FieldsetProps, any> {
      */
     public getContent(): HTMLDivElement | null;
 }
-

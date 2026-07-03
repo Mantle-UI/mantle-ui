@@ -179,4 +179,3 @@ export const Toast = React.memo(
 );
 
 Toast.displayName = 'Toast';
-

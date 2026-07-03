@@ -66,4 +66,3 @@ export const PrevPageLink = React.memo((inProps) => {
 });
 
 PrevPageLink.displayName = 'PrevPageLink';
-

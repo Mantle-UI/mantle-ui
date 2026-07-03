@@ -178,7 +178,7 @@ interface TooltipHTMLAttributes {
      *
      * Content of the tooltip.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -191,7 +191,7 @@ interface TooltipHTMLAttributes {
      *
      * When present, it specifies that the tooltip should be hidden.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -205,7 +205,7 @@ interface TooltipHTMLAttributes {
      *
      * Style class of the tooltip.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -218,7 +218,7 @@ interface TooltipHTMLAttributes {
      *
      * Position of the tooltip.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -232,7 +232,7 @@ interface TooltipHTMLAttributes {
      *
      * Defines which position on the tooltip being positioned to align with the target element.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -245,7 +245,7 @@ interface TooltipHTMLAttributes {
      *
      * Defines which position on the target element to align the positioned tooltip.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -258,7 +258,7 @@ interface TooltipHTMLAttributes {
      *
      * Event to show the tooltip.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -272,7 +272,7 @@ interface TooltipHTMLAttributes {
      *
      * Event to show the tooltip if the event property is empty.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -286,7 +286,7 @@ interface TooltipHTMLAttributes {
      *
      * Event to hide the tooltip if the event property is empty.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -300,7 +300,7 @@ interface TooltipHTMLAttributes {
      *
      * Whether the tooltip will follow the mouse.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -314,7 +314,7 @@ interface TooltipHTMLAttributes {
      *
      * Defines top position of the tooltip in relation to the mouse when the mouseTrack is enabled.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -328,7 +328,7 @@ interface TooltipHTMLAttributes {
      *
      * Defines left position of the tooltip in relation to the mouse when the mouseTrack is enabled.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -342,7 +342,7 @@ interface TooltipHTMLAttributes {
      *
      * Delay to show the tooltip in milliseconds.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -356,7 +356,7 @@ interface TooltipHTMLAttributes {
      *
      * Delay to update the tooltip in milliseconds.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -370,7 +370,7 @@ interface TooltipHTMLAttributes {
      *
      * Delay to hide the tooltip in milliseconds.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -384,7 +384,7 @@ interface TooltipHTMLAttributes {
      *
      * Whether to hide tooltip when hovering over tooltip content.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -398,7 +398,7 @@ interface TooltipHTMLAttributes {
      *
      * Whether to show tooltip for disabled elements.*
      *
-     * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+     * ![MantleUI](/images/mantle-ui-logo.png)
      * ___
      *
      * _*This feature will be active when there is a MantleUI {@link tooltip} component on the page._
@@ -412,4 +412,3 @@ interface TooltipHTMLAttributes {
 declare module 'react' {
     export interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T>, TooltipHTMLAttributes {}
 }
-

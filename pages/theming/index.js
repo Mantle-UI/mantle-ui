@@ -106,4 +106,3 @@ const ThemingDoc = () => {
 };
 
 export default ThemingDoc;
-

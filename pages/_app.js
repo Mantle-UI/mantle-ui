@@ -65,4 +65,3 @@ export default function MyApp({ Component, pageProps }) {
         </AppContentContext.Provider>
     );
 }
-

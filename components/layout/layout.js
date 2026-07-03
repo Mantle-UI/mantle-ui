@@ -74,7 +74,7 @@ export default function Layout({ children }) {
                 <meta property="og:title" content="Mantle UI | React Component Library" />
                 <meta property="og:url" content="https://github.com/Mantle-UI/mantle-ui" />
                 <meta property="og:description" content="Mantle UI is a flexible and accessible React component library." />
-                <meta property="og:image" content="/images/logo-100.png" />
+                <meta property="og:image" content="/images/mantle-ui-logo.png" />
                 <meta property="og:ttl" content="604800" />
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
             </Head>
@@ -90,4 +90,3 @@ export default function Layout({ children }) {
         </div>
     );
 }
-

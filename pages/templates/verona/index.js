@@ -219,4 +219,3 @@ const VeronaPage = () => {
 };
 
 export default VeronaPage;
-

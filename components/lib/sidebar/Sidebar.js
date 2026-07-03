@@ -309,4 +309,3 @@ export const Sidebar = React.forwardRef((inProps, ref) => {
 });
 
 Sidebar.displayName = 'Sidebar';
-

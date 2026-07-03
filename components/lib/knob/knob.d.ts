@@ -184,7 +184,7 @@ export interface KnobProps extends Omit<React.DetailedHTMLProps<React.InputHTMLA
  *
  * [Live Demo](https://www.primereact.org/knob/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -195,4 +195,3 @@ export declare class Knob extends React.Component<KnobProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

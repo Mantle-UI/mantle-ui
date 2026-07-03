@@ -120,4 +120,3 @@ export const OverlayPanelBase = ComponentBase.extend({
         styles
     }
 });
-

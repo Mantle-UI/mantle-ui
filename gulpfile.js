@@ -18,7 +18,7 @@ gulp.task('build-css', function () {
 });
 
 gulp.task('build-mantle-ui-react-css', function () {
-    return gulp.src(['./styles/primereact.css']).pipe(concat('mantle-ui-react.css')).pipe(gulp.dest('dist/resources')).pipe(rename('mantle-ui-react.min.css')).pipe(gulp.dest('dist/resources'));
+    return gulp.src(['./styles/mantle-ui-react.css']).pipe(concat('mantle-ui-react.css')).pipe(gulp.dest('dist/resources')).pipe(rename('mantle-ui-react.min.css')).pipe(gulp.dest('dist/resources'));
 });
 
 gulp.task('build-themes', function () {

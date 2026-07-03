@@ -140,4 +140,3 @@ export const BlockUI = React.forwardRef((inProps, ref) => {
 });
 
 BlockUI.displayName = 'BlockUI';
-

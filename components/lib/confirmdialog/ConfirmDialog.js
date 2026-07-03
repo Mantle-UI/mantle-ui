@@ -270,4 +270,3 @@ export const ConfirmDialog = React.memo(
 );
 
 ConfirmDialog.displayName = 'ConfirmDialog';
-

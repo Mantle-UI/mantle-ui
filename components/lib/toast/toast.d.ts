@@ -316,7 +316,7 @@ export interface ToastProps extends Omit<React.DetailedHTMLProps<React.HTMLAttri
  *
  * [Live Demo](https://www.primereact.org/toast/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -346,4 +346,3 @@ export declare class Toast extends React.Component<ToastProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

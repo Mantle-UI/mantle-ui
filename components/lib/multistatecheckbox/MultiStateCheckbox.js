@@ -209,4 +209,3 @@ export const MultiStateCheckbox = React.memo(
 );
 
 MultiStateCheckbox.displayName = 'MultiStateCheckbox';
-

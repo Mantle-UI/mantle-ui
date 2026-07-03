@@ -46,4 +46,3 @@ export const Portal = React.memo((inProps) => {
 });
 
 Portal.displayName = 'Portal';
-

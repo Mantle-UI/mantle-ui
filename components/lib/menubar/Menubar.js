@@ -697,4 +697,3 @@ export const Menubar = React.memo(
 );
 
 Menubar.displayName = 'Menubar';
-

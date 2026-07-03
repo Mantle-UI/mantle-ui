@@ -69,4 +69,3 @@ export const Toolbar = React.memo(
 );
 
 Toolbar.displayName = 'Toolbar';
-

@@ -238,4 +238,3 @@ export const useLocale = () => {
     return { locale, addLocale, updateLocaleOption, updateLocaleOptions, localeOption, localeOptions, ariaLabel };
 };
 /* eslint-enable */
-

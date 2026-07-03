@@ -997,7 +997,7 @@ export interface CalendarProps<TMode extends CalendarSelectionMode = 'single', T
  *
  * [Live Demo](https://www.primereact.org/calendar/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -1046,4 +1046,3 @@ export declare class Calendar<TMode extends CalendarSelectionMode = 'single', TV
      */
     public updateViewDate(event: React.SyntheticEvent | null, value: Nullable<TValue>): void;
 }
-

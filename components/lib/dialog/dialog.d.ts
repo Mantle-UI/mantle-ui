@@ -446,7 +446,7 @@ export interface DialogProps {
  *
  * [Live Demo](https://www.primereact.org/dialog/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -486,4 +486,3 @@ export declare class Dialog extends React.Component<DialogProps, any> {
      */
     public getCloseButton(): HTMLButtonElement | null;
 }
-

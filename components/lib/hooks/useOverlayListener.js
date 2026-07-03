@@ -81,4 +81,3 @@ export const useOverlayListener = ({ target, overlay, listener, when = true, typ
     return [bind, unbind];
 };
 /* eslint-enable */
-

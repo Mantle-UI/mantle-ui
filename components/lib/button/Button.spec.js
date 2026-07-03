@@ -163,4 +163,3 @@ describe('Button', () => {
         expect(container).toMatchSnapshot();
     });
 });
-

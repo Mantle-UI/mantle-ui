@@ -291,7 +291,7 @@ export interface CarouselProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
  *
  * [Live Demo](https://www.primereact.org/carousel/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
@@ -310,4 +310,3 @@ export declare class Carousel extends React.Component<CarouselProps, any> {
      */
     public getElement(): HTMLDivElement | null;
 }
-

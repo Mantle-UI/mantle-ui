@@ -349,4 +349,3 @@ export const MultiSelectPanel = React.memo(
 );
 
 MultiSelectPanel.displayName = 'MultiSelectPanel';
-

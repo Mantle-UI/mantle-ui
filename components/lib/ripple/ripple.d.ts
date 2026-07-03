@@ -65,9 +65,8 @@ export interface RippleProps {
  *
  * [Live Demo](https://www.primereact.org/ripple/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  */
 export declare class Ripple extends React.Component<RippleProps, any> {}
-

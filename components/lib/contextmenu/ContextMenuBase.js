@@ -99,4 +99,3 @@ export const ContextMenuBase = ComponentBase.extend({
         styles
     }
 });
-

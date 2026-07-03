@@ -78,10 +78,9 @@ export interface ButtonGroupProps {
  *
  * [Live Demo](https://www.primereact.org/button/)
  * --- ---
- * ![MantleUI](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](/images/mantle-ui-logo.png)
  *
  * @group Component
  *
  */
 export declare const ButtonGroup: React.ForwardRefExoticComponent<React.PropsWithChildren<ButtonGroupProps> & React.RefAttributes<HTMLDivElement>>;
-

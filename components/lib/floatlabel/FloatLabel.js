@@ -35,4 +35,3 @@ export const FloatLabel = React.memo(
 );
 
 FloatLabel.displayName = 'FloatLabel';
-

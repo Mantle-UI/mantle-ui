@@ -1,14 +1,8 @@
 name: Bug report
-description: Create a report to help PrimeReact improve.
+description: Create a report to help Mantle UI improve.
 title: 'Replace_With_Component_Name: Brief_Bug_Description'
 labels: ['Status: Needs Triage']
 body:
-    - type: markdown
-      attributes:
-          # yamllint disable rule:line-length
-          value: >
-              ### There is no guarantee in receiving an immediate response in GitHub Issue Tracker, If you'd like to secure our response, you may consider *PrimeReact PRO Support* where support is provided within 4 business hours
-          # yamllint enable rule:line-length
     - type: textarea
       id: description
       attributes:

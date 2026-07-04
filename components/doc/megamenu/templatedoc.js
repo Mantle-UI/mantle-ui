@@ -3,7 +3,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 import { Avatar } from '@/components/lib/avatar/Avatar';
 import { MegaMenu } from '@/components/lib/megamenu/MegaMenu';
 import { Button } from '@/components/lib/button/Button';
-import { Ripple } from '@/components/lib/primereact.all';
+import { Ripple } from '@/components/lib/mantle-ui-react.all';
 
 export function TemplateDoc(props) {
     const itemRenderer = (item) => {

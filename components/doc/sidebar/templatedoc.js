@@ -2,7 +2,7 @@ import { DocSectionCode } from '@/components/doc/common/docsectioncode';
 import { DocSectionText } from '@/components/doc/common/docsectiontext';
 import { Button } from '@/components/lib/button/Button';
 import { Sidebar } from '@/components/lib/sidebar/Sidebar';
-import { Avatar } from '@/components/lib/primereact.all';
+import { Avatar } from '@/components/lib/mantle-ui-react.all';
 import React, { useState } from 'react';
 
 export function TemplateDoc(props) {

@@ -2,7 +2,7 @@ import { DocSectionCode } from '@/components/doc/common/docsectioncode';
 import { DocSectionText } from '@/components/doc/common/docsectiontext';
 import { Button } from '@/components/lib/button/Button';
 import { Dialog } from '@/components/lib/dialog/Dialog';
-import { InputText } from '@/components/lib/primereact.all';
+import { InputText } from '@/components/lib/mantle-ui-react.all';
 import { useState } from 'react';
 
 export function HeadlessDoc(props) {

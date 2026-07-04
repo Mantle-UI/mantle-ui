@@ -11,7 +11,7 @@ import { ResponsiveDoc } from '@/components/doc/confirmdialog/responsivedoc';
 import { TemplateDoc } from '@/components/doc/confirmdialog/templatedoc';
 import { StyledDoc } from '@/components/doc/confirmdialog/theming/styleddoc';
 import { TailwindDoc } from '@/components/doc/confirmdialog/theming/tailwinddoc';
-import { ConfirmDialog } from '@/components/lib/primereact.all';
+import { ConfirmDialog } from '@/components/lib/mantle-ui-react.all';
 
 const ConfirmDialogDemo = () => {
     const docs = [

@@ -2,7 +2,7 @@ name: Generate API DOC
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - '**/**/*.d.ts'
       - 'api-generator/build-apidoc.js'

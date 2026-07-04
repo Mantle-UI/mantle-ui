@@ -12,12 +12,12 @@ permissions:
 
 jobs:
   build:
-    if: github.repository == 'primefaces/primereact' && github.ref == 'refs/heads/master'
+    if: github.repository == 'Mantle-UI/mantle-ui' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
     - uses: actions/checkout@v6

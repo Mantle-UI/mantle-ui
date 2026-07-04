@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ariaLabel, PrimeReactContext } from '../api/Api';
+import { ariaLabel, MantleContext } from '../api/Api';
 import { useMergeProps } from '../hooks/Hooks';
 import { AngleLeftIcon } from '../icons/angleleft';
 import { Ripple } from '../ripple/Ripple';
@@ -8,7 +8,7 @@ import { PrevPageLinkBase } from './PaginatorBase';
 
 export const PrevPageLink = React.memo((inProps) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = PrevPageLinkBase.getProps(inProps, context);
     const { ptm, cx } = props;
 

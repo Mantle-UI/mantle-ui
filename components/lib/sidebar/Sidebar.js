@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, ariaLabel } from '../api/Api';
+import MantleUI, { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useEventListener, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -11,7 +11,7 @@ import { SidebarBase } from './SidebarBase';
 
 export const Sidebar = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = SidebarBase.getProps(inProps, context);
 
     const [maskVisibleState, setMaskVisibleState] = React.useState(false);
@@ -138,7 +138,7 @@ export const Sidebar = React.forwardRef((inProps, ref) => {
 
     useUpdateEffect(() => {
         if (maskVisibleState) {
-            ZIndexUtils.set('modal', maskRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex.modal) || PrimeReact.zIndex.modal);
+            ZIndexUtils.set('modal', maskRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex.modal) || MantleUI.zIndex.modal);
             setVisibleState(true);
         }
     }, [maskVisibleState]);

@@ -59,8 +59,8 @@ const animationFeaturesData1 = [
     },
     {
         id: 3,
-        title: 'PrimeIcons',
-        description: 'Diamond ships with PrimeIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
+        title: 'MantleIcons',
+        description: 'Diamond ships with MantleIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/apollo/features-animation-icons.png'
     },
     {
@@ -69,8 +69,8 @@ const animationFeaturesData1 = [
         description: (
             <>
                 Diamond uses Figma as the design tool. It will be possible to download the Figma file after your purchase. You can{' '}
-                <a href="https://www.figma.com/file/lKooXEoqqWz7PBYwJ7B8QS/Preview-%7C-Diamond-2022?node-id=271%3A12531">preview the Figma file</a> before the purchase. Note that PrimeReact UI components are excluded from the Diamond Figma file as
-                they are available in <Link href="/uikit">PrimeOne for Figma</Link> only.
+                <a href="https://www.figma.com/file/lKooXEoqqWz7PBYwJ7B8QS/Preview-%7C-Diamond-2022?node-id=271%3A12531">preview the Figma file</a> before the purchase. Note that MantleUI UI components are excluded from the Diamond Figma file as they
+                are available in <Link href="/uikit">PrimeOne for Figma</Link> only.
             </>
         ),
         src: 'https://primefaces.org/cdn/primereact/images/templates/diamond/features-animation-figma.png'
@@ -189,7 +189,7 @@ const templateHeroData = {
     pattern: 'https://primefaces.org/cdn/primereact/images/templates/diamond/diamond-hero-pattern.png',
     dashboard1: 'https://primefaces.org/cdn/primereact/images/templates/diamond/diamond-hero-dashboard1.png',
     dashboard2: 'https://primefaces.org/cdn/primereact/images/templates/diamond/diamond-hero-dashboard2.png',
-    description: 'An amazing application template for React based on the popular NextJS framework with light-dim-dark modes, 7 menu layouts, various menu themes, sample apps, ready to use template pages and 30 PrimeReact themes.',
+    description: 'An amazing application template for React based on the popular NextJS framework with light-dim-dark modes, 7 menu layouts, various menu themes, sample apps, ready to use template pages and 30 MantleUI themes.',
     liveHref: 'https://diamond.primereact.org',
     docHref: 'https://diamond.primereact.org/documentation',
     storeHref: 'https://primeui.store/templates/react/diamond'

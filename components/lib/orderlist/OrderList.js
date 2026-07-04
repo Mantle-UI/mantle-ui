@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { FilterService, PrimeReactContext } from '../api/Api';
+import MantleUI, { FilterService, MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { DomHandler, ObjectUtils, UniqueComponentId, classNames } from '../utils/Utils';
@@ -10,7 +10,7 @@ import { OrderListSubList } from './OrderListSubList';
 export const OrderList = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = OrderListBase.getProps(inProps, context);
 
         const [selectionState, setSelectionState] = React.useState([]);
@@ -402,7 +402,7 @@ export const OrderList = React.memo(
 
         const createStyle = () => {
             if (!styleElementRef.current) {
-                styleElementRef.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+                styleElementRef.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
 
                 let innerHTML = `
 @media screen and (max-width: ${props.breakpoint}) {

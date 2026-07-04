@@ -558,13 +558,13 @@ export interface AutoCompleteProps<T = any, M extends boolean = false> extends O
 }
 
 /**
- * **PrimeReact - AutoComplete**
+ * **MantleUI - AutoComplete**
  *
  * _AutoComplete is an input component that provides real-time suggestions while being typed._
  *
  * [Live Demo](https://www.primereact.org/autocomplete/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

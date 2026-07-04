@@ -684,13 +684,13 @@ export interface TreeProps {
 }
 
 /**
- * **PrimeReact - Tree**
+ * **MantleUI - Tree**
  *
  * _Tree is used to display hierarchical data._
  *
  * [Live Demo](https://www.primereact.org/tree/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

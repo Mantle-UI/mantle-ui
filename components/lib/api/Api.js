@@ -3,11 +3,11 @@ import { FilterOperator } from './FilterOperator';
 import { FilterService } from './FilterService';
 import { addLocale, ariaLabel, locale, localeOption, localeOptions, updateLocaleOption, updateLocaleOptions } from './Locale';
 import { MessageSeverity } from './MessageSeverity';
-import { PrimeIcons } from './PrimeIcons';
-import PrimeReact from './PrimeReact';
+import { MantleIcons } from './MantleIcons';
+import MantleUI from './MantleUI';
 import { SortOrder } from './SortOrder';
-import { PrimeReactContext, PrimeReactProvider } from './PrimeReactContext';
+import { MantleContext, MantleProvider } from './MantleContext';
 
-export default PrimeReact;
+export default MantleUI;
 
-export { locale, addLocale, ariaLabel, localeOption, localeOptions, updateLocaleOption, updateLocaleOptions, PrimeIcons, MessageSeverity, FilterMatchMode, FilterOperator, FilterService, SortOrder, PrimeReactProvider, PrimeReactContext };
+export { locale, addLocale, ariaLabel, localeOption, localeOptions, updateLocaleOption, updateLocaleOptions, MantleIcons, MessageSeverity, FilterMatchMode, FilterOperator, FilterService, SortOrder, MantleProvider, MantleContext };

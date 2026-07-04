@@ -285,13 +285,13 @@ export interface CarouselProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - Carousel**
+ * **MantleUI - Carousel**
  *
  * _Carousel is a content slider featuring various customization options._
  *
  * [Live Demo](https://www.primereact.org/carousel/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

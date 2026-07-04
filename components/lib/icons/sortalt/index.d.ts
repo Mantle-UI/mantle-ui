@@ -8,11 +8,11 @@ import { IconBaseProps } from '../../iconbase';
 export interface SortAltIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - SortAltIcon**
+ * **MantleUI - SortAltIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

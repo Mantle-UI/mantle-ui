@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useUpdateEffect } from '../hooks/Hooks';
 import { ObjectUtils, classNames } from '../utils/Utils';
@@ -16,7 +16,7 @@ import { RowsPerPageDropdown } from './RowsPerPageDropdown';
 export const Paginator = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = PaginatorBase.getProps(inProps, context);
         const metaData = {
             props,

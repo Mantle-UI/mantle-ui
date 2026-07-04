@@ -47,13 +47,13 @@ export interface OverlayServiceOptions {
 }
 
 /**
- * **PrimeReact - OverlayService**
+ * **MantleUI - OverlayService**
  *
  * _OverlayService allows all overlay components to communicate with each other._
  *
  * [Live Demo](https://www.primereact.org/dropdown/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Service
  */

@@ -1,30 +1,28 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm version](https://badge.fury.io/js/primereact.svg)](https://badge.fury.io/js/primereact)
-![NPM Downloads](https://img.shields.io/npm/dm/primereact?color=purple)
-[![Actions CI](https://github.com/primefaces/primereact/workflows/NodeJS%20CI/badge.svg)](https://github.com/primefaces/primereact/actions/workflows/node.js.yml)
-[![Discord Chat](https://img.shields.io/discord/557940238991753223.svg?color=7289da&label=chat&logo=discord)](https://discord.gg/gzKFYnpmCY)
-[![Stackoverflow](https://img.shields.io/badge/StackOverflow-primereact-chocolate.svg)](https://stackoverflow.com/questions/tagged/primereact)
-[![Prime Discussions](https://img.shields.io/github/discussions-search?query=org%3Aprimefaces&logo=github&label=Prime%20Discussions&link=https%3A%2F%2Fgithub.com%2Forgs%2Fprimefaces%2Fdiscussions)](https://github.com/orgs/primefaces/discussions)
+[![GitHub](https://img.shields.io/badge/GitHub-Mantle--UI%2Fmantle--ui-181717?logo=github)](https://github.com/Mantle-UI/mantle-ui)
+[![npm package](https://img.shields.io/badge/npm-%40mantle--ui%2Freact-CB3837?logo=npm)](https://www.npmjs.com/package/@mantle-ui/react)
 
-[![PrimeReact Hero](https://www.primefaces.org/static/social/primereact-preview.jpg)](https://www.primereact.org)
+[![Mantle UI](https://github.com/Mantle-UI/mantle-ui/raw/main/public/images/mantle-logo-text.png)](https://github.com/Mantle-UI/mantle-ui)
 
-# PrimeReact
+# Mantle UI
 
-PrimeReact is a rich set of open source UI Components for React. See [PrimeReact homepage](https://primereact.org/) for live showcase and documentation. 
+Mantle UI is an independent community-maintained React component library continued from the MIT-licensed PrimeReact v10 codebase.
+
+Mantle UI is not affiliated with PrimeTek, PrimeReact, or ngrok.
 
 ## Download
 
-PrimeReact is available at [npm](https://www.npmjs.com/package/primereact).
+Mantle UI is published as [`@mantle-ui/react`](https://www.npmjs.com/package/@mantle-ui/react).
 
 ```
 # Using npm
-npm install primereact
+npm install @mantle-ui/react
 
 # Using yarn
-yarn add primereact
+yarn add @mantle-ui/react
 
 # Using pnpm
-pnpm add primereact
+pnpm add @mantle-ui/react
 ```
 
 ## Import
@@ -32,35 +30,34 @@ pnpm add primereact
 Each component can be imported individually so that you only bundle what you use. Import path is available in the documentation of the corresponding component.
 
 ```javascript
-//import { ComponentName } from 'primereact/{componentname}';
-import { Button } from 'primereact/button';
+// import { ComponentName } from '@mantle-ui/react/{componentname}';
+import { Button } from '@mantle-ui/react/button';
 
 export default function MyComponent() {
-  return (
-    <Button label="PrimeReact" />
-  )
+    return <Button label="Mantle UI" />;
 }
 ```
 
 ## Theming
 
-PrimeReact has two theming modes; styled or unstyled.
+Mantle UI has two theming modes; styled or unstyled.
 
 **Styled Mode**
 
-Styled mode is based on pre-skinned components with opinionated themes like Material, Bootstrap or PrimeOne themes. Theme is the required css file to be imported, visit the [Themes](https://primereact.org/theming) section for the complete list of available themes to choose from.
+Styled mode is based on pre-skinned components with opinionated themes. Import the theme and core styles from the package resources.
 
 ```javascript
 // theme
-import 'primereact/resources/themes/lara-light-cyan/theme.css';
+import '@mantle-ui/react/resources/themes/lara-light-cyan/theme.css';
+import '@mantle-ui/react/resources/mantle-ui-react.css';
 ```
 
 **Unstyled Mode**
 
-Unstyled mode is disabled by default for all components. Using the PrimeReact context, set `unstyled` as true to enable it globally. Visit the [Unstyled mode](https://primereact.org/unstyled) documentation for more information and examples.
+Unstyled mode is disabled by default for all components. Using the Mantle UI context, set `unstyled` as true to enable it globally.
 
 ## Contributors
 
-<a href="https://github.com/primefaces/primereact/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=primefaces/primereact" />
+<a href="https://github.com/Mantle-UI/mantle-ui/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Mantle-UI/mantle-ui" />
 </a>

@@ -51,13 +51,13 @@ const ContributionPage = () => {
     return (
         <div>
             <Head>
-                <title>Contribution - PrimeReact</title>
+                <title>Contribution - MantleUI</title>
             </Head>
             <div className="doc">
                 <div className="doc-main">
                     <div className="doc-intro">
                         <h1>Contribution Guide</h1>
-                        <p>Welcome to the PrimeReact Contribution Guide and thank you for considering contributing.</p>
+                        <p>Welcome to the MantleUI Contribution Guide and thank you for considering contributing.</p>
                     </div>
                     <DocSections docs={docs} />
                 </div>

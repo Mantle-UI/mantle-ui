@@ -29,7 +29,7 @@ const InstallationPage = () => {
         {
             id: 'theming',
             label: 'Theming',
-            description: 'PrimeReact has two theming modes; styled or unstyled.',
+            description: 'MantleUI has two theming modes; styled or unstyled.',
             children: [
                 {
                     id: 'styled',
@@ -65,14 +65,14 @@ const InstallationPage = () => {
     return (
         <div>
             <Head>
-                <title>Getting Started - PrimeReact</title>
-                <meta name="description" content="PrimeReact is a rich set of open source components for React." />
+                <title>Getting Started - MantleUI</title>
+                <meta name="description" content="MantleUI is a rich set of open source components for React." />
             </Head>
             <div className="doc">
                 <div className="doc-main">
                     <div className="doc-intro">
                         <h1>Installation</h1>
-                        <p>PrimeReact is a rich set of open source UI components for React.</p>
+                        <p>MantleUI is a rich set of open source UI components for React.</p>
                     </div>
                     <DocSections docs={docs} />
                 </div>

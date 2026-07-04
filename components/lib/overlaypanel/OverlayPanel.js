@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, ariaLabel } from '../api/Api';
+import MantleUI, { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useOverlayListener, useUnmountEffect } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ import { OverlayPanelBase } from './OverlayPanelBase';
 
 export const OverlayPanel = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = OverlayPanelBase.getProps(inProps, context);
     const [visibleState, setVisibleState] = React.useState(false);
 
@@ -132,7 +132,7 @@ export const OverlayPanel = React.forwardRef((inProps, ref) => {
 
     const onEnter = () => {
         overlayRef.current.setAttribute(attributeSelector.current, '');
-        ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.overlay) || PrimeReact.zIndex.overlay);
+        ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
         DomHandler.addStyles(overlayRef.current, { position: 'absolute', top: '0', left: '0' });
         align();
     };
@@ -196,7 +196,7 @@ export const OverlayPanel = React.forwardRef((inProps, ref) => {
 
     const createStyle = () => {
         if (!styleElement.current) {
-            styleElement.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+            styleElement.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
 
             let innerHTML = '';
 

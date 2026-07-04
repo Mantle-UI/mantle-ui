@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { DomHandler } from '../utils/Utils';
 
 let _id = 0;
@@ -7,7 +7,7 @@ let _id = 0;
 export const useStyle = (css, options = {}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const styleRef = useRef(null);
-    const context = useContext(PrimeReactContext);
+    const context = useContext(MantleContext);
 
     const defaultDocument = DomHandler.isClient() ? window.document : undefined;
     const { document = defaultDocument, manual = false, name = `style_${++_id}`, id = undefined, media = undefined } = options;
@@ -55,7 +55,7 @@ export const useStyle = (css, options = {}) => {
                 styleRef.current.media = media;
             }
 
-            DomHandler.addNonce(styleRef.current, (context && context.nonce) || PrimeReact.nonce);
+            DomHandler.addNonce(styleRef.current, (context && context.nonce) || MantleUI.nonce);
             styleContainer.appendChild(styleRef.current);
 
             if (name) {

@@ -1,4 +1,4 @@
-import PrimeReact, { FilterMatchMode } from '../api/Api';
+import MantleUI, { FilterMatchMode } from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { ObjectUtils, classNames } from '../utils/Utils';
 
@@ -382,8 +382,8 @@ const classes = {
     filterOverlay: ({ columnFilterProps: props, context, getColumnProp }) =>
         classNames('p-column-filter-overlay p-component p-fluid', getColumnProp('filterMenuClassName'), {
             'p-column-filter-overlay-menu': props.display === 'menu',
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     columnFilter: ({ columnFilterProps: props }) =>
         classNames('p-column-filter p-fluid', {

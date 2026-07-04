@@ -148,13 +148,13 @@ export interface ChipProps extends Omit<React.DetailedHTMLProps<React.HTMLAttrib
 }
 
 /**
- * **PrimeReact - Chip**
+ * **MantleUI - Chip**
  *
  * _Chip represents people using icons, labels and images._
  *
  * [Live Demo](https://www.primereact.org/chip/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { ObjectUtils, classNames } from '../utils/Utils';
 
@@ -25,8 +25,8 @@ const classes = {
             'p-multiselect-inline': props.inline,
             'p-multiselect-flex': props.flex,
             'p-multiselect-limited': !allowOptionSelect,
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     list: ({ virtualScrollerOptions }) => (virtualScrollerOptions ? 'p-multiselect-items p-component' : 'p-multiselect-items p-component'),
     labelContainer: 'p-multiselect-label-container',

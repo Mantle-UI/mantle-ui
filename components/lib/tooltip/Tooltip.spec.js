@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { PrimeReactProvider } from '../api/Api';
+import { MantleProvider } from '../api/Api';
 import { Button } from '../button/Button';
 import { InputText } from '../inputtext/InputText';
 import { Tooltip } from './Tooltip';
@@ -10,9 +10,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /Manual zIndex/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="Manual zIndex" tooltipOptions={{ autoZIndex: false, style: { zIndex: 6666 } }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -31,9 +31,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /Auto zIndex/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="Auto zIndex" tooltipOptions={{ autoZIndex: true, baseZIndex: 500 }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -52,9 +52,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /Mouse Enter/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="Mouse Enter" tooltipOptions={{ position: 'right', showDelay: 1 }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -75,9 +75,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /Focus Blur/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="Focus Blur" tooltipOptions={{ event: 'focus' }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -98,9 +98,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /Both/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="Both" tooltipOptions={{ event: 'both' }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -134,9 +134,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /Disabled/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText disabled tooltip="Disabled" />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-disabled')[0];
 
@@ -153,12 +153,12 @@ describe('Tooltip', () => {
         const tooltipText = /Disabled/i;
         const { container } = render(
             <>
-                <PrimeReactProvider>
+                <MantleProvider>
                     <Tooltip target=".disabled-button" />
                     <span className="disabled-button" data-pr-tooltip="A Disabled Button">
                         <Button type="button" label="Save" icon="pi pi-check" disabled />
                     </span>
-                </PrimeReactProvider>
+                </MantleProvider>
             </>
         );
         const input = container.getElementsByClassName('disabled-button')[0];
@@ -176,9 +176,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /right/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="right" tooltipOptions={{ position: 'right' }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -197,9 +197,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /left/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="left" tooltipOptions={{ position: 'left' }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -218,9 +218,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /top/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="top" tooltipOptions={{ position: 'top' }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -239,9 +239,9 @@ describe('Tooltip', () => {
         // Arrange
         const tooltipText = /bottom/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <InputText tooltip="bottom" tooltipOptions={{ position: 'bottom' }} />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
@@ -264,12 +264,12 @@ describe('Tooltip', () => {
         const hideOn = jest.fn();
         const tooltipText = /Events Button/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Tooltip target=".events-button" onBeforeHide={hideBeforeOn} onBeforeShow={showBeforeOn} onShow={showOn} onHide={hideOn} />
                 <span className="events-button" data-pr-tooltip="Events Button">
                     <Button type="button" label="Events" />
                 </span>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('events-button')[0];
 
@@ -305,12 +305,12 @@ describe('Tooltip', () => {
         const showOn = jest.fn();
         const tooltipText = /Show/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Tooltip target=".events-button" onBeforeShow={showBeforeOn} onShow={showOn} />
                 <span className="events-button" data-pr-tooltip="Show">
                     <Button type="button" label="Events" />
                 </span>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('events-button')[0];
 
@@ -330,12 +330,12 @@ describe('Tooltip', () => {
         const hideOn = jest.fn();
         const tooltipText = /Hide/i;
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Tooltip target=".events-button" onBeforeHide={hideBeforeOn} onHide={hideOn} />
                 <span className="events-button" data-pr-tooltip="Hide">
                     <Button type="button" label="Events" />
                 </span>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const input = container.getElementsByClassName('events-button')[0];
 

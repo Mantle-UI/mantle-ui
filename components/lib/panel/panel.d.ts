@@ -268,13 +268,13 @@ export interface PanelProps extends Omit<React.DetailedHTMLProps<React.HTMLAttri
 }
 
 /**
- * **PrimeReact - Panel**
+ * **MantleUI - Panel**
  *
  * _Panel is a grouping component providing with content toggle feature._
  *
  * [Live Demo](https://www.primereact.org/panel/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

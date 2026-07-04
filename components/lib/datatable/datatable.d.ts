@@ -1938,13 +1938,13 @@ interface DataTablePropsCellMultiple<TValue extends DataTableValueArray> extends
 export type DataTableProps<TValue extends DataTableValueArray> = DataTablePropsSingle<TValue> | DataTablePropsCellSingle<TValue> | DataTablePropsMultiple<TValue> | DataTablePropsCellMultiple<TValue>;
 
 /**
- * **PrimeReact - DataTable<TValue**
+ * **MantleUI - DataTable<TValue**
  *
  * _DataTable displays data in tabular format._
  *
  * [Live Demo](https://www.primereact.org/datatable/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

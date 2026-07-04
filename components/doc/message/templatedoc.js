@@ -5,7 +5,7 @@ import { Message } from '@/components/lib/message/Message';
 export function TemplateDoc(props) {
     const content = (
         <div className="flex align-items-center">
-            <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="32" />
+            <img alt="logo" src="/images/mantle-ui-logo.png" width="32" />
             <div className="ml-2">Always bet on Prime.</div>
         </div>
     );
@@ -30,7 +30,7 @@ import { Message } from 'primereact/message';
 export default function TemplateDemo() {
     const content = (
         <div className="flex align-items-center">
-            <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="32" />
+            <img alt="logo" src="/images/mantle-ui-logo.png" width="32" />
             <div className="ml-2">Always bet on Prime.</div>
         </div>
     );
@@ -58,7 +58,7 @@ import { Message } from 'primereact/message';
 export default function TemplateDemo() {
     const content = (
         <div className="flex align-items-center">
-            <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="32" />
+            <img alt="logo" src="/images/mantle-ui-logo.png" width="32" />
             <div className="ml-2">Always bet on Prime.</div>
         </div>
     );

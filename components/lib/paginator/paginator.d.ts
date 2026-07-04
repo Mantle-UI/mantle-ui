@@ -727,13 +727,13 @@ export interface PaginatorProps extends Omit<React.DetailedHTMLProps<React.HTMLA
 }
 
 /**
- * **PrimeReact - Paginator**
+ * **MantleUI - Paginator**
  *
  * _Paginator is a generic widget to display content in paged format._
  *
  * [Live Demo](https://www.primereact.org/paginator/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

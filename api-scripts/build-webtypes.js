@@ -15,6 +15,9 @@ const staticMessages = {
     types: 'Defines the custom types used by the module.'
 };
 
+const LIBRARY_DISPLAY_NAME = 'Mantle UI';
+const LIBRARY_PACKAGE_NAME = '@mantle-ui/react';
+
 const app = new TypeDoc.Application();
 
 // If you want TypeDoc to load tsconfig.json / typedoc.json files
@@ -23,7 +26,7 @@ app.options.addReader(new TypeDoc.TypeDocReader());
 
 const pkg = require(path.resolve(rootDir, 'package.json'));
 const library = {
-    name: 'PrimeReact',
+    name: LIBRARY_PACKAGE_NAME,
     version: pkg.version,
     repository: pkg.repository,
     license: pkg.license
@@ -48,7 +51,7 @@ const webTypes = {
 
 app.bootstrap({
     // typedoc options here
-    name: 'PrimeReact',
+    name: LIBRARY_DISPLAY_NAME,
     entryPoints: [`components/lib`],
     entryPointStrategy: 'expand',
     tsconfig: 'api-scripts/tsconfig.json',

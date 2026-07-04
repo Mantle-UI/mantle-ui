@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames } from '../utils/Utils';
 
@@ -15,8 +15,8 @@ const classes = {
         classNames('p-colorpicker-panel', panelProps.panelClassName, {
             'p-colorpicker-overlay-panel': !panelProps.inline,
             'p-disabled': panelProps.disabled,
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     content: 'p-colorpicker-content',
     hueHandle: 'p-colorpicker-hue-handle',

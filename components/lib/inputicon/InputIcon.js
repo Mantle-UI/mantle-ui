@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react';
 import { useMergeProps } from '../hooks/Hooks';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { InputIconBase } from './InputIconBase';
 import { classNames } from '../utils/Utils';
 
@@ -8,7 +8,7 @@ export const InputIcon = React.memo(
     React.forwardRef((inProps, ref) => {
         const elementRef = useRef(ref);
         const mergeProps = useMergeProps();
-        const context = useContext(PrimeReactContext);
+        const context = useContext(MantleContext);
         const props = InputIconBase.getProps(inProps, context);
 
         const { ptm, cx } = InputIconBase.setMetaData({

@@ -312,13 +312,13 @@ interface ConfirmPopupReturn {
 }
 
 /**
- * **PrimeReact - ConfirmPopup**
+ * **MantleUI - ConfirmPopup**
  *
  * _ConfirmPopup displays a confirmation overlay displayed relatively to its target._
  *
  * [Live Demo](https://www.primereact.org/confirmpopup/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

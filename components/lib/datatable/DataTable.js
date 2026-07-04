@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { getStorage } from '../../utils/utils';
-import PrimeReact, { FilterMatchMode, FilterOperator, FilterService, PrimeReactContext } from '../api/Api';
+import MantleUI, { FilterMatchMode, FilterOperator, FilterService, MantleContext } from '../api/Api';
 import { ColumnBase } from '../column/ColumnBase';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useEventListener, useMergeProps, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -16,7 +16,7 @@ import { TableFooter } from './TableFooter';
 import { TableHeader } from './TableHeader';
 
 export const DataTable = React.forwardRef((inProps, ref) => {
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const mergeProps = useMergeProps();
     const props = DataTableBase.getProps(inProps, context);
     const [firstState, setFirstState] = React.useState(props.first);
@@ -855,7 +855,7 @@ export const DataTable = React.forwardRef((inProps, ref) => {
     };
 
     const createBeforeResizeStyleElement = () => {
-        beforeResizeStyleElement.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+        beforeResizeStyleElement.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
         let innerHTML = `
 [data-pc-name="datatable"][${attributeSelector.current}] {
     user-select:none;
@@ -866,12 +866,12 @@ export const DataTable = React.forwardRef((inProps, ref) => {
     };
 
     const createStyleElement = () => {
-        styleElement.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+        styleElement.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
     };
 
     const createResponsiveStyle = () => {
         if (!responsiveStyleElement.current) {
-            responsiveStyleElement.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+            responsiveStyleElement.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
 
             let tableSelector = `.p-datatable-wrapper ${isVirtualScrollerDisabled() ? '' : '> .p-virtualscroller'} > .p-datatable-table`;
             let selector = `.p-datatable[${attributeSelector.current}] > ${tableSelector}`;
@@ -1012,7 +1012,7 @@ export const DataTable = React.forwardRef((inProps, ref) => {
     };
 
     const compareValuesOnSort = (value1, value2, comparator, order) => {
-        return ObjectUtils.sort(value1, value2, order, comparator, (context && context.nullSortOrder) || PrimeReact.nullSortOrder);
+        return ObjectUtils.sort(value1, value2, order, comparator, (context && context.nullSortOrder) || MantleUI.nullSortOrder);
     };
 
     const addSortMeta = (meta, multiSortMeta) => {
@@ -1051,7 +1051,7 @@ export const DataTable = React.forwardRef((inProps, ref) => {
         } else {
             // performance optimization to prevent resolving field data in each loop
             const lookupMap = new Map();
-            const comparator = ObjectUtils.localeComparator((context && context.locale) || PrimeReact.locale);
+            const comparator = ObjectUtils.localeComparator((context && context.locale) || MantleUI.locale);
 
             for (let item of data) {
                 lookupMap.set(item, ObjectUtils.resolveFieldData(item, field));
@@ -1092,7 +1092,7 @@ export const DataTable = React.forwardRef((inProps, ref) => {
 
             value = columnSortFunction.current({ data, field, order, multiSortMeta });
         } else {
-            const comparator = ObjectUtils.localeComparator((context && context.locale) || PrimeReact.locale);
+            const comparator = ObjectUtils.localeComparator((context && context.locale) || MantleUI.locale);
 
             value.sort((data1, data2) => {
                 return multisortField(data1, data2, multiSortMeta, 0, comparator);
@@ -1283,8 +1283,8 @@ export const DataTable = React.forwardRef((inProps, ref) => {
                 const dataType = getColumnProp(col, 'dataType');
                 const matchMode =
                     getColumnProp(col, 'filterMatchMode') ||
-                    ((context && context.filterMatchModeOptions[dataType]) || PrimeReact.filterMatchModeOptions[dataType]
-                        ? (context && context.filterMatchModeOptions[dataType][0]) || PrimeReact.filterMatchModeOptions[dataType][0]
+                    ((context && context.filterMatchModeOptions[dataType]) || MantleUI.filterMatchModeOptions[dataType]
+                        ? (context && context.filterMatchModeOptions[dataType][0]) || MantleUI.filterMatchModeOptions[dataType][0]
                         : FilterMatchMode.STARTS_WITH);
                 let constraint = { value: null, matchMode };
 

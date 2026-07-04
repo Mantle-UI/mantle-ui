@@ -5,12 +5,12 @@ import { Button } from '@/components/lib/button/Button';
 export function SetupDoc(props) {
     const code1 = {
         basic: `
-import { PrimeReactProvider } from "primereact/api";
+import { MantleProvider } from "primereact/api";
 ...
 return(
-    <PrimeReactProvider value={{ unstyled: true }}>
+    <MantleProvider value={{ unstyled: true }}>
         <App />
-    </PrimeReactProvider>
+    </MantleProvider>
 )
 `
     };
@@ -24,7 +24,7 @@ return(
         <>
             <DocSectionText {...props}>
                 <p>
-                    Unstyled mode is enabled for the whole suite by setting <i>unstyled</i> as true during PrimeReact installation.
+                    Unstyled mode is enabled for the whole suite by setting <i>unstyled</i> as true during MantleUI installation.
                 </p>
                 <DocSectionCode code={code1} hideToggleCode import hideStackBlitz />
                 <p>

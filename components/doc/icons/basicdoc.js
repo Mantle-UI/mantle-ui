@@ -15,7 +15,7 @@ export function BasicDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    PrimeIcons use the <i>pi pi-&#123;icon&#125;</i> syntax such as <i>pi pi-check</i>. A standalone icon can be displayed using an element such as <i>i</i> or <i>span</i>
+                    MantleIcons use the <i>pi pi-&#123;icon&#125;</i> syntax such as <i>pi pi-check</i>. A standalone icon can be displayed using an element such as <i>i</i> or <i>span</i>
                 </p>
             </DocSectionText>
             <div className="card flex justify-content-center gap-3">

@@ -1,4 +1,4 @@
-import { PrimeReactPTOptions } from '../../api/api';
+import { MantleUIPTOptions } from '../../api/api';
 
-declare const Tailwind: PrimeReactPTOptions;
+declare const Tailwind: MantleUIPTOptions;
 export default Tailwind;

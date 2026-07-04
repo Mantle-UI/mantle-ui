@@ -33,13 +33,13 @@ export interface TerminalServiceOptions {
 }
 
 /**
- * **PrimeReact - TerminalService**
+ * **MantleUI - TerminalService**
  *
  * _Terminal is a text based user interface._
  *
  * [Live Demo](https://www.primereact.org/terminal/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

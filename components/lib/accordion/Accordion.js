@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ export const AccordionTab = () => {};
 
 export const Accordion = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = AccordionBase.getProps(inProps, context);
     const [idState, setIdState] = React.useState(props.id);
     const [activeIndexState, setActiveIndexState] = React.useState(props.activeIndex);

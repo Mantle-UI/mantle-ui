@@ -151,13 +151,13 @@ export interface InplaceProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - Inplace**
+ * **MantleUI - Inplace**
  *
  * _Inplace provides an easy to do editing and display at the same time where clicking the output displays the actual content._
  *
  * [Live Demo](https://www.primereact.org/inplace/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

@@ -6,7 +6,7 @@ export function FigmaDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    PrimeIcons library is now available on{' '}
+                    MantleIcons library is now available on{' '}
                     <a href="https://www.figma.com/community/file/1354343849355792252/primeicons" target="_blank" rel="noopener noreferrer">
                         Figma Community
                     </a>

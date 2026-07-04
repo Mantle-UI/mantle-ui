@@ -16,7 +16,7 @@ yarn add primereact
         <>
             <DocSectionText {...props}>
                 <p>
-                    PrimeReact is available for download at <a href="https://www.npmjs.com/package/primereact">npm</a>.
+                    MantleUI is available for download at <a href="https://www.npmjs.com/package/primereact">npm</a>.
                 </p>
             </DocSectionText>
             <DocSectionCode code={code} hideToggleCode import hideStackBlitz />

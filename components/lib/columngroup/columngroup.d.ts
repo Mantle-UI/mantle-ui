@@ -69,13 +69,13 @@ export interface ColumnGroupProps {
 }
 
 /**
- * **PrimeReact - ColumnGroup**
+ * **MantleUI - ColumnGroup**
  *
  * _It is a helper component for DataTable._
  *
  * [Live Demo](https://www.primereact.org/columngroup/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

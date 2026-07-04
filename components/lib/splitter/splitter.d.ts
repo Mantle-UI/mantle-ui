@@ -214,13 +214,13 @@ export interface SplitterProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - SplitterPanel**
+ * **MantleUI - SplitterPanel**
  *
  * _Splitter is utilized to separate and resize panels._
  *
  * [Live Demo](https://www.primereact.org/splitter/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

@@ -13,7 +13,7 @@ export function WCAGDoc(props) {
                         WCAG
                     </a>{' '}
                     refers to <strong>Web Content Accessibility Guideline</strong>, a standard managed by the WAI (Web Accessibility Initiative) of W3C (World Wide Web Consortium). WCAG consists of recommendations for making the web content more
-                    accessible. PrimeReact components aim high level of WCAG compliancy in the near future.
+                    accessible. MantleUI components aim high level of WCAG compliancy in the near future.
                 </p>
 
                 <p>

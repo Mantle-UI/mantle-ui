@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { ariaLabel } from '../api/Locale';
 import { useMergeProps } from '../hooks/Hooks';
 import { InputNumber } from '../inputnumber/InputNumber';
@@ -8,7 +8,7 @@ import { JumpToPageInputBase } from './PaginatorBase';
 
 export const JumpToPageInput = React.memo((inProps) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = JumpToPageInputBase.getProps(inProps, context);
     const ariaLabelValue = ariaLabel('jumpToPageInputLabel');
 

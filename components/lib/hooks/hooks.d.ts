@@ -192,12 +192,12 @@ export declare function useUnmountEffect(effect: React.EffectCallback): void;
  */
 export declare function useEventListener(options: EventOptions): any[];
 /**
- * Custom hook to listen to overlay event. It can be used when an overlay is desired to behave like the overlays in PrimeReact.
+ * Custom hook to listen to overlay event. It can be used when an overlay is desired to behave like the overlays in MantleUI.
  * @param {OverlayEventOptions} options - The event options.
  */
 export declare function useOverlayListener(options: OverlayEventOptions): any[];
 /**
- * Custom hook to listen to overlay scroll. It can be used when an overlay is desired to behave like the overlays in PrimeReact.
+ * Custom hook to listen to overlay scroll. It can be used when an overlay is desired to behave like the overlays in MantleUI.
  * @param {EventOptions} options - The event options.
  */
 export declare function useOverlayScrollListener(options: EventOptions): any[];

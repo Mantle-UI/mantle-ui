@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { FilterService, PrimeReactContext, localeOption } from '../api/Api';
+import MantleUI, { FilterService, MantleContext, localeOption } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useDebounce, useMergeProps, useMountEffect, useOverlayListener, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { ChevronDownIcon } from '../icons/chevrondown';
@@ -15,7 +15,7 @@ import { MultiSelectPanel } from './MultiSelectPanel';
 export const MultiSelect = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = MultiSelectBase.getProps(inProps, context);
         const [focusedOptionIndex, setFocusedOptionIndex] = React.useState(null);
         const [clicked, setClicked] = React.useState(false);
@@ -538,7 +538,7 @@ export const MultiSelect = React.memo(
         };
 
         const onOverlayEnter = (callback) => {
-            ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.overlay) || PrimeReact.zIndex.overlay);
+            ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
             DomHandler.addStyles(overlayRef.current, { position: 'absolute', top: '0', left: '0' });
             alignOverlay();
             scrollInView();
@@ -566,7 +566,7 @@ export const MultiSelect = React.memo(
         };
 
         const alignOverlay = () => {
-            !props.inline && DomHandler.alignOverlay(overlayRef.current, labelContainerRef.current.parentElement, props.appendTo || (context && context.appendTo) || PrimeReact.appendTo);
+            !props.inline && DomHandler.alignOverlay(overlayRef.current, labelContainerRef.current.parentElement, props.appendTo || (context && context.appendTo) || MantleUI.appendTo);
         };
 
         const isClearClicked = (event) => {

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { DomHandler, ObjectUtils } from '../utils/Utils';
 import { PortalBase } from './PortalBase';
 
 export const Portal = React.memo((inProps) => {
     const props = PortalBase.getProps(inProps);
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
 
     const [mountedState, setMountedState] = React.useState(props.visible && DomHandler.isClient());
 
@@ -29,7 +29,7 @@ export const Portal = React.memo((inProps) => {
     const element = props.element || props.children;
 
     if (element && mountedState) {
-        let appendTo = props.appendTo || (context && context.appendTo) || PrimeReact.appendTo;
+        let appendTo = props.appendTo || (context && context.appendTo) || MantleUI.appendTo;
 
         if (ObjectUtils.isFunction(appendTo)) {
             appendTo = appendTo();

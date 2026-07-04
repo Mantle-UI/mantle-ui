@@ -187,13 +187,13 @@ export interface MessagesProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - Messages**
+ * **MantleUI - Messages**
  *
  * _Messages is used to display inline messages with various severities._
  *
  * [Live Demo](https://www.primereact.org/messages/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

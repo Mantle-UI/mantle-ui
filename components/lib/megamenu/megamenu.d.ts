@@ -237,13 +237,13 @@ export interface MegaMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAt
 }
 
 /**
- * **PrimeReact - MegaMenu**
+ * **MantleUI - MegaMenu**
  *
  * _MegaMenu is navigation component that displays submenus together._
  *
  * [Live Demo](https://www.primereact.org/megamenu/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

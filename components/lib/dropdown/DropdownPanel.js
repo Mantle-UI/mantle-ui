@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ariaLabel, localeOption, PrimeReactContext } from '../api/Api';
+import { ariaLabel, localeOption, MantleContext } from '../api/Api';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps } from '../hooks/Hooks';
 import { SearchIcon } from '../icons/search';
@@ -13,7 +13,7 @@ export const DropdownPanel = React.memo(
     React.forwardRef((props, ref) => {
         const mergeProps = useMergeProps();
         const { ptm, cx, sx } = props;
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
 
         const filterInputRef = React.useRef(null);
         const isEmptyFilter = !(props.visibleOptions && props.visibleOptions.length) && props.hasFilter;

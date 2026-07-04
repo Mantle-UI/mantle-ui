@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, localeOption } from '../api/Api';
+import MantleUI, { MantleContext, localeOption } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useEventListener, useMergeProps, useUnmountEffect } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ export const ScrollTop = React.memo(
     React.forwardRef((inProps, ref) => {
         const [visibleState, setVisibleState] = React.useState(false);
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ScrollTopBase.getProps(inProps, context);
         const { ptm, cx, isUnstyled } = ScrollTopBase.setMetaData({
             props,
@@ -57,7 +57,7 @@ export const ScrollTop = React.memo(
         };
 
         const onEnter = () => {
-            ZIndexUtils.set('overlay', scrollElementRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.overlay) || PrimeReact.zIndex.overlay);
+            ZIndexUtils.set('overlay', scrollElementRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
         };
 
         const onEntered = () => {

@@ -51,7 +51,7 @@ primereact/resources/themes/arya-purple/theme.css
         <>
             <DocSectionText {...props}>
                 <p>
-                    PrimeReact ships with various free themes to choose from. The list below states all the available themes in the npm distribution with import paths. For a live preview, use the configurator{' '}
+                    MantleUI ships with various free themes to choose from. The list below states all the available themes in the npm distribution with import paths. For a live preview, use the configurator{' '}
                     <span className="border-round inline-flex border-1 w-2rem h-2rem p-0 align-items-center justify-content-center bg-primary">
                         <span className="pi pi-palette" />
                     </span>{' '}

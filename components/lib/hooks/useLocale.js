@@ -1,7 +1,7 @@
 /* eslint-disable */
 import * as React from 'react';
-import { PrimeReactContext } from '../../lib/api/Api';
-import PrimeReact from '../api/Api';
+import { MantleContext } from '../../lib/api/Api';
+import MantleUI from '../api/Api';
 
 let locales = {
     en: {
@@ -139,17 +139,17 @@ let locales = {
 };
 
 export const useLocale = () => {
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
 
     const locale = (locale) => {
         if (locale) {
             if (context) context.locale = locale;
-            else PrimeReact.locale = locale;
+            else MantleUI.locale = locale;
         }
 
         return {
-            locale: (context && context.locale) || PrimeReact.locale,
-            options: locales[(context && context.locale) || PrimeReact.locale]
+            locale: (context && context.locale) || MantleUI.locale,
+            options: locales[(context && context.locale) || MantleUI.locale]
         };
     };
 
@@ -172,7 +172,7 @@ export const useLocale = () => {
         if (locale.includes('__proto__') || locale.includes('prototype')) {
             throw new Error('Unsafe locale detected');
         }
-        const _locale = locale || (context && context.locale) || PrimeReact.locale;
+        const _locale = locale || (context && context.locale) || MantleUI.locale;
 
         locales[_locale] = { ...locales[_locale], ...options };
     };
@@ -182,7 +182,7 @@ export const useLocale = () => {
             throw new Error('Unsafe key detected');
         }
 
-        const _locale = locale || (context && context.locale) || PrimeReact.locale;
+        const _locale = locale || (context && context.locale) || MantleUI.locale;
 
         try {
             return localeOptions(_locale)[key];
@@ -207,7 +207,7 @@ export const useLocale = () => {
         if (ariaKey.includes('__proto__') || ariaKey.includes('prototype')) {
             throw new Error('Unsafe ariaKey detected');
         }
-        const _locale = (context && context.locale) || PrimeReact.locale;
+        const _locale = (context && context.locale) || MantleUI.locale;
 
         try {
             let ariaLabel = localeOptions(_locale)['aria'][ariaKey];
@@ -227,7 +227,7 @@ export const useLocale = () => {
     };
 
     const localeOptions = (locale) => {
-        const _locale = locale || (context && context.locale) || PrimeReact.locale;
+        const _locale = locale || (context && context.locale) || MantleUI.locale;
         if (_locale.includes('__proto__') || _locale.includes('prototype')) {
             throw new Error('Unsafe locale detected');
         }

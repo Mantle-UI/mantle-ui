@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { ObjectUtils, classNames } from '../utils/Utils';
@@ -8,7 +8,7 @@ import { ToolbarBase } from './ToolbarBase';
 export const Toolbar = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ToolbarBase.getProps(inProps, context);
         const elementRef = React.useRef(null);
         const start = ObjectUtils.getJSXElement(props.left || props.start, props);

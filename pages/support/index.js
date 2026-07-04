@@ -20,7 +20,7 @@ const SupportPage = () => {
                 <div className="card m-0 flex-1 bg-primary text-primary-contrast font-medium">
                     <div className="text-2xl font-semibold mb-3">Professional Support</div>
                     <p className="m-0 line-height-3 text-lg">
-                        With PRO support, it's easy to support, tune, and add features to PrimeReact as an in-house library. With the exclusive services of a PRO account, you no longer need to post questions in the community forum and the community
+                        With PRO support, it's easy to support, tune, and add features to MantleUI as an in-house library. With the exclusive services of a PRO account, you no longer need to post questions in the community forum and the community
                         issue tracker at GitHub. Service is delivered via a private issue tracker based on a one-business-day response time.
                     </p>
                 </div>
@@ -78,7 +78,7 @@ const SupportPage = () => {
                             </ul>
                         </div>
                         <a
-                            href="mailto:contact@primetek.com.tr?subject=PrimeReact%20PRO%20Support"
+                            href="mailto:contact@primetek.com.tr?subject=MantleUI%20PRO%20Support"
                             className="block mt-4 w-full bg-primary border-round py-2 px-3 text-center transition-all duration-300 text-primary-contrast font-semibold text-lg leading-none"
                         >
                             Buy Now
@@ -118,8 +118,7 @@ const SupportPage = () => {
                             <li>
                                 <div className="font-semibold mb-2">6. Delivery</div>
                                 <span className="line-height-3">
-                                    If the issue requires an update in the library, it gets published to npm by as part of the public PrimeReact package. A patch update on an older version can also be requested if you are not using the latest
-                                    version.
+                                    If the issue requires an update in the library, it gets published to npm by as part of the public MantleUI package. A patch update on an older version can also be requested if you are not using the latest version.
                                 </span>
                             </li>
                         </ul>
@@ -251,11 +250,11 @@ const SupportPage = () => {
                     <div className="flex-1 flex flex-column gap-5">
                         <div>
                             <div className="line-height-3 mb-2 font-semibold">Are the changes delivered with a custom build?</div>
-                            <p className="m-0 line-height-3">No, changes become part of the PrimeReact core and pushed to the public npm package on next update.</p>
+                            <p className="m-0 line-height-3">No, changes become part of the MantleUI core and pushed to the public npm package on next update.</p>
                         </div>
                         <div>
                             <div className="line-height-3 mb-2 font-semibold">Who provides the support service?</div>
-                            <p className="m-0 line-height-3">Support service is provided by the PrimeReact team at PrimeTek.</p>
+                            <p className="m-0 line-height-3">Support service is provided by the MantleUI team at PrimeTek.</p>
                         </div>
                         <div>
                             <div className="line-height-3 mb-2 font-semibold">Is there a minimum hour requirement?</div>

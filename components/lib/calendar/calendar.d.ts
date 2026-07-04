@@ -991,13 +991,13 @@ export interface CalendarProps<TMode extends CalendarSelectionMode = 'single', T
 }
 
 /**
- * **PrimeReact - Calendar**
+ * **MantleUI - Calendar**
  *
  * _Calendar also known as DatePicker, is a form component to work with dates._
  *
  * [Live Demo](https://www.primereact.org/calendar/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

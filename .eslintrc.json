@@ -1,6 +1,14 @@
 {
     "plugins": ["@typescript-eslint", "jest-dom"],
     "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+    "overrides": [
+        {
+            "files": ["api-scripts/**/*.js"],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off"
+            }
+        }
+    ],
     "rules": {
         "@next/next/no-img-element": "off",
         "react/display-name": "off",

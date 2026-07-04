@@ -10,15 +10,15 @@ var gulp = require('gulp'),
 gulp.task('build-css', function () {
     return gulp
         .src([process.env.INPUT_DIR + 'common/Common.css', process.env.INPUT_DIR + '**/*.css'])
-        .pipe(concat('primereact.css'))
+        .pipe(concat('mantle-ui-react.css'))
         .pipe(gulp.dest(process.env.OUTPUT_DIR + 'resources'))
         .pipe(uglifycss({ uglyComments: true }))
-        .pipe(rename('primereact.min.css'))
+        .pipe(rename('mantle-ui-react.min.css'))
         .pipe(gulp.dest(process.env.OUTPUT_DIR + 'resources'));
 });
 
-gulp.task('build-primereactcss', function () {
-    return gulp.src(['./styles/primereact.css']).pipe(concat('primereact.css')).pipe(gulp.dest('dist/resources')).pipe(rename('primereact.min.css')).pipe(gulp.dest('dist/resources'));
+gulp.task('build-mantle-ui-react-css', function () {
+    return gulp.src(['./styles/mantle-ui-react.css']).pipe(concat('mantle-ui-react.css')).pipe(gulp.dest('dist/resources')).pipe(rename('mantle-ui-react.min.css')).pipe(gulp.dest('dist/resources'));
 });
 
 gulp.task('build-themes', function () {
@@ -81,4 +81,4 @@ gulp.task('copy-package.json', function () {
 
 //Building project with run sequence
 gulp.task('copy-files', gulp.series('copy-d.ts', 'copy-package.json'));
-gulp.task('build-resources', gulp.series('build-primereactcss', 'images', 'build-themes', 'copy-fonts', 'build-meta', 'copy-files'));
+gulp.task('build-resources', gulp.series('build-mantle-ui-react-css', 'images', 'build-themes', 'copy-fonts', 'build-meta', 'copy-files'));

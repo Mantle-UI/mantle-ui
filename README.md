@@ -6,7 +6,7 @@
 
 # Mantle UI
 
-Mantle UI is an independent community-maintained React component library continued from the MIT-licensed PrimeReact v10 codebase.
+Mantle UI is an independent community-maintained React component library continued from the MIT-licensed [PrimeReact v10](https://github.com/primefaces/primereact) codebase.
 
 Mantle UI is not affiliated with PrimeTek, PrimeReact, or ngrok.
 

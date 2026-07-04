@@ -1,8 +1,17 @@
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const basePath = isGitHubPages ? '/mantle-ui' : '';
+
 module.exports = {
     reactStrictMode: process.env.NODE_ENV === 'production' ? false : true,
     trailingSlash: true,
+    assetPrefix: isGitHubPages ? `${basePath}/` : '',
+    basePath,
     publicRuntimeConfig: {
-        appVersion: process.env.npm_package_version || ''
+        appVersion: process.env.npm_package_version || '',
+        basePath
+    },
+    env: {
+        NEXT_PUBLIC_BASE_PATH: basePath
     },
     webpack(config) {
         config.module.rules.push({
@@ -14,6 +23,10 @@ module.exports = {
         return config;
     },
     async redirects() {
+        if (isGitHubPages) {
+            return [];
+        }
+
         return [
             {
                 source: '/setup',

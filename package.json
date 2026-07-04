@@ -9,6 +9,7 @@
         "dev:docs": "next dev",
         "start:docs": "next start",
         "build:docs": "next build",
+        "build:docs:pages": "next build && next export",
         "build:bundle": "rollup -c",
         "build:assets": "gulp build-resources",
         "build:dist": "npm run build:check && npm run build:bundle && npm run build:assets && npm run build:api",

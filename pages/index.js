@@ -7,7 +7,7 @@ import ThemeSection from '@/components/landing/themesection';
 import UsersSection from '@/components/landing/userssection';
 import AppContentContext from '@/components/layout/appcontentcontext';
 import Topbar from '@/components/layout/topbar';
-import { useMountEffect } from '@/components/lib/primereact.all';
+import { useMountEffect } from '@/components/lib/mantle-ui-react.all';
 import { classNames } from '@/components/lib/utils/Utils';
 // import NewsSection from '@/components/news/newssection';
 import Head from 'next/head';

@@ -2,11 +2,11 @@ import { GTagManager } from '@/components/analytics/analytics';
 import AppContentContext from '@/components/layout/appcontentcontext';
 import Layout from '@/components/layout/layout';
 import { MantleProvider } from '@/components/lib/api/MantleContext';
-import { switchTheme } from '@/components/utils/utils';
+import { applyBasePathCompatibility, switchTheme } from '@/components/utils/utils';
 import '@docsearch/css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/demo/demo.scss';
 import '../styles/layout/layout.scss';
 
@@ -55,6 +55,10 @@ export default function MyApp({ Component, pageProps }) {
         ripple: true,
         hideOverlaysOnDocumentScrolling: false
     };
+
+    useEffect(() => {
+        return applyBasePathCompatibility();
+    }, []);
 
     return (
         <AppContentContext.Provider value={appState}>

@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    if: github.repository == 'Mantle-UI/mantle-ui' && github.ref == 'refs/heads/master'
+    if: github.repository == 'Mantle-UI/mantle-ui' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     strategy:

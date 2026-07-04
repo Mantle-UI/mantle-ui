@@ -14,6 +14,8 @@ const staticMessages = {
     types: 'Defines the custom types used by the module.'
 };
 
+const LIBRARY_DISPLAY_NAME = 'Mantle UI';
+
 const app = new TypeDoc.Application();
 
 // If you want TypeDoc to load tsconfig.json / typedoc.json files
@@ -22,7 +24,7 @@ app.options.addReader(new TypeDoc.TypeDocReader());
 
 app.bootstrap({
     // typedoc options here
-    name: 'PrimeReact',
+    name: LIBRARY_DISPLAY_NAME,
     entryPoints: [`components/lib`],
     entryPointStrategy: 'expand',
     tsconfig: 'api-scripts/tsconfig.json',

@@ -105,13 +105,13 @@ export interface CardProps extends Omit<React.DetailedHTMLProps<React.HTMLAttrib
 }
 
 /**
- * **PrimeReact - Card**
+ * **MantleUI - Card**
  *
  * _Card is a flexible container component._
  *
  * [Live Demo](https://www.primereact.org/card/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

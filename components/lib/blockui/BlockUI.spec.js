@@ -2,42 +2,42 @@ import '@testing-library/jest-dom';
 import { act, render } from '@testing-library/react';
 import * as React from 'react';
 import { snapshotParent } from '../../test';
-import { PrimeReactProvider } from '../api/Api';
+import { MantleProvider } from '../api/Api';
 import { Panel } from '../panel/Panel';
 import { BlockUI } from './BlockUI';
 
 describe('BlockUI', () => {
     snapshotParent(
-        <PrimeReactProvider>
+        <MantleProvider>
             <BlockUI blocked={true} fullScreen />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'block fullscreen'
     );
     snapshotParent(
-        <PrimeReactProvider>
+        <MantleProvider>
             <BlockUI blocked={true}>
                 <Panel>blocked</Panel>
             </BlockUI>
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'block panel'
     );
     snapshotParent(
-        <PrimeReactProvider>
+        <MantleProvider>
             <BlockUI blocked={false}>
                 <Panel>unblocked</Panel>
             </BlockUI>
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'unblock panel'
     );
     test('block and unblock panel events', async () => {
         // Arrange
         const ref = React.createRef();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <BlockUI ref={ref} blocked={false}>
                     <Panel>unblocked</Panel>
                 </BlockUI>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
 
         // Act
@@ -61,9 +61,9 @@ describe('BlockUI', () => {
         // Arrange
         const ref = React.createRef();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <BlockUI ref={ref} blocked={false} fullScreen />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
 
         // Act
@@ -83,11 +83,11 @@ describe('BlockUI', () => {
         expect(container.parentElement).toMatchSnapshot('unblocked-event-fullscreen');
     });
     snapshotParent(
-        <PrimeReactProvider>
+        <MantleProvider>
             <BlockUI blocked={true} className="block-jest" style={{ cursor: 'move' }} containerClassName="container-jest" containerStyle={{ cursor: 'pointer' }}>
                 <Panel>style + class</Panel>
             </BlockUI>
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'container style and className'
     );
 });

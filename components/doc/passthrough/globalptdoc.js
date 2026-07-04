@@ -5,7 +5,7 @@ export function GlobalPTDoc(props) {
     const code = {
         basic: `
 // _app.js        
-import { PrimeReactProvider } from "primereact/api";
+import { MantleProvider } from "primereact/api";
 
 export default function GlobalPTDemo() {
 
@@ -19,9 +19,9 @@ export default function GlobalPTDemo() {
     };
 
     return(
-        <PrimeReactProvider value={{ pt }}>
+        <MantleProvider value={{ pt }}>
             <App />
-        </PrimeReactProvider>
+        </MantleProvider>
     )
 }
         `

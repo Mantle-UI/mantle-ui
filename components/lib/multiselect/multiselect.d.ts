@@ -776,13 +776,13 @@ export interface MultiSelectProps extends Omit<React.DetailedHTMLProps<React.Inp
 }
 
 /**
- * **PrimeReact - MultiSelect**
+ * **MantleUI - MultiSelect**
  *
  * _MultiSelect is used to select multiple items from a collection._
  *
  * [Live Demo](https://www.primereact.org/multiselect/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

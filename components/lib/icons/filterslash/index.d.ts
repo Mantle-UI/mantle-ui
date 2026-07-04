@@ -8,11 +8,11 @@ import { IconBaseProps } from '../../iconbase';
 export interface FilterSlashIconProps extends IconBaseProps {}
 
 /**
- * **PrimeReact - FilterSlashIcon**
+ * **MantleUI - FilterSlashIcon**
  *
  * [Live Demo](https://www.primereact.org/icons/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

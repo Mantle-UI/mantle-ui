@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useEventListener, useMatchMedia, useMergeProps, useMountEffect, useResizeListener, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -11,7 +11,7 @@ import { ContextMenuSub } from './ContextMenuSub';
 export const ContextMenu = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = ContextMenuBase.getProps(inProps, context);
 
         const [idState, setIdState] = React.useState(props.id);
@@ -75,7 +75,7 @@ export const ContextMenu = React.memo(
 
         const createStyle = () => {
             if (!styleElementRef.current) {
-                styleElementRef.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+                styleElementRef.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
 
                 const selector = `${attributeSelectorState}`;
                 const innerHTML = `
@@ -155,7 +155,7 @@ export const ContextMenu = React.memo(
             DomHandler.addStyles(menuRef.current, { position: 'absolute' });
 
             if (props.autoZIndex) {
-                ZIndexUtils.set('menu', menuRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex.menu) || PrimeReact.zIndex.menu);
+                ZIndexUtils.set('menu', menuRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex.menu) || MantleUI.zIndex.menu);
             }
 
             position(currentEvent.current);

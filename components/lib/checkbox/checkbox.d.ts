@@ -233,13 +233,13 @@ export interface CheckboxProps extends Omit<React.DetailedHTMLProps<React.InputH
 }
 
 /**
- * **PrimeReact - Checkbox**
+ * **MantleUI - Checkbox**
  *
  * _Checkbox is an extension to standard checkbox element with skinning capabilities._
  *
  * [Live Demo](https://www.primereact.org/checkbox/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

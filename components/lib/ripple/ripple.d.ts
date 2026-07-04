@@ -59,13 +59,13 @@ export interface RippleProps {
 }
 
 /**
- * **PrimeReact - Ripple**
+ * **MantleUI - Ripple**
  *
  * _Ripple component adds ripple effect to the host element._
  *
  * [Live Demo](https://www.primereact.org/ripple/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

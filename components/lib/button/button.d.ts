@@ -186,13 +186,13 @@ export interface ButtonProps extends Omit<React.DetailedHTMLProps<React.ButtonHT
 }
 
 /**
- * **PrimeReact - Button**
+ * **MantleUI - Button**
  *
  * _Button is an extension to standard button element with icons and theming._
  *
  * [Live Demo](https://www.primereact.org/button/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

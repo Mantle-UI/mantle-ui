@@ -9,13 +9,13 @@ import { InputText } from '../inputtext/InputText';
 import { RowBase } from '../row/RowBase';
 import { Tooltip } from '../tooltip/Tooltip';
 import { classNames, DomHandler, IconUtils, ObjectUtils } from '../utils/Utils';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 
 export const TreeTableHeader = React.memo((props) => {
     const mergeProps = useMergeProps();
     const { ptm, ptmo, cx } = props.ptCallbacks;
     const filterTimeout = React.useRef(null);
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
 
     const getColumnProp = (column, ...args) => {
         return column ? (typeof args[0] === 'string' ? ColumnBase.getCProp(column, args[0]) : ColumnBase.getCProp(args[0] || column, args[1])) : null;

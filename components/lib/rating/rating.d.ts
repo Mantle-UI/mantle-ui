@@ -174,13 +174,13 @@ export interface RatingProps extends Omit<React.DetailedHTMLProps<React.InputHTM
 }
 
 /**
- * **PrimeReact - Rating**
+ * **MantleUI - Rating**
  *
  * _Rating component is a star based selection input._
  *
  * [Live Demo](https://www.primereact.org/rating/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

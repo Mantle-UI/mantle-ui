@@ -128,13 +128,13 @@ export interface ScrollTopProps {
 }
 
 /**
- * **PrimeReact - ScrollTop**
+ * **MantleUI - ScrollTop**
  *
  * _ScrollTop gets displayed after a certain scroll position and used to navigates to the top of the page quickly._
  *
  * [Live Demo](https://www.primereact.org/scrolltop/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

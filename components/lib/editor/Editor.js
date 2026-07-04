@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { DomHandler, classNames } from '../utils/Utils';
@@ -17,7 +17,7 @@ const QuillJS = (function () {
 export const Editor = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = EditorBase.getProps(inProps, context);
         const { ptm, cx, isUnstyled } = EditorBase.setMetaData({
             props

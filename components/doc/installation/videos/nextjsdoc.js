@@ -5,7 +5,7 @@ export function NextJSDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    PrimeReact has first class support for SSR and{' '}
+                    MantleUI has first class support for SSR and{' '}
                     <a alt="NextJS" href="https://nextjs.org/">
                         Next.JS
                     </a>

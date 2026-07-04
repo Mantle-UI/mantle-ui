@@ -98,12 +98,12 @@ Declaring these types as objects, slows down execution speed, and produces nasty
 
 ## Spacing
 
--   Indentation with tabs.
--   No whitespace at the end of line or on blank lines.
--   Lines should usually be no longer than 80 characters, and should not exceed 120 (counting tabs as 4 spaces).
--   No filler spaces in empty constructs (e.g., {}, [], fn()).
--   There should be a new line at the end of each file.
--   All function bodies are indented by one tab, even if the entire file is wrapped in a closure.
+- Indentation with tabs.
+- No whitespace at the end of line or on blank lines.
+- Lines should usually be no longer than 80 characters, and should not exceed 120 (counting tabs as 4 spaces).
+- No filler spaces in empty constructs (e.g., {}, [], fn()).
+- There should be a new line at the end of each file.
+- All function bodies are indented by one tab, even if the entire file is wrapped in a closure.
 
 ## Ordering
 
@@ -252,9 +252,9 @@ Especially when there are more than **4 props**, can enhance code readability an
 
 Using named exports provides better **clarity** when importing components, making the codebase more organized and easier to navigate.
 
--   Named imports work well with tree shaking.
--   Refactoring becomes easier.
--   Easier to identify and understand the dependencies of a module.
+- Named imports work well with tree shaking.
+- Refactoring becomes easier.
+- Easier to identify and understand the dependencies of a module.
 
 ## Utils
 

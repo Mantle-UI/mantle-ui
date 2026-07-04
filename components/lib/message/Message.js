@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { CheckIcon } from '../icons/check';
@@ -12,7 +12,7 @@ import { MessageBase } from './MessageBase';
 export const Message = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = MessageBase.getProps(inProps, context);
 
         const elementRef = React.useRef(null);

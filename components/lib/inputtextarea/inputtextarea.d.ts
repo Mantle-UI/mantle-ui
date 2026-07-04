@@ -117,13 +117,13 @@ export interface InputTextareaProps extends Omit<React.DetailedHTMLProps<React.T
 }
 
 /**
- * **PrimeReact - InputTextarea**
+ * **MantleUI - InputTextarea**
  *
  * _Inputtextarea add styling and autoResize functionality to standard textarea element._
  *
  * [Live Demo](https://www.primereact.org/inputtextarea/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

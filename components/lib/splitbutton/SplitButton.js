@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { Button } from '../button/Button';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useUnmountEffect } from '../hooks/Hooks';
@@ -13,7 +13,7 @@ import { SplitButtonBase } from './SplitButtonBase';
 export const SplitButton = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = SplitButtonBase.getProps(inProps, context);
 
         const [idState, setIdState] = React.useState(props.id ?? UniqueComponentId);
@@ -81,7 +81,7 @@ export const SplitButton = React.memo(
         };
 
         const alignOverlay = () => {
-            DomHandler.alignOverlay(overlayRef.current, defaultButtonRef.current.parentElement, props.appendTo || (context && context.appendTo) || PrimeReact.appendTo);
+            DomHandler.alignOverlay(overlayRef.current, defaultButtonRef.current.parentElement, props.appendTo || (context && context.appendTo) || MantleUI.appendTo);
         };
 
         useMountEffect(() => {

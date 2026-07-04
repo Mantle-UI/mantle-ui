@@ -5,7 +5,7 @@ export function SetupLocaleDoc(props) {
     const code = {
         basic: `
 // _app.js
-import { PrimeReactProvider } from 'primereact/api';
+import { MantleProvider } from 'primereact/api';
 
 export default function MyApp({ Component }) {
     const value = {
@@ -14,9 +14,9 @@ export default function MyApp({ Component }) {
     };
 
     return (
-        <PrimeReactProvider value={value}>
+        <MantleProvider value={value}>
             <Component />
-        </PrimeReactProvider>
+        </MantleProvider>
     );
 }
         `
@@ -27,11 +27,11 @@ export default function MyApp({ Component }) {
             <DocSectionText {...props}>
                 <p>
                     To establish the default locale for your entire application, you can utilize the
-                    <i> PrimeReactProvider</i>.
+                    <i> MantleProvider</i>.
                 </p>
 
                 <p>
-                    When <b>PrimeReactProvider</b> is used, it becomes the primary source of locale configuration for all PrimeReact components.
+                    When <b>MantleProvider</b> is used, it becomes the primary source of locale configuration for all MantleUI components.
                 </p>
 
                 <h5>Locale Precedence</h5>
@@ -41,16 +41,16 @@ export default function MyApp({ Component }) {
                         <code>locale</code> prop defined on a component
                     </li>
                     <li>
-                        <code>PrimeReactProvider</code> (<code>context.locale</code>)
+                        <code>MantleProvider</code> (<code>context.locale</code>)
                     </li>
                     <li>
-                        Global <code>PrimeReact.locale</code> set via <code>locale()</code>
+                        Global <code>MantleUI.locale</code> set via <code>locale()</code>
                     </li>
                     <li>Browser locale</li>
                 </ul>
 
                 <p>
-                    This means that once <b>PrimeReactProvider</b> is present, calling
+                    This means that once <b>MantleProvider</b> is present, calling
                     <code> locale()</code> alone is not sufficient. The locale must be provided explicitly through the provider.
                 </p>
             </DocSectionText>

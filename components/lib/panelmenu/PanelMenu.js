@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
@@ -12,7 +12,7 @@ import { PanelMenuList } from './PanelMenuList';
 export const PanelMenu = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = PanelMenuBase.getProps(inProps, context);
 
         const [idState, setIdState] = React.useState(props.id);

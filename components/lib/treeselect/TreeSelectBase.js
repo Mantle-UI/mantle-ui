@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames } from '../utils/Utils';
 
@@ -21,8 +21,8 @@ const classes = {
         }),
     panel: ({ panelProps: props, context }) =>
         classNames('p-treeselect-panel p-component', props.panelClassName, {
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     labelContainer: 'p-treeselect-label-container',
     tokenLabel: 'p-treeselect-token-label',

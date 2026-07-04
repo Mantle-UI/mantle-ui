@@ -98,13 +98,13 @@ export interface ChartProps extends Omit<React.DetailedHTMLProps<React.HTMLAttri
 }
 
 /**
- * **PrimeReact - Chart**
+ * **MantleUI - Chart**
  *
  * _Chart components are based on Chart.js, an open source HTML5 based charting library._
  *
  * [Live Demo](https://www.primereact.org/chart/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

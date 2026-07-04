@@ -4,20 +4,20 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ContextDoc(props) {
     const code = {
         basic: `
-import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+import { MantleProvider, MantleContext } from 'primereact/api';
         `
     };
 
     const code2 = {
         basic: `
 // _app.js
-import { PrimeReactProvider } from 'primereact/api';
+import { MantleProvider } from 'primereact/api';
 
 export default function MyApp({ Component, pageProps }) {
     return (
-        <PrimeReactProvider>
+        <MantleProvider>
             <Component {...pageProps} />
-        </PrimeReactProvider>
+        </MantleProvider>
     );
 }
         `
@@ -27,13 +27,13 @@ export default function MyApp({ Component, pageProps }) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    Configuration is managed by the <i>PrimeReactProvider</i> and <i>PrimeReactContext</i> imported from <i>primereact/api</i>.
+                    Configuration is managed by the <i>MantleProvider</i> and <i>MantleContext</i> imported from <i>primereact/api</i>.
                 </p>
             </DocSectionText>
             <DocSectionCode code={code} hideToggleCode import hideStackBlitz />
             <div className="doc-section-description">
                 <p>
-                    The <i>PrimeReactProvider</i> component is used to wrap the application and the <i>PrimeReactContext</i> is used to access the configuration options.
+                    The <i>MantleProvider</i> component is used to wrap the application and the <i>MantleContext</i> is used to access the configuration options.
                 </p>
             </div>
             <DocSectionCode code={code2} hideToggleCode import hideStackBlitz />

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useEventListener, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { DomHandler, ObjectUtils } from '../utils/Utils';
 import { StyleClassBase } from './StyleClassBase';
 
 export const StyleClass = React.forwardRef((inProps, ref) => {
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = StyleClassBase.getProps(inProps, context);
 
     const targetRef = React.useRef(null);

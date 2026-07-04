@@ -440,13 +440,13 @@ export interface DialogProps {
 }
 
 /**
- * **PrimeReact - Dialog**
+ * **MantleUI - Dialog**
  *
  * _Dialog is a container to display content in an overlay window._
  *
  * [Live Demo](https://www.primereact.org/dialog/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, ariaLabel, localeOption } from '../api/Api';
+import MantleUI, { MantleContext, ariaLabel, localeOption } from '../api/Api';
 import { useMergeProps, useMountEffect, usePrevious, useResizeListener, useUpdateEffect } from '../hooks/Hooks';
 import { ChevronDownIcon } from '../icons/chevrondown';
 import { ChevronLeftIcon } from '../icons/chevronleft';
@@ -174,7 +174,7 @@ export const GalleriaThumbnails = React.memo(
         const responsiveOptions = React.useRef(null);
         const prevNumVisible = usePrevious(numVisibleState);
         const prevActiveItemIndex = usePrevious(props.activeItemIndex);
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
 
         const { ptm, cx, sx } = props;
 
@@ -345,7 +345,7 @@ export const GalleriaThumbnails = React.memo(
 
         const createStyle = () => {
             if (!thumbnailsStyle.current) {
-                thumbnailsStyle.current = DomHandler.createInlineStyle((context && context.nonce) || PrimeReact.nonce, context && context.styleContainer);
+                thumbnailsStyle.current = DomHandler.createInlineStyle((context && context.nonce) || MantleUI.nonce, context && context.styleContainer);
             }
 
             let innerHTML = `
@@ -357,14 +357,14 @@ export const GalleriaThumbnails = React.memo(
         `;
 
             if (props.responsiveOptions) {
-                const comparator = ObjectUtils.localeComparator((context && context.locale) || PrimeReact.locale);
+                const comparator = ObjectUtils.localeComparator((context && context.locale) || MantleUI.locale);
 
                 responsiveOptions.current = [...props.responsiveOptions];
                 responsiveOptions.current.sort((data1, data2) => {
                     const value1 = data1.breakpoint;
                     const value2 = data2.breakpoint;
 
-                    return ObjectUtils.sort(value1, value2, -1, comparator, (context && context.nullSortOrder) || PrimeReact.nullSortOrder);
+                    return ObjectUtils.sort(value1, value2, -1, comparator, (context && context.nullSortOrder) || MantleUI.nullSortOrder);
                 });
 
                 for (let i = 0; i < responsiveOptions.current.length; i++) {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { PrimeReactContext, ariaLabel } from '../api/Api';
+import { MantleContext, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { CheckIcon } from '../icons/check';
@@ -12,7 +12,7 @@ import { TriStateCheckboxBase } from './TriStateCheckboxBase';
 export const TriStateCheckbox = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = TriStateCheckboxBase.getProps(inProps, context);
 
         const [checkBoxValue, setCheckBoxValue] = useState(null);

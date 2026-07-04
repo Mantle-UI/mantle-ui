@@ -36,12 +36,12 @@ const PassThroughDemo = () => {
 
     return (
         <DocComponent
-            title="PrimeReact - PassThrough"
+            title="MantleUI - PassThrough"
             header="Pass Through"
             description="The Pass Through props is an API to access the internal DOM Structure of the components."
             componentDocs={docs}
             apiDocs={['API']}
-            apiExclude={{ interfaces: ['PrimeIconsOptions', 'APIOptions', 'ContextAPIOptions', 'FilterMatchModeOptions', 'ZIndexOptions', 'LocaleOptions'], types: 'excludeAll' }}
+            apiExclude={{ interfaces: ['MantleIconsOptions', 'APIOptions', 'ContextAPIOptions', 'FilterMatchModeOptions', 'ZIndexOptions', 'LocaleOptions'], types: 'excludeAll' }}
         />
     );
 };

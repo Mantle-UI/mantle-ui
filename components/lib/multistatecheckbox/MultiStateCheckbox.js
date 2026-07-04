@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ariaLabel, PrimeReactContext } from '../api/Api';
+import { ariaLabel, MantleContext } from '../api/Api';
 import { Checkbox } from '../checkbox/Checkbox';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
@@ -10,7 +10,7 @@ import { MultiStateCheckboxBase } from './MultiStateCheckboxBase';
 export const MultiStateCheckbox = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = MultiStateCheckboxBase.getProps(inProps, context);
 
         const [focusedState, setFocusedState] = React.useState(false);

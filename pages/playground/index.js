@@ -4,7 +4,7 @@ const PlayGround = () => {
     return (
         <div>
             <Head>
-                <title>Playground - PrimeReact</title>
+                <title>Playground - MantleUI</title>
                 <meta name="description" content="Experience Primereact right now with the interactive environment." />
             </Head>
             <div className="doc">

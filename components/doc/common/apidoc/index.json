@@ -550,16 +550,16 @@
         }
     },
     "api": {
-        "description": "API for PrimeReact components.",
+        "description": "API for MantleUI components.",
         "functions": {
             "description": "Defines the custom functions used by the module.",
             "values": {
-                "PrimeReactProvider": {
-                    "name": "PrimeReactProvider",
+                "MantleProvider": {
+                    "name": "MantleProvider",
                     "parameters": [
                         {
                             "name": "props",
-                            "type": "PrimeReactProviderProps"
+                            "type": "MantleProviderProps"
                         },
                         {
                             "name": "deprecatedLegacyContext",
@@ -759,7 +759,7 @@
                     "callbacks": []
                 },
                 "APIOptions": {
-                    "description": "Configuration options for the PrimeReact components.",
+                    "description": "Configuration options for the MantleUI components.",
                     "relatedProp": "",
                     "props": [
                         {
@@ -788,7 +788,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "description": "PrimeReact components utilize \"react-transition-group\" internally to implement animations. Setting \"cssTransition\" to \"false\" disables all animations."
+                            "description": "MantleUI components utilize \"react-transition-group\" internally to implement animations. Setting \"cssTransition\" to \"false\" disables all animations."
                         },
                         {
                             "name": "filterMatchModeOptions",
@@ -850,7 +850,7 @@
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
-                            "type": "PrimeReactPTOptions",
+                            "type": "MantleUIPTOptions",
                             "description": "This option allows to direct implementation of all relevant attributes (e.g., style, classnames) within the respective HTML tag."
                         },
                         {
@@ -955,7 +955,7 @@
                             "name": "setPt",
                             "optional": true,
                             "readonly": false,
-                            "type": "Dispatch<SetStateAction<PrimeReactPTOptions>>",
+                            "type": "Dispatch<SetStateAction<MantleUIPTOptions>>",
                             "description": "Sets the \"pt\" state of the context."
                         }
                     ],
@@ -993,7 +993,7 @@
                     ],
                     "extendedBy": "CascadeSelectContext"
                 },
-                "PrimeReactPTOptions": {
+                "MantleUIPTOptions": {
                     "description": "This option allows to direct implementation of all relevant attributes (e.g., style, classnames) within the respective HTML tag globally for all components.",
                     "relatedProp": "",
                     "props": [
@@ -2126,7 +2126,7 @@
                     ],
                     "callbacks": []
                 },
-                "PrimeIconsOptions": {
+                "MantleIconsOptions": {
                     "relatedProp": "",
                     "props": [
                         {
@@ -9699,7 +9699,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "description": "PrimeReact components utilize \"react-transition-group\" internally to implement animations. Setting \"cssTransition\" to \"false\" disables all animations."
+                            "description": "MantleUI components utilize \"react-transition-group\" internally to implement animations. Setting \"cssTransition\" to \"false\" disables all animations."
                         },
                         {
                             "name": "filterMatchModeOptions",
@@ -9761,7 +9761,7 @@
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
-                            "type": "PrimeReactPTOptions",
+                            "type": "MantleUIPTOptions",
                             "description": "This option allows to direct implementation of all relevant attributes (e.g., style, classnames) within the respective HTML tag."
                         },
                         {
@@ -9866,7 +9866,7 @@
                             "name": "setPt",
                             "optional": true,
                             "readonly": false,
-                            "type": "Dispatch<SetStateAction<PrimeReactPTOptions>>",
+                            "type": "Dispatch<SetStateAction<MantleUIPTOptions>>",
                             "description": "Sets the \"pt\" state of the context."
                         },
                         {
@@ -16129,10 +16129,10 @@
         }
     },
     "csstransition": {
-        "description": "CSSTransition component wraps [ReactCSSTransition](https://reactcommunity.org/react-transition-group/css-transition) API.\nIt allows us to easily manage animations. All PrimeReact components use this component.\n\n[Live Demo](https://www.primereact.org/dropdown/)",
+        "description": "CSSTransition component wraps [ReactCSSTransition](https://reactcommunity.org/react-transition-group/css-transition) API.\nIt allows us to easily manage animations. All MantleUI components use this component.\n\n[Live Demo](https://www.primereact.org/dropdown/)",
         "components": {
             "CSSTransition": {
-                "description": "CSSTransition component wraps [ReactCSSTransition](https://reactcommunity.org/react-transition-group/css-transition) API.\nIt allows us to easily manage animations. All PrimeReact components use this component.",
+                "description": "CSSTransition component wraps [ReactCSSTransition](https://reactcommunity.org/react-transition-group/css-transition) API.\nIt allows us to easily manage animations. All MantleUI components use this component.",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27030,7 +27030,7 @@
                         }
                     ],
                     "returnType": "any[]",
-                    "description": "Custom hook to listen to overlay event. It can be used when an overlay is desired to behave like the overlays in PrimeReact."
+                    "description": "Custom hook to listen to overlay event. It can be used when an overlay is desired to behave like the overlays in MantleUI."
                 },
                 "useOverlayScrollListener": {
                     "name": "useOverlayScrollListener",
@@ -27042,7 +27042,7 @@
                         }
                     ],
                     "returnType": "any[]",
-                    "description": "Custom hook to listen to overlay scroll. It can be used when an overlay is desired to behave like the overlays in PrimeReact."
+                    "description": "Custom hook to listen to overlay scroll. It can be used when an overlay is desired to behave like the overlays in MantleUI."
                 },
                 "useResizeListener": {
                     "name": "useResizeListener",
@@ -27822,7 +27822,7 @@
     "icons/angledoubledown": {
         "components": {
             "AngleDoubleDownIcon": {
-                "description": "**PrimeReact - AngleDoubleDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27863,7 +27863,7 @@
     "icons/angledoubleleft": {
         "components": {
             "AngleDoubleLeftIcon": {
-                "description": "**PrimeReact - AngleDoubleLeftIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27904,7 +27904,7 @@
     "icons/angledoubleright": {
         "components": {
             "AngleDoubleRightIcon": {
-                "description": "**PrimeReact - AngleDoubleRightIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27945,7 +27945,7 @@
     "icons/angledoubleup": {
         "components": {
             "AngleDoubleUpIcon": {
-                "description": "**PrimeReact - AngleDoubleUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -27986,7 +27986,7 @@
     "icons/angledown": {
         "components": {
             "AngleDownIcon": {
-                "description": "**PrimeReact - AngleDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28027,7 +28027,7 @@
     "icons/angleleft": {
         "components": {
             "AngleLeftIcon": {
-                "description": "**PrimeReact - AngleLeftIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28068,7 +28068,7 @@
     "icons/angleright": {
         "components": {
             "AngleRightIcon": {
-                "description": "**PrimeReact - AngleRightIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28109,7 +28109,7 @@
     "icons/angleup": {
         "components": {
             "AngleUpIcon": {
-                "description": "**PrimeReact - AngleUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28150,7 +28150,7 @@
     "icons/arrowdown": {
         "components": {
             "ArrowDownIcon": {
-                "description": "**PrimeReact - ArrowDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28191,7 +28191,7 @@
     "icons/arrowup": {
         "components": {
             "ArrowUpIcon": {
-                "description": "**PrimeReact - ArrowUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28232,7 +28232,7 @@
     "icons/ban": {
         "components": {
             "BanIcon": {
-                "description": "**PrimeReact - BanIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28273,7 +28273,7 @@
     "icons/bars": {
         "components": {
             "BarsIcon": {
-                "description": "**PrimeReact - BarsIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28314,7 +28314,7 @@
     "icons/blank": {
         "components": {
             "BlankIcon": {
-                "description": "**PrimeReact - BlankIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28355,7 +28355,7 @@
     "icons/calendar": {
         "components": {
             "CalendarIcon": {
-                "description": "**PrimeReact - CalendarIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28396,7 +28396,7 @@
     "icons/check": {
         "components": {
             "CheckIcon": {
-                "description": "**PrimeReact - CheckIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28437,7 +28437,7 @@
     "icons/chevrondown": {
         "components": {
             "ChevronDownIcon": {
-                "description": "**PrimeReact - ChevronDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28478,7 +28478,7 @@
     "icons/chevronleft": {
         "components": {
             "ChevronLeftIcon": {
-                "description": "**PrimeReact - ChevronLeftIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28519,7 +28519,7 @@
     "icons/chevronright": {
         "components": {
             "ChevronRightIcon": {
-                "description": "**PrimeReact - ChevronRightIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28560,7 +28560,7 @@
     "icons/chevronup": {
         "components": {
             "ChevronUpIcon": {
-                "description": "**PrimeReact - ChevronUpIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28601,7 +28601,7 @@
     "icons/download": {
         "components": {
             "DownloadIcon": {
-                "description": "**PrimeReact - DownloadIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28642,7 +28642,7 @@
     "icons/exclamationtriangle": {
         "components": {
             "ExclamationTriangleIcon": {
-                "description": "**PrimeReact - ExclamationTriangleIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28683,7 +28683,7 @@
     "icons/eye": {
         "components": {
             "EyeIcon": {
-                "description": "**PrimeReact - EyeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28724,7 +28724,7 @@
     "icons/eyeslash": {
         "components": {
             "EyeSlashIcon": {
-                "description": "**PrimeReact - EyeSlashIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28765,7 +28765,7 @@
     "icons/filter": {
         "components": {
             "FilterIcon": {
-                "description": "**PrimeReact - FilterIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28806,7 +28806,7 @@
     "icons/filterslash": {
         "components": {
             "FilterSlashIcon": {
-                "description": "**PrimeReact - FilterSlashIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28847,7 +28847,7 @@
     "icons/infocircle": {
         "components": {
             "InfoCircleIcon": {
-                "description": "**PrimeReact - InfoCircleIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28888,7 +28888,7 @@
     "icons/minus": {
         "components": {
             "MinusIcon": {
-                "description": "**PrimeReact - MinusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28929,7 +28929,7 @@
     "icons/pencil": {
         "components": {
             "PencilIcon": {
-                "description": "**PrimeReact - PencilIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -28970,7 +28970,7 @@
     "icons/plus": {
         "components": {
             "PlusIcon": {
-                "description": "**PrimeReact - PlusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29011,7 +29011,7 @@
     "icons/refresh": {
         "components": {
             "RefreshIcon": {
-                "description": "**PrimeReact - RefreshIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29052,7 +29052,7 @@
     "icons/search": {
         "components": {
             "SearchIcon": {
-                "description": "**PrimeReact - SearchIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29093,7 +29093,7 @@
     "icons/searchminus": {
         "components": {
             "SearchMinusIcon": {
-                "description": "**PrimeReact - SearchMinusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29134,7 +29134,7 @@
     "icons/searchplus": {
         "components": {
             "SearchPlusIcon": {
-                "description": "**PrimeReact - SearchPlusIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29175,7 +29175,7 @@
     "icons/sortalt": {
         "components": {
             "SortAltIcon": {
-                "description": "**PrimeReact - SortAltIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29216,7 +29216,7 @@
     "icons/sortamountdown": {
         "components": {
             "SortAmountDownIcon": {
-                "description": "**PrimeReact - SortAmountDownIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29257,7 +29257,7 @@
     "icons/sortamountupalt": {
         "components": {
             "SortAmountUpAltIcon": {
-                "description": "**PrimeReact - SortAmountUpAltIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29298,7 +29298,7 @@
     "icons/spinner": {
         "components": {
             "SpinnerIcon": {
-                "description": "**PrimeReact - SpinnerIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29339,7 +29339,7 @@
     "icons/star": {
         "components": {
             "StarIcon": {
-                "description": "**PrimeReact - StarIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29380,7 +29380,7 @@
     "icons/starfill": {
         "components": {
             "StarFillIcon": {
-                "description": "**PrimeReact - StarFillIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29421,7 +29421,7 @@
     "icons/thlarge": {
         "components": {
             "ThLargeIcon": {
-                "description": "**PrimeReact - ThLargeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29462,7 +29462,7 @@
     "icons/times": {
         "components": {
             "TimesIcon": {
-                "description": "**PrimeReact - TimesIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29503,7 +29503,7 @@
     "icons/timescircle": {
         "components": {
             "TimesCircleIcon": {
-                "description": "**PrimeReact - TimesCircleIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29544,7 +29544,7 @@
     "icons/trash": {
         "components": {
             "TrashIcon": {
-                "description": "**PrimeReact - TrashIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29585,7 +29585,7 @@
     "icons/undo": {
         "components": {
             "UndoIcon": {
-                "description": "**PrimeReact - UndoIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29626,7 +29626,7 @@
     "icons/upload": {
         "components": {
             "UploadIcon": {
-                "description": "**PrimeReact - UploadIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29667,7 +29667,7 @@
     "icons/windowmaximize": {
         "components": {
             "WindowMaximizeIcon": {
-                "description": "**PrimeReact - WindowMaximizeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -29708,7 +29708,7 @@
     "icons/windowminimize": {
         "components": {
             "WindowMinimizeIcon": {
-                "description": "**PrimeReact - WindowMinimizeIcon**\n\n[Live Demo](https://www.primereact.org/icons/)\n--- ---\n![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)",
+                "description": "100.png)",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": []
@@ -35397,7 +35397,7 @@
         }
     },
     "menuitem": {
-        "description": "PrimeReact menus components share a common api to specify the menuitems and submenus.\n\n[Live Demo](https://www.primereact.org/menumodel/)",
+        "description": "MantleUI menus components share a common api to specify the menuitems and submenus.\n\n[Live Demo](https://www.primereact.org/menumodel/)",
         "model": {
             "MenuItem": {
                 "description": "Defines model of MenuItem API.",
@@ -50749,7 +50749,7 @@
                             "readonly": false,
                             "type": "number",
                             "default": "0",
-                            "description": "Base zIndex value to add to initial layering of PrimeReact components which start from 1000."
+                            "description": "Base zIndex value to add to initial layering of MantleUI components which start from 1000."
                         },
                         {
                             "name": "children",
@@ -51725,10 +51725,10 @@
         }
     },
     "tooltip": {
-        "description": "Tooltip functionality is integrated within various PrimeReact components.\n\n[Live Demo](https://www.primereact.org/tooltip/)",
+        "description": "Tooltip functionality is integrated within various MantleUI components.\n\n[Live Demo](https://www.primereact.org/tooltip/)",
         "components": {
             "Tooltip": {
-                "description": "Tooltip functionality is integrated within various PrimeReact components.",
+                "description": "Tooltip functionality is integrated within various MantleUI components.",
                 "methods": {
                     "description": "Defines methods that can be accessed by the component's reference.",
                     "values": [
@@ -52492,7 +52492,7 @@
                 }
             },
             "TooltipHTMLAttributes": {
-                "description": "In addition to React.HTMLAttributes, the following attributes can be used on any HTMLElement if the page has a PrimeReact  tooltip  component.",
+                "description": "In addition to React.HTMLAttributes, the following attributes can be used on any HTMLElement if the page has a MantleUI  tooltip  component.",
                 "props": {
                     "description": "",
                     "values": [

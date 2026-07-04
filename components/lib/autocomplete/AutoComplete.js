@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext, localeOption } from '../api/Api';
+import MantleUI, { MantleContext, localeOption } from '../api/Api';
 import { Button } from '../button/Button';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useOverlayListener, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -16,7 +16,7 @@ import { AutoCompletePanel } from './AutoCompletePanel';
 export const AutoComplete = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = AutoCompleteBase.getProps(inProps, context);
         const [idState, setIdState] = React.useState(props.id);
         const [searchingState, setSearchingState] = React.useState(false);
@@ -192,7 +192,7 @@ export const AutoComplete = React.memo(
         };
 
         const onOverlayEnter = () => {
-            ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, (context && context.zIndex.overlay) || PrimeReact.zIndex.overlay);
+            ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
             DomHandler.addStyles(overlayRef.current, { position: 'absolute', top: '0', left: '0' });
             alignOverlay();
         };
@@ -230,7 +230,7 @@ export const AutoComplete = React.memo(
         const alignOverlay = () => {
             const target = props.multiple ? multiContainerRef.current : inputRef.current;
 
-            DomHandler.alignOverlay(overlayRef.current, target, props.appendTo || (context && context.appendTo) || PrimeReact.appendTo);
+            DomHandler.alignOverlay(overlayRef.current, target, props.appendTo || (context && context.appendTo) || MantleUI.appendTo);
         };
 
         const onPanelClick = (event) => {

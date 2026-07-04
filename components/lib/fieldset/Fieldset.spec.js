@@ -2,33 +2,33 @@ import '@testing-library/jest-dom';
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { snapshot } from '../../test';
-import { PrimeReactProvider } from '../api/Api';
+import { MantleProvider } from '../api/Api';
 import { Fieldset } from './Fieldset';
 
 describe('Fieldset', () => {
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Fieldset />
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'default'
     );
     snapshot(
-        <PrimeReactProvider>
+        <MantleProvider>
             <Fieldset id="fieldset" legend="Simple Fieldset">
                 Content
             </Fieldset>
-        </PrimeReactProvider>,
+        </MantleProvider>,
         'legend'
     );
     test('when Fieldset is toggleable it will toggle when clicked', async () => {
         // Arrange
         const toggleOn = jest.fn();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Fieldset legend="Toggleable" toggleable onToggle={toggleOn}>
                     <p>Lorem ipsum dolor sit amet</p>
                 </Fieldset>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const legend = container.querySelectorAll('[data-pc-section="toggler"]')[0];
 
@@ -48,11 +48,11 @@ describe('Fieldset', () => {
         const expandOn = jest.fn();
         const collapseOn = jest.fn();
         const { container } = render(
-            <PrimeReactProvider>
+            <MantleProvider>
                 <Fieldset legend="Expand/Collapse" toggleable onExpand={expandOn} onCollapse={collapseOn}>
                     <p>Lorem ipsum dolor sit amet</p>
                 </Fieldset>
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const legend = container.querySelectorAll('[data-pc-section="toggler"]')[0];
 

@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames } from '../utils/Utils';
 
@@ -89,8 +89,8 @@ const styles = `
 const classes = {
     root: ({ props, context }) =>
         classNames('p-toast p-component p-toast-' + props.position, props.className, {
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     message: {
         message: ({ severity }) =>

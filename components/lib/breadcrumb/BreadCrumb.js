@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { ChevronRightIcon } from '../icons/chevronright';
@@ -9,7 +9,7 @@ import { BreadCrumbBase } from './BreadCrumbBase';
 export const BreadCrumb = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = BreadCrumbBase.getProps(inProps, context);
         const [idState, setIdState] = React.useState(props.id);
         const elementRef = React.useRef(null);

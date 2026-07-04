@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { localeOption, PrimeReactContext } from '../api/Api';
+import { localeOption, MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useDebounce, useMergeProps, useUpdateEffect } from '../hooks/Hooks';
 import { SearchIcon } from '../icons/search';
@@ -11,7 +11,7 @@ import { UITreeNode } from './UITreeNode';
 export const Tree = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = TreeBase.getProps(inProps, context);
 
         const [filterValue, filterValueState, setFilterValueState] = useDebounce('', props.filterDelay || 0);

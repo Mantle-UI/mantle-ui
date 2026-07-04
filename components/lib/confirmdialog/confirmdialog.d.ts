@@ -273,13 +273,13 @@ interface ConfirmDialogReturn {
 }
 
 /**
- * **PrimeReact - ConfirmDialog**
+ * **MantleUI - ConfirmDialog**
  *
  * _ConfirmDialog uses a Dialog UI with confirmDialog method or <ConfirmDialog> tag._
  *
  * [Live Demo](https://www.primereact.org/confirmdialog/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

@@ -3,7 +3,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function HelpNeededDoc(props) {
     return (
         <DocSectionText {...props}>
-            <p>PrimeReact is a community-driven project backed by the expertise and sponsorship of PrimeTek, and we appreciate any help you can provide. Here are some areas where you can contribute:</p>
+            <p>MantleUI is a community-driven project backed by the expertise and sponsorship of PrimeTek, and we appreciate any help you can provide. Here are some areas where you can contribute:</p>
             <h3>Issue Triage</h3>
             <p>Help us manage issues by;</p>
             <ul className="leading-normal px-10 m-0">
@@ -27,7 +27,7 @@ export function HelpNeededDoc(props) {
                 <a href="https://discord.com/invite/gzKFYnpmCY" target="_blank" rel="noopener noreferrer">
                     PrimeLand Discord
                 </a>{' '}
-                server. Your expertise can help others solve problems and improve their experience with PrimeReact.
+                server. Your expertise can help others solve problems and improve their experience with MantleUI.
             </p>
         </DocSectionText>
     );

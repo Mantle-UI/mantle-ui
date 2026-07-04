@@ -73,13 +73,13 @@ export interface StyleClassProps {
 }
 
 /**
- * **PrimeReact - StyleClass**
+ * **MantleUI - StyleClass**
  *
  * _StyleClass manages css classes declaratively to during enter/leave animations or just to toggle classes on an element._
  *
  * [Live Demo](https://www.primereact.org/styleclass/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

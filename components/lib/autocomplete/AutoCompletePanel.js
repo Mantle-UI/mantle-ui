@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { localeOption, PrimeReactContext } from '../api/Api';
+import { localeOption, MantleContext } from '../api/Api';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import { useMergeProps } from '../hooks/Hooks';
 import { Portal } from '../portal/Portal';
@@ -11,7 +11,7 @@ export const AutoCompletePanel = React.memo(
     React.forwardRef((props, ref) => {
         const mergeProps = useMergeProps();
         const { ptm, cx } = props;
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
 
         const _ptm = (key, options) => {
             return ptm(key, {

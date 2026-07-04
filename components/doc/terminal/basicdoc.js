@@ -50,7 +50,7 @@ export function BasicDoc(props) {
     const code = {
         basic: `
 <Terminal 
-    welcomeMessage="Welcome to PrimeReact" 
+    welcomeMessage="Welcome to MantleUI" 
     prompt="primereact $" 
     pt={{
         root: 'bg-gray-900 text-white border-round',
@@ -113,7 +113,7 @@ export default function TerminalDemo() {
                 Enter "<strong>date</strong>" to display the current date, "<strong>greet {'{0}'}</strong>" for a message, "<strong>random</strong>" to get a random number and "<strong>clear</strong>" to clear all commands.
             </p>
             <Terminal 
-                welcomeMessage="Welcome to PrimeReact" 
+                welcomeMessage="Welcome to MantleUI" 
                 prompt="primereact $" 
                 pt={{
                     root: 'bg-gray-900 text-white border-round',
@@ -179,7 +179,7 @@ export default function TerminalDemo() {
                 Enter "<strong>date</strong>" to display the current date, "<strong>greet {'{0}'}</strong>" for a message, "<strong>random</strong>" to get a random number and "<strong>clear</strong>" to clear all commands.
             </p>
             <Terminal 
-                welcomeMessage="Welcome to PrimeReact" 
+                welcomeMessage="Welcome to MantleUI" 
                 prompt="primereact $" 
                 pt={{
                     root: 'bg-gray-900 text-white border-round',
@@ -207,7 +207,7 @@ export default function TerminalDemo() {
                     Enter "<strong>date</strong>" to display the current date, "<strong>greet {'{0}'}</strong>" for a message, "<strong>random</strong>" to get a random number and "<strong>clear</strong>" to clear all commands.
                 </p>
                 <Terminal
-                    welcomeMessage="Welcome to PrimeReact"
+                    welcomeMessage="Welcome to MantleUI"
                     prompt="primereact $"
                     pt={{
                         root: 'bg-gray-900 text-white border-round',

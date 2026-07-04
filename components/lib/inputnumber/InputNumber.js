@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { AngleDownIcon } from '../icons/angledown';
@@ -13,7 +13,7 @@ import { InputNumberBase } from './InputNumberBase';
 export const InputNumber = React.memo(
     React.forwardRef((inProps, ref) => {
         const mergeProps = useMergeProps();
-        const context = React.useContext(PrimeReactContext);
+        const context = React.useContext(MantleContext);
         const props = InputNumberBase.getProps(inProps, context);
         const [focusedState, setFocusedState] = React.useState(false);
         const metaData = {
@@ -45,7 +45,7 @@ export const InputNumber = React.memo(
         const _prefix = React.useRef(null);
         const _index = React.useRef(null);
         const isFocusedByClick = React.useRef(false);
-        const _locale = props.locale || (context && context.locale) || PrimeReact.locale;
+        const _locale = props.locale || (context && context.locale) || MantleUI.locale;
         const stacked = props.showButtons && props.buttonLayout === 'stacked';
         const horizontal = props.showButtons && props.buttonLayout === 'horizontal';
         const vertical = props.showButtons && props.buttonLayout === 'vertical';

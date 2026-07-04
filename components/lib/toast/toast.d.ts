@@ -250,7 +250,7 @@ interface ContentProps {
  */
 export interface ToastProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt' | 'content'> {
     /**
-     * Base zIndex value to add to initial layering of PrimeReact components which start from 1000.
+     * Base zIndex value to add to initial layering of MantleUI components which start from 1000.
      * @defaultValue 0
      */
     baseZIndex?: number | undefined;
@@ -310,13 +310,13 @@ export interface ToastProps extends Omit<React.DetailedHTMLProps<React.HTMLAttri
 }
 
 /**
- * **PrimeReact - Toast**
+ * **MantleUI - Toast**
  *
  * _Toast is used to display messages in an overlay._
  *
  * [Live Demo](https://www.primereact.org/toast/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

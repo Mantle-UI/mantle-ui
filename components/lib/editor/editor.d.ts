@@ -182,13 +182,13 @@ export interface EditorProps extends Omit<React.DetailedHTMLProps<React.InputHTM
 }
 
 /**
- * **PrimeReact - Editor**
+ * **MantleUI - Editor**
  *
  * _Editor is rich text editor component based on Quill._
  *
  * [Live Demo](https://www.primereact.org/editor/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

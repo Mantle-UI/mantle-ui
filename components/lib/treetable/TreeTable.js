@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { getStorage } from '../../utils/utils';
-import PrimeReact, { FilterMatchMode, FilterService, PrimeReactContext } from '../api/Api';
+import MantleUI, { FilterMatchMode, FilterService, MantleContext } from '../api/Api';
 import { ColumnBase } from '../column/ColumnBase';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useEventListener, useMergeProps, useMountEffect, useUpdateEffect } from '../hooks/Hooks';
@@ -17,7 +17,7 @@ import { TreeTableScrollableView } from './TreeTableScrollableView';
 
 export const TreeTable = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = TreeTableBase.getProps(inProps, context);
     const [expandedKeysState, setExpandedKeysState] = React.useState(props.expandedKeys);
     const [firstState, setFirstState] = React.useState(props.first);
@@ -405,7 +405,7 @@ export const TreeTable = React.forwardRef((inProps, ref) => {
         } else {
             // performance optimization to prevent resolving field data in each loop
             const lookupMap = new Map();
-            const comparator = ObjectUtils.localeComparator((context && context.locale) || PrimeReact.locale);
+            const comparator = ObjectUtils.localeComparator((context && context.locale) || MantleUI.locale);
 
             for (let node of data) {
                 lookupMap.set(node.data, ObjectUtils.resolveFieldData(node.data, field));
@@ -431,7 +431,7 @@ export const TreeTable = React.forwardRef((inProps, ref) => {
     const sortMultiple = ({ data, multiSortMeta = [] }) => {
         let value = [...data];
 
-        const comparator = ObjectUtils.localeComparator((context && context.locale) || PrimeReact.locale);
+        const comparator = ObjectUtils.localeComparator((context && context.locale) || MantleUI.locale);
 
         value.sort((node1, node2) => {
             return multisortField(node1, node2, multiSortMeta, 0, comparator);
@@ -463,7 +463,7 @@ export const TreeTable = React.forwardRef((inProps, ref) => {
     };
 
     const compareValuesOnSort = (value1, value2, comparator, order) => {
-        return ObjectUtils.sort(value1, value2, order, comparator, (context && context.nullSortOrder) || PrimeReact.nullSortOrder);
+        return ObjectUtils.sort(value1, value2, order, comparator, (context && context.nullSortOrder) || MantleUI.nullSortOrder);
     };
 
     const filter = (value, field, mode) => {
@@ -518,8 +518,8 @@ export const TreeTable = React.forwardRef((inProps, ref) => {
                 const dataType = getColumnProp(col, 'dataType');
                 const matchMode =
                     getColumnProp(col, 'filterMatchMode') ||
-                    ((context && context.filterMatchModeOptions[dataType]) || PrimeReact.filterMatchModeOptions[dataType]
-                        ? (context && context.filterMatchModeOptions[dataType][0]) || PrimeReact.filterMatchModeOptions[dataType][0]
+                    ((context && context.filterMatchModeOptions[dataType]) || MantleUI.filterMatchModeOptions[dataType]
+                        ? (context && context.filterMatchModeOptions[dataType][0]) || MantleUI.filterMatchModeOptions[dataType][0]
                         : FilterMatchMode.STARTS_WITH);
                 let constraint = { value: null, matchMode };
 

@@ -7,7 +7,7 @@ import { classNames } from '../utils/Utils';
 import { ColumnFilter } from './ColumnFilter';
 import { HeaderCell } from './HeaderCell';
 import { HeaderCheckbox } from './HeaderCheckbox';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 
 export const TableHeader = React.memo((props) => {
     const [sortableDisabledFieldsState, setSortableDisabledFieldsState] = React.useState([]);
@@ -17,7 +17,7 @@ export const TableHeader = React.memo((props) => {
     const isMultipleSort = props.sortMode === 'multiple';
     const isAllSortableDisabled = isSingleSort && allSortableDisabledState;
     const { ptm, ptmo, cx } = props.ptCallbacks;
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
 
     const getColumnProp = (column, name) => {
         return ColumnBase.getCProp(column, name);

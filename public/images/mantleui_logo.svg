@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 300" width="310" height="300" role="img" aria-label="Mantle UI M logo icon">
+  <defs>
+    <linearGradient id="blueGrad" x1="38" y1="15" x2="291" y2="206" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5F66F6"></stop>
+      <stop offset="100%" stop-color="#4E57E8"></stop>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="90" y1="123" x2="241" y2="229" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#33415C"></stop>
+      <stop offset="100%" stop-color="#243455"></stop>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="39" y1="187" x2="290" y2="276" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#18C7BA"></stop>
+      <stop offset="100%" stop-color="#14B8A6"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- outer blue M -->
+  <path fill="url(#blueGrad)" d="M 38 15 L 38 206 L 78 178 L 79 100 L 164 160 L 250 100 L 252 176 L 291 206 L 291 16 L 164 105 Z"></path>
+
+  <!-- inner dark M -->
+  <path fill="url(#navyGrad)" d="M 90 123 L 89 174 L 165 229 L 241 175 L 241 123 L 165 176 Z"></path>
+
+  <!-- lower teal wings -->
+  <path fill="url(#tealGrad)" d="M 39 277 L 39 220 L 87 187 L 126 215 Z"></path>
+  <path fill="url(#tealGrad)" d="M 205 216 L 245 187 L 290 220 L 290 276 Z"></path>
+</svg>

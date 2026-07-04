@@ -206,13 +206,13 @@ export interface ContextMenuProps extends Omit<React.DetailedHTMLProps<React.HTM
 }
 
 /**
- * **PrimeReact - ContextMenu**
+ * **MantleUI - ContextMenu**
  *
  * _ContextMenu displays an overlay menu on right click of its target. Note that components like DataTable has special integration with ContextMenu. Refer to documentation of the individual documentation of the components having a special integration._
  *
  * [Live Demo](https://www.primereact.org/contextmenu/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

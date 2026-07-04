@@ -4,7 +4,7 @@ export function UtilsDoc(props) {
     return (
         <>
             <DocSectionText {...props}>
-                <p>In addition to PrimeFlex, PrimeReact has a couple of css utility classes on its own as well.</p>
+                <p>In addition to PrimeFlex, MantleUI has a couple of css utility classes on its own as well.</p>
             </DocSectionText>
             <div className="doc-tablewrapper">
                 <table className="doc-table">

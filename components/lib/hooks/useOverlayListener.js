@@ -14,7 +14,7 @@ export const useOverlayListener = ({ target, overlay, listener, when = true, typ
      * The parameters of the 'listener' method in the following event handlers;
      * @param {Event} event A click event of the document.
      * @param {string} options.type The custom type to detect event.
-     * @param {boolean} options.valid It is controlled by PrimeReact. It is determined whether it is valid or not according to some custom validation.
+     * @param {boolean} options.valid It is controlled by MantleUI. It is determined whether it is valid or not according to some custom validation.
      */
     const [bindDocumentClickListener, unbindDocumentClickListener] = useEventListener({
         target: 'window',

@@ -5,7 +5,7 @@ export function CustomCSSDoc(props) {
     const code = {
         basic: `
 // _app.js        
-import { PrimeReactProvider } from "primereact/api";
+import { MantleProvider } from "primereact/api";
 
 export default function CustomCSSDemo() {
 
@@ -40,9 +40,9 @@ export default function CustomCSSDemo() {
     };
 
     return(
-        <PrimeReactProvider value={{ pt }}>
+        <MantleProvider value={{ pt }}>
             <App />
-        </PrimeReactProvider>
+        </MantleProvider>
     )
 }
         `

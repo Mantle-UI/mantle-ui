@@ -4,10 +4,10 @@ import { Button } from '@/components/lib/button/Button';
 import { useOverlayListener } from '@/components/lib/hooks/Hooks';
 import Link from 'next/link';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { PrimeReactContext } from '@/components/lib/api/PrimeReactContext';
+import { MantleContext } from '@/components/lib/api/MantleContext';
 
 export function BasicDoc(props) {
-    const context = useContext(PrimeReactContext);
+    const context = useContext(MantleContext);
     const [visible, setVisible] = useState(false);
     const buttonRef = useRef(null);
     const overlayRef = useRef(null);

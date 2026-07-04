@@ -1,11 +1,11 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { DomHandler, ObjectUtils } from '../utils/Utils';
 import { usePrevious } from './usePrevious';
 import { useUnmountEffect } from './useUnmountEffect';
 
 export const useOverlayScrollListener = ({ target, listener, options, when = true }) => {
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const targetRef = React.useRef(null);
     const listenerRef = React.useRef(null);
     const scrollableParentsRef = React.useRef([]);
@@ -19,7 +19,7 @@ export const useOverlayScrollListener = ({ target, listener, options, when = tru
         }
 
         if (!listenerRef.current && targetRef.current) {
-            const hideOnScroll = context ? context.hideOverlaysOnDocumentScrolling : PrimeReact.hideOverlaysOnDocumentScrolling;
+            const hideOnScroll = context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling;
             const nodes = (scrollableParentsRef.current = DomHandler.getScrollableParents(targetRef.current));
 
             // Ensure window/body is always included as fallback

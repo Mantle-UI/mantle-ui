@@ -41,7 +41,7 @@ export const useStorage = (initialValue, key, storage = 'local') => {
                 storage === 'local' ? window.localStorage.setItem(key, serializedValue) : window.sessionStorage.setItem(key, serializedValue);
             }
         } catch (error) {
-            throw new Error(`PrimeReact useStorage: Failed to serialize the value at key: ${key}`);
+            throw new Error(`MantleUI useStorage: Failed to serialize the value at key: ${key}`);
         }
     };
 

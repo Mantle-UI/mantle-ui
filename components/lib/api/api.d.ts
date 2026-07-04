@@ -1,6 +1,6 @@
 /**
  *
- * API for PrimeReact components.
+ * API for MantleUI components.
  *
  * @module api
  *
@@ -155,7 +155,7 @@ export interface FilterMatchModeOptions {
 }
 
 /**
- * Configuration options for the PrimeReact components.
+ * Configuration options for the MantleUI components.
  */
 export interface APIOptions {
     /**
@@ -172,7 +172,7 @@ export interface APIOptions {
      */
     autoZIndex?: boolean;
     /**
-     * PrimeReact components utilize "react-transition-group" internally to implement animations. Setting "cssTransition" to "false" disables all animations.
+     * MantleUI components utilize "react-transition-group" internally to implement animations. Setting "cssTransition" to "false" disables all animations.
      * @defaultValue true
      */
     cssTransition?: boolean;
@@ -216,7 +216,7 @@ export interface APIOptions {
     /**
      * This option allows to direct implementation of all relevant attributes (e.g., style, classnames) within the respective HTML tag.
      */
-    pt?: PrimeReactPTOptions;
+    pt?: MantleUIPTOptions;
     /**
      * Used to configure passthrough(pt) options of the component.
      * @type {PassThroughOptions}
@@ -286,13 +286,13 @@ export interface APIOptions {
     /**
      * Sets the "pt" state of the context.
      */
-    setPt?: Dispatch<SetStateAction<PrimeReactPTOptions>>;
+    setPt?: Dispatch<SetStateAction<MantleUIPTOptions>>;
 }
 
 /**
  * This option allows to direct implementation of all relevant attributes (e.g., style, classnames) within the respective HTML tag globally for all components.
  */
-export interface PrimeReactPTOptions {
+export interface MantleUIPTOptions {
     /**
      * Custom passthrough(pt) options for Accordion.
      */
@@ -678,13 +678,13 @@ export interface PrimeReactPTOptions {
 }
 
 /**
- * @deprecated since version 9.6.0. Use PrimeReactContext instead.
+ * @deprecated since version 9.6.0. Use MantleContext instead.
  */
-declare const PrimeReact: APIOptions;
+declare const MantleUI: APIOptions;
 
-export default PrimeReact;
+export default MantleUI;
 
-type PrimeReactProviderProps = {
+type MantleProviderProps = {
     /**
      * Any default global API options
      */
@@ -696,10 +696,10 @@ type PrimeReactProviderProps = {
     children: React.ReactNode;
 };
 
-declare const PrimeReactProvider: React.FC<PrimeReactProviderProps>;
-declare const PrimeReactContext: React.Context<APIOptions>;
+declare const MantleProvider: React.FC<MantleProviderProps>;
+declare const MantleContext: React.Context<APIOptions>;
 
-export { PrimeReactContext, PrimeReactProvider };
+export { MantleContext, MantleProvider };
 
 // Locale
 /**
@@ -1215,7 +1215,7 @@ export interface LocaleOptions {
 }
 
 // Icons
-export interface PrimeIconsOptions {
+export interface MantleIconsOptions {
     readonly ALIGN_CENTER: string;
     readonly ALIGN_JUSTIFY: string;
     readonly ALIGN_LEFT: string;
@@ -1458,7 +1458,7 @@ export interface PrimeIconsOptions {
     readonly YOUTUBE: string;
 }
 
-export declare const PrimeIcons: PrimeIconsOptions;
+export declare const MantleIcons: MantleIconsOptions;
 
 // Severity
 export declare enum MessageSeverity {

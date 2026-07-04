@@ -171,13 +171,13 @@ export interface InputSwitchProps extends Omit<React.DetailedHTMLProps<React.Inp
 }
 
 /**
- * **PrimeReact - InputSwitch**
+ * **MantleUI - InputSwitch**
  *
  * _InputSwitch is used to select a boolean value._
  *
  * [Live Demo](https://www.primereact.org/inputswitch/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

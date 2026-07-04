@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames } from '../utils/Utils';
 
@@ -29,7 +29,7 @@ const classes = {
         }),
     panel: ({ context }) =>
         classNames('p-autocomplete-panel p-component', {
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     listWrapper: 'p-autocomplete-items-wrapper',
     list: ({ virtualScrollerOptions, options }) => (virtualScrollerOptions ? classNames('p-autocomplete-items', options.className) : 'p-autocomplete-items'),

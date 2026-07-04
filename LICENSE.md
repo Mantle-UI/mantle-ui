@@ -1,5 +1,7 @@
 The MIT License (MIT)
 
+Copyright (c) 2026 Mantle UI contributors
+
 Copyright (c) 2016-2025 PrimeTek
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

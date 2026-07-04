@@ -1,10 +1,10 @@
 import pkg from 'package.json';
 import { services } from './services';
 
-const PrimeReact = {
+const MantleUI = {
     version: 'latest' || pkg.version, // latest
     description:
-        'PrimeReact is an open source UI library for React featuring a rich set of 80+ components, a theme designer, various theme alternatives such as Material, Bootstrap, Tailwind, premium templates and professional support. In addition, it integrates with PrimeBlock, which has 370+ ready to use UI blocks to build spectacular applications in no time.'
+        'MantleUI is an open source UI library for React featuring a rich set of 80+ components, a theme designer, various theme alternatives such as Material, Bootstrap, Tailwind, premium templates and professional support. In addition, it integrates with PrimeBlock, which has 370+ ready to use UI blocks to build spectacular applications in no time.'
 };
 
 const app_dependencies = pkg ? pkg.dependencies : {};
@@ -67,7 +67,7 @@ const getConfiguredDependencies = (isUnstyled, isTypeScript) => {
         react: app_dependencies.react || 'latest',
         'react-dom': app_dependencies['react-dom'] || 'latest',
         'react-transition-group': app_dependencies['react-transition-group'] || 'latest',
-        primereact: PrimeReact.version || 'latest', // latest
+        primereact: MantleUI.version || 'latest', // latest
         primeicons: app_dependencies.primeicons || 'latest',
         vite: 'latest',
         '@vitejs/plugin-react': 'latest',
@@ -181,7 +181,7 @@ export default ThemeSwitcher;`
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'primeicons/primeicons.css';
-import { PrimeReactProvider } from 'primereact/api';
+import { MantleProvider } from 'primereact/api';
 import Tailwind from 'primereact/passthrough/tailwind';
 import ThemeSwitcher from './components/themeSwitcher';
 
@@ -192,10 +192,10 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root')${isTypeScript ? ' as HTMLElement' : ''});
 root.render(
     <React.StrictMode>
-        <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
+        <MantleProvider value={{ unstyled: true, pt: Tailwind }}>
         <ThemeSwitcher />
         <App />
-        </PrimeReactProvider>
+        </MantleProvider>
     </React.StrictMode>
 );`
     };
@@ -233,7 +233,7 @@ body {
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'primeicons/primeicons.css';
-import { PrimeReactProvider } from 'primereact/api';
+import { MantleProvider } from 'primereact/api';
 import 'primeflex/primeflex.css';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
@@ -245,9 +245,9 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root')${isTypeScript ? ' as HTMLElement' : ''});
 root.render(
 <React.StrictMode>
-    <PrimeReactProvider>
+    <MantleProvider>
     <App />
-    </PrimeReactProvider>
+    </MantleProvider>
 </React.StrictMode>
 );`
     };
@@ -280,7 +280,7 @@ const getVite = (props = {}, template = 'javascript') => {
     const packageJson = {
         content: {
             name: title.toLowerCase().replaceAll(' ', '_'),
-            description: `**${description}** ${PrimeReact.description}`,
+            description: `**${description}** ${MantleUI.description}`,
             type: 'module',
             scripts: {
                 dev: 'vite',
@@ -317,8 +317,8 @@ export default defineConfig({
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="**${description}** ${PrimeReact.description}" />
-        <title>PrimeReact App</title>
+        <meta name="description" content="**${description}** ${MantleUI.description}" />
+        <title>MantleUI App</title>
     </head>
     <body>
         <div id="root"></div>

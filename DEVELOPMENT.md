@@ -1,94 +1,129 @@
 ## Local Development
 
-This document intends to establish a series of steps to take in order to set up a local environment for developing on the primereact components with live reload, quick builds, and incremental builds.
+This repository currently has two separate workflows:
 
-## Instructions
+- a legacy Next.js docs app used for the existing documentation site
+- a Rollup + Gulp library packaging pipeline used to publish
+  `@mantle-ui/react`
 
-You must have a local copy of this repository somewhere on your machine. From that repository. Before starting, make sure that the version for your `primereact/package.json` is a [valid semantic version](https://docs.npmjs.com/about-semantic-versioning) and does not contain a suffix such as `-SNAPSHOT`.
+Mantle UI may move more of this workflow to Vite later, but for now the goal
+is to keep the current package build working while making it easier to
+understand.
 
-Once that is done, you will run:
+## Prerequisites
 
-**Unix/MacOS:**
+- Node.js `>= 18`
+- npm
 
-```shell
-~/primereact/ $ npm run dev:link
-```
-
-**Windows:**
-dev:link:windows
-
-```shell
-C:\primereact> npm run dev:link:windows
-```
-
-This will alter the bundler to only emit non-minified esm modules. The aliasing plugin has also been disabled for components. Once everything has been bundled (this can take a few minutes) you should keep this command running. It will allow for incremental builds as you develop in the `primereact/` directory.
-
-> Note: if you get "Error: JavaScript heap out of memory", it may help to set the following node variable: `export NODE_OPTIONS=--max-old-space-size=8192`.
-
-> Note: The build will be finished when the terminal displays: `[20xx-xx-xx 00:00:00] waiting for changes...`.
-
-This will create a local copy of the package that is used instead of the registry version.
-Unlike `npm link`, `yalc` does not use symlinks, which avoids common module resolution issues.
-
-### Open a new terminal and navigate to the `primereact/dist/` directory
-
-Run yalc publish
-
-```shell 
-~/primereact/ $ cd dist
-~/primereact/dist/ $ npx yalc publish
-```
-
-### Now change your directory to your local project you are developing on!
+Install dependencies from the repository root:
 
 ```shell
-~/primereact/dist/ $ cd ~/my-cool-project
-~/my-cool-project/ $
+npm install --legacy-peer-deps
 ```
 
-The goal now is to link your primereact dependency to the yalc package that we configured earlier:
+`--legacy-peer-deps` is currently required because the dependency metadata for
+`jspdf` and `jspdf-autotable` does not satisfy npm's default peer resolution.
+
+## Docs App Workflow
+
+The docs app still uses Next.js.
+
+Start the docs app in development mode:
 
 ```shell
-~/my-cool-project/ $ npx yalc add primereact
+npm run dev:docs
 ```
 
-As long at the dependencies version that you symlinked satisfies the version that is specified in `my-cool-project/package.json` then the link should have worked.
-
-You can validate that by running:
+Build the docs app:
 
 ```shell
-~/my-cool-project/ $  npx yalc check
-
-Yalc dependencies found: [ 'primereact' ]
+npm run build:docs
 ```
 
-After doing your changes in the `primereact/` directory, you can publish the changes to your local project by running:
+Run the built docs app:
 
 ```shell
-~/primereact/dist/ $ npx yalc push
+npm run start:docs
 ```
 
-## Live Development
-If you want to push your changes automatically to your local project, you can use the following:
+The legacy aliases still exist:
+
+- `npm run dev`
+- `npm run build`
+- `npm run start`
+
+## Library Packaging Workflow
+
+The publishable library artifacts are built into `dist/`.
+
+### Cross-platform build
 
 ```shell
-~/primereact $ npm run dev:link -- -- --watch.onEnd="cd dist && npx yalc push"
+INPUT_DIR=components/lib/ OUTPUT_DIR=dist/ NODE_ENV=production npm run build:dist
 ```
-This command will watch for changes in the `primereact/` directory and automatically push updates to your local project whenever you save a file. (note the double -- before `watch.onEnd`)
 
-### Congratulations!
-
-You can now live develop in the `primereact/` directory and your changes should be represented in your `my-cool-project/` build. (Assuming you are running vite or another bundler for `my-cool-project`)
-
-### Cleanup
-
-Once done, you can clean up with:
+### Windows build
 
 ```shell
-~/my-cool-project/ $ yalc remove primereact
-~/my-cool-project/ $ rm -rf yalc.lock .yalc
-~/my-cool-project/ $ npm install primereact@latest
+npm run build:lib:windows
 ```
 
-> Note: `yalc` stores the published package in `~/.yalc/primereact` and uses file references in your project.  
-> This avoids typical pitfalls of `npm link`, such as duplicated React versions or broken module scopes.
+### Unix-like build
+
+```shell
+npm run build:lib
+```
+
+These scripts perform:
+
+1. linting, formatting, and type checks
+2. Rollup bundling
+3. Gulp resource copying and CSS packaging
+4. API docs and web types generation
+
+## Build Script Reference
+
+- `npm run build:bundle`
+  Runs the Rollup library bundle only.
+- `npm run build:assets`
+  Runs the Gulp asset/resource packaging only.
+- `npm run build:api`
+  Generates API documentation and web types.
+- `npm run build:dist`
+  Runs the full library packaging pipeline.
+- `npm run build:dist:watch`
+  Runs the packaging pipeline and leaves Rollup in watch mode.
+- `npm run build:verify`
+  Runs the repository verification gate, including `security:check`.
+
+## Recommended Usage
+
+- `npm run build:lib:windows`
+  Use this when you want to build the publishable Mantle UI package into
+  `dist/` on Windows.
+- `npm run build:lib`
+  Use this when you want the same package build on Unix-like systems.
+- `npm run build:verify`
+  Use this when you want the extra verification gate before release work,
+  especially the audit check.
+
+## Developing the Library Against Another App
+
+If you want to test Mantle UI inside another project, build the library to
+`dist/` first.
+
+For now, local linking is not fully standardized in this document. If your
+downstream app already uses Vite, the simplest approach is usually to consume
+the built output from `dist/` or use your preferred local package linking
+workflow.
+
+If the team wants a standard local linking path later, document that
+separately once the package build is stabilized.
+
+## Known Build Notes
+
+- The current docs app is still Next.js-based even if downstream consumers use
+  Vite.
+- The packaging flow still uses Rollup and Gulp.
+- Some filenames and internal build details still reflect the inherited
+  PrimeReact v10 structure and are being cleaned up incrementally.

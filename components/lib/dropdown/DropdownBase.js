@@ -1,4 +1,4 @@
-import PrimeReact from '../api/Api';
+import MantleUI from '../api/Api';
 import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames, ObjectUtils } from '../utils/Utils';
 
@@ -40,8 +40,8 @@ const classes = {
     list: ({ virtualScrollerOptions }) => (virtualScrollerOptions ? 'p-dropdown-items' : 'p-dropdown-items'),
     panel: ({ context }) =>
         classNames('p-dropdown-panel p-component', {
-            'p-input-filled': (context && context.inputStyle === 'filled') || PrimeReact.inputStyle === 'filled',
-            'p-ripple-disabled': (context && context.ripple === false) || PrimeReact.ripple === false
+            'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
+            'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     item: ({ selected, disabled, label, index, focusedOptionIndex, highlightOnSelect }) =>
         classNames('p-dropdown-item', {

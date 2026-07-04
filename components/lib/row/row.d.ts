@@ -75,13 +75,13 @@ export interface RowProps {
 }
 
 /**
- * **PrimeReact - Row**
+ * **MantleUI - Row**
  *
  * _Row component is a helper component used to create grouping structures in DataTable._
  *
  * [Live Demo](https://www.primereact.org/datatable/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

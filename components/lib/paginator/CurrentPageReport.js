@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { PrimeReactContext } from '../api/Api';
+import { MantleContext } from '../api/Api';
 import { useMergeProps } from '../hooks/Hooks';
 import { ObjectUtils } from '../utils/Utils';
 import { CurrentPageReportBase } from './PaginatorBase';
 
 export const CurrentPageReport = React.memo((inProps) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = CurrentPageReportBase.getProps(inProps, context);
 
     const report = {

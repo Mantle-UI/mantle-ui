@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PrimeReact, { PrimeReactContext } from '../api/Api';
+import MantleUI, { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { Portal } from '../portal/Portal';
@@ -8,7 +8,7 @@ import { BlockUIBase } from './BlockUIBase';
 
 export const BlockUI = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const context = React.useContext(PrimeReactContext);
+    const context = React.useContext(MantleContext);
     const props = BlockUIBase.getProps(inProps, context);
 
     const [visibleState, setVisibleState] = React.useState(props.blocked);
@@ -60,7 +60,7 @@ export const BlockUI = React.forwardRef((inProps, ref) => {
         if (props.autoZIndex) {
             const key = props.fullScreen ? 'modal' : 'overlay';
 
-            ZIndexUtils.set(key, maskRef.current, (context && context.autoZIndex) || PrimeReact.autoZIndex, props.baseZIndex || (context && context.zIndex[key]) || PrimeReact.zIndex[key]);
+            ZIndexUtils.set(key, maskRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, props.baseZIndex || (context && context.zIndex[key]) || MantleUI.zIndex[key]);
         }
 
         props.onBlocked && props.onBlocked();

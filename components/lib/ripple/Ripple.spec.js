@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { userAgent } from '../../test';
-import { PrimeReactProvider } from '../api/Api';
+import { MantleProvider } from '../api/Api';
 import { Button } from '../button/Button';
 
 describe('Ripple', () => {
@@ -10,9 +10,9 @@ describe('Ripple', () => {
         // Arrange
         userAgent('Chrome');
         const { container } = render(
-            <PrimeReactProvider ripple={true}>
+            <MantleProvider ripple={true}>
                 <Button />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const button = container.getElementsByClassName('p-button')[0];
 
@@ -28,9 +28,9 @@ describe('Ripple', () => {
         // Arrange
         userAgent('iPhone');
         const { container } = render(
-            <PrimeReactProvider ripple={true}>
+            <MantleProvider ripple={true}>
                 <Button />
-            </PrimeReactProvider>
+            </MantleProvider>
         );
         const button = container.getElementsByClassName('p-button')[0];
 

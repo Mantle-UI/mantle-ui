@@ -72,13 +72,13 @@ export interface ButtonGroupProps {
 }
 
 /**
- * **PrimeReact - ButtonGroup**
+ * **MantleUI - ButtonGroup**
  *
  * _ButtonGroup appears on top of the input field when focused._
  *
  * [Live Demo](https://www.primereact.org/button/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  *

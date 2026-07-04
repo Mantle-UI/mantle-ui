@@ -19,83 +19,83 @@ const NPM_LINK = process.env.NPM_LINK === 'true';
 
 // alias entries
 const ALIAS_ICON_COMPONENT_ENTRIES = [
-    { find: '../../iconbase/IconBase', replacement: 'primereact/iconbase' },
-    { find: '../icons/angledoubledown', replacement: 'primereact/icons/angledoubledown' },
-    { find: '../icons/angledoubleleft', replacement: 'primereact/icons/angledoubleleft' },
-    { find: '../icons/angledoubleright', replacement: 'primereact/icons/angledoubleright' },
-    { find: '../icons/angledoubleup', replacement: 'primereact/icons/angledoubleup' },
-    { find: '../icons/angledown', replacement: 'primereact/icons/angledown' },
-    { find: '../icons/angleleft', replacement: 'primereact/icons/angleleft' },
-    { find: '../icons/angleright', replacement: 'primereact/icons/angleright' },
-    { find: '../icons/angleup', replacement: 'primereact/icons/angleup' },
-    { find: '../icons/arrowdown', replacement: 'primereact/icons/arrowdown' },
-    { find: '../icons/arrowup', replacement: 'primereact/icons/arrowup' },
-    { find: '../icons/ban', replacement: 'primereact/icons/ban' },
-    { find: '../icons/bars', replacement: 'primereact/icons/bars' },
-    { find: '../icons/calendar', replacement: 'primereact/icons/calendar' },
-    { find: '../icons/check', replacement: 'primereact/icons/check' },
-    { find: '../icons/chevrondown', replacement: 'primereact/icons/chevrondown' },
-    { find: '../icons/chevronleft', replacement: 'primereact/icons/chevronleft' },
-    { find: '../icons/chevronright', replacement: 'primereact/icons/chevronright' },
-    { find: '../icons/chevronup', replacement: 'primereact/icons/chevronup' },
-    { find: '../icons/exclamationtriangle', replacement: 'primereact/icons/exclamationtriangle' },
-    { find: '../icons/eye', replacement: 'primereact/icons/eye' },
-    { find: '../icons/eyeslash', replacement: 'primereact/icons/eyeslash' },
-    { find: '../icons/filter', replacement: 'primereact/icons/filter' },
-    { find: '../icons/filterslash', replacement: 'primereact/icons/filterslash' },
-    { find: '../icons/infocircle', replacement: 'primereact/icons/infocircle' },
-    { find: '../icons/minus', replacement: 'primereact/icons/minus' },
-    { find: '../icons/pencil', replacement: 'primereact/icons/pencil' },
-    { find: '../icons/plus', replacement: 'primereact/icons/plus' },
-    { find: '../icons/refresh', replacement: 'primereact/icons/refresh' },
-    { find: '../icons/search', replacement: 'primereact/icons/search' },
-    { find: '../icons/searchminus', replacement: 'primereact/icons/searchminus' },
-    { find: '../icons/searchplus', replacement: 'primereact/icons/searchplus' },
-    { find: '../icons/sortalt', replacement: 'primereact/icons/sortalt' },
-    { find: '../icons/sortamountdown', replacement: 'primereact/icons/sortamountdown' },
-    { find: '../icons/sortamountupalt', replacement: 'primereact/icons/sortamountupalt' },
-    { find: '../icons/spinner', replacement: 'primereact/icons/spinner' },
-    { find: '../icons/star', replacement: 'primereact/icons/star' },
-    { find: '../icons/starfill', replacement: 'primereact/icons/starfill' },
-    { find: '../icons/thlarge', replacement: 'primereact/icons/thlarge' },
-    { find: '../icons/times', replacement: 'primereact/icons/times' },
-    { find: '../icons/timescircle', replacement: 'primereact/icons/timescircle' },
-    { find: '../icons/trash', replacement: 'primereact/icons/trash' },
-    { find: '../icons/undo', replacement: 'primereact/icons/undo' },
-    { find: '../icons/upload', replacement: 'primereact/icons/upload' },
-    { find: '../icons/windowmaximize', replacement: 'primereact/icons/windowmaximize' },
-    { find: '../icons/windowminimize', replacement: 'primereact/icons/windowminimize' }
+    { find: '../../iconbase/IconBase', replacement: '@mantle-ui/react/iconbase' },
+    { find: '../icons/angledoubledown', replacement: '@mantle-ui/react/icons/angledoubledown' },
+    { find: '../icons/angledoubleleft', replacement: '@mantle-ui/react/icons/angledoubleleft' },
+    { find: '../icons/angledoubleright', replacement: '@mantle-ui/react/icons/angledoubleright' },
+    { find: '../icons/angledoubleup', replacement: '@mantle-ui/react/icons/angledoubleup' },
+    { find: '../icons/angledown', replacement: '@mantle-ui/react/icons/angledown' },
+    { find: '../icons/angleleft', replacement: '@mantle-ui/react/icons/angleleft' },
+    { find: '../icons/angleright', replacement: '@mantle-ui/react/icons/angleright' },
+    { find: '../icons/angleup', replacement: '@mantle-ui/react/icons/angleup' },
+    { find: '../icons/arrowdown', replacement: '@mantle-ui/react/icons/arrowdown' },
+    { find: '../icons/arrowup', replacement: '@mantle-ui/react/icons/arrowup' },
+    { find: '../icons/ban', replacement: '@mantle-ui/react/icons/ban' },
+    { find: '../icons/bars', replacement: '@mantle-ui/react/icons/bars' },
+    { find: '../icons/calendar', replacement: '@mantle-ui/react/icons/calendar' },
+    { find: '../icons/check', replacement: '@mantle-ui/react/icons/check' },
+    { find: '../icons/chevrondown', replacement: '@mantle-ui/react/icons/chevrondown' },
+    { find: '../icons/chevronleft', replacement: '@mantle-ui/react/icons/chevronleft' },
+    { find: '../icons/chevronright', replacement: '@mantle-ui/react/icons/chevronright' },
+    { find: '../icons/chevronup', replacement: '@mantle-ui/react/icons/chevronup' },
+    { find: '../icons/exclamationtriangle', replacement: '@mantle-ui/react/icons/exclamationtriangle' },
+    { find: '../icons/eye', replacement: '@mantle-ui/react/icons/eye' },
+    { find: '../icons/eyeslash', replacement: '@mantle-ui/react/icons/eyeslash' },
+    { find: '../icons/filter', replacement: '@mantle-ui/react/icons/filter' },
+    { find: '../icons/filterslash', replacement: '@mantle-ui/react/icons/filterslash' },
+    { find: '../icons/infocircle', replacement: '@mantle-ui/react/icons/infocircle' },
+    { find: '../icons/minus', replacement: '@mantle-ui/react/icons/minus' },
+    { find: '../icons/pencil', replacement: '@mantle-ui/react/icons/pencil' },
+    { find: '../icons/plus', replacement: '@mantle-ui/react/icons/plus' },
+    { find: '../icons/refresh', replacement: '@mantle-ui/react/icons/refresh' },
+    { find: '../icons/search', replacement: '@mantle-ui/react/icons/search' },
+    { find: '../icons/searchminus', replacement: '@mantle-ui/react/icons/searchminus' },
+    { find: '../icons/searchplus', replacement: '@mantle-ui/react/icons/searchplus' },
+    { find: '../icons/sortalt', replacement: '@mantle-ui/react/icons/sortalt' },
+    { find: '../icons/sortamountdown', replacement: '@mantle-ui/react/icons/sortamountdown' },
+    { find: '../icons/sortamountupalt', replacement: '@mantle-ui/react/icons/sortamountupalt' },
+    { find: '../icons/spinner', replacement: '@mantle-ui/react/icons/spinner' },
+    { find: '../icons/star', replacement: '@mantle-ui/react/icons/star' },
+    { find: '../icons/starfill', replacement: '@mantle-ui/react/icons/starfill' },
+    { find: '../icons/thlarge', replacement: '@mantle-ui/react/icons/thlarge' },
+    { find: '../icons/times', replacement: '@mantle-ui/react/icons/times' },
+    { find: '../icons/timescircle', replacement: '@mantle-ui/react/icons/timescircle' },
+    { find: '../icons/trash', replacement: '@mantle-ui/react/icons/trash' },
+    { find: '../icons/undo', replacement: '@mantle-ui/react/icons/undo' },
+    { find: '../icons/upload', replacement: '@mantle-ui/react/icons/upload' },
+    { find: '../icons/windowmaximize', replacement: '@mantle-ui/react/icons/windowmaximize' },
+    { find: '../icons/windowminimize', replacement: '@mantle-ui/react/icons/windowminimize' }
 ];
 
 const CORE_PASSTHROUGH_DEPENDENCIES = [
-    { find: '../passthrough', replacement: 'primereact/passthrough' },
-    { find: '../passthrough/tailwind', replacement: 'primereact/passthrough/tailwind' }
+    { find: '../passthrough', replacement: '@mantle-ui/react/passthrough' },
+    { find: '../passthrough/tailwind', replacement: '@mantle-ui/react/passthrough/tailwind' }
 ];
 
 const ALIAS_COMPONENT_ENTRIES = [
-    { find: '../utils/Utils', replacement: 'primereact/utils' },
-    { find: '../api/Api', replacement: 'primereact/api' },
-    { find: '../componentbase/ComponentBase', replacement: 'primereact/componentbase' },
-    { find: '../hooks/Hooks', replacement: 'primereact/hooks' },
-    { find: '../ripple/Ripple', replacement: 'primereact/ripple' },
-    { find: '../csstransition/CSSTransition', replacement: 'primereact/csstransition' },
-    { find: '../portal/Portal', replacement: 'primereact/portal' },
-    { find: '../keyfilter/KeyFilter', replacement: 'primereact/keyfilter' },
+    { find: '../utils/Utils', replacement: '@mantle-ui/react/utils' },
+    { find: '../api/Api', replacement: '@mantle-ui/react/api' },
+    { find: '../componentbase/ComponentBase', replacement: '@mantle-ui/react/componentbase' },
+    { find: '../hooks/Hooks', replacement: '@mantle-ui/react/hooks' },
+    { find: '../ripple/Ripple', replacement: '@mantle-ui/react/ripple' },
+    { find: '../csstransition/CSSTransition', replacement: '@mantle-ui/react/csstransition' },
+    { find: '../portal/Portal', replacement: '@mantle-ui/react/portal' },
+    { find: '../keyfilter/KeyFilter', replacement: '@mantle-ui/react/keyfilter' },
     ...ALIAS_ICON_COMPONENT_ENTRIES,
-    { find: '../tooltip/Tooltip', replacement: 'primereact/tooltip' },
-    { find: '../virtualscroller/VirtualScroller', replacement: 'primereact/virtualscroller' },
-    { find: '../terminalservice/TerminalService', replacement: 'primereact/terminalservice' },
-    { find: '../overlayservice/OverlayService', replacement: 'primereact/overlayservice' },
-    { find: '../checkox/Checkbox', replacement: 'primereact/checkbox' },
-    { find: '../button/Button', replacement: 'primereact/button' },
-    { find: '../inputtext/InputText', replacement: 'primereact/inputtext' },
-    { find: '../inputnumber/InputNumber', replacement: 'primereact/inputnumber' },
-    { find: '../messages/Messages', replacement: 'primereact/messages' },
-    { find: '../progressbar/ProgressBar', replacement: 'primereact/progressbar' },
-    { find: '../dropdown/Dropdown', replacement: 'primereact/dropdown' },
-    { find: '../dialog/Dialog', replacement: 'primereact/dialog' },
-    { find: '../paginator/Paginator', replacement: 'primereact/paginator' },
-    { find: '../tree/Tree', replacement: 'primereact/tree' },
+    { find: '../tooltip/Tooltip', replacement: '@mantle-ui/react/tooltip' },
+    { find: '../virtualscroller/VirtualScroller', replacement: '@mantle-ui/react/virtualscroller' },
+    { find: '../terminalservice/TerminalService', replacement: '@mantle-ui/react/terminalservice' },
+    { find: '../overlayservice/OverlayService', replacement: '@mantle-ui/react/overlayservice' },
+    { find: '../checkox/Checkbox', replacement: '@mantle-ui/react/checkbox' },
+    { find: '../button/Button', replacement: '@mantle-ui/react/button' },
+    { find: '../inputtext/InputText', replacement: '@mantle-ui/react/inputtext' },
+    { find: '../inputnumber/InputNumber', replacement: '@mantle-ui/react/inputnumber' },
+    { find: '../messages/Messages', replacement: '@mantle-ui/react/messages' },
+    { find: '../progressbar/ProgressBar', replacement: '@mantle-ui/react/progressbar' },
+    { find: '../dropdown/Dropdown', replacement: '@mantle-ui/react/dropdown' },
+    { find: '../dialog/Dialog', replacement: '@mantle-ui/react/dialog' },
+    { find: '../paginator/Paginator', replacement: '@mantle-ui/react/paginator' },
+    { find: '../tree/Tree', replacement: '@mantle-ui/react/tree' },
     ...CORE_PASSTHROUGH_DEPENDENCIES
 ];
 
@@ -106,9 +106,17 @@ const GLOBAL_DEPENDENCIES = {
     'react-transition-group': 'ReactTransitionGroup'
 };
 
+const toIifeGlobalName = (moduleName) => {
+    if (moduleName.startsWith('@mantle-ui/react/')) {
+        return `MantleUI.${moduleName.replace('@mantle-ui/react/', '').replaceAll('/', '.')}`;
+    }
+
+    return moduleName.replaceAll('/', '.');
+};
+
 const GLOBAL_COMPONENT_DEPENDENCIES = {
     ...GLOBAL_DEPENDENCIES,
-    ...(NPM_LINK ? [] : ALIAS_COMPONENT_ENTRIES.reduce((acc, cur) => ({ ...acc, [cur.replacement]: cur.replacement.replaceAll('/', '.') }), {}))
+    ...(NPM_LINK ? [] : ALIAS_COMPONENT_ENTRIES.reduce((acc, cur) => ({ ...acc, [cur.replacement]: toIifeGlobalName(cur.replacement) }), {}))
 };
 
 // externals
@@ -161,7 +169,7 @@ const PLUGINS = [replace(REPLACE_PLUGIN_OPTIONS), resolve(RESOLVE_PLUGIN_OPTIONS
 const PLUGINS_COMPONENT = NPM_LINK ? PLUGINS : [alias(ALIAS_PLUGIN_OPTIONS_FOR_COMPONENT), ...PLUGINS];
 
 function addEntry(name, input, output, isComponent = true) {
-    const exports = name === 'primereact.api' || name === 'primereact' ? 'named' : 'auto';
+    const exports = name === 'MantleUI.api' || name === 'MantleUI' ? 'named' : 'auto';
     const useCorePlugin = !NPM_LINK && ALIAS_COMPONENT_ENTRIES.some((entry) => entry.replacement === name.replaceAll('.', '/'));
     const plugins = isComponent ? PLUGINS_COMPONENT : PLUGINS;
     const external = isComponent ? EXTERNAL_COMPONENT : EXTERNAL;
@@ -242,7 +250,7 @@ function corePlugin() {
             if (format === 'iife') {
                 Object.keys(bundle).forEach((id) => {
                     const chunk = bundle[id];
-                    const folderName = name.replace('primereact.', '').replaceAll('.', '/');
+                    const folderName = name.replace('MantleUI.', '').replaceAll('.', '/');
                     const filePath = `./dist/core/core${id.indexOf('.min.js') > 0 ? '.min.js' : '.js'}`;
 
                     core[filePath] ? (core[filePath][folderName] = chunk.code) : (core[filePath] = { [`${folderName}`]: chunk.code });
@@ -262,7 +270,7 @@ function addCore() {
             generateBundle() {
                 Object.entries(core).forEach(([filePath, value]) => {
                     const code = ALIAS_COMPONENT_ENTRIES.reduce((val, entry) => {
-                        const name = entry.replacement.replace('primereact/', '');
+                        const name = entry.replacement.replace('@mantle-ui/react/', '');
 
                         val += value[name] + '\n';
 
@@ -292,7 +300,7 @@ function addComponent() {
                     const input = process.env.INPUT_DIR + folderName + '/' + file;
                     const output = process.env.OUTPUT_DIR + folderName + '/' + name;
 
-                    addEntry('primereact.' + folderName, input, output, true);
+                    addEntry('MantleUI.' + folderName, input, output, true);
                 }
             });
         });
@@ -310,7 +318,7 @@ function addIcon() {
                     const input = process.env.INPUT_DIR + 'icons/' + folderName + '/' + file;
                     const output = process.env.OUTPUT_DIR + 'icons/' + folderName + '/' + name;
 
-                    addEntry('primereact.icons.' + folderName, input, output, true);
+                    addEntry('MantleUI.icons.' + folderName, input, output, true);
                 }
             });
         });
@@ -324,32 +332,32 @@ function addPassThrough() {
     addEntry('passthrough.tailwind', `${inputDir}/tailwind/index.js`, `${outputDir}/tailwind/index`, false);
 }
 
-function addPrimeReact() {
-    const input = process.env.INPUT_DIR + 'primereact.all.js';
-    const output = process.env.OUTPUT_DIR + 'primereact.all';
+function addMantleUI() {
+    const input = process.env.INPUT_DIR + 'mantle-ui-react.all.js';
+    const output = process.env.OUTPUT_DIR + 'mantle-ui-react.all';
 
-    addEntry('primereact', input, output, false);
+    addEntry('MantleUI', input, output, false);
 }
 
 function addPackageJson() {
     const outputDir = path.resolve(__dirname, process.env.OUTPUT_DIR);
     const packageJson = `{
-    "name": "primereact",
+    "name": "@mantle-ui/react",
     "version": "${pkg.version}",
     "private": false,
-    "author": "PrimeTek Informatics",
-    "description": "PrimeReact is an open source UI library for React featuring a rich set of 90+ components, a theme designer, various theme alternatives such as Material, Bootstrap, Tailwind, premium templates and professional support. In addition, it integrates with PrimeBlock, which has 370+ ready to use UI blocks to build spectacular applications in no time.",
-    "homepage": "https://www.primereact.org",
+    "author": "Mantle UI contributors",
+    "description": "Mantle UI is an open source React component library.",
+    "homepage": "https://github.com/Mantle-UI/mantle-ui",
     "repository": {
         "type": "git",
-        "url": "https://github.com/primefaces/primereact.git"
+        "url": "https://github.com/Mantle-UI/mantle-ui.git"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/primefaces/primereact/issues"
+        "url": "https://github.com/Mantle-UI/mantle-ui/issues"
     },
     "keywords": [
-        "primereact",
+        "mantle-ui",
         "react",
         "hooks",
         "next",
@@ -365,10 +373,10 @@ function addPackageJson() {
         "react components",
         "responsive components"
     ],
-    "unpkg": "primereact.all.min.js",
-    "jsdelivr": "primereact.all.min.js",
-    "main": "primereact.all.min.js",
-    "module": "primereact.all.esm.min.js",
+    "unpkg": "mantle-ui-react.all.min.js",
+    "jsdelivr": "mantle-ui-react.all.min.js",
+    "main": "mantle-ui-react.all.min.js",
+    "module": "mantle-ui-react.all.esm.min.js",
     "web-types": "web-types.json",
     "peerDependencies": {
         "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0",
@@ -398,7 +406,7 @@ function addPackageJson() {
 
 addIcon();
 addComponent();
-addPrimeReact();
+addMantleUI();
 addPassThrough();
 addCore();
 addPackageJson();

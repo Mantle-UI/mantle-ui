@@ -225,13 +225,13 @@ export interface SidebarProps extends Omit<React.DetailedHTMLProps<React.HTMLAtt
 }
 
 /**
- * **PrimeReact - Sidebar**
+ * **MantleUI - Sidebar**
  *
  * _Sidebar is a panel component displayed as an overlay._
  *
  * [Live Demo](https://www.primereact.org/sidebar/)
  * --- ---
- * ![PrimeReact](https://primefaces.org/cdn/primereact/images/logo-100.png)
+ * ![MantleUI](https://raw.githubusercontent.com/Mantle-UI/mantle-ui/feature/rebranding/public/images/mantle-ui-logo_100.png)
  *
  * @group Component
  */

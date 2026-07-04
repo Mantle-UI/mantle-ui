@@ -12,7 +12,7 @@ import { CustomerService } from '@/service/CustomerService';
 import React, { useContext, useEffect, useState } from 'react';
 
 const ThemeSection = () => {
-    const [tableTheme, setTableTheme] = useState('lara-light-cyan');
+    const [tableTheme, setTableTheme] = useState('lara-dark-cyan');
     const { darkMode } = useContext(AppContentContext);
     const [customers, setCustomers] = useState(null);
     const [selectedCustomers, setSelectedCustomers] = useState(null);

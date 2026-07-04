@@ -24,8 +24,8 @@ function AppContent({ component: Component, pageProps }) {
 
 export default function MyApp({ Component, pageProps }) {
     const isProduction = process.env.NODE_ENV === 'production';
-    const [darkMode, setDarkMode] = useState(false);
-    const [theme, setTheme] = useState('lara-light-cyan');
+    const [darkMode, setDarkMode] = useState(true);
+    const [theme, setTheme] = useState('lara-dark-cyan');
     const [newsActive, setNewsActive] = useState(false);
     const [announcement, setAnnouncement] = useState(null);
 

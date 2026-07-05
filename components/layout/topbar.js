@@ -80,15 +80,11 @@ export default function Topbar(props) {
         <div ref={containerElement} className="layout-topbar">
             <div className="layout-topbar-inner">
                 <div className="layout-topbar-logo-container">
-                    <Link href="/">
-                        <a className="layout-topbar-logo" aria-label="Mantle UI logo">
-                            <img src="/images/mantle-logo-text.png" alt="Mantle UI" height="35" />
-                        </a>
+                    <Link href="/" className="layout-topbar-logo" aria-label="Mantle UI logo">
+                        <img src="/images/mantle-logo-text.png" alt="Mantle UI" height="35" />
                     </Link>
-                    <Link href="/" aria-label="Mantle UI logo">
-                        <a className="layout-topbar-icon">
-                            <img src="/images/mantle-ui-logo.png" alt="Mantle UI icon" height="35" />
-                        </a>
+                    <Link href="/" className="layout-topbar-icon" aria-label="Mantle UI logo">
+                        <img src="/images/mantle-ui-logo.png" alt="Mantle UI icon" height="35" />
                     </Link>
                 </div>
 

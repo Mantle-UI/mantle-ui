@@ -19,10 +19,8 @@ const TemplatesPage = () => {
                             <a href="https://genesis.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/genesis" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/genesis" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -40,10 +38,8 @@ const TemplatesPage = () => {
                             <a href="https://apollo.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/apollo" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/apollo" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -57,10 +53,8 @@ const TemplatesPage = () => {
                             <a href="https://sakai.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/sakai" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/sakai" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -74,10 +68,8 @@ const TemplatesPage = () => {
                             <a href="https://diamond.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/diamond" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/diamond" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -91,10 +83,8 @@ const TemplatesPage = () => {
                             <a href="https://verona.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/verona" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/verona" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -108,10 +98,8 @@ const TemplatesPage = () => {
                             <a href="https://atlantis.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/atlantis" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/atlantis" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -125,10 +113,8 @@ const TemplatesPage = () => {
                             <a href="https://freya.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/freya" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/freya" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -142,10 +128,8 @@ const TemplatesPage = () => {
                             <a href="https://ultima.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/ultima" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/ultima" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>
@@ -159,10 +143,8 @@ const TemplatesPage = () => {
                             <a href="https://avalon.primereact.org" className="flex-1 p-button p-component" rel="noopener noreferrer">
                                 <span className="p-button-label white-space-nowrap">Preview</span>
                             </a>
-                            <Link href="/templates/avalon" rel="noopener noreferrer">
-                                <a className="flex-1 p-button p-component p-button-outlined">
-                                    <span className="p-button-label white-space-nowrap">Learn More</span>
-                                </a>
+                            <Link href="/templates/avalon" rel="noopener noreferrer" className="flex-1 p-button p-component p-button-outlined">
+                                <span className="p-button-label white-space-nowrap">Learn More</span>
                             </Link>
                         </div>
                     </div>

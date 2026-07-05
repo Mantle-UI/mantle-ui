@@ -9,8 +9,8 @@ const FooterSection = () => {
                         <ul className="list-none p-0 m-0">
                             <li className="font-bold mb-5">General</li>
                             <li className="mb-4">
-                                <Link href="/installation">
-                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Get Started</a>
+                                <Link href="/installation" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
+                                    Get Started
                                 </Link>
                             </li>
                             <li className="mb-4">
@@ -34,8 +34,8 @@ const FooterSection = () => {
                                 </a>
                             </li>
                             <li className="mb-4">
-                                <Link href="/support">
-                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">PRO Support</a>
+                                <Link href="/support" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
+                                    PRO Support
                                 </Link>
                             </li>
                         </ul>
@@ -84,13 +84,13 @@ const FooterSection = () => {
                         <ul className="list-none p-0 m-0">
                             <li className="font-bold mt-5 lg:mt-0 mb-5">Theming</li>
                             <li className="mb-4">
-                                <Link href="/theming">
-                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Styled Mode</a>
+                                <Link href="/theming" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
+                                    Styled Mode
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/unstyled">
-                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Unstyled Mode</a>
+                                <Link href="/unstyled" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
+                                    Unstyled Mode
                                 </Link>
                             </li>
                         </ul>

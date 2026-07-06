@@ -9,7 +9,7 @@ export function LabelDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function LabelDemo() {
     const values = [
@@ -28,7 +28,7 @@ export default function LabelDemo() {
         `,
         typescript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function LabelDemo() {
     const values = [

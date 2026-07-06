@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function BasicDemo() {
     const [value, setValue] = useState('');
@@ -26,7 +26,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function BasicDemo() {
     const [value, setValue] = useState<string>('');

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Badge } from 'primereact/badge';
+import { Badge } from '@mantle-ui/react/badge';
         `
     };
 

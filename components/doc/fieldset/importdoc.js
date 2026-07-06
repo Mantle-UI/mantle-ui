@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Fieldset } from 'primereact/fieldset';
+import { Fieldset } from '@mantle-ui/react/fieldset';
         `
     };
 

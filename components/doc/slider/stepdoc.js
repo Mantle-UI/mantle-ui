@@ -12,7 +12,7 @@ export function StepDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Slider } from "primereact/slider";
+import { Slider } from "@mantle-ui/react/slider";
 
 export default function StepDemo() {
     const [value, setValue] = useState(20);
@@ -26,7 +26,7 @@ export default function StepDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Slider, SliderChangeEvent } from "primereact/slider";
+import { Slider, SliderChangeEvent } from "@mantle-ui/react/slider";
 
 export default function StepDemo() {
     const [value, setValue] = useState<number>(20);

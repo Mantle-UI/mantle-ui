@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Editor } from "primereact/editor";
+import { Editor } from "@mantle-ui/react/editor";
 
 export default function BasicDemo() {
     const [text, setText] = useState('');
@@ -26,7 +26,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Editor, EditorTextChangeEvent } from "primereact/editor";
+import { Editor, EditorTextChangeEvent } from "@mantle-ui/react/editor";
 
 export default function BasicDemo() {
     const [text, setText] = useState<string>('');

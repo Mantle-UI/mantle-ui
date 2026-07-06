@@ -40,7 +40,7 @@ const [bindWindowResizeListener, unbindWindowResizeListener] = useResizeListener
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { useResizeListener } from 'primereact/hooks';
+import { useResizeListener } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const [eventData, setEventData] = useState({ width: 0, height: 0 });
@@ -80,7 +80,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { useResizeListener } from 'primereact/hooks';
+import { useResizeListener } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const [eventData, setEventData] = useState({ width: 0, height: 0 });

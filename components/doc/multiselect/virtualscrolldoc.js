@@ -31,7 +31,7 @@ export function VirtualScrollDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function VirtualScrollDemo() {
     const [selectAll, setSelectAll] = useState(false);
@@ -63,7 +63,7 @@ export default function VirtualScrollDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { MultiSelect, MultiSelectChangeEvent, MultiSelectAllEvent } from 'primereact/multiselect';
+import { MultiSelect, MultiSelectChangeEvent, MultiSelectAllEvent } from '@mantle-ui/react/multiselect';
 
 export default function VirtualScrollDemo() {
     const [selectAll, setSelectAll] = useState(false);

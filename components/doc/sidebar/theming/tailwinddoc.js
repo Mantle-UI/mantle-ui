@@ -74,8 +74,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
 
 export default function UnstyledDemo() {
     const [visibleLeft, setVisibleLeft] = useState(false);

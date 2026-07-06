@@ -71,9 +71,9 @@ export function HeadlessDoc(props) {
             `,
         javascript: `
 import React, { useRef, useState } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
-import { ProgressBar } from 'primereact/progressbar';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
 
 export default function HeadlessDemo() {
     const toast = useRef(null);
@@ -143,9 +143,9 @@ export default function HeadlessDemo() {
             `,
         typescript: `
 import React, { useRef, useState } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
-import { ProgressBar } from 'primereact/progressbar';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
 
 export default function HeadlessDemo() {
     const toast = useRef<Toast>(null);

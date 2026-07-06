@@ -106,10 +106,10 @@ export function ColumnGroupDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { ColumnGroup } from 'primereact/columngroup';
-import { Row } from 'primereact/row';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { ColumnGroup } from '@mantle-ui/react/columngroup';
+import { Row } from '@mantle-ui/react/row';
 
 export default function ColumnGroupDemo() {
     const [sales] = useState([
@@ -209,10 +209,10 @@ export default function ColumnGroupDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { ColumnGroup } from 'primereact/columngroup';
-import { Row } from 'primereact/row';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { ColumnGroup } from '@mantle-ui/react/columngroup';
+import { Row } from '@mantle-ui/react/row';
 
 interface Sale {
     product: string;

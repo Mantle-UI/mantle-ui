@@ -17,7 +17,7 @@ export function BasicDoc(props) {
 `,
         javascript: `
 import React, { useRef } from 'react';
-import { ContextMenu } from 'primereact/contextmenu';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
 
 export default function BasicDemo() {
     const cm = useRef(null);
@@ -36,8 +36,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { ContextMenu } from 'primereact/contextmenu';
-import { MenuItem } from 'primereact/menuitem';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function BasicDemo() {
     const cm = useRef<ContextMenu>(null);

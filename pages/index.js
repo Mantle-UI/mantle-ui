@@ -1,8 +1,6 @@
-import BlockSection from '@/components/landing/blocksection';
 import FeaturesSection from '@/components/landing/featuressection';
 import FooterSection from '@/components/landing/footersection';
 import HeroSection from '@/components/landing/herosection';
-import TemplateSection from '@/components/landing/templatesection';
 import ThemeSection from '@/components/landing/themesection';
 import UsersSection from '@/components/landing/userssection';
 import AppContentContext from '@/components/layout/appcontentcontext';
@@ -36,14 +34,13 @@ export default function Home() {
                 <meta name="robots" content="index, follow" />
                 <meta name="viewport" content="initial-scale=1, width=device-width" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@primereact" />
                 <meta name="twitter:title" content="MantleUI | React UI Component Library" />
                 <meta name="twitter:description" content="The ultimate collection of design-agnostic, flexible and accessible React UI Components." />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="MantleUI | React UI Component Library" />
-                <meta property="og:url" content="https://primereact.org" />
+                <meta property="og:url" content="https://github.com/Mantle-UI/mantle-ui" />
                 <meta property="og:description" content="The ultimate collection of design-agnostic, flexible and accessible React UI Components." />
-                <meta property="og:image" content="https://primefaces.org/static/social/primereact-preview.jpg" />
+                <meta property="og:image" content="https://github.com/Mantle-UI/mantle-ui/raw/main/public/images/mantle-logo-text.png" />
                 <meta property="og:ttl" content="604800" />
             </Head>
             {/* <NewsSection /> */}
@@ -52,8 +49,6 @@ export default function Home() {
             <FeaturesSection />
             <UsersSection />
             <ThemeSection />
-            <BlockSection />
-            <TemplateSection />
             <FooterSection />
         </div>
     );

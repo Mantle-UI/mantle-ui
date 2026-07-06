@@ -20,7 +20,7 @@ export function CheckmarkDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
+import { Dropdown } from '@mantle-ui/react/dropdown';
 
 export default function CheckmarkDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -42,7 +42,7 @@ export default function CheckmarkDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
+import { Dropdown, DropdownChangeEvent } from '@mantle-ui/react/dropdown';
 
 interface City {
     name: string;

@@ -80,7 +80,7 @@ export function LineStylesDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function LineStylesDemo() {
     const [chartData, setChartData] = useState({});
@@ -162,7 +162,7 @@ export default function LineStylesDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function LineStylesDemo() {
     const [chartData, setChartData] = useState({});

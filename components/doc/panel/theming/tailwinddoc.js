@@ -51,7 +51,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Panel } from 'primereact/panel';
+import { Panel } from '@mantle-ui/react/panel';
 
 export default function UnstyledDemo() {
     return (

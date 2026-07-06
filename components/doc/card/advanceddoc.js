@@ -22,8 +22,8 @@ export function AdvancedDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
+import { Card } from '@mantle-ui/react/card';
+import { Button } from '@mantle-ui/react/button';
 
 export default function AdvancedDemo() {
     const header = (
@@ -50,8 +50,8 @@ export default function AdvancedDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
+import { Card } from '@mantle-ui/react/card';
+import { Button } from '@mantle-ui/react/button';
 
 export default function AdvancedDemo() {
     const header = (

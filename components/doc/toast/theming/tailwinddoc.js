@@ -43,8 +43,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function UnstyledDemo() {
     const toast = useRef(null);

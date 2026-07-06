@@ -9,7 +9,7 @@ export function ReadOnlyDoc(props) {
         `,
         javascript: `
 import React from "react";
-import { Editor } from "primereact/editor";
+import { Editor } from "@mantle-ui/react/editor";
 
 export default function ReadOnlyDemo() {
 
@@ -22,7 +22,7 @@ export default function ReadOnlyDemo() {
         `,
         typescript: `
 import React from "react";
-import { Editor } from "primereact/editor";
+import { Editor } from "@mantle-ui/react/editor";
 
 export default function ReadOnlyDemo() {
     return (

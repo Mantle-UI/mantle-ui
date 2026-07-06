@@ -10,7 +10,7 @@ export function LifeCyleDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Panel } from 'primereact/panel';
+import { Panel } from '@mantle-ui/react/panel';
 
 export default function LifeCyleDemo() {
     const panelPt = {
@@ -34,7 +34,7 @@ export default function LifeCyleDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Panel } from 'primereact/panel';
+import { Panel } from '@mantle-ui/react/panel';
 
 export default function LifeCyleDemo() {
     const panelPt = {

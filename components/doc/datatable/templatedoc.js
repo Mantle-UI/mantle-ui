@@ -73,11 +73,11 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Button } from '@mantle-ui/react/button';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 export default function TemplateDemo() {
@@ -147,11 +147,11 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Button } from '@mantle-ui/react/button';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 interface Product {

@@ -26,7 +26,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function UnstyledDemo() {
     return (

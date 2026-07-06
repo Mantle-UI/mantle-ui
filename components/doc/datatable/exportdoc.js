@@ -94,10 +94,10 @@ export function ExportDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import { Tooltip } from 'primereact/tooltip';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Button } from '@mantle-ui/react/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
 import { ProductService } from './service/ProductService';
 
 export default function ExportDemo() {
@@ -182,10 +182,10 @@ export default function ExportDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import { Tooltip } from 'primereact/tooltip';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Button } from '@mantle-ui/react/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
 import { ProductService } from './service/ProductService';
 
 interface Product {

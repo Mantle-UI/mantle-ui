@@ -12,7 +12,7 @@ export function SlotCharDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputMask } from "primereact/inputmask";
+import { InputMask } from "@mantle-ui/react/inputmask";
 
 export default function SlotCharDemo() {
     const [value, setValue] = useState();
@@ -26,7 +26,7 @@ export default function SlotCharDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputMask, InputMaskChangeEvent } from "primereact/inputmask";
+import { InputMask, InputMaskChangeEvent } from "@mantle-ui/react/inputmask";
 
 export default function SlotCharDemo() {
     const [value, setValue] = useState<string | undefined>();

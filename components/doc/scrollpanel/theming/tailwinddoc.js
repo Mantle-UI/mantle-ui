@@ -23,7 +23,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { ScrollPanel } from 'primereact/scrollpanel';
+import { ScrollPanel } from '@mantle-ui/react/scrollpanel';
 
 export default function UnstyledDemo() {
     return (

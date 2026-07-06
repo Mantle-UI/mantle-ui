@@ -65,7 +65,7 @@ export function LazyDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Tree } from 'primereact/tree';
+import { Tree } from '@mantle-ui/react/tree';
 
 export default function LazyDemo() {
     const [nodes, setNodes] = useState([]);
@@ -132,8 +132,8 @@ export default function LazyDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Tree } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
+import { Tree } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
 
 export default function LazyDemo() {
     const [nodes, setNodes] = useState<TreeNode[]>([]);

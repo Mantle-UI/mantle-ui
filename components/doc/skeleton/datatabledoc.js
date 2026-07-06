@@ -18,9 +18,9 @@ export function DataTableDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Skeleton } from 'primereact/skeleton';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { Skeleton } from '@mantle-ui/react/skeleton';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 
 export default function DataTableDemo() {
     const items = Array.from({ length: 5 }, (v, i) => i);
@@ -39,9 +39,9 @@ export default function DataTableDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Skeleton } from 'primereact/skeleton';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { Skeleton } from '@mantle-ui/react/skeleton';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 
 export default function DataTableDemo() {
     const items: number[] = Array.from({ length: 5 }, (v, i) => i);

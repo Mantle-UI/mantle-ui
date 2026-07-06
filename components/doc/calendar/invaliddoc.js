@@ -9,7 +9,7 @@ export function InvalidDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
+import { Calendar } from '@mantle-ui/react/calendar';
 
 export default function InvalidDemo() {
     return (
@@ -21,7 +21,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
+import { Calendar } from '@mantle-ui/react/calendar';
 
 export default function InvalidDemo() {
     return (

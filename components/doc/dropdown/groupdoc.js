@@ -54,7 +54,7 @@ export function GroupDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
+import { Dropdown } from '@mantle-ui/react/dropdown';
 
 export default function GroupedDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -110,7 +110,7 @@ export default function GroupedDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
+import { Dropdown, DropdownChangeEvent } from '@mantle-ui/react/dropdown';
 
 interface City {
     label: string;

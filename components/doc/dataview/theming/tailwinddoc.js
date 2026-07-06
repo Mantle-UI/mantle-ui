@@ -42,10 +42,10 @@ const Tailwind = {
         javascript: `
 import React, { useState, useEffect } from 'react';
 import { ProductService } from './service/ProductService';
-import { Button } from 'primereact/button';
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
+import { Button } from '@mantle-ui/react/button';
+import { DataView, DataViewLayoutOptions } from '@mantle-ui/react/dataview';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function UnstyledDemo() {
     const [products, setProducts] = useState([]);

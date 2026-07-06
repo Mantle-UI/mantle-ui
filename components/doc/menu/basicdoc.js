@@ -14,7 +14,7 @@ export function BasicDoc(props) {
 `,
         javascript: `
 import React from 'react'; 
-import { Menu } from 'primereact/menu';
+import { Menu } from '@mantle-ui/react/menu';
 
 export default function BasicDemo() {
     let items = [
@@ -29,8 +29,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Menu } from 'primereact/menu';
-import { MenuItem } from 'primereact/menuitem';
+import { Menu } from '@mantle-ui/react/menu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function BasicDemo() {
     let items: MenuItem[] = [

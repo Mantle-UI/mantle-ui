@@ -15,7 +15,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Tag } from 'primereact/tag';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function TemplateDemo() {
     return (
@@ -32,7 +32,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Tag } from 'primereact/tag';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function TemplateDemo() {
     return (

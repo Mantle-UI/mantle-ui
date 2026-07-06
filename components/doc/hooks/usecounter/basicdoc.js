@@ -17,8 +17,8 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { useCounter } from 'primereact/hooks';
+import { Button } from '@mantle-ui/react/button';
+import { useCounter } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const { count, increment, decrement, reset } = useCounter(0);
@@ -37,8 +37,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { useCounter } from 'primereact/hooks';
+import { Button } from '@mantle-ui/react/button';
+import { useCounter } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const { count, increment, decrement, reset } = useCounter(0);

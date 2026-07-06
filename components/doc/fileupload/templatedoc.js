@@ -108,12 +108,12 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useRef, useState } from 'react';
-import { Toast } from 'primereact/toast';
-import { FileUpload } from 'primereact/fileupload';
-import { ProgressBar } from 'primereact/progressbar';
-import { Button } from 'primereact/button';
-import { Tooltip } from 'primereact/tooltip';
-import { Tag } from 'primereact/tag';
+import { Toast } from '@mantle-ui/react/toast';
+import { FileUpload } from '@mantle-ui/react/fileupload';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
+import { Button } from '@mantle-ui/react/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function TemplateDemo() {
     const toast = useRef(null);
@@ -218,12 +218,12 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useRef, useState } from 'react';
-import { Toast } from 'primereact/toast';
-import { FileUpload, FileUploadHeaderTemplateOptions, FileUploadSelectEvent, FileUploadUploadEvent, ItemTemplateOptions,} from 'primereact/fileupload';
-import { ProgressBar } from 'primereact/progressbar';
-import { Button } from 'primereact/button';
-import { Tooltip } from 'primereact/tooltip';
-import { Tag } from 'primereact/tag';
+import { Toast } from '@mantle-ui/react/toast';
+import { FileUpload, FileUploadHeaderTemplateOptions, FileUploadSelectEvent, FileUploadUploadEvent, ItemTemplateOptions,} from '@mantle-ui/react/fileupload';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
+import { Button } from '@mantle-ui/react/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function TemplateDemo() {
     const toast = useRef<Toast>(null);

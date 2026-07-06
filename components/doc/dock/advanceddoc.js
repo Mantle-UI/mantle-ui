@@ -304,15 +304,15 @@ export function AdvancedDoc(props) {
 `,
         javascript: `
 import React, { useRef, useState, useEffect } from 'react';
-import { Dock } from 'primereact/dock';
-import { Tooltip } from 'primereact/tooltip';
-import { Dialog } from 'primereact/dialog';
-import { Terminal } from 'primereact/terminal';
-import { TerminalService } from 'primereact/terminalservice';
-import { Galleria } from 'primereact/galleria';
-import { Toast } from 'primereact/toast';
-import { Tree } from 'primereact/tree';
-import { Menubar } from 'primereact/menubar';
+import { Dock } from '@mantle-ui/react/dock';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { Terminal } from '@mantle-ui/react/terminal';
+import { TerminalService } from '@mantle-ui/react/terminalservice';
+import { Galleria } from '@mantle-ui/react/galleria';
+import { Toast } from '@mantle-ui/react/toast';
+import { Tree } from '@mantle-ui/react/tree';
+import { Menubar } from '@mantle-ui/react/menubar';
 import { NodeService } from './service/NodeService';
 import { PhotoService } from './service/PhotoService';
 import './DockDemo.css';
@@ -601,16 +601,16 @@ export default function AdvanceDemo() {
         `,
         typescript: `
 import React, { useRef, useState, useEffect } from 'react';
-import { Dock } from 'primereact/dock';
-import { Tooltip } from 'primereact/tooltip';
-import { Dialog } from 'primereact/dialog';
-import { Terminal } from 'primereact/terminal';
-import { TerminalService } from 'primereact/terminalservice';
-import { Galleria } from 'primereact/galleria';
-import { Toast } from 'primereact/toast';
-import { Tree } from 'primereact/tree';
-import { Menubar } from 'primereact/menubar';
-import { MenuItem } from 'primereact/menuitem';
+import { Dock } from '@mantle-ui/react/dock';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { Terminal } from '@mantle-ui/react/terminal';
+import { TerminalService } from '@mantle-ui/react/terminalservice';
+import { Galleria } from '@mantle-ui/react/galleria';
+import { Toast } from '@mantle-ui/react/toast';
+import { Tree } from '@mantle-ui/react/tree';
+import { Menubar } from '@mantle-ui/react/menubar';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 import { NodeService } from './service/NodeService';
 import { PhotoService } from './service/PhotoService';
 import './DockDemo.css';

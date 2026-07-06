@@ -57,8 +57,8 @@ export function TextDoc(props) {
         javascript: `
 import React, { useRef } from 'react';
 //import { useRouter } from 'next/router';
-import { SplitButton } from 'primereact/splitbutton';
-import { Toast } from 'primereact/toast';
+import { SplitButton } from '@mantle-ui/react/splitbutton';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function TextDemo() {
     //const router = useRouter();
@@ -115,9 +115,9 @@ export default function TextDemo() {
         typescript: `
 import React, { useRef } from 'react';
 //import { useRouter } from 'next/router';
-import { SplitButton } from 'primereact/splitbutton';
-import { MenuItem } from 'primereact/menuitem';
-import { Toast } from 'primereact/toast';
+import { SplitButton } from '@mantle-ui/react/splitbutton';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function TextDemo() {
     //const router = useRouter();

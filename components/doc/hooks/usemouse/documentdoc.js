@@ -11,7 +11,7 @@ const { x, y } = useMouse();
         `,
         javascript: `
 import React from 'react';
-import { useMouse } from 'primereact/hooks';
+import { useMouse } from '@mantle-ui/react/hooks';
 
 export default function DocumentDemo() {
     const { x, y } = useMouse();
@@ -30,7 +30,7 @@ export default function DocumentDemo() {
         `,
         typescript: `
 import React from 'react';
-import { useMouse } from 'primereact/hooks';
+import { useMouse } from '@mantle-ui/react/hooks';
 
 export default function DocumentDemo() {
     const { x, y } = useMouse();

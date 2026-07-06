@@ -81,7 +81,7 @@ export function StackedBarDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function StackedBarDemo() {
     const [chartData, setChartData] = useState({});
@@ -164,7 +164,7 @@ export default function StackedBarDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function StackedBarDemo() {
     const [chartData, setChartData] = useState({});

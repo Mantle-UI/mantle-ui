@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { RadioButton } from 'primereact/radiobutton';
+import { RadioButton } from '@mantle-ui/react/radiobutton';
         `
     };
 

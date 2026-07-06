@@ -53,8 +53,8 @@ export function ControlledDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from "react";
-import { TreeSelect } from 'primereact/treeselect';
-import { Button } from 'primereact/button';
+import { TreeSelect } from '@mantle-ui/react/treeselect';
+import { Button } from '@mantle-ui/react/button';
 import { NodeService } from './service/NodeService';
 
 export default function ControlledDemo() {
@@ -108,9 +108,9 @@ export default function ControlledDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from "react";
-import { TreeSelect, TreeSelectChangeEvent, TreeSelectExpandedEvent } from 'primereact/treeselect';
-import { TreeNode } from 'primereact/treenode';
-import { Button } from 'primereact/button';
+import { TreeSelect, TreeSelectChangeEvent, TreeSelectExpandedEvent } from '@mantle-ui/react/treeselect';
+import { TreeNode } from '@mantle-ui/react/treenode';
+import { Button } from '@mantle-ui/react/button';
 import { NodeService } from './service/NodeService';
 
 interface NodeKey {

@@ -43,8 +43,8 @@ export function SeverityDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function SeverityDemo() {
     const toast = useRef(null);
@@ -90,8 +90,8 @@ export default function SeverityDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function SeverityDemo() {
     const toast = useRef<Toast>(null);

@@ -9,7 +9,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function DisabledDemo() {
     return (
@@ -21,7 +21,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function DisabledDemo() {
     return (

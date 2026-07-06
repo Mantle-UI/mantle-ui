@@ -60,7 +60,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { ProgressSpinner } from 'primereact/progressspinner';
+import { ProgressSpinner } from '@mantle-ui/react/progressspinner';
 
 export default function UnstyledDemo() {
     return (

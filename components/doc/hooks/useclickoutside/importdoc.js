@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useClickOutside } from 'primereact/hooks';
+import { useClickOutside } from '@mantle-ui/react/hooks';
         `
     };
 

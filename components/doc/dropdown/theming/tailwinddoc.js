@@ -85,7 +85,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
+import { Dropdown } from '@mantle-ui/react/dropdown';
 
 export default function UnstyledDemo() {
     const [selectedCity, setSelectedCity] = useState(null);

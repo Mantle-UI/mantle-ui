@@ -35,7 +35,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { Tag } from 'primereact/tag';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function UnstyledDemo() {
     return (

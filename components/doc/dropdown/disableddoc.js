@@ -9,7 +9,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
+import { Dropdown } from '@mantle-ui/react/dropdown';
 
 export default function DisabledDemo() {
     return (
@@ -21,7 +21,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
+import { Dropdown } from '@mantle-ui/react/dropdown';
 
 export default function DisabledDemo() {
     return (

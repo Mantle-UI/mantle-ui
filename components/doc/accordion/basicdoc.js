@@ -34,7 +34,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Accordion, AccordionTab } from '@mantle-ui/react/accordion';
 
 export default function BasicDemo() {
     return (
@@ -71,7 +71,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Accordion, AccordionTab } from '@mantle-ui/react/accordion';
 
 export default function BasicDemo() {
     return (

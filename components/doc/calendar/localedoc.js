@@ -26,8 +26,8 @@ export function LocaleDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
-import { addLocale } from 'primereact/api';
+import { Calendar } from '@mantle-ui/react/calendar';
+import { addLocale } from '@mantle-ui/react/api';
 
 export default function LocaleDemo() {
     const [date, setDate] = useState(null);
@@ -53,9 +53,9 @@ export default function LocaleDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
-import { addLocale } from 'primereact/api';
-import { Nullable } from "primereact/ts-helpers";
+import { Calendar } from '@mantle-ui/react/calendar';
+import { addLocale } from '@mantle-ui/react/api';
+import { Nullable } from "@mantle-ui/react/ts-helpers";
 
 export default function LocaleDemo() {
     const [date, setDate] = useState<Nullable<Date>>(null);

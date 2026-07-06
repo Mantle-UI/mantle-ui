@@ -5,9 +5,9 @@ export function UsePassThroughDoc(props) {
     const code1 = {
         basic: `
 import React from 'react'; 
-import { MantleProvider } from "primereact/api";
-import { usePassThrough } from "primereact/passthrough";
-import Tailwind from "primereact/passthrough/tailwind";
+import { MantleProvider } from "@mantle-ui/react/api";
+import { usePassThrough } from "@mantle-ui/react/passthrough";
+import Tailwind from "@mantle-ui/react/passthrough/tailwind";
 
 export default function UsePassThroughDemo() {
 

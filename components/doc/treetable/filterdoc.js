@@ -47,12 +47,12 @@ export function FilterDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { SelectButton } from 'primereact/selectbutton';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { SelectButton } from '@mantle-ui/react/selectbutton';
 import { NodeService } from './service/NodeService';
 
 export default function FilterDemo() {
@@ -97,13 +97,13 @@ export default function FilterDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { SelectButton } from 'primereact/selectbutton';
-import { TreeNode } from 'primereact/treenode';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { SelectButton } from '@mantle-ui/react/selectbutton';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 interface FilterModeOption {

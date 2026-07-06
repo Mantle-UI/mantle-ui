@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { ListBox } from 'primereact/listbox';
+import { ListBox } from '@mantle-ui/react/listbox';
         `
     };
 

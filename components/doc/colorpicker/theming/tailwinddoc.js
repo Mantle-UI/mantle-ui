@@ -57,7 +57,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { ColorPicker } from 'primereact/colorpicker';
+import { ColorPicker } from '@mantle-ui/react/colorpicker';
 
 export default function UnstyledDemo() {
     const [color, setColor] = useState(null);

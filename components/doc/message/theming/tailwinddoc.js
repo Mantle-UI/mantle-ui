@@ -24,7 +24,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Message } from 'primereact/message';
+import { Message } from '@mantle-ui/react/message';
 
 export default function UnstyledDemo() {
     return (

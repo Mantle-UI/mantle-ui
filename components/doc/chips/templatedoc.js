@@ -21,7 +21,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Chips } from "primereact/chips";
+import { Chips } from "@mantle-ui/react/chips";
 
 export default function TemplateDemo() {
     const [value, setValue] = useState([]);
@@ -43,7 +43,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Chips, ChipsChangeEvent } from "primereact/chips";
+import { Chips, ChipsChangeEvent } from "@mantle-ui/react/chips";
 
 export default function TemplateDemo() {
     const [value, setValue] = useState<string[]>([]);

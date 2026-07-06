@@ -16,7 +16,7 @@ export function MaskDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputMask } from "primereact/inputmask";
+import { InputMask } from "@mantle-ui/react/inputmask";
 
 export default function MaskDemo() {
     return (
@@ -41,7 +41,7 @@ export default function MaskDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputMask } from "primereact/inputmask";
+import { InputMask } from "@mantle-ui/react/inputmask";
 
 export default function MaskDemo() {
     return (

@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Knob } from 'primereact/knob';
+import { Knob } from '@mantle-ui/react/knob';
 
 export default function BasicDemo() {
     const [value, setValue] = useState(0);
@@ -26,7 +26,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Knob, KnobChangeEvent } from 'primereact/knob';
+import { Knob, KnobChangeEvent } from '@mantle-ui/react/knob';
 
 export default function BasicDemo() {
     const [value, setValue] = useState<number>(0);

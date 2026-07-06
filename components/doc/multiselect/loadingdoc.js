@@ -9,7 +9,7 @@ export function LoadingDoc(props) {
         `,
         javascript: `
 import React from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function LoadingDemo() {
     return (
@@ -21,7 +21,7 @@ export default function LoadingDemo() {
         `,
         typescript: `
 import React from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function LoadingDemo() {
     return (

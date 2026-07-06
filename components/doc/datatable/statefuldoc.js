@@ -142,15 +142,15 @@ export function StatefulDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { FilterMatchMode, FilterOperator } from 'primereact/api';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { MultiSelect } from 'primereact/multiselect';
-import { Dropdown } from 'primereact/dropdown';
-import { Tag } from 'primereact/tag';
+import { FilterMatchMode, FilterOperator } from '@mantle-ui/react/api';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 export default function BasicDemo() {
@@ -285,15 +285,15 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { FilterMatchMode, FilterOperator } from 'primereact/api';
-import { DataTable, DataTableFilterMeta } from 'primereact/datatable';
-import { Column, ColumnFilterElementTemplateOptions } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { MultiSelect, MultiSelectChangeEvent } from 'primereact/multiselect';
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
-import { Tag } from 'primereact/tag';
+import { FilterMatchMode, FilterOperator } from '@mantle-ui/react/api';
+import { DataTable, DataTableFilterMeta } from '@mantle-ui/react/datatable';
+import { Column, ColumnFilterElementTemplateOptions } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { MultiSelect, MultiSelectChangeEvent } from '@mantle-ui/react/multiselect';
+import { Dropdown, DropdownChangeEvent } from '@mantle-ui/react/dropdown';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 interface RepresentativeOption {

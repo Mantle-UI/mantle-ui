@@ -71,10 +71,10 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react'; 
-import { Panel } from 'primereact/panel';
-import { Avatar } from 'primereact/Avatar';
-import { Menu } from 'primereact/Menu';
-import { Button } from 'primereact/Button';
+import { Panel } from '@mantle-ui/react/panel';
+import { Avatar } from '@mantle-ui/react/Avatar';
+import { Menu } from '@mantle-ui/react/Menu';
+import { Button } from '@mantle-ui/react/Button';
 
 export default function TemplateDemo() {
     const configMenu = useRef(null);
@@ -142,10 +142,10 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react'; 
-import { Panel } from 'primereact/panel';
-import { Avatar } from 'primereact/Avatar';
-import { Menu } from 'primereact/Menu';
-import { Button } from 'primereact/Button';
+import { Panel } from '@mantle-ui/react/panel';
+import { Avatar } from '@mantle-ui/react/Avatar';
+import { Menu } from '@mantle-ui/react/Menu';
+import { Button } from '@mantle-ui/react/Button';
 
 export default function TemplateDemo() {
     const configMenu = useRef<HTMLElement | null>(null);

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Tree } from 'primereact/tree';
+import { Tree } from '@mantle-ui/react/tree';
         `
     };
 

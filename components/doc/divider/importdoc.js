@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Divider } from 'primereact/divider';
+import { Divider } from '@mantle-ui/react/divider';
         `
     };
 

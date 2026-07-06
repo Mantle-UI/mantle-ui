@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
         `
     };
 

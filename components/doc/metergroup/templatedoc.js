@@ -11,7 +11,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function TemplateDemo() {
     const meter = (props, attr) => <span {...attr} key={props.index} style={{ background: \`linear-gradient(to right, \${props.color1}, \${props.color2})\`, width: props.percentage + '%' }} />;
@@ -67,7 +67,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function TemplateDemo() {
     const meter = (props: any, attr: any) => (

@@ -36,9 +36,9 @@ export function RowSelectEventsDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Toast } from 'primereact/toast';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Toast } from '@mantle-ui/react/toast';
 import { ProductService } from './service/ProductService';
 
 export default function RowSelectEventsDemo() {
@@ -74,9 +74,9 @@ export default function RowSelectEventsDemo() {
         `,
         typescript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { DataTable, DataTableSelectionChangeEvent, DataTableSelectEvent, DataTableUnselectEvent } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Toast } from 'primereact/toast';
+import { DataTable, DataTableSelectionChangeEvent, DataTableSelectEvent, DataTableUnselectEvent } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Toast } from '@mantle-ui/react/toast';
 import { ProductService } from './service/ProductService';
 
 interface Product {

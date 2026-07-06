@@ -5,7 +5,7 @@ import Link from 'next/link';
 export function StyledModeDoc(props) {
     const code = {
         basic: `
-import "primereact/resources/themes/lara-light-cyan/theme.css";
+import "@mantle-ui/react/resources/themes/lara-light-cyan/theme.css";
 `
     };
 

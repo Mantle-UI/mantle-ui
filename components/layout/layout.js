@@ -5,7 +5,6 @@ import Menu from '@/components/layout/menu';
 import Topbar from '@/components/layout/topbar';
 import { MantleContext } from '@/components/lib/api/MantleContext';
 import { DomHandler, classNames } from '@/components/lib/utils/Utils';
-import NewsSection from '@/components/news/newssection';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
@@ -78,7 +77,6 @@ export default function Layout({ children }) {
                 <meta property="og:ttl" content="604800" />
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
             </Head>
-            <NewsSection />
             <Topbar showConfigurator showMenuButton onMenuButtonClick={() => setSidebarActive(true)} onConfigButtonClick={() => setConfigActive(true)} onDarkSwitchClick={toggleDarkMode} />
             <div className={classNames('layout-mask', { 'layout-mask-active': sidebarActive })} onClick={() => setSidebarActive(false)} />
             <Config active={configActive} onHide={() => setConfigActive(false)} onDarkSwitchClick={toggleDarkMode} />

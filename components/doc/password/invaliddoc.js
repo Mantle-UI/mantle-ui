@@ -9,7 +9,7 @@ export function InvalidDoc(props) {
         `,
         javascript: `
 import React from "react";
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
 
 export default function InvalidDemo() {
     return (
@@ -21,7 +21,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
 import React from "react";
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
 
 export default function InvalidDemo() {
     return (

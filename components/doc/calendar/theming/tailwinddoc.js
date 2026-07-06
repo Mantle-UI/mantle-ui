@@ -146,7 +146,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
+import { Calendar } from '@mantle-ui/react/calendar';
 
 export default function UnstyledDemo() {
     const [date, setDate] = useState(null);

@@ -33,7 +33,7 @@ export function RegexWordDoc(props) {
         `,
         javascript: `
 import React, { useState }  from 'react'; 
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function RegexDemo() {
     const [prevValue, setPrevValue] = useState('');
@@ -73,7 +73,7 @@ export default function RegexDemo() {
         `,
         typescript: `
 import React, { useState }  from 'react'; 
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function RegexDemo() {
     const [prevValue, setPrevValue] = useState('');

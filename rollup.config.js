@@ -378,6 +378,9 @@ function addPackageJson() {
     "main": "mantle-ui-react.all.min.js",
     "module": "mantle-ui-react.all.esm.min.js",
     "web-types": "web-types.json",
+    "bin": {
+        "mantleui": "./bin/mantle-ui-migrate.cjs"
+    },
     "peerDependencies": {
         "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0",
         "react": "^17.0.0 || ^18.0.0 || ^19.0.0",

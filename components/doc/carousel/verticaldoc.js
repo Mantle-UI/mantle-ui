@@ -54,9 +54,9 @@ export function VerticalDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { Carousel } from 'primereact/carousel';
-import { Tag } from 'primereact/tag';
+import { Button } from '@mantle-ui/react/button';
+import { Carousel } from '@mantle-ui/react/carousel';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 export default function VerticalDemo() {
@@ -111,9 +111,9 @@ export default function VerticalDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { Carousel } from 'primereact/carousel';
-import { Tag } from 'primereact/tag';
+import { Button } from '@mantle-ui/react/button';
+import { Carousel } from '@mantle-ui/react/carousel';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 interface Product {

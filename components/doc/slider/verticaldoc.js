@@ -12,7 +12,7 @@ export function VerticalDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Slider } from "primereact/slider";
+import { Slider } from "@mantle-ui/react/slider";
 
 export default function VerticalDemo() {
     const [value, setValue] = useState(50);
@@ -26,7 +26,7 @@ export default function VerticalDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Slider, SliderChangeEvent } from "primereact/slider";
+import { Slider, SliderChangeEvent } from "@mantle-ui/react/slider";
 
 export default function VerticalDemo() {
     const [value, setValue] = useState<number>(50);

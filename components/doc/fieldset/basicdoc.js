@@ -16,7 +16,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Fieldset } from 'primereact/fieldset';
+import { Fieldset } from '@mantle-ui/react/fieldset';
 
 export default function BasicDemo() {
     return (
@@ -35,7 +35,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Fieldset } from 'primereact/fieldset';
+import { Fieldset } from '@mantle-ui/react/fieldset';
 
 export default function BasicDemo() {
     return (

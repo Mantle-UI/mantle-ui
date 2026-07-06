@@ -23,8 +23,8 @@ export function FloatLabelDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
-import { FloatLabel } from 'primereact/floatlabel';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
 
 export default function FloatLabelDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -48,8 +48,8 @@ export default function FloatLabelDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
-import { FloatLabel } from 'primereact/floatlabel';
+import { Dropdown, DropdownChangeEvent } from '@mantle-ui/react/dropdown';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
 
 interface City {
     name: string;

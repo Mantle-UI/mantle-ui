@@ -69,10 +69,10 @@ export function LoaderDataScrollerDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useRef, useState } from 'react';
-import { Button } from 'primereact/button';
-import { DataScroller } from 'primereact/datascroller';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
+import { Button } from '@mantle-ui/react/button';
+import { DataScroller } from '@mantle-ui/react/datascroller';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 export default function LoaderDataScrollerDemo() {
@@ -140,10 +140,10 @@ export default function LoaderDataScrollerDemo() {
         `,
         typescript: `
 import React, { useEffect, useRef, useState } from 'react';
-import { Button } from 'primereact/button';
-import { DataScroller } from 'primereact/datascroller';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
+import { Button } from '@mantle-ui/react/button';
+import { DataScroller } from '@mantle-ui/react/datascroller';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 interface Product {

@@ -195,11 +195,11 @@ export function HeadlessDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
-import { Avatar } from 'primereact/avatar';
-import { Ripple } from 'primereact/ripple';
-import { StyleClass } from 'primereact/styleclass';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Ripple } from '@mantle-ui/react/ripple';
+import { StyleClass } from '@mantle-ui/react/styleclass';
 
 export default function HeadlessDemo() {
     const [visible, setVisible] = useState(false);
@@ -402,11 +402,11 @@ export default function HeadlessDemo() {
         `,
         typescript: `
 import React, { useState, useRef } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
-import { Avatar } from 'primereact/avatar';
-import { Ripple } from 'primereact/ripple';
-import { StyleClass } from 'primereact/styleclass';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Ripple } from '@mantle-ui/react/ripple';
+import { StyleClass } from '@mantle-ui/react/styleclass';
 
 export default function HeadlessDemo() {
     const [visible, setVisible] = useState<boolean>(false);

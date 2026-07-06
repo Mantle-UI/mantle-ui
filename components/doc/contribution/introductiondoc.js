@@ -5,8 +5,8 @@ export function IntroductionDoc(props) {
     const code = {
         code1: {
             basic: `
-git clone https://github.com/primefaces/primereact.git
-cd primereact
+git clone https://github.com/Mantle-UI/mantle-ui.git
+cd mantle-ui
 `
         },
         code2: {
@@ -31,8 +31,8 @@ npm run dev
     return (
         <DocSectionText {...props}>
             <p>
-                MantleUI is a popular React library maintained by PrimeTek, a company renowned for its comprehensive set of UI components for various frameworks. PrimeTek is dedicated to providing high-quality, versatile, and accessible UI components
-                that help developers build better applications faster.
+                Mantle UI is an independent community-maintained React component library continued from the MIT-licensed PrimeReact v10 codebase. The project focuses on delivering high-quality, versatile, and accessible UI components for React
+                applications.
             </p>
             <h3>Development Setup</h3>
             <p>To begin with, clone the MantleUI repository from GitHub</p>

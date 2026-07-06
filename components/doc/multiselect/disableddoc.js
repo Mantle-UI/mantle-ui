@@ -9,7 +9,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function DisabledDemo() {
     return (
@@ -21,7 +21,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function DisabledDemo() {
     return (

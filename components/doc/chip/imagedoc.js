@@ -12,7 +12,7 @@ export function ImageDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function ImageDemo() {
     return (
@@ -27,7 +27,7 @@ export default function ImageDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function ImageDemo() {
     return (

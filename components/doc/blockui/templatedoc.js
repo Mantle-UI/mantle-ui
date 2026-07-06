@@ -27,9 +27,9 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { BlockUI } from 'primereact/blockui';
-import { Panel } from 'primereact/panel';
-import { Button } from 'primereact/button';
+import { BlockUI } from '@mantle-ui/react/blockui';
+import { Panel } from '@mantle-ui/react/panel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     const [blocked, setBlocked] = useState(false);
@@ -56,9 +56,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { BlockUI } from 'primereact/blockui';
-import { Panel } from 'primereact/panel';
-import { Button } from 'primereact/button';
+import { BlockUI } from '@mantle-ui/react/blockui';
+import { Panel } from '@mantle-ui/react/panel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     const [blocked, setBlocked] = useState<boolean>(false);

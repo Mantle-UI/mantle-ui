@@ -18,8 +18,8 @@ export function CaptchaDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { Toast } from 'primereact/toast';
-import { Captcha } from 'primereact/captcha';
+import { Toast } from '@mantle-ui/react/toast';
+import { Captcha } from '@mantle-ui/react/captcha';
 
 export default function CaptchaDoc() {
     const toast = useRef(null);
@@ -38,8 +38,8 @@ export default function CaptchaDoc() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { Toast } from 'primereact/toast';
-import { Captcha } from 'primereact/captcha';
+import { Toast } from '@mantle-ui/react/toast';
+import { Captcha } from '@mantle-ui/react/captcha';
 
 export default function CaptchaDoc() {
     const toast = useRef<Toast>(null);

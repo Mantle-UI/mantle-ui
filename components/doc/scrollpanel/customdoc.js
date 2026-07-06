@@ -19,7 +19,7 @@ export function CustomDemo(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { ScrollPanel } from 'primereact/scrollpanel';
+import { ScrollPanel } from '@mantle-ui/react/scrollpanel';
 import './ScrollPanelDemo.css';
 
 export default function CustomDemo() {
@@ -77,7 +77,7 @@ export default function CustomDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { ScrollPanel } from 'primereact/scrollpanel';
+import { ScrollPanel } from '@mantle-ui/react/scrollpanel';
 import './ScrollPanelDemo.css';
 
 export default function CustomDemo() {

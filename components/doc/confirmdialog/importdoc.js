@@ -4,8 +4,8 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { ConfirmDialog } from 'primereact/confirmdialog'; // For <ConfirmDialog /> component
-import { confirmDialog } from 'primereact/confirmdialog'; // For confirmDialog method
+import { ConfirmDialog } from '@mantle-ui/react/confirmdialog'; // For <ConfirmDialog /> component
+import { confirmDialog } from '@mantle-ui/react/confirmdialog'; // For confirmDialog method
         `
     };
 

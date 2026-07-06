@@ -51,8 +51,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from 'react';
-import { Dock } from 'primereact/dock';
-import { RadioButton } from 'primereact/radiobutton';
+import { Dock } from '@mantle-ui/react/dock';
+import { RadioButton } from '@mantle-ui/react/radiobutton';
 import './DockDemo.css';
 
 export default function BasicDemo() {

@@ -36,9 +36,9 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
-import { Avatar } from 'primereact/avatar';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
+import { Avatar } from '@mantle-ui/react/avatar';
 
 export default function TemplateDemo() {
     const [visible, setVisible] = useState(false);
@@ -73,9 +73,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
-import { Avatar } from 'primereact/avatar';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
+import { Avatar } from '@mantle-ui/react/avatar';
 
 export default function TemplateDemo() {
     const [visible, setVisible] = useState<boolean>(false);

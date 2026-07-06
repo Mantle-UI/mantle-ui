@@ -38,8 +38,8 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useRef } from 'react'; 
-import { useMountEffect } from 'primereact/hooks';
-import { Messages } from 'primereact/messages';
+import { useMountEffect } from '@mantle-ui/react/hooks';
+import { Messages } from '@mantle-ui/react/messages';
 
 export default function TemplateDemo() {
     const msgs = useRef(null);
@@ -69,8 +69,8 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useEffect, useRef } from 'react'; 
-import { useMountEffect } from 'primereact/hooks';
-import { Messages } from 'primereact/messages';
+import { useMountEffect } from '@mantle-ui/react/hooks';
+import { Messages } from '@mantle-ui/react/messages';
 
 export default function TemplateDemo() {
     const msgs = useRef<Messages>(null);

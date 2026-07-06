@@ -24,9 +24,9 @@ export function ButtonDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { InputNumber } from 'primereact/inputnumber';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ButtonDemo() {
     return (
@@ -52,9 +52,9 @@ export default function ButtonDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { InputNumber } from 'primereact/inputnumber';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ButtonDemo() {
     return (

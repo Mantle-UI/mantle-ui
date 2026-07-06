@@ -35,10 +35,10 @@ export function FlexibleScrollDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
 import { CustomerService } from './service/CustomerService';
 
 export default function FlexibleScrollDemo() {
@@ -71,10 +71,10 @@ export default function FlexibleScrollDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
 import { CustomerService } from './service/CustomerService';
 
 interface Customer {

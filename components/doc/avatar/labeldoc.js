@@ -19,8 +19,8 @@ export function LabelDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Avatar } from 'primereact/avatar';
-import { Badge } from 'primereact/badge';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function LabelDemo() {
     return (
@@ -51,8 +51,8 @@ export default function LabelDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Avatar } from 'primereact/avatar';
-import { Badge } from 'primereact/badge';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function LabelDemo() {
     return (

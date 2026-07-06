@@ -4,8 +4,8 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Avatar } from 'primereact/avatar';
-import { AvatarGroup } from 'primereact/avatargroup';   //Optional for grouping
+import { Avatar } from '@mantle-ui/react/avatar';
+import { AvatarGroup } from '@mantle-ui/react/avatargroup';   //Optional for grouping
         `
     };
 

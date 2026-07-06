@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { StyleClass } from 'primereact/styleclass';
+import { StyleClass } from '@mantle-ui/react/styleclass';
         `
     };
 

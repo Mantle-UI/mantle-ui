@@ -159,15 +159,15 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Button } from 'primereact/button';
-import { Paginator } from 'primereact/paginator';
-import { Ripple } from 'primereact/ripple';
-import { Divider } from 'primereact/divider';
-import { Dropdown } from 'primereact/dropdown';
-import { InputText } from 'primereact/inputtext';
-import { Slider } from 'primereact/slider';
-import { Tooltip } from 'primereact/tooltip';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { Paginator } from '@mantle-ui/react/paginator';
+import { Ripple } from '@mantle-ui/react/ripple';
+import { Divider } from '@mantle-ui/react/divider';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Slider } from '@mantle-ui/react/slider';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function TemplateDemo() {
     const [first, setFirst] = useState([0, 0, 0]);
@@ -323,15 +323,15 @@ export default function TemplateDemo() {
         typescript: `
 import React, { useState } from "react";
 import { Paginator, PaginatorPageChangeEvent, PaginatorJumpToPageInputOptions, PaginatorCurrentPageReportOptions, PaginatorRowsPerPageDropdownOptions,
-    PaginatorLastPageLinkOptions, PaginatorNextPageLinkOptions, PaginatorPageLinksOptions, PaginatorPrevPageLinkOptions, PaginatorFirstPageLinkOptions } from 'primereact/paginator';
-import { Button } from 'primereact/button';
-import { Ripple } from 'primereact/ripple';
-import { Divider } from 'primereact/divider';
-import { Dropdown } from 'primereact/dropdown';
-import { InputText } from 'primereact/inputtext';
-import { Slider } from 'primereact/slider';
-import { Tooltip } from 'primereact/tooltip';
-import { classNames } from 'primereact/utils';
+    PaginatorLastPageLinkOptions, PaginatorNextPageLinkOptions, PaginatorPageLinksOptions, PaginatorPrevPageLinkOptions, PaginatorFirstPageLinkOptions } from '@mantle-ui/react/paginator';
+import { Button } from '@mantle-ui/react/button';
+import { Ripple } from '@mantle-ui/react/ripple';
+import { Divider } from '@mantle-ui/react/divider';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Slider } from '@mantle-ui/react/slider';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function TemplateDemo() {
     const [first, setFirst] = useState<number[]>([0, 0, 0]);

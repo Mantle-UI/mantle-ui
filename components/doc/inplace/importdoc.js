@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
         `
     };
 

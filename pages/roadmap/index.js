@@ -14,12 +14,8 @@ const Roadmap = () => {
             <div className="doc-intro">
                 <h1>Roadmap</h1>
                 <p>
-                    At{' '}
-                    <a href="https://www.primetek.com.tr/" className="font-medium hover:underline text-primary">
-                        PrimeTek
-                    </a>
-                    , we are passionate about improving MantleUI and would like to share our ideas for 2024 with the community. These are planned to be implemented in parallel to the regular maintenance work of the library involving review of issue
-                    tickets, PRs and MantleUI PRO support.
+                    We are passionate about improving Mantle UI and would like to share our roadmap ideas with the community. These initiatives are planned alongside the regular maintenance work of the library, including issue triage, pull request
+                    review and support work.
                 </p>
             </div>
 
@@ -146,7 +142,7 @@ const Roadmap = () => {
                             <div className="flex-1 flex gap-3 flex-column" />
                         </div>
                         <div className="flex gap-3 border-bottom-1 surface-border pb-3">
-                            <div className="flex-shrink-0 p-3 bg-orange-500 text-white border-round font-bold text-lg flex align-items-center justify-content-center w-14rem">PRIMEBLOCKS</div>
+                            <div className="flex-shrink-0 p-3 bg-orange-500 text-white border-round font-bold text-lg flex align-items-center justify-content-center w-14rem">BLOCKS</div>
                             <div className="flex-1 flex gap-3 flex-column">
                                 <div className="p-3 surface-card border-round border-orange-500" style={{ borderLeft: '6px solid' }}>
                                     <h2 className="text-lg font-bold mt-0 mb-2">Blocks Update</h2>

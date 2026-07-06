@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { TieredMenu } from 'primereact/tieredmenu';
+import { TieredMenu } from '@mantle-ui/react/tieredmenu';
         `
     };
 

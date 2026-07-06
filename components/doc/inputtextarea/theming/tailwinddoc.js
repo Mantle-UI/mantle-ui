@@ -23,7 +23,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState('');

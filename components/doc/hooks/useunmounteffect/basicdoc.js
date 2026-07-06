@@ -25,8 +25,8 @@ useUnmountEffect(() => {
         `,
         javascript: `
 import React, { useRef, useState } from 'react';
-import { Button } from 'primereact/button';
-import { useUnmountEffect, useMountEffect } from 'primereact/hooks';
+import { Button } from '@mantle-ui/react/button';
+import { useUnmountEffect, useMountEffect } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const [hidden, setHidden] = useState(false);
@@ -53,8 +53,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useRef, useState } from 'react';
-import { Button } from 'primereact/button';
-import { useUnmountEffect, useMountEffect } from 'primereact/hooks';
+import { Button } from '@mantle-ui/react/button';
+import { useUnmountEffect, useMountEffect } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const [hidden, setHidden] = useState<boolean>(false);

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { ColorPicker } from 'primereact/colorpicker';
+import { ColorPicker } from '@mantle-ui/react/colorpicker';
         `
     };
 

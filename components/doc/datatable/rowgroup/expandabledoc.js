@@ -95,9 +95,9 @@ export function ExpandableRowGroupDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Tag } from 'primereact/tag';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 export default function ExpandableRowGroupDemo() {
@@ -191,9 +191,9 @@ export default function ExpandableRowGroupDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable, DataTableRowToggleEvent, DataTableExpandedRows } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Tag } from 'primereact/tag';
+import { DataTable, DataTableRowToggleEvent, DataTableExpandedRows } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 interface Country {

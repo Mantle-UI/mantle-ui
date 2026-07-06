@@ -34,7 +34,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function UnstyledDemo() {
     const [value1, setValue1] = useState(42723);

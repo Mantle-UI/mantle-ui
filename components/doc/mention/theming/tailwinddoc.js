@@ -29,7 +29,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState, useEffect } from "react";
-import { Mention } from 'primereact/mention';
+import { Mention } from '@mantle-ui/react/mention';
 import { CustomerService } from './service/CustomerService';
 
 export default function UnstyledDemo() {

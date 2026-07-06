@@ -54,9 +54,9 @@ export function ContextMenuDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Tree } from 'primereact/tree';
-import { ContextMenu } from 'primereact/contextmenu';
-import { Toast } from 'primereact/toast';
+import { Tree } from '@mantle-ui/react/tree';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
+import { Toast } from '@mantle-ui/react/toast';
 import { NodeService } from './service/NodeService';
 
 export default function ContextMenuDemo() {
@@ -108,10 +108,10 @@ export default function ContextMenuDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Tree, TreeExpandedKeysType } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
-import { ContextMenu } from 'primereact/contextmenu';
-import { Toast } from 'primereact/toast';
+import { Tree, TreeExpandedKeysType } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
+import { Toast } from '@mantle-ui/react/toast';
 import { NodeService } from './service/NodeService';
 
 export default function ContextMenuDemo() {

@@ -15,7 +15,7 @@ export function OutlinedDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function OutlinedDemo() {
     return (
@@ -33,7 +33,7 @@ export default function OutlinedDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function OutlinedDemo() {
     return (

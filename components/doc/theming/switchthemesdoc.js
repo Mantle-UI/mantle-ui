@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function SwitchThemesDoc(props) {
     const code1 = {
         basic: `
-import { MantleContext } from 'primereact/api';
+import { MantleContext } from '@mantle-ui/react/api';
 
 //Use in a component
 const { changeTheme } = useContext(MantleContext);

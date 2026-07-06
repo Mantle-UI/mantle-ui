@@ -34,8 +34,8 @@ export function MultipleSelectionDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { InputSwitch } from 'primereact/inputswitch';
-import { Tree } from 'primereact/tree';
+import { InputSwitch } from '@mantle-ui/react/inputswitch';
+import { Tree } from '@mantle-ui/react/tree';
 import { NodeService } from './service/NodeService';
 
 export default function MultipleSelectionDemo() {
@@ -60,9 +60,9 @@ export default function MultipleSelectionDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { InputSwitch, InputSwitchChangeEvent } from 'primereact/inputswitch';
-import { Tree, TreeMultipleSelectionKeys } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
+import { InputSwitch, InputSwitchChangeEvent } from '@mantle-ui/react/inputswitch';
+import { Tree, TreeMultipleSelectionKeys } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function MultipleSelectionDemo() {

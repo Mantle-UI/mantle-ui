@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useMouse } from 'primereact/hooks';
+import { useMouse } from '@mantle-ui/react/hooks';
         `
     };
 

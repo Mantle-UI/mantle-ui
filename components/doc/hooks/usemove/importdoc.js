@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useMove } from 'primereact/hooks';
+import { useMove } from '@mantle-ui/react/hooks';
         `
     };
 

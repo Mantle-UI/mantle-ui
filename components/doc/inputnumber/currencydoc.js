@@ -18,7 +18,7 @@ export function CurrencyDoc(props) {
 `,
         javascript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function CurrencyDemo() {
     const [value1, setValue1] = useState(1500);
@@ -50,7 +50,7 @@ export default function CurrencyDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
+import { InputNumber, InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
 
 export default function CurrencyDemo() {
     const [value1, setValue1] = useState<number>(1500);

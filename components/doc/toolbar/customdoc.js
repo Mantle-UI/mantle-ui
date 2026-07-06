@@ -59,8 +59,8 @@ export function CustomDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Toolbar } from 'primereact/toolbar';
-import { Avatar } from 'primereact/avatar';
+import { Toolbar } from '@mantle-ui/react/toolbar';
+import { Avatar } from '@mantle-ui/react/avatar';
 
 export default function CustomDemo() {
     const startContent = (
@@ -120,8 +120,8 @@ export default function CustomDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Toolbar } from 'primereact/toolbar';
-import { Avatar } from 'primereact/avatar';
+import { Toolbar } from '@mantle-ui/react/toolbar';
+import { Avatar } from '@mantle-ui/react/avatar';
 
 export default function CustomDemo() {
     const startContent = (

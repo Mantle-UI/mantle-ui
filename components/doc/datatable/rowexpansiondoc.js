@@ -149,13 +149,13 @@ export function RowExpansionDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
-import { Rating } from 'primereact/rating';
-import { Button } from 'primereact/button';
-import { Tag } from 'primereact/tag';
-import { Toast } from 'primereact/toast';
+import { Rating } from '@mantle-ui/react/rating';
+import { Button } from '@mantle-ui/react/button';
+import { Tag } from '@mantle-ui/react/tag';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function RowExpansionDemo() {
     const [products, setProducts] = useState([]);
@@ -300,13 +300,13 @@ export default function RowExpansionDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable, DataTableExpandedRows, DataTableRowEvent, DataTableValueArray } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { DataTable, DataTableExpandedRows, DataTableRowEvent, DataTableValueArray } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
-import { Rating } from 'primereact/rating';
-import { Button } from 'primereact/button';
-import { Tag } from 'primereact/tag';
-import { Toast } from 'primereact/toast';
+import { Rating } from '@mantle-ui/react/rating';
+import { Button } from '@mantle-ui/react/button';
+import { Tag } from '@mantle-ui/react/tag';
+import { Toast } from '@mantle-ui/react/toast';
 
 interface Order {
     id: string;

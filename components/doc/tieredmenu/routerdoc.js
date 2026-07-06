@@ -49,7 +49,7 @@ export function RouterDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { TieredMenu } from 'primereact/tieredmenu';
+import { TieredMenu } from '@mantle-ui/react/tieredmenu';
 import { useRouter } from 'next/router';
 
 export default function RouterDemo() {
@@ -99,8 +99,8 @@ export default function RouterDemo() {
         `,
         typescript: `
 import React from 'react';
-import { TieredMenu } from 'primereact/tieredmenu';
-import { MenuItem } from 'primereact/menuitem';
+import { TieredMenu } from '@mantle-ui/react/tieredmenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 import { useRouter } from 'next/router';
 
 export default function RouterDemo() {

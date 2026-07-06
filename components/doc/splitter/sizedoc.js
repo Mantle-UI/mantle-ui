@@ -12,7 +12,7 @@ export function SizeDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Splitter, SplitterPanel } from 'primereact/splitter';
+import { Splitter, SplitterPanel } from '@mantle-ui/react/splitter';
 
 export default function SizeDemo() {
     return (
@@ -25,7 +25,7 @@ export default function SizeDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Splitter, SplitterPanel } from 'primereact/splitter';
+import { Splitter, SplitterPanel } from '@mantle-ui/react/splitter';
 
 export default function SizeDemo() {
     return (

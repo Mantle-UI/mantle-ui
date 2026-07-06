@@ -23,10 +23,10 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { DataScroller } from 'primereact/datascroller';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
+import { Button } from '@mantle-ui/react/button';
+import { DataScroller } from '@mantle-ui/react/datascroller';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 export default function UnstyledDemo() {

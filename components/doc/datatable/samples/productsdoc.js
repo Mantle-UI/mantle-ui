@@ -282,23 +282,23 @@ export function ProductsDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { classNames } from 'primereact/utils';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { classNames } from '@mantle-ui/react/utils';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
-import { Toast } from 'primereact/toast';
-import { Button } from 'primereact/button';
-import { FileUpload } from 'primereact/fileupload';
-import { Rating } from 'primereact/rating';
-import { Toolbar } from 'primereact/toolbar';
-import { InputTextarea } from 'primereact/inputtextarea';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { RadioButton } from 'primereact/radiobutton';
-import { InputNumber } from 'primereact/inputnumber';
-import { Dialog } from 'primereact/dialog';
-import { InputText } from 'primereact/inputtext';
-import { Tag } from 'primereact/tag';
+import { Toast } from '@mantle-ui/react/toast';
+import { Button } from '@mantle-ui/react/button';
+import { FileUpload } from '@mantle-ui/react/fileupload';
+import { Rating } from '@mantle-ui/react/rating';
+import { Toolbar } from '@mantle-ui/react/toolbar';
+import { InputTextarea } from '@mantle-ui/react/inputtextarea';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { RadioButton } from '@mantle-ui/react/radiobutton';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function ProductsDemo() {
     let emptyProduct = {
@@ -642,23 +642,23 @@ export default function ProductsDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { classNames } from 'primereact/utils';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { classNames } from '@mantle-ui/react/utils';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
-import { Toast } from 'primereact/toast';
-import { Button } from 'primereact/button';
-import { FileUpload } from 'primereact/fileupload';
-import { Rating } from 'primereact/rating';
-import { Toolbar } from 'primereact/toolbar';
-import { InputTextarea } from 'primereact/inputtextarea';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { RadioButton, RadioButtonChangeEvent } from 'primereact/radiobutton';
-import { InputNumber,InputNumberValueChangeEvent } from 'primereact/inputnumber';
-import { Dialog } from 'primereact/dialog';
-import { InputText } from 'primereact/inputtext';
-import { Tag } from 'primereact/tag';
+import { Toast } from '@mantle-ui/react/toast';
+import { Button } from '@mantle-ui/react/button';
+import { FileUpload } from '@mantle-ui/react/fileupload';
+import { Rating } from '@mantle-ui/react/rating';
+import { Toolbar } from '@mantle-ui/react/toolbar';
+import { InputTextarea } from '@mantle-ui/react/inputtextarea';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { RadioButton, RadioButtonChangeEvent } from '@mantle-ui/react/radiobutton';
+import { InputNumber,InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Tag } from '@mantle-ui/react/tag';
 
 interface Product {
   id: string | null;

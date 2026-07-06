@@ -29,7 +29,7 @@ export function GroupDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { RadioButton } from "primereact/radiobutton";
+import { RadioButton } from "@mantle-ui/react/radiobutton";
 
 export default function GroupDemo() {
     const [ingredient, setIngredient] = useState('');
@@ -60,7 +60,7 @@ export default function GroupDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { RadioButton, RadioButtonChangeEvent } from "primereact/radiobutton";
+import { RadioButton, RadioButtonChangeEvent } from "@mantle-ui/react/radiobutton";
 
 export default function GroupDemo() {
     const [ingredient, setIngredient] = useState<string>('');

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { InputSwitch } from 'primereact/inputswitch';
+import { InputSwitch } from '@mantle-ui/react/inputswitch';
         `
     };
 

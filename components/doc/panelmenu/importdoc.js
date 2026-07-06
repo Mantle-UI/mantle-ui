@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { PanelMenu } from 'primereact/panelmenu';
+import { PanelMenu } from '@mantle-ui/react/panelmenu';
         `
     };
 

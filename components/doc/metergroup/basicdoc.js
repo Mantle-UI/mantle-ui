@@ -9,7 +9,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function BasicDemo() {
     const values = [{ label: 'Space used', value: 15 }];
@@ -23,7 +23,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function BasicDemo() {
     const values = [{ label: 'Space used', value: 15 }];

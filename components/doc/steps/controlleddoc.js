@@ -24,8 +24,8 @@ export function ControlledDoc(props) {
 `,
         javascript: `
 import React, { useState } from 'react'; 
-import { Steps } from 'primereact/steps';
-import { Button } from 'primereact/button';
+import { Steps } from '@mantle-ui/react/steps';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ControlledDemo() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -55,9 +55,9 @@ export default function ControlledDemo() {
         `,
         typescript: `
 import React, { useState } from 'react'; 
-import { Steps } from 'primereact/steps';
-import { MenuItem } from 'primereact/menuitem';
-import { Button } from 'primereact/button';
+import { Steps } from '@mantle-ui/react/steps';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ControlledDemo() {
     const [activeIndex, setActiveIndex] = useState(0);

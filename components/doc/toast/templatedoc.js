@@ -55,9 +55,9 @@ toastBC.current.show({
 });`,
         javascript: `
 import React, { useState, useRef } from 'react';
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 import { Avatar } from '@/components/lib/avatar/Avatar';
-import { Toast } from 'primereact/toast';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function TemplateDemo() {
     const [visible, setVisible] = useState(false);
@@ -100,9 +100,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState, useRef } from 'react';
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 import { Avatar } from '@/components/lib/avatar/Avatar';
-import { Toast } from 'primereact/toast';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function TemplateDemo() {
     const [visible, setVisible] = useState(false);

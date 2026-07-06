@@ -17,7 +17,7 @@ export function DragDropDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
+import { Tree } from '@mantle-ui/react/tree';
 import { NodeService } from './service/NodeService';
 
 export default function DragDropDemo() {
@@ -36,8 +36,8 @@ export default function DragDropDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Tree, TreeDragDropEvent } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
+import { Tree, TreeDragDropEvent } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function DragDropDemo() {

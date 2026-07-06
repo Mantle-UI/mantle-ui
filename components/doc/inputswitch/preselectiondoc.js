@@ -12,7 +12,7 @@ export function PreselectionDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputSwitch } from "primereact/inputswitch";
+import { InputSwitch } from "@mantle-ui/react/inputswitch";
 
 export default function PreselectionDemo() {
     const [checked, setChecked] = useState(true);
@@ -26,7 +26,7 @@ export default function PreselectionDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputSwitch, InputSwitchChangeEvent } from "primereact/inputswitch";
+import { InputSwitch, InputSwitchChangeEvent } from "@mantle-ui/react/inputswitch";
 
 export default function PreselectionDemo() {
     const [checked, setChecked] = useState<boolean>(true);

@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { TriStateCheckbox } from 'primereact/tristatecheckbox';
+import { TriStateCheckbox } from '@mantle-ui/react/tristatecheckbox';
 
 export default function BasicDemo() {
     const [value, setValue] = useState(null);
@@ -27,7 +27,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { TriStateCheckbox, TriStateCheckboxChangeEvent } from 'primereact/tristatecheckbox';
+import { TriStateCheckbox, TriStateCheckboxChangeEvent } from '@mantle-ui/react/tristatecheckbox';
 
 export default function BasicDemo() {
     const [value, setValue] = useState<boolean | undefined | null>(null);

@@ -89,12 +89,12 @@ export function RowEditDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { InputNumber } from 'primereact/inputnumber';
-import { Dropdown } from 'primereact/dropdown';
-import { Tag } from 'primereact/tag';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 export default function RowEditingDemo() {
@@ -179,12 +179,12 @@ export default function RowEditingDemo() {
         `,
         typescript: `
 import React, { useEffect, useState } from 'react';
-import { DataTable, DataTableRowEditCompleteEvent } from 'primereact/datatable';
-import { Column, ColumnEditorOptions } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
-import { Tag } from 'primereact/tag';
+import { DataTable, DataTableRowEditCompleteEvent } from '@mantle-ui/react/datatable';
+import { Column, ColumnEditorOptions } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { InputNumber, InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
+import { Dropdown, DropdownChangeEvent } from '@mantle-ui/react/dropdown';
+import { Tag } from '@mantle-ui/react/tag';
 import { ProductService } from './service/ProductService';
 
 interface Product {

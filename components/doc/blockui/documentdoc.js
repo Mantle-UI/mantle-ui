@@ -22,9 +22,9 @@ export function DocumentDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { BlockUI } from 'primereact/blockui';
-import { Panel } from 'primereact/panel';
-import { Button } from 'primereact/button';
+import { BlockUI } from '@mantle-ui/react/blockui';
+import { Panel } from '@mantle-ui/react/panel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function DocumentDemo() {
     const [blocked, setBlocked] = useState(false);
@@ -47,9 +47,9 @@ export default function DocumentDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { BlockUI } from 'primereact/blockui';
-import { Panel } from 'primereact/panel';
-import { Button } from 'primereact/button';
+import { BlockUI } from '@mantle-ui/react/blockui';
+import { Panel } from '@mantle-ui/react/panel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function DocumentDemo() {
     const [blocked, setBlocked] = useState<boolean>(false);

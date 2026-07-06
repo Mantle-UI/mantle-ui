@@ -79,6 +79,10 @@ gulp.task('copy-package.json', function () {
     return gulp.src(process.env.INPUT_DIR + '**/package.json').pipe(gulp.dest('./' + process.env.OUTPUT_DIR));
 });
 
+gulp.task('copy-bin', function () {
+    return gulp.src(['bin/mantle-ui-migrate.cjs']).pipe(gulp.dest('./' + process.env.OUTPUT_DIR + 'bin'));
+});
+
 //Building project with run sequence
-gulp.task('copy-files', gulp.series('copy-d.ts', 'copy-package.json'));
+gulp.task('copy-files', gulp.series('copy-d.ts', 'copy-package.json', 'copy-bin'));
 gulp.task('build-resources', gulp.series('build-mantle-ui-react-css', 'images', 'build-themes', 'copy-fonts', 'build-meta', 'copy-files'));

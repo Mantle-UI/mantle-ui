@@ -11,7 +11,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Image } from 'primereact/image';
+import { Image } from '@mantle-ui/react/image';
 
 export default function TemplateDemo() {
     const icon = (<i className="pi pi-search"></i>)
@@ -25,7 +25,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Image } from 'primereact/image';
+import { Image } from '@mantle-ui/react/image';
 
 export default function TemplateDemo() {
     const icon = (<i className="pi pi-search"></i>)

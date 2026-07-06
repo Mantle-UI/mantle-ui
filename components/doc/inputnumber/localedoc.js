@@ -18,7 +18,7 @@ export function LocaleDoc(props) {
 `,
         javascript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function LocaleDemo() {
     const [value1, setValue1] = useState(151351);
@@ -50,7 +50,7 @@ export default function LocaleDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
+import { InputNumber, InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
 
 export default function LocaleDemo() {
     const [value1, setValue1] = useState<number>(151351);

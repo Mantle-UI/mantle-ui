@@ -56,7 +56,7 @@ const [bindMouseLeaveListener, unbindMouseLeaveListener] = useEventListener({
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { useEventListener } from 'primereact/hooks';
+import { useEventListener } from '@mantle-ui/react/hooks';
 
 export default function ElementDemo() {
     const [hover, setHover] = useState(false);
@@ -99,7 +99,7 @@ export default function ElementDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { useEventListener } from 'primereact/hooks';
+import { useEventListener } from '@mantle-ui/react/hooks';
 
 export default function ElementDemo() {
     const [hover, setHover] = useState<boolean>(false);

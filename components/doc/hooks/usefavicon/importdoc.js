@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useFavicon } from 'primereact/hooks';
+import { useFavicon } from '@mantle-ui/react/hooks';
         `
     };
 

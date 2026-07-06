@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { SpeedDial } from 'primereact/speeddial';
+import { SpeedDial } from '@mantle-ui/react/speeddial';
         `
     };
 

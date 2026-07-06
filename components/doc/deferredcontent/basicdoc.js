@@ -19,8 +19,8 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef } from 'react';
-import { DeferredContent } from 'primereact/deferredcontent';
-import { Toast } from 'primereact/toast';
+import { DeferredContent } from '@mantle-ui/react/deferredcontent';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function BasicDemo() {
     const toast = useRef(null);
@@ -42,8 +42,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useRef } from 'react';
-import { DeferredContent } from 'primereact/deferredcontent';
-import { Toast } from 'primereact/toast';
+import { DeferredContent } from '@mantle-ui/react/deferredcontent';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function BasicDemo() {
     const toast = useRef<Toast | null>(null);

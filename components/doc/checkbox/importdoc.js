@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Checkbox } from 'primereact/checkbox';
+import { Checkbox } from '@mantle-ui/react/checkbox';
         `
     };
 

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Slider } from 'primereact/slider';
+import { Slider } from '@mantle-ui/react/slider';
         `
     };
 

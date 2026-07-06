@@ -5,7 +5,7 @@ import { Button } from '@/components/lib/button/Button';
 export function SetupDoc(props) {
     const code1 = {
         basic: `
-import { MantleProvider } from "primereact/api";
+import { MantleProvider } from "@mantle-ui/react/api";
 ...
 return(
     <MantleProvider value={{ unstyled: true }}>

@@ -41,7 +41,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Slider } from "primereact/slider";
+import { Slider } from "@mantle-ui/react/slider";
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState(null);

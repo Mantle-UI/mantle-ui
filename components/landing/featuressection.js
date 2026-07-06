@@ -24,7 +24,7 @@ const FeaturesSection = () => {
                             <div className="box p-4 w-full animation-duration-500">
                                 <img src="https://primefaces.org/cdn/primereact/images/landing/features/icon-community.svg" alt="components icon" className="block mb-3" />
                                 <div className="font-semibold mb-3 text-lg">Community</div>
-                                <p className="m-0 text-secondary font-medium">Connect with the other open source community members, collaborate and have a voice in the project roadmap.</p>
+                                <p className="m-0 text-secondary font-medium">Connect with other open source users, collaborate on improvements, and help shape Mantle UI.</p>
                             </div>
                         </div>
                         <div className="col-12 md:col-6 xl:col-3 flex justify-content-center">
@@ -37,8 +37,8 @@ const FeaturesSection = () => {
                         <div className="col-12 md:col-6 xl:col-3 flex justify-content-center">
                             <div className="box p-4 w-full animation-duration-500">
                                 <img src="https://primefaces.org/cdn/primereact/images/landing/features/icon-support.svg" alt="components icon" className="block mb-3" />
-                                <div className="font-semibold mb-3 text-lg">Enterprise Support</div>
-                                <p className="m-0 text-secondary font-medium">Exceptional support service featuring response within 1 business day and option to request enhancements and new features for the library.</p>
+                                <div className="font-semibold mb-3 text-lg">Open Source Workflow</div>
+                                <p className="m-0 text-secondary font-medium">Built in the open with issues, pull requests, and community feedback shaping the library over time.</p>
                             </div>
                         </div>
                         <div className="col-12 md:col-6 xl:col-3 flex justify-content-center">
@@ -51,8 +51,8 @@ const FeaturesSection = () => {
                         <div className="col-12 md:col-6 xl:col-3 flex justify-content-center">
                             <div className="box p-4 w-full animation-duration-500">
                                 <img src="https://primefaces.org/cdn/primereact/images/landing/features/icon-productivity.svg" alt="components icon" className="block mb-3" />
-                                <div className="font-semibold mb-3 text-lg">Blocks</div>
-                                <p className="m-0 text-secondary font-medium">400+ pre-designed copy paste ready UI blocks to build spectacular apps in no time.</p>
+                                <div className="font-semibold mb-3 text-lg">Developer Productivity</div>
+                                <p className="m-0 text-secondary font-medium">Composable building blocks, strong defaults, and broad coverage help you move faster across real applications.</p>
                             </div>
                         </div>
                         <div className="col-12 md:col-6 xl:col-3 flex justify-content-center">

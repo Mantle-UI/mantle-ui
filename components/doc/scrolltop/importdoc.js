@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { ScrollTop } from 'primereact/scrolltop';
+import { ScrollTop } from '@mantle-ui/react/scrolltop';
         `
     };
 

@@ -26,8 +26,8 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { InputText } from 'primereact/inputtext';
-import { InputNumber } from 'primereact/inputnumber';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function BasicDemo() {
     return (
@@ -55,8 +55,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { InputText } from 'primereact/inputtext';
-import { InputNumber } from 'primereact/inputnumber';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function BasicDemo() {
     return (

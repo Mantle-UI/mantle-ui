@@ -19,9 +19,9 @@ const [clearTimeout] = useTimeout(() => {
         `,
         javascript: `
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
-import { useTimeout } from 'primereact/hooks';
-import { Toast } from 'primereact/toast';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { useTimeout } from '@mantle-ui/react/hooks';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function BasicDemo() {
     const toast = useRef(null);
@@ -42,9 +42,9 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
-import { useTimeout } from 'primereact/hooks';
-import { Toast } from 'primereact/toast';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { useTimeout } from '@mantle-ui/react/hooks';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function BasicDemo() {
     const toast = useRef<Toast>(null);

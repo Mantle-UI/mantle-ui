@@ -53,8 +53,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { ProgressBar } from 'primereact/progressbar';
-import { Toast } from 'primereact/toast';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState(0);

@@ -22,8 +22,8 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     const [visible, setVisible] = useState(false);
@@ -44,8 +44,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     const [visible, setVisible] = useState<boolean>(false);

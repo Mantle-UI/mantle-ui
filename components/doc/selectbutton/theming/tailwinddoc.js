@@ -33,7 +33,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { SelectButton } from 'primereact/selectbutton';
+import { SelectButton } from '@mantle-ui/react/selectbutton';
 
 export default function UnstyledDemo() {
     const options = ['Off', 'On'];

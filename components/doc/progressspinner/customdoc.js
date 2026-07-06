@@ -9,7 +9,7 @@ export function CustomDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { ProgressSpinner } from 'primereact/progressspinner';
+import { ProgressSpinner } from '@mantle-ui/react/progressspinner';
 
 export default function CustomDemo() {
     return (
@@ -21,7 +21,7 @@ export default function CustomDemo() {
         `,
         typescript: `
 import React from 'react';
-import { ProgressSpinner } from 'primereact/progressspinner';
+import { ProgressSpinner } from '@mantle-ui/react/progressspinner';
 
 export default function CustomDemo() {
     return (

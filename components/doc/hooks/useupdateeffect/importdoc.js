@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useUpdateEffect } from 'primereact/hooks';
+import { useUpdateEffect } from '@mantle-ui/react/hooks';
         `
     };
 

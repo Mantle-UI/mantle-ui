@@ -29,10 +29,10 @@ export function DataTableDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef } from 'react';
-import { DeferredContent } from 'primereact/deferredcontent';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Toast } from 'primereact/toast';
+import { DeferredContent } from '@mantle-ui/react/deferredcontent';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Toast } from '@mantle-ui/react/toast';
 import { ProductService } from './service/ProductService';
 
 export default function DataTableDemo() {
@@ -62,10 +62,10 @@ export default function DataTableDemo() {
         `,
         typescript: `
 import React, { useState, useRef } from 'react';
-import { DeferredContent } from 'primereact/deferredcontent';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Toast } from 'primereact/toast';
+import { DeferredContent } from '@mantle-ui/react/deferredcontent';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Toast } from '@mantle-ui/react/toast';
 import { ProductService } from './service/ProductService';
 
 export default function DataTableDemo() {

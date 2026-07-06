@@ -4,8 +4,8 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useLocalStorage } from 'primereact/hooks';
-import { useSessionStorage } from 'primereact/hooks';
+import { useLocalStorage } from '@mantle-ui/react/hooks';
+import { useSessionStorage } from '@mantle-ui/react/hooks';
         `
     };
 

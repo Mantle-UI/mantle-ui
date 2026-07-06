@@ -17,8 +17,8 @@ export function ConstantsDoc(props) {
     const code = {
         basic: `
 import React from 'react'; 
-import { Menu } from 'primereact/menu';
-import { MantleIcons } from 'primereact/api';
+import { Menu } from '@mantle-ui/react/menu';
+import { MantleIcons } from '@mantle-ui/react/api';
 
 export default function ConstantsDemo() {
     const items = [

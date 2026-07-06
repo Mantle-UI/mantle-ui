@@ -17,7 +17,7 @@ export function CSSModulesDoc(props) {
     const code2 = {
         basic: `
 import React from 'react';
-import { Panel } from 'primereact/panel';
+import { Panel } from '@mantle-ui/react/panel';
 import panelDemoModule from './paneldemo.module.css';
 
 export default function PanelDemo() {

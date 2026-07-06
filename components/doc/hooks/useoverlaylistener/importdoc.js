@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useOverlayListener } from 'primereact/hooks';
+import { useOverlayListener } from '@mantle-ui/react/hooks';
         `
     };
 

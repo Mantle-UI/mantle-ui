@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { FloatLabel } from 'primereact/floatlabel';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
         `
     };
 

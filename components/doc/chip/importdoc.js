@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
         `
     };
 

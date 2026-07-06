@@ -21,7 +21,7 @@ export function ClickEventDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function ClickEventDemo() {
@@ -44,7 +44,7 @@ export default function ClickEventDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function ClickEventDemo() {

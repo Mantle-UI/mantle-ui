@@ -19,7 +19,7 @@ export function DropdownDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 
 export default function DropdownDemo() {
     const [value, setValue] = useState('');
@@ -39,7 +39,7 @@ export default function DropdownDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { AutoComplete, AutoCompleteCompleteEvent } from "primereact/autocomplete";
+import { AutoComplete, AutoCompleteCompleteEvent } from "@mantle-ui/react/autocomplete";
 
 export default function DropdownDemo() {
     const [value, setValue] = useState<string>('');

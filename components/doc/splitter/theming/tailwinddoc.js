@@ -35,7 +35,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Splitter, SplitterPanel } from 'primereact/splitter';
+import { Splitter, SplitterPanel } from '@mantle-ui/react/splitter';
 
 export default function UnstyledDemo() {
     return (

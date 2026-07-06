@@ -12,7 +12,7 @@ export function IconDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function IconDemo() {
     return (
@@ -27,7 +27,7 @@ export default function IconDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function IconDemo() {
     return (

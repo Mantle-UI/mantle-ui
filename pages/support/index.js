@@ -88,9 +88,7 @@ const SupportPage = () => {
                         <ul className="flex flex-column gap-3 list-none m-0 p-0 text-lg">
                             <li>
                                 <div className="font-semibold mb-2">1. Purchase PRO Support</div>
-                                <span className="line-height-3">
-                                    Contact the Mantle UI maintainers through the community discussions to inquire about support.
-                                </span>
+                                <span className="line-height-3">Contact the Mantle UI maintainers through the community discussions to inquire about support.</span>
                             </li>
                             <li>
                                 <div className="font-semibold mb-2">2. Setup</div>

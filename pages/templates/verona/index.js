@@ -22,8 +22,7 @@ const features2Data = [
     },
     {
         title: 'Support',
-        description:
-            'Mantle UI templates are supported through community channels for general guidance, while dedicated support arrangements can be discussed separately when needed.',
+        description: 'Mantle UI templates are supported through community channels for general guidance, while dedicated support arrangements can be discussed separately when needed.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/apollo/apollo-features2-lifetime.png'
     },
     {

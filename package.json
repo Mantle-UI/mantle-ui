@@ -1,7 +1,7 @@
 {
     "name": "@mantle-ui/react",
     "private": false,
-    "version": "10.10.2",
+    "version": "10.10.3",
     "bin": {
         "mantleui": "./bin/mantle-ui-migrate.cjs"
     },
@@ -87,6 +87,7 @@
         "gulp-uglifycss": "^1.1.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
+        "postcss": "^8.5.16",
         "prettier": "3.5.3",
         "rollup": "^2.80.0",
         "rollup-plugin-postcss": "^4.0.2",

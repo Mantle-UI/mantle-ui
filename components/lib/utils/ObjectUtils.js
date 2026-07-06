@@ -534,6 +534,13 @@ export default class ObjectUtils {
         }
 
         const fields = field.split('.');
+        const blockedFields = new Set(['__proto__', 'prototype', 'constructor']);
+
+        if (fields.some((part) => !part || blockedFields.has(part))) {
+            // guard against prototype pollution and malformed paths
+            return;
+        }
+
         let obj = data;
 
         for (let i = 0, len = fields.length; i < len; ++i) {

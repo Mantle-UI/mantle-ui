@@ -39,8 +39,8 @@ const DocApiTable = (props) => {
                         return (
                             <React.Fragment key={i}>
                                 {i !== 0 ? '|' : ''}
-                                <Link href={router.basePath + router.pathname + `#${apiId}`} target="_self">
-                                    <a onClick={() => onClick(apiId, 'smooth')}>{sValue}</a>
+                                <Link href={router.basePath + router.pathname + `#${apiId}`} target="_self" onClick={() => onClick(apiId, 'smooth')}>
+                                    {sValue}
                                 </Link>
                             </React.Fragment>
                         );
@@ -52,10 +52,8 @@ const DocApiTable = (props) => {
                             {isLinkableOption ? (
                                 <span id={id + '.' + sValue} className={classNames('doc-option-name', { 'line-through cursor-pointer': !!deprecated })} title={deprecated}>
                                     {sValue}
-                                    <Link href={router.basePath + router.pathname + `#${id + '.' + sValue}`} target="_self">
-                                        <a onClick={() => onClick(id + '.' + sValue)} className="doc-option-link">
-                                            <i className="pi pi-link" />
-                                        </a>
+                                    <Link href={router.basePath + router.pathname + `#${id + '.' + sValue}`} target="_self" onClick={() => onClick(id + '.' + sValue)} className="doc-option-link">
+                                        <i className="pi pi-link" />
                                     </Link>
                                 </span>
                             ) : (
@@ -71,10 +69,8 @@ const DocApiTable = (props) => {
             return isLinkableOption ? (
                 <span id={id + '.' + val} className={classNames('doc-option-name', { 'line-through cursor-pointer': !!deprecated })} title={deprecated}>
                     {val}
-                    <Link href={router.basePath + router.pathname + `#${id + '.' + val}`} target="_self">
-                        <a onClick={() => onClick(id + '.' + val)} className="doc-option-link">
-                            <i className="pi pi-link" />
-                        </a>
+                    <Link href={router.basePath + router.pathname + `#${id + '.' + val}`} target="_self" onClick={() => onClick(id + '.' + val)} className="doc-option-link">
+                        <i className="pi pi-link" />
                     </Link>
                 </span>
             ) : (

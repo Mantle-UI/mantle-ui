@@ -4,12 +4,9 @@ const basePath = isGitHubPages ? '/mantle-ui' : '';
 module.exports = {
     reactStrictMode: process.env.NODE_ENV === 'production' ? false : true,
     trailingSlash: true,
+    output: isGitHubPages ? 'export' : undefined,
     assetPrefix: isGitHubPages ? `${basePath}/` : '',
     basePath,
-    publicRuntimeConfig: {
-        appVersion: process.env.npm_package_version || '',
-        basePath
-    },
     env: {
         NEXT_PUBLIC_BASE_PATH: basePath
     },

@@ -1,9 +1,9 @@
 name: Publish to npm
 
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types:
+      - published
 
 permissions:
   contents: read
@@ -15,27 +15,33 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.release.tag_name }}
 
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 22.x
-          package-manager-cache: false  # never use caching in release builds
+          node-version: '22'
+          package-manager-cache: false
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci --legacy-peer-deps
 
       - name: Verify release tag matches package.json version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
           TAG="${RELEASE_TAG#v}"
           PKG_VERSION="$(node -p "require('./package.json').version")"
+
+          echo "Release tag: $RELEASE_TAG"
+          echo "package.json version: $PKG_VERSION"
+
           if [ "$TAG" != "$PKG_VERSION" ]; then
-            echo "Release tag ($RELEASE_TAG) does not match package.json version ($PKG_VERSION)"
+            echo "::error::Release tag ($RELEASE_TAG) does not match package.json version ($PKG_VERSION)"
             exit 1
           fi
-        env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
 
       - name: Build library
         run: npm run build:lib

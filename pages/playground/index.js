@@ -5,13 +5,13 @@ const PlayGround = () => {
         <div>
             <Head>
                 <title>Playground - MantleUI</title>
-                <meta name="description" content="Experience Primereact right now with the interactive environment." />
+                <meta name="description" content="Experience Mantle UI right now with the interactive environment." />
             </Head>
             <div className="doc">
                 <div className="doc-main">
                     <div className="doc-intro">
                         <h1>Playground</h1>
-                        <p>Experience Primereact right now with the interactive environment.</p>
+                        <p>Experience Mantle UI right now with the interactive environment.</p>
                     </div>
                     <section className="py-4">
                         <iframe

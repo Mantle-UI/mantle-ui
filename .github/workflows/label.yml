@@ -2,22 +2,48 @@ name: Label To Issues and PRs
 
 on:
   issues:
-    types: [opened,reopened]
+    types: [opened, reopened]
   pull_request:
-    types: [opened,reopened]
+    types: [opened, reopened]
 
 permissions:
   contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
-  label_issues:
+  label:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
+
     steps:
-      - name: Label issues
-        uses: andymckay/labeler@1.0.4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          add-labels: 'Status: Needs Triage'
-          remove-labels: 'Resolution: By Design,Resolution: Cannot Replicate,Resolution: Duplicate,Resolution: Help Wanted,Resolution: Invalid,Resolution: Needs Issue,Resolution: Needs More Information,Resolution: Needs Revision,Resolution: Wontfix'
+      - name: Update labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" = "issues" ]; then
+            NUMBER="${{ github.event.issue.number }}"
+            gh issue edit "$NUMBER" \
+              --add-label "Status: Needs Triage" \
+              --remove-label "Resolution: By Design" \
+              --remove-label "Resolution: Cannot Replicate" \
+              --remove-label "Resolution: Duplicate" \
+              --remove-label "Resolution: Help Wanted" \
+              --remove-label "Resolution: Invalid" \
+              --remove-label "Resolution: Needs Issue" \
+              --remove-label "Resolution: Needs More Information" \
+              --remove-label "Resolution: Needs Revision" \
+              --remove-label "Resolution: Wontfix"
+          else
+            NUMBER="${{ github.event.pull_request.number }}"
+            gh pr edit "$NUMBER" \
+              --add-label "Status: Needs Triage" \
+              --remove-label "Resolution: By Design" \
+              --remove-label "Resolution: Cannot Replicate" \
+              --remove-label "Resolution: Duplicate" \
+              --remove-label "Resolution: Help Wanted" \
+              --remove-label "Resolution: Invalid" \
+              --remove-label "Resolution: Needs Issue" \
+              --remove-label "Resolution: Needs More Information" \
+              --remove-label "Resolution: Needs Revision" \
+              --remove-label "Resolution: Wontfix"
+          fi

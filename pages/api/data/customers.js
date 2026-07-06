@@ -147,12 +147,13 @@ const filters = {
 
 function filter(value, field, filterValue, filterMatchMode) {
     let filteredItems = [];
+    const matcher = Object.prototype.hasOwnProperty.call(filters, filterMatchMode) ? filters[filterMatchMode] : null;
 
     if (value) {
         for (let item of value) {
             let fieldValue = resolveFieldData(item, field);
 
-            if (filters[filterMatchMode](fieldValue, filterValue)) {
+            if (typeof matcher === 'function' && matcher(fieldValue, filterValue)) {
                 filteredItems.push(item);
             }
         }

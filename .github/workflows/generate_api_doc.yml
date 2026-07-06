@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   build:
@@ -20,23 +21,35 @@ jobs:
         node-version: [22.x]
 
     steps:
-    - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v6
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-    - name: Install node packages
-      run: npm install
+      - name: Install node packages
+        run: npm install
 
-    - name: Generate api doc
-      run: npm run apidoc
+      - name: Generate api doc
+        run: npm run apidoc
 
-    - name: Commit doc
-      run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-        git commit -a -m "Update API doc"
-        git push
+      - name: Check for generated changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v8.1.1
+        with:
+          commit-message: "chore: update api docs"
+          title: "chore: update api docs"
+          body: "Automated API documentation update generated from the current main branch."
+          branch: "workflow/update-api-docs"
+          delete-branch: true

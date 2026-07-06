@@ -30,7 +30,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { BreadCrumb } from 'primereact/breadcrumb';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
 
 export default function UnstyledDemo() {
     const items = [{ label: 'Computer' }, { label: 'Notebook' }, { label: 'Accessories' }, { label: 'Backpacks' }, { label: 'Item' }];

@@ -57,10 +57,10 @@ export function ContextMenuDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { ContextMenu } from 'primereact/contextmenu';
-import { Toast } from 'primereact/toast';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
+import { Toast } from '@mantle-ui/react/toast';
 import { ProductService } from './service/ProductService';
 
 export default function ContextMenuDemo() {
@@ -115,10 +115,10 @@ export default function ContextMenuDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { ContextMenu } from 'primereact/contextmenu';
-import { Toast } from 'primereact/toast';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
+import { Toast } from '@mantle-ui/react/toast';
 import { ProductService } from './service/ProductService';
 
 interface Product {

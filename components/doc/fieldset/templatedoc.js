@@ -24,7 +24,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Fieldset } from 'primereact/fieldset';
+import { Fieldset } from '@mantle-ui/react/fieldset';
 import { Avatar } from '@/components/lib/avatar/Avatar';
 
 export default function TemplateDemo() {
@@ -51,7 +51,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Fieldset } from 'primereact/fieldset';
+import { Fieldset } from '@mantle-ui/react/fieldset';
 import { Avatar } from '@/components/lib/avatar/Avatar';
 
 export default function TemplateDemo() {

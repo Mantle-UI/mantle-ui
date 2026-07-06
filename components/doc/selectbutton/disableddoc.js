@@ -18,7 +18,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { SelectButton } from 'primereact/selectbutton';
+import { SelectButton } from '@mantle-ui/react/selectbutton';
 
 export default function DisabledDemo() {
     const [value, setValue] = useState(null);
@@ -38,7 +38,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { SelectButton, SelectButtonChangeEvent } from 'primereact/selectbutton';
+import { SelectButton, SelectButtonChangeEvent } from '@mantle-ui/react/selectbutton';
 
 interface Item {
     name: string;

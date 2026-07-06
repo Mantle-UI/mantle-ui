@@ -24,8 +24,8 @@ export function GridLinesDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
 
 export default function GridLinesDemo() {
@@ -49,8 +49,8 @@ export default function GridLinesDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
 
 interface Product {

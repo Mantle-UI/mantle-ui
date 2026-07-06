@@ -15,8 +15,8 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Tooltip } from 'primereact/tooltip';
-import { Button } from 'primereact/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Button } from '@mantle-ui/react/button';
 
 export default function DisabledDemo() {
     return (
@@ -33,8 +33,8 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Tooltip } from 'primereact/tooltip';
-import { Button } from 'primereact/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Button } from '@mantle-ui/react/button';
 
 export default function DisabledDemo() {
     return (

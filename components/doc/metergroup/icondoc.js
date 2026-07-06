@@ -9,7 +9,7 @@ export function IconDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function IconDemo() {
     const values = [
@@ -28,7 +28,7 @@ export default function IconDemo() {
         `,
         typescript: `
 import React, { useEffect, useRef } from 'react';
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
 
 export default function IconDemo() {
     const values = [

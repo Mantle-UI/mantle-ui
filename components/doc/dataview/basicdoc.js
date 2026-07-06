@@ -76,11 +76,11 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { DataView } from 'primereact/dataview';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { DataView } from '@mantle-ui/react/dataview';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
+import { classNames } from '@mantle-ui/react/utils';
 import { ProductService } from './service/ProductService';
 
 export default function BasicDemo() {
@@ -152,11 +152,11 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { DataView } from 'primereact/dataview';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { DataView } from '@mantle-ui/react/dataview';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
+import { classNames } from '@mantle-ui/react/utils';
 import { ProductService } from './service/ProductService';
 
 interface Product {

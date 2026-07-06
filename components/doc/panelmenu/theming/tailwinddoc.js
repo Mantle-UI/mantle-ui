@@ -65,7 +65,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { PanelMenu } from 'primereact/panelmenu';
+import { PanelMenu } from '@mantle-ui/react/panelmenu';
 
 export default function UnstyledDemo() {
     const items = [

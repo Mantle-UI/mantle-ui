@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ThemeDoc(props) {
     const code = {
         basic: `
-import { MantleProvider } from "primereact/api";
+import { MantleProvider } from "@mantle-ui/react/api";
 ...
 return(
     <MantleProvider

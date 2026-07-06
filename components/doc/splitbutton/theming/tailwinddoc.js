@@ -44,8 +44,8 @@ const Tailwind = {
         javascript: `
 import React, { useRef } from 'react';
 //import { useRouter } from 'next/router';
-import { SplitButton } from 'primereact/splitbutton';
-import { Toast } from 'primereact/toast';
+import { SplitButton } from '@mantle-ui/react/splitbutton';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function UnstyledDemo() {
     //const router = useRouter();

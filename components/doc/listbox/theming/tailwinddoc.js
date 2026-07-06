@@ -47,7 +47,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { ListBox } from 'primereact/listbox';
+import { ListBox } from '@mantle-ui/react/listbox';
 
 export default function UnstyledDemo() {
     const [selectedCity, setSelectedCity] = useState(null);

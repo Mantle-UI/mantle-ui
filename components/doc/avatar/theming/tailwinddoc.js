@@ -37,9 +37,9 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Avatar } from 'primereact/avatar';
-import { AvatarGroup } from 'primereact/avatargroup';
-import { Badge } from 'primereact/badge';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { AvatarGroup } from '@mantle-ui/react/avatargroup';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function UnstyledDemo() {
     return (

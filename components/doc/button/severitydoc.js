@@ -15,7 +15,7 @@ export function SeverityDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function SeverityDemo() {
     return (
@@ -33,7 +33,7 @@ export default function SeverityDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function SeverityDemo() {
     return (

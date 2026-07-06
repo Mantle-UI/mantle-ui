@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { PickList } from 'primereact/picklist';
+import { PickList } from '@mantle-ui/react/picklist';
         `
     };
 

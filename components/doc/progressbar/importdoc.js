@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { ProgressBar } from 'primereact/progressbar';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
         `
     };
 

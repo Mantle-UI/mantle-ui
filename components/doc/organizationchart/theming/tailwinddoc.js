@@ -56,7 +56,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from 'react';
-import { OrganizationChart } from 'primereact/organizationchart';
+import { OrganizationChart } from '@mantle-ui/react/organizationchart';
 
 export default function UnstyledDemo() {
   const [data] = useState([

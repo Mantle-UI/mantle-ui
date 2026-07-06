@@ -13,7 +13,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { SelectButton } from 'primereact/selectbutton';
+import { SelectButton } from '@mantle-ui/react/selectbutton';
 
 export default function BasicDemo() {
     const options = ['Off', 'On'];
@@ -28,7 +28,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { SelectButton, SelectButtonChangeEvent } from 'primereact/selectbutton';
+import { SelectButton, SelectButtonChangeEvent } from '@mantle-ui/react/selectbutton';
 
 export default function BasicDemo() {
     const options: string[] = ['Off', 'On'];

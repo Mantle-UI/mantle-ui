@@ -108,8 +108,8 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { TieredMenu } from 'primereact/tieredmenu';
-import { Badge } from 'primereact/badge';
+import { TieredMenu } from '@mantle-ui/react/tieredmenu';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TemplateDemo() {
     const itemRenderer = (item) => (
@@ -217,9 +217,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { TieredMenu } from 'primereact/tieredmenu';
-import { MenuItem } from 'primereact/menuitem';
-import { Badge } from 'primereact/badge';
+import { TieredMenu } from '@mantle-ui/react/tieredmenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TemplateDemo() {
     const itemRenderer = (item) => (

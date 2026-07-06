@@ -66,9 +66,9 @@ export function LazyVirtualScrollDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Skeleton } from 'primereact/skeleton';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Skeleton } from '@mantle-ui/react/skeleton';
 import { CarService } from './service/CarService';
 
 export default function LazyVirtualScrollDemo() {
@@ -125,10 +125,10 @@ export default function LazyVirtualScrollDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Skeleton } from 'primereact/skeleton';
-import { VirtualScrollerLazyEvent, VirtualScrollerLoadingTemplateOptions } from 'primereact/virtualscroller';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Skeleton } from '@mantle-ui/react/skeleton';
+import { VirtualScrollerLazyEvent, VirtualScrollerLoadingTemplateOptions } from '@mantle-ui/react/virtualscroller';
 import { CarService } from './service/CarService';
 
 interface Car {

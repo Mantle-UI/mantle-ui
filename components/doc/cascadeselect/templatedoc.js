@@ -99,7 +99,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { CascadeSelect } from 'primereact/cascadeselect';
+import { CascadeSelect } from '@mantle-ui/react/cascadeselect';
 
 export default function TemplateDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -203,7 +203,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { CascadeSelect, CascadeSelectChangeEvent } from 'primereact/cascadeselect';
+import { CascadeSelect, CascadeSelectChangeEvent } from '@mantle-ui/react/cascadeselect';
 
 interface City {
     cname: string;

@@ -54,9 +54,9 @@ export function PaginatorTemplateDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
+import { Button } from '@mantle-ui/react/button';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
 
 export default function PaginatorTemplateDemo() {
     const [nodes, setNodes] = useState([]);
@@ -109,10 +109,10 @@ export default function PaginatorTemplateDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { TreeTable } from 'primereact/treetable';
-import { TreeNode } from 'primereact/treenode';
-import { Column } from 'primereact/column';
+import { Button } from '@mantle-ui/react/button';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { TreeNode } from '@mantle-ui/react/treenode';
+import { Column } from '@mantle-ui/react/column';
 
 export default function PaginatorTemplateDemo() {
     const [nodes, setNodes] = useState<TreeNode[]>([]);

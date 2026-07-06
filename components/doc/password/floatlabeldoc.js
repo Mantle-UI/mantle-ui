@@ -17,8 +17,8 @@ export function FloatLabelDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Password } from 'primereact/password';
-import { FloatLabel } from 'primereact/floatlabel';
+import { Password } from '@mantle-ui/react/password';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
 
 export default function FloatLabelDemo() {
     const [value, setValue] = useState('');
@@ -35,8 +35,8 @@ export default function FloatLabelDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Password } from 'primereact/password';
-import { FloatLabel } from 'primereact/floatlabel';
+import { Password } from '@mantle-ui/react/password';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
 
 export default function FloatLabelDemo() {
     const [value, setValue] = useState<string>('');

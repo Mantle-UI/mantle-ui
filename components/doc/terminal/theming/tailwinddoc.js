@@ -21,8 +21,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useEffect } from 'react';
-import { Terminal } from 'primereact/terminal';
-import { TerminalService } from 'primereact/terminalservice';
+import { Terminal } from '@mantle-ui/react/terminal';
+import { TerminalService } from '@mantle-ui/react/terminalservice';
 
 export default function UnstyledDemo() {
     const commandHandler = (text) => {

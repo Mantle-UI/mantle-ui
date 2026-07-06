@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
         `
     };
 

@@ -4,14 +4,14 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ContextDoc(props) {
     const code = {
         basic: `
-import { MantleProvider, MantleContext } from 'primereact/api';
+import { MantleProvider, MantleContext } from '@mantle-ui/react/api';
         `
     };
 
     const code2 = {
         basic: `
 // _app.js
-import { MantleProvider } from 'primereact/api';
+import { MantleProvider } from '@mantle-ui/react/api';
 
 export default function MyApp({ Component, pageProps }) {
     return (

@@ -123,10 +123,10 @@ export function TemplateDoc(props) {
 `,
         javascript: `
 import React from 'react'; 
-import { Menu } from 'primereact/menu';
-import { Badge } from 'primereact/badge';
-import { Avatar } from 'primereact/avatar';
-import { classNames } from 'primereact/utils';
+import { Menu } from '@mantle-ui/react/menu';
+import { Badge } from '@mantle-ui/react/badge';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function TemplateDemo() {
     const itemRenderer = (item) => (
@@ -244,11 +244,11 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Menu } from 'primereact/menu';
-import { Toast } from 'primereact/toast';
-import { Badge } from 'primereact/badge';
-import { MenuItem } from 'primereact/menuitem';
-import { classNames } from 'primereact/utils';
+import { Menu } from '@mantle-ui/react/menu';
+import { Toast } from '@mantle-ui/react/toast';
+import { Badge } from '@mantle-ui/react/badge';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function TemplateDemo() {
     const itemRenderer = (item) => (

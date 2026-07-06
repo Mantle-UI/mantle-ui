@@ -27,7 +27,7 @@ export function IndicatorsDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function IndicatorsDemo() {
@@ -56,7 +56,7 @@ export default function IndicatorsDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function IndicatorsDemo() {

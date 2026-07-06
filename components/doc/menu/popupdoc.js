@@ -49,9 +49,9 @@ export function PopupDoc(props) {
 `,
         javascript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Menu } from 'primereact/menu';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Menu } from '@mantle-ui/react/menu';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function PopupDoc() {
     const menuLeft = useRef(null);
@@ -98,10 +98,10 @@ export default function PopupDoc() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Menu } from 'primereact/menu';
-import { MenuItem } from 'primereact/menuitem';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Menu } from '@mantle-ui/react/menu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function PopupDoc() {
     const menuLeft = useRef<Menu>(null);

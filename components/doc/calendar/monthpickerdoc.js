@@ -12,7 +12,7 @@ export function MonthPickerDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
+import { Calendar } from '@mantle-ui/react/calendar';
 
 export default function MonthPickerDemo() {
     const [date, setDate] = useState(null);
@@ -26,8 +26,8 @@ export default function MonthPickerDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
-import { Nullable } from "primereact/ts-helpers";
+import { Calendar } from '@mantle-ui/react/calendar';
+import { Nullable } from "@mantle-ui/react/ts-helpers";
 
 export default function MonthPickerDemo() {
     const [date, setDate] = useState<Nullable<Date>>(null);

@@ -5,7 +5,7 @@ export function ExampleDoc(props) {
     const code = {
         javascript: `
 import React from 'react'; 
-import { Panel } from 'primereact/panel';
+import { Panel } from '@mantle-ui/react/panel';
 
 export default function TailwindDemo() {
     return (

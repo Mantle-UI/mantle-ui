@@ -35,7 +35,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { TabView, TabPanel } from 'primereact/tabview';
+import { TabView, TabPanel } from '@mantle-ui/react/tabview';
 
 export default function DisabledDemo() {
     return (
@@ -73,7 +73,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { TabView, TabPanel } from 'primereact/tabview';
+import { TabView, TabPanel } from '@mantle-ui/react/tabview';
 
 export default function DisabledDemo() {
     return (

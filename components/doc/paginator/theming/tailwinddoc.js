@@ -190,7 +190,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Paginator } from 'primereact/paginator';
+import { Paginator } from '@mantle-ui/react/paginator';
 
 export default function UnstyledDemo() {
     const [first, setFirst] = useState(0);

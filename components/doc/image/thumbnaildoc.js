@@ -9,7 +9,7 @@ export function ThumbnailDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Image } from 'primereact/image';
+import { Image } from '@mantle-ui/react/image';
 
 export default function ThumbnailDemo() {
     return (
@@ -21,7 +21,7 @@ export default function ThumbnailDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Image } from 'primereact/image';
+import { Image } from '@mantle-ui/react/image';
 
 export default function ThumbnailDemo() {
     return (

@@ -43,7 +43,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { OrganizationChart } from 'primereact/organizationchart';
+import { OrganizationChart } from '@mantle-ui/react/organizationchart';
 
 export default function BasicDoc() {
     const [data] = useState([
@@ -88,8 +88,8 @@ export default function BasicDoc() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { OrganizationChart } from 'primereact/organizationchart';
-import { TreeNode } from 'primereact/treenode';
+import { OrganizationChart } from '@mantle-ui/react/organizationchart';
+import { TreeNode } from '@mantle-ui/react/treenode';
 
 export default function BasicDoc() {
     const [data] = useState<TreeNode[]>([

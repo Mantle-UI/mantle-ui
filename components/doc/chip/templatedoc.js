@@ -16,7 +16,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function TemplateDemo() {
     const content = (
@@ -35,7 +35,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function TemplateDemo() {
     const content = (

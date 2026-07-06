@@ -11,7 +11,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     return (
@@ -25,7 +25,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     return (

@@ -32,7 +32,7 @@ export function VirtualScrollDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 
 export default function VirtualScrollerDemo() {
     const [selectedItem, setSelectedItem] = useState(null);
@@ -62,7 +62,7 @@ export default function VirtualScrollerDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { AutoComplete, AutoCompleteCompleteEvent } from "primereact/autocomplete";
+import { AutoComplete, AutoCompleteCompleteEvent } from "@mantle-ui/react/autocomplete";
 
 interface Item {
     label: string;

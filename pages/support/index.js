@@ -6,22 +6,22 @@ const SupportPage = () => {
                     <i className="pi pi-github absolute opacity-20" style={{ bottom: '-50px', right: '-50px', fontSize: '200px', transform: 'rotateX(45deg) rotateY(0deg) rotateZ(-45deg)' }}></i>
                     <div className="text-2xl font-semibold mb-3 relative">Community Support</div>
                     <p className="m-0 line-height-3 relative text-lg">
-                        <a href="https://github.com/orgs/primefaces/discussions" className="text-primary font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="text-primary font-medium hover:underline" target="_blank" rel="noopener noreferrer">
                             Forum
                         </a>{' '}
                         and{' '}
                         <a href="https://discord.gg/gzKFYnpmCY" className="text-primary font-medium hover:underline" target="_blank" rel="noopener noreferrer">
                             Discord
                         </a>{' '}
-                        are where the community users gather to seek support, post topics and discuss the technology. GitHub issue is the channel for the community users to create tickets however PrimeTek does not guarantee a response time although
-                        they are monitored and maintained by our staff. If you need to secure a response, you may consider PRO support instead.
+                        are where the community gathers to seek support, post topics and discuss the technology. GitHub issues are available for bug reports and maintenance work, but response times are not guaranteed. If you need a dedicated support
+                        arrangement, you may consider professional support instead.
                     </p>
                 </div>
                 <div className="card m-0 flex-1 bg-primary text-primary-contrast font-medium">
                     <div className="text-2xl font-semibold mb-3">Professional Support</div>
                     <p className="m-0 line-height-3 text-lg">
-                        With PRO support, it's easy to support, tune, and add features to MantleUI as an in-house library. With the exclusive services of a PRO account, you no longer need to post questions in the community forum and the community
-                        issue tracker at GitHub. Service is delivered via a private issue tracker based on a one-business-day response time.
+                        Professional support can be used to prioritize fixes, tuning, and feature work around Mantle UI. Instead of relying solely on the public community channels, support is coordinated through a private issue tracker with a
+                        one-business-day response target.
                     </p>
                 </div>
             </div>
@@ -77,11 +77,8 @@ const SupportPage = () => {
                                 </li>
                             </ul>
                         </div>
-                        <a
-                            href="mailto:contact@primetek.com.tr?subject=MantleUI%20PRO%20Support"
-                            className="block mt-4 w-full bg-primary border-round py-2 px-3 text-center transition-all duration-300 text-primary-contrast font-semibold text-lg leading-none"
-                        >
-                            Buy Now
+                        <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="block mt-4 w-full bg-primary border-round py-2 px-3 text-center transition-all duration-300 text-primary-contrast font-semibold text-lg leading-none">
+                            Contact Maintainers
                         </a>
                     </div>
                 </div>
@@ -91,13 +88,7 @@ const SupportPage = () => {
                         <ul className="flex flex-column gap-3 list-none m-0 p-0 text-lg">
                             <li>
                                 <div className="font-semibold mb-2">1. Purchase PRO Support</div>
-                                <span className="line-height-3">
-                                    Contact{' '}
-                                    <a href="mailto:contact@primetek.com.tr" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">
-                                        PrimeTek
-                                    </a>{' '}
-                                    to purchase support.
-                                </span>
+                                <span className="line-height-3">Contact the Mantle UI maintainers through the community discussions to inquire about support.</span>
                             </li>
                             <li>
                                 <div className="font-semibold mb-2">2. Setup</div>
@@ -109,7 +100,7 @@ const SupportPage = () => {
                             </li>
                             <li>
                                 <div className="font-semibold mb-2">4. Estimate and Approval</div>
-                                <span className="line-height-3">An estimate is provided to resolve the issue, upon your approval the PrimeTek team commences work.</span>
+                                <span className="line-height-3">An estimate is provided to resolve the issue, and work begins after approval.</span>
                             </li>
                             <li>
                                 <div className="font-semibold mb-2">5. Resolution</div>
@@ -254,7 +245,7 @@ const SupportPage = () => {
                         </div>
                         <div>
                             <div className="line-height-3 mb-2 font-semibold">Who provides the support service?</div>
-                            <p className="m-0 line-height-3">Support service is provided by the MantleUI team at PrimeTek.</p>
+                            <p className="m-0 line-height-3">Support service is provided by the Mantle UI maintainers.</p>
                         </div>
                         <div>
                             <div className="line-height-3 mb-2 font-semibold">Is there a minimum hour requirement?</div>
@@ -268,7 +259,7 @@ const SupportPage = () => {
                     <div className="flex-1 flex flex-column gap-5">
                         <div>
                             <div className="line-height-3 mb-2 font-semibold">Can we request new features and enhancements?</div>
-                            <p className="m-0 line-height-3">Yes, initially the request needs to be approved by PrimeTek based on project roadmap fit. As a result, not all requests may be accepted.</p>
+                            <p className="m-0 line-height-3">Yes, requests are reviewed based on project roadmap fit, so not all requests may be accepted.</p>
                         </div>
                         <div>
                             <div className="line-height-3 mb-2 font-semibold">What are the payment terms?</div>

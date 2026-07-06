@@ -70,9 +70,9 @@ export function RowSpanRowGroupDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Tag } from 'primereact/tag';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 export default function RowSpanGroupingDemo() {
@@ -141,9 +141,9 @@ export default function RowSpanGroupingDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Tag } from 'primereact/tag';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 interface Country {

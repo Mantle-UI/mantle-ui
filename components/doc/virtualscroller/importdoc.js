@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { VirtualScroller } from 'primereact/virtualscroller';
+import { VirtualScroller } from '@mantle-ui/react/virtualscroller';
         `
     };
 

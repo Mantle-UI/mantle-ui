@@ -54,7 +54,7 @@ export function PolarAreaDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function PolarAreaDemo() {
     const [chartData, setChartData] = useState({});
@@ -110,7 +110,7 @@ export default function PolarAreaDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function PolarAreaDemo() {
     const [chartData, setChartData] = useState({});

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { BlockUI } from 'primereact/blockui';
+import { BlockUI } from '@mantle-ui/react/blockui';
         `
     };
 

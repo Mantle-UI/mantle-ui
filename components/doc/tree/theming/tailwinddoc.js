@@ -76,7 +76,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
+import { Tree } from '@mantle-ui/react/tree';
 import { NodeService } from './service/NodeService';
 
 export default function UnstyledDemo() {

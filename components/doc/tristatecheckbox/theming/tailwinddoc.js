@@ -36,7 +36,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { TriStateCheckbox } from 'primereact/tristatecheckbox';
+import { TriStateCheckbox } from '@mantle-ui/react/tristatecheckbox';
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState(null);

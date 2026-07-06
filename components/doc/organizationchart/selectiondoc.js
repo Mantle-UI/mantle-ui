@@ -75,7 +75,7 @@ export function SelectionDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { OrganizationChart } from 'primereact/organizationchart';
+import { OrganizationChart } from '@mantle-ui/react/organizationchart';
 
 export default function SelectionDemo() {
     const [selection, setSelection] = useState([]);
@@ -152,8 +152,8 @@ export default function SelectionDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { OrganizationChart } from 'primereact/organizationchart';
-import { TreeNode } from 'primereact/treenode';
+import { OrganizationChart } from '@mantle-ui/react/organizationchart';
+import { TreeNode } from '@mantle-ui/react/treenode';
 
 export default function SelectionDemo() {
     const [selection, setSelection] = useState<TreeNode[]>([]);

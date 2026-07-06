@@ -30,7 +30,7 @@ export function NestedDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Splitter, SplitterPanel } from 'primereact/splitter';
+import { Splitter, SplitterPanel } from '@mantle-ui/react/splitter';
 
 export default function NestedDemo() {
     return (
@@ -61,7 +61,7 @@ export default function NestedDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Splitter, SplitterPanel } from 'primereact/splitter';
+import { Splitter, SplitterPanel } from '@mantle-ui/react/splitter';
 
 export default function NestedDemo() {
     return (

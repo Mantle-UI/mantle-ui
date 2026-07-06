@@ -4,8 +4,8 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Stepper } from 'primereact/stepper';
-import { StepperPanel } from 'primereact/stepperpanel';
+import { Stepper } from '@mantle-ui/react/stepper';
+import { StepperPanel } from '@mantle-ui/react/stepperpanel';
         `
     };
 

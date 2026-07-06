@@ -28,7 +28,7 @@ export function MultipleDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from "react";
-import { TreeSelect } from 'primereact/treeselect';
+import { TreeSelect } from '@mantle-ui/react/treeselect';
 import { NodeService } from './service/NodeService';
 
 export default function MultipleDemo() {
@@ -49,8 +49,8 @@ export default function MultipleDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from "react";
-import { TreeSelect, TreeSelectChangeEvent } from 'primereact/treeselect';
-import { TreeNode } from 'primereact/treenode';
+import { TreeSelect, TreeSelectChangeEvent } from '@mantle-ui/react/treeselect';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function MultipleDemo() {

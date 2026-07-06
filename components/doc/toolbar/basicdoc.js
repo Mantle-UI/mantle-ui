@@ -47,12 +47,12 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Toolbar } from 'primereact/toolbar';
-import { Button } from 'primereact/button';
-import { SplitButton } from 'primereact/splitbutton';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
+import { Toolbar } from '@mantle-ui/react/toolbar';
+import { Button } from '@mantle-ui/react/button';
+import { SplitButton } from '@mantle-ui/react/splitbutton';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
 
 export default function BasicDemo() {
     const items = [
@@ -96,13 +96,13 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Toolbar } from 'primereact/toolbar';
-import { Button } from 'primereact/button';
-import { MenuItem } from 'primereact/menuitem';
-import { SplitButton } from 'primereact/splitbutton';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
+import { Toolbar } from '@mantle-ui/react/toolbar';
+import { Button } from '@mantle-ui/react/button';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { SplitButton } from '@mantle-ui/react/splitbutton';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
 
 export default function BasicDemo() {
     const items: MenuItem[] = [

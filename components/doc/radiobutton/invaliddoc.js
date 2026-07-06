@@ -9,7 +9,7 @@ export function InvalidDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { RadioButton } from "primereact/radiobutton";
+import { RadioButton } from "@mantle-ui/react/radiobutton";
 
 export default function InvalidDemo() {
     return (
@@ -21,7 +21,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { RadioButton } from "primereact/radiobutton";
+import { RadioButton } from "@mantle-ui/react/radiobutton";
 
 export default function InvalidDemo() {
     return (

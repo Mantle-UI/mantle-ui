@@ -18,7 +18,7 @@ export function ButtonsDoc(props) {
 `,
         javascript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function ButtonsDemo() {
     const [value1, setValue1] = useState(20);
@@ -48,7 +48,7 @@ export default function ButtonsDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
+import { InputNumber, InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
 
 export default function ButtonsDemo() {
     const [value1, setValue1] = useState<number>(20);

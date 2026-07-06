@@ -123,7 +123,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function UnstyledDemo() {
     const [selectedCities, setSelectedCities] = useState(null);

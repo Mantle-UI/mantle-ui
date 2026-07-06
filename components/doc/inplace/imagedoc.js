@@ -19,7 +19,7 @@ export function ImageDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
 
 export default function ImageDemo() {
     return (
@@ -39,7 +39,7 @@ export default function ImageDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
 
 export default function ImageDemo() {
     return (

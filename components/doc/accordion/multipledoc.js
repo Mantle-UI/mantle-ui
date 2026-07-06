@@ -34,7 +34,7 @@ export function MultipleDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Accordion, AccordionTab } from '@mantle-ui/react/accordion';
 
 export default function MultipleDemo() {
     return (
@@ -71,7 +71,7 @@ export default function MultipleDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Accordion, AccordionTab } from '@mantle-ui/react/accordion';
 
 export default function MultipleDemo() {
     return (

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Dialog } from 'primereact/dialog';
+import { Dialog } from '@mantle-ui/react/dialog';
         `
     };
 

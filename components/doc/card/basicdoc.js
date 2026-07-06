@@ -14,7 +14,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Card } from 'primereact/card';
+import { Card } from '@mantle-ui/react/card';
 
 export default function BasicDemo() {
     return (
@@ -31,7 +31,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Card } from 'primereact/card';
+import { Card } from '@mantle-ui/react/card';
 
 export default function BasicDemo() {
     return (

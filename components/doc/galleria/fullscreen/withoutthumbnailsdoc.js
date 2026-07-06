@@ -30,8 +30,8 @@ export function WithoutThumbnailsDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Galleria } from 'primereact/galleria';
+import { Button } from '@mantle-ui/react/button';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function WithoutThumbnailsDemo() {
@@ -62,8 +62,8 @@ export default function WithoutThumbnailsDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Galleria } from 'primereact/galleria';
+import { Button } from '@mantle-ui/react/button';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function WithoutThumbnailsDemo() {

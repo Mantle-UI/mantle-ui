@@ -19,8 +19,8 @@ export function ValidationDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Message } from 'primereact/message';
-import { InputText } from 'primereact/inputtext';
+import { Message } from '@mantle-ui/react/message';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function ValidationDemo() {
     return (
@@ -41,8 +41,8 @@ export default function ValidationDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Message } from 'primereact/message';
-import { InputText } from 'primereact/inputtext';
+import { Message } from '@mantle-ui/react/message';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function ValidationDemo() {
     return (

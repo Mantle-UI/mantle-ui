@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Accordion, AccordionTab } from '@mantle-ui/react/accordion';
         `
     };
 

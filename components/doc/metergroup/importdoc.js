@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { MeterGroup } from 'primereact/metergroup';
+import { MeterGroup } from '@mantle-ui/react/metergroup';
         `
     };
 

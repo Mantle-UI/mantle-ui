@@ -43,7 +43,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { FileUpload } from 'primereact/fileupload';
+import { FileUpload } from '@mantle-ui/react/fileupload';
 
 export default function UnstyledDemo() {
         

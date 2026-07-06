@@ -19,7 +19,7 @@ export function SingleSelectionDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
+import { Tree } from '@mantle-ui/react/tree';
 import { NodeService } from './service/NodeService';
 
 export default function SingleSelectionDemo() {
@@ -39,8 +39,8 @@ export default function SingleSelectionDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
+import { Tree } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function SingleSelectionDemo() {

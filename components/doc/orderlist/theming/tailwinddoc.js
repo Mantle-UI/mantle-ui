@@ -100,7 +100,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { OrderList } from 'primereact/orderlist';
+import { OrderList } from '@mantle-ui/react/orderlist';
 import { ProductService } from './service/ProductService';
 
 export default function UnstyledDemo() {

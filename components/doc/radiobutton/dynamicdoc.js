@@ -25,7 +25,7 @@ export function DynamicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { RadioButton } from "primereact/radiobutton";
+import { RadioButton } from "@mantle-ui/react/radiobutton";
 
 export default function DynamicDemo() {
     const categories = [
@@ -54,7 +54,7 @@ export default function DynamicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { RadioButton, RadioButtonChangeEvent } from "primereact/radiobutton";
+import { RadioButton, RadioButtonChangeEvent } from "@mantle-ui/react/radiobutton";
 
 interface Category {
     name: string;

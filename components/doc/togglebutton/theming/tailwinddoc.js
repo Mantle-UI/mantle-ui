@@ -35,7 +35,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { ToggleButton } from 'primereact/togglebutton';
+import { ToggleButton } from '@mantle-ui/react/togglebutton';
 
 export default function UnstyledDemo() {
     const [checked, setChecked] = useState(false);

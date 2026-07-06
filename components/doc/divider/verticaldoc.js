@@ -22,7 +22,7 @@ export function VerticalDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Divider } from 'primereact/divider';
+import { Divider } from '@mantle-ui/react/divider';
 
 export default function VerticalDemo() {
     return (
@@ -47,7 +47,7 @@ export default function VerticalDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Divider } from 'primereact/divider';
+import { Divider } from '@mantle-ui/react/divider';
 
 export default function VerticalDemo() {
     return (

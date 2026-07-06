@@ -30,7 +30,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function UnstyledDemo() {
     return (

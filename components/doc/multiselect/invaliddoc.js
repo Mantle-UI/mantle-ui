@@ -20,7 +20,7 @@ export function InvalidDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function InvalidDemo() {
     const [selectedCities, setSelectedCities] = useState(null);
@@ -42,7 +42,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { MultiSelect, MultiSelectChangeEvent } from 'primereact/multiselect';
+import { MultiSelect, MultiSelectChangeEvent } from '@mantle-ui/react/multiselect';
 
 interface City {
     name: string;

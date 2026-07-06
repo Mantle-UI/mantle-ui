@@ -23,7 +23,7 @@ module.exports = {
     };
     const code2 = {
         basic: `
-import { MantleProvider } from "primereact/api";
+import { MantleProvider } from "@mantle-ui/react/api";
 
 ...
 return(
@@ -37,8 +37,8 @@ return(
 
     const code3 = {
         basic: `
-import { MantleProvider } from "primereact/api";
-import Tailwind from 'primereact/passthrough/tailwind';
+import { MantleProvider } from "@mantle-ui/react/api";
+import Tailwind from '@mantle-ui/react/passthrough/tailwind';
 
 ...
 return(
@@ -52,7 +52,7 @@ return(
 
     const code4 = {
         basic: `
-import { MantleProvider } from "primereact/api";
+import { MantleProvider } from "@mantle-ui/react/api";
 import { twMerge } from 'tailwind-merge';
 
 ...
@@ -67,7 +67,7 @@ return(
 
     const code5 = {
         basic: `
-import { MantleProvider } from "primereact/api";
+import { MantleProvider } from "@mantle-ui/react/api";
 
 export default function MyApp({ Component, pageProps }) {
     

@@ -12,7 +12,7 @@ export function InlineDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { ColorPicker } from 'primereact/colorpicker';
+import { ColorPicker } from '@mantle-ui/react/colorpicker';
 
 export default function InlineDemo() {
     const [color, setColor] = useState(null);
@@ -26,7 +26,7 @@ export default function InlineDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { ColorPicker, ColorPickerChangeEvent } from 'primereact/colorpicker';
+import { ColorPicker, ColorPickerChangeEvent } from '@mantle-ui/react/colorpicker';
 
 export default function InlineDemo() {
     const [color, setColor] = useState<string>(null);

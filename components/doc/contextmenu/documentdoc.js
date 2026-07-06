@@ -37,7 +37,7 @@ export function DocumentDoc(props) {
 `,
         javascript: `
 import React from 'react';
-import { ContextMenu } from 'primereact/contextmenu';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
 
 export default function DocumentDemo() {
     const items = [
@@ -78,8 +78,8 @@ export default function DocumentDemo() {
         `,
         typescript: `
 import React from 'react';
-import { ContextMenu } from 'primereact/contextmenu';
-import { MenuItem } from 'primereact/menuitem';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function DocumentDemo() {
     const items: MenuItem[] = [

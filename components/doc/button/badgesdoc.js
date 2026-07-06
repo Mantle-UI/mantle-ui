@@ -10,7 +10,7 @@ export function BadgesDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BadgesDemo() {
     return (
@@ -23,7 +23,7 @@ export default function BadgesDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BadgesDemo() {
     return (

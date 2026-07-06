@@ -29,9 +29,9 @@ useInterval(
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { useInterval } from 'primereact/hooks';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { useInterval } from '@mantle-ui/react/hooks';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function BasicDemo() {
     const [seconds, setSeconds] = useState(0);
@@ -56,9 +56,9 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { useInterval } from 'primereact/hooks';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { useInterval } from '@mantle-ui/react/hooks';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function BasicDemo() {
     const [seconds, setSeconds] = useState<number>(0);

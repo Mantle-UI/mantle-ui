@@ -17,7 +17,7 @@ export function LayoutDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Paginator } from 'primereact/paginator';
+import { Paginator } from '@mantle-ui/react/paginator';
 
 export default function LayoutDemo() {
     const [first, setFirst] = useState(0);
@@ -35,7 +35,7 @@ export default function LayoutDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Paginator, PaginatorPageChangeEvent } from 'primereact/paginator';
+import { Paginator, PaginatorPageChangeEvent } from '@mantle-ui/react/paginator';
 
 export default function LayoutDemo() {
     const [first, setFirst] = useState<number>(0);

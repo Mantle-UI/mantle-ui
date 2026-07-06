@@ -38,7 +38,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Chips } from "primereact/chips";
+import { Chips } from "@mantle-ui/react/chips";
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState([]);

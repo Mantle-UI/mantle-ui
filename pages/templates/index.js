@@ -5,7 +5,7 @@ const TemplatesPage = () => {
         <div>
             <div className="doc-intro">
                 <h1>Templates</h1>
-                <p>Highly customizable application templates to get started in no time with style. Designed and implemented by PrimeTek.</p>
+                <p>Highly customizable application templates to get started in no time with style. These pages are being reworked for Mantle UI.</p>
             </div>
 
             <h2>Multi-Purpose Templates</h2>

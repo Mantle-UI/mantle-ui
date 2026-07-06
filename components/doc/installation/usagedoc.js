@@ -5,11 +5,11 @@ import { Button } from '@/components/lib/button/Button';
 export function UsageDoc(props) {
     const code = {
         basic: `
-import { Button } from 'primereact/button';                             
+import { Button } from '@mantle-ui/react/button';                             
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     return (
@@ -21,7 +21,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     return (

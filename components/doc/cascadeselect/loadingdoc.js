@@ -9,7 +9,7 @@ export function LoadingDoc(props) {
         `,
         javascript: `
 import React from "react";
-import { CascadeSelect } from 'primereact/cascadeselect';
+import { CascadeSelect } from '@mantle-ui/react/cascadeselect';
 
 export default function LoadingDemo() {
     return (
@@ -21,7 +21,7 @@ export default function LoadingDemo() {
         `,
         typescript: `
 import React from "react";
-import { CascadeSelect, CascadeSelectChangeEvent } from 'primereact/cascadeselect';
+import { CascadeSelect, CascadeSelectChangeEvent } from '@mantle-ui/react/cascadeselect';
 
 export default function LoadingDemo() {
    

@@ -14,7 +14,7 @@ const FooterSection = () => {
                                 </Link>
                             </li>
                             <li className="mb-4">
-                                <a href="https://github.com/primefaces/primereact-examples" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/Mantle-UI/mantle-ui" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
                                     Examples
                                 </a>
                             </li>
@@ -22,9 +22,9 @@ const FooterSection = () => {
                     </div>
                     <div className="w-6 lg:w-3 flex">
                         <ul className="list-none p-0 m-0">
-                            <li className="font-bold mb-5">Support</li>
+                            <li className="font-bold mb-5">Community</li>
                             <li className="mb-4">
-                                <a href="https://github.com/orgs/primefaces/discussions" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
                                     Forum
                                 </a>
                             </li>
@@ -33,11 +33,6 @@ const FooterSection = () => {
                                     Discord
                                 </a>
                             </li>
-                            <li className="mb-4">
-                                <Link href="/support" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
-                                    PRO Support
-                                </Link>
-                            </li>
                         </ul>
                     </div>
                     <div className="w-6 lg:w-3 flex">
@@ -45,36 +40,21 @@ const FooterSection = () => {
                             <li className="font-bold mt-5 lg:mt-0 mb-5">Resources</li>
                             <li className="mb-4">
                                 <a href="https://www.youtube.com/channel/UCTgmp69aBOlLnPEqlUyetWw" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    PrimeTV
+                                    Videos
                                 </a>
                             </li>
                             <li className="mb-4">
-                                <a href="https://primeui.store" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    Store
+                                <a href="https://github.com/Mantle-UI/mantle-ui/releases" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
+                                    Releases
                                 </a>
                             </li>
                             <li className="mb-4">
-                                <a href="https://github.com/primefaces/primereact" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    Source Code
+                                <a href="https://github.com/Mantle-UI/mantle-ui/blob/main/CHANGELOG.md" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
+                                    Changelog
                                 </a>
                             </li>
                             <li className="mb-4">
-                                <a href="https://twitter.com/primereact" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    Twitter
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="https://www.primefaces.org/newsletter" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    Newsletter
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="https://gear.primefaces.org/" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    PrimeGear
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="mailto:contact@primetek.com.tr" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
                                     Contact Us
                                 </a>
                             </li>
@@ -82,15 +62,20 @@ const FooterSection = () => {
                     </div>
                     <div className="w-6 lg:w-3 flex">
                         <ul className="list-none p-0 m-0">
-                            <li className="font-bold mt-5 lg:mt-0 mb-5">Theming</li>
+                            <li className="font-bold mt-5 lg:mt-0 mb-5">Explore</li>
                             <li className="mb-4">
-                                <Link href="/theming" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
-                                    Styled Mode
+                                <Link href="/theming">
+                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Theming</a>
+                                </Link>
+                            </li>
+                            <li className="mb-4">
+                                <Link href="/tailwind">
+                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Tailwind</a>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/unstyled" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
-                                    Unstyled Mode
+                                <Link href="/contribution">
+                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Contribution</a>
                                 </Link>
                             </li>
                         </ul>
@@ -143,16 +128,16 @@ const FooterSection = () => {
                         </svg>
                     </span>
                     <div className="flex align-items-center">
-                        <a href="https://twitter.com/primereact" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
+                        <a href="https://github.com/Mantle-UI/mantle-ui/releases" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
                             <i className="pi pi-twitter" />
                         </a>
-                        <a href="https://github.com/primefaces/primereact" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
+                        <a href="https://github.com/Mantle-UI/mantle-ui" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
                             <i className="pi pi-github" />
                         </a>
                         <a href="https://discord.gg/gzKFYnpmCY" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
                             <i className="pi pi-discord" />
                         </a>
-                        <a href="https://github.com/orgs/primefaces/discussions" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center">
+                        <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center">
                             <i className="pi pi-comments" />
                         </a>
                     </div>

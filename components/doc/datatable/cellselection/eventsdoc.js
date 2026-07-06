@@ -39,9 +39,9 @@ export function CellSelectEventsDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Toast } from 'primereact/toast'
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Toast } from '@mantle-ui/react/toast'
 import { ProductService } from './service/ProductService';
 
 export default function CellSelectEventsDemo() {
@@ -78,9 +78,9 @@ export default function CellSelectEventsDemo() {
         `,
         typescript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { DataTable, DataTableSelectionChangeEvent, DataTableCellSelection, DataTableSelectEvent, DataTableUnselectEvent } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Toast } from 'primereact/toast'
+import { DataTable, DataTableSelectionChangeEvent, DataTableCellSelection, DataTableSelectEvent, DataTableUnselectEvent } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { Toast } from '@mantle-ui/react/toast'
 import { ProductService } from './service/ProductService';
 
 interface Product {

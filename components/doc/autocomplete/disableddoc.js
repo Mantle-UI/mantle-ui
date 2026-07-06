@@ -9,7 +9,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React from "react";
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 
 export default function DisabledDemo() {
     return (
@@ -21,7 +21,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React from "react";
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 
 export default function DisabledDemo() {
     return (

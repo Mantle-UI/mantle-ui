@@ -27,9 +27,9 @@ export function DeclarativeDoc(props) {
         `,
         javascript: `
 import React, { useRef, useState } from 'react';
-import { ConfirmPopup, confirmPopup } from 'primereact/confirmpopup';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { ConfirmPopup, confirmPopup } from '@mantle-ui/react/confirmpopup';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function DeclarativeDemo() {
     const [visible, setVisible] = useState(false);
@@ -58,9 +58,9 @@ export default function DeclarativeDemo() {
         `,
         typescript: `
 import React, { useRef, useState } from 'react';
-import { ConfirmPopup, confirmPopup } from 'primereact/confirmpopup';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { ConfirmPopup, confirmPopup } from '@mantle-ui/react/confirmpopup';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function DeclarativeDemo() {
     const [visible, setVisible] = useState<boolean>(false);

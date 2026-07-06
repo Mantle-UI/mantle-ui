@@ -40,8 +40,8 @@ export function InteractiveDoc(props) {
 `,
         javascript: `
 import React, { useState, useRef } from 'react';
-import { Steps } from 'primereact/steps';
-import { Toast } from 'primereact/toast';
+import { Steps } from '@mantle-ui/react/steps';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function InteractiveDemo() {
     const [activeIndex, setActiveIndex] = useState(1);
@@ -83,9 +83,9 @@ export default function InteractiveDemo() {
         `,
         typescript: `
 import React, { useState, useRef } from 'react';
-import { Steps } from 'primereact/steps';
-import { Toast } from 'primereact/toast';
-import { MenuItem } from 'primereact/menuitem';
+import { Steps } from '@mantle-ui/react/steps';
+import { Toast } from '@mantle-ui/react/toast';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function InteractiveDemo() {
     const [activeIndex, setActiveIndex] = useState<number>(1);

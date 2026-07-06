@@ -94,10 +94,10 @@ export function CellEditDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { InputNumber } from 'primereact/inputnumber';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 import { ProductService } from './service/ProductService';
 
 export default function CellEditingDemo() {
@@ -176,10 +176,10 @@ export default function CellEditingDemo() {
         `,
         typescript: `
 import React, { useEffect, useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column, ColumnEvent, ColumnEditorOptions } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column, ColumnEvent, ColumnEditorOptions } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { InputNumber, InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
 import { ProductService } from './service/ProductService';
 
 interface Product {

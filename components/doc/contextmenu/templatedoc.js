@@ -93,7 +93,7 @@ export function TemplateDoc(props) {
         javascript: `
 import { useState, useRef, useEffect } from 'react';
 import { ProductService } from './service/ProductService';
-import { ContextMenu } from 'primereact/contextmenu';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
 
 export default function TemplateDemo() {
     const [products, setProducts] = useState([]);
@@ -173,7 +173,7 @@ export default function TemplateDemo() {
         typescript: `
 import React, { useState, useRef, useEffect } from 'react';
 import { ProductService } from './service/ProductService';
-import { MenuItem } from 'primereact/menuitem';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 interface Product {
   id: string;

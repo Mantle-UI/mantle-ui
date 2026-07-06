@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useDebounce } from 'primereact/hooks';
+import { useDebounce } from '@mantle-ui/react/hooks';
         `
     };
 

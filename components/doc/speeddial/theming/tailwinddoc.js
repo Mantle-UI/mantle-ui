@@ -49,8 +49,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useRef } from 'react';
-import { SpeedDial } from 'primereact/speeddial';
-import { Toast } from 'primereact/toast';
+import { SpeedDial } from '@mantle-ui/react/speeddial';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function UnstyledDemo() {
     const toast = useRef(null);

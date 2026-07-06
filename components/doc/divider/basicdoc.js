@@ -27,7 +27,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Divider } from 'primereact/divider';
+import { Divider } from '@mantle-ui/react/divider';
 
 export default function BasicDemo() {
     return (
@@ -57,7 +57,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Divider } from 'primereact/divider';
+import { Divider } from '@mantle-ui/react/divider';
 
 export default function BasicDemo() {
     return (

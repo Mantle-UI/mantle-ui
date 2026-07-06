@@ -14,7 +14,7 @@ export function SeverityDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Message } from 'primereact/message';
+import { Message } from '@mantle-ui/react/message';
 
 export default function SeverityDemo() {
     return (
@@ -31,7 +31,7 @@ export default function SeverityDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Message } from 'primereact/message';
+import { Message } from '@mantle-ui/react/message';
 
 export default function SeverityDemo() {
     return (

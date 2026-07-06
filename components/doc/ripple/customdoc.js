@@ -32,7 +32,7 @@ export function CustomDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Ripple } from 'primereact/ripple';
+import { Ripple } from '@mantle-ui/react/ripple';
 
 export default function CustomDemo() {
     return (
@@ -67,7 +67,7 @@ export default function CustomDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Ripple } from 'primereact/ripple';
+import { Ripple } from '@mantle-ui/react/ripple';
 
 export default function CustomDemo() {
     return (

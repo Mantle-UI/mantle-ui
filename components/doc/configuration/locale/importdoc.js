@@ -5,7 +5,7 @@ import Link from 'next/link';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { locale, addLocale, updateLocaleOption, updateLocaleOptions, localeOption, localeOptions } from 'primereact/api';
+import { locale, addLocale, updateLocaleOption, updateLocaleOptions, localeOption, localeOptions } from '@mantle-ui/react/api';
         `
     };
 

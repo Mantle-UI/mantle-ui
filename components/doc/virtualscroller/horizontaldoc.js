@@ -26,8 +26,8 @@ export function HorizontalDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { VirtualScroller } from 'primereact/virtualscroller';
-import { classNames } from 'primereact/utils';
+import { VirtualScroller } from '@mantle-ui/react/virtualscroller';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function HorizontalDemo() {
     const [items] = useState(Array.from({ length: 100000 }).map((_, i) => \`Item #\${i}\`));
@@ -53,8 +53,8 @@ export default function HorizontalDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { VirtualScroller, VirtualScrollerTemplateOptions } from 'primereact/virtualscroller';
-import { classNames } from 'primereact/utils';
+import { VirtualScroller, VirtualScrollerTemplateOptions } from '@mantle-ui/react/virtualscroller';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function HorizontalDemo() {
     const [items] = useState<string[]>(Array.from({ length: 100000 }).map((_, i) => \`Item #\${i}\`));

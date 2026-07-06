@@ -36,9 +36,9 @@ export function ResponsiveDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef } from 'react';
-import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
-import { Toast } from 'primereact/toast';
-import { Button } from 'primereact/button';
+import { ConfirmDialog, confirmDialog } from '@mantle-ui/react/confirmdialog';
+import { Toast } from '@mantle-ui/react/toast';
+import { Button } from '@mantle-ui/react/button';
 
 export default function DeclarativeDemo() {
     const [visible, setVisible] = useState(false);
@@ -76,8 +76,8 @@ export default function DeclarativeDemo() {
         `,
         typescript: `
 import React, { useState, useRef } from 'react';
-import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
-import { Toast } from 'primereact/toast';
+import { ConfirmDialog, confirmDialog } from '@mantle-ui/react/confirmdialog';
+import { Toast } from '@mantle-ui/react/toast';
 import { Button } from 'primefaces/button';
 
 export default function DeclarativeDemo() {

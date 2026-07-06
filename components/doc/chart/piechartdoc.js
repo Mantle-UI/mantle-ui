@@ -39,7 +39,7 @@ export function PieChartDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function PieChartDemo() {
     const [chartData, setChartData] = useState({});
@@ -88,7 +88,7 @@ export default function PieChartDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function PieChartDemo() {
     const [chartData, setChartData] = useState({});

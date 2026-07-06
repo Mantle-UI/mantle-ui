@@ -27,8 +27,8 @@ export function FooterDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
 
 export default function FooterDemo() {
     const [visible, setVisible] = useState(false);
@@ -56,8 +56,8 @@ export default function FooterDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
 
 export default function FooterDemo() {
     const [visible, setVisible] = useState<boolean>(false);

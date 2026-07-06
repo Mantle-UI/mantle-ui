@@ -9,7 +9,7 @@ export function InvalidDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputSwitch } from "primereact/inputswitch";
+import { InputSwitch } from "@mantle-ui/react/inputswitch";
 
 export default function InvalidDemo() {
     return (
@@ -21,7 +21,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputSwitch } from "primereact/inputswitch";
+import { InputSwitch } from "@mantle-ui/react/inputswitch";
 
 export default function InvalidDemo() {
     return (

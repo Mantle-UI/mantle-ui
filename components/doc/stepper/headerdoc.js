@@ -37,9 +37,9 @@ export function HeaderDoc(props) {
         `,
         javascript: `
 import { useRef } from 'react';
-import { Stepper } from 'primereact/stepper';
-import { StepperPanel } from 'primereact/stepperpanel';
-import { Button } from 'primereact/button';
+import { Stepper } from '@mantle-ui/react/stepper';
+import { StepperPanel } from '@mantle-ui/react/stepperpanel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     const stepperRef = useRef(null);
@@ -74,9 +74,9 @@ export default function BasicDemo() {
         `,
         typescript: `
 import { useRef } from 'react';
-import { Stepper } from 'primereact/stepper';
-import { StepperPanel } from 'primereact/stepperpanel';
-import { Button } from 'primereact/button';
+import { Stepper } from '@mantle-ui/react/stepper';
+import { StepperPanel } from '@mantle-ui/react/stepperpanel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     const stepperRef = useRef(null);

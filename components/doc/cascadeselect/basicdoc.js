@@ -88,7 +88,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { CascadeSelect } from 'primereact/cascadeselect';
+import { CascadeSelect } from '@mantle-ui/react/cascadeselect';
 
 export default function BasicDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -180,7 +180,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { CascadeSelect, CascadeSelectChangeEvent } from 'primereact/cascadeselect';
+import { CascadeSelect, CascadeSelectChangeEvent } from '@mantle-ui/react/cascadeselect';
 
 interface City {
     cname: string;

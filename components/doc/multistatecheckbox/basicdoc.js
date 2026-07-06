@@ -17,7 +17,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { MultiStateCheckbox } from 'primereact/multistatecheckbox';
+import { MultiStateCheckbox } from '@mantle-ui/react/multistatecheckbox';
 
 export default function BasicDemo() {
     const [value, setValue] = useState('public');
@@ -37,7 +37,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { MultiStateCheckbox, MultiStateCheckboxChangeEvent } from 'primereact/multistatecheckbox';
+import { MultiStateCheckbox, MultiStateCheckboxChangeEvent } from '@mantle-ui/react/multistatecheckbox';
 
 interface Item {
     value: string;

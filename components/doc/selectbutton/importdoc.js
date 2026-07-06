@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { SelectButton } from 'primereact/selectbutton';
+import { SelectButton } from '@mantle-ui/react/selectbutton';
         `
     };
 

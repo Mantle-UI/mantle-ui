@@ -181,8 +181,8 @@ export default ThemeSwitcher;`
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'primeicons/primeicons.css';
-import { MantleProvider } from 'primereact/api';
-import Tailwind from 'primereact/passthrough/tailwind';
+import { MantleProvider } from '@mantle-ui/react/api';
+import Tailwind from '@mantle-ui/react/passthrough/tailwind';
 import ThemeSwitcher from './components/themeSwitcher';
 
 import './index.css';
@@ -233,10 +233,10 @@ body {
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'primeicons/primeicons.css';
-import { MantleProvider } from 'primereact/api';
+import { MantleProvider } from '@mantle-ui/react/api';
 import 'primeflex/primeflex.css';
-import 'primereact/resources/primereact.css';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import '@mantle-ui/react/resources/primereact.css';
+import '@mantle-ui/react/resources/themes/lara-light-indigo/theme.css';
 
 import './index.css';
 import './flags.css';
@@ -288,7 +288,7 @@ const getVite = (props = {}, template = 'javascript') => {
                 preview: 'vite preview'
             },
             main: `${path}main.${fileExtension}`,
-            keywords: ['primereact', 'react', 'vite', 'starter'],
+            keywords: ['@mantle-ui/react', 'react', 'vite', 'starter'],
             dependencies
         }
     };

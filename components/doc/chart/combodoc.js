@@ -80,7 +80,7 @@ export function ComboDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function ComboDemo() {
     const [chartData, setChartData] = useState({});
@@ -162,7 +162,7 @@ export default function ComboDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function ComboDemo() {
     const [chartData, setChartData] = useState({});

@@ -18,8 +18,8 @@ export function InputDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
-import { InputText } from 'primereact/inputtext';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function InputDemo() {
     const [text, setText] = useState('');
@@ -38,8 +38,8 @@ export default function InputDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
-import { InputText } from 'primereact/inputtext';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function InputDemo() {
     const [text, setText] = useState<string>('');

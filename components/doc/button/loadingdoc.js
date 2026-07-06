@@ -20,7 +20,7 @@ export function LoadingDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function LoadingDemo() {
     const [loading, setLoading] = useState(false);
@@ -42,7 +42,7 @@ export default function LoadingDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function LoadingDemo() {
     const [loading, setLoading] = useState<boolean>(false);

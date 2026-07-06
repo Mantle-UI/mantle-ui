@@ -56,7 +56,7 @@ export function AutoResizeDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from "react";
-import { Mention } from 'primereact/mention';
+import { Mention } from '@mantle-ui/react/mention';
 import { CustomerService } from './service/CustomerService';
 
 export default function AutoResizeDemo() {
@@ -114,7 +114,7 @@ export default function AutoResizeDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from "react";
-import { Mention, MentionSearchEvent } from 'primereact/mention';
+import { Mention, MentionSearchEvent } from '@mantle-ui/react/mention';
 import { CustomerService } from './service/CustomerService';
 
 export default function AutoResizeDemo() {

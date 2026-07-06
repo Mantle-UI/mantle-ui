@@ -36,7 +36,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Steps } from 'primereact/steps';
+import { Steps } from '@mantle-ui/react/steps';
 
 export default function UnstyledDemo() {
     const items = [

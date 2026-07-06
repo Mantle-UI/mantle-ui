@@ -9,7 +9,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { ScrollTop } from 'primereact/scrolltop';
+import { ScrollTop } from '@mantle-ui/react/scrolltop';
 
 export default function BasicDemo() {
     return (
@@ -23,7 +23,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { ScrollTop } from 'primereact/scrolltop';
+import { ScrollTop } from '@mantle-ui/react/scrolltop';
 
 export default function BasicDemo() {
     return (

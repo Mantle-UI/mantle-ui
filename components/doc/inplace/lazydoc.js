@@ -31,9 +31,9 @@ export function LazyDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
 
 export default function LazyDemo() {
@@ -62,9 +62,9 @@ export default function LazyDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { ProductService } from './service/ProductService';
 
 export default function LazyDemo() {

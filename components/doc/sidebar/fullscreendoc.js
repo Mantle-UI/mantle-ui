@@ -22,8 +22,8 @@ export function FullScreenDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
 
 export default function FullScreenDemo() {
     const [visible, setVisible] = useState(false);
@@ -44,8 +44,8 @@ export default function FullScreenDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
 
 export default function FullScreenDemo() {
     const [visible, setVisible] = useState<boolean>(false);

@@ -23,8 +23,8 @@ export function StickyDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function StickyDemo() {
     const toast = useRef(null);
@@ -50,8 +50,8 @@ export default function StickyDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function StickyDemo() {
     const toast = useRef<Toast>(null);

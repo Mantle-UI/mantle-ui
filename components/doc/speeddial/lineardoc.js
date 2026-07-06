@@ -56,8 +56,8 @@ export function LinearDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { SpeedDial } from 'primereact/speeddial';
-import { Toast } from 'primereact/toast';
+import { SpeedDial } from '@mantle-ui/react/speeddial';
+import { Toast } from '@mantle-ui/react/toast';
 import { useRouter } from 'next/router';
 
 export default function LinearDemo() {
@@ -116,9 +116,9 @@ export default function LinearDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { SpeedDial } from 'primereact/speeddial';
-import { Toast } from 'primereact/toast';
-import { MenuItem } from 'primereact/menuitem';
+import { SpeedDial } from '@mantle-ui/react/speeddial';
+import { Toast } from '@mantle-ui/react/toast';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 import { useRouter } from 'next/router';
 
 export default function LinearDoc() {

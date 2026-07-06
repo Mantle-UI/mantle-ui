@@ -36,7 +36,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function UnstyledDemo() {
     const [checked, setChecked] = useState(false);

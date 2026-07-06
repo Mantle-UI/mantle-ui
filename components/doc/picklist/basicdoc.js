@@ -40,7 +40,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { PickList } from 'primereact/picklist';
+import { PickList } from '@mantle-ui/react/picklist';
 import { ProductService } from './service/ProductService';
 
 export default function BasicDemo() {
@@ -82,7 +82,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { PickList } from 'primereact/picklist';
+import { PickList } from '@mantle-ui/react/picklist';
 import { ProductService } from './service/ProductService';
 
 interface Product {

@@ -9,7 +9,7 @@ export function ReadOnlyDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Rating } from "primereact/rating";
+import { Rating } from "@mantle-ui/react/rating";
 
 export default function ReadOnlyDemo() {
     return (
@@ -21,7 +21,7 @@ export default function ReadOnlyDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Rating } from "primereact/rating";
+import { Rating } from "@mantle-ui/react/rating";
 
 export default function ReadOnlyDemo() {
     return (

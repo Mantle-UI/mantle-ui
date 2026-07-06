@@ -15,8 +15,8 @@ const visible = useIntersectionObserver(elementRef);
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { useIntersectionObserver } from 'primereact/hooks';
-import { classNames } from 'primereact/utils';
+import { useIntersectionObserver } from '@mantle-ui/react/hooks';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function BasicDemo() {
     const elementRef = useRef(null);
@@ -38,8 +38,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { useIntersectionObserver } from 'primereact/hooks';
-import { classNames } from 'primereact/utils';
+import { useIntersectionObserver } from '@mantle-ui/react/hooks';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function BasicDemo() {
     const elementRef = useRef(null);

@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+import { DataView, DataViewLayoutOptions } from '@mantle-ui/react/dataview';
         `
     };
 

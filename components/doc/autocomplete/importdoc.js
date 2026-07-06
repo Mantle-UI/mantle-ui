@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { AutoComplete } from 'primereact/autocomplete';
+import { AutoComplete } from '@mantle-ui/react/autocomplete';
         `
     };
 

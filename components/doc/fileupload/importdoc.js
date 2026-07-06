@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { FileUpload } from 'primereact/fileupload';
+import { FileUpload } from '@mantle-ui/react/fileupload';
         `
     };
 

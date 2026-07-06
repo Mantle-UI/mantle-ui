@@ -38,8 +38,7 @@ const features2Data = [
     },
     {
         title: 'Support',
-        description:
-            'PrimeTek offers assistance with account management and licensing issues, with the expectation that users have the necessary technical knowledge to use our products, as we do not offer technical support or consulting. Users can seek assistance in our community via our public Discord and Forum.',
+        description: 'Mantle UI templates are supported through community channels for general guidance, while dedicated support arrangements can be discussed separately when needed.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/apollo/apollo-features2-lifetime.png'
     },
     {
@@ -71,7 +70,7 @@ const animationFeaturesData1 = [
     {
         id: 3,
         title: 'MantleIcons',
-        description: 'Genesis ships with MantleIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
+        description: 'Genesis ships with MantleIcons, a modern icon library including a wide range of icons for your applications.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/apollo/features-animation-icons.png'
     },
     {
@@ -163,7 +162,7 @@ const templateHeroData = {
     pattern: 'https://primefaces.org/cdn/primereact/images/templates/genesis/hero-pattern.png',
     dashboard1: 'https://primefaces.org/cdn/primereact/images/templates/genesis/dashboard-2.png',
     dashboard2: 'https://primefaces.org/cdn/primereact/images/templates/genesis/dashboard-1.png',
-    description: 'Genesis, crafted by Prime, is the ultimate multi-purpose website template built with React and Next.js. It offers unmatched versatility and performance with a suite of example pages to elevate your projects.',
+    description: 'Genesis is a multi-purpose website template built with React and Next.js. It offers a versatile starting point with a suite of example pages to elevate your projects.',
     liveHref: 'https://genesis.primereact.org',
     docHref: '',
     multipurpose: true,

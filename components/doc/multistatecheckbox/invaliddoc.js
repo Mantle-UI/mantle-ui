@@ -9,7 +9,7 @@ export function InvalidDoc(props) {
         `,
         javascript: `
 import React from "react";
-import { MultiStateCheckbox } from 'primereact/multistatecheckbox';
+import { MultiStateCheckbox } from '@mantle-ui/react/multistatecheckbox';
 
 export default function InvalidDemo() {
     return (
@@ -21,7 +21,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
     import React from "react";
-        import { MultiStateCheckbox } from 'primereact/multistatecheckbox';
+        import { MultiStateCheckbox } from '@mantle-ui/react/multistatecheckbox';
         
         export default function InvalidDemo() {
             return (

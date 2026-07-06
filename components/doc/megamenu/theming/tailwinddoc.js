@@ -70,7 +70,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { MegaMenu } from 'primereact/megamenu';
+import { MegaMenu } from '@mantle-ui/react/megamenu';
 
 export default function UnstyledDemo() {
     const items = [

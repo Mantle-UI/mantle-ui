@@ -13,7 +13,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { ScrollPanel } from 'primereact/scrollpanel';
+import { ScrollPanel } from '@mantle-ui/react/scrollpanel';
 
 export default function BasicDemo() {
     return (
@@ -44,7 +44,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { ScrollPanel } from 'primereact/scrollpanel';
+import { ScrollPanel } from '@mantle-ui/react/scrollpanel';
 
 export default function BasicDemo() {
     return (

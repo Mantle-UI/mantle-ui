@@ -18,7 +18,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { ProgressBar } from 'primereact/progressbar';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
 
 export default function TemplateDemo() {
     const valueTemplate = (value) => {
@@ -38,7 +38,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { ProgressBar } from 'primereact/progressbar';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
 
 export default function TemplateDemo() {
     const valueTemplate = (value) => {

@@ -19,7 +19,7 @@ export function FilterDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { ListBox } from 'primereact/listbox';
+import { ListBox } from '@mantle-ui/react/listbox';
 
 export default function BasicDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -40,7 +40,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { ListBox, ListBoxChangeEvent } from 'primereact/listbox';
+import { ListBox, ListBoxChangeEvent } from '@mantle-ui/react/listbox';
 
 interface City {
     name: string;

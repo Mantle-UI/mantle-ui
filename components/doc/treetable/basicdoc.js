@@ -22,8 +22,8 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
 import { NodeService } from './service/NodeService';
 
 export default function BasicDemo() {
@@ -46,9 +46,9 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { TreeNode } from 'primereact/treenode';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function BasicDemo() {

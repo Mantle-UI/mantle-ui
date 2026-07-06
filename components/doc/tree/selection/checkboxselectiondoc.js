@@ -30,7 +30,7 @@ export function CheckboxSelectionDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
+import { Tree } from '@mantle-ui/react/tree';
 import { NodeService } from './service/NodeService';
 
 export default function CheckboxSelectionDemo() {
@@ -50,8 +50,8 @@ export default function CheckboxSelectionDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Tree, TreeCheckboxSelectionKeys } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
+import { Tree, TreeCheckboxSelectionKeys } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function CheckboxSelectionDemo() {

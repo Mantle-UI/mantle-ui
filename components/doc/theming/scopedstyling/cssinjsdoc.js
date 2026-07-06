@@ -14,7 +14,7 @@ export function CssInJsDoc(props) {
     const code = {
         basic: `
 import React from 'react';
-import { Panel } from 'primereact/panel';
+import { Panel } from '@mantle-ui/react/panel';
 import css from 'styled-jsx/css';
 
 export default function PanelDemo() {

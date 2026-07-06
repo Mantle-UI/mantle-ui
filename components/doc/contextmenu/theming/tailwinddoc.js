@@ -44,7 +44,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useRef } from 'react';
-import { ContextMenu } from 'primereact/contextmenu';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
 
 export default function UnstyledDemo() {
     const cm = useRef(null);

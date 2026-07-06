@@ -56,9 +56,9 @@ export function SemiCircleDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { SpeedDial } from 'primereact/speeddial';
+import { SpeedDial } from '@mantle-ui/react/speeddial';
 import { useRouter } from 'next/router';
-import { Toast } from 'primereact/toast';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function SemiCircleDemo() {
     const toast = useRef(null);
@@ -116,10 +116,10 @@ export default function SemiCircleDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { SpeedDial } from 'primereact/speeddial';
-import { Toast } from 'primereact/toast';
+import { SpeedDial } from '@mantle-ui/react/speeddial';
+import { Toast } from '@mantle-ui/react/toast';
 import { useRouter } from 'next/router';
-import { MenuItem } from 'primereact/menuitem';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function SemiCircleDemo() {
     const toast = useRef<Toast>(null);

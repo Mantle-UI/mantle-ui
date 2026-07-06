@@ -24,7 +24,7 @@ export function RouterDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { BreadCrumb } from 'primereact/breadcrumb';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
 import Link from 'next/link';
 
 export default function RouterDemo() {
@@ -46,8 +46,8 @@ export default function RouterDemo() {
         `,
         typescript: `
 import React from 'react';
-import { BreadCrumb } from 'primereact/breadcrumb';
-import { MenuItem } from 'primereact/menuitem';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 import Link from 'next/link';
 
 export default function RouterDemo() {

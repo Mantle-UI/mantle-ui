@@ -64,10 +64,10 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { TabView, TabPanel } from 'primereact/tabview';
-import { SplitButton } from 'primereact/splitbutton';
-import { Avatar } from 'primereact/avatar';
-import { Badge } from 'primereact/badge';
+import { TabView, TabPanel } from '@mantle-ui/react/tabview';
+import { SplitButton } from '@mantle-ui/react/splitbutton';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TemplateDemo() {
     const tab1HeaderTemplate = (options) => {
@@ -132,10 +132,10 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { TabView, TabPanel, TabPanelHeaderTemplateOptions } from 'primereact/tabview';
-import { SplitButton } from 'primereact/splitbutton';
-import { Avatar } from 'primereact/avatar';
-import { Badge } from 'primereact/badge';
+import { TabView, TabPanel, TabPanelHeaderTemplateOptions } from '@mantle-ui/react/tabview';
+import { SplitButton } from '@mantle-ui/react/splitbutton';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TemplateDemo() {
     const tab1HeaderTemplate = (options: TabPanelHeaderTemplateOptions) => {

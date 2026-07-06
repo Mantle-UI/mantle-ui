@@ -54,7 +54,7 @@ export function GroupDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { ListBox } from 'primereact/listbox';
+import { ListBox } from '@mantle-ui/react/listbox';
 
 export default function GroupDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -110,7 +110,7 @@ export default function GroupDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { ListBox, ListBoxChangeEvent } from 'primereact/listbox';
+import { ListBox, ListBoxChangeEvent } from '@mantle-ui/react/listbox';
 
 interface City {
     label: string;

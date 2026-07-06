@@ -33,7 +33,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { TabMenu } from 'primereact/tabmenu';
+import { TabMenu } from '@mantle-ui/react/tabmenu';
 
 export default function UnstyledDemo() {
     const items = [

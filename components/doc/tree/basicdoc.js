@@ -17,7 +17,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
+import { Tree } from '@mantle-ui/react/tree';
 import { NodeService } from './service/NodeService';
 
 export default function BasicDemo() {
@@ -36,8 +36,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
+import { Tree } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function BasicDemo() {

@@ -6,7 +6,7 @@ export function ConfigurationDoc(props) {
     const code = {
         basic: `
 //_app.js
-import { MantleProvider } from 'primereact/api';
+import { MantleProvider } from '@mantle-ui/react/api';
 
 export default function MyApp({ Component }) {
     const value = {

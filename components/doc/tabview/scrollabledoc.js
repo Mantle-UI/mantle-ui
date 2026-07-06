@@ -18,7 +18,7 @@ export function ScrollableDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { TabView, TabPanel } from 'primereact/tabview';
+import { TabView, TabPanel } from '@mantle-ui/react/tabview';
 
 export default function ScrollableDemo() {
     const scrollableTabs = Array.from({ length: 50 }, (_, i) => ({ title: \`Tab \${i + 1}\`, content: \`Tab \${i + 1} Content\` }))
@@ -40,7 +40,7 @@ export default function ScrollableDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { TabView, TabPanel } from 'primereact/tabview';
+import { TabView, TabPanel } from '@mantle-ui/react/tabview';
 
 export default function ScrollableDemo() {
     const scrollableTabs = Array.from({ length: 50 }, (_, i) => ({ title: \`Tab \${i + 1}\`, content: \`Tab \${i + 1} Content\` }))

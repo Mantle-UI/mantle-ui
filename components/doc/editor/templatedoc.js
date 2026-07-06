@@ -24,7 +24,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Editor } from "primereact/editor";
+import { Editor } from "@mantle-ui/react/editor";
 
 export default function TemplateDemo() {
     const [text, setText] = useState('<div>Hello World!</div><div>MantleUI <b>Editor</b> Rocks</div><div><br></div>');
@@ -50,7 +50,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Editor, EditorTextChangeEvent } from "primereact/editor";
+import { Editor, EditorTextChangeEvent } from "@mantle-ui/react/editor";
 
 export default function TemplateDemo() {
     const [text, setText] = useState<string>('<div>Hello World!</div><div>MantleUI <b>Editor</b> Rocks</div><div><br></div>');

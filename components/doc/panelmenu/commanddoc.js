@@ -70,8 +70,8 @@ export function CommandDoc(props) {
 `,
         javascript: `
 import React, { useRef } from 'react'; 
-import { PanelMenu } from 'primereact/panelmenu';
-import { Toast } from 'primereact/toast';
+import { PanelMenu } from '@mantle-ui/react/panelmenu';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function CommandDemo() {
     const toast = useRef(null);
@@ -142,9 +142,9 @@ export default function CommandDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react'; 
-import { PanelMenu } from 'primereact/panelmenu';
-import { MenuItem } from 'primereact/menuitem';
-import { Toast } from 'primereact/toast';
+import { PanelMenu } from '@mantle-ui/react/panelmenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function CommandDemo() {
     const toast = useRef<Toast>(null);

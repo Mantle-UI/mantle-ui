@@ -9,7 +9,7 @@ export function DelayDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function DelayDemo() {
     return (
@@ -21,7 +21,7 @@ export default function DelayDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function DelayDemo() {
     return (

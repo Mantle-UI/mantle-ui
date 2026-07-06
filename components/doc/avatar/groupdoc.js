@@ -18,9 +18,9 @@ export function GroupDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Avatar } from 'primereact/avatar';
-import { AvatarGroup } from 'primereact/avatargroup';
-import { Badge } from 'primereact/badge';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { AvatarGroup } from '@mantle-ui/react/avatargroup';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function GroupDemo() {
 
@@ -40,9 +40,9 @@ export default function GroupDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Avatar } from 'primereact/avatar';
-import { AvatarGroup } from 'primereact/avatargroup';
-import { Badge } from 'primereact/badge';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { AvatarGroup } from '@mantle-ui/react/avatargroup';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function GroupDemo() {
 

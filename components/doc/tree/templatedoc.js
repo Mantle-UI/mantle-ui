@@ -67,8 +67,8 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { classNames } from 'primereact/utils';
-import { Tree } from 'primereact/tree';
+import { classNames } from '@mantle-ui/react/utils';
+import { Tree } from '@mantle-ui/react/tree';
 
 export default function TemplateDemo() {
     const nodes = [
@@ -133,9 +133,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { classNames } from 'primereact/utils';
-import { Tree, TreeNodeTemplateOptions, TreeTogglerTemplateOptions } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
+import { classNames } from '@mantle-ui/react/utils';
+import { Tree, TreeNodeTemplateOptions, TreeTogglerTemplateOptions } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
 
 export default function TemplateDemo() {
     const nodes: TreeNode[] = [

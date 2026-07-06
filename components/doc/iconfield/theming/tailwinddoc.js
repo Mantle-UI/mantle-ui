@@ -39,9 +39,9 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { InputText } from 'primereact/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function BasicDemo() {
     return (

@@ -45,8 +45,8 @@ export function GroupDoc(props) {
         javascript: `
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
-import { Menu } from 'primereact/menu';
-import { Toast } from 'primereact/toast';
+import { Menu } from '@mantle-ui/react/menu';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function GroupDemo() {
     const toast = useRef(null);
@@ -91,9 +91,9 @@ export default function GroupDemo() {
         typescript: `
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
-import { Menu } from 'primereact/menu';
-import { MenuItem } from 'primereact/menuitem';
-import { Toast } from 'primereact/toast';
+import { Menu } from '@mantle-ui/react/menu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function GroupDemo() {
     const toast = useRef<Toast>(null);

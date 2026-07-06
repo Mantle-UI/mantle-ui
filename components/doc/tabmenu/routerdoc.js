@@ -23,7 +23,7 @@ export function RouterDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { TabMenu } from 'primereact/tabmenu';
+import { TabMenu } from '@mantle-ui/react/tabmenu';
 import { useRouter } from 'next/router';
 
 export default function RouterDemo() {
@@ -49,8 +49,8 @@ export default function RouterDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { TabMenu } from 'primereact/tabmenu';
-import { MenuItem } from 'primereact/menuitem';
+import { TabMenu } from '@mantle-ui/react/tabmenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 import { useRouter } from 'next/router';
 
 export default function RouterDemo() {

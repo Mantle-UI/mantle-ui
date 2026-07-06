@@ -12,7 +12,7 @@ export function InvalidDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { ToggleButton } from 'primereact/togglebutton';
+import { ToggleButton } from '@mantle-ui/react/togglebutton';
 
 export default function InvalidDemo() {
     const [checked, setChecked] = useState(false);
@@ -26,7 +26,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { ToggleButton, ToggleButtonChangeEvent } from 'primereact/togglebutton';
+import { ToggleButton, ToggleButtonChangeEvent } from '@mantle-ui/react/togglebutton';
 
 export default function InvalidDemo() {
     const [checked, setChecked] = useState<boolean>(false);

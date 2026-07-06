@@ -12,7 +12,7 @@ export function DisabledDoc(props) {
 `,
         javascript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function DisabledDemo() {
     const [value, setValue] = useState(50);
@@ -26,7 +26,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function DisabledDemo() {
     const [value, setValue] = useState<number>(50);

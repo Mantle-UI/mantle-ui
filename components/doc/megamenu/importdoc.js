@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { MegaMenu } from 'primereact/megamenu';
+import { MegaMenu } from '@mantle-ui/react/megamenu';
         `
     };
 

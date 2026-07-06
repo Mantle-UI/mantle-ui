@@ -53,8 +53,8 @@ export function PositionDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
 
 export default function PositionDemo() {
     const [visibleLeft, setVisibleLeft] = useState(false);
@@ -108,8 +108,8 @@ export default function PositionDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Button } from 'primereact/button';
+import { Sidebar } from '@mantle-ui/react/sidebar';
+import { Button } from '@mantle-ui/react/button';
 
 export default function PositionDemo() {
     const [visibleLeft, setVisibleLeft] = useState<boolean>(false);

@@ -14,7 +14,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { InputOtp } from 'primereact/inputotp';
+import { InputOtp } from '@mantle-ui/react/inputotp';
 
 export default function TemplateDemo() {
     const [token, setTokens] = useState();
@@ -50,7 +50,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { InputOtp } from 'primereact/inputotp';
+import { InputOtp } from '@mantle-ui/react/inputotp';
 
 interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {
     events: React.HTMLAttributes<HTMLInputElement>;

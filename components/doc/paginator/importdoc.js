@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Paginator } from 'primereact/paginator';
+import { Paginator } from '@mantle-ui/react/paginator';
         `
     };
 

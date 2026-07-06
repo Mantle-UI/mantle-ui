@@ -22,8 +22,7 @@ const features2Data = [
     },
     {
         title: 'Support',
-        description:
-            'PrimeTek offers assistance with account management and licensing issues, with the expectation that users have the necessary technical knowledge to use our products, as we do not offer technical support or consulting. Users can seek assistance in our community via our public Discord and Forum.',
+        description: 'Mantle UI templates are supported through community channels for general guidance, while dedicated support arrangements can be discussed separately when needed.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/apollo/apollo-features2-lifetime.png'
     },
     {
@@ -60,7 +59,7 @@ const animationFeaturesData1 = [
     {
         id: 3,
         title: 'MantleIcons',
-        description: 'Verona ships with MantleIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
+        description: 'Verona ships with MantleIcons, a modern icon library including a wide range of icons for your applications.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/apollo/features-animation-icons.png'
     },
     {

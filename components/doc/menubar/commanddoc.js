@@ -66,7 +66,7 @@ export function CommandDoc(props) {
 `,
         javascript: `
 import React from 'react'; 
-import { Menubar } from 'primereact/menubar';
+import { Menubar } from '@mantle-ui/react/menubar';
 
 export default function CommandDemo() {
     const toast = useRef(null);
@@ -133,8 +133,8 @@ export default function CommandDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Menubar } from 'primereact/menubar';
-import { MenuItem } from 'primereact/menuitem';
+import { Menubar } from '@mantle-ui/react/menubar';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function CommandDemo() {
     const toast = useRef<Toast>(null);

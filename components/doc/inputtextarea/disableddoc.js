@@ -9,7 +9,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function DisabledDemo() {
     return (
@@ -21,7 +21,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function DisabledDemo() {
     return (

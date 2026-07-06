@@ -17,8 +17,8 @@ export function FloatLabelDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputMask } from "primereact/inputmask";
-import { FloatLabel } from "primereact/floatlabel";
+import { InputMask } from "@mantle-ui/react/inputmask";
+import { FloatLabel } from "@mantle-ui/react/floatlabel";
 
 export default function FloatLabelDemo() {
     const [value, setValue] = useState();
@@ -35,8 +35,8 @@ export default function FloatLabelDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputMask, InputMaskChangeEvent } from "primereact/inputmask";
-import { FloatLabel } from "primereact/floatlabel";
+import { InputMask, InputMaskChangeEvent } from "@mantle-ui/react/inputmask";
+import { FloatLabel } from "@mantle-ui/react/floatlabel";
 
 export default function FloatLabelDemo() {
     const [value, setValue] = useState<string | undefined>();

@@ -40,7 +40,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { InputMask } from "primereact/inputmask";
+import { InputMask } from "@mantle-ui/react/inputmask";
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState('');

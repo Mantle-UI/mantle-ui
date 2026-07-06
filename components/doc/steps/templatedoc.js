@@ -43,7 +43,7 @@ export function TemplateDoc(props) {
 `,
         javascript: `
 import React, { useState } from 'react'; 
-import { Steps } from 'primereact/steps';
+import { Steps } from '@mantle-ui/react/steps';
 
 export default function TemplateDemo() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -88,8 +88,8 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from 'react'; 
-import { Steps } from 'primereact/steps';
-import { MenuItem } from 'primereact/menuitem';
+import { Steps } from '@mantle-ui/react/steps';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function TemplateDemo() {
     const [activeIndex, setActiveIndex] = useState<number>(0);

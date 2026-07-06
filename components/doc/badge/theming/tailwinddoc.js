@@ -34,7 +34,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { Badge } from 'primereact/badge';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function UnstyledDemo() {
     return (

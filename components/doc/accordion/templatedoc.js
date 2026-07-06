@@ -60,9 +60,9 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Accordion, AccordionTab } from 'primereact/accordion';
-import { Avatar } from 'primereact/avatar';
-import { Badge } from 'primereact/badge';
+import { Accordion, AccordionTab } from '@mantle-ui/react/accordion';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TemplateDemo() {
     return (
@@ -123,9 +123,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Accordion, AccordionTab } from 'primereact/accordion';
-import { Avatar } from 'primereact/avatar';
-import { Badge } from 'primereact/badge';
+import { Accordion, AccordionTab } from '@mantle-ui/react/accordion';
+import { Avatar } from '@mantle-ui/react/avatar';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TemplateDemo() {
     return (

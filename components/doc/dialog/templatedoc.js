@@ -35,8 +35,8 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
 import { Avatar } from '@/components/lib/avatar/Avatar';
 
 export default function TemplateDemo() {
@@ -70,8 +70,8 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
 import { Avatar } from '@/components/lib/avatar/Avatar';
 
 export default function TemplateDemo() {

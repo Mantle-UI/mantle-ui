@@ -16,7 +16,7 @@ export function TimeDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
+import { Calendar } from '@mantle-ui/react/calendar';
 
 export default function TimeDemo() {
     const [datetime12h, setDateTime12h] = useState(null);
@@ -49,8 +49,8 @@ export default function TimeDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Calendar} from 'primereact/calendar';
-import { Nullable } from "primereact/ts-helpers";
+import { Calendar} from '@mantle-ui/react/calendar';
+import { Nullable } from "@mantle-ui/react/ts-helpers";
 
 export default function TimeDemo() {
     const [datetime12h, setDateTime12h] = useState<Nullable<Date>>(null);

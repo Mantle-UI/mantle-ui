@@ -66,7 +66,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useState } from 'react';
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 import { CountryService } from './service/CountryService';
 
 export default function TemplateDemo() {
@@ -139,7 +139,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useEffect, useState } from 'react';
-import { AutoComplete, AutoCompleteCompleteEvent } from "primereact/autocomplete";
+import { AutoComplete, AutoCompleteCompleteEvent } from "@mantle-ui/react/autocomplete";
 import { CountryService } from './service/CountryService';
 
 interface Country {

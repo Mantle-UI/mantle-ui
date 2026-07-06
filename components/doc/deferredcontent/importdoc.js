@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { DeferredContent } from 'primereact/deferredcontent';
+import { DeferredContent } from '@mantle-ui/react/deferredcontent';
         `
     };
 

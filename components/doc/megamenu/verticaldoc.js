@@ -106,7 +106,7 @@ export function VerticalDoc(props) {
 `,
         javascript: `
 import React from 'react'; 
-import { MegaMenu } from 'primereact/megamenu';
+import { MegaMenu } from '@mantle-ui/react/megamenu';
 
 export default function VerticalDemo() {
     const items = [
@@ -215,8 +215,8 @@ export default function VerticalDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { MegaMenu } from 'primereact/megamenu';
-import { MenuItem } from 'primereact/menuitem';
+import { MegaMenu } from '@mantle-ui/react/megamenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function VerticalDemo() {
     const items: MenuItem[] = [

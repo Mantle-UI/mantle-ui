@@ -38,8 +38,8 @@ export function FilterDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Slider } from "primereact/slider";
-import { SelectButton } from "primereact/selectbutton";
+import { Slider } from "@mantle-ui/react/slider";
+import { SelectButton } from "@mantle-ui/react/selectbutton";
 
 export default function FilterDemo() {
     const [value, setValue] = useState(null);
@@ -67,8 +67,8 @@ export default function FilterDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Slider, SliderChangeEvent } from "primereact/slider";
-import { SelectButton } from "primereact/selectbutton";
+import { Slider, SliderChangeEvent } from "@mantle-ui/react/slider";
+import { SelectButton } from "@mantle-ui/react/selectbutton";
 
 export default function FilterDemo() {
     const [value, setValue] = useState<number>(null);

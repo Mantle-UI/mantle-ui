@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { DataScroller } from 'primereact/datascroller';
+import { DataScroller } from '@mantle-ui/react/datascroller';
         `
     };
 

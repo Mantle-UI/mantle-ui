@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Editor } from 'primereact/editor';
+import { Editor } from '@mantle-ui/react/editor';
         `
     };
 

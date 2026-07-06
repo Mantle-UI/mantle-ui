@@ -93,8 +93,8 @@ export function FloatLabelDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { CascadeSelect } from 'primereact/cascadeselect';
-import { FloatLabel } from 'primereact/floatlabel';
+import { CascadeSelect } from '@mantle-ui/react/cascadeselect';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
 
 export default function FloatLabelDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -189,8 +189,8 @@ export default function FloatLabelDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { CascadeSelect, CascadeSelectChangeEvent } from 'primereact/cascadeselect';
-import { FloatLabel } from 'primereact/floatlabel';
+import { CascadeSelect, CascadeSelectChangeEvent } from '@mantle-ui/react/cascadeselect';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
 
 interface City {
     cname: string;

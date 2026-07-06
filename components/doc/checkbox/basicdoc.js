@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function BasicDemo() {
     const [checked, setChecked] = useState(false);
@@ -26,7 +26,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function BasicDemo() {
     const [checked, setChecked] = useState<boolean>(false);

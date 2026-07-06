@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Ripple } from 'primereact/ripple';
+import { Ripple } from '@mantle-ui/react/ripple';
         `
     };
 

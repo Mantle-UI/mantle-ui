@@ -32,7 +32,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { MultiStateCheckbox } from 'primereact/multistatecheckbox';
+import { MultiStateCheckbox } from '@mantle-ui/react/multistatecheckbox';
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState('public');

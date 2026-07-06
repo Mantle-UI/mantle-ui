@@ -37,9 +37,9 @@ export function MultipleRowsSelectionDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { InputSwitch } from 'primereact/inputswitch';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { InputSwitch } from '@mantle-ui/react/inputswitch';
 import { NodeService } from './service/NodeService';
 
 export default function MultipleRowsSelectionDemo() {
@@ -68,10 +68,10 @@ export default function MultipleRowsSelectionDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { TreeTable, TreeTableSelectionKeysType, TreeTableSelectionEvent } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { TreeNode } from 'primereact/treenode';
-import { InputSwitch, InputSwitchChangeEvent } from 'primereact/inputswitch';
+import { TreeTable, TreeTableSelectionKeysType, TreeTableSelectionEvent } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { TreeNode } from '@mantle-ui/react/treenode';
+import { InputSwitch, InputSwitchChangeEvent } from '@mantle-ui/react/inputswitch';
 import { NodeService } from './service/NodeService';
 
 export default function MultipleRowsSelectionDemo() {

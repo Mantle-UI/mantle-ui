@@ -16,8 +16,8 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputText } from "primereact/inputtext";
-import { FloatLabel } from "primereact/floatlabel";
+import { InputText } from "@mantle-ui/react/inputtext";
+import { FloatLabel } from "@mantle-ui/react/floatlabel";
 
 export default function BasicDemo() {
     const [value, setValue] = useState('');
@@ -34,8 +34,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputText } from "primereact/inputtext";
-import { FloatLabel } from "primereact/floatlabel";
+import { InputText } from "@mantle-ui/react/inputtext";
+import { FloatLabel } from "@mantle-ui/react/floatlabel";
 
 export default function BasicDemo() {
     const [value, setValue] = useState<string>('');

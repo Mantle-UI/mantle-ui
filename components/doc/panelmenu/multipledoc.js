@@ -88,7 +88,7 @@ export function MultipleDoc(props) {
 `,
         javascript: `
 import React from 'react'; 
-import { PanelMenu } from 'primereact/panelmenu';
+import { PanelMenu } from '@mantle-ui/react/panelmenu';
 
 export default function MultipleDemo() {
     const items = [
@@ -179,8 +179,8 @@ export default function MultipleDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { PanelMenu } from 'primereact/panelmenu';
-import { MenuItem } from 'primereact/menuitem';
+import { PanelMenu } from '@mantle-ui/react/panelmenu';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function MultipleDemo() {
     const items: MenuItem[] = [

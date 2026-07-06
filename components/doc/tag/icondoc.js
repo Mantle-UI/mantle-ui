@@ -13,7 +13,7 @@ export function IconDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Tag } from 'primereact/tag';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function IconDemo() {
     return (
@@ -29,7 +29,7 @@ export default function IconDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Tag } from 'primereact/tag';
+import { Tag } from '@mantle-ui/react/tag';
 
 export default function IconDemo() {
     return (

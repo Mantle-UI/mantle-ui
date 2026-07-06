@@ -46,7 +46,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Rating } from "primereact/rating";
+import { Rating } from "@mantle-ui/react/rating";
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState(null);

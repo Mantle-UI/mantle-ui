@@ -52,7 +52,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Fieldset } from 'primereact/fieldset';
+import { Fieldset } from '@mantle-ui/react/fieldset';
 
 export default function UnstyledDemo() {
     return (

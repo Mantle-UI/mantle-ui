@@ -27,7 +27,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { ScrollTop } from 'primereact/scrolltop';
+import { ScrollTop } from '@mantle-ui/react/scrolltop';
 
 export default function UnstyledDemo() {
     return (

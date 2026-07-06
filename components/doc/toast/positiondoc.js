@@ -30,8 +30,8 @@ export function PositionDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Toast } from '@mantle-ui/react/toast';
 
 export default function PositionDemo() {
     const toastTopCenter = useRef(null);
@@ -72,8 +72,8 @@ export default function PositionDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast, ToastMessage } from 'primereact/toast';
+import { Button } from '@mantle-ui/react/button';
+import { Toast, ToastMessage } from '@mantle-ui/react/toast';
 
 export default function PositionDemo() {
     const toastTopCenter = useRef<Toast>(null);

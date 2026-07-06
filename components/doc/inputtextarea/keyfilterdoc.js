@@ -10,7 +10,7 @@ export function KeyFilterDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function KeyFilterDemo() {
     return (
@@ -22,7 +22,7 @@ export default function KeyFilterDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function KeyFilterDemo() {
     return (

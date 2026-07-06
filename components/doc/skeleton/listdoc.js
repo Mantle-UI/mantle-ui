@@ -48,7 +48,7 @@ export function ListDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Skeleton } from 'primereact/skeleton';
+import { Skeleton } from '@mantle-ui/react/skeleton';
 
 export default function ListDemo() {
     return (
@@ -99,7 +99,7 @@ export default function ListDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Skeleton } from 'primereact/skeleton';
+import { Skeleton } from '@mantle-ui/react/skeleton';
 
 export default function ListDemo() {
     return (

@@ -38,8 +38,8 @@ export function EventsDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Tree } from 'primereact/tree';
-import { Toast } from 'primereact/toast';
+import { Tree } from '@mantle-ui/react/tree';
+import { Toast } from '@mantle-ui/react/toast';
 import { NodeService } from './service/NodeService';
 
 export default function EventsDemo() {
@@ -80,9 +80,9 @@ export default function EventsDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Tree, TreeEventNodeEvent } from 'primereact/tree';
-import { Toast } from 'primereact/toast';
-import { TreeNode } from "primereact/treenode";
+import { Tree, TreeEventNodeEvent } from '@mantle-ui/react/tree';
+import { Toast } from '@mantle-ui/react/toast';
+import { TreeNode } from "@mantle-ui/react/treenode";
 import { NodeService } from './service/NodeService';
 
 export default function EventsDemo() {

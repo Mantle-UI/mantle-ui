@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useResizeListener } from 'primereact/hooks';
+import { useResizeListener } from '@mantle-ui/react/hooks';
         `
     };
 

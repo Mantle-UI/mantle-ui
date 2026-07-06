@@ -174,9 +174,9 @@ export function AdvancedDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Galleria } from 'primereact/galleria';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { Galleria } from '@mantle-ui/react/galleria';
+import { classNames } from '@mantle-ui/react/utils';
 import { PhotoService } from './service/PhotoService';
 import './GalleriaAdvancedDemo.css';
 
@@ -353,9 +353,9 @@ export default function AdvancedDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Galleria, GalleriaResponsiveOptions } from 'primereact/galleria';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { Galleria, GalleriaResponsiveOptions } from '@mantle-ui/react/galleria';
+import { classNames } from '@mantle-ui/react/utils';
 import { PhotoService } from './service/PhotoService';
 import './GalleriaAdvancedDemo.css';
 

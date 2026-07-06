@@ -25,8 +25,8 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef } from 'react'; 
-import { Button } from 'primereact/button';
-import { useClickOutside } from 'primereact/hooks';
+import { Button } from '@mantle-ui/react/button';
+import { useClickOutside } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const [visible, setVisible] = useState(false);
@@ -50,8 +50,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState, useRef } from 'react';
-import { Button } from 'primereact/button';
-import { useClickOutside } from 'primereact/hooks';
+import { Button } from '@mantle-ui/react/button';
+import { useClickOutside } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const [visible, setVisible] = useState<boolean>(false);

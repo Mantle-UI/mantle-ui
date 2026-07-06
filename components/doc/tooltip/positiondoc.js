@@ -13,7 +13,7 @@ export function PositionDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function PositionDemo() {
     return (
@@ -29,7 +29,7 @@ export default function PositionDemo() {
         `,
         typescript: `
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function PositionDemo() {
     return (

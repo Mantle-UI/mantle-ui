@@ -13,7 +13,7 @@ export function HorizontalDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Timeline } from 'primereact/timeline';
+import { Timeline } from '@mantle-ui/react/timeline';
 
 export default function HorizontalDemo() {
     const events = ['2020', '2021', '2022', '2023'];
@@ -29,7 +29,7 @@ export default function HorizontalDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Timeline } from 'primereact/timeline';
+import { Timeline } from '@mantle-ui/react/timeline';
 
 export default function HorizontalDemo() {
     const events: string[] = ['2020', '2021', '2022', '2023'];

@@ -38,10 +38,10 @@ export function ColumnToggleDoc(props) {
         `,
         javascript: `
 import React, {useState, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
 import { NodeService } from './service/NodeService';
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function ColumnToggleDemo() {
     let columns = [
@@ -78,10 +78,10 @@ export default function ColumnToggleDemo() {
         `,
         typescript: `
 import React, {useState, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { MultiSelect, MultiSelectChangeEvent } from 'primereact/multiselect';
-import { TreeNode } from 'primereact/treenode';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { MultiSelect, MultiSelectChangeEvent } from '@mantle-ui/react/multiselect';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 interface ColumnMeta {

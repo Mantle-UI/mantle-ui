@@ -168,12 +168,12 @@ export function GMapDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { Checkbox } from 'primereact/checkbox';
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
-import { Toast } from 'primereact/toast';
-import { GMap } from 'primereact/gmap';
-import { InputText } from 'primereact/inputtext';
+import { Checkbox } from '@mantle-ui/react/checkbox';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { Toast } from '@mantle-ui/react/toast';
+import { GMap } from '@mantle-ui/react/gmap';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function GMapDoc() {
     const [googleMapsReady, setGoogleMapsReady] = useState(false);
@@ -371,12 +371,12 @@ export default function GMapDoc() {
         `,
         typescript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { Checkbox } from 'primereact/checkbox';
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
-import { Toast } from 'primereact/toast';
-import { GMap } from 'primereact/gmap';
-import { InputText } from 'primereact/inputtext';
+import { Checkbox } from '@mantle-ui/react/checkbox';
+import { Button } from '@mantle-ui/react/button';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { Toast } from '@mantle-ui/react/toast';
+import { GMap } from '@mantle-ui/react/gmap';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function GMapDoc() {
     const [googleMapsReady, setGoogleMapsReady] = useState(false);

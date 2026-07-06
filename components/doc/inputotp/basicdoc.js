@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { InputOtp } from 'primereact/inputotp';
+import { InputOtp } from '@mantle-ui/react/inputotp';
 
 export default function BasicDemo() {
     const [token, setTokens] = useState();
@@ -26,7 +26,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { InputOtp } from 'primereact/inputotp';
+import { InputOtp } from '@mantle-ui/react/inputotp';
 
 export default function BasicDemo() {
     const [token, setTokens] = useState<string | number | undefined>();

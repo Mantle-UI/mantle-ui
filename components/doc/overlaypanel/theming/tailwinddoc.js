@@ -38,8 +38,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useRef } from 'react';
-import { OverlayPanel } from 'primereact/overlaypanel';
-import { Button } from 'primereact/button';
+import { OverlayPanel } from '@mantle-ui/react/overlaypanel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function UnstyledDemo() {
     const op = useRef(null);

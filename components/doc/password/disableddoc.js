@@ -9,7 +9,7 @@ export function DisabledDoc(props) {
         `,
         javascript: `
 import React from "react";
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
 
 export default function DisabledDemo() {
     return (
@@ -21,7 +21,7 @@ export default function DisabledDemo() {
         `,
         typescript: `
 import React from "react";
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
 
 export default function DisabledDemo() {
     return (

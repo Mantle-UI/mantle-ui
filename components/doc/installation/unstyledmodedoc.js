@@ -5,7 +5,7 @@ import Link from 'next/link';
 export function UnstyledModeDoc(props) {
     const code = {
         basic: `
-import { MantleProvider } from "primereact/api";
+import { MantleProvider } from "@mantle-ui/react/api";
 ...
 return(
     <MantleProvider value={{ unstyled: true }}>

@@ -50,9 +50,9 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { ConfirmPopup, confirmPopup } from 'primereact/confirmpopup';
-import { Toast } from 'primereact/toast';
-import { Button } from 'primereact/button';
+import { ConfirmPopup, confirmPopup } from '@mantle-ui/react/confirmpopup';
+import { Toast } from '@mantle-ui/react/toast';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     const toast = useRef(null);
@@ -102,9 +102,9 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { ConfirmPopup, confirmPopup } from 'primereact/confirmpopup';
-import { Toast } from 'primereact/toast';
-import { Button } from 'primereact/button';
+import { ConfirmPopup, confirmPopup } from '@mantle-ui/react/confirmpopup';
+import { Toast } from '@mantle-ui/react/toast';
+import { Button } from '@mantle-ui/react/button';
 
 export default function BasicDemo() {
     const toast = useRef<Toast>(null);

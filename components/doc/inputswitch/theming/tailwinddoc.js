@@ -36,7 +36,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { InputSwitch } from "primereact/inputswitch";
+import { InputSwitch } from "@mantle-ui/react/inputswitch";
 
 export default function UnstyledDemo() {
     const [checked, setChecked] = useState(false);

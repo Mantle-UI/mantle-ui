@@ -12,7 +12,7 @@ export function FilledDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputText } from "primereact/inputtext";
+import { InputText } from "@mantle-ui/react/inputtext";
 
 export default function FilledDemo() {
     const [value, setValue] = useState('');
@@ -26,7 +26,7 @@ export default function FilledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputText } from "primereact/inputtext";
+import { InputText } from "@mantle-ui/react/inputtext";
 
 export default function FilledDemo() {
     const [value, setValue] = useState<string>('');

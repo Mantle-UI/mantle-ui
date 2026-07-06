@@ -55,7 +55,7 @@ export function GroupDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { MultiSelect } from 'primereact/multiselect';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
 
 export default function GroupedDoc() {
     const [selectedCities, setSelectedCities] = useState(null);
@@ -112,7 +112,7 @@ export default function GroupedDoc() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { MultiSelect, MultiSelectChangeEvent } from 'primereact/multiselect';
+import { MultiSelect, MultiSelectChangeEvent } from '@mantle-ui/react/multiselect';
 
 interface City {
     label: string;

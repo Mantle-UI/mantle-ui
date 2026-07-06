@@ -12,7 +12,7 @@ export function NumberOfStarsDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Rating } from "primereact/rating";
+import { Rating } from "@mantle-ui/react/rating";
 
 export default function NumberOfStarsDemo() {
     const [value, setValue] = useState(null);
@@ -26,7 +26,7 @@ export default function NumberOfStarsDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Rating, RatingChangeEvent } from "primereact/rating";
+import { Rating, RatingChangeEvent } from "@mantle-ui/react/rating";
 
 export default function NumberOfStarsDemo() {
     const [value, setValue] = useState<number>(null);

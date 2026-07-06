@@ -12,7 +12,7 @@ export function AutoResizeDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function AutoResizeDemo() {
     const [value, setValue] = useState('');
@@ -26,7 +26,7 @@ export default function AutoResizeDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputTextarea } from "primereact/inputtextarea";
+import { InputTextarea } from "@mantle-ui/react/inputtextarea";
 
 export default function AutoResizeDemo() {
     const [value, setValue] = useState<string>('');

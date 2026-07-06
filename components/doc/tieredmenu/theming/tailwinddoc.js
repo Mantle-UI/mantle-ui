@@ -59,7 +59,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { TieredMenu } from 'primereact/tieredmenu';
+import { TieredMenu } from '@mantle-ui/react/tieredmenu';
 
 export default function UnstyledDemo() {
     const items = [

@@ -30,7 +30,7 @@ export function MinMaxDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
+import { Calendar } from '@mantle-ui/react/calendar';
 
 export default function MinMaxDemo() {
     let today = new Date();
@@ -62,8 +62,8 @@ export default function MinMaxDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Calendar } from 'primereact/calendar';
-import { Nullable } from "primereact/ts-helpers";
+import { Calendar } from '@mantle-ui/react/calendar';
+import { Nullable } from "@mantle-ui/react/ts-helpers";
 
 export default function MinMaxDemo() {
     let today = new Date();

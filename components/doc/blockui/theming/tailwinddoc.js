@@ -17,9 +17,9 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from 'react';
-import { BlockUI } from 'primereact/blockui';
-import { Panel } from 'primereact/panel';
-import { Button } from 'primereact/button';
+import { BlockUI } from '@mantle-ui/react/blockui';
+import { Panel } from '@mantle-ui/react/panel';
+import { Button } from '@mantle-ui/react/button';
 
 export default function UnstyledDemo() {
     const [blocked, setBlocked] = useState(false);

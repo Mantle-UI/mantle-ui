@@ -12,7 +12,7 @@ export function ReadOnlyDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Knob } from 'primereact/knob';
+import { Knob } from '@mantle-ui/react/knob';
 
 export default function ReadOnlyDemo() {
     return (
@@ -24,7 +24,7 @@ export default function ReadOnlyDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Knob } from 'primereact/knob';
+import { Knob } from '@mantle-ui/react/knob';
 
 export default function ReadOnlyDemo() {
     return (

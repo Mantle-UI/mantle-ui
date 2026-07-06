@@ -226,20 +226,20 @@ export const CustomersDoc = (props) => {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { FilterMatchMode, FilterOperator } from 'primereact/api';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { Dropdown } from 'primereact/dropdown';
-import { InputNumber } from 'primereact/inputnumber';
-import { Button } from 'primereact/button';
-import { ProgressBar } from 'primereact/progressbar';
-import { Calendar } from 'primereact/calendar';
-import { MultiSelect } from 'primereact/multiselect';
-import { Slider } from 'primereact/slider';
-import { Tag } from 'primereact/tag';
+import { FilterMatchMode, FilterOperator } from '@mantle-ui/react/api';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { Button } from '@mantle-ui/react/button';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
+import { Calendar } from '@mantle-ui/react/calendar';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
+import { Slider } from '@mantle-ui/react/slider';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 export default function CustomersDemo() {
@@ -447,20 +447,20 @@ export default function CustomersDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { FilterMatchMode, FilterOperator } from 'primereact/api';
-import { DataTable, DataTableFilterMeta } from 'primereact/datatable';
-import { Column, ColumnFilterElementTemplateOptions } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
-import { InputNumber } from 'primereact/inputnumber';
-import { Button } from 'primereact/button';
-import { ProgressBar } from 'primereact/progressbar';
-import { Calendar } from 'primereact/calendar';
-import { MultiSelect, MultiSelectChangeEvent } from 'primereact/multiselect';
-import { Slider, SliderChangeEvent } from 'primereact/slider';
-import { Tag } from 'primereact/tag';
+import { FilterMatchMode, FilterOperator } from '@mantle-ui/react/api';
+import { DataTable, DataTableFilterMeta } from '@mantle-ui/react/datatable';
+import { Column, ColumnFilterElementTemplateOptions } from '@mantle-ui/react/column';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { Dropdown, DropdownChangeEvent } from '@mantle-ui/react/dropdown';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { Button } from '@mantle-ui/react/button';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
+import { Calendar } from '@mantle-ui/react/calendar';
+import { MultiSelect, MultiSelectChangeEvent } from '@mantle-ui/react/multiselect';
+import { Slider, SliderChangeEvent } from '@mantle-ui/react/slider';
+import { Tag } from '@mantle-ui/react/tag';
 import { CustomerService } from './service/CustomerService';
 
 interface Country {

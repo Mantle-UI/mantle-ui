@@ -19,8 +19,8 @@ export function ToggleableDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { Panel } from 'primereact/panel';
+import { Button } from '@mantle-ui/react/button';
+import { Panel } from '@mantle-ui/react/panel';
 
 export default function ToggleableDemo() {
     const ref = useRef(null);
@@ -41,8 +41,8 @@ export default function ToggleableDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { Panel } from 'primereact/panel';
+import { Button } from '@mantle-ui/react/button';
+import { Panel } from '@mantle-ui/react/panel';
 
 export default function ToggleableDemo() {
     const ref = useRef<Panel>(null);

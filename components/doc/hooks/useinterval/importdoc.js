@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useInterval } from 'primereact/hooks';
+import { useInterval } from '@mantle-ui/react/hooks';
         `
     };
 

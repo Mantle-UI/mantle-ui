@@ -44,7 +44,7 @@ export function CustomContentDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function CustomContentDemo() {
@@ -89,7 +89,7 @@ export default function CustomContentDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function CustomContentDemo() {

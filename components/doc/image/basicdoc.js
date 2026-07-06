@@ -9,7 +9,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Image } from 'primereact/image';
+import { Image } from '@mantle-ui/react/image';
 
 export default function BasicDemo() {
     return (
@@ -21,7 +21,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Image } from 'primereact/image';
+import { Image } from '@mantle-ui/react/image';
 
 export default function BasicDemo() {
     return (

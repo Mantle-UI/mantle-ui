@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { BreadCrumb } from 'primereact/breadcrumb';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
 
 export default function BasicDemo() {
     const items = [{ label: 'Electronics' }, { label: 'Computer' }, { label: 'Accessories' }, { label: 'Keyboard' }, { label: 'Wireless' }];
@@ -25,8 +25,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react';
-import { BreadCrumb } from 'primereact/breadcrumb';
-import { MenuItem } from 'primereact/menuitem';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function BasicDemo() {
     const items: MenuItem[] = [{ label: 'Electronics' }, { label: 'Computer' }, { label: 'Accessories' }, { label: 'Keyboard' }, { label: 'Wireless' }];

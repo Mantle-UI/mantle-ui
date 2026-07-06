@@ -9,7 +9,7 @@ export function ElementDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { ScrollTop } from 'primereact/scrolltop';
+import { ScrollTop } from '@mantle-ui/react/scrolltop';
 
 export default function ElementDemo() {
     return (
@@ -30,7 +30,7 @@ export default function ElementDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { ScrollTop } from 'primereact/scrolltop';
+import { ScrollTop } from '@mantle-ui/react/scrolltop';
 
 export default function ElementDemo() {
     return (

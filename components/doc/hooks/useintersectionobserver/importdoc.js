@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { useIntersectionObserver } from 'primereact/hooks';
+import { useIntersectionObserver } from '@mantle-ui/react/hooks';
         `
     };
 

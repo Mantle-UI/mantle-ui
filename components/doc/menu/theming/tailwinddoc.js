@@ -52,7 +52,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Menu } from 'primereact/menu';
+import { Menu } from '@mantle-ui/react/menu';
 
 export default function UnstyledDemo() {
     let items = [

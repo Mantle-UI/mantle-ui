@@ -71,7 +71,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Timeline } from 'primereact/timeline';
+import { Timeline } from '@mantle-ui/react/timeline';
 
 export default function UnstyledDemo() {
     const events = [

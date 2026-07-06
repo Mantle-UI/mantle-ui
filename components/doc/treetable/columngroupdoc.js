@@ -200,10 +200,10 @@ export function ColumnGroupDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { ColumnGroup } from 'primereact/columngroup';
-import { Row } from 'primereact/row';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { ColumnGroup } from '@mantle-ui/react/columngroup';
+import { Row } from '@mantle-ui/react/row';
 
 export default function ColumnGroupDemo() {
     const nodes = [
@@ -403,11 +403,11 @@ export default function ColumnGroupDemo() {
         `,
         typescript: `
 import React from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { ColumnGroup } from 'primereact/columngroup';
-import { Row } from 'primereact/row';
-import { TreeNode } from 'primereact/treenode';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { ColumnGroup } from '@mantle-ui/react/columngroup';
+import { Row } from '@mantle-ui/react/row';
+import { TreeNode } from '@mantle-ui/react/treenode';
 
 export default function ColGroupDemo() {
     const nodes: TreeNode[] = [

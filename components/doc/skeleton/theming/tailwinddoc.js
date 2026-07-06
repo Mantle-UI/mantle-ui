@@ -27,7 +27,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { Skeleton } from 'primereact/skeleton';
+import { Skeleton } from '@mantle-ui/react/skeleton';
 
 export default function UnstyledDemo() {
     return (

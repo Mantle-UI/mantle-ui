@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Carousel } from 'primereact/carousel';
+import { Carousel } from '@mantle-ui/react/carousel';
         `
     };
 

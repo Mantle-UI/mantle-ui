@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { OrderList } from 'primereact/orderlist';
+import { OrderList } from '@mantle-ui/react/orderlist';
         `
     };
 

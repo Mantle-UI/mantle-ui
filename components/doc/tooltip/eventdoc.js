@@ -11,7 +11,7 @@ export function EventDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function EventDemo() {
     return (
@@ -25,7 +25,7 @@ export default function EventDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function EventDemo() {
     return (

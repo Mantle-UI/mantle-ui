@@ -21,7 +21,7 @@ export function HoverEventDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function HoverEventDemo() {
@@ -44,7 +44,7 @@ export default function HoverEventDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function HoverEventDemo() {

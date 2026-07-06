@@ -27,7 +27,7 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { BreadCrumb } from 'primereact/breadcrumb';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
 
 export default function TemplateDemo() {
     const iconItemTemplate = (item, options) => {
@@ -55,8 +55,8 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { BreadCrumb } from 'primereact/breadcrumb';
-import { MenuItem, MenuItemOptions } from 'primereact/menuitem';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
+import { MenuItem, MenuItemOptions } from '@mantle-ui/react/menuitem';
 
 export default function TemplateDoc() {
     const iconItemTemplate = (item: MenuItem, options: MenuItemOptions) => {

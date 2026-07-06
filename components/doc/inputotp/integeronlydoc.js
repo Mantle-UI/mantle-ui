@@ -12,7 +12,7 @@ export function IntegerOnlyDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { InputOtp } from 'primereact/inputotp';
+import { InputOtp } from '@mantle-ui/react/inputotp';
 
 export default function IntegerOnlyDemo() {
     const [token, setTokens] = useState();
@@ -26,7 +26,7 @@ export default function IntegerOnlyDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { InputOtp } from 'primereact/inputotp';
+import { InputOtp } from '@mantle-ui/react/inputotp';
 
 export default function IntegerOnlyDemo() {
     const [token, setTokens] = useState<string | number | undefined>();

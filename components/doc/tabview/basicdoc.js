@@ -34,7 +34,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { TabView, TabPanel } from 'primereact/tabview';
+import { TabView, TabPanel } from '@mantle-ui/react/tabview';
 
 export default function BasicDemo() {
     return (
@@ -71,7 +71,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { TabView, TabPanel } from 'primereact/tabview';
+import { TabView, TabPanel } from '@mantle-ui/react/tabview';
 import './TabViewDemo.css';
 
 export default function BasicDemo() {

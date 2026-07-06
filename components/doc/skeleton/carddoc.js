@@ -23,7 +23,7 @@ export function CardDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Skeleton } from 'primereact/skeleton';
+import { Skeleton } from '@mantle-ui/react/skeleton';
 
 export default function CardDemo() {
     return (
@@ -49,7 +49,7 @@ export default function CardDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Skeleton } from 'primereact/skeleton';
+import { Skeleton } from '@mantle-ui/react/skeleton';
 
 export default function CardDemo() {
     return (

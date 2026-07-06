@@ -70,7 +70,7 @@ export function GroupDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 
 export default function GroupDemo() {
     const [selectedCity, setSelectedCity] = useState(null);
@@ -151,7 +151,7 @@ import {
   AutoComplete,
   AutoCompleteChangeEvent,
   AutoCompleteCompleteEvent,
-} from "primereact/autocomplete";
+} from "@mantle-ui/react/autocomplete";
 
 interface City {
   label: string;

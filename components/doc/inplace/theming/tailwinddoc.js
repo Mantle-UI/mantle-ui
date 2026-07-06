@@ -18,7 +18,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from 'react';
-import { Inplace, InplaceDisplay, InplaceContent } from 'primereact/inplace';
+import { Inplace, InplaceDisplay, InplaceContent } from '@mantle-ui/react/inplace';
 
 export default function UnstyledDemo() {
     return (

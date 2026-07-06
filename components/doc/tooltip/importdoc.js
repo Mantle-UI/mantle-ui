@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Tooltip } from 'primereact/tooltip';
+import { Tooltip } from '@mantle-ui/react/tooltip';
         `
     };
 

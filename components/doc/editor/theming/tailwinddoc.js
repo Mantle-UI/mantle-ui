@@ -24,7 +24,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Editor } from "primereact/editor";
+import { Editor } from "@mantle-ui/react/editor";
 
 export default function UnstyledDemo() {
     const [text, setText] = useState('');

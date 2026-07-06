@@ -36,7 +36,7 @@ export function MultipleDoc(props) {
         `,
         javascript: `
 import React, { useEffect, useState } from 'react';
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 import { CountryService } from "./service/CountryService";
 
 export default function MultipleDemo() {
@@ -75,7 +75,7 @@ export default function MultipleDemo() {
         `,
         typescript: `
 import React, { useEffect, useState } from 'react';
-import { AutoComplete, AutoCompleteCompleteEvent } from "primereact/autocomplete";
+import { AutoComplete, AutoCompleteCompleteEvent } from "@mantle-ui/react/autocomplete";
 import { CountryService } from "./service/CountryService";
 
 interface Country {

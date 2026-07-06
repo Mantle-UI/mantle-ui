@@ -52,7 +52,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
 
 export default function UnstyledDemo() {
     const [value, setValue] = useState('');

@@ -21,7 +21,7 @@ export function BasicDoc(props) {
 `,
         javascript: `
 import React from 'react'; 
-import { Steps } from 'primereact/steps';
+import { Steps } from '@mantle-ui/react/steps';
 
 export default function BasicDemo() {
     const items = [
@@ -45,8 +45,8 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Steps } from 'primereact/steps';
-import { MenuItem } from 'primereact/menuitem';
+import { Steps } from '@mantle-ui/react/steps';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export default function BasicDemo() {
     const items: MenuItem[] = [

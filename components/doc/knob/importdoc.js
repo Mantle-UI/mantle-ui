@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Knob } from 'primereact/knob';
+import { Knob } from '@mantle-ui/react/knob';
         `
     };
 

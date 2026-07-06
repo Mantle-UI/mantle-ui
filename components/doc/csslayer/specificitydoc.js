@@ -19,7 +19,7 @@ export function SpecificityDoc(props) {
     const code = {
         basic: `
 import React, { useState } from 'react';
-import { InputSwitch } from 'primereact/inputswitch';
+import { InputSwitch } from '@mantle-ui/react/inputswitch';
 
 export function SpecificityDemo() {
     const [checked, setChecked] = useState(false);

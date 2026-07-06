@@ -34,7 +34,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function UnstyledDemo() {
     return (

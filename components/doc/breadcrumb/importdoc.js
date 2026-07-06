@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { BreadCrumb } from 'primereact/breadcrumb';
+import { BreadCrumb } from '@mantle-ui/react/breadcrumb';
         `
     };
 

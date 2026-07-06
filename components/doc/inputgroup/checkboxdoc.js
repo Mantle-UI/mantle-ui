@@ -38,9 +38,9 @@ export function CheckboxDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Checkbox } from 'primereact/checkbox';
-import { RadioButton } from 'primereact/radiobutton';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Checkbox } from '@mantle-ui/react/checkbox';
+import { RadioButton } from '@mantle-ui/react/radiobutton';
 
 export default function CheckboxDoc() {
     const [checked1, setChecked1] = useState(false);
@@ -78,9 +78,9 @@ export default function CheckboxDoc() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Checkbox } from 'primereact/checkbox';
-import { RadioButton } from 'primereact/radiobutton';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Checkbox } from '@mantle-ui/react/checkbox';
+import { RadioButton } from '@mantle-ui/react/radiobutton';
 
 export default function CheckboxDoc() {
     const [checked1, setChecked1] = useState<boolean>(false);

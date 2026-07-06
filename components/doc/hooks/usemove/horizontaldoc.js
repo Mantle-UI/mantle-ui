@@ -11,7 +11,7 @@ const { ref, x } = useMove({ initialValue: { x: 0.2 } });
         `,
         javascript: `
 import React from 'react'; 
-import {useMove } from 'primereact/hooks';
+import {useMove } from '@mantle-ui/react/hooks';
 
 export default function HorizontalDemo() {
     const { ref, x } = useMove({ initialValue: { x: 0.2 } });
@@ -44,7 +44,7 @@ export default function HorizontalDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import {useMove } from 'primereact/hooks';
+import {useMove } from '@mantle-ui/react/hooks';
 
 export default function HorizontalDemo() {
     const { ref, x } = useMove({ initialValue: { x: 0.2 } });

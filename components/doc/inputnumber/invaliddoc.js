@@ -12,7 +12,7 @@ export function InvalidDoc(props) {
 `,
         javascript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function InvalidDemo() {
     const [value, setValue] = useState(151351);
@@ -26,7 +26,7 @@ export default function InvalidDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
+import { InputNumber, InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
 
 export default function InvalidDemo() {
     const [value, setValue] = useState<number>(151351);

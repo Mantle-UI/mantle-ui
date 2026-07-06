@@ -34,8 +34,8 @@ export function SampleDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { InputOtp } from 'primereact/inputotp';
-import { Button } from 'primereact/button';
+import { InputOtp } from '@mantle-ui/react/inputotp';
+import { Button } from '@mantle-ui/react/button';
 
 export default function SampleDemo() {
     const [token, setTokens] = useState();
@@ -104,8 +104,8 @@ export default function SampleDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { InputOtp, InputOtpProps } from 'primereact/inputotp';
-import { Button } from 'primereact/button';
+import { InputOtp, InputOtpProps } from '@mantle-ui/react/inputotp';
+import { Button } from '@mantle-ui/react/button';
 
 interface CustomInputProps extends InputOtpProps {
     events?: any;

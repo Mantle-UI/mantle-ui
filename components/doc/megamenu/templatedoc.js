@@ -120,10 +120,10 @@ export function TemplateDoc(props) {
 `,
         javascript: `
 import React from 'react';
-import { MegaMenu } from 'primereact/megamenu';
-import { InputText } from 'primereact/inputtext';
-import { Ripple } from 'primereact/ripple';
-import { Button } from 'primereact/button';
+import { MegaMenu } from '@mantle-ui/react/megamenu';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Ripple } from '@mantle-ui/react/ripple';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     const itemRenderer = (item, options) => {
@@ -248,11 +248,11 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { MegaMenu } from 'primereact/megamenu';
-import { InputText } from 'primereact/inputtext';
-import { MenuItem } from 'primereact/menuitem';
-import { Ripple } from 'primereact/ripple';
-import { Button } from 'primereact/button';
+import { MegaMenu } from '@mantle-ui/react/megamenu';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { MenuItem } from '@mantle-ui/react/menuitem';
+import { Ripple } from '@mantle-ui/react/ripple';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     const itemRenderer = (item, options) => {

@@ -67,9 +67,9 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
-import { ChevronDownIcon } from 'primereact/icons/chevrondown';
-import { ChevronRightIcon } from 'primereact/icons/chevronright';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { ChevronDownIcon } from '@mantle-ui/react/icons/chevrondown';
+import { ChevronRightIcon } from '@mantle-ui/react/icons/chevronright';
 
 export default function TemplateDemo() {
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -135,9 +135,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
-import { CheckIcon } from 'primereact/icons/check';
-import { StarIcon } from 'primereact/icons/star';
+import { Dropdown, DropdownChangeEvent } from '@mantle-ui/react/dropdown';
+import { CheckIcon } from '@mantle-ui/react/icons/check';
+import { StarIcon } from '@mantle-ui/react/icons/star';
 
 interface Country {
     name: string;

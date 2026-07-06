@@ -13,7 +13,7 @@ export function VerticalDoc(props) {
 `,
         javascript: `
 import React, { useState } from "react";
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function VerticalDemo() {
     const [value, setValue] = useState(50);
@@ -28,7 +28,7 @@ export default function VerticalDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
+import { InputNumber, InputNumberValueChangeEvent } from '@mantle-ui/react/inputnumber';
 
 export default function VerticalDemo() {
     const [value, setValue] = useState<number>(50);

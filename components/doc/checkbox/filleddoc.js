@@ -12,7 +12,7 @@ export function FilledDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function FilledDemo() {
     const [checked, setChecked] = useState(false);
@@ -26,7 +26,7 @@ export default function FilledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function FilledDemo() {
     const [checked, setChecked] = useState<boolean>(false);

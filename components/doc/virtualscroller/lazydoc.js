@@ -71,9 +71,9 @@ export function LazyDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { VirtualScroller } from 'primereact/virtualscroller';
-import { Skeleton } from 'primereact/skeleton';
-import { classNames } from 'primereact/utils';
+import { VirtualScroller } from '@mantle-ui/react/virtualscroller';
+import { Skeleton } from '@mantle-ui/react/skeleton';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function LazyDemo() {
     const [lazyItems, setLazyItems] = useState([]);
@@ -140,9 +140,9 @@ export default function LazyDemo() {
         `,
         typescript: `
 import React, { useState, useEffect, useRef } from 'react';
-import { VirtualScroller, VirtualScrollerTemplateOptions, VirtualScrollerLazyEvent } from 'primereact/virtualscroller';
-import { Skeleton } from 'primereact/skeleton';
-import { classNames } from 'primereact/utils';
+import { VirtualScroller, VirtualScrollerTemplateOptions, VirtualScrollerLazyEvent } from '@mantle-ui/react/virtualscroller';
+import { Skeleton } from '@mantle-ui/react/skeleton';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function LazyDemo() {
     const [lazyItems, setLazyItems] = useState<string[]>([]);

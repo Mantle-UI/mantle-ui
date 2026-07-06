@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Captcha } from 'primereact/captcha';
+import { Captcha } from '@mantle-ui/react/captcha';
         `
     };
 

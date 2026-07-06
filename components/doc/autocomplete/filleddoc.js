@@ -17,7 +17,7 @@ export function FilledDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { AutoComplete } from "primereact/autocomplete";
+import { AutoComplete } from "@mantle-ui/react/autocomplete";
 
 export default function FilledDemo() {
     const [value, setValue] = useState('');
@@ -36,7 +36,7 @@ export default function FilledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { AutoComplete, AutoCompleteCompleteEvent } from "primereact/autocomplete";
+import { AutoComplete, AutoCompleteCompleteEvent } from "@mantle-ui/react/autocomplete";
 
 export default function FilledDemo() {
     const [value, setValue] = useState<string>('');

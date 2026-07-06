@@ -32,9 +32,9 @@ export function SizeDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { SelectButton } from 'primereact/selectbutton';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { SelectButton } from '@mantle-ui/react/selectbutton';
 import { ProductService } from './service/ProductService';
 
 export default function SizeDemo() {
@@ -67,9 +67,9 @@ export default function SizeDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { SelectButton, SelectButtonChangeEvent } from 'primereact/selectbutton';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { SelectButton, SelectButtonChangeEvent } from '@mantle-ui/react/selectbutton';
 import { ProductService } from './service/ProductService';
 
 interface Product {

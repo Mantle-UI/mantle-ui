@@ -25,7 +25,7 @@ content={content}
         `,
         javascript: `
 import React from 'react';
-import { Message } from 'primereact/message';
+import { Message } from '@mantle-ui/react/message';
 
 export default function TemplateDemo() {
     const content = (
@@ -53,7 +53,7 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Message } from 'primereact/message';
+import { Message } from '@mantle-ui/react/message';
 
 export default function TemplateDemo() {
     const content = (

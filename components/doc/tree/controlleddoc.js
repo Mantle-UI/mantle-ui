@@ -48,8 +48,8 @@ export function ControlledDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Tree } from 'primereact/tree';
-import { Button } from 'primereact/button';
+import { Tree } from '@mantle-ui/react/tree';
+import { Button } from '@mantle-ui/react/button';
 import { NodeService } from './service/NodeService';
 
 export default function ControlledDemo() {
@@ -98,9 +98,9 @@ export default function ControlledDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Tree, TreeExpandedKeysType } from 'primereact/tree';
-import { TreeNode } from 'primereact/treenode';
-import { Button } from 'primereact/button';
+import { Tree, TreeExpandedKeysType } from '@mantle-ui/react/tree';
+import { TreeNode } from '@mantle-ui/react/treenode';
+import { Button } from '@mantle-ui/react/button';
 import { NodeService } from './service/NodeService';
 
 export default function ControlledDemo() {

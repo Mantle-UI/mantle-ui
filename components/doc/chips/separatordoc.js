@@ -12,7 +12,7 @@ export function SeparatorDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Chips } from "primereact/chips";
+import { Chips } from "@mantle-ui/react/chips";
 
 export default function SeparatorDemo() {
     const [value, setValue] = useState([]);
@@ -26,7 +26,7 @@ export default function SeparatorDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Chips, ChipsChangeEvent } from "primereact/chips";
+import { Chips, ChipsChangeEvent } from "@mantle-ui/react/chips";
 
 export default function SeparatorDemo() {
     const [value, setValue] = useState<string[]>([]);

@@ -10,7 +10,7 @@ export function AutoHideDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function AutoHideDemo() {
 
@@ -24,7 +24,7 @@ export default function AutoHideDemo() {
         `,
         typescript: `
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function AutoHideDemo() {
 

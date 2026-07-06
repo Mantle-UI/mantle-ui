@@ -41,7 +41,7 @@ export function GroupDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function GroupDemo() {
     const [ingredients, setIngredients] = useState([]);
@@ -81,7 +81,7 @@ export default function GroupDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox } from "@mantle-ui/react/checkbox";
 
 export default function GroupDemo() {
     const [ingredients, setIngredients] = useState<string[]>([]);

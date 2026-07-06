@@ -9,7 +9,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Badge } from 'primereact/badge';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function BasicDemo() {
     return (
@@ -21,7 +21,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Badge } from 'primereact/badge';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function BasicDemo() {
     return (

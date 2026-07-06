@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Skeleton } from 'primereact/skeleton';
+import { Skeleton } from '@mantle-ui/react/skeleton';
         `
     };
 

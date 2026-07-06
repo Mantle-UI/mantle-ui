@@ -26,7 +26,7 @@ export function ItemWithoutThumbnailsDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function ItemWithoutThumbnailsDemo() {
@@ -54,7 +54,7 @@ export default function ItemWithoutThumbnailsDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function ItemWithoutThumbnailsDemo() {

@@ -19,7 +19,7 @@ export function MultipleDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function MultipleDemo() {
     return (
@@ -41,7 +41,7 @@ export default function MultipleDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { InputNumber } from 'primereact/inputnumber';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
 
 export default function MultipleDemo() {
     return (

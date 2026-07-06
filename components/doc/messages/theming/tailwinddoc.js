@@ -40,8 +40,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useEffect, useRef } from 'react'; 
-import { useMountEffect } from 'primereact/hooks';
-import { Messages } from 'primereact/messages';
+import { useMountEffect } from '@mantle-ui/react/hooks';
+import { Messages } from '@mantle-ui/react/messages';
 
 export default function UnstyledDemo() {
     const msgs = useRef(null);

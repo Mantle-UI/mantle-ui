@@ -115,11 +115,11 @@ export function LayoutDoc(props) {
         javascript: `
 import React, { useState, useEffect } from 'react';
 import { ProductService } from './service/ProductService';
-import { Button } from 'primereact/button';
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { DataView, DataViewLayoutOptions } from '@mantle-ui/react/dataview';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function BasicDemo() {
     const [products, setProducts] = useState([]);
@@ -228,11 +228,11 @@ export default function BasicDemo() {
         typescript: `
 import React, { useState, useEffect } from 'react';
 import { ProductService } from './service/ProductService';
-import { Button } from 'primereact/button';
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
-import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
-import { classNames } from 'primereact/utils';
+import { Button } from '@mantle-ui/react/button';
+import { DataView, DataViewLayoutOptions } from '@mantle-ui/react/dataview';
+import { Rating } from '@mantle-ui/react/rating';
+import { Tag } from '@mantle-ui/react/tag';
+import { classNames } from '@mantle-ui/react/utils';
 
 interface Product {
     id: string;

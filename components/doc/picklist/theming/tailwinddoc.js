@@ -166,7 +166,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { PickList } from 'primereact/picklist';
+import { PickList } from '@mantle-ui/react/picklist';
 import { ProductService } from './service/ProductService';
 
 export default function UnstyledDemo() {

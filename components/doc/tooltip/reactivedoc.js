@@ -23,10 +23,10 @@ export function ReactiveDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Tooltip } from 'primereact/tooltip';
-import { Slider } from 'primereact/slider';
-import { Knob } from 'primereact/knob';
-import { Button } from 'primereact/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Slider } from '@mantle-ui/react/slider';
+import { Knob } from '@mantle-ui/react/knob';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ReactiveDemo() {
     const [buttonTooltip, setButtonTooltip] = useState('Click to proceed');
@@ -48,10 +48,10 @@ export default function ReactiveDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Tooltip } from 'primereact/tooltip';
-import { Slider } from 'primereact/slider';
-import { Knob } from 'primereact/knob';
-import { Button } from 'primereact/button';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Slider } from '@mantle-ui/react/slider';
+import { Knob } from '@mantle-ui/react/knob';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ReactiveDemo() {
     const [buttonTooltip, setButtonTooltip] = useState<string>('Click to proceed');

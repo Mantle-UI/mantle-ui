@@ -13,7 +13,7 @@ export function KeyFilterDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Chips } from "primereact/chips";
+import { Chips } from "@mantle-ui/react/chips";
 
 export default function KeyFilterDemo() {
     const [value, setValue] = useState([]);
@@ -27,7 +27,7 @@ export default function KeyFilterDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Chips, ChipsChangeEvent } from "primereact/chips";
+import { Chips, ChipsChangeEvent } from "@mantle-ui/react/chips";
 
 export default function KeyFilterDemo() {
     const [value, setValue] = useState<string[]>([]);

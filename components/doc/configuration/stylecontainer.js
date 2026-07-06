@@ -5,7 +5,7 @@ export function StyleContainer(props) {
     const code = {
         basic: `
 //_app.js
-import { MantleProvider } from 'primereact/api';
+import { MantleProvider } from '@mantle-ui/react/api';
 
 root.attachShadow({ mode: 'open' }); // Open the shadowRoot
 const mountHere = root.shadowRoot;

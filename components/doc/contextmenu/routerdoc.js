@@ -38,7 +38,7 @@ export function RouterDoc(props) {
 </span>
 <ContextMenu model={items} ref={cm} />`,
         javascript: `
-import { ContextMenu } from 'primereact/contextmenu';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
 import { useRef } from 'react';
 import { useRouter } from 'next/router'
 
@@ -80,10 +80,10 @@ export function RouterDemo(props) {
 }
         `,
         typescript: `
-import { ContextMenu } from 'primereact/contextmenu';
+import { ContextMenu } from '@mantle-ui/react/contextmenu';
 import { useRef, MouseEvent } from 'react';
 import { useRouter } from 'next/router'
-import { MenuItem } from 'primereact/menuitem';
+import { MenuItem } from '@mantle-ui/react/menuitem';
 
 export function RouterDemo(props: any) {
     const cm = useRef<ContextMenuRef | null>(null);

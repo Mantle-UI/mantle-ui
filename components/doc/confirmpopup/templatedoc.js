@@ -46,9 +46,9 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useRef } from 'react';
-import { confirmPopup } from 'primereact/confirmpopup';
-import { Toast } from 'primereact/toast';
-import { Button } from 'primereact/button';
+import { confirmPopup } from '@mantle-ui/react/confirmpopup';
+import { Toast } from '@mantle-ui/react/toast';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     const toast = useRef(null);
@@ -94,9 +94,9 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useRef } from 'react';
-import { confirmPopup } from 'primereact/confirmpopup';
-import { Toast } from 'primereact/toast';
-import { Button } from 'primereact/button';
+import { confirmPopup } from '@mantle-ui/react/confirmpopup';
+import { Toast } from '@mantle-ui/react/toast';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TemplateDemo() {
     const toast = useRef<Toast>(null);

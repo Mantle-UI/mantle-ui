@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { Menubar } from 'primereact/menubar';
+import { Menubar } from '@mantle-ui/react/menubar';
         `
     };
 

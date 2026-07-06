@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { ToggleButton } from 'primereact/togglebutton';
+import { ToggleButton } from '@mantle-ui/react/togglebutton';
         `
     };
 

@@ -32,8 +32,8 @@ export function GridDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { VirtualScroller } from 'primereact/virtualscroller';
-import { classNames } from 'primereact/utils';
+import { VirtualScroller } from '@mantle-ui/react/virtualscroller';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function GridDemo() {
     const [items] = useState(Array.from({ length: 1000 }).map((_, i) => Array.from({ length: 1000 }).map((_j, j) => \`Item #\${i}_\${j}\`)));
@@ -65,8 +65,8 @@ export default function GridDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { VirtualScroller, VirtualScrollerTemplateOptions } from 'primereact/virtualscroller';
-import { classNames } from 'primereact/utils';
+import { VirtualScroller, VirtualScrollerTemplateOptions } from '@mantle-ui/react/virtualscroller';
+import { classNames } from '@mantle-ui/react/utils';
 
 export default function GridDemo() {
     const [items] = useState<string[][]>(Array.from({ length: 1000 }).map((_, i) => Array.from({ length: 1000 }).map((_j, j) => \`Item #\${i}_\${j}\`)));

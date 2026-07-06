@@ -31,9 +31,9 @@ export function PaginatorTemplateDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { Button } from '@mantle-ui/react/button';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { CustomerService } from './service/CustomerService';
 
 export default function PaginatorTemplateDemo() {
@@ -62,9 +62,9 @@ export default function PaginatorTemplateDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Button } from 'primereact/button';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { Button } from '@mantle-ui/react/button';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
 import { CustomerService } from './service/CustomerService';
 
 interface Country {

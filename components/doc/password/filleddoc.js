@@ -12,7 +12,7 @@ export function FilledDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
 
 export default function FilledDemo() {
     const [value, setValue] = useState('');
@@ -26,7 +26,7 @@ export default function FilledDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Password } from 'primereact/password';
+import { Password } from '@mantle-ui/react/password';
 
 export default function FilledDemo() {
     const [value, setValue] = useState<string>('');

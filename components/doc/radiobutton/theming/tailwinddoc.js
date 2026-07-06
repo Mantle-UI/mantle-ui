@@ -43,7 +43,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { RadioButton } from "primereact/radiobutton";
+import { RadioButton } from "@mantle-ui/react/radiobutton";
 
 export default function UnstyledDemo() {
     const [ingredient, setIngredient] = useState('');

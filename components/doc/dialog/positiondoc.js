@@ -47,8 +47,8 @@ export function PositionDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Dialog } from 'primereact/dialog';
-import { Button } from 'primereact/button';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { Button } from '@mantle-ui/react/button';
 
 export default function PositionDemo() {
     const [visible, setVisible] = useState(false);
@@ -96,8 +96,8 @@ export default function PositionDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Dialog } from 'primereact/dialog';
-import { Button } from 'primereact/button';
+import { Dialog } from '@mantle-ui/react/dialog';
+import { Button } from '@mantle-ui/react/button';
 
 export default function PositionDemo() {
     const [visible, setVisible] = useState<boolean>(false);

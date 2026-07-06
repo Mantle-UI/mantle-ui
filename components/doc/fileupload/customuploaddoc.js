@@ -25,7 +25,7 @@ export function CustomUploadDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { FileUpload } from 'primereact/fileupload';
+import { FileUpload } from '@mantle-ui/react/fileupload';
 
 export default function CustomUploadDemo() {
     const customBase64Uploader = async (event) => {
@@ -50,7 +50,7 @@ export default function CustomUploadDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { FileUpload, FileUploadHandlerEvent } from 'primereact/fileupload';
+import { FileUpload, FileUploadHandlerEvent } from '@mantle-ui/react/fileupload';
 
 export default function CustomUploadDemo() {
     const customBase64Uploader = async (event: FileUploadHandlerEvent) => {

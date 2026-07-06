@@ -54,7 +54,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React, { useState } from "react";
-import { CascadeSelect } from 'primereact/cascadeselect';
+import { CascadeSelect } from '@mantle-ui/react/cascadeselect';
 
 export default function UnstyledDemo() {
     const [selectedCity, setSelectedCity] = useState(null);

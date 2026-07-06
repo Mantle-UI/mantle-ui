@@ -26,8 +26,8 @@ export function TemplateDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Password } from 'primereact/password';
-import { Divider } from 'primereact/divider';
+import { Password } from '@mantle-ui/react/password';
+import { Divider } from '@mantle-ui/react/divider';
 
 export default function TemplateDemo() {
     const [value, setValue] = useState('');
@@ -54,8 +54,8 @@ export default function TemplateDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Password } from 'primereact/password';
-import { Divider } from 'primereact/divider';
+import { Password } from '@mantle-ui/react/password';
+import { Divider } from '@mantle-ui/react/divider';
 
 export default function TemplateDemo() {
     const [value, setValue] = useState<string>('');

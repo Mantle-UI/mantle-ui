@@ -15,8 +15,8 @@ export function ReactiveDoc(props) {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { Knob } from 'primereact/knob';
-import { Button } from 'primereact/button';
+import { Knob } from '@mantle-ui/react/knob';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ReactiveDemo() {
     const [value, setValue] = useState(0);
@@ -34,8 +34,8 @@ export default function ReactiveDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { Knob } from 'primereact/knob';
-import { Button } from 'primereact/button';
+import { Knob } from '@mantle-ui/react/knob';
+import { Button } from '@mantle-ui/react/button';
 
 export default function ReactiveDemo() {
     const [value, setValue] = useState<number>(0);

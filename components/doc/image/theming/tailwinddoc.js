@@ -80,7 +80,7 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react'; 
-import { Image } from 'primereact/image';
+import { Image } from '@mantle-ui/react/image';
 
 export default function UnstyledDemo() {
     return (

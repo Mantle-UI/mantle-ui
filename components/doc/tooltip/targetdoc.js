@@ -19,8 +19,8 @@ export function TargetDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Tooltip } from 'primereact/tooltip';
-import { Badge } from 'primereact/badge';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TargetDemo() {
     return (
@@ -41,8 +41,8 @@ export default function TargetDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Tooltip } from 'primereact/tooltip';
-import { Badge } from 'primereact/badge';
+import { Tooltip } from '@mantle-ui/react/tooltip';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function TargetDemo() {
     return (

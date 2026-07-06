@@ -15,7 +15,7 @@ export function TextDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TextDemo() {
     return (
@@ -33,7 +33,7 @@ export default function TextDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function TextDemo() {
     return (

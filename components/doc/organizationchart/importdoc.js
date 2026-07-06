@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { OrganizationChart } from 'primereact/organizationchart';
+import { OrganizationChart } from '@mantle-ui/react/organizationchart';
         `
     };
 

@@ -9,7 +9,7 @@ export function IndeterminateDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { ProgressBar } from 'primereact/progressbar';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
 
 export default function IndeterminateDemo() {
     return (
@@ -21,7 +21,7 @@ export default function IndeterminateDemo() {
         `,
         typescript: `
 import React from 'react';
-import { ProgressBar } from 'primereact/progressbar';
+import { ProgressBar } from '@mantle-ui/react/progressbar';
 
 export default function IndeterminateDemo() {
     return (

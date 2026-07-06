@@ -222,18 +222,18 @@ FilterService.register('custom_activity', (value, filters) => {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { classNames } from 'primereact/utils';
-import { FilterMatchMode, FilterService } from 'primereact/api';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { InputNumber } from 'primereact/inputnumber';
-import { InputText } from 'primereact/inputtext';
-import { Dropdown } from 'primereact/dropdown';
-import { MultiSelect } from 'primereact/multiselect';
-import { Tag } from 'primereact/tag';
-import { TriStateCheckbox } from 'primereact/tristatecheckbox';
+import { classNames } from '@mantle-ui/react/utils';
+import { FilterMatchMode, FilterService } from '@mantle-ui/react/api';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
+import { Tag } from '@mantle-ui/react/tag';
+import { TriStateCheckbox } from '@mantle-ui/react/tristatecheckbox';
 import { CustomerService } from './service/CustomerService';
 
 // The rule argument should be a string in the format "custom_[field]".
@@ -426,18 +426,18 @@ export default function CustomFilterDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { classNames } from 'primereact/utils';
-import { FilterMatchMode, FilterService } from 'primereact/api';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { InputNumber } from 'primereact/inputnumber';
-import { InputText } from 'primereact/inputtext';
-import { Dropdown } from 'primereact/dropdown';
-import { MultiSelect } from 'primereact/multiselect';
-import { Tag } from 'primereact/tag';
-import { TriStateCheckbox } from 'primereact/tristatecheckbox';
+import { classNames } from '@mantle-ui/react/utils';
+import { FilterMatchMode, FilterService } from '@mantle-ui/react/api';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { IconField } from '@mantle-ui/react/iconfield';
+import { InputIcon } from '@mantle-ui/react/inputicon';
+import { InputNumber } from '@mantle-ui/react/inputnumber';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Dropdown } from '@mantle-ui/react/dropdown';
+import { MultiSelect } from '@mantle-ui/react/multiselect';
+import { Tag } from '@mantle-ui/react/tag';
+import { TriStateCheckbox } from '@mantle-ui/react/tristatecheckbox';
 import { CustomerService } from './service/CustomerService';
 
 interface Representative {

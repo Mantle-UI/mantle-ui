@@ -14,8 +14,8 @@ export function InputDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Slider } from "primereact/slider";
-import { InputText } from "primereact/inputtext";
+import { Slider } from "@mantle-ui/react/slider";
+import { InputText } from "@mantle-ui/react/inputtext";
 
 export default function InputDemo() {
     const [value, setValue] = useState(50);
@@ -32,8 +32,8 @@ export default function InputDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Slider, SliderChangeEvent } from "primereact/slider";
-import { InputText } from "primereact/inputtext";
+import { Slider, SliderChangeEvent } from "@mantle-ui/react/slider";
+import { InputText } from "@mantle-ui/react/inputtext";
 
 export default function InputDemo() {
     const [value, setValue] = useState<number>(50);

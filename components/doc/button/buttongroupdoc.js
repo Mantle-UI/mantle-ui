@@ -14,8 +14,8 @@ export function ButtonGroupDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { ButtonGroup } from 'primereact/buttongroup';
+import { Button } from '@mantle-ui/react/button';
+import { ButtonGroup } from '@mantle-ui/react/buttongroup';
 
 export default function ButtonSetDemo() {
     return (
@@ -31,8 +31,8 @@ export default function ButtonSetDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
-import { ButtonGroup } from 'primereact/buttongroup';
+import { Button } from '@mantle-ui/react/button';
+import { ButtonGroup } from '@mantle-ui/react/buttongroup';
 
 export default function ButtonSetDemo() {
     return (

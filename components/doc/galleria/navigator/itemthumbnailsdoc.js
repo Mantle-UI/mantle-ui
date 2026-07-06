@@ -41,7 +41,7 @@ export function ItemThumbnailsDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import { Galleria } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function ItemThumbnailsDemo() {
@@ -83,7 +83,7 @@ export default function ItemThumbnailsDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria, GalleriaResponsiveOptions } from 'primereact/galleria';
+import { Galleria, GalleriaResponsiveOptions } from '@mantle-ui/react/galleria';
 import { PhotoService } from './service/PhotoService';
 
 export default function ItemThumbnailsDoc() {

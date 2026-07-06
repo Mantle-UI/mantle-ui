@@ -44,9 +44,9 @@ export function PositionDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
-import { Checkbox } from 'primereact/checkbox';
-import { RadioButton } from 'primereact/radiobutton';
+import { Galleria } from '@mantle-ui/react/galleria';
+import { Checkbox } from '@mantle-ui/react/checkbox';
+import { RadioButton } from '@mantle-ui/react/radiobutton';
 import { PhotoService } from './service/PhotoService';
 
 export default function PositionDemo() {
@@ -106,8 +106,8 @@ export default function PositionDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
-import { Checkbox } from 'primereact/checkbox';
+import { Galleria } from '@mantle-ui/react/galleria';
+import { Checkbox } from '@mantle-ui/react/checkbox';
 import { PhotoService } from './service/PhotoService';
 
 export default function PositionDemo() {

@@ -18,7 +18,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { Paginator } from 'primereact/paginator';
+import { Paginator } from '@mantle-ui/react/paginator';
 
 export default function BasicDemo() {
     const [first, setFirst] = useState(0);
@@ -38,7 +38,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { Paginator, PaginatorPageChangeEvent } from 'primereact/paginator';
+import { Paginator, PaginatorPageChangeEvent } from '@mantle-ui/react/paginator';
 
 export default function BasicDemo() {
     const [first, setFirst] = useState<number>(0);

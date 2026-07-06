@@ -11,7 +11,7 @@ export function IconsDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function IconsDemo() {
     return (
@@ -25,7 +25,7 @@ export default function IconsDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { Button } from 'primereact/button';
+import { Button } from '@mantle-ui/react/button';
 
 export default function IconsDemo() {
     return (

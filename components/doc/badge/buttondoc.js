@@ -15,8 +15,8 @@ export function ButtonDoc(props) {
             `,
         javascript: `
 import React from 'react';
-import { Button } from 'primereact/button';
-import { Badge } from 'primereact/badge';
+import { Button } from '@mantle-ui/react/button';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function ButtonDemo() {
     return (
@@ -33,8 +33,8 @@ export default function ButtonDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Button } from 'primereact/button';
-import { Badge } from 'primereact/badge';
+import { Button } from '@mantle-ui/react/button';
+import { Badge } from '@mantle-ui/react/badge';
 
 export default function ButtonDemo() {
     return (

@@ -7,10 +7,10 @@ export function CSSLayerDoc(props) {
 @layer tailwind-base, primereact, tailwind-utilities;
 
 /* VITE ONLY: In "styled" mode you must add the MantleUI Theme here. Do NOT include in "unstyled" mode */
-@import 'primereact/resources/themes/lara-light-blue/theme.css';
+@import '@mantle-ui/react/resources/themes/lara-light-blue/theme.css';
 
 /* NEXT.JS ONLY: In "styled" mode you must also add the layer(primereact) */
-@import 'primereact/resources/themes/lara-light-blue/theme.css' layer(primereact);
+@import '@mantle-ui/react/resources/themes/lara-light-blue/theme.css' layer(primereact);
 
 @layer tailwind-base {
   @tailwind base;

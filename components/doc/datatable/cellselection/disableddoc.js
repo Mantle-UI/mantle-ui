@@ -35,9 +35,9 @@ export function DisabledCellSelectionDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputSwitch } from 'primereact/inputswitch';
+import { DataTable } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { InputSwitch } from '@mantle-ui/react/inputswitch';
 import { ProductService } from './service/ProductService';
 
 export default function DisabledCellSelectionDemo() {
@@ -74,9 +74,9 @@ export default function DisabledCellSelectionDemo() {
         typescript: `
 import React, { useState, useEffect } from 'react';
 import { DataTable, DataTableSelectionChangeEvent, DataTableCellSelection,
-        DataTableDataSelectableEvent, DataTableCellClassNameOptions } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputSwitch, InputSwitchChangeEvent } from 'primereact/inputswitch';
+        DataTableDataSelectableEvent, DataTableCellClassNameOptions } from '@mantle-ui/react/datatable';
+import { Column } from '@mantle-ui/react/column';
+import { InputSwitch, InputSwitchChangeEvent } from '@mantle-ui/react/inputswitch';
 import { ProductService } from './service/ProductService';
 
 interface Product {

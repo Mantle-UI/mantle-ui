@@ -24,8 +24,8 @@ export function FloatLabelDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from "react";
-import { TreeSelect } from 'primereact/treeselect';
-import { FloatLabel } from 'primereact/floatlabel';
+import { TreeSelect } from '@mantle-ui/react/treeselect';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
 import { NodeService } from './service/NodeService';
 
 export default function FloatLabelDemo() {
@@ -49,9 +49,9 @@ export default function FloatLabelDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from "react";
-import { TreeSelect, TreeSelectChangeEvent } from 'primereact/treeselect';
-import { FloatLabel } from 'primereact/floatlabel';
-import { TreeNode } from 'primereact/treenode';
+import { TreeSelect, TreeSelectChangeEvent } from '@mantle-ui/react/treeselect';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function FloatLabelDemo() {

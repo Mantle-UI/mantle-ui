@@ -35,10 +35,10 @@ export function RowSelectionEventsDoc(props) {
         `,
         javascript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { TreeTable } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { InputSwitch } from 'primereact/inputswitch';
-import { Toast } from 'primereact/toast';
+import { TreeTable } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { InputSwitch } from '@mantle-ui/react/inputswitch';
+import { Toast } from '@mantle-ui/react/toast';
 import { NodeService } from './service/NodeService';
 
 export default function SingleRowSelectionDemo() {
@@ -72,11 +72,11 @@ export default function SingleRowSelectionDemo() {
         `,
         typescript: `
 import React, { useState, useRef, useEffect } from 'react';
-import { TreeTable, TreeTableSelectionEvent } from 'primereact/treetable';
-import { Column } from 'primereact/column';
-import { InputSwitch } from 'primereact/inputswitch';
-import { Toast } from 'primereact/toast';
-import { TreeNode } from 'primereact/treenode';
+import { TreeTable, TreeTableSelectionEvent } from '@mantle-ui/react/treetable';
+import { Column } from '@mantle-ui/react/column';
+import { InputSwitch } from '@mantle-ui/react/inputswitch';
+import { Toast } from '@mantle-ui/react/toast';
+import { TreeNode } from '@mantle-ui/react/treenode';
 import { NodeService } from './service/NodeService';
 
 export default function SingleRowSelectionDemo() {

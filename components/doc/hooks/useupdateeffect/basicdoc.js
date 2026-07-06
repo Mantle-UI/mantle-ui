@@ -24,9 +24,9 @@ useUpdateEffect(() => {
         `,
         javascript: `
 import React, { useState } from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Toast } from 'primereact/toast';
-import { useUpdateEffect } from 'primereact/hooks';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Toast } from '@mantle-ui/react/toast';
+import { useUpdateEffect } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const toast = useRef(null);
@@ -48,9 +48,9 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React, { useState } from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Toast } from 'primereact/toast';
-import { useUpdateEffect } from 'primereact/hooks';
+import { InputText } from '@mantle-ui/react/inputtext';
+import { Toast } from '@mantle-ui/react/toast';
+import { useUpdateEffect } from '@mantle-ui/react/hooks';
 
 export default function BasicDemo() {
     const toast = useRef(null);

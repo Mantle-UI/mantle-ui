@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import { InputMask } from 'primereact/inputmask';
+import { InputMask } from '@mantle-ui/react/inputmask';
         `
     };
 

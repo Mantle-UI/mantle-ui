@@ -75,7 +75,7 @@ export function HorizontalBarDoc(props) {
         `,
         javascript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function HorizontalBarDemo() {
     const [chartData, setChartData] = useState({});
@@ -152,7 +152,7 @@ export default function HorizontalBarDemo() {
         `,
         typescript: `
 import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart } from '@mantle-ui/react/chart';
 
 export default function HorizontalBarDemo() {
     const [chartData, setChartData] = useState({});

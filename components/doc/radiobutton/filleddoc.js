@@ -9,7 +9,7 @@ export function FilledDoc(props) {
         `,
         javascript: `
 import React from 'react'; 
-import { RadioButton } from "primereact/radiobutton";
+import { RadioButton } from "@mantle-ui/react/radiobutton";
 
 export default function FilledDemo() {
     return (
@@ -21,7 +21,7 @@ export default function FilledDemo() {
         `,
         typescript: `
 import React from 'react'; 
-import { RadioButton } from "primereact/radiobutton";
+import { RadioButton } from "@mantle-ui/react/radiobutton";
 
 export default function FilledDemo() {
     return (

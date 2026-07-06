@@ -12,7 +12,7 @@ export function BasicDoc(props) {
         `,
         javascript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function BasicDemo() {
     return (
@@ -27,7 +27,7 @@ export default function BasicDemo() {
         `,
         typescript: `
 import React from 'react';
-import { Chip } from 'primereact/chip';
+import { Chip } from '@mantle-ui/react/chip';
 
 export default function BasicDemo() {
     return (

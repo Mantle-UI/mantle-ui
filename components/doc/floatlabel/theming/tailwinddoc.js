@@ -31,8 +31,8 @@ const Tailwind = {
     const code2 = {
         javascript: `
 import React from 'react';
-import { FloatLabel } from 'primereact/floatlabel';
-import { InputText } from 'primereact/inputtext';
+import { FloatLabel } from '@mantle-ui/react/floatlabel';
+import { InputText } from '@mantle-ui/react/inputtext';
 
 export default function BasicDemo() {
     return (

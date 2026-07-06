@@ -13,7 +13,7 @@ export function CustomizedDoc(props) {
         `,
         javascript: `
 import React, { useState } from "react";
-import { ToggleButton } from 'primereact/togglebutton';
+import { ToggleButton } from '@mantle-ui/react/togglebutton';
 
 export default function CustomizedDemo() {
     const [checked, setChecked] = useState(false);
@@ -28,7 +28,7 @@ export default function CustomizedDemo() {
         `,
         typescript: `
 import React, { useState } from "react";
-import { ToggleButton, ToggleButtonChangeEvent } from 'primereact/togglebutton';
+import { ToggleButton, ToggleButtonChangeEvent } from '@mantle-ui/react/togglebutton';
 
 export default function CustomizedDemo() {
     const [checked, setChecked] = useState<boolean>(false);

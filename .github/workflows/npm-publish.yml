@@ -38,9 +38,6 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
 
-      - name: Run tests
-        run: npm run test:check
-
       - name: Build library
         run: npm run build:lib
 

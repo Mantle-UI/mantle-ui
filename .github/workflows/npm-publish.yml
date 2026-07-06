@@ -27,7 +27,6 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Verify release tag matches package.json version
-        if: github.event_name == 'release'
         run: |
           TAG="${RELEASE_TAG#v}"
           PKG_VERSION="$(node -p "require('./package.json').version")"

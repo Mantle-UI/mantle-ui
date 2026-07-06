@@ -1,6 +1,7 @@
 name: Generate API DOC
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
@@ -13,7 +14,7 @@ permissions:
 
 jobs:
   build:
-    if: github.repository == 'Mantle-UI/mantle-ui' && github.ref == 'refs/heads/main'
+    if: github.repository == 'Mantle-UI/mantle-ui' && (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
 
     strategy:

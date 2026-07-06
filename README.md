@@ -89,6 +89,11 @@ npm exec mantleui migrate -- --dry-run
 
 If you copy the script into another project manually, keep the `.cjs` extension so it also works in projects using `"type": "module"`.
 
+## Publishing
+
+Adjust the version in the `package.json` run `npm i` and if necessary and commit files.
+Then simply "Publish a Release" on GitHub and the workflow will handle publishing to NPM based on the tag `v10.x.x`
+
 ## Contributors
 
 <a href="https://github.com/Mantle-UI/mantle-ui/graphs/contributors">

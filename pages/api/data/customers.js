@@ -145,9 +145,11 @@ const filters = {
     }
 };
 
+const filterMatchers = new Map(Object.entries(filters));
+
 function filter(value, field, filterValue, filterMatchMode) {
     let filteredItems = [];
-    const matcher = Object.prototype.hasOwnProperty.call(filters, filterMatchMode) ? filters[filterMatchMode] : null;
+    const matcher = filterMatchers.has(filterMatchMode) ? filterMatchers.get(filterMatchMode) : null;
 
     if (value) {
         for (let item of value) {

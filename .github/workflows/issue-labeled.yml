@@ -15,29 +15,35 @@ jobs:
 
     steps:
       - name: Cannot Replicate
-        if: github.event.label.name == 'Resolution: Cannot Replicate'
+        if: ${{ github.event.label.name == 'Resolution: Cannot Replicate' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue comment "${{ github.event.issue.number }}" --body \
-          "We're unable to replicate your issue. If you are able to create a reproducer or add additional details, please edit this issue. This issue will be closed if there is no activity in 20 days."
+          gh issue comment "${{ github.event.issue.number }}" --body "$(cat <<'EOF'
+          We're unable to replicate your issue. If you are able to create a reproducer or add additional details, please edit this issue. This issue will be closed if there is no activity in 20 days.
+          EOF
+          )"
 
       - name: Duplicate
-        if: github.event.label.name == 'Resolution: Duplicate'
+        if: ${{ github.event.label.name == 'Resolution: Duplicate' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue comment "${{ github.event.issue.number }}" --body \
-          "This issue is a duplicate and has already been reported and possibly fixed. Please review both open and closed issues for a similar report."
+          gh issue comment "${{ github.event.issue.number }}" --body "$(cat <<'EOF'
+          This issue is a duplicate and has already been reported and possibly fixed. Please review both open and closed issues for a similar report.
+          EOF
+          )"
 
       - name: Needs Reproducer
-        if: github.event.label.name == 'Status: Needs Reproducer'
+        if: ${{ github.event.label.name == 'Status: Needs Reproducer' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue comment "${{ github.event.issue.number }}" --body \
-          "Please fork the StackBlitz project below and create a case demonstrating your bug report.
+          gh issue comment "${{ github.event.issue.number }}" --body "$(cat <<'EOF'
+          Please fork the StackBlitz project below and create a case demonstrating your bug report.
 
           https://stackblitz.com/edit/vitejs-vite-pekean1c?file=src%2FApp.tsx
 
-          This issue will be closed if there is no activity in 20 days."
+          This issue will be closed if there is no activity in 20 days.
+          EOF
+          )"

@@ -2,6 +2,9 @@
     "name": "@mantle-ui/react",
     "private": false,
     "version": "10.10.0",
+    "bin": {
+        "mantleui": "./bin/mantle-ui-migrate.cjs"
+    },
     "scripts": {
         "dev": "npm run dev:docs",
         "start": "npm run start:docs",

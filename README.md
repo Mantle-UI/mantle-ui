@@ -14,6 +14,8 @@ Mantle UI is not affiliated with PrimeTek, PrimeReact, or ngrok.
 
 Mantle UI is published as [`@mantle-ui/react`](https://www.npmjs.com/package/@mantle-ui/react).
 
+For local package testing, build the library first and pack the publishable output from `dist/` rather than packing the repository root.
+
 ```
 # Using npm
 npm install @mantle-ui/react
@@ -55,6 +57,37 @@ import '@mantle-ui/react/resources/mantle-ui-react.css';
 **Unstyled Mode**
 
 Unstyled mode is disabled by default for all components. Using the Mantle UI context, set `unstyled` as true to enable it globally.
+
+## Migration From PrimeReact
+
+Mantle UI includes a migration CLI that rewrites `primereact` imports to `@mantle-ui/react`. It only updates source imports and does not modify `package.json` or lockfiles.
+The CLI is included in the published package and in the built `dist/` package output.
+
+If `@mantle-ui/react` is already installed in the project, run it from the project root with your package manager:
+
+```bash
+npm exec mantleui migrate
+pnpm exec mantleui migrate
+yarn mantleui migrate
+```
+
+Without installing first, you can run it directly from the published package:
+
+```bash
+npx --package @mantle-ui/react mantleui migrate
+```
+
+Useful options:
+
+```bash
+# target a different project directory
+npm exec mantleui migrate -- --dir ./my-app
+
+# preview changes without writing files
+npm exec mantleui migrate -- --dry-run
+```
+
+If you copy the script into another project manually, keep the `.cjs` extension so it also works in projects using `"type": "module"`.
 
 ## Contributors
 

@@ -12,8 +12,29 @@ jobs:
   release:
     if: github.repository == 'Mantle-UI/mantle-ui' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    environment: release
 
     steps:
+      - name: Check release allowlist
+        env:
+          ACTOR: ${{ github.actor }}
+          ALLOWED_RELEASE_ACTORS: ${{ vars.RELEASE_ALLOWED_ACTORS }}
+        run: |
+          if [ -z "$ALLOWED_RELEASE_ACTORS" ]; then
+            echo "::error::Repository variable RELEASE_ALLOWED_ACTORS is not configured."
+            exit 1
+          fi
+
+          normalized_list="$(printf '%s' "$ALLOWED_RELEASE_ACTORS" | tr ',;' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | sed '/^$/d')"
+
+          if ! printf '%s\n' "$normalized_list" | grep -Fxq "$ACTOR"; then
+            echo "::error::User '$ACTOR' is not allowed to run releases."
+            echo "Allowed actors are controlled by the RELEASE_ALLOWED_ACTORS repository variable."
+            exit 1
+          fi
+
+          echo "Release authorized for $ACTOR."
+
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0

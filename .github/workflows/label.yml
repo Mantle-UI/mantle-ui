@@ -19,10 +19,12 @@ jobs:
       - name: Update labels
         env:
           GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
         run: |
           if [ "${{ github.event_name }}" = "issues" ]; then
             NUMBER="${{ github.event.issue.number }}"
             gh issue edit "$NUMBER" \
+              --repo "$REPO" \
               --add-label "Status: Needs Triage" \
               --remove-label "Resolution: By Design" \
               --remove-label "Resolution: Cannot Replicate" \
@@ -36,6 +38,7 @@ jobs:
           else
             NUMBER="${{ github.event.pull_request.number }}"
             gh pr edit "$NUMBER" \
+              --repo "$REPO" \
               --add-label "Status: Needs Triage" \
               --remove-label "Resolution: By Design" \
               --remove-label "Resolution: Cannot Replicate" \

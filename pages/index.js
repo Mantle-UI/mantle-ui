@@ -2,7 +2,6 @@ import FeaturesSection from '@/components/landing/featuressection';
 import FooterSection from '@/components/landing/footersection';
 import HeroSection from '@/components/landing/herosection';
 import ThemeSection from '@/components/landing/themesection';
-import UsersSection from '@/components/landing/userssection';
 import AppContentContext from '@/components/layout/appcontentcontext';
 import Topbar from '@/components/layout/topbar';
 import { useMountEffect } from '@/components/lib/mantle-ui-react.all';
@@ -47,7 +46,6 @@ export default function Home() {
             <Topbar onDarkSwitchClick={toggleDarkMode} />
             <HeroSection />
             <FeaturesSection />
-            <UsersSection />
             <ThemeSection />
             <FooterSection />
         </div>

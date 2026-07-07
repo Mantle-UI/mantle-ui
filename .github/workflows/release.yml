@@ -1,0 +1,84 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+  issues: read
+
+jobs:
+  release:
+    if: github.repository == 'Mantle-UI/mantle-ui' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: release
+
+    steps:
+      - name: Check release allowlist
+        env:
+          ACTOR: ${{ github.actor }}
+          ALLOWED_RELEASE_ACTORS: ${{ vars.RELEASE_ALLOWED_ACTORS }}
+        run: |
+          if [ -z "$ALLOWED_RELEASE_ACTORS" ]; then
+            echo "::error::Repository variable RELEASE_ALLOWED_ACTORS is not configured."
+            exit 1
+          fi
+
+          normalized_list="$(printf '%s' "$ALLOWED_RELEASE_ACTORS" | tr ',;' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | sed '/^$/d')"
+
+          if ! printf '%s\n' "$normalized_list" | grep -Fxq "$ACTOR"; then
+            echo "::error::User '$ACTOR' is not allowed to run releases."
+            echo "Allowed actors are controlled by the RELEASE_ALLOWED_ACTORS repository variable."
+            exit 1
+          fi
+
+          echo "Release authorized for $ACTOR."
+
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Determine next version and update changelog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node ./scripts/release.js
+
+      - name: Read release version
+        id: version
+        run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Commit release changes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git add CHANGELOG.md package-lock.json package.json
+          git commit -m "chore(release): v$VERSION"
+
+      - name: Create release tag
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: git tag "v$VERSION"
+
+      - name: Push release commit and tag
+        run: git push --follow-tags origin HEAD:main
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: gh release create "v$VERSION" --title "v$VERSION" --notes-file RELEASE_NOTES.md

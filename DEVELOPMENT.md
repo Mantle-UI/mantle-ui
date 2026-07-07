@@ -107,6 +107,30 @@ These scripts perform:
   Use this when you want the extra verification gate before release work,
   especially the audit check.
 
+## Release Workflow
+
+Releases are created manually from GitHub Actions with the `Release` workflow on `main`.
+
+The workflow does not publish to npm directly. It prepares the release and creates the GitHub Release, and `.github/workflows/npm-publish.yml` publishes to npm afterwards.
+
+Before running, the workflow checks `github.actor` against the `RELEASE_ALLOWED_ACTORS` repository variable. Set that variable in repository settings as a comma-separated or newline-separated list of allowed GitHub usernames.
+The release job targets the protected `release` environment, so required reviewers and other configured deployment protection rules apply to the workflow run.
+
+Release bump detection is based on merged pull requests since the latest tag:
+
+- `breaking-change` label on the PR or any linked issue => major
+- linked issue type `feature` => minor
+- linked issue type `bug` => patch
+
+Priority is `breaking-change > feature > bug`.
+
+Linked issues are resolved from:
+
+- PR body closing references such as `Fixes #123`
+- GitHub-linked issue relationships on the pull request
+
+`bug` and `feature` labels do not affect version bumps.
+
 ## Developing the Library Against Another App
 
 If you want to test Mantle UI inside another project, build the library to

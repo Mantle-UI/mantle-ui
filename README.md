@@ -92,10 +92,47 @@ npm exec mantleui migrate -- --dry-run
 
 If you copy the script into another project manually, keep the `.cjs` extension so it also works in projects using `"type": "module"`.
 
-## Publishing
+## Releasing
 
-Adjust the version in the `package.json` run `npm i` and if necessary and commit files.
-Then simply "Publish a Release" on GitHub and the workflow will handle publishing to NPM based on the tag `v10.x.x`
+Mantle UI uses a manual GitHub Actions release workflow. Maintainers do not edit the version by hand and do not publish to npm directly from a local machine.
+
+Start the `Release` workflow from GitHub Actions on the `main` branch. The workflow will:
+
+- inspect merged pull requests since the latest Git tag
+- resolve linked issues from both PR body references like `fixes #123` and GitHub-linked issue relationships
+- calculate the next version automatically
+- update `package.json` and `package-lock.json`
+- commit the release as `chore(release): vX.Y.Z`
+- create and push the `vX.Y.Z` tag
+- create the GitHub Release
+
+The existing npm publish workflow is triggered by that GitHub Release and publishes `@mantle-ui/react` via trusted publishing.
+
+Before the workflow does any release work, it checks `github.actor` against the `RELEASE_ALLOWED_ACTORS` repository variable. Configure that variable as a comma-separated or newline-separated list of allowed GitHub usernames.
+The release job is also attached to the protected `release` environment, so GitHub environment rules and reviewers are enforced before the job proceeds.
+
+### Release Version Rules
+
+- `breaking-change` label on the PR or on any linked issue => major release
+- linked issue type `feature` => minor release
+- linked issue type `bug` => patch release
+
+Priority is:
+
+```txt
+breaking-change > feature > bug
+```
+
+If no relevant release signal exists since the latest tag, the release workflow fails without creating a release.
+
+### PR Linking Convention
+
+To make release detection reliable, pull requests should either:
+
+- include closing references in the PR body, for example `Fixes #123`
+- or be linked to issues using GitHub's linked issue relationship
+
+The PR title does not affect version calculation.
 
 ## Contributors
 

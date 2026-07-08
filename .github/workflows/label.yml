@@ -19,31 +19,16 @@ jobs:
       - name: Update labels
         env:
           GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
         run: |
           if [ "${{ github.event_name }}" = "issues" ]; then
             NUMBER="${{ github.event.issue.number }}"
             gh issue edit "$NUMBER" \
-              --add-label "Status: Needs Triage" \
-              --remove-label "Resolution: By Design" \
-              --remove-label "Resolution: Cannot Replicate" \
-              --remove-label "Resolution: Duplicate" \
-              --remove-label "Resolution: Help Wanted" \
-              --remove-label "Resolution: Invalid" \
-              --remove-label "Resolution: Needs Issue" \
-              --remove-label "Resolution: Needs More Information" \
-              --remove-label "Resolution: Needs Revision" \
-              --remove-label "Resolution: Wontfix"
+              --repo "$REPO" \
+              --add-label "Status: Needs Triage"
           else
             NUMBER="${{ github.event.pull_request.number }}"
             gh pr edit "$NUMBER" \
-              --add-label "Status: Needs Triage" \
-              --remove-label "Resolution: By Design" \
-              --remove-label "Resolution: Cannot Replicate" \
-              --remove-label "Resolution: Duplicate" \
-              --remove-label "Resolution: Help Wanted" \
-              --remove-label "Resolution: Invalid" \
-              --remove-label "Resolution: Needs Issue" \
-              --remove-label "Resolution: Needs More Information" \
-              --remove-label "Resolution: Needs Revision" \
-              --remove-label "Resolution: Wontfix"
+              --repo "$REPO" \
+              --add-label "Status: Needs Triage"
           fi

@@ -25,6 +25,9 @@ yarn add @mantle-ui/react
 
 # Using pnpm
 pnpm add @mantle-ui/react
+
+# Using bun
+bun install @mantle-ui/react
 ```
 
 ## Import

@@ -1,20 +1,5 @@
 # Changelog
 
-## [10.10.4](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.3...v10.10.4) (2026-07-08)
-
-[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.3...v10.10.4)
-
-## Bug Fixes
-
-- Add manual release workflow [#38](https://github.com/Mantle-UI/mantle-ui/pull/38) (issues: #37)
-## Other Changes
-
-- feat: add npm publish release workflow [#36](https://github.com/Mantle-UI/mantle-ui/pull/36)
-- Add bun installation instructions for @mantle-ui/react [#40](https://github.com/Mantle-UI/mantle-ui/pull/40)
-- Remove PrimeTek branding and update landing page content [#41](https://github.com/Mantle-UI/mantle-ui/pull/41)
-- Create funding.md [#42](https://github.com/Mantle-UI/mantle-ui/pull/42)
-- Configure release workflow to use GitHub App authentication [#43](https://github.com/Mantle-UI/mantle-ui/pull/43)
-
 ## [10.9.8](https://github.com/primefaces/primereact/tree/10.9.8) (2026-05-14)
 
 [Full Changelog](https://github.com/primefaces/primereact/compare/10.9.7...10.9.8)

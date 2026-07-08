@@ -107,6 +107,13 @@ The existing npm publish workflow is triggered by that GitHub Release and publis
 
 Before the workflow does any release work, it checks `github.actor` against the `RELEASE_ALLOWED_ACTORS` repository variable. Configure that variable as a comma-separated or newline-separated list of allowed GitHub usernames.
 The release job is also attached to the protected `release` environment, so GitHub environment rules and reviewers are enforced before the job proceeds.
+The workflow pushes and creates the release as a dedicated GitHub App, not as `github-actions[bot]`. Configure the app before first use:
+
+- create and install a GitHub App for this repository
+- grant it at least `Contents: Read & Write`, `Pull requests: Read`, and `Issues: Read`
+- add that GitHub App to the `main` ruleset bypass list
+- set repository variable `RELEASE_APP_CLIENT_ID`
+- set repository secret `RELEASE_APP_PRIVATE_KEY`
 
 ### Release Version Rules
 

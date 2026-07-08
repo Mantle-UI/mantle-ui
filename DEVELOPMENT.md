@@ -115,6 +115,13 @@ The workflow does not publish to npm directly. It prepares the release and creat
 
 Before running, the workflow checks `github.actor` against the `RELEASE_ALLOWED_ACTORS` repository variable. Set that variable in repository settings as a comma-separated or newline-separated list of allowed GitHub usernames.
 The release job targets the protected `release` environment, so required reviewers and other configured deployment protection rules apply to the workflow run.
+The workflow authenticates as a dedicated GitHub App for checkout, pushes, tags, and release creation. Configure the repository before first use:
+
+- create and install a GitHub App for the repository
+- grant the app at least `Contents: Read & Write`, `Pull requests: Read`, and `Issues: Read`
+- add the app to the `main` ruleset bypass list
+- set repository variable `RELEASE_APP_CLIENT_ID`
+- set repository secret `RELEASE_APP_PRIVATE_KEY`
 
 Release bump detection is based on merged pull requests since the latest tag:
 

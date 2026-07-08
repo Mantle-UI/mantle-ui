@@ -64,18 +64,18 @@ const FooterSection = () => {
                         <ul className="list-none p-0 m-0">
                             <li className="font-bold mt-5 lg:mt-0 mb-5">Explore</li>
                             <li className="mb-4">
-                                <Link href="/theming">
-                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Theming</a>
+                                <Link href="/theming" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
+                                    Theming
                                 </Link>
                             </li>
                             <li className="mb-4">
-                                <Link href="/tailwind">
-                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Tailwind</a>
+                                <Link href="/tailwind" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
+                                    Tailwind
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contribution">
-                                    <a className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Contribution</a>
+                                <Link href="/contribution" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">
+                                    Contribution
                                 </Link>
                             </li>
                         </ul>

@@ -49,7 +49,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: false
+          persist-credentials: true
 
       - name: Use Node.js 22
         uses: actions/setup-node@v6
@@ -68,12 +68,9 @@ jobs:
           echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
 
       - name: Configure git for GitHub App
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           git config user.name "${{ steps.app-token.outputs.app-slug }}[bot]"
           git config user.email "${{ steps.git-identity.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com"
-          gh auth setup-git
 
       - name: Determine next version and update changelog
         env:

@@ -10,7 +10,7 @@ const SupportPage = () => {
                             Forum
                         </a>{' '}
                         and{' '}
-                        <a href="https://discord.gg/gzKFYnpmCY" className="text-primary font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                        <a href="https://discord.gg/BGs6EkpnDv" className="text-primary font-medium hover:underline" target="_blank" rel="noopener noreferrer">
                             Discord
                         </a>{' '}
                         are where the community gathers to seek support, post topics and discuss the technology. GitHub issues are available for bug reports and maintenance work, but response times are not guaranteed. If you need a dedicated support

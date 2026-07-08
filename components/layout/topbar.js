@@ -104,22 +104,12 @@ export default function Topbar(props) {
                     </li>
                     <li>
                         <a
-                            href="https://discord.gg/gzKFYnpmCY"
+                            href="https://discord.gg/BGs6EkpnDv"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex flex-shrink-0 px-link border-1 border-solid w-2rem h-2rem surface-border border-round surface-card align-items-center justify-content-center transition-all transition-duration-300 hover:border-primary"
                         >
                             <i className="pi pi-discord text-700" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/Mantle-UI/mantle-ui/discussions"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex flex-shrink-0 px-link border-1 border-solid w-2rem h-2rem surface-border border-round surface-card align-items-center justify-content-center transition-all transition-duration-300 hover:border-primary"
-                        >
-                            <i className="pi pi-comments text-700" />
                         </a>
                     </li>
                     <li>

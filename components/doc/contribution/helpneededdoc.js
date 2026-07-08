@@ -24,7 +24,7 @@ export function HelpNeededDoc(props) {
                     GitHub Discussions
                 </a>
                 , and the{' '}
-                <a href="https://discord.com/invite/gzKFYnpmCY" target="_blank" rel="noopener noreferrer">
+                <a href="https://discord.gg/BGs6EkpnDv" target="_blank" rel="noopener noreferrer">
                     Mantle UI Discord
                 </a>{' '}
                 server. Your expertise can help others solve problems and improve their experience with MantleUI.

@@ -24,12 +24,7 @@ const FooterSection = () => {
                         <ul className="list-none p-0 m-0">
                             <li className="font-bold mb-5">Community</li>
                             <li className="mb-4">
-                                <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    Forum
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="https://discord.gg/gzKFYnpmCY" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
+                                <a href="https://discord.gg/BGs6EkpnDv" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
                                     Discord
                                 </a>
                             </li>
@@ -51,11 +46,6 @@ const FooterSection = () => {
                             <li className="mb-4">
                                 <a href="https://github.com/Mantle-UI/mantle-ui/blob/main/CHANGELOG.md" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
                                     Changelog
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    Contact Us
                                 </a>
                             </li>
                         </ul>
@@ -87,17 +77,11 @@ const FooterSection = () => {
                 <div className="flex flex-wrap justify-content-between py-6 gap-5">
                     <span className="font-semibold text-xl">Mantle UI</span>
                     <div className="flex align-items-center">
-                        <a href="https://github.com/Mantle-UI/mantle-ui/releases" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
-                            <i className="pi pi-twitter" />
-                        </a>
                         <a href="https://github.com/Mantle-UI/mantle-ui" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
                             <i className="pi pi-github" />
                         </a>
-                        <a href="https://discord.gg/gzKFYnpmCY" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
+                        <a href="https://discord.gg/BGs6EkpnDv" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center mr-3">
                             <i className="pi pi-discord" />
-                        </a>
-                        <a href="https://github.com/Mantle-UI/mantle-ui/discussions" className="linkbox block w-3rem h-3rem flex align-items-center justify-content-center">
-                            <i className="pi pi-comments" />
                         </a>
                     </div>
                 </div>

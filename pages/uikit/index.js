@@ -337,7 +337,7 @@ const UIKitPage = (props) => {
                                 <p className="mt-0 mb-6 p-0 line-height-3 text-lg">
                                     PrimeTek offers assistance with account management and licensing issues, with the expectation that users have the necessary technical knowledge to use our products, as we do not offer technical support or
                                     consulting. Users can seek assistance in our community via our public{' '}
-                                    <a href="https://discord.com/invite/gzKFYnpmCY" className="text-primary hover:underline font-medium">
+                                    <a href="https://discord.gg/BGs6EkpnDv" className="text-primary hover:underline font-medium">
                                         Discord
                                     </a>{' '}
                                     and{' '}

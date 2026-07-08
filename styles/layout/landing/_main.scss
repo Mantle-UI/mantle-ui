@@ -129,9 +129,9 @@
     position: relative;
     color: var(--home-text-color);
     padding: 0.25rem 0.5rem;
-    margin: 0 0.5rem;
+    margin: 0.75rem auto;
     border-radius: var(--border-radius);
-    display: inline-block;
+    display: block;
     width: 14.45rem;
 
     &::before {

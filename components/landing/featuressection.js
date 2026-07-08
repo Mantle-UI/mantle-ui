@@ -3,11 +3,11 @@ const FeaturesSection = () => {
         <section className="landing-features py-8">
             <div className="section-header">Features</div>
             <p className="section-detail">
-                Mantle UI builds on the foundations of a widely adopted React component ecosystem and continues that work as an independent, community-maintained library.
-                <span className="font-semibold animated-text relative white-space-nowrap">
+                <span className="block">Mantle UI builds on the foundations of a widely adopted React component ecosystem and continues that work as an independent, community-maintained library.</span>
+                <span className="block font-semibold animated-text relative white-space-nowrap mx-auto">
                     <span className="select-none">Built for real production teams</span>
                 </span>
-                Explore the components, themes, and documentation to see whether it fits your stack.
+                <span className="block">Explore the components, themes, and documentation to see whether it fits your stack.</span>
             </p>
             <div className=" mt-7 px-3 lg:px-8">
                 <div className="features-container">

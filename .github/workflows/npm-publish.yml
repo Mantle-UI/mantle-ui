@@ -54,4 +54,17 @@ jobs:
 
       - name: Publish to npm
         working-directory: dist
-        run: npm publish --access public --provenance
+        run: npm publish --access public --provenance --loglevel verbose
+
+      - name: Print npm debug logs on failure
+        if: failure()
+        run: |
+          if ls /home/runner/.npm/_logs/*.log >/dev/null 2>&1; then
+            for file in /home/runner/.npm/_logs/*.log; do
+              echo "::group::${file}"
+              cat "$file"
+              echo "::endgroup::"
+            done
+          else
+            echo "No npm debug logs found."
+          fi

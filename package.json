@@ -1,7 +1,7 @@
 {
     "name": "@mantle-ui/react",
     "private": false,
-    "version": "10.10.3",
+    "version": "10.10.4",
     "bin": {
         "mantleui": "./bin/mantle-ui-migrate.cjs"
     },

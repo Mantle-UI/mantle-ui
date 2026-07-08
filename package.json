@@ -2,6 +2,10 @@
     "name": "@mantle-ui/react",
     "private": false,
     "version": "10.10.4",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Mantle-UI/mantle-ui.git"
+    },
     "bin": {
         "mantleui": "./bin/mantle-ui-migrate.cjs"
     },

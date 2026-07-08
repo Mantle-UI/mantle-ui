@@ -350,7 +350,7 @@ function addPackageJson() {
     "homepage": "https://github.com/Mantle-UI/mantle-ui",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Mantle-UI/mantle-ui.git"
+        "url": "git+https://github.com/Mantle-UI/mantle-ui.git"
     },
     "license": "MIT",
     "bugs": {

@@ -4,6 +4,12 @@ on:
   release:
     types:
       - published
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Git tag to publish, for example v10.10.4
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -12,11 +18,13 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.release_tag || github.event.release.tag_name }}
 
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ env.RELEASE_TAG }}
 
       - name: Use Node.js
         uses: actions/setup-node@v6
@@ -29,8 +37,6 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Verify release tag matches package.json version
-        env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
           TAG="${RELEASE_TAG#v}"
           PKG_VERSION="$(node -p "require('./package.json').version")"

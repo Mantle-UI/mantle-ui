@@ -1,13 +1,13 @@
 import os
 import time
-from github import Github
+from github import Github, Auth
 
-SOURCE_REPO = os.environ["SOURCE_REPO"]
-DEST_REPO = os.environ["DEST_REPO"]
-GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
+auth = Auth.Token(GITHUB_TOKEN)
 
-source = Github().get_repo(SOURCE_REPO)
-dest = Github(GITHUB_TOKEN).get_repo(DEST_REPO)
+github = Github(auth=auth)
+
+source = github.get_repo(SOURCE_REPO)
+dest = github.get_repo(DEST_REPO)
 
 
 def get_existing_migrations():

@@ -2,8 +2,11 @@ import os
 import time
 from github import Github, Auth
 
-auth = Auth.Token(GITHUB_TOKEN)
+SOURCE_REPO = os.environ["SOURCE_REPO"]
+DEST_REPO = os.environ["DEST_REPO"]
+GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 
+auth = Auth.Token(GITHUB_TOKEN)
 github = Github(auth=auth)
 
 source = github.get_repo(SOURCE_REPO)

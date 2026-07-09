@@ -46,7 +46,7 @@ const InstallationPage = () => {
             id: 'examples',
             label: 'Examples',
             component: ExamplesDoc
-        },
+        }
     ];
 
     return (

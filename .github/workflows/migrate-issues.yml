@@ -1,0 +1,31 @@
+name: Migrate Open Issues
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install PyGithub
+
+      - name: Run migration
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SOURCE_REPO: ${{ vars.SOURCE_REPO }}
+          DEST_REPO: ${{ github.repository }}
+        run: python scripts/migrate_issues.py

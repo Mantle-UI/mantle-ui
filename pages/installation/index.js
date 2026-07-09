@@ -6,7 +6,6 @@ import { ExamplesDoc } from '@/components/doc/installation/examplesdoc';
 import { StyledModeDoc } from '@/components/doc/installation/styleddoc';
 import { UnstyledModeDoc } from '@/components/doc/installation/unstyledmodedoc';
 import { UsageDoc } from '@/components/doc/installation/usagedoc';
-import { NextJSDoc } from '@/components/doc/installation/videos/nextjsdoc';
 import Head from 'next/head';
 
 const InstallationPage = () => {
@@ -48,18 +47,6 @@ const InstallationPage = () => {
             label: 'Examples',
             component: ExamplesDoc
         },
-        {
-            id: 'videos',
-            label: 'Videos',
-            description: 'Video tutorials to take you through step-by-step.',
-            children: [
-                {
-                    id: 'nextjs',
-                    label: 'Next.js',
-                    component: NextJSDoc
-                }
-            ]
-        }
     ];
 
     return (

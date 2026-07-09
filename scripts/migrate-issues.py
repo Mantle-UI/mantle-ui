@@ -28,7 +28,7 @@ available_labels = {label.name for label in dest.get_labels()}
 
 print(f"Found {len(existing)} already migrated issues.")
 
-for issue in source.get_issues(state="open"):
+    for issue in list(source.get_issues(state="open"))[:3]:
 
     # Skip pull requests
     if issue.pull_request:
@@ -76,6 +76,8 @@ Thanks for your original report!
     )
 
     print(f"Created #{new_issue.number}")
+
+    existing.add(original_url)
 
     time.sleep(1)
 

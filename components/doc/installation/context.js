@@ -27,7 +27,7 @@ export default function MyApp({ Component, pageProps }) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    Configuration is managed by the <i>MantleProvider</i> and <i>MantleContext</i> imported from <i>primereact/api</i>.
+                    Configuration is managed by the <i>MantleProvider</i> and <i>MantleContext</i> imported from <i>@mantle-ui/react/api</i>.
                 </p>
             </DocSectionText>
             <DocSectionCode code={code} hideToggleCode import hideStackBlitz />

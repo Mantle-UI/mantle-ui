@@ -13,7 +13,7 @@ import "@mantle-ui/react/resources/themes/lara-light-cyan/theme.css";
         <>
             <DocSectionText {...props}>
                 <p>
-                    Styled mode is based on pre-skinned components with opinionated themes like Material, Bootstrap or PrimeOne themes. Theme is the required css file to be imported, visit the <Link href="/theming/#themes">Themes</Link> section for
+                    Styled mode is based on pre-skinned components with opinionated themes such as Material, Bootstrap, and Lara. Theme is the required css file to be imported, visit the <Link href="/theming/#themes">Themes</Link> section for
                     the complete list of available themes to choose from.
                 </p>
                 <DocSectionCode code={code} hideToggleCode import hideStackBlitz />

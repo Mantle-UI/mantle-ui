@@ -3,8 +3,7 @@ import { services } from './services';
 
 const MantleUI = {
     version: 'latest' || pkg.version, // latest
-    description:
-        'MantleUI is an open source UI library for React featuring a rich set of 80+ components, a theme designer, various theme alternatives such as Material, Bootstrap, Tailwind, premium templates and professional support. In addition, it integrates with PrimeBlock, which has 370+ ready to use UI blocks to build spectacular applications in no time.'
+    description: 'MantleUI is an open source React component library with a broad set of components, multiple theming options, and support for both styled and unstyled workflows.'
 };
 
 const app_dependencies = pkg ? pkg.dependencies : {};
@@ -67,7 +66,7 @@ const getConfiguredDependencies = (isUnstyled, isTypeScript) => {
         react: app_dependencies.react || 'latest',
         'react-dom': app_dependencies['react-dom'] || 'latest',
         'react-transition-group': app_dependencies['react-transition-group'] || 'latest',
-        primereact: MantleUI.version || 'latest', // latest
+        '@mantle-ui/react': MantleUI.version || 'latest', // latest
         primeicons: app_dependencies.primeicons || 'latest',
         vite: 'latest',
         '@vitejs/plugin-react': 'latest',
@@ -99,7 +98,7 @@ export default {
     content: [
         './index.html',
         './src/**/*.{vue,js,ts,jsx,tsx}',
-        './node_modules/primereact/**/*.{js,ts,jsx,tsx}',
+        './node_modules/@mantle-ui/react/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
         extend: {},
@@ -235,7 +234,7 @@ import ReactDOM from 'react-dom/client';
 import 'primeicons/primeicons.css';
 import { MantleProvider } from '@mantle-ui/react/api';
 import 'primeflex/primeflex.css';
-import '@mantle-ui/react/resources/primereact.css';
+import '@mantle-ui/react/resources/mantle-ui-react.css';
 import '@mantle-ui/react/resources/themes/lara-light-indigo/theme.css';
 
 import './index.css';
@@ -261,7 +260,7 @@ const getVite = (props = {}, template = 'javascript') => {
     const isTypeScript = template === 'typescript';
     const fileExtension = isTypeScript ? 'tsx' : 'jsx';
 
-    const { code: sources, title = 'primereact_demo', description = '', dependencies: pDependencies = {} } = props;
+    const { code: sources, title = 'mantle_ui_demo', description = '', dependencies: pDependencies = {} } = props;
 
     const configuredDependencies = getConfiguredDependencies(isUnstyled, isTypeScript);
     const dependencies = { ...configuredDependencies, ...pDependencies, 'react-scripts': '5.0.1' };

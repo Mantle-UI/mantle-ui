@@ -4,22 +4,9 @@ export function ExamplesDoc(props) {
     return (
         <>
             <DocSectionText {...props}>
-                <p>We've created various samples for the popular options in the React ecosystem.</p>
+                <p>Mantle UI works with the usual React application setups, including Vite and Next.js.</p>
+                <p>Framework-specific starter examples are being refreshed for the Mantle UI project and will be published in the repository as they are finalized.</p>
             </DocSectionText>
-            <div className="flex flex-wrap card justify-content-between gap-3">
-                <a href="https://github.com/primefaces/primereact-examples/tree/main/cra-basic">
-                    <img src="https://primefaces.org/cdn/primereact/images/logos/cra.svg" alt="Create React App" className="w-8rem h-8rem" />
-                </a>
-                <a href="https://github.com/primefaces/primereact-examples/tree/main/nextjs-basic">
-                    <img src="https://primefaces.org/cdn/primereact/images/logos/next-js.svg" alt="Next.JS" className="w-8rem h-8rem" />
-                </a>
-                <a href="https://github.com/primefaces/primereact-examples/tree/main/vite-basic-ts">
-                    <img src="https://primefaces.org/cdn/primereact/images/logos/vite.png" alt="Vite" className="w-8rem h-8rem" />
-                </a>
-                <a href="https://github.com/refinedev/refine/tree/master/examples/blog-refine-primereact">
-                    <img src="https://primefaces.org/cdn/primereact/images/logos/refine.svg" alt="Refine" className="w-8rem h-8rem" />
-                </a>
-            </div>
         </>
     );
 }

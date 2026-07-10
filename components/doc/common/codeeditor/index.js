@@ -64,9 +64,7 @@ export const useStackBlitz = (props) => {
             template: 'node',
             description: props.embedded
                 ? "This example demonstrates how to style components with Tailwind CSS using MantleUI's unstyled property. As mentioned in the MantleUI documentation, components can be styled or have HTML attributes added using a global or inline pass through approach. In this example, we utilize the global PT approach with Tailwind CSS."
-                : '**' +
-                  (props.description || '') +
-                  '**\n MantleUI is an open source React component library with a broad set of components, multiple theming options, and support for both styled and unstyled workflows.',
+                : '**' + (props.description || '') + '**\n MantleUI is an open source React component library with a broad set of components, multiple theming options, and support for both styled and unstyled workflows.',
             dependencies: stackBlitzParameters.dependencies,
             files
         };

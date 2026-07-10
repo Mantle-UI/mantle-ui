@@ -59,26 +59,24 @@ export const useStackBlitz = (props) => {
 
         Object.entries(stackBlitzParameters.files).forEach(([k, v]) => (files[`${k}`] = typeof v.content === 'object' ? JSON.stringify(v.content, null, 2) : v.content));
 
-        const primereactproject = {
+        const mantleUiProject = {
             title: props.title || 'MantleUI Demo',
             template: 'node',
             description: props.embedded
                 ? "This example demonstrates how to style components with Tailwind CSS using MantleUI's unstyled property. As mentioned in the MantleUI documentation, components can be styled or have HTML attributes added using a global or inline pass through approach. In this example, we utilize the global PT approach with Tailwind CSS."
-                : '**' +
-                  (props.description || '') +
-                  '**\n MantleUI is an open source UI library for React featuring a rich set of 90+ components, a theme designer, various theme alternatives such as Material, Bootstrap, Tailwind, premium templates and professional support. In addition, it integrates with PrimeBlock, which has 370+ ready to use UI blocks to build spectacular applications in no time.',
+                : '**' + (props.description || '') + '**\n MantleUI is an open source React component library with a broad set of components, multiple theming options, and support for both styled and unstyled workflows.',
             dependencies: stackBlitzParameters.dependencies,
             files
         };
 
         if (props.embedded) {
-            sdk.embedProject('embed', primereactproject, {
+            sdk.embedProject('embed', mantleUiProject, {
                 openFile: 'src/App.jsx',
                 view: 'default',
                 height: '800px'
             });
         } else {
-            sdk.openProject(primereactproject, {
+            sdk.openProject(mantleUiProject, {
                 newWindow: true,
                 openFile: [stackBlitzParameters.sourceFileName]
             });

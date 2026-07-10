@@ -5,10 +5,10 @@ export function DownloadDoc(props) {
     const code = {
         basic: `
 // with npm
-npm install primereact
+npm install @mantle-ui/react
 
 // with yarn
-yarn add primereact
+yarn add @mantle-ui/react
         `
     };
 
@@ -16,7 +16,7 @@ yarn add primereact
         <>
             <DocSectionText {...props}>
                 <p>
-                    MantleUI is available for download at <a href="https://www.npmjs.com/package/primereact">npm</a>.
+                    Mantle UI is available on <a href="https://www.npmjs.com/package/@mantle-ui/react">npm</a>.
                 </p>
             </DocSectionText>
             <DocSectionCode code={code} hideToggleCode import hideStackBlitz />

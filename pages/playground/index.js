@@ -75,7 +75,8 @@ const PlayGround = () => {
                                 <div>
                                     <h2 className="text-2xl mt-0 mb-3">Open the Mantle UI playground</h2>
                                     <p className="m-0 line-height-3">
-                                        The interactive starter is generated from this repository and opened in StackBlitz in a separate tab. Embedded WebContainer editors require browser isolation headers that are not available on the GitHub Pages docs host.
+                                        The interactive starter is generated from this repository and opened in StackBlitz in a separate tab. Embedded WebContainer editors require browser isolation headers that are not available on the GitHub Pages
+                                        docs host.
                                     </p>
                                 </div>
                                 <div className="flex flex-wrap gap-3">

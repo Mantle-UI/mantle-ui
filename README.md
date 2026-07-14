@@ -1,6 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub](https://img.shields.io/badge/GitHub-Mantle--UI%2Fmantle--ui-181717?logo=github)](https://github.com/Mantle-UI/mantle-ui)
 [![npm package](https://img.shields.io/badge/npm-%40mantle--ui%2Freact-CB3837?logo=npm)](https://www.npmjs.com/package/@mantle-ui/react)
+![NPM Downloads](https://img.shields.io/npm/dm/@mantle-ui/react??color=purple)
 
 [![Mantle UI](https://github.com/Mantle-UI/mantle-ui/raw/main/public/images/mantle-logo-text.png)](https://github.com/Mantle-UI/mantle-ui)
 

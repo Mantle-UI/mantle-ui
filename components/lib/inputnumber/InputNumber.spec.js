@@ -13,6 +13,18 @@ function getButtons(container) {
 }
 
 describe('InputNumber decimal precision and stepping', () => {
+    test('allows entering a minus sign into an empty input', async () => {
+        const user = userEvent.setup();
+        const { container } = render(<InputNumber minFractionDigits={2} />);
+        const input = container.querySelector('input');
+
+        await user.click(input);
+        await user.keyboard('-');
+
+        expect(input).toHaveValue('-');
+        expect(input.selectionStart).toBe(1);
+    });
+
     test('increments correctly with step=0.25', async () => {
         const { container } = render(<InputNumber step={0.25} showButtons mode="decimal" />);
 

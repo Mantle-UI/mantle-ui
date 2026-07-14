@@ -28,6 +28,8 @@ export default function App() {
                 <p className="m-0">This starter is generated from the Mantle UI docs project instead of pointing to an old PrimeReact StackBlitz sample.</p>
             </Card>
         </div>
+        );
+    }
                 `
             }
         },

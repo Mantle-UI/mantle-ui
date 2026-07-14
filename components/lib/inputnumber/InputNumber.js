@@ -106,7 +106,7 @@ export const InputNumber = React.memo(
         };
 
         const getMinusSignExpression = () => {
-            const formatter = new Intl.NumberFormat(_locale, { useGrouping: false });
+            const formatter = new Intl.NumberFormat(_locale, { useGrouping: false, minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
             return new RegExp(`[${formatter.format(-1).trim().replace(_numeral.current, '')}]`, 'g');
         };
@@ -675,9 +675,11 @@ export const InputNumber = React.memo(
         };
 
         const isDecimalSign = (char) => {
-            if (_decimal.current.test(char) || isFloat(char)) {
-                _decimal.current.lastIndex = 0;
+            const isDecimal = _decimal.current.test(char);
 
+            _decimal.current.lastIndex = 0;
+
+            if (isDecimal || (!isMinusSign(char) && isFloat(char))) {
                 return true;
             }
 

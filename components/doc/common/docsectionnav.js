@@ -82,8 +82,7 @@ export function DocSectionNav({ docs = [] }) {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const createItem = ({ id, label, children }, level = 0) => {
-        const { basePath, pathname } = router;
-        const href = `${basePath}${pathname}#${id}`;
+        const href = `${router.pathname}#${id}`;
 
         return (
             <li key={id} className={classNames('navbar-item', { 'active-navbar-item': activeId === id })}>

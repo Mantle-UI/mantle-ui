@@ -1,5 +1,25 @@
 # Changelog
 
+## [10.10.5](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.4...v10.10.5) (2026-07-16)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.4...v10.10.5)
+
+## Bug Fixes
+
+- Update Discord invite link and consolidate community channels [#46](https://github.com/Mantle-UI/mantle-ui/pull/46) (issues: #45)
+- fix(InputNumber): allow negative input [#367](https://github.com/Mantle-UI/mantle-ui/pull/367) (issues: #55)
+## Other Changes
+
+- fix: Center animated text and improve layout in landing page sections [#44](https://github.com/Mantle-UI/mantle-ui/pull/44)
+- Create migrate-issues.yml [#47](https://github.com/Mantle-UI/mantle-ui/pull/47)
+- Remove trailing comma from installation navigation [#48](https://github.com/Mantle-UI/mantle-ui/pull/48)
+- Renamed migrate issues file [#49](https://github.com/Mantle-UI/mantle-ui/pull/49)
+- #362 - Refactor PrimeReact references to Mantle UI [#363](https://github.com/Mantle-UI/mantle-ui/pull/363) (issues: #362)
+- prime leftovers [#366](https://github.com/Mantle-UI/mantle-ui/pull/366)
+- build(deps): bump actions/checkout from 4 to 7 [#364](https://github.com/Mantle-UI/mantle-ui/pull/364)
+- build(deps): bump actions/setup-python from 5 to 6 [#365](https://github.com/Mantle-UI/mantle-ui/pull/365)
+- fix(docs): avoid duplicate base paths in anchor links [#369](https://github.com/Mantle-UI/mantle-ui/pull/369) (issues: #368)
+
 ## [10.10.4](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.3...v10.10.4) (2026-07-08)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.3...v10.10.4)

@@ -148,10 +148,10 @@ const styles = `
 export const AutoCompleteBase = ComponentBase.extend({
     defaultProps: {
         __TYPE: 'AutoComplete',
-        id: null,
         appendTo: null,
         autoFocus: false,
         autoHighlight: false,
+        children: undefined,
         className: null,
         completeMethod: null,
         delay: 300,
@@ -164,11 +164,12 @@ export const AutoCompleteBase = ComponentBase.extend({
         emptyMessage: null,
         field: null,
         forceSelection: false,
+        iconPosition: null,
+        id: null,
         inputClassName: null,
         inputId: null,
         inputRef: null,
         inputStyle: null,
-        variant: null,
         invalid: false,
         itemTemplate: null,
         loadingIcon: null,
@@ -213,9 +214,8 @@ export const AutoCompleteBase = ComponentBase.extend({
         transitionOptions: null,
         type: 'text',
         value: null,
-        virtualScrollerOptions: null,
-        children: undefined,
-        iconPosition: null
+        variant: null,
+        virtualScrollerOptions: null
     },
     css: {
         classes,

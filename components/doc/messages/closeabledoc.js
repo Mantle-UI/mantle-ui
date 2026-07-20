@@ -63,7 +63,7 @@ export default function ClosableDemo() {
             { sticky: true, severity: 'success', summary: 'Success', detail: 'Closable Message' },
             { sticky: true, severity: 'info', summary: 'Info', detail: 'Not Closable Message', closable: false }
         ]);
-    };
+    });
 
     return (
         <div className="card">

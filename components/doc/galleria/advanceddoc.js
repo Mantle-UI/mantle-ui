@@ -363,7 +363,7 @@ export default function AdvancedDemo() {
     const [images, setImages] = useState(null);
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [showThumbnails, setShowThumbnails] = useState<boolean>(false);
-    const [isAutoPlayActive, setAutoPlayActive] = <boolean>useState(true);
+    const [isAutoPlayActive, setAutoPlayActive] = useState<boolean>(true);
     const [isFullScreen, setFullScreen] = useState<boolean>(false);
     
     const galleria = useRef(null)

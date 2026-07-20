@@ -139,7 +139,8 @@ export default function HeadlessDemo() {
             ></Toast>
             <Button onClick={show} label="View" />
         </div>
-    )
+    );
+}
             `,
         typescript: `
 import React, { useRef, useState } from 'react';
@@ -149,6 +150,8 @@ import { ProgressBar } from '@mantle-ui/react/progressbar';
 
 export default function HeadlessDemo() {
     const toast = useRef<Toast>(null);
+    const [progress, setProgress] = useState(0);
+    const interval = useRef<ReturnType<typeof setInterval>>();
 
     const clear = () => {
         setProgress(0);
@@ -209,7 +212,7 @@ export default function HeadlessDemo() {
             ></Toast>
             <Button onClick={show} label="View" />
         </div>
-    )
+    );
 }
             `
     };

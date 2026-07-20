@@ -18,46 +18,50 @@ export function ToggleableDoc(props) {
 </Panel>
         `,
         javascript: `
-import React from 'react'; 
+import React, { useRef } from 'react';
 import { Button } from '@mantle-ui/react/button';
 import { Panel } from '@mantle-ui/react/panel';
 
 export default function ToggleableDemo() {
     const ref = useRef(null);
     return (
-        <Button label="Toggle" className="m-2" onClick={() => ref.current.toggle()} />
-        <Button label="Expand" className="m-2" onClick={() => ref.current.expand()} />
-        <Button label="Collapse" className="m-2" onClick={() => ref.current.collapse()} />
-        <Panel ref={ref} header="Header" toggleable>
-            <p className="m-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </Panel>
+        <>
+            <Button label="Toggle" className="m-2" onClick={() => ref.current.toggle()} />
+            <Button label="Expand" className="m-2" onClick={() => ref.current.expand()} />
+            <Button label="Collapse" className="m-2" onClick={() => ref.current.collapse()} />
+            <Panel ref={ref} header="Header" toggleable>
+                <p className="m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </Panel>
+        </>
     )
 }
         `,
         typescript: `
-import React from 'react'; 
+import React, { useRef } from 'react';
 import { Button } from '@mantle-ui/react/button';
 import { Panel } from '@mantle-ui/react/panel';
 
 export default function ToggleableDemo() {
     const ref = useRef<Panel>(null);
     return (
-        <Button label="Toggle" className="m-2" onClick={() => ref.current?.toggle()} />
-        <Button label="Expand" className="m-2" onClick={() => ref.current?.expand()} />
-        <Button label="Collapse" className="m-2" onClick={() => ref.current?.collapse()} />
-        <Panel ref={ref} header="Header" toggleable>
-            <p className="m-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </Panel>
+        <>
+            <Button label="Toggle" className="m-2" onClick={() => ref.current?.toggle()} />
+            <Button label="Expand" className="m-2" onClick={() => ref.current?.expand()} />
+            <Button label="Collapse" className="m-2" onClick={() => ref.current?.collapse()} />
+            <Panel ref={ref} header="Header" toggleable>
+                <p className="m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </Panel>
+        </>
     )
 }
         `

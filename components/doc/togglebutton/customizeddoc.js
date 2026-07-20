@@ -39,7 +39,8 @@ export default function CustomizedDemo() {
                 checked={checked} onChange={(e:  ToggleButtonChangeEvent) => setChecked(e.value)} className="w-9rem" />
         </div>
     );
-    `
+}
+        `
     };
 
     return (

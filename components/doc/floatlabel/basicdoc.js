@@ -26,7 +26,7 @@ export default function BasicDemo() {
         <div className="card flex justify-content-center">
             <FloatLabel>
                 <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
-                <label htmlFor"username">Username</label>
+                <label htmlFor="username">Username</label>
             </FloatLabel>
         </div>
     )

@@ -53,8 +53,10 @@ export default function CommandDemo() {
     ];
 
     return (
-        <Menu model={items} />
-        <Toast ref={toast} />
+        <>
+            <Menu model={items} />
+            <Toast ref={toast} />
+        </>
     )
 }
         `,
@@ -85,8 +87,10 @@ export default function CommandDemo() {
     ];
 
     return (
-        <Menu model={items} />
-        <Toast ref={toast} />
+        <>
+            <Menu model={items} />
+            <Toast ref={toast} />
+        </>
     )
 }
         `

@@ -21,11 +21,12 @@ export default function LifeCyleDemo() {
             useUnmountEffect: () => {
                 //panel unmounted
             }
+        }
     };
 
     return (
         <div className="card">
-            <Panel header="Header" pt={panelPT}>
+            <Panel header="Header" pt={panelPt}>
                 Content
             </Panel>
         </div>
@@ -45,11 +46,12 @@ export default function LifeCyleDemo() {
             useUnmountEffect: () => {
                 //panel unmounted
             }
+        }
     };
     
     return (
         <div className="card">
-            <Panel header="Header" pt={panelPT}>
+            <Panel header="Header" pt={panelPt}>
                 Content
             </Panel>
         </div>

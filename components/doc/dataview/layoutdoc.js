@@ -328,7 +328,7 @@ export default function BasicDemo() {
             return;
         }
 
-        if (layout === 'list') return listItem(product: Product, index);
+        if (layout === 'list') return listItem(product, index);
         else if (layout === 'grid') return gridItem(product);
     };
 

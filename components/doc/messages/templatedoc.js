@@ -76,7 +76,7 @@ export default function TemplateDemo() {
     const msgs = useRef<Messages>(null);
 
     useMountEffect(() => {
-        msgs.current>.clear();
+        msgs.current?.clear();
         msgs.current?.show({
             severity: 'info', sticky: true, content: (
                 <React.Fragment>

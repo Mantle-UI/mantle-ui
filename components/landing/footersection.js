@@ -34,11 +34,6 @@ const FooterSection = () => {
                         <ul className="list-none p-0 m-0">
                             <li className="font-bold mt-5 lg:mt-0 mb-5">Resources</li>
                             <li className="mb-4">
-                                <a href="https://www.youtube.com/channel/UCTgmp69aBOlLnPEqlUyetWw" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
-                                    Videos
-                                </a>
-                            </li>
-                            <li className="mb-4">
                                 <a href="https://github.com/Mantle-UI/mantle-ui/releases" className="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" target="_blank" rel="noopener noreferrer">
                                     Releases
                                 </a>

@@ -447,15 +447,12 @@ export const Password = React.memo(
         const icon = createIcon();
         const panel = createPanel();
 
-        const rootProps = mergeProps(
-            ptm('root'),
-            {
-                ref: elementRef,
-                id: props.id,
-                className: classNames(props.className, cx('root', { isFilled, focusedState })),
-                style: props.style
-            }
-        );
+        const rootProps = mergeProps(ptm('root'), {
+            ref: elementRef,
+            id: props.id,
+            className: classNames(props.className, cx('root', { isFilled, focusedState })),
+            style: props.style
+        });
 
         const inputTextProps = mergeProps(
             {

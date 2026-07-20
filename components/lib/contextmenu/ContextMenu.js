@@ -694,7 +694,7 @@ export const ContextMenu = React.memo(
                     onClick: (e) => onMenuClick(e),
                     onMouseEnter: (e) => onMenuMouseEnter(e)
                 },
-                ContextMenuBase.getOtherProps(props),
+                ContextMenuBase.getOtherProps(props)
             );
 
             const transitionProps = mergeProps(

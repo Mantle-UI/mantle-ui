@@ -240,15 +240,12 @@ export const Knob = React.memo(
 
         const text = props.showValue && <text {...labelProps}>{valueToDisplay()}</text>;
 
-        const rootProps = mergeProps(
-            ptm('root'),
-            {
-                ref: elementRef,
-                id: props.id,
-                className: classNames(props.className, cx('root')),
-                style: props.style
-            }
-        );
+        const rootProps = mergeProps(ptm('root'), {
+            ref: elementRef,
+            id: props.id,
+            className: classNames(props.className, cx('root')),
+            style: props.style
+        });
 
         const svgProps = mergeProps(
             {

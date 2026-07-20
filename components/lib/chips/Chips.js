@@ -448,15 +448,12 @@ export const Chips = React.memo(
         const otherProps = ChipsBase.getOtherProps(props);
         const ariaProps = ObjectUtils.reduceKeys(otherProps, DomHandler.ARIA_PROPS);
         const list = createList();
-        const rootProps = mergeProps(
-            {
-                id: props.id,
-                ref: elementRef,
-                className: classNames(props.className, cx('root', { isFilled, focusedState, disabled: props.disabled, invalid: props.invalid })),
-                style: props.style
-            },
-            ptm('root')
-        );
+        const rootProps = mergeProps(ptm('root'), {
+            id: props.id,
+            ref: elementRef,
+            className: classNames(props.className, cx('root', { isFilled, focusedState, disabled: props.disabled, invalid: props.invalid })),
+            style: props.style
+        });
 
         return (
             <>

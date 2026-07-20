@@ -4,11 +4,11 @@ const FeaturesSection = () => {
             <div className="section-header">Features</div>
             <p className="section-detail">
                 <span className="block">Mantle UI builds on the foundations of a widely adopted React component ecosystem and continues that work as an independent, community-maintained library.</span>
-                <span className="block font-semibold animated-text relative white-space-nowrap mx-auto">
-                    <span className="select-none">Built for real production teams</span>
-                </span>
                 <span className="block">Explore the components, themes, and documentation to see whether it fits your stack.</span>
             </p>
+            <div className="flex justify-content-center mt-5 mb-1">
+                <img src="/images/brand/mantle-guardian.png" alt="Mantle guardian mascot" className="w-10rem" />
+            </div>
             <div className=" mt-7 px-3 lg:px-8">
                 <div className="features-container">
                     <div className="grid">
@@ -28,7 +28,7 @@ const FeaturesSection = () => {
                         </div>
                         <div className="col-12 md:col-6 xl:col-3 flex justify-content-center">
                             <div className="box p-4 w-full animation-duration-500">
-                                <img src="/images/brand/mantle-guardian.png" alt="Mantle guardian mascot" className="block mb-3 w-6rem" />
+                                <img src="https://primefaces.org/cdn/primereact/images/landing/features/icon-community.svg" alt="Community icon" className="block mb-3" />
                                 <div className="font-semibold mb-3 text-lg">Community</div>
                                 <p className="m-0 text-secondary font-medium">Connect with other open source users, collaborate on improvements, and help shape Mantle UI.</p>
                                 <a href="https://discord.gg/BGs6EkpnDv" target="_blank" rel="noopener noreferrer" className="inline-flex align-items-center gap-2 mt-3 text-primary font-semibold">

@@ -635,11 +635,6 @@
                 {
                     "name": "CSS Layer",
                     "to": "/guides/csslayer"
-                },
-                {
-                    "name": "Videos",
-                    "icon": "pi pi-youtube",
-                    "href": "https://www.youtube.com/channel/UCTgmp69aBOlLnPEqlUyetWw"
                 }
             ]
         },

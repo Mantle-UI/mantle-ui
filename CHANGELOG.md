@@ -1,5 +1,20 @@
 # Changelog
 
+## [10.10.6](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.5...v10.10.6) (2026-07-20)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.5...v10.10.6)
+
+## Bug Fixes
+
+- fix(AutoComplete): support IconField iconPosition [#370](https://github.com/Mantle-UI/mantle-ui/pull/370) (issues: #218)
+- fix: preserve Tailwind classes in passthrough [#372](https://github.com/Mantle-UI/mantle-ui/pull/372) (issues: #195)
+- fix(MultiSelect): improve keyboard navigation [#374](https://github.com/Mantle-UI/mantle-ui/pull/374) (issues: #181)
+## Other Changes
+
+- build(deps): bump actions/setup-node from 6 to 7 [#371](https://github.com/Mantle-UI/mantle-ui/pull/371)
+- fix(Calendar): navigate overlay days across rows [#373](https://github.com/Mantle-UI/mantle-ui/pull/373) (issues: #192)
+- Fix various syntax, typing, and JSX errors in documentation examples [#375](https://github.com/Mantle-UI/mantle-ui/pull/375)
+
 ## [10.10.5](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.4...v10.10.5) (2026-07-16)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.4...v10.10.5)

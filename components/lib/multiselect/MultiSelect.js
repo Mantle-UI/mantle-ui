@@ -17,7 +17,7 @@ export const MultiSelect = React.memo(
         const mergeProps = useMergeProps();
         const context = React.useContext(MantleContext);
         const props = MultiSelectBase.getProps(inProps, context);
-        const [focusedOptionIndex, setFocusedOptionIndex] = React.useState(null);
+        const [focusedOptionIndex, setFocusedOptionIndex] = React.useState(-1);
         const [clicked, setClicked] = React.useState(false);
         const [filterValue, filterState, setFilterState] = useDebounce('', props.filterDelay || 0);
         const [startRangeIndex, setStartRangeIndex] = React.useState(-1);
@@ -163,9 +163,17 @@ export const MultiSelect = React.memo(
         const onArrowDownKey = (event) => {
             if (!overlayVisibleState) {
                 show();
-                props.editable && changeFocusedOptionIndex(event, findSelectedOptionIndex());
+                changeFocusedOptionIndex(event, findFirstOptionIndex());
             } else {
-                const optionIndex = focusedOptionIndex !== -1 ? findNextOptionIndex(focusedOptionIndex) : clicked ? findFirstOptionIndex() : findFirstFocusedOptionIndex();
+                let optionIndex;
+
+                if (focusedOptionIndex !== -1) {
+                    optionIndex = findNextOptionIndex(focusedOptionIndex);
+                } else {
+                    const pressedInOverlay = event.currentTarget !== inputRef.current;
+
+                    optionIndex = pressedInOverlay ? findFirstOptionIndex() : findFirstFocusedOptionIndex();
+                }
 
                 if (event.shiftKey) {
                     onOptionSelectRange(event, startRangeIndex, optionIndex);
@@ -186,7 +194,15 @@ export const MultiSelect = React.memo(
                 overlayVisibleState && hide();
                 event.preventDefault();
             } else {
-                const optionIndex = focusedOptionIndex !== -1 ? findPrevOptionIndex(focusedOptionIndex) : clicked ? findLastOptionIndex() : findLastFocusedOptionIndex();
+                let optionIndex;
+
+                if (focusedOptionIndex !== -1) {
+                    optionIndex = findPrevOptionIndex(focusedOptionIndex);
+                } else {
+                    const pressedInOverlay = event.currentTarget !== inputRef.current;
+
+                    optionIndex = pressedInOverlay ? findLastOptionIndex() : findLastFocusedOptionIndex();
+                }
 
                 changeFocusedOptionIndex(event, optionIndex);
 
@@ -308,6 +324,28 @@ export const MultiSelect = React.memo(
                     break;
 
                 case 'Space':
+                    if (props.inline) {
+                        break;
+                    }
+
+                    if (event.currentTarget !== inputRef.current && focusedOptionIndex === -1) {
+                        const panelElement = overlayRef.current;
+                        const wrapperElement = panelElement && panelElement.querySelector('.p-multiselect-items-wrapper');
+
+                        if (wrapperElement) {
+                            const pageAmount = Math.max(1, wrapperElement.clientHeight - 40);
+                            const delta = event.shiftKey ? -pageAmount : pageAmount;
+
+                            wrapperElement.scrollTop = Math.max(0, Math.min(wrapperElement.scrollTop + delta, wrapperElement.scrollHeight - wrapperElement.clientHeight));
+                        }
+
+                        event.preventDefault();
+                        event.stopPropagation();
+                        break;
+                    }
+
+                    onEnterKey(event);
+                    break;
                 case 'NumpadEnter':
                 case 'Enter':
                     if (props.inline) {
@@ -349,6 +387,8 @@ export const MultiSelect = React.memo(
                     }
 
                     hide();
+                    DomHandler.focus(inputRef.current);
+                    event.preventDefault();
                     break;
 
                 case 'Tab':
@@ -507,22 +547,36 @@ export const MultiSelect = React.memo(
             props.onFilter && props.onFilter({ filter: '' });
         };
 
-        const scrollInView = (event) => {
-            if (!overlayVisibleState) {
+        const scrollInView = (index = focusedOptionIndex) => {
+            if (!overlayVisibleState || index === -1) {
                 return;
             }
 
-            let focusedItem;
+            setTimeout(() => {
+                const panelElement = overlayRef.current;
 
-            if (event) {
-                focusedItem = event.currentTarget;
-            } else {
-                focusedItem = DomHandler.findSingle(overlayRef.current, 'li[data-p-highlight="true"]');
-            }
+                if (!panelElement) {
+                    return;
+                }
 
-            if (focusedItem && focusedItem.scrollIntoView) {
-                focusedItem.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-            }
+                const wrapperElement = panelElement.querySelector('.p-multiselect-items-wrapper');
+                const itemElement = panelElement.querySelector(`[data-p-index="${index}"]`);
+
+                if (wrapperElement && itemElement) {
+                    const wrapperRect = wrapperElement.getBoundingClientRect();
+                    const itemRect = itemElement.getBoundingClientRect();
+                    const overScrollUp = wrapperRect.top - itemRect.top;
+                    const overScrollDown = itemRect.bottom - wrapperRect.bottom;
+
+                    if (overScrollUp > 0) {
+                        wrapperElement.scrollTop -= overScrollUp;
+                    } else if (overScrollDown > 0) {
+                        wrapperElement.scrollTop += overScrollDown;
+                    }
+                } else if (itemElement && itemElement.scrollIntoView) {
+                    itemElement.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+                }
+            }, 0);
         };
 
         const show = () => {
@@ -833,7 +887,7 @@ export const MultiSelect = React.memo(
         const changeFocusedOptionIndex = (event, index) => {
             if (focusedOptionIndex !== index) {
                 setFocusedOptionIndex(index);
-                scrollInView(event);
+                scrollInView(index);
 
                 if (props.selectOnFocus) {
                     onOptionSelect(event, visibleOptions[index], false);
@@ -1075,6 +1129,12 @@ export const MultiSelect = React.memo(
             }
         }, [overlayVisibleState, filterState, hasFilter]);
 
+        useUpdateEffect(() => {
+            if (overlayVisibleState && focusedOptionIndex !== -1) {
+                scrollInView(focusedOptionIndex);
+            }
+        }, [focusedOptionIndex, overlayVisibleState]);
+
         useUnmountEffect(() => {
             ZIndexUtils.clear(overlayRef.current);
         });
@@ -1232,6 +1292,7 @@ export const MultiSelect = React.memo(
                         updateModel={updateModel}
                         onFilterInputChange={onFilterInputChange}
                         onFilterKeyDown={onFilterKeyDown}
+                        onKeyDown={onKeyDown}
                         resetFilter={resetFilter}
                         onCloseClick={onCloseClick}
                         onSelectAll={onSelectAll}

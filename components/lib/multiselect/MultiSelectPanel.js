@@ -218,7 +218,9 @@ export const MultiSelectPanel = React.memo(
                                     className: classNames(options.className, cx('list', { virtualScrollerProps: props.virtualScrollerOptions })),
                                     role: 'listbox',
                                     'aria-multiselectable': true,
-                                    id: props.listId
+                                    id: props.listId,
+                                    tabIndex: 0,
+                                    onKeyDown: props.onKeyDown
                                 },
                                 getPTOptions('list')
                             );
@@ -236,7 +238,9 @@ export const MultiSelectPanel = React.memo(
             const wrapperProps = mergeProps(
                 {
                     className: cx('wrapper'),
-                    style: { maxHeight: props.scrollHeight }
+                    style: { maxHeight: props.scrollHeight },
+                    tabIndex: 0,
+                    onKeyDown: props.onKeyDown
                 },
                 getPTOptions('wrapper')
             );

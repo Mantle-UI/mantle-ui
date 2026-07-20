@@ -11,6 +11,10 @@ Mantle UI is an independent community-maintained React component library continu
 
 Mantle UI is not affiliated with PrimeTek, PrimeReact, or ngrok.
 
+## Community
+
+Need help, want to talk about Mantle UI, or interested in contributing? Join our [Discord community](https://discord.gg/BGs6EkpnDv).
+
 ## Download
 
 Mantle UI is published as [`@mantle-ui/react`](https://www.npmjs.com/package/@mantle-ui/react).

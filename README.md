@@ -1,153 +1,232 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub](https://img.shields.io/badge/GitHub-Mantle--UI%2Fmantle--ui-181717?logo=github)](https://github.com/Mantle-UI/mantle-ui)
-[![npm package](https://img.shields.io/badge/npm-%40mantle--ui%2Freact-CB3837?logo=npm)](https://www.npmjs.com/package/@mantle-ui/react)
-![NPM Downloads](https://img.shields.io/npm/dm/@mantle-ui/react??color=purple)
+[![npm](https://img.shields.io/npm/v/@mantle-ui/react?label=%40mantle-ui%2Freact&logo=npm)](https://www.npmjs.com/package/@mantle-ui/react)
+[![npm downloads](https://img.shields.io/npm/dm/@mantle-ui/react)](https://www.npmjs.com/package/@mantle-ui/react)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-[![Mantle UI](https://github.com/Mantle-UI/mantle-ui/raw/main/public/images/mantle-logo-text.png)](https://github.com/Mantle-UI/mantle-ui)
+<p align="center">
+  <a href="https://mantle-ui.github.io/mantle-ui/">
+    <img
+      src="https://github.com/Mantle-UI/mantle-ui/raw/main/public/images/mantle-logo-text.png"
+      alt="Mantle UI"
+    />
+  </a>
+</p>
+
+<p align="center">
+  A community-maintained continuation of the MIT-licensed PrimeReact v10 component library.
+</p>
+
+<p align="center">
+  <a href="https://mantle-ui.github.io/mantle-ui/">Documentation</a>
+  ·
+  <a href="https://www.npmjs.com/package/@mantle-ui/react">npm</a>
+  ·
+  <a href="https://github.com/Mantle-UI/mantle-ui/releases">Releases</a>
+  ·
+  <a href="https://github.com/Mantle-UI/mantle-ui/issues">Issues</a>
+  ·
+  <a href="https://github.com/Mantle-UI/mantle-ui/discussions">Discussions</a>
+  ·
+  <a href="https://discord.gg/BGs6EkpnDv">Discord</a>
+  ·
+  <a href="https://opencollective.com/mantle-ui">Open Collective</a>
+</p>
 
 # Mantle UI
 
-Mantle UI is an independent community-maintained React component library continued from the MIT-licensed [PrimeReact v10](https://github.com/primefaces/primereact) codebase.
+Mantle UI is an independent, community-maintained React UI component library based on the MIT-licensed [PrimeReact v10](https://github.com/primefaces/primereact) codebase.
+
+The project exists to provide PrimeReact v10 users with a stable, open-source path forward. Mantle UI preserves the familiar component APIs and development model while continuing maintenance, bug fixes, accessibility improvements, documentation, and compatibility work in the open.
 
 Mantle UI is not affiliated with PrimeTek, PrimeReact, or ngrok.
 
-## Community
+## Why Mantle UI?
 
-Need help, want to talk about Mantle UI, or interested in contributing? Join our [Discord community](https://discord.gg/BGs6EkpnDv).
+- Community-driven and independently maintained
+- Based on the established PrimeReact v10 codebase
+- Published under the MIT License
+- More than 80 React UI components
+- Styled and unstyled modes
+- Available on npm
+- Includes an automated migration CLI
+- Developed transparently on GitHub
 
-## Download
+## Installation
 
-Mantle UI is published as [`@mantle-ui/react`](https://www.npmjs.com/package/@mantle-ui/react).
+Install Mantle UI using your preferred package manager:
 
-For local package testing, build the library first and pack the publishable output from `dist/` rather than packing the repository root.
-
-```
-# Using npm
+```bash
 npm install @mantle-ui/react
-
-# Using yarn
-yarn add @mantle-ui/react
-
-# Using pnpm
-pnpm add @mantle-ui/react
-
-# Using bun
-bun install @mantle-ui/react
 ```
 
-## Import
+```bash
+pnpm add @mantle-ui/react
+```
 
-Each component can be imported individually so that you only bundle what you use. Import path is available in the documentation of the corresponding component.
+```bash
+yarn add @mantle-ui/react
+```
 
-```javascript
-// import { ComponentName } from '@mantle-ui/react/{componentname}';
+```bash
+bun add @mantle-ui/react
+```
+
+## Basic Usage
+
+Components can be imported individually:
+
+```tsx
 import { Button } from '@mantle-ui/react/button';
 
-export default function MyComponent() {
+export default function Example() {
     return <Button label="Mantle UI" />;
 }
 ```
 
-## Theming
+See the [documentation](https://mantle-ui.github.io/mantle-ui/) for component examples, APIs, theming, and configuration.
 
-Mantle UI has two theming modes; styled or unstyled.
+## Migrating from PrimeReact
 
-**Styled Mode**
+Mantle UI includes a migration CLI that rewrites source imports from `primereact` to `@mantle-ui/react`.
 
-Styled mode is based on pre-skinned components with opinionated themes. Import the theme and core styles from the package resources.
+The migration only updates source imports. It does not modify `package.json` or lockfiles.
 
-```javascript
-// theme
-import '@mantle-ui/react/resources/themes/lara-light-cyan/theme.css';
-import '@mantle-ui/react/resources/mantle-ui-react.css';
+### 1. Install Mantle UI
+
+```bash
+npm install @mantle-ui/react
 ```
 
-**Unstyled Mode**
+### 2. Preview the migration
 
-Unstyled mode is disabled by default for all components. Using the Mantle UI context, set `unstyled` as true to enable it globally.
+Run the migration in dry-run mode first:
 
-## Migration From PrimeReact
+```bash
+npm exec mantleui migrate -- --dry-run
+```
 
-Mantle UI includes a migration CLI that rewrites `primereact` imports to `@mantle-ui/react`. It only updates source imports and does not modify `package.json` or lockfiles.
-The CLI is included in the published package and in the built `dist/` package output.
-
-If `@mantle-ui/react` is already installed in the project, run it from the project root with your package manager:
+### 3. Apply the migration
 
 ```bash
 npm exec mantleui migrate
+```
+
+The CLI is also available with pnpm and Yarn:
+
+```bash
 pnpm exec mantleui migrate
 yarn mantleui migrate
 ```
 
-Without installing first, you can run it directly from the published package:
+You can also run it directly without installing the package first:
 
 ```bash
 npx --package @mantle-ui/react mantleui migrate
 ```
 
-Useful options:
+To migrate a different project directory:
 
 ```bash
-# target a different project directory
 npm exec mantleui migrate -- --dir ./my-app
-
-# preview changes without writing files
-npm exec mantleui migrate -- --dry-run
 ```
 
-If you copy the script into another project manually, keep the `.cjs` extension so it also works in projects using `"type": "module"`.
+After running the CLI, review the generated changes and test your application before deploying them.
 
-## Releasing
+## Theming
 
-Mantle UI uses a manual GitHub Actions release workflow. Maintainers do not edit the version by hand and do not publish to npm directly from a local machine.
+Mantle UI supports styled and unstyled usage.
 
-Start the `Release` workflow from GitHub Actions on the `main` branch. The workflow will:
+### Styled mode
 
-- inspect merged pull requests since the latest Git tag
-- resolve linked issues from both PR body references like `fixes #123` and GitHub-linked issue relationships
-- calculate the next version automatically
-- update `package.json` and `package-lock.json`
-- commit the release as `chore(release): vX.Y.Z`
-- create and push the `vX.Y.Z` tag
-- create the GitHub Release
+Import a theme and the core Mantle UI stylesheet:
 
-The existing npm publish workflow is triggered by that GitHub Release and publishes `@mantle-ui/react` via trusted publishing.
-
-Before the workflow does any release work, it checks `github.actor` against the `RELEASE_ALLOWED_ACTORS` repository variable. Configure that variable as a comma-separated or newline-separated list of allowed GitHub usernames.
-The release job is also attached to the protected `release` environment, so GitHub environment rules and reviewers are enforced before the job proceeds.
-The workflow pushes and creates the release as a dedicated GitHub App, not as `github-actions[bot]`. Configure the app before first use:
-
-- create and install a GitHub App for this repository
-- grant it at least `Contents: Read & Write`, `Pull requests: Read`, and `Issues: Read`
-- add that GitHub App to the `main` ruleset bypass list
-- set repository variable `RELEASE_APP_CLIENT_ID`
-- set repository secret `RELEASE_APP_PRIVATE_KEY`
-
-### Release Version Rules
-
-- `breaking-change` label on the PR or on any linked issue => major release
-- linked issue type `feature` => minor release
-- linked issue type `bug` => patch release
-
-Priority is:
-
-```txt
-breaking-change > feature > bug
+```tsx
+import '@mantle-ui/react/resources/themes/lara-light-cyan/theme.css';
+import '@mantle-ui/react/resources/mantle-ui-react.css';
 ```
 
-If no relevant release signal exists since the latest tag, the release workflow fails without creating a release.
+### Unstyled mode
 
-### PR Linking Convention
+Unstyled mode allows components to be used without the default component styling. It can be enabled globally through the Mantle UI context.
 
-To make release detection reliable, pull requests should either:
+See the [theming documentation](https://mantle-ui.github.io/mantle-ui/) for details.
 
-- include closing references in the PR body, for example `Fixes #123`
-- or be linked to issues using GitHub's linked issue relationship
+## Project Status
 
-The PR title does not affect version calculation.
+Mantle UI is under active community development.
+
+The current focus is on:
+
+- maintaining compatibility for existing PrimeReact v10 users
+- reviewing and resolving inherited issues
+- fixing bugs and improving stability
+- improving accessibility
+- keeping the library compatible with the modern React ecosystem
+- improving documentation and migration guidance
+- building a sustainable contributor community
+
+Please review the latest [releases](https://github.com/Mantle-UI/mantle-ui/releases) before adopting Mantle UI in production.
+
+## Reporting Bugs
+
+Before opening an issue:
+
+1. Search the existing [issues](https://github.com/Mantle-UI/mantle-ui/issues).
+2. Confirm that the problem occurs with the latest Mantle UI release.
+3. Provide a minimal reproduction whenever possible.
+4. Include your Mantle UI, React, browser, and package-manager versions.
+
+Use GitHub Issues for reproducible bugs and clearly defined implementation tasks.
+
+For usage questions, ideas, feedback, and general conversation, use [GitHub Discussions](https://github.com/Mantle-UI/mantle-ui/discussions) or join our [Discord community](https://discord.gg/BGs6EkpnDv).
+
+## Contributing
+
+Contributions are welcome.
+
+You can help by:
+
+- reporting and reproducing bugs
+- reviewing inherited PrimeReact v10 issues
+- improving documentation
+- fixing accessibility problems
+- submitting code changes
+- testing releases
+- answering community questions
+
+Before starting substantial work, please open or join an issue so the proposed approach can be discussed.
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, contribution guidelines, and the pull request process.
+
+## Funding
+
+Mantle UI is developed and maintained by the community.
+
+Financial support helps fund ongoing development, maintenance, bug fixes, accessibility improvements, documentation, infrastructure, contributor work, and community initiatives.
+
+You can support the project through [Open Collective](https://opencollective.com/mantle-ui).
+
+Mantle UI is fiscally hosted by the [Open Source Collective](https://oscollective.org/).
+
+See [FUNDING.md](FUNDING.md) for details about funding, expenses, transparency, and sponsored development.
+
+## License
+
+Mantle UI is available under the [MIT License](LICENSE).
+
+The project is derived from the MIT-licensed PrimeReact v10 codebase. Relevant copyright and attribution notices are preserved in accordance with the license.
+
+## Community
+
+- [Documentation](https://mantle-ui.github.io/mantle-ui/)
+- [GitHub Discussions](https://github.com/Mantle-UI/mantle-ui/discussions)
+- [Discord](https://discord.gg/BGs6EkpnDv)
+- [Open Collective](https://opencollective.com/mantle-ui)
 
 ## Contributors
 
 <a href="https://github.com/Mantle-UI/mantle-ui/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Mantle-UI/mantle-ui" />
+  <img
+    src="https://contrib.rocks/image?repo=Mantle-UI/mantle-ui"
+    alt="Mantle UI contributors"
+  />
 </a>

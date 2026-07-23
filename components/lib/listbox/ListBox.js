@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FilterService, MantleContext, localeOption } from '../api/Api';
+import { ariaLabel, FilterService, MantleContext, localeOption } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps, useMountEffect } from '../hooks/Hooks';
 import { Tooltip } from '../tooltip/Tooltip';
@@ -822,6 +822,7 @@ export const ListBox = React.memo(
                                     className: ptCallbacks.cx('list', { options }),
                                     role: 'listbox',
                                     tabIndex: '-1',
+                                    'aria-label': ariaLabel('listLabel'),
                                     'aria-multiselectable': props.multiple,
                                     onFocus: onListFocus,
                                     onBlur: onListBlur,
@@ -846,6 +847,7 @@ export const ListBox = React.memo(
                     ref: listRef,
                     className: ptCallbacks.cx('list'),
                     role: 'listbox',
+                    'aria-label': ariaLabel('listLabel'),
                     'aria-multiselectable': props.multiple,
                     tabIndex: '-1',
                     onFocus: onListFocus,

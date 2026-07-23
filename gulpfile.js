@@ -4,7 +4,27 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglifycss = require('gulp-uglifycss'),
     rename = require('gulp-rename'),
-    flatten = require('gulp-flatten');
+    flatten = require('gulp-flatten'),
+    Transform = require('stream').Transform,
+    rootPackage = require('./package.json');
+
+function addPackageVersion() {
+    return new Transform({
+        objectMode: true,
+        transform: function (file, encoding, callback) {
+            try {
+                var packageJson = JSON.parse(file.contents.toString());
+
+                packageJson.version = rootPackage.version;
+                file.contents = Buffer.from(JSON.stringify(packageJson, null, 4) + '\n');
+
+                callback(null, file);
+            } catch (error) {
+                callback(error);
+            }
+        }
+    });
+}
 
 /** @deprecated */
 gulp.task('build-css', function () {
@@ -76,7 +96,7 @@ gulp.task('copy-d.ts', function () {
 });
 
 gulp.task('copy-package.json', function () {
-    return gulp.src(process.env.INPUT_DIR + '**/package.json').pipe(gulp.dest('./' + process.env.OUTPUT_DIR));
+    return gulp.src(process.env.INPUT_DIR + '**/package.json').pipe(addPackageVersion()).pipe(gulp.dest('./' + process.env.OUTPUT_DIR));
 });
 
 gulp.task('copy-bin', function () {

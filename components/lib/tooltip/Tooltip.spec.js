@@ -71,6 +71,26 @@ describe('Tooltip', () => {
         fireEvent.mouseLeave(input);
         expect(screen.queryByText(tooltipText)).toBeNull();
     });
+    test('when using ReactNode content it renders the node', async () => {
+        // Arrange
+        const { container } = render(
+            <MantleProvider>
+                <Tooltip target=".tooltip-target" content={<strong>Rich tooltip content</strong>} />
+                <button className="tooltip-target" type="button">
+                    Target
+                </button>
+            </MantleProvider>
+        );
+        const target = container.getElementsByClassName('tooltip-target')[0];
+
+        // Act
+        fireEvent.mouseEnter(target);
+
+        // Assert
+        await waitFor(() => screen.getByText('Rich tooltip content'));
+        expect(screen.getByText('Rich tooltip content')).toBeVisible();
+        expect(screen.queryByText('[object Object]')).toBeNull();
+    });
     test('when using tooltip with event focus it is displayed on events focus and blur', async () => {
         // Arrange
         const tooltipText = /Focus Blur/i;

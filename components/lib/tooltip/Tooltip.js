@@ -64,10 +64,6 @@ export const Tooltip = React.memo(
             when: visibleState
         });
 
-        const isTargetContentEmpty = (target) => {
-            return !(props.content || getTargetOption(target, 'tooltip'));
-        };
-
         const isContentEmpty = (target) => {
             return !(props.content || getTargetOption(target, 'tooltip') || props.children);
         };
@@ -132,16 +128,10 @@ export const Tooltip = React.memo(
         };
 
         const updateText = (target, callback) => {
-            if (textRef.current) {
-                const content = getTargetOption(target, 'tooltip') || props.content;
+            const content = getTargetOption(target, 'tooltip') || props.content || props.children;
 
-                if (content) {
-                    textRef.current.innerHTML = ''; // remove children
-                    textRef.current.appendChild(document.createTextNode(content));
-                    callback();
-                } else if (props.children) {
-                    callback();
-                }
+            if (content) {
+                callback();
             }
         };
 
@@ -518,7 +508,7 @@ export const Tooltip = React.memo(
         }));
 
         const createElement = () => {
-            const empty = isTargetContentEmpty(currentTargetRef.current);
+            const content = getTargetOption(currentTargetRef.current, 'tooltip') || props.content || props.children;
             const rootProps = mergeProps(
                 ptm('root'),
                 {
@@ -552,7 +542,7 @@ export const Tooltip = React.memo(
                 <div ref={elementRef} {...rootProps}>
                     <div {...arrowProps} />
                     <div ref={textRef} {...textProps}>
-                        {empty && props.children}
+                        {content}
                     </div>
                 </div>
             );

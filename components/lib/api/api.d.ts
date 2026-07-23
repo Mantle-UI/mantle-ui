@@ -678,7 +678,7 @@ export interface MantleUIPTOptions {
 }
 
 /**
- * @deprecated since version 9.6.0. Use MantleContext instead.
+ * MantleUI for APIOptions (or use MantleContext instead).
  */
 declare const MantleUI: APIOptions;
 

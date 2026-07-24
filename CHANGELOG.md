@@ -1,5 +1,22 @@
 # Changelog
 
+## [10.10.7](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.6...v10.10.7) (2026-07-24)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.6...v10.10.7)
+
+## Bug Fixes
+
+- Add accessible name to ListBox [#384](https://github.com/Mantle-UI/mantle-ui/pull/384) (issues: #138)
+## Other Changes
+
+- Update FUNDING.MD [#377](https://github.com/Mantle-UI/mantle-ui/pull/377)
+- Create FUNDING.yml [#378](https://github.com/Mantle-UI/mantle-ui/pull/378)
+- Update README.md [#380](https://github.com/Mantle-UI/mantle-ui/pull/380)
+- Removed deprecation for MantleUI [#381](https://github.com/Mantle-UI/mantle-ui/pull/381)
+- Add version metadata to subpackages [#382](https://github.com/Mantle-UI/mantle-ui/pull/382) (issues: #187)
+- chore: update api docs [#383](https://github.com/Mantle-UI/mantle-ui/pull/383)
+- Render ReactNode tooltip content [#385](https://github.com/Mantle-UI/mantle-ui/pull/385) (issues: #159)
+
 ## [10.10.6](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.5...v10.10.6) (2026-07-20)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.5...v10.10.6)

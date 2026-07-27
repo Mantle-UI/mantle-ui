@@ -1,6 +1,7 @@
 [![npm](https://img.shields.io/npm/v/@mantle-ui/react?label=%40mantle-ui%2Freact&logo=npm)](https://www.npmjs.com/package/@mantle-ui/react)
 [![npm downloads](https://img.shields.io/npm/dm/@mantle-ui/react)](https://www.npmjs.com/package/@mantle-ui/react)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![Discord Chat](https://img.shields.io/discord/1524174660386820177?label=Discord&logo=discord)](https://discord.gg/BGs6EkpnDv)
 
 <p align="center">
   <a href="https://mantle-ui.github.io/mantle-ui/">

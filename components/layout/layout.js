@@ -5,6 +5,7 @@ import Menu from '@/components/layout/menu';
 import Topbar from '@/components/layout/topbar';
 import { MantleContext } from '@/components/lib/api/MantleContext';
 import { DomHandler, classNames } from '@/components/lib/utils/Utils';
+import { withBasePath } from '@/components/utils/utils';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
@@ -75,7 +76,7 @@ export default function Layout({ children }) {
                 <meta property="og:description" content="Mantle UI is a flexible and accessible React component library." />
                 <meta property="og:image" content="/images/mantle-ui-logo.png" />
                 <meta property="og:ttl" content="604800" />
-                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+                <link rel="icon" href={withBasePath('/favicon.svg')} type="image/svg+xml" />
             </Head>
             <Topbar showConfigurator showMenuButton onMenuButtonClick={() => setSidebarActive(true)} onConfigButtonClick={() => setConfigActive(true)} onDarkSwitchClick={toggleDarkMode} />
             <div className={classNames('layout-mask', { 'layout-mask-active': sidebarActive })} onClick={() => setSidebarActive(false)} />

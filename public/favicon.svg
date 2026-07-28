@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 300" role="img" aria-label="Mantle UI M logo icon">
+    <defs>
+        <linearGradient id="blueGrad" x1="38" y1="15" x2="291" y2="206" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#5F66F6" />
+            <stop offset="100%" stop-color="#4E57E8" />
+        </linearGradient>
+        <linearGradient id="navyGrad" x1="90" y1="123" x2="241" y2="229" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#33415C" />
+            <stop offset="100%" stop-color="#243455" />
+        </linearGradient>
+        <linearGradient id="tealGrad" x1="39" y1="187" x2="290" y2="276" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#18C7BA" />
+            <stop offset="100%" stop-color="#14B8A6" />
+        </linearGradient>
+    </defs>
+    <path fill="url(#blueGrad)" d="M38 15v191l40-28 1-78 85 60 86-60 2 76 39 30V16l-127 89z" />
+    <path fill="url(#navyGrad)" d="M90 123l-1 51 76 55 76-54v-52l-76 53z" />
+    <path fill="url(#tealGrad)" d="M39 277v-57l48-33 39 28zM205 216l40-29 45 33v56z" />
+</svg>

@@ -7,7 +7,7 @@ export default function Document() {
             <Head>
                 {/* eslint-disable */}
                 <meta name="algolia-site-verification" content="D315CFBBFC16F186" />
-                <link href={withBasePath('/favicon.ico')} rel="icon" type="image/x-icon"></link>
+                <link href={withBasePath('/favicon.svg')} rel="icon" type="image/svg+xml"></link>
                 <link id="theme-link" href={withBasePath('/themes/lara-dark-cyan/theme.css')} rel="stylesheet"></link>
                 <link id="home-table-link" href={withBasePath('/styles/landing/themes/lara-dark-cyan/theme.css')} rel="stylesheet"></link>
                 <link rel="stylesheet" href={withBasePath('/styles/flags.css')}></link>

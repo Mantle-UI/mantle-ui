@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { DocSectionCode } from '@/components/doc/common/docsectioncode';
 import { DocSectionText } from '@/components/doc/common/docsectiontext';
 import { useMountEffect } from '@/components/lib/hooks/Hooks';

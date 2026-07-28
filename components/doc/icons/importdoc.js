@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function ImportDoc(props) {
     const code = {
         basic: `
-import 'primeicons/primeicons.css';
+import '@mantle-ui/icons/primeicons.css';
         `
     };
 

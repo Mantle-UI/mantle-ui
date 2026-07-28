@@ -10,7 +10,7 @@ export function MultipleDoc(props) {
 
     useEffect(() => {
         NodeService.getTreeNodes().then((data) => setNodes(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const introCode = {
         basic: `

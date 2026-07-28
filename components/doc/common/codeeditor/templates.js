@@ -67,7 +67,7 @@ const getConfiguredDependencies = (isUnstyled, isTypeScript) => {
         'react-dom': app_dependencies['react-dom'] || 'latest',
         'react-transition-group': app_dependencies['react-transition-group'] || 'latest',
         '@mantle-ui/react': MantleUI.version || 'latest', // latest
-        primeicons: app_dependencies.primeicons || 'latest',
+        '@mantle-ui/icons': app_dependencies['@mantle-ui/icons'] || 'latest',
         vite: 'latest',
         '@vitejs/plugin-react': 'latest',
         ...(isTypeScript ? typeScriptDependencies : '')
@@ -84,7 +84,7 @@ const getConfiguredDependencies = (isUnstyled, isTypeScript) => {
 
     return {
         ...defaultDependencies,
-        primeflex: app_dependencies.primeflex || 'latest'
+        '@mantle-ui/flex': app_dependencies['@mantle-ui/flex'] || 'latest'
     };
 };
 
@@ -179,7 +179,7 @@ export default ThemeSwitcher;`
     const mainJsx = {
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'primeicons/primeicons.css';
+import '@mantle-ui/icons/primeicons.css';
 import { MantleProvider } from '@mantle-ui/react/api';
 import Tailwind from '@mantle-ui/react/passthrough/tailwind';
 import ThemeSwitcher from './components/themeSwitcher';
@@ -231,9 +231,9 @@ body {
     const mainJsx = {
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'primeicons/primeicons.css';
+import '@mantle-ui/icons/primeicons.css';
 import { MantleProvider } from '@mantle-ui/react/api';
-import 'primeflex/primeflex.css';
+import '@mantle-ui/flex/mantleflex.css';
 import '@mantle-ui/react/resources/mantle-ui-react.css';
 import '@mantle-ui/react/resources/themes/lara-light-indigo/theme.css';
 

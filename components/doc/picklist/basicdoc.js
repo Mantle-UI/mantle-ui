@@ -10,7 +10,7 @@ export function BasicDoc(props) {
 
     useEffect(() => {
         ProductService.getProductsSmall().then((data) => setSource(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const onChange = (event) => {
         setSource(event.source);

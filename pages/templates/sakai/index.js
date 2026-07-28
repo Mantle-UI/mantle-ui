@@ -33,8 +33,8 @@ const features2Data = [
 const animationFeaturesData1 = [
     {
         id: 1,
-        title: 'PrimeFlex CSS Utilities',
-        description: 'PrimeFlex is a CSS utility library featuring various helpers such as a grid system, flexbox, spacing, elevation and more.',
+        title: 'MantleFlex CSS Utilities',
+        description: 'MantleFlex is a CSS utility library featuring various helpers such as a grid system, flexbox, spacing, elevation and more.',
         src: 'https://primefaces.org/cdn/primereact/images/templates/babylon/features-animation-utilities.png'
     },
     {

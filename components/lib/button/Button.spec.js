@@ -95,7 +95,7 @@ describe('Button', () => {
         const tooltipText = /Jest Tooltip/i;
 
         // tooltip does not exist to start
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
 
         // Act
         fireEvent.mouseEnter(button);
@@ -106,7 +106,7 @@ describe('Button', () => {
 
         // tooltip disappears when we mouse out
         fireEvent.mouseLeave(button);
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
     });
 
     test('when button is clicked ensure onClick is fired', async () => {

@@ -177,11 +177,11 @@ interface TreeSelectPanelHeaderTemplateOptions {
     /**
      * The JSX element that represents the filter of the panel.
      */
-    filterElement: JSX.Element;
+    filterElement: React.JSX.Element;
     /**
      * The JSX element that represents the close of the panel.
      */
-    closeElement: JSX.Element;
+    closeElement: React.JSX.Element;
     /**
      * Style class of the panel close element.
      */
@@ -197,7 +197,7 @@ interface TreeSelectPanelHeaderTemplateOptions {
     /**
      * The JSX element that represents the panel.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of the TreeSelect component.
      */

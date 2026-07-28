@@ -56,7 +56,7 @@ export default function ExampleDemo() {
         <>
             <DocSectionText {...props}>
                 <p>
-                    Here is a sample that provides a style using PrimeFlex CSS library. Before beginning, head over to the pass through section <Link href="/button">button</Link> documentation to learn more about the components internals. We'll be
+                    Here is a sample that provides a style using MantleFlex CSS library. Before beginning, head over to the pass through section <Link href="/button">button</Link> documentation to learn more about the components internals. We'll be
                     using the <i>root</i>, <i>label</i> and <i>icon</i> elements to add a custom style.
                 </p>
             </DocSectionText>

@@ -34,7 +34,7 @@ export function PaginatorBasicDoc(props) {
         }
 
         setNodes(files);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const code = {
         basic: `

@@ -11,7 +11,7 @@ The repository has **two separate build workflows** living side by side:
 1. A Next.js docs/demo site (`pages/`, `components/doc`, `components/demo`, `components/layout`) — this is what's deployed as the public documentation site.
 2. A Rollup + Gulp packaging pipeline (`rollup.config.js`, `gulpfile.js`) that builds the publishable `@mantle-ui/react` package into `dist/` from `components/lib/`.
 
-Install dependencies with `npm install --legacy-peer-deps` (required because `jspdf`/`jspdf-autotable` peer metadata doesn't satisfy npm's default resolver).
+Install dependencies with `npm install`.
 
 ## Common Commands
 

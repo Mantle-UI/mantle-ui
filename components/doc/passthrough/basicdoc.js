@@ -112,7 +112,7 @@ export default function BasicDemo() {
                 </p>
                 <p>
                     Most common usage of <i>pt</i> is styling and customization. The <i>className</i> and <i>style</i> properties support the exact syntax of the corresponding <i>classNames</i> like objects and conditionals. Example below styles a
-                    Panel component with PrimeFlex CSS library.
+                    Panel component with MantleFlex CSS library.
                 </p>
             </DocSectionText>
             <div className="card">

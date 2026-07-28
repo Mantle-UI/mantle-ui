@@ -390,7 +390,7 @@ interface ColumnBodyExpanderOptions {
     /**
      * Custom JSX element for the options.
      */
-    element?: JSX.Element;
+    element?: React.JSX.Element;
 }
 
 interface ColumnBodyRowEditorOptions {
@@ -401,7 +401,7 @@ interface ColumnBodyRowEditorOptions {
     /**
      * Custom JSX element for the options.
      */
-    element?: JSX.Element;
+    element?: React.JSX.Element;
     /**
      * Event on save click of the row editor.
      * @param {*} event  - Browser event.

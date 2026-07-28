@@ -12,7 +12,7 @@ export function EventsDoc(props) {
 
     useEffect(() => {
         NodeService.getTreeNodes().then((data) => setNodes(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const onExpand = (event) => {
         toast.current.show({ severity: 'success', summary: 'Node Expanded', detail: event.node.label });

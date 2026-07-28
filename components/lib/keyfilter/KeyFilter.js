@@ -1,7 +1,6 @@
 import { DomHandler } from '../utils/Utils';
 
 export const KeyFilter = {
-    /* eslint-disable */
     DEFAULT_MASKS: {
         pint: /[\d]/,
         int: /[\d\-]/,
@@ -13,7 +12,6 @@ export const KeyFilter = {
         alpha: /[a-z_]/i,
         alphanum: /[a-z0-9_]/i
     },
-    /* eslint-enable */
 
     getRegex(keyfilter) {
         return KeyFilter.DEFAULT_MASKS[keyfilter] ? KeyFilter.DEFAULT_MASKS[keyfilter] : keyfilter;

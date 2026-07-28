@@ -4,7 +4,7 @@ import { ArchitectureDoc } from '@/components/doc/theming/architecturedoc';
 import { BuiltInThemesDoc } from '@/components/doc/theming/builtinthemesdoc';
 import { CSSVariablesDoc } from '@/components/doc/theming/cssvariablesdoc';
 import { CustomThemeDoc } from '@/components/doc/theming/customthemedoc';
-import { PrimeFlexDoc } from '@/components/doc/theming/primeflexdoc';
+import { MantleFlexDoc } from '@/components/doc/theming/primeflexdoc';
 import { ScaleDoc } from '@/components/doc/theming/scaledoc';
 import { CssInJsDoc } from '@/components/doc/theming/scopedstyling/cssinjsdoc';
 import { CSSModulesDoc } from '@/components/doc/theming/scopedstyling/cssmodulesdoc';
@@ -69,9 +69,9 @@ const ThemingDoc = () => {
             component: ScaleDoc
         },
         {
-            id: 'primeflex',
-            label: 'PrimeFlex',
-            component: PrimeFlexDoc
+            id: 'mantleflex',
+            label: 'MantleFlex',
+            component: MantleFlexDoc
         },
         {
             id: 'utils',

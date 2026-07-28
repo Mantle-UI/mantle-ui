@@ -153,7 +153,7 @@ export default function ListDemo() {
     return (
         <>
             <DocSectionText {...props}>
-                <p>Sample List implementation using different Skeleton components and PrimeFlex CSS utilities.</p>
+                <p>Sample List implementation using different Skeleton components and MantleFlex CSS utilities.</p>
             </DocSectionText>
             <div className="card">
                 <div className="border-round border-1 surface-border p-4">

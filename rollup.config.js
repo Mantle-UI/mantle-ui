@@ -4,12 +4,15 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import postcss from 'rollup-plugin-postcss';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
 import fs from 'fs-extra';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-import pkg from './package.json';
+import pkg from './package.json' with { type: 'json' };
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 let entries = [];
 
@@ -128,7 +131,7 @@ const EXTERNAL_COMPONENT = [...EXTERNAL, ...(NPM_LINK ? [] : ALIAS_COMPONENT_ENT
 const BABEL_PLUGIN_OPTIONS = {
     exclude: 'node_modules/**',
     presets: ['@babel/preset-env', '@babel/preset-react'],
-    plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-proposal-class-properties'],
+    plugins: ['@babel/plugin-transform-runtime'],
     skipPreflightCheck: true,
     babelHelpers: 'runtime',
     babelrc: false

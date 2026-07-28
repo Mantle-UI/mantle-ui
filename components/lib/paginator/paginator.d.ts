@@ -172,7 +172,7 @@ interface PaginatorFirstPageLinkOptions {
     /**
      * JSX element to be used as the first page link.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The page number.
      */
@@ -223,7 +223,7 @@ interface PaginatorPrevPageLinkOptions {
     /**
      * JSX element to be used as the prev page link.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The page number.
      */
@@ -304,7 +304,7 @@ interface PaginatorPageLinksOptions {
     /**
      * JSX element to be used as the page links.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of Paginator component
      */
@@ -335,7 +335,7 @@ interface PaginatorNextPageLinkOptions {
     /**
      * JSX element to be used as the next page link.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The page number.
      */
@@ -386,7 +386,7 @@ interface PaginatorLastPageLinkOptions {
     /**
      * JSX element to be used as the last page link.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The page number.
      */
@@ -495,7 +495,7 @@ interface PaginatorRowsPerPageDropdownOptions {
     /**
      * JSX element to be used as the rows per page dropdown.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of Paginator component.
      */
@@ -541,7 +541,7 @@ interface PaginatorCurrentPageReportOptions {
     /**
      * JSX element to be used as the current page report element.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of Paginator component.
      */
@@ -573,7 +573,7 @@ interface PaginatorJumpToPageInputOptions {
     /**
      * JSX element to be used as the jump to page input element.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of Paginator component.
      */

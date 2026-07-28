@@ -40,7 +40,7 @@ export function DataTableDoc(props) {
             setProducts(data);
             setSelectedProduct(data[0]);
         });
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const formatCurrency = (value) => {
         return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });

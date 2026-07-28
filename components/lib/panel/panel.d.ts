@@ -49,19 +49,19 @@ interface PanelHeaderTemplateOptions {
     /**
      * The JSX element that represents the title of the panel.
      */
-    titleElement: JSX.Element;
+    titleElement: React.JSX.Element;
     /**
      * The JSX element that represents the icons of the panel.
      */
-    iconsElement: JSX.Element;
+    iconsElement: React.JSX.Element;
     /**
      * The JSX element that represents the toggler of the panel.
      */
-    togglerElement: JSX.Element;
+    togglerElement: React.JSX.Element;
     /**
      * The JSX element that represents the panel.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of the Panel component.
      */
@@ -82,7 +82,7 @@ interface PanelFooterTemplateOptions {
     /**
      * The JSX element that represents the panel.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of the Panel component.
      */

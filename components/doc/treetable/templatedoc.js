@@ -12,7 +12,7 @@ export function TemplateDoc(props) {
 
     useEffect(() => {
         NodeService.getTreeTableNodes().then((data) => setNodes(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const actionTemplate = () => {
         return (

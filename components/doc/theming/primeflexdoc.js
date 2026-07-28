@@ -2,7 +2,7 @@ import { DocSectionCode } from '@/components/doc/common/docsectioncode';
 import { DocSectionText } from '@/components/doc/common/docsectiontext';
 import { Button } from '@/components/lib/button/Button';
 
-export function PrimeFlexDoc(props) {
+export function MantleFlexDoc(props) {
     const code = {
         basic: `
 <div className="flex flex-column md:flex-row justify-content-between my-5">
@@ -17,9 +17,9 @@ export function PrimeFlexDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>
-                    <a href="https://primeflex.org">PrimeFlex</a> is a lightweight responsive CSS utility library to accompany Prime UI libraries and static webpages as well. MantleUI can be used with any CSS utility library like bootstrap and
-                    tailwind however PrimeFlex has benefits like integration with MantleUI themes using CSS variables so that colors classes e.g. <i>bg-blue-500</i> receive the color code from the MantleUI theme being used. MantleUI follows the CSS
-                    utility approach of PrimeFlex and currently does not provide an extended style property like <i>sx</i>. Same approach is also utilized in <a href="https://blocks.primereact.org">PrimeBlocks for MantleUI</a> project as well.
+                    <a href="https://primeflex.org">MantleFlex</a> is a lightweight responsive CSS utility library to accompany Prime UI libraries and static webpages as well. MantleUI can be used with any CSS utility library like bootstrap and
+                    tailwind however MantleFlex has benefits like integration with MantleUI themes using CSS variables so that colors classes e.g. <i>bg-blue-500</i> receive the color code from the MantleUI theme being used. MantleUI follows the CSS
+                    utility approach of MantleFlex and currently does not provide an extended style property like <i>sx</i>. Same approach is also utilized in <a href="https://blocks.primereact.org">PrimeBlocks for MantleUI</a> project as well.
                 </p>
 
                 <p>Here is an example to demonstrate how to align 3 buttons horizontally on bigger screens and display them as stacked on smaller ones.</p>

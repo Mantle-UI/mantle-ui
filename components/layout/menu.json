@@ -505,7 +505,7 @@
             "icon": "pi pi-eye",
             "children": [
                 {
-                    "name": "Prime Icons",
+                    "name": "Mantle Icons",
                     "to": "/icons",
                     "badge": "UPDATED"
                 },
@@ -619,9 +619,9 @@
             ]
         },
         {
-            "name": "PrimeFlex CSS",
+            "name": "MantleFlex CSS",
             "icon": "pi pi-table",
-            "href": "https://primeflex.org",
+            "href": "https://mantle-ui.github.io/mantle-flex/",
             "target": "_blank"
         },
         {

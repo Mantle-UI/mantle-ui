@@ -104,7 +104,7 @@ interface MultiStateCheckboxIconTemplateEvent {
     /**
      * The default element created by the component.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props passed to the component.
      */

@@ -28,7 +28,7 @@ export function ObjectsDoc(props) {
 
     useEffect(() => {
         CountryService.getCountries().then((data) => setCountries(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const code = {
         basic: `

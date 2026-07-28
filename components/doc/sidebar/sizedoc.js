@@ -70,7 +70,7 @@ export default function SizeDemo() {
         <>
             <DocSectionText {...props}>
                 <p>
-                    Sidebar dimension can be defined with <i>style</i> or <i>className</i> properties which can also be responsive when used with a CSS utility library like PrimeFlex.
+                    Sidebar dimension can be defined with <i>style</i> or <i>className</i> properties which can also be responsive when used with a CSS utility library like MantleFlex.
                 </p>
             </DocSectionText>
             <div className="card flex justify-content-center">

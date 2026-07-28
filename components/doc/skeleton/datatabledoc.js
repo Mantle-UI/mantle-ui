@@ -63,7 +63,7 @@ export default function DataTableDemo() {
     return (
         <>
             <DocSectionText {...props}>
-                <p>Sample DataTable implementation using different Skeleton components and PrimeFlex CSS utilities.</p>
+                <p>Sample DataTable implementation using different Skeleton components and MantleFlex CSS utilities.</p>
             </DocSectionText>
             <div className="card">
                 <DataTable value={items} className="p-datatable-striped">

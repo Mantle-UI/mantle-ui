@@ -49,7 +49,7 @@ export function NumScrollDoc(props) {
 
     useEffect(() => {
         ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 9)));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const productTemplate = (product) => {
         return (

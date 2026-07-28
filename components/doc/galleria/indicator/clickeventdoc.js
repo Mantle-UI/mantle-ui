@@ -9,7 +9,7 @@ export function ClickEventDoc(props) {
 
     useEffect(() => {
         PhotoService.getImages().then((data) => setImages(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const itemTemplate = (item) => {
         return <img src={item.itemImageSrc} alt={item.alt} style={{ width: '100%', display: 'block' }} />;

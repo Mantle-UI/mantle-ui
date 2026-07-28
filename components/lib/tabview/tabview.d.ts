@@ -44,19 +44,19 @@ interface TabPanelHeaderTemplateOptions {
     /**
      * Left icon of the tab header.
      */
-    leftIconElement: JSX.Element;
+    leftIconElement: React.JSX.Element;
     /**
      * The title element of the tab header.
      */
-    titleElement: JSX.Element;
+    titleElement: React.JSX.Element;
     /**
      * Right icon of the tab header.
      */
-    rightIconElement: JSX.Element;
+    rightIconElement: React.JSX.Element;
     /**
      * The JSX element of the tab header.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of the tab panel component.
      */

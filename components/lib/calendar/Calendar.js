@@ -3690,7 +3690,7 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <td {...dayProps} key={date.day}>
+                    <td {...dayProps} key={`${date.year}-${date.month}-${date.day}`}>
                         {content}
                     </td>
                 );

@@ -76,8 +76,8 @@ export const ListBoxItem = React.memo((props) => {
 
     return (
         <li {...itemProps} key={props.optionKey}>
-            {content}
-            <Ripple />
+            <React.Fragment key="content">{content}</React.Fragment>
+            <Ripple key="ripple" />
         </li>
     );
 });

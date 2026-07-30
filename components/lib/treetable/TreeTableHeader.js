@@ -267,10 +267,10 @@ export const TreeTableHeader = React.memo((props) => {
 
         if (options.filterOnly) {
             const frozen = getColumnProp(column, 'frozen');
+            const headerCellKey = getColumnProp(column, 'columnKey') || getColumnProp(column, 'field') || options.index;
             const headerCellProps = mergeProps(
                 {
                     role: 'columnheader',
-                    key: getColumnProp(column, 'columnKey') || getColumnProp(column, 'field') || options.index,
                     className: classNames(cx('headerCell', { options, frozen }), getColumnProp(column, 'filterHeaderClassName')),
                     style: getColumnProp(column, 'filterHeaderStyle') || getColumnProp(column, 'style'),
                     rowSpan: getColumnProp(column, 'rowSpan'),
@@ -287,7 +287,11 @@ export const TreeTableHeader = React.memo((props) => {
                 })
             );
 
-            return <th {...headerCellProps}>{filterElement}</th>;
+            return (
+                <th key={headerCellKey} {...headerCellProps}>
+                    {filterElement}
+                </th>
+            );
         }
 
         const headerCellRef = React.createRef(null);
@@ -378,7 +382,8 @@ export const TreeTableHeader = React.memo((props) => {
     const createHeaderRow = (row, index) => {
         const rowColumns = React.Children.toArray(RowBase.getCProp(row, 'children'));
         const rowHeaderCells = rowColumns.map((col, i) => createHeaderCell(col, { index: i, filterOnly: false, renderFilter: true }));
-        const headerRowProps = mergeProps(ptm('headerRow', { hostName: props.hostName }), RowBase.getProps(row.props, context));
+        const { unstyled, __TYPE, ptOptions, ...rest } = RowBase.getProps(row.props, context);
+        const headerRowProps = mergeProps(ptm('headerRow', { hostName: props.hostName }), rest);
 
         return (
             <tr role="row" {...headerRowProps} key={index}>

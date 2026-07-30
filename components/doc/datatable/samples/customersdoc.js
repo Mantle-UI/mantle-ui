@@ -32,8 +32,7 @@ export const CustomersDoc = (props) => {
         status: { operator: FilterOperator.OR, constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }] },
         activity: { value: null, matchMode: FilterMatchMode.BETWEEN }
     });
-    const [globalFilterValue, setGlobalFilterValue] = useState('');
-    const debouncedGlobalFilterValue = useDebounce(globalFilterValue, 300);
+    const [globalFilterValue, debouncedGlobalFilterValue, setGlobalFilterValue] = useDebounce('', 300);
     const [representatives] = useState([
         { name: 'Amy Elsner', image: 'amyelsner.png' },
         { name: 'Anna Fali', image: 'annafali.png' },

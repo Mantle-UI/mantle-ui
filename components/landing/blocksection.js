@@ -7,7 +7,7 @@ const BlockSection = () => {
 
     useEffect(() => {
         setAnimation(true);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <section id="blocks-section" className="landing-blocks pt-8 overflow-hidden">

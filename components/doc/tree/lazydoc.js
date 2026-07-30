@@ -57,7 +57,7 @@ export function LazyDoc(props) {
             setNodes(createLazyNodes());
             setLoading(false);
         }, 2000);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const code = {
         basic: `

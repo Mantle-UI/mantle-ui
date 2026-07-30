@@ -214,7 +214,7 @@ interface VirtualScrollerLoaderIconTemplateOptions {
     /**
      * The JSX element that represents the loader icon.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of the VirtualScroller component.
      */
@@ -257,7 +257,7 @@ interface VirtualScrollerContentTemplateOptions {
     /**
      * Default wrapper element.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * Props of VirtualScroller component.
      */

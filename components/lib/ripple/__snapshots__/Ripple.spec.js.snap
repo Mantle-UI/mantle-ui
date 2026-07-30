@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Ripple when Ripple is enabled, button should have ripple effect on desktop device 1`] = `
 <div>

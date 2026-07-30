@@ -207,19 +207,19 @@ interface FileUploadHeaderTemplateOptions {
     /**
      * The choose button element.
      */
-    chooseButton: JSX.Element;
+    chooseButton: React.JSX.Element;
     /**
      * The upload button element.
      */
-    uploadButton: JSX.Element;
+    uploadButton: React.JSX.Element;
     /**
      * The cancel button element.
      */
-    cancelButton: JSX.Element;
+    cancelButton: React.JSX.Element;
     /**
      * The default element created by the component.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props passed to the component.
      * @type {FileUploadProps}
@@ -255,19 +255,19 @@ interface ItemTemplateOptions {
     /**
      * Element to display preview of the file.
      */
-    previewElement: JSX.Element;
+    previewElement: React.JSX.Element;
     /**
      * Element to display the name of the file.
      */
-    fileNameElement: JSX.Element;
+    fileNameElement: React.JSX.Element;
     /**
      * Element to display the size of the file.
      */
-    sizeElement: JSX.Element;
+    sizeElement: React.JSX.Element;
     /**
      * Element to display the remove button.
      */
-    removeElement: JSX.Element;
+    removeElement: React.JSX.Element;
     /**
      * Formatted string of the file size.
      */
@@ -283,7 +283,7 @@ interface ItemTemplateOptions {
     /**
      * Default element created by the component.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * All component props
      * @type {FileUploadProps}

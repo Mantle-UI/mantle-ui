@@ -10,7 +10,7 @@ export function ReorderDoc(props) {
 
     useEffect(() => {
         NodeService.getTreeTableNodes().then((data) => setNodes(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const code = {
         basic: `

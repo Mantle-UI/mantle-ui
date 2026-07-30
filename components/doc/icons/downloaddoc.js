@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function DownloadDoc(props) {
     const code = {
         basic: `
-npm install primeicons
+npm install @mantle-ui/icons
         `
     };
 

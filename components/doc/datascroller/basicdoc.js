@@ -12,7 +12,7 @@ export function BasicDoc(props) {
 
     useEffect(() => {
         ProductService.getProducts().then((data) => setProducts(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const getSeverity = (product) => {
         switch (product.inventoryStatus) {

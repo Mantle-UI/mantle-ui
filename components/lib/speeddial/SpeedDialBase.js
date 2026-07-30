@@ -41,6 +41,16 @@ const styles = `
         pointer-events: none;
     }
 
+    .p-speeddial-circle .p-speeddial-list,
+    .p-speeddial-semi-circle .p-speeddial-list,
+    .p-speeddial-quarter-circle .p-speeddial-list {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     .p-speeddial-circle .p-speeddial-item,
     .p-speeddial-semi-circle .p-speeddial-item,
     .p-speeddial-quarter-circle .p-speeddial-item {
@@ -70,10 +80,6 @@ const styles = `
 
     .p-speeddial-opened .p-speeddial-list {
         pointer-events: auto;
-    }
-
-    .p-speeddial:not(.p-speeddial-opened) .p-speeddial-list {
-        display: none;
     }
 
     .p-speeddial-opened .p-speeddial-item {

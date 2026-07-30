@@ -14,7 +14,7 @@ export function LayoutDoc(props) {
 
     useEffect(() => {
         ProductService.getProducts().then((data) => setProducts(data.slice(0, 12)));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const getSeverity = (product) => {
         switch (product.inventoryStatus) {
@@ -374,7 +374,7 @@ export default function BasicDemo() {
             <DocSectionText {...props}>
                 <p>
                     DataView supports <i>list</i> and <i>grid</i> display modes defined with the <i>layout</i> property. The helper <i>DataViewLayoutOptions</i> component can be used to switch between the modes however this component is optional and
-                    you may use your own UI to switch modes as well. As in <i>list</i> layout, the <i>grid</i> layout also requires PrimeFlex Grid classes to define how the grid is displayed per screen sizes.
+                    you may use your own UI to switch modes as well. As in <i>list</i> layout, the <i>grid</i> layout also requires MantleFlex Grid classes to define how the grid is displayed per screen sizes.
                 </p>
             </DocSectionText>
             <div className="card">

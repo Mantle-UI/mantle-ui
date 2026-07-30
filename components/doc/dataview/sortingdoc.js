@@ -21,7 +21,7 @@ export function SortingDoc(props) {
 
     useEffect(() => {
         ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 5)));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const getSeverity = (product) => {
         switch (product.inventoryStatus) {

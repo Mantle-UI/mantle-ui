@@ -444,7 +444,6 @@ export const Splitter = React.memo(
 
             const rootProps = mergeProps(
                 {
-                    key: index,
                     id: panelId,
                     className: panelClassName,
                     style: { ...getPanelProp(panel, 'style'), flexBasis },
@@ -456,7 +455,7 @@ export const Splitter = React.memo(
             );
 
             return (
-                <React.Fragment>
+                <React.Fragment key={index}>
                     <div {...rootProps}>{getPanelProp(panel, 'children')}</div>
                     {gutter}
                 </React.Fragment>

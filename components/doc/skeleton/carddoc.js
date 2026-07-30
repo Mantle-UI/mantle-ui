@@ -78,7 +78,7 @@ export default function CardDemo() {
     return (
         <>
             <DocSectionText {...props}>
-                <p>Sample Card implementation using different Skeleton components and PrimeFlex CSS utilities.</p>
+                <p>Sample Card implementation using different Skeleton components and MantleFlex CSS utilities.</p>
             </DocSectionText>
             <div className="card">
                 <div className="border-round border-1 surface-border p-4 surface-card">

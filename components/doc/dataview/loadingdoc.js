@@ -13,7 +13,7 @@ export function LoadingDoc(props) {
 
     useEffect(() => {
         ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 6)));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const listItem = (product, index) => {
         return (

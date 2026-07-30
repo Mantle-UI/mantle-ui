@@ -225,7 +225,7 @@ interface MultiSelectPanelHeaderTemplateEvent {
     /**
      * The checkbox element for selecting items.
      */
-    checkboxElement: JSX.Element;
+    checkboxElement: React.JSX.Element;
     /**
      * Whether the checkbox is checked.
      */
@@ -238,11 +238,11 @@ interface MultiSelectPanelHeaderTemplateEvent {
     /**
      * The element for filtering the items.
      */
-    filterElement: JSX.Element;
+    filterElement: React.JSX.Element;
     /**
      * The close element.
      */
-    closeElement: JSX.Element;
+    closeElement: React.JSX.Element;
     /**
      * The classname for the close element.
      */
@@ -259,7 +259,7 @@ interface MultiSelectPanelHeaderTemplateEvent {
     /**
      * The default element created by the component.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of Multiselect component
      */

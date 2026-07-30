@@ -58,7 +58,7 @@ describe('Tooltip', () => {
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
 
         // Act
         fireEvent.mouseEnter(input);
@@ -69,7 +69,7 @@ describe('Tooltip', () => {
 
         // tooltip disappears when we mouse out
         fireEvent.mouseLeave(input);
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
     });
     test('when using ReactNode content it renders the node', async () => {
         // Arrange
@@ -89,7 +89,7 @@ describe('Tooltip', () => {
         // Assert
         await waitFor(() => screen.getByText('Rich tooltip content'));
         expect(screen.getByText('Rich tooltip content')).toBeVisible();
-        expect(screen.queryByText('[object Object]')).toBeNull();
+        expect(screen.queryByText('[object Object]')).not.toBeInTheDocument();
     });
     test('when using tooltip with event focus it is displayed on events focus and blur', async () => {
         // Arrange
@@ -101,7 +101,7 @@ describe('Tooltip', () => {
         );
         const input = container.getElementsByClassName('p-inputtext')[0];
 
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
 
         // Act
         fireEvent.focus(input);
@@ -112,7 +112,7 @@ describe('Tooltip', () => {
 
         // tooltip disappears when we blur
         fireEvent.blur(input);
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
     });
     test('when using tooltip event both it is displayed on events focus, blur, mousenter, mouseleave', async () => {
         // Arrange
@@ -135,7 +135,7 @@ describe('Tooltip', () => {
         fireEvent.blur(input);
 
         // Assert (blur)
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
 
         // Act (mouse enter)
         fireEvent.mouseEnter(input);
@@ -148,7 +148,7 @@ describe('Tooltip', () => {
         fireEvent.mouseLeave(input);
 
         // Assert (mouse leave)
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
     });
     test('when using tooltip on disabled element it is not displayed', async () => {
         // Arrange
@@ -160,13 +160,13 @@ describe('Tooltip', () => {
         );
         const input = container.getElementsByClassName('p-disabled')[0];
 
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
 
         // Act
         fireEvent.mouseEnter(input);
 
         // Assert
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
     });
     test('when using tooltip on disabled button and showOnDisabled it is displayed', async () => {
         // Arrange
@@ -183,7 +183,7 @@ describe('Tooltip', () => {
         );
         const input = container.getElementsByClassName('disabled-button')[0];
 
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
 
         // Act
         fireEvent.mouseEnter(input);
@@ -338,7 +338,7 @@ describe('Tooltip', () => {
         fireEvent.mouseEnter(input);
 
         // Assert (show)
-        expect(screen.queryByText(tooltipText)).toBeNull();
+        expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
         expect(showBeforeOn).toHaveBeenCalledTimes(1);
         expect(showOn).toHaveBeenCalledTimes(0);
     });

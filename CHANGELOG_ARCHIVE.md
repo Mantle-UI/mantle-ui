@@ -1504,7 +1504,7 @@
 
 **Implemented New Features and Enhancements:**
 
-- PrimeFlex 3 support for DataView [\#2332](https://github.com/primefaces/primereact/issues/2332)
+- MantleFlex 3 support for DataView [\#2332](https://github.com/primefaces/primereact/issues/2332)
 - Improve scrollbar style on BreadCrumb and TabMenu [\#2330](https://github.com/primefaces/primereact/issues/2330)
 
 **Fixed Bugs:**
@@ -2062,7 +2062,7 @@
 
 **Implemented New Features and Enhancements:**
 
-- Remove PrimeFlex dependency from MegaMenu [\#1690](https://github.com/primefaces/primereact/issues/1690)
+- Remove MantleFlex dependency from MegaMenu [\#1690](https://github.com/primefaces/primereact/issues/1690)
 - Chips display for MultiSelect [\#1689](https://github.com/primefaces/primereact/issues/1689)
 - Add the 'enter' key support to InputNumber [\#1688](https://github.com/primefaces/primereact/issues/1688)
 - New Component: Timeline [\#1687](https://github.com/primefaces/primereact/issues/1687)
@@ -2162,7 +2162,7 @@
 - Negative sign with InputNumber [\#1551](https://github.com/primefaces/primereact/issues/1551)
 - InputNumber: pasting doesn't work correctly [\#1549](https://github.com/primefaces/primereact/issues/1549)
 - InputGroup support for input components with wrappers [\#1548](https://github.com/primefaces/primereact/issues/1548)
-- Update PrimeFlex documentation to 2.0.0 [\#1542](https://github.com/primefaces/primereact/issues/1542)
+- Update MantleFlex documentation to 2.0.0 [\#1542](https://github.com/primefaces/primereact/issues/1542)
 - Scrollable Table alignment improvement [\#1541](https://github.com/primefaces/primereact/issues/1541)
 - DataTable onRowClick executes when multiple selection mode is enabled and user clicks on selection checkbox column cell [\#1534](https://github.com/primefaces/primereact/issues/1534)
 - Add content property to Message component [\#1463](https://github.com/primefaces/primereact/issues/1463)
@@ -3006,7 +3006,7 @@
 - Keyboard support for Dialog Icons [\#568](https://github.com/primefaces/primereact/issues/568)
 - Pass column props to columnResizeEnd [\#564](https://github.com/primefaces/primereact/issues/564)
 - New Tree Component [\#559](https://github.com/primefaces/primereact/issues/559)
-- Integrate PrimeFlex Grid System [\#556](https://github.com/primefaces/primereact/issues/556)
+- Integrate MantleFlex Grid System [\#556](https://github.com/primefaces/primereact/issues/556)
 - className parameter unsupported by Spinner component [\#548](https://github.com/primefaces/primereact/issues/548)
 
 **Fixed Bugs:**

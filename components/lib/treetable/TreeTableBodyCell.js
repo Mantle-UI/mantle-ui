@@ -227,14 +227,14 @@ export const TreeTableBodyCell = (props) => {
     );
 
     const editorKeyHelperLabelProps = mergeProps(getColumnPTOptions('editorKeyHelper'));
-    /* eslint-disable */
+
     const editorKeyHelper = columnEditor && (
         <a {...editorKeyHelperProps}>
             <span {...editorKeyHelperLabelProps}></span>
         </a>
     );
     const align = getColumnProp('align');
-    /* eslint-enable */
+
     const bodyCellProps = mergeProps(
         {
             role: 'cell',

@@ -171,11 +171,11 @@ interface TreeHeaderTemplateOptions {
     /**
      * The JSX element of the filter input.
      */
-    filterElement: JSX.Element;
+    filterElement: React.JSX.Element;
     /**
      * The JSX element of the tree header.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of the tree header component.
      */
@@ -218,7 +218,7 @@ interface TreeNodeTemplateOptions {
     /**
      * The JSX element that represents the tree node.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of the Tree component.
      */
@@ -249,7 +249,7 @@ interface TreeTogglerTemplateOptions {
     /**
      * JSX element to be used as the template options.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * The props of Tree component
      */

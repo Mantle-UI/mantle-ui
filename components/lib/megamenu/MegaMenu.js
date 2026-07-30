@@ -1265,13 +1265,12 @@ export const MegaMenu = React.memo(
 
             const icon = props.menuIcon || <BarsIcon {...menuButtonIconProps} />;
             const menuIcon = IconUtils.getJSXIcon(icon, { ...menuButtonIconProps }, { props });
-            /* eslint-disable */
+
             const button = (
                 <a ref={menuButtonRef} {...menuButtonProps}>
                     {menuIcon}
                 </a>
             );
-            /* eslint-enable */
 
             return button;
         };

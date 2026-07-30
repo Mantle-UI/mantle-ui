@@ -69,7 +69,7 @@ export default function Config(props) {
 
     useEffect(() => {
         document.documentElement.style.fontSize = scale + 'px';
-    }, [scale]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [scale]);
 
     useEffect(() => {
         if (theme.startsWith('md')) {

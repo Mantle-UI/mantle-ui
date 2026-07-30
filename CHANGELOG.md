@@ -612,7 +612,7 @@
 - Check meta key for MacOS [\#6588](https://github.com/primefaces/primereact/pull/6588)
 - InputOtp respect props.value change [\#6595](https://github.com/primefaces/primereact/pull/6595)
 - Fix typo in Scale doc [\#6596](https://github.com/primefaces/primereact/pull/6596)
-- Fix typo in PrimeFlex doc [\#6597](https://github.com/primefaces/primereact/pull/6597)
+- Fix typo in MantleFlex doc [\#6597](https://github.com/primefaces/primereact/pull/6597)
 - Password fix tab ordering of toggle mask [\#6598](https://github.com/primefaces/primereact/pull/6598)
 - Fix typo [\#6601](https://github.com/primefaces/primereact/pull/6601)
 - Show headless sidebar in all window sizes [\#6605](https://github.com/primefaces/primereact/pull/6605)

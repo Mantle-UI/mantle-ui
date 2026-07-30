@@ -63,7 +63,7 @@ const ThemeSection = () => {
             setCustomers(getCustomers(data));
             setLoading(false);
         });
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     useUpdateEffect(() => {
         const newTheme = darkMode ? tableTheme.replace('light', 'dark') : tableTheme.replace('dark', 'light');

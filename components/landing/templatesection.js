@@ -8,7 +8,7 @@ const TemplateSection = () => {
 
     useEffect(() => {
         setAnimation(true);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const imageBg = (template) => {
         const url = template === 'templates-text' ? 'png' : 'jpg';

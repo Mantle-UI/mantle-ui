@@ -234,11 +234,9 @@ export const OrganizationChartNode = React.memo((props) => {
             );
 
             return (
-                /* eslint-disable */
                 <a {...nodeTogglerProps}>
                     <i> {togglerIcon} </i>
                 </a>
-                /* eslint-enable */
             );
         }
 

@@ -16,7 +16,7 @@ export function ColumnToggleDoc(props) {
 
     useEffect(() => {
         NodeService.getTreeTableNodes().then((data) => setNodes(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const onColumnToggle = (event) => {
         let selectedColumns = event.value;

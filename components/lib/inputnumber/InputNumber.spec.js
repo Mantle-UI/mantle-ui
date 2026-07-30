@@ -2,7 +2,12 @@ import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import { DomHandler } from '../utils/Utils';
 import { InputNumber } from './InputNumber';
+
+// jsdom (as bundled by jest-environment-jsdom 30) reports `'ontouchstart' in window` as true,
+// which makes DomHandler.isTouchDevice() misidentify this jsdom test environment as a touch device.
+jest.spyOn(DomHandler, 'isTouchDevice').mockReturnValue(false);
 
 function getButtons(container) {
     const inc = container.querySelector('[data-pc-section="incrementbutton"]') || container.querySelector('.p-inputnumber-button-up');

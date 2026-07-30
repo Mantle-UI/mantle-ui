@@ -48,7 +48,7 @@ export const FileUpload = React.memo(
         const chooseButtonLabel = props.chooseLabel || props.chooseOptions.label || localeOption('choose');
         const uploadButtonLabel = props.uploadLabel || props.uploadOptions.label || localeOption('upload');
         const cancelButtonLabel = props.cancelLabel || props.cancelOptions.label || localeOption('cancel');
-        const chooseDisabled = disabled || (props.fileLimit && props.fileLimit <= filesState.length + uploadedFileCount);
+        const chooseDisabled = disabled || (props.fileLimit && props.fileLimit <= filesState.length + uploadedFileCount.current);
         const uploadDisabled = disabled || !hasFiles;
         const cancelDisabled = disabled || !hasFiles;
 
@@ -187,7 +187,7 @@ export const FileUpload = React.memo(
 
             if (props.customUpload) {
                 if (props.fileLimit) {
-                    uploadedFileCount = uploadedFileCount + files.length;
+                    uploadedFileCount.current = uploadedFileCount.current + files.length;
                 }
 
                 if (props.uploadHandler) {
@@ -237,7 +237,7 @@ export const FileUpload = React.memo(
 
                         if (xhr.status >= 200 && xhr.status < 300) {
                             if (props.fileLimit) {
-                                uploadedFileCount = uploadedFileCount + files.length;
+                                uploadedFileCount.current = uploadedFileCount.current + files.length;
                             }
 
                             if (props.onUpload) {

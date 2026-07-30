@@ -36,7 +36,7 @@ export function PaginatorTemplateDoc(props) {
         }
 
         setNodes(files);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const paginatorLeft = <Button type="button" icon="pi pi-refresh" text />;
     const paginatorRight = <Button type="button" icon="pi pi-download" text />;

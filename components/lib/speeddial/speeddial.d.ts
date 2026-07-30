@@ -95,7 +95,7 @@ interface SpeedDialButtonOptions {
     /**
      * Default element created by the component.
      */
-    element: JSX.Element;
+    element: React.JSX.Element;
     /**
      * Properties passed to the component.
      */

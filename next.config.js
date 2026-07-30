@@ -10,14 +10,13 @@ module.exports = {
     env: {
         NEXT_PUBLIC_BASE_PATH: basePath
     },
-    webpack(config) {
-        config.module.rules.push({
-            test: /\.svg$/i,
-            issuer: /\.[jt]sx?$/,
-            use: ['@svgr/webpack']
-        });
-
-        return config;
+    turbopack: {
+        rules: {
+            '*.svg': {
+                loaders: ['@svgr/webpack'],
+                as: '*.js'
+            }
+        }
     },
     async redirects() {
         if (isGitHubPages) {

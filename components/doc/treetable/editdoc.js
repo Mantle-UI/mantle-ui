@@ -11,7 +11,7 @@ export function EditDoc(props) {
 
     useEffect(() => {
         NodeService.getTreeTableNodes().then((data) => setNodes(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const onEditorValueChange = (options, value) => {
         let newNodes = JSON.parse(JSON.stringify(nodes));

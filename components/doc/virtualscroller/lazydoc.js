@@ -13,7 +13,7 @@ export function LazyDoc(props) {
     useEffect(() => {
         setLazyItems(Array.from({ length: 100000 }));
         setLazyLoading(false);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const onLazyLoad = (event) => {
         setLazyLoading(true);

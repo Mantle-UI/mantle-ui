@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BlockUI block and unblock fullscreen events: blocked-event-fullscreen 1`] = `
 <body

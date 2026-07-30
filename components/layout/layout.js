@@ -45,7 +45,7 @@ export default function Layout({ children }) {
         } else {
             DomHandler.unblockBodyScroll('blocked-scroll');
         }
-    }, [sidebarActive]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [sidebarActive]);
 
     useEffect(() => {
         const handleRouteChangeComplete = (l) => {

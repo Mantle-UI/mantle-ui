@@ -105,5 +105,9 @@
     },
     "engines": {
         "node": ">=20.10.0"
+    },
+    "overrides": {
+        "postcss": "$postcss",
+        "sharp": "0.35.3"
     }
 }

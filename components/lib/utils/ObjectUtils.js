@@ -534,27 +534,33 @@ export default class ObjectUtils {
         }
 
         const fields = field.split('.');
-        const blockedFields = new Set(['__proto__', 'prototype', 'constructor']);
 
-        if (fields.some((part) => !part || blockedFields.has(part))) {
-            // guard against prototype pollution and malformed paths
+        if (fields.some((part) => !part || part === '__proto__' || part === 'prototype' || part === 'constructor')) {
+            // Guard against prototype pollution and malformed paths before mutating data.
             return;
         }
 
         let obj = data;
 
         for (let i = 0, len = fields.length; i < len; ++i) {
+            const currentField = fields[i];
+
+            if (currentField === '__proto__' || currentField === 'prototype' || currentField === 'constructor') {
+                // Guard each dynamic property access against prototype pollution.
+                return;
+            }
+
             // Check if we are on the last field
             if (i + 1 - len === 0) {
-                obj[fields[i]] = value;
+                obj[currentField] = value;
                 break;
             }
 
-            if (!obj[fields[i]]) {
-                obj[fields[i]] = {};
+            if (!obj[currentField]) {
+                obj[currentField] = {};
             }
 
-            obj = obj[fields[i]];
+            obj = obj[currentField];
         }
     }
 

@@ -101,7 +101,7 @@
         "rollup-plugin-postcss": "^4.0.2",
         "sass": "^1.79.4",
         "typedoc": "^0.28.20",
-        "typescript": "^6.0.3"
+        "typescript": "^7.0.2"
     },
     "engines": {
         "node": ">=20.10.0"

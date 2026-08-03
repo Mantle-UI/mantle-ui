@@ -7,13 +7,8 @@ const BUMP_PRIORITY = {
     feature: 2,
     'breaking-change': 3
 };
-const SECTION_ORDER = ['breaking-change', 'feature', 'bug', 'other'];
-const SECTION_TITLES = {
-    'breaking-change': 'Breaking Changes',
-    feature: 'Features',
-    bug: 'Bug Fixes',
-    other: 'Other Changes'
-};
+const FEATURE_LABELS = new Set(['enhancement', 'feature', 'type: new feature']);
+const IGNORED_RELEASE_LABELS = new Set(['status: needs triage']);
 const CLOSING_KEYWORDS_PATTERN = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#(\d+)\b/gi;
 
 function run(command, args, options = {}) {
@@ -67,13 +62,7 @@ function incrementVersion(version, bump) {
 }
 
 function normalizeLabels(labels) {
-    return labels
-        .map((label) => label.name.toLowerCase())
-        .filter(Boolean);
-}
-
-function extractBreakingChangeLabel(labels) {
-    return normalizeLabels(labels).includes('breaking-change');
+    return labels.map((label) => label.name.toLowerCase()).filter(Boolean);
 }
 
 function getHighestPriorityLabel(labels) {
@@ -100,22 +89,7 @@ function extractClosingIssueNumbers(body) {
 
 function fetchMergedPullRequests(lastTagDate) {
     const mergedSinceDate = lastTagDate.slice(0, 10);
-    const prs = JSON.parse(
-        run('gh', [
-            'pr',
-            'list',
-            '--state',
-            'merged',
-            '--base',
-            'main',
-            '--search',
-            `merged:>=${mergedSinceDate}`,
-            '--limit',
-            '200',
-            '--json',
-            'number,title,url,mergedAt,labels,body'
-        ])
-    );
+    const prs = JSON.parse(run('gh', ['pr', 'list', '--state', 'merged', '--base', 'main', '--search', `merged:>=${mergedSinceDate}`, '--limit', '200', '--json', 'number,title,url,mergedAt,labels,body']));
 
     return prs.filter((pr) => pr.mergedAt > lastTagDate).sort((left, right) => new Date(left.mergedAt) - new Date(right.mergedAt));
 }
@@ -165,9 +139,6 @@ function fetchIssueLabelMap(repo, issueNumbers) {
   repository(owner: $owner, name: $name) {
     issue(number: $number) {
       number
-      issueType {
-        name
-      }
       labels(first: 100) {
         nodes {
           name
@@ -191,8 +162,7 @@ function fetchIssueLabelMap(repo, issueNumbers) {
         }
 
         issueMap.set(issueNumber, {
-            type: issue.issueType?.name?.toLowerCase() || null,
-            hasBreakingChange: extractBreakingChangeLabel(issue.labels?.nodes || [])
+            labels: normalizeLabels(issue.labels?.nodes || [])
         });
     }
 
@@ -200,33 +170,25 @@ function fetchIssueLabelMap(repo, issueNumbers) {
 }
 
 function resolvePullRequestReleaseInfo(pr, issueMap, githubLinkedIssueNumbers) {
-    const hasPrBreakingChange = extractBreakingChangeLabel(pr.labels || []);
     const bodyLinkedIssueNumbers = extractClosingIssueNumbers(pr.body);
     const linkedIssueNumbers = [...new Set([...bodyLinkedIssueNumbers, ...githubLinkedIssueNumbers])];
     const linkedIssues = linkedIssueNumbers.map((issueNumber) => issueMap.get(issueNumber)).filter(Boolean);
-    const hasIssueBreakingChange = linkedIssues.some((issue) => issue.hasBreakingChange);
-    const linkedIssueTypes = [...new Set(linkedIssues.map((issue) => issue.type).filter((type) => type === 'feature' || type === 'bug'))];
-    let effectiveLabel = null;
-
-    if (hasPrBreakingChange || hasIssueBreakingChange) {
-        effectiveLabel = 'breaking-change';
-    } else if (linkedIssueTypes.includes('feature')) {
-        effectiveLabel = 'feature';
-    } else if (linkedIssueTypes.includes('bug')) {
-        effectiveLabel = 'bug';
-    }
+    const labels = [...new Set([...normalizeLabels(pr.labels || []), ...linkedIssues.flatMap((issue) => issue.labels)])];
+    const releaseLabels = labels.filter((label) => !IGNORED_RELEASE_LABELS.has(label));
+    const hasFeatureLabel = releaseLabels.some((label) => FEATURE_LABELS.has(label));
+    const effectiveLabel = releaseLabels.includes('breaking-change') ? 'breaking-change' : hasFeatureLabel ? 'feature' : releaseLabels.length ? 'bug' : null;
 
     return {
         number: pr.number,
         title: pr.title,
         url: pr.url,
         mergedAt: pr.mergedAt,
-        hasPrBreakingChange,
         bodyLinkedIssueNumbers,
         githubLinkedIssueNumbers,
         linkedIssueNumbers,
-        linkedIssueTypes,
-        hasIssueBreakingChange,
+        labels,
+        releaseLabels,
+        hasFeatureLabel,
         effectiveLabel
     };
 }
@@ -256,26 +218,30 @@ function formatReleaseItem(pr) {
 }
 
 function buildReleaseNotes(nextVersion, today, compareUrl, prs) {
-    const grouped = {
-        'breaking-change': [],
-        feature: [],
-        bug: [],
-        other: []
-    };
+    const grouped = new Map();
 
     for (const pr of prs) {
-        grouped[pr.effectiveLabel || 'other'].push(pr);
-    }
+        for (const label of pr.releaseLabels) {
+            const items = grouped.get(label) || [];
 
-    const sections = [];
-
-    for (const key of SECTION_ORDER) {
-        if (!grouped[key].length) {
-            continue;
+            items.push(pr);
+            grouped.set(label, items);
         }
-
-        sections.push(`## ${SECTION_TITLES[key]}\n\n${grouped[key].map(formatReleaseItem).join('\n')}`);
     }
+
+    const sections = [...grouped.entries()]
+        .sort(([left], [right]) => {
+            const priority = ['breaking-change', 'enhancement', 'feature'];
+            const leftPriority = priority.indexOf(left);
+            const rightPriority = priority.indexOf(right);
+
+            if (leftPriority !== rightPriority) {
+                return (leftPriority === -1 ? priority.length : leftPriority) - (rightPriority === -1 ? priority.length : rightPriority);
+            }
+
+            return left.localeCompare(right);
+        })
+        .map(([label, items]) => `## ${label}\n\n${items.map(formatReleaseItem).join('\n')}`);
 
     return [`## [${nextVersion}](${compareUrl}) (${today})`, '', `[Full Changelog](${compareUrl})`, '', ...sections].join('\n');
 }
@@ -320,23 +286,23 @@ function main() {
         throw new Error(`No merged pull requests found after ${lastTag}.`);
     }
 
-    const githubLinkedIssueNumbersByPr = new Map(
-        mergedPullRequests.map((pr) => [pr.number, fetchPullRequestLinkedIssueNumbers(repo, pr.number)])
-    );
-    const allIssueNumbers = [...new Set(
-        mergedPullRequests.flatMap((pr) => {
-            const bodyLinkedIssueNumbers = extractClosingIssueNumbers(pr.body);
-            const githubLinkedIssueNumbers = githubLinkedIssueNumbersByPr.get(pr.number) || [];
+    const githubLinkedIssueNumbersByPr = new Map(mergedPullRequests.map((pr) => [pr.number, fetchPullRequestLinkedIssueNumbers(repo, pr.number)]));
+    const allIssueNumbers = [
+        ...new Set(
+            mergedPullRequests.flatMap((pr) => {
+                const bodyLinkedIssueNumbers = extractClosingIssueNumbers(pr.body);
+                const githubLinkedIssueNumbers = githubLinkedIssueNumbersByPr.get(pr.number) || [];
 
-            return [...bodyLinkedIssueNumbers, ...githubLinkedIssueNumbers];
-        })
-    )];
+                return [...bodyLinkedIssueNumbers, ...githubLinkedIssueNumbers];
+            })
+        )
+    ];
     const issueMap = fetchIssueLabelMap(repo, allIssueNumbers);
-    const releasePullRequests = mergedPullRequests.map((pr) => resolvePullRequestReleaseInfo(pr, issueMap, githubLinkedIssueNumbersByPr.get(pr.number) || []));
+    const releasePullRequests = mergedPullRequests.map((pr) => resolvePullRequestReleaseInfo(pr, issueMap, githubLinkedIssueNumbersByPr.get(pr.number) || [])).filter((pr) => pr.effectiveLabel);
     const detectedBump = detectBump(releasePullRequests);
 
     if (!detectedBump) {
-        throw new Error('No relevant release signal found since the latest tag. Use breaking-change on the PR or linked issue, or link issues with type feature or bug before creating a release.');
+        throw new Error('No release label found since the latest tag. Apply a repository label to the PR or a linked issue before creating a release.');
     }
 
     const nextVersion = incrementVersion(currentVersion, detectedBump);

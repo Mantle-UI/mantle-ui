@@ -1,5 +1,45 @@
 # Changelog
 
+## [10.11.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.7...v10.11.0) (2026-08-03)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.7...v10.11.0)
+
+## enhancement
+
+- Upgrade dependencies [#395](https://github.com/Mantle-UI/mantle-ui/pull/395) (issues: #396)
+## dependencies
+
+- build(deps): bump actions/setup-python from 6 to 7 [#386](https://github.com/Mantle-UI/mantle-ui/pull/386)
+- build(deps): bump svgo [#387](https://github.com/Mantle-UI/mantle-ui/pull/387)
+- build(deps): bump next from 15.5.20 to 15.5.21 [#388](https://github.com/Mantle-UI/mantle-ui/pull/388)
+- build(deps): bump dompurify from 3.4.11 to 3.4.12 [#389](https://github.com/Mantle-UI/mantle-ui/pull/389)
+- build(deps-dev): bump postcss from 8.5.16 to 8.5.18 [#390](https://github.com/Mantle-UI/mantle-ui/pull/390)
+- Upgrade dependencies [#395](https://github.com/Mantle-UI/mantle-ui/pull/395) (issues: #396)
+- fix: resolve Dependabot security alerts [#399](https://github.com/Mantle-UI/mantle-ui/pull/399) (issues: #407)
+- build(deps-dev): bump eslint-plugin-jest-dom from 5.5.0 to 5.6.0 [#405](https://github.com/Mantle-UI/mantle-ui/pull/405)
+- build(deps): bump actions/stale from 10 to 11 [#401](https://github.com/Mantle-UI/mantle-ui/pull/401)
+## documentation
+
+- docs: add Discord community shield [#393](https://github.com/Mantle-UI/mantle-ui/pull/393)
+- docs: use Mantle logo favicon [#394](https://github.com/Mantle-UI/mantle-ui/pull/394)
+- chore: update api docs [#398](https://github.com/Mantle-UI/mantle-ui/pull/398)
+## github_actions
+
+- build(deps): bump actions/setup-python from 6 to 7 [#386](https://github.com/Mantle-UI/mantle-ui/pull/386)
+- build(deps): bump actions/stale from 10 to 11 [#401](https://github.com/Mantle-UI/mantle-ui/pull/401)
+- chore(release): include label changelog sections [#408](https://github.com/Mantle-UI/mantle-ui/pull/408)
+## javascript
+
+- build(deps): bump svgo [#387](https://github.com/Mantle-UI/mantle-ui/pull/387)
+- build(deps): bump next from 15.5.20 to 15.5.21 [#388](https://github.com/Mantle-UI/mantle-ui/pull/388)
+- build(deps): bump dompurify from 3.4.11 to 3.4.12 [#389](https://github.com/Mantle-UI/mantle-ui/pull/389)
+- build(deps-dev): bump postcss from 8.5.16 to 8.5.18 [#390](https://github.com/Mantle-UI/mantle-ui/pull/390)
+- Upgrade dependencies [#395](https://github.com/Mantle-UI/mantle-ui/pull/395) (issues: #396)
+- build(deps-dev): bump eslint-plugin-jest-dom from 5.5.0 to 5.6.0 [#405](https://github.com/Mantle-UI/mantle-ui/pull/405)
+## security
+
+- fix: resolve Dependabot security alerts [#399](https://github.com/Mantle-UI/mantle-ui/pull/399) (issues: #407)
+
 ## [10.10.7](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.6...v10.10.7) (2026-07-24)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.6...v10.10.7)

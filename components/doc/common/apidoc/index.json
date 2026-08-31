@@ -50080,6 +50080,78 @@
             }
         }
     },
+    "themes/themes": {
+        "functions": {
+            "description": "Defines the custom functions used by the module.",
+            "values": {
+                "definePreset": {
+                    "name": "definePreset",
+                    "parameters": [
+                        {
+                            "name": "basePreset",
+                            "type": "MantleThemePreset"
+                        },
+                        {
+                            "name": "overrides",
+                            "type": "MantleThemePreset"
+                        }
+                    ],
+                    "returnType": "MantleThemePreset"
+                },
+                "resolvePreset": {
+                    "name": "resolvePreset",
+                    "parameters": [
+                        {
+                            "name": "preset",
+                            "type": "MantleThemePreset"
+                        },
+                        {
+                            "name": "colorScheme",
+                            "type": "\"dark\" | \"light\""
+                        }
+                    ],
+                    "returnType": "Record<string, string>"
+                },
+                "createThemeCss": {
+                    "name": "createThemeCss",
+                    "parameters": [
+                        {
+                            "name": "preset",
+                            "type": "MantleThemePreset"
+                        },
+                        {
+                            "name": "options",
+                            "type": "{ colorScheme?: \"dark\" | \"light\"; prefix?: string; selector?: string }"
+                        }
+                    ],
+                    "returnType": "string"
+                }
+            }
+        },
+        "interfaces": {
+            "description": "Defines the custom interfaces used by the module.",
+            "values": {
+                "MantleThemePreset": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "primitive",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "Record<string, unknown>"
+                        },
+                        {
+                            "name": "semantic",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "Record<string, unknown>"
+                        }
+                    ],
+                    "callbacks": []
+                }
+            }
+        }
+    },
     "tieredmenu": {
         "description": "TieredMenu is an input component that provides real-time suggestions when being typed.\n\n[Live Demo](https://www.primereact.org/tieredmenu/)",
         "components": {

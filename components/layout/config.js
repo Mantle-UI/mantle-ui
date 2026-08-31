@@ -113,6 +113,25 @@ export default function Config(props) {
                 <section className="py-4 border-bottom-1 surface-border">
                     <div className="text-xl font-semibold mb-3">Themes</div>
                     <div className="flex align-items-center gap-2 mb-3">
+                        <span className="flex align-items-center justify-content-center border-circle bg-green-500 text-white" style={{ width: '1.5rem', height: '1.5rem' }}>
+                            A
+                        </span>
+                        <span className="font-medium">Aura</span>
+                        <span className="text-xs text-color-secondary">Experimental</span>
+                    </div>
+                    <div className="flex align-items-center justify-content-between gap-3 mb-4">
+                        <button
+                            className={classNames('bg-transparent border-1 cursor-pointer p-2 w-3 flex align-items-center justify-content-center transition-all transition-duration-200', {
+                                'border-primary': isThemeActive('aura', 'emerald'),
+                                'hover:border-500 surface-border': !isThemeActive('aura', 'emerald')
+                            })}
+                            style={{ borderRadius: '30px' }}
+                            onClick={() => switchTheme('aura', 'emerald')}
+                        >
+                            <span className="block h-1rem w-full" style={{ borderRadius: '30px', background: 'linear-gradient(180deg, #10b981 0%, rgba(16, 185, 129, 0.5) 100%)' }} />
+                        </button>
+                    </div>
+                    <div className="flex align-items-center gap-2 mb-3">
                         <img src="https://primefaces.org/cdn/primereact/images/themes/lara-light-teal.png" alt="Lara Light Teal" className="border-circle" style={{ width: '1.5rem' }} />
                         <span className="font-medium">Lara</span>
                     </div>

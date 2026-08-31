@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FilterMatchMode } from './FilterMatchMode';
 import MantleUI from './MantleUI';
+import { applyPreset } from '../themes/themes';
 
 export const MantleContext = React.createContext();
 
@@ -34,6 +35,13 @@ export const MantleProvider = (props) => {
     );
     const [pt, setPt] = useState(propsValue.pt ?? undefined);
     const [unstyled, setUnstyled] = useState(propsValue.unstyled ?? false);
+    const [theme, setTheme] = useState(propsValue.theme ?? undefined);
+
+    React.useEffect(() => {
+        if (theme?.preset) {
+            applyPreset(theme.preset, { ...theme.options, styleContainer });
+        }
+    }, [styleContainer, theme]);
     const [filterMatchModeOptions, setFilterMatchModeOptions] = useState(
         propsValue.filterMatchModeOptions ?? {
             text: [FilterMatchMode.STARTS_WITH, FilterMatchMode.CONTAINS, FilterMatchMode.NOT_CONTAINS, FilterMatchMode.ENDS_WITH, FilterMatchMode.EQUALS, FilterMatchMode.NOT_EQUALS],
@@ -116,7 +124,9 @@ export const MantleProvider = (props) => {
         filterMatchModeOptions,
         setFilterMatchModeOptions,
         unstyled,
-        setUnstyled
+        setUnstyled,
+        theme,
+        setTheme
     };
 
     return <MantleContext.Provider value={value}>{props.children}</MantleContext.Provider>;

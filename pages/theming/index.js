@@ -10,6 +10,7 @@ import { CssInJsDoc } from '@/components/doc/theming/scopedstyling/cssinjsdoc';
 import { CSSModulesDoc } from '@/components/doc/theming/scopedstyling/cssmodulesdoc';
 import { NamedClassDoc } from '@/components/doc/theming/scopedstyling/namedclassdoc';
 import { SwitchThemesDoc } from '@/components/doc/theming/switchthemesdoc';
+import { TokenPresetsDoc } from '@/components/doc/theming/tokenpresetsdoc';
 import { UtilsDoc } from '@/components/doc/theming/utilsdoc';
 import Head from 'next/head';
 
@@ -19,6 +20,11 @@ const ThemingDoc = () => {
             id: 'architecture',
             label: 'Architecture',
             component: ArchitectureDoc
+        },
+        {
+            id: 'tokenpresets',
+            label: 'Token Presets',
+            component: TokenPresetsDoc
         },
         {
             id: 'builtinthemes',

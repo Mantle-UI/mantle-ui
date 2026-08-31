@@ -1,0 +1,6 @@
+{
+    "main": "./themes.cjs.js",
+    "module": "./themes.esm.js",
+    "unpkg": "./themes.min.js",
+    "types": "./themes.d.ts"
+}

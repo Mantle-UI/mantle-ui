@@ -1,0 +1,87 @@
+/* See ../aura-light-emerald/theme.css for the token contract and initial component bridge. */
+:root {
+    color-scheme: dark;
+    --mantle-primary-200: #a7f3d0;
+    --mantle-primary-300: #6ee7b7;
+    --mantle-primary-400: #34d399;
+    --mantle-primary-color: var(--mantle-primary-400);
+    --mantle-primary-contrast-color: #18181b;
+    --mantle-primary-hover-color: var(--mantle-primary-300);
+    --mantle-primary-active-color: var(--mantle-primary-200);
+    --mantle-surface-0: #ffffff;
+    --mantle-surface-100: #f4f4f5;
+    --mantle-surface-200: #e4e4e7;
+    --mantle-surface-300: #d4d4d8;
+    --mantle-surface-400: #a1a1aa;
+    --mantle-surface-500: #71717a;
+    --mantle-surface-700: #3f3f46;
+    --mantle-surface-800: #27272a;
+    --mantle-surface-900: #18181b;
+    --mantle-surface-950: #09090b;
+    --mantle-text-color: var(--mantle-surface-0);
+    --mantle-text-muted-color: var(--mantle-surface-400);
+    --mantle-form-field-background: var(--mantle-surface-950);
+    --mantle-form-field-border-color: #52525b;
+    --mantle-form-field-hover-border-color: var(--mantle-surface-500);
+    --mantle-form-field-focus-border-color: var(--mantle-primary-color);
+    --mantle-form-field-color: var(--mantle-surface-0);
+    --mantle-form-field-placeholder-color: var(--mantle-surface-400);
+    --mantle-form-field-padding-x: 0.75rem;
+    --mantle-form-field-padding-y: 0.5rem;
+    --mantle-form-field-border-radius: 6px;
+    --mantle-button-padding-x: 1.25rem;
+    --mantle-button-padding-y: 0.75rem;
+    --mantle-button-border-radius: 6px;
+    --mantle-transition-duration: 0.2s;
+    --primary-color: var(--mantle-primary-color);
+    --primary-color-text: var(--mantle-primary-contrast-color);
+    --surface-ground: var(--mantle-surface-950);
+    --surface-card: var(--mantle-surface-900);
+    --surface-overlay: var(--mantle-surface-900);
+    --surface-border: var(--mantle-surface-700);
+    --text-color: var(--mantle-text-color);
+    --text-color-secondary: var(--mantle-text-muted-color);
+    --border-radius: var(--mantle-form-field-border-radius);
+}
+
+.p-button {
+    background: var(--mantle-primary-color);
+    border: 1px solid var(--mantle-primary-color);
+    border-radius: var(--mantle-button-border-radius);
+    color: var(--mantle-primary-contrast-color);
+    padding: var(--mantle-button-padding-y) var(--mantle-button-padding-x);
+    transition: background var(--mantle-transition-duration), border-color var(--mantle-transition-duration);
+}
+
+.p-button:not(:disabled):hover {
+    background: var(--mantle-primary-hover-color);
+    border-color: var(--mantle-primary-hover-color);
+}
+
+.p-button:not(:disabled):active {
+    background: var(--mantle-primary-active-color);
+    border-color: var(--mantle-primary-active-color);
+}
+
+.p-inputtext {
+    background: var(--mantle-form-field-background);
+    border: 1px solid var(--mantle-form-field-border-color);
+    border-radius: var(--mantle-form-field-border-radius);
+    color: var(--mantle-form-field-color);
+    padding: var(--mantle-form-field-padding-y) var(--mantle-form-field-padding-x);
+    transition: border-color var(--mantle-transition-duration);
+}
+
+.p-inputtext:hover {
+    border-color: var(--mantle-form-field-hover-border-color);
+}
+
+.p-inputtext:enabled:focus {
+    border-color: var(--mantle-form-field-focus-border-color);
+    box-shadow: 0 0 0 1px var(--mantle-form-field-focus-border-color);
+    outline: 0;
+}
+
+.p-inputtext::placeholder {
+    color: var(--mantle-form-field-placeholder-color);
+}

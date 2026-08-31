@@ -6,6 +6,7 @@
  *
  */
 import { Dispatch, SetStateAction } from 'react';
+import { MantleThemeOptions, MantleThemePreset } from '../themes/themes';
 import { AccordionPassThroughOptions, AccordionTabPassThroughOptions } from '../accordion/accordion';
 import { AutoCompletePassThroughOptions } from '../autocomplete/autocomplete';
 import { AvatarPassThroughOptions } from '../avatar/avatar';
@@ -190,6 +191,10 @@ export interface APIOptions {
      */
     inputStyle?: InputStyleType;
     /**
+     * Prime-style token theme configuration. The preset is injected as CSS custom properties when the provider mounts.
+     */
+    theme?: { preset: MantleThemePreset; options?: MantleThemeOptions };
+    /**
      * The locale configuration sets up the language and region specific preferences.
      * @defaultValue 'en'
      */
@@ -263,6 +268,10 @@ export interface APIOptions {
      * Sets the "inputStyle" state of the context.
      */
     setInputStyle?: Dispatch<SetStateAction<InputStyleType>>;
+    /**
+     * Sets the active token theme configuration.
+     */
+    setTheme?: Dispatch<SetStateAction<{ preset: MantleThemePreset; options?: MantleThemeOptions } | undefined>>;
     /**
      * Sets the "locale" state of the context.
      */

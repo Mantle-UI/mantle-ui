@@ -78,6 +78,10 @@ const webTypes = {
             return text.replace(/&#123;/g, '{').replace(/&#125;/g, '}');
         };
 
+        const parseDefaultValue = (text) => {
+            return parseText(text).replace(/^```[^\r\n]*\r?\n([\s\S]*?)\r?\n```$/, '$1');
+        };
+
         project.children.forEach((module) => {
             const { name, comment } = module;
 
@@ -169,7 +173,7 @@ const webTypes = {
                                 if (!prop.inheritedFrom || (prop.inheritedFrom && !prop.inheritedFrom.toString().startsWith('Omit.data-pr-'))) {
                                     props.push({
                                         name: prop.name,
-                                        default: prop.comment && prop.comment.getTag('@defaultValue') ? parseText(prop.comment.getTag('@defaultValue').content[0].text) : 'null', // TODO: Check
+                                        default: prop.comment && prop.comment.getTag('@defaultValue') ? parseDefaultValue(prop.comment.getTag('@defaultValue').content[0].text) : 'null', // TODO: Check
                                         description: prop.comment && prop.comment.summary.map((s) => parseText(s.text || '')).join(' '),
                                         value: {
                                             kind: 'expression',
@@ -235,7 +239,7 @@ const webTypes = {
                                 optional: prop.flags.isOptional,
                                 readonly: prop.flags.isReadonly,
                                 type: prop.type.toString(),
-                                default: prop.comment && prop.comment.getTag('@defaultValue') ? prop.comment.getTag('@defaultValue').content[0].text : '', // TODO: Check
+                                default: prop.comment && prop.comment.getTag('@defaultValue') ? parseDefaultValue(prop.comment.getTag('@defaultValue').content[0].text) : '', // TODO: Check
                                 description: prop.comment && prop.comment.summary.map((s) => s.text || '').join(' ')
                             });
                         });

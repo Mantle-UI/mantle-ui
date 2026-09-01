@@ -78,6 +78,10 @@ const DocApiTable = (props) => {
             );
         };
 
+        const formatDefaultValue = (value) => {
+            return typeof value === 'string' ? value.replace(/^```[^\r\n]*\r?\n([\s\S]*?)\r?\n```$/, '$1') : value;
+        };
+
         const createTBody = () => {
             return (
                 <React.Fragment>
@@ -114,7 +118,7 @@ const DocApiTable = (props) => {
                                                     })
                                                 ) : k === 'default' ? (
                                                     <div className={classNames('doc-option-default', { 'doc-option-dark': appContentContext.darkMode, 'doc-option-light': !appContentContext.darkMode })}>
-                                                        {ObjectUtils.isEmpty(v) ? 'null' : createContent(v, k === 'name', d.deprecated)}
+                                                        {ObjectUtils.isEmpty(v) ? 'null' : createContent(formatDefaultValue(v), k === 'name', d.deprecated)}
                                                     </div>
                                                 ) : k === 'type' ? (
                                                     <span className="doc-option-type">{createContent(v, k === 'name', d.deprecated)}</span>

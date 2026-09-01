@@ -51,6 +51,10 @@ const LIBRARY_DISPLAY_NAME = 'Mantle UI';
             return text.replace(/&#123;/g, '{').replace(/&#125;/g, '}');
         };
 
+        const parseDefaultValue = (text) => {
+            return parseText(text).replace(/^```[^\r\n]*\r?\n([\s\S]*?)\r?\n```$/, '$1');
+        };
+
         project.children.forEach((module) => {
             const { name, comment } = module;
 
@@ -147,7 +151,7 @@ const LIBRARY_DISPLAY_NAME = 'Mantle UI';
                                             optional: prop.flags.isOptional,
                                             readonly: prop.flags.isReadonly,
                                             type: prop.type.toString(),
-                                            default: prop.comment && prop.comment.getTag('@defaultValue') ? parseText(prop.comment.getTag('@defaultValue').content[0].text) : '', // TODO: Check
+                                            default: prop.comment && prop.comment.getTag('@defaultValue') ? parseDefaultValue(prop.comment.getTag('@defaultValue').content[0].text) : '', // TODO: Check
                                             description: prop.comment && prop.comment.summary.map((s) => parseText(s.text || '')).join(' '),
                                             deprecated: prop.comment && prop.comment.getTag('@deprecated') ? parseText(prop.comment.getTag('@deprecated').content[0].text) : undefined
                                         });
@@ -215,7 +219,7 @@ const LIBRARY_DISPLAY_NAME = 'Mantle UI';
                                 optional: prop.flags.isOptional,
                                 readonly: prop.flags.isReadonly,
                                 type: prop.type.toString(),
-                                default: prop.comment && prop.comment.getTag('@defaultValue') ? prop.comment.getTag('@defaultValue').content[0].text : '', // TODO: Check
+                                default: prop.comment && prop.comment.getTag('@defaultValue') ? parseDefaultValue(prop.comment.getTag('@defaultValue').content[0].text) : '', // TODO: Check
                                 description: prop.comment && prop.comment.summary.map((s) => s.text || '').join(' ')
                             });
                         });

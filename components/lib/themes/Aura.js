@@ -109,7 +109,7 @@ export const Aura = {
         },
         formField: {
             paddingX: '0.75rem',
-            paddingY: '0.5rem',
+            paddingY: '0.75rem',
             borderRadius: '{borderRadius.md}',
             transitionDuration: '{transitionDuration}'
         },
@@ -202,7 +202,9 @@ export const Aura = {
                 color: '{primary.contrastColor}',
                 borderRadius: '{borderRadius.md}',
                 paddingX: '1.25rem',
-                paddingY: '0.75rem'
+                paddingY: '0.75rem',
+                iconOnlyWidth: '3rem',
+                iconOnlyPadding: '0.75rem'
             },
             secondary: {
                 background: '{slate.700}',
@@ -339,6 +341,19 @@ export const Aura = {
                 selectedFocusBackground: 'color-mix(in srgb, {primary.color}, transparent 76%)'
             }
         },
+        autocomplete: {
+            panel: {
+                background: '{overlay.background}',
+                borderColor: '{overlay.borderColor}',
+                color: '{overlay.color}',
+                borderRadius: '{formField.borderRadius}'
+            },
+            option: {
+                color: '{overlay.color}',
+                hoverBackground: 'color-mix(in srgb, {overlay.color}, transparent 94%)',
+                selectedBackground: 'color-mix(in srgb, {primary.color}, transparent 84%)'
+            }
+        },
         selectButton: {
             button: {
                 background: '{formField.background}',
@@ -397,6 +412,70 @@ ${selector} {
     color: var(--${prefix}-button-root-color);
     padding: var(--${prefix}-button-root-padding-y) var(--${prefix}-button-root-padding-x);
     transition: background var(--${prefix}-transition-duration), border-color var(--${prefix}-transition-duration);
+}
+
+.p-button.p-button-icon-only:not(.p-button-text):not(.p-button-link):not(.p-button-outlined) {
+    padding: var(--${prefix}-button-root-icon-only-padding);
+    width: var(--${prefix}-button-root-icon-only-width);
+}
+
+/* Joined controls keep only their outer corners rounded. */
+.p-button-group > .p-button.p-button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.p-button-group > .p-button.p-button:first-child:not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.p-button-group > .p-button.p-button:last-child:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.p-splitbutton > .p-button.p-button:first-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.p-splitbutton > .p-button.p-button:last-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.p-autocomplete.p-autocomplete-dd .p-autocomplete-input.p-inputtext {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.p-autocomplete.p-autocomplete-dd .p-autocomplete-dropdown.p-button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.p-inputgroup > .p-component,
+.p-inputgroup > .p-inputwrapper > .p-inputtext,
+.p-inputgroup > .p-float-label > .p-component {
+    border-radius: 0;
+}
+
+.p-inputgroup > .p-button.p-button:not(.p-button-rounded) {
+    border-radius: 0;
+}
+
+.p-inputgroup > .p-button.p-button:first-child,
+.p-inputgroup > .p-inputtext:first-child,
+.p-inputgroup > .p-inputwrapper:first-child > .p-inputtext {
+    border-bottom-left-radius: var(--${prefix}-form-field-border-radius);
+    border-top-left-radius: var(--${prefix}-form-field-border-radius);
+}
+
+.p-inputgroup > .p-button.p-button:last-child,
+.p-inputgroup > .p-inputtext:last-child,
+.p-inputgroup > .p-inputwrapper:last-child > .p-inputtext {
+    border-bottom-right-radius: var(--${prefix}-form-field-border-radius);
+    border-top-right-radius: var(--${prefix}-form-field-border-radius);
 }
 
 .p-button:not(.p-button-text):not(.p-button-link):not(.p-button-outlined):not(:disabled):hover {
@@ -681,6 +760,28 @@ ${selector} {
 
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight.p-focus {
     background: var(--${prefix}-dropdown-option-selected-focus-background);
+}
+
+.p-autocomplete-panel {
+    background: var(--${prefix}-autocomplete-panel-background);
+    border-color: var(--${prefix}-autocomplete-panel-border-color);
+    border-radius: var(--${prefix}-autocomplete-panel-border-radius);
+    color: var(--${prefix}-autocomplete-panel-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item,
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item-group {
+    color: var(--${prefix}-autocomplete-option-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:not(.p-highlight):not(.p-disabled):hover {
+    background: var(--${prefix}-autocomplete-option-hover-background);
+    color: var(--${prefix}-autocomplete-option-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {
+    background: var(--${prefix}-autocomplete-option-selected-background);
+    color: var(--${prefix}-autocomplete-option-color);
 }
 
 .p-checkbox .p-checkbox-box {

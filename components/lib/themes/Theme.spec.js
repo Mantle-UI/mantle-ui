@@ -6,16 +6,20 @@ describe('Aura token foundation', () => {
 
         expect(tokens['primary.color']).toBe('#10b981');
         expect(tokens['formField.borderRadius']).toBe('6px');
+        expect(tokens['formField.paddingY']).toBe('0.75rem');
         expect(tokens['formField.focusBorderColor']).toBe('#10b981');
         expect(tokens['selectButton.button.selectedBackground']).toBe('#10b981');
         expect(tokens['toggleButton.root.selectedHoverBackground']).toBe('#059669');
         expect(tokens['checkbox.root.checkedBackground']).toBe('#10b981');
         expect(tokens['inputswitch.root.handleBackground']).toBe('#ffffff');
         expect(tokens['inputtext.root.filledBackground']).toBe('#f1f5f9');
+        expect(tokens['button.root.iconOnlyWidth']).toBe('3rem');
         expect(tokens['dropdown.panel.background']).toBe('#ffffff');
+        expect(tokens['autocomplete.panel.background']).toBe('#ffffff');
         expect(resolvePreset(Aura, 'dark')['formField.borderColor']).toBe('#52525b');
         expect(resolvePreset(Aura, 'dark')['inputtext.root.filledBackground']).toBe('#27272a');
         expect(resolvePreset(Aura, 'dark')['dropdown.panel.background']).toBe('#18181b');
+        expect(resolvePreset(Aura, 'dark')['autocomplete.panel.background']).toBe('#18181b');
     });
 
     it('creates scoped CSS custom properties', () => {
@@ -47,6 +51,10 @@ describe('Aura token foundation', () => {
         expect(css).toContain('var(--p-inputtext-root-filled-background)');
         expect(css).toContain('var(--p-dropdown-panel-background)');
         expect(css).toContain('var(--p-dropdown-option-selected-background)');
+        expect(css).toContain('var(--p-autocomplete-panel-background)');
+        expect(css).toContain('var(--p-button-root-icon-only-padding)');
+        expect(css).toContain('.p-autocomplete.p-autocomplete-dd .p-autocomplete-dropdown.p-button');
+        expect(css).toContain('.p-splitbutton > .p-button.p-button:first-child');
     });
 
     it('applies and updates a preset at runtime', () => {

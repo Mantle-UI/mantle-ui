@@ -7155,7 +7155,7 @@
     --mantle-primary-hover-color: #10b981;
     --mantle-primary-active-color: #059669;
     --mantle-form-field-padding-x: 0.75rem;
-    --mantle-form-field-padding-y: 0.5rem;
+    --mantle-form-field-padding-y: 0.75rem;
     --mantle-form-field-border-radius: 6px;
     --mantle-form-field-transition-duration: 0.2s;
     --mantle-form-field-background: #09090b;
@@ -7173,6 +7173,8 @@
     --mantle-button-root-border-radius: 6px;
     --mantle-button-root-padding-x: 1.25rem;
     --mantle-button-root-padding-y: 0.75rem;
+    --mantle-button-root-icon-only-width: 3rem;
+    --mantle-button-root-icon-only-padding: 0.75rem;
     --mantle-button-secondary-background: #334155;
     --mantle-button-secondary-hover-background: #1e293b;
     --mantle-button-secondary-active-background: #0f172a;
@@ -7202,7 +7204,7 @@
     --mantle-inputtext-root-border-radius: 6px;
     --mantle-inputtext-root-color: #ffffff;
     --mantle-inputtext-root-padding-x: 0.75rem;
-    --mantle-inputtext-root-padding-y: 0.5rem;
+    --mantle-inputtext-root-padding-y: 0.75rem;
     --mantle-inputtext-root-hover-border-color: #71717a;
     --mantle-inputtext-root-focus-border-color: #34d399;
     --mantle-inputtext-root-placeholder-color: #a1a1aa;
@@ -7267,6 +7269,13 @@
     --mantle-dropdown-option-focus-background: color-mix(in srgb, #ffffff, transparent 94%);
     --mantle-dropdown-option-selected-background: color-mix(in srgb, #34d399, transparent 84%);
     --mantle-dropdown-option-selected-focus-background: color-mix(in srgb, #34d399, transparent 76%);
+    --mantle-autocomplete-panel-background: #18181b;
+    --mantle-autocomplete-panel-border-color: #3f3f46;
+    --mantle-autocomplete-panel-color: #ffffff;
+    --mantle-autocomplete-panel-border-radius: 6px;
+    --mantle-autocomplete-option-color: #ffffff;
+    --mantle-autocomplete-option-hover-background: color-mix(in srgb, #ffffff, transparent 94%);
+    --mantle-autocomplete-option-selected-background: color-mix(in srgb, #34d399, transparent 84%);
     --mantle-select-button-button-background: #09090b;
     --mantle-select-button-button-border-color: #52525b;
     --mantle-select-button-button-color: #ffffff;
@@ -7330,6 +7339,70 @@
     color: var(--mantle-button-root-color);
     padding: var(--mantle-button-root-padding-y) var(--mantle-button-root-padding-x);
     transition: background var(--mantle-transition-duration), border-color var(--mantle-transition-duration);
+}
+
+.p-button.p-button-icon-only:not(.p-button-text):not(.p-button-link):not(.p-button-outlined) {
+    padding: var(--mantle-button-root-icon-only-padding);
+    width: var(--mantle-button-root-icon-only-width);
+}
+
+/* Joined controls keep only their outer corners rounded. */
+.p-button-group > .p-button.p-button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.p-button-group > .p-button.p-button:first-child:not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.p-button-group > .p-button.p-button:last-child:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.p-splitbutton > .p-button.p-button:first-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.p-splitbutton > .p-button.p-button:last-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.p-autocomplete.p-autocomplete-dd .p-autocomplete-input.p-inputtext {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.p-autocomplete.p-autocomplete-dd .p-autocomplete-dropdown.p-button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.p-inputgroup > .p-component,
+.p-inputgroup > .p-inputwrapper > .p-inputtext,
+.p-inputgroup > .p-float-label > .p-component {
+    border-radius: 0;
+}
+
+.p-inputgroup > .p-button.p-button:not(.p-button-rounded) {
+    border-radius: 0;
+}
+
+.p-inputgroup > .p-button.p-button:first-child,
+.p-inputgroup > .p-inputtext:first-child,
+.p-inputgroup > .p-inputwrapper:first-child > .p-inputtext {
+    border-bottom-left-radius: var(--mantle-form-field-border-radius);
+    border-top-left-radius: var(--mantle-form-field-border-radius);
+}
+
+.p-inputgroup > .p-button.p-button:last-child,
+.p-inputgroup > .p-inputtext:last-child,
+.p-inputgroup > .p-inputwrapper:last-child > .p-inputtext {
+    border-bottom-right-radius: var(--mantle-form-field-border-radius);
+    border-top-right-radius: var(--mantle-form-field-border-radius);
 }
 
 .p-button:not(.p-button-text):not(.p-button-link):not(.p-button-outlined):not(:disabled):hover {
@@ -7614,6 +7687,28 @@
 
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight.p-focus {
     background: var(--mantle-dropdown-option-selected-focus-background);
+}
+
+.p-autocomplete-panel {
+    background: var(--mantle-autocomplete-panel-background);
+    border-color: var(--mantle-autocomplete-panel-border-color);
+    border-radius: var(--mantle-autocomplete-panel-border-radius);
+    color: var(--mantle-autocomplete-panel-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item,
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item-group {
+    color: var(--mantle-autocomplete-option-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:not(.p-highlight):not(.p-disabled):hover {
+    background: var(--mantle-autocomplete-option-hover-background);
+    color: var(--mantle-autocomplete-option-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {
+    background: var(--mantle-autocomplete-option-selected-background);
+    color: var(--mantle-autocomplete-option-color);
 }
 
 .p-checkbox .p-checkbox-box {

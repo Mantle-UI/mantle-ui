@@ -1,3 +1,5 @@
+@use './breakpoints' as *;
+
 .landing-blocks {
     * {
         box-sizing: content-box;

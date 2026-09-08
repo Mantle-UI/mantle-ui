@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 .DocSearch-Button {
     border-radius: var(--border-radius);
     border: 1px solid var(--surface-border);

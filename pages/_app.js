@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react';
 import '../styles/demo/demo.scss';
 import '../styles/layout/layout.scss';
 
+const THEME_STORAGE_KEY = 'mantle-ui-docs-theme';
+
 function AppContent({ component: Component, pageProps }) {
     if (Component.getLayout) {
         return Component.getLayout(<Component {...pageProps} />);
@@ -39,6 +41,12 @@ export default function MyApp({ Component, pageProps }) {
                 switchTheme(theme, newTheme, 'theme-link', () => {
                     setDarkMode(dark);
                     setTheme(newTheme);
+
+                    try {
+                        window.localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+                    } catch (error) {
+                        // Theme switching remains available when browser storage is unavailable.
+                    }
                 });
             }
         },
@@ -59,6 +67,21 @@ export default function MyApp({ Component, pageProps }) {
     useEffect(() => {
         return applyBasePathCompatibility();
     }, []);
+
+    useEffect(() => {
+        try {
+            const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+
+            if (savedTheme && savedTheme !== theme) {
+                switchTheme(theme, savedTheme, 'theme-link', () => {
+                    setDarkMode(savedTheme.includes('-dark'));
+                    setTheme(savedTheme);
+                });
+            }
+        } catch (error) {
+            // Use the default theme when browser storage is unavailable.
+        }
+    }, []); // The stored selection is restored once after the client mounts.
 
     return (
         <AppContentContext.Provider value={appState}>

@@ -119,7 +119,7 @@ export const createPresetCss = (preset, { prefix = 'mantle', darkModeSelector = 
     const lightCss = createCssRule(selector, resolvePreset(preset, 'light'), prefix);
     const darkSelector = getDarkSelector(darkModeSelector);
     const darkCss = darkSelector ? (darkSelector === 'system' ? `@media (prefers-color-scheme: dark) {\n${createCssRule(selector, resolvePreset(preset, 'dark'), prefix)}\n}` : createCssRule(darkSelector, resolvePreset(preset, 'dark'), prefix)) : '';
-    const componentCss = typeof preset.css === 'function' ? preset.css({ prefix }) : preset.css;
+    const componentCss = typeof preset.css === 'function' ? preset.css({ prefix, selector }) : preset.css;
     const css = [lightCss, darkCss, componentCss].filter(Boolean).join('\n\n');
 
     if (!cssLayer) {

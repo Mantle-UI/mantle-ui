@@ -2,7 +2,7 @@ export interface MantleThemePreset {
     primitive?: Record<string, unknown>;
     semantic?: Record<string, unknown>;
     components?: Record<string, unknown>;
-    css?: string | ((options: { prefix: string }) => string);
+    css?: string | ((options: { prefix: string; selector?: string; colorScheme?: 'light' | 'dark' }) => string);
 }
 
 export interface MantleThemeOptions {

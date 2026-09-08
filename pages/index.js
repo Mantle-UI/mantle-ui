@@ -4,25 +4,28 @@ import HeroSection from '@/components/landing/herosection';
 import ThemeSection from '@/components/landing/themesection';
 import AppContentContext from '@/components/layout/appcontentcontext';
 import Topbar from '@/components/layout/topbar';
-import { useMountEffect } from '@/components/lib/mantle-ui-react.all';
 import { classNames } from '@/components/lib/utils/Utils';
 // import NewsSection from '@/components/news/newssection';
 import Head from 'next/head';
 import { useContext } from 'react';
 
 export default function Home() {
-    const { newsActive, darkMode, changeTheme } = useContext(AppContentContext);
+    const { newsActive, darkMode, theme, changeTheme } = useContext(AppContentContext);
     const landingClass = classNames('landing', { 'layout-light': !darkMode, 'layout-dark': darkMode, 'layout-news-active': newsActive });
 
     const toggleDarkMode = () => {
-        const newTheme = darkMode ? 'lara-light-cyan' : 'lara-dark-cyan';
+        let newTheme;
+
+        if (darkMode) {
+            newTheme = theme.replace('dark', 'light');
+        } else if (theme.includes('light') && theme !== 'fluent-light') {
+            newTheme = theme.replace('light', 'dark');
+        } else {
+            newTheme = 'lara-dark-cyan';
+        }
 
         changeTheme(newTheme, !darkMode);
     };
-
-    useMountEffect(() => {
-        changeTheme(darkMode ? 'lara-dark-cyan' : 'lara-light-cyan', darkMode);
-    });
 
     return (
         <div className={landingClass}>

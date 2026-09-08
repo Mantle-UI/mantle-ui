@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .template {
     display: flex;
     flex-direction: column;

@@ -1,3 +1,5 @@
+@use './breakpoints' as *;
+
 .landing-templates {
     overflow: hidden;
     background: var(--home-templates-bg);
@@ -248,4 +250,3 @@
         transform:  translateX(10px);
     }
 }
-

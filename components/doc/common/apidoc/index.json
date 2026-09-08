@@ -797,6 +797,13 @@
                             "description": "Input fields have two styles: default (outlined with borders) and filled (background-colored). Applying 'p-input-filled' to an input's ancestor enables the filled style."
                         },
                         {
+                            "name": "theme",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "{ preset: MantleThemePreset; options?: MantleThemeOptions }",
+                            "description": "Prime-style token theme configuration. The preset is injected as CSS custom properties when the provider mounts."
+                        },
+                        {
                             "name": "locale",
                             "optional": true,
                             "readonly": false,
@@ -900,6 +907,13 @@
                             "readonly": false,
                             "type": "Dispatch<SetStateAction<InputStyleType>>",
                             "description": "Sets the \"inputStyle\" state of the context."
+                        },
+                        {
+                            "name": "setTheme",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "Dispatch<SetStateAction<{ preset: MantleThemePreset; options?: MantleThemeOptions } | undefined>>",
+                            "description": "Sets the active token theme configuration."
                         },
                         {
                             "name": "setLocale",
@@ -9709,6 +9723,13 @@
                             "description": "Input fields have two styles: default (outlined with borders) and filled (background-colored). Applying 'p-input-filled' to an input's ancestor enables the filled style."
                         },
                         {
+                            "name": "theme",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "{ preset: MantleThemePreset; options?: MantleThemeOptions }",
+                            "description": "Prime-style token theme configuration. The preset is injected as CSS custom properties when the provider mounts."
+                        },
+                        {
                             "name": "locale",
                             "optional": true,
                             "readonly": false,
@@ -9812,6 +9833,13 @@
                             "readonly": false,
                             "type": "Dispatch<SetStateAction<InputStyleType>>",
                             "description": "Sets the \"inputStyle\" state of the context."
+                        },
+                        {
+                            "name": "setTheme",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "Dispatch<SetStateAction<{ preset: MantleThemePreset; options?: MantleThemeOptions } | undefined>>",
+                            "description": "Sets the active token theme configuration."
                         },
                         {
                             "name": "setLocale",
@@ -50125,6 +50153,96 @@
                         }
                     ],
                     "returnType": "string"
+                },
+                "createPresetCss": {
+                    "name": "createPresetCss",
+                    "parameters": [
+                        {
+                            "name": "preset",
+                            "type": "MantleThemePreset"
+                        },
+                        {
+                            "name": "options",
+                            "type": "MantleThemeOptions"
+                        }
+                    ],
+                    "returnType": "string"
+                },
+                "applyPreset": {
+                    "name": "applyPreset",
+                    "parameters": [
+                        {
+                            "name": "preset",
+                            "type": "MantleThemePreset"
+                        },
+                        {
+                            "name": "options",
+                            "type": "MantleThemeOptions"
+                        }
+                    ],
+                    "returnType": "MantleThemePreset"
+                },
+                "usePreset": {
+                    "name": "usePreset",
+                    "parameters": [
+                        {
+                            "name": "preset",
+                            "type": "MantleThemePreset"
+                        },
+                        {
+                            "name": "options",
+                            "type": "MantleThemeOptions"
+                        }
+                    ],
+                    "returnType": "MantleThemePreset"
+                },
+                "updatePreset": {
+                    "name": "updatePreset",
+                    "parameters": [
+                        {
+                            "name": "overrides",
+                            "type": "MantleThemePreset"
+                        }
+                    ],
+                    "returnType": "MantleThemePreset"
+                },
+                "updatePrimaryPalette": {
+                    "name": "updatePrimaryPalette",
+                    "parameters": [
+                        {
+                            "name": "palette",
+                            "type": "Record<string, string>"
+                        }
+                    ],
+                    "returnType": "MantleThemePreset"
+                },
+                "updateSurfacePalette": {
+                    "name": "updateSurfacePalette",
+                    "parameters": [
+                        {
+                            "name": "palette",
+                            "type": "Record<string, string>"
+                        },
+                        {
+                            "name": "colorScheme",
+                            "type": "\"dark\" | \"light\""
+                        }
+                    ],
+                    "returnType": "MantleThemePreset"
+                },
+                "$dt": {
+                    "name": "$dt",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "string"
+                        },
+                        {
+                            "name": "fallback",
+                            "type": "string"
+                        }
+                    ],
+                    "returnType": "DesignToken"
                 }
             }
         },
@@ -50145,6 +50263,78 @@
                             "optional": true,
                             "readonly": false,
                             "type": "Record<string, unknown>"
+                        },
+                        {
+                            "name": "components",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "Record<string, unknown>"
+                        },
+                        {
+                            "name": "css",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string | ((options: { prefix: string; selector?: string }) => string)"
+                        }
+                    ],
+                    "callbacks": []
+                },
+                "MantleThemeOptions": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "prefix",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "darkModeSelector",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string | false"
+                        },
+                        {
+                            "name": "selector",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "cssLayer",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean | { name?: string }"
+                        },
+                        {
+                            "name": "styleContainer",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "HTMLElement"
+                        }
+                    ],
+                    "callbacks": []
+                },
+                "DesignToken": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "name",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "variable",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "value",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "string | undefined"
                         }
                     ],
                     "callbacks": []

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { getVite } from '@/components/doc/common/codeeditor/templates';
 
 const createPlaygroundProject = () => {
-    const { files, dependencies } = getVite(
+    const { files } = getVite(
         {
             title: 'Mantle UI Playground',
             description: 'Interactive Mantle UI playground powered by Vite and StackBlitz.',
@@ -46,7 +46,6 @@ export default function App() {
         title: 'Mantle UI Playground',
         template: 'node',
         description: 'Interactive Mantle UI playground powered by Vite and StackBlitz.',
-        dependencies,
         files: normalizedFiles
     };
 };

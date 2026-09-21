@@ -20,9 +20,15 @@ export function AccessibilityDoc(props) {
                     <tbody>
                         <tr>
                             <td>
-                                <i>enter</i> / <i>space</i>
+                                <i>enter</i>
                             </td>
-                            <td>Expands or collapses the focused root navigation item.</td>
+                            <td>Expands or collapses a focused root navigation button, or activates a focused navigation link.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i>space</i>
+                            </td>
+                            <td>Expands or collapses the focused root navigation button.</td>
                         </tr>
                         <tr>
                             <td>

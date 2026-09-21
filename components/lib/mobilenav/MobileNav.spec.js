@@ -29,7 +29,15 @@ describe('MobileNav', () => {
     test('uses unique render keys when sibling item ids are duplicated', () => {
         const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-        render(<MobileNav visible model={[{ id: 'duplicate', label: 'First' }, { id: 'duplicate', label: 'Second' }]} />);
+        render(
+            <MobileNav
+                visible
+                model={[
+                    { id: 'duplicate', label: 'First' },
+                    { id: 'duplicate', label: 'Second' }
+                ]}
+            />
+        );
 
         expect(consoleError).not.toHaveBeenCalledWith(expect.stringContaining('unique "key" prop'));
         consoleError.mockRestore();

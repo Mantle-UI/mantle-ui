@@ -37,9 +37,11 @@ const styles = `
 
     .p-mobilenav-active { opacity: 1; transform: translateX(0); }
 
-    @supports (background: color-mix(in srgb, black, transparent)) {
+    @supports (color: light-dark(white, black)) and (background: color-mix(in srgb, black, transparent)) {
+        /* Mantle themes set color-scheme, allowing the component to select an
+         * opaque light surface and a frosted dark surface without app classes. */
         .p-mobilenav {
-            background: color-mix(in srgb, var(--surface-overlay) 30%, transparent) !important;
+            background: light-dark(var(--surface-overlay), color-mix(in srgb, var(--surface-overlay) 30%, transparent)) !important;
         }
     }
 

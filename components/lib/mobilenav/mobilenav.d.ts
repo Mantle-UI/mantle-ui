@@ -20,6 +20,10 @@ export interface MobileNavPassThroughMethodOptions {
 }
 
 export interface MobileNavPassThroughOptions {
+    /** Attributes for the overlay mask. */
+    mask?: MobileNavPassThroughType<React.HTMLAttributes<HTMLDivElement>>;
+    /** Attributes for the root drawer element. */
+    root?: MobileNavPassThroughType<React.HTMLAttributes<HTMLElement>>;
     /** Attributes for the navigation landmark. */
     nav?: MobileNavPassThroughType<React.HTMLAttributes<HTMLElement>>;
     /** Attributes for the root navigation list. */

@@ -6,15 +6,41 @@ import { MobileNav } from './MobileNav';
 const model = [{ label: 'Components', id: 'components', icon: 'pi pi-box', items: [{ label: 'Button', url: '/button' }] }];
 
 describe('MobileNav', () => {
-    test('renders an accessible navigation tree in a drawer', () => {
+    test('renders and activates an accessible navigation tree in a drawer', async () => {
         render(<MobileNav visible model={model} />);
 
         expect(screen.getByRole('navigation', { name: 'Navigation' })).toBeVisible();
+        await waitFor(() => expect(document.querySelector('.p-mobilenav')).toHaveClass('p-mobilenav-active'));
+        expect(document.querySelector('.p-mobilenav-mask')).toHaveClass('p-mobilenav-mask-active');
         expect(screen.getByRole('button', { name: 'Components' })).toHaveAttribute('aria-expanded', 'false');
         expect(document.querySelectorAll('.p-mobilenav-icon .pi')).toHaveLength(1);
         expect(document.querySelector('.p-mobilenav-submenu-wrapper')).not.toHaveClass('p-mobilenav-submenu-expanded');
         expect(document.querySelector('.p-mobilenav-submenu-wrapper')).toHaveAttribute('aria-hidden', 'true');
         expect(screen.getByRole('link', { name: 'Button', hidden: true })).toHaveAttribute('tabindex', '-1');
+    });
+
+    test('applies mask and root pass-through options', () => {
+        render(<MobileNav visible model={model} pt={{ mask: { 'data-testid': 'mask' }, root: { 'data-testid': 'root' } }} />);
+
+        expect(screen.getByTestId('mask')).toHaveClass('p-mobilenav-mask');
+        expect(screen.getByTestId('root')).toHaveClass('p-mobilenav');
+    });
+
+    test('uses unique render keys when sibling item ids are duplicated', () => {
+        const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+        render(
+            <MobileNav
+                visible
+                model={[
+                    { id: 'duplicate', label: 'First' },
+                    { id: 'duplicate', label: 'Second' }
+                ]}
+            />
+        );
+
+        expect(consoleError).not.toHaveBeenCalledWith(expect.stringContaining('unique "key" prop'));
+        consoleError.mockRestore();
     });
 
     test('expands a branch and closes after selecting a leaf', async () => {

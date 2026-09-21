@@ -1,3 +1,5 @@
+@use "../mixins";
+
 .template {
     display: flex;
     flex-direction: column;
@@ -21,7 +23,7 @@
                 font-weight: 600;
                 color: var(--surface-900);
 
-                @include mobile {
+                @include mixins.mobile {
                     font-size: 1.5rem;
                 }
             }
@@ -52,7 +54,7 @@
             width: 45rem;
             margin: 1.25rem auto 0;
 
-            @include mobile {
+            @include mixins.mobile {
                 font-size: 1rem;
                 line-height: 1.25rem;
                 width: 96%;
@@ -124,14 +126,14 @@
 
             &-title {
                 h2 {
-                    @include mobile {
+                    @include mixins.mobile {
                         font-size: 1.5rem;
                     }
                 }
             }
 
             &-description {
-                @include mobile {
+                @include mixins.mobile {
                     font-size: 1rem;
                     line-height: 1.25rem;
                     width: 90%;

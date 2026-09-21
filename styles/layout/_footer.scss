@@ -1,3 +1,5 @@
+@use "mixins";
+
 .layout-footer {
     padding: 2rem 4rem;
     margin-top: 4rem;
@@ -15,7 +17,7 @@
         transition: all .3s;
         border-radius: var(--border-radius);
 
-        @include focus-visible();
+        @include mixins.focus-visible();
 
         &:hover {
             text-decoration: underline;

@@ -7259,6 +7259,21 @@
     --mantle-dropdown-option-focus-background: color-mix(in srgb, #334155, transparent 94%);
     --mantle-dropdown-option-selected-background: color-mix(in srgb, #10b981, transparent 84%);
     --mantle-dropdown-option-selected-focus-background: color-mix(in srgb, #10b981, transparent 76%);
+    --mantle-autocomplete-root-invalid-border-color: #ef4444;
+    --mantle-autocomplete-multiple-container-background: #ffffff;
+    --mantle-autocomplete-multiple-container-border-color: #cbd5e1;
+    --mantle-autocomplete-multiple-container-color: #334155;
+    --mantle-autocomplete-multiple-container-hover-border-color: #94a3b8;
+    --mantle-autocomplete-multiple-container-focus-border-color: #10b981;
+    --mantle-autocomplete-multiple-container-filled-background: #f1f5f9;
+    --mantle-autocomplete-multiple-container-padding-x: 0.75rem;
+    --mantle-autocomplete-multiple-container-padding-y: 0.375rem;
+    --mantle-autocomplete-multiple-container-border-radius: 6px;
+    --mantle-autocomplete-multiple-container-invalid-border-color: #ef4444;
+    --mantle-autocomplete-token-background: color-mix(in srgb, #10b981, transparent 84%);
+    --mantle-autocomplete-token-color: #334155;
+    --mantle-autocomplete-token-border-radius: 6px;
+    --mantle-autocomplete-loader-color: #64748b;
     --mantle-autocomplete-panel-background: #ffffff;
     --mantle-autocomplete-panel-border-color: #e2e8f0;
     --mantle-autocomplete-panel-color: #334155;
@@ -7266,6 +7281,7 @@
     --mantle-autocomplete-option-color: #334155;
     --mantle-autocomplete-option-hover-background: color-mix(in srgb, #334155, transparent 94%);
     --mantle-autocomplete-option-selected-background: color-mix(in srgb, #10b981, transparent 84%);
+    --mantle-autocomplete-option-group-background: color-mix(in srgb, #334155, transparent 90%);
     --mantle-select-button-button-background: #ffffff;
     --mantle-select-button-button-border-color: #cbd5e1;
     --mantle-select-button-button-color: #334155;
@@ -7695,6 +7711,52 @@
 .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {
     background: var(--mantle-autocomplete-option-selected-background);
     color: var(--mantle-autocomplete-option-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item-group {
+    background: var(--mantle-autocomplete-option-group-background);
+    color: var(--mantle-autocomplete-option-color);
+}
+
+.p-autocomplete .p-autocomplete-loader {
+    color: var(--mantle-autocomplete-loader-color);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container {
+    background: var(--mantle-autocomplete-multiple-container-background);
+    border-color: var(--mantle-autocomplete-multiple-container-border-color);
+    border-radius: var(--mantle-autocomplete-multiple-container-border-radius);
+    color: var(--mantle-autocomplete-multiple-container-color);
+    padding: var(--mantle-autocomplete-multiple-container-padding-y) var(--mantle-autocomplete-multiple-container-padding-x);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover {
+    border-color: var(--mantle-autocomplete-multiple-container-hover-border-color);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled).p-focus {
+    border-color: var(--mantle-autocomplete-multiple-container-focus-border-color);
+    box-shadow: 0 0 0 1px var(--mantle-autocomplete-multiple-container-focus-border-color);
+    outline: 0;
+}
+
+.p-autocomplete .p-autocomplete-multiple-container.p-variant-filled {
+    background: var(--mantle-autocomplete-multiple-container-filled-background);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-input-token input {
+    color: var(--mantle-autocomplete-multiple-container-color);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-token {
+    background: var(--mantle-autocomplete-token-background);
+    border-radius: var(--mantle-autocomplete-token-border-radius);
+    color: var(--mantle-autocomplete-token-color);
+}
+
+.p-autocomplete.p-invalid > .p-inputtext,
+.p-autocomplete.p-invalid > .p-autocomplete-multiple-container {
+    border-color: var(--mantle-autocomplete-root-invalid-border-color);
 }
 
 .p-checkbox .p-checkbox-box {

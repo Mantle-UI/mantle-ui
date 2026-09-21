@@ -16,6 +16,7 @@ describe('Aura token foundation', () => {
         expect(tokens['button.root.iconOnlyWidth']).toBe('3rem');
         expect(tokens['dropdown.panel.background']).toBe('#ffffff');
         expect(tokens['autocomplete.panel.background']).toBe('#ffffff');
+        expect(tokens['autocomplete.multipleContainer.focusBorderColor']).toBe('#10b981');
         expect(resolvePreset(Aura, 'dark')['formField.borderColor']).toBe('#52525b');
         expect(resolvePreset(Aura, 'dark')['inputtext.root.filledBackground']).toBe('#27272a');
         expect(resolvePreset(Aura, 'dark')['dropdown.panel.background']).toBe('#18181b');
@@ -52,6 +53,7 @@ describe('Aura token foundation', () => {
         expect(css).toContain('var(--p-dropdown-panel-background)');
         expect(css).toContain('var(--p-dropdown-option-selected-background)');
         expect(css).toContain('var(--p-autocomplete-panel-background)');
+        expect(css).toContain('var(--p-autocomplete-multiple-container-focus-border-color)');
         expect(css).toContain('var(--p-button-root-icon-only-padding)');
         expect(css).toContain('.p-autocomplete.p-autocomplete-dd .p-autocomplete-dropdown.p-button');
         expect(css).toContain('.p-splitbutton > .p-button.p-button:first-child');

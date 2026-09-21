@@ -342,6 +342,29 @@ export const Aura = {
             }
         },
         autocomplete: {
+            root: {
+                invalidBorderColor: '{red.500}'
+            },
+            multipleContainer: {
+                background: '{formField.background}',
+                borderColor: '{formField.borderColor}',
+                color: '{formField.color}',
+                hoverBorderColor: '{formField.hoverBorderColor}',
+                focusBorderColor: '{formField.focusBorderColor}',
+                filledBackground: '{formField.filledBackground}',
+                paddingX: '{formField.paddingX}',
+                paddingY: '0.375rem',
+                borderRadius: '{formField.borderRadius}',
+                invalidBorderColor: '{red.500}'
+            },
+            token: {
+                background: 'color-mix(in srgb, {primary.color}, transparent 84%)',
+                color: '{formField.color}',
+                borderRadius: '{formField.borderRadius}'
+            },
+            loader: {
+                color: '{text.mutedColor}'
+            },
             panel: {
                 background: '{overlay.background}',
                 borderColor: '{overlay.borderColor}',
@@ -351,7 +374,8 @@ export const Aura = {
             option: {
                 color: '{overlay.color}',
                 hoverBackground: 'color-mix(in srgb, {overlay.color}, transparent 94%)',
-                selectedBackground: 'color-mix(in srgb, {primary.color}, transparent 84%)'
+                selectedBackground: 'color-mix(in srgb, {primary.color}, transparent 84%)',
+                groupBackground: 'color-mix(in srgb, {overlay.color}, transparent 90%)'
             }
         },
         selectButton: {
@@ -782,6 +806,52 @@ ${selector} {
 .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {
     background: var(--${prefix}-autocomplete-option-selected-background);
     color: var(--${prefix}-autocomplete-option-color);
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item-group {
+    background: var(--${prefix}-autocomplete-option-group-background);
+    color: var(--${prefix}-autocomplete-option-color);
+}
+
+.p-autocomplete .p-autocomplete-loader {
+    color: var(--${prefix}-autocomplete-loader-color);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container {
+    background: var(--${prefix}-autocomplete-multiple-container-background);
+    border-color: var(--${prefix}-autocomplete-multiple-container-border-color);
+    border-radius: var(--${prefix}-autocomplete-multiple-container-border-radius);
+    color: var(--${prefix}-autocomplete-multiple-container-color);
+    padding: var(--${prefix}-autocomplete-multiple-container-padding-y) var(--${prefix}-autocomplete-multiple-container-padding-x);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover {
+    border-color: var(--${prefix}-autocomplete-multiple-container-hover-border-color);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled).p-focus {
+    border-color: var(--${prefix}-autocomplete-multiple-container-focus-border-color);
+    box-shadow: 0 0 0 1px var(--${prefix}-autocomplete-multiple-container-focus-border-color);
+    outline: 0;
+}
+
+.p-autocomplete .p-autocomplete-multiple-container.p-variant-filled {
+    background: var(--${prefix}-autocomplete-multiple-container-filled-background);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-input-token input {
+    color: var(--${prefix}-autocomplete-multiple-container-color);
+}
+
+.p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-token {
+    background: var(--${prefix}-autocomplete-token-background);
+    border-radius: var(--${prefix}-autocomplete-token-border-radius);
+    color: var(--${prefix}-autocomplete-token-color);
+}
+
+.p-autocomplete.p-invalid > .p-inputtext,
+.p-autocomplete.p-invalid > .p-autocomplete-multiple-container {
+    border-color: var(--${prefix}-autocomplete-root-invalid-border-color);
 }
 
 .p-checkbox .p-checkbox-box {

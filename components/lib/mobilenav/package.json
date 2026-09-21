@@ -1,0 +1,7 @@
+{
+    "main": "./mobilenav.cjs.js",
+    "module": "./mobilenav.esm.js",
+    "unpkg": "./mobilenav.min.js",
+    "types": "./mobilenav.d.ts",
+    "sideEffects": false
+}

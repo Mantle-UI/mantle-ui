@@ -15,6 +15,9 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
     const [rendered, setRendered] = React.useState(props.visible);
     const itemRefs = React.useRef({});
     const maskRef = React.useRef(null);
+    const rootRef = React.useRef(null);
+    const previouslyFocusedElementRef = React.useRef(null);
+    const wasVisibleRef = React.useRef(false);
     const activate = React.useCallback(() => {
         rootRef.current?.classList.add('p-mobilenav-active');
         maskRef.current?.classList.add('p-mobilenav-mask-active');
@@ -28,12 +31,20 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
         let frame;
 
         if (props.visible) {
+            if (!wasVisibleRef.current) {
+                const activeElement = document.activeElement;
+
+                previouslyFocusedElementRef.current = activeElement instanceof HTMLElement && !rootRef.current?.contains(activeElement) ? activeElement : null;
+            }
+
             setRendered(true);
 
             // When the Portal already exists (for example a close followed by an
             // immediate reopen), it has a rendered inactive drawer we can animate.
             if (rootRef.current) {
-                frame = requestAnimationFrame(activate);
+                frame = requestAnimationFrame(() => {
+                    activate();
+                });
             }
 
             props.blockScroll && DomHandler.blockBodyScroll();
@@ -42,13 +53,65 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
             maskRef.current?.classList.remove('p-mobilenav-mask-active');
             props.blockScroll && DomHandler.unblockBodyScroll();
             timer = setTimeout(() => setRendered(false), 400);
+
+            if (wasVisibleRef.current) {
+                DomHandler.focus(previouslyFocusedElementRef.current);
+                previouslyFocusedElementRef.current = null;
+            }
         }
+
+        wasVisibleRef.current = props.visible;
 
         return () => {
             clearTimeout(timer);
             cancelAnimationFrame(frame);
         };
     }, [props.visible, props.blockScroll, activate]);
+
+    const getFocusableItems = React.useCallback(() => {
+        if (!rootRef.current) {
+            return [];
+        }
+
+        return Array.from(rootRef.current.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(
+            (element) => element.tabIndex !== -1 && !element.closest('[aria-hidden="true"]')
+        );
+    }, []);
+
+    const focusFirstItem = React.useCallback(() => {
+        DomHandler.focus(getFocusableItems()[0]);
+    }, [getFocusableItems]);
+
+    const onKeyDown = React.useCallback((event) => {
+        if (event.key !== 'Tab') {
+            return;
+        }
+
+        const focusableItems = getFocusableItems();
+
+        if (!focusableItems.length) {
+            event.preventDefault();
+
+            return;
+        }
+
+        const currentIndex = focusableItems.indexOf(document.activeElement);
+        const nextItem = event.shiftKey ? (currentIndex <= 0 ? focusableItems[focusableItems.length - 1] : focusableItems[currentIndex - 1]) : currentIndex === focusableItems.length - 1 ? focusableItems[0] : focusableItems[currentIndex + 1];
+
+        event.preventDefault();
+        DomHandler.focus(nextItem);
+    }, [getFocusableItems]);
+
+    const setRootRef = React.useCallback(
+        (element) => {
+            rootRef.current = element;
+
+            if (element && props.visible) {
+                requestAnimationFrame(focusFirstItem);
+            }
+        },
+        [props.visible, focusFirstItem]
+    );
 
     const mobileNavDisplayOrder = useDisplayOrder('mobilenav', props.visible);
 
@@ -90,22 +153,21 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
         if (items.length) {
             event.preventDefault();
             const action = event.currentTarget;
+            const expanded = action.getAttribute('aria-expanded') !== 'true';
+            const submenu = action.nextElementSibling;
+            const menuItem = action.closest('.p-mobilenav-item');
 
             // StyleClass owns the visual open/close operation, exactly as the
-            // documentation sidebar does. Mirror its completed state to the
-            // accessibility tree without re-rendering the menu.
-            setTimeout(() => {
-                const submenu = action.nextElementSibling;
-                const collapsed = submenu?.classList.contains('hidden');
-
-                if (submenu) {
-                    submenu.setAttribute('aria-hidden', String(collapsed));
-                    submenu.querySelectorAll('a, button').forEach((element) => {
-                        element.tabIndex = collapsed ? -1 : 0;
-                    });
-                    action.setAttribute('aria-expanded', String(!collapsed));
-                }
-            }, 0);
+            // documentation sidebar does. Mirror the intended state to the
+            // accessibility tree without waiting for the leave animation.
+            if (submenu) {
+                submenu.setAttribute('aria-hidden', String(!expanded));
+                submenu.querySelectorAll('a, button').forEach((element) => {
+                    element.tabIndex = expanded ? 0 : -1;
+                });
+                action.setAttribute('aria-expanded', String(expanded));
+                menuItem?.classList.toggle('p-mobilenav-item-expanded', expanded);
+            }
 
             return;
         }
@@ -165,7 +227,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
 
         const element =
             hasItems && level === 0 ? (
-                <StyleClass nodeRef={getItemRef(key)} selector="@next" enterClassName="hidden" enterActiveClassName="slidedown" leaveToClassName="hidden" leaveActiveClassName="slideup">
+                <StyleClass key="action" nodeRef={getItemRef(key)} selector="@next" enterClassName="hidden" enterActiveClassName="slidedown" leaveToClassName="hidden" leaveActiveClassName="slideup">
                     {React.cloneElement(action, { ref: getItemRef(key) })}
                 </StyleClass>
             ) : (
@@ -229,8 +291,6 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
         return React.createElement('ol', mergeProps({ id: level ? `${idState}_${parentKey.slice(0, -1)}_group` : undefined, className: level ? cx('submenu') : cx('menu') }, ptm(level ? 'submenu' : 'menu')), ...menuItems);
     };
 
-    const rootRef = React.useRef(null);
-
     React.useImperativeHandle(ref, () => ({
         props,
         getElement: () => rootRef.current
@@ -248,6 +308,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
                 // documentation sidebar used, without a timeout delay.
                 if (props.visible) {
                     requestAnimationFrame(activate);
+                    requestAnimationFrame(focusFirstItem);
                 }
             }}
         >
@@ -257,7 +318,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
                 style={props.maskStyle}
                 onMouseDown={(event) => props.dismissable && event.target === event.currentTarget && props.onHide && props.onHide(event)}
             >
-                <aside ref={rootRef} id={props.id} className={cx('root')} style={props.style}>
+                <aside ref={setRootRef} id={props.id} className={cx('root')} style={props.style} onKeyDown={onKeyDown}>
                     <nav {...mergeProps({ 'aria-label': props.ariaLabel }, ptm('nav'))}>{createMenu(props.model || [])}</nav>
                 </aside>
             </div>

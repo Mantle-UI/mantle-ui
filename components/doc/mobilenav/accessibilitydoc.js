@@ -8,6 +8,7 @@ export function AccessibilityDoc(props) {
                 MobileNav renders a <i>nav</i> landmark. Use <i>ariaLabel</i> to provide its accessible name; it defaults to <i>Navigation</i>. The active leaf item receives <i>aria-current=&quot;page&quot;</i>, while expandable items expose their
                 state with <i>aria-expanded</i>.
             </p>
+            <p>When the drawer opens, focus moves to its first available navigation item. Focus remains within the drawer while it is open and returns to the element that opened it when it closes.</p>
             <h3>Keyboard Support</h3>
             <div className="doc-tablewrapper">
                 <table className="doc-table">
@@ -29,6 +30,18 @@ export function AccessibilityDoc(props) {
                                 <i>space</i>
                             </td>
                             <td>Expands or collapses the focused root navigation button.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i>tab</i>
+                            </td>
+                            <td>Moves focus to the next navigation item and wraps from the last item to the first.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i>shift</i> + <i>tab</i>
+                            </td>
+                            <td>Moves focus to the previous navigation item and wraps from the first item to the last.</td>
                         </tr>
                         <tr>
                             <td>

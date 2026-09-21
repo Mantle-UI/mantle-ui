@@ -119,6 +119,10 @@ const styles = `
         transform: rotate(180deg);
     }
 
+    .p-mobilenav-item-content[aria-expanded="true"] .p-mobilenav-toggle-icon {
+        transform: rotate(180deg);
+    }
+
     .p-mobilenav-sublist {
         margin-left: 1rem;
         padding: .25rem 0;

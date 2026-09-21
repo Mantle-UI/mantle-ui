@@ -36566,6 +36566,20 @@
                     "relatedProp": "",
                     "props": [
                         {
+                            "name": "mask",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLDivElement>>",
+                            "description": "Attributes for the overlay mask."
+                        },
+                        {
+                            "name": "root",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLElement>>",
+                            "description": "Attributes for the root drawer element."
+                        },
+                        {
                             "name": "nav",
                             "optional": true,
                             "readonly": false,

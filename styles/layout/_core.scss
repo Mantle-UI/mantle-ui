@@ -1,4 +1,4 @@
-@use './mixins' as *;
+@use "mixins";
 
 html {
     font-size: 14px;
@@ -96,7 +96,7 @@ input[type="number"] {
     cursor: pointer;
     user-select: none;
 
-    @include focus-visible();
+    @include mixins.focus-visible();
 }
 
 .px-link:disabled {

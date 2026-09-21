@@ -79,10 +79,9 @@ export default function Layout({ children }) {
                 <link rel="icon" href={withBasePath('/favicon.svg')} type="image/svg+xml" />
             </Head>
             <Topbar showConfigurator showMenuButton onMenuButtonClick={() => setSidebarActive(true)} onConfigButtonClick={() => setConfigActive(true)} onDarkSwitchClick={toggleDarkMode} />
-            <div className={classNames('layout-mask', { 'layout-mask-active': sidebarActive })} onClick={() => setSidebarActive(false)} />
             <Config active={configActive} onHide={() => setConfigActive(false)} onDarkSwitchClick={toggleDarkMode} />
             <div className="layout-content">
-                <Menu active={sidebarActive} />
+                <Menu active={sidebarActive} onHide={() => setSidebarActive(false)} />
                 <div className="layout-content-slot">{children}</div>
             </div>
             <Footer />

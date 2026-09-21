@@ -10,11 +10,12 @@ const DocApiTable = (props) => {
 
     const { id, data, name, description, allowLink = true } = props;
     const isPT = id.startsWith('pt.');
+    const isMobileNavProps = name === 'MobileNav' && id.endsWith('.props');
 
     const router = useRouter();
 
     if (ObjectUtils.isNotEmpty(data)) {
-        const headers = Object.keys(data[0]);
+        const headers = isPT ? ['Name', 'Type', 'Description'] : isMobileNavProps ? ['Name', 'Type', 'Default', 'Description'] : Object.keys(data[0]);
 
         const onClick = (id, behavior) => {
             const element = document.getElementById(id);
@@ -98,6 +99,32 @@ const DocApiTable = (props) => {
                             );
                         }
 
+                        if (isMobileNavProps) {
+                            const values = {
+                                name: d.name || '-',
+                                type: d.type || d.returnType || '-',
+                                default: ObjectUtils.isEmpty(d.default) ? 'undefined' : d.default,
+                                description: d.description || d.values || '-'
+                            };
+
+                            return (
+                                <tr key={i}>
+                                    <td>{createContent(values.name, true, d.deprecated)}</td>
+                                    <td>
+                                        <span className="doc-option-type">{createContent(values.type, false, d.deprecated)}</span>
+                                    </td>
+                                    <td>
+                                        <div className={classNames('doc-option-default', { 'doc-option-dark': appContentContext.darkMode, 'doc-option-light': !appContentContext.darkMode })}>
+                                            {ObjectUtils.isEmpty(values.default) ? '-' : createContent(formatDefaultValue(values.default), false, d.deprecated)}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span className="doc-option-description">{values.description}</span>
+                                    </td>
+                                </tr>
+                            );
+                        }
+
                         return (
                             <tr key={i}>
                                 {Object.entries(d).map(
@@ -144,7 +171,7 @@ const DocApiTable = (props) => {
         const createTHead = () => {
             return (
                 <React.Fragment>
-                    {isPT ? (
+                    {isPT || isMobileNavProps ? (
                         <tr>
                             {headers.map((h) => (
                                 <th key={h}>{h}</th>

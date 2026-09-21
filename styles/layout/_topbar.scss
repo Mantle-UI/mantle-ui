@@ -1,3 +1,5 @@
+@use "mixins";
+
 .layout-topbar {
     position: fixed;
     top: 0;
@@ -29,7 +31,7 @@
     .layout-topbar-logo,
     .layout-topbar-icon {
         border-radius: var(--border-radius);
-        @include focus-visible();
+        @include mixins.focus-visible();
     }
 
     .layout-topbar-logo {

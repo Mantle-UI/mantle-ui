@@ -13,15 +13,13 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
     const [idState] = React.useState(props.id || UniqueComponentId('mobilenav_'));
     const [expandedKeysState] = React.useState({});
     const [rendered, setRendered] = React.useState(props.visible);
+    const [active, setActive] = React.useState(false);
     const itemRefs = React.useRef({});
     const maskRef = React.useRef(null);
     const rootRef = React.useRef(null);
     const previouslyFocusedElementRef = React.useRef(null);
     const wasVisibleRef = React.useRef(false);
-    const activate = React.useCallback(() => {
-        rootRef.current?.classList.add('p-mobilenav-active');
-        maskRef.current?.classList.add('p-mobilenav-mask-active');
-    }, []);
+    const activate = React.useCallback(() => setActive(true), []);
     const { ptm, cx, isUnstyled } = MobileNavBase.setMetaData({ props, state: { id: idState, expandedKeys: expandedKeysState } });
 
     useHandleStyle(MobileNavBase.css.styles, isUnstyled, { name: 'mobilenav' });
@@ -49,8 +47,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
 
             props.blockScroll && DomHandler.blockBodyScroll();
         } else {
-            rootRef.current?.classList.remove('p-mobilenav-active');
-            maskRef.current?.classList.remove('p-mobilenav-mask-active');
+            setActive(false);
             props.blockScroll && DomHandler.unblockBodyScroll();
             timer = setTimeout(() => setRendered(false), 400);
 
@@ -108,10 +105,15 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
             rootRef.current = element;
 
             if (element && props.visible) {
-                requestAnimationFrame(focusFirstItem);
+                requestAnimationFrame(() => {
+                    if (rootRef.current === element && props.visible) {
+                        activate();
+                        focusFirstItem();
+                    }
+                });
             }
         },
-        [props.visible, focusFirstItem]
+        [props.visible, activate, focusFirstItem]
     );
 
     const mobileNavDisplayOrder = useDisplayOrder('mobilenav', props.visible);
@@ -285,7 +287,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
         const menuItems = [];
 
         items.forEach((item, index) => {
-            const key = `${parentKey}${getItemKey(item, index)}`;
+            const key = `${parentKey}${getItemKey(item, index)}_${index}`;
             const menuItem = createMenuItem(item, key, level, hidden);
 
             if (menuItem) {
@@ -317,8 +319,18 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
                 }
             }}
         >
-            <div ref={maskRef} className={classNames('p-mobilenav-mask', props.maskClassName)} style={props.maskStyle} onMouseDown={(event) => props.dismissable && event.target === event.currentTarget && props.onHide && props.onHide(event)}>
-                <aside ref={setRootRef} id={props.id} className={cx('root')} style={props.style} onKeyDown={onKeyDown}>
+            <div
+                {...mergeProps(
+                    {
+                        ref: maskRef,
+                        className: classNames('p-mobilenav-mask', props.maskClassName, { 'p-mobilenav-mask-active': active }),
+                        style: props.maskStyle,
+                        onMouseDown: (event) => props.dismissable && event.target === event.currentTarget && props.onHide && props.onHide(event)
+                    },
+                    ptm('mask')
+                )}
+            >
+                <aside {...mergeProps({ ref: setRootRef, id: props.id, className: classNames(cx('root'), { 'p-mobilenav-active': active }), style: props.style, onKeyDown }, ptm('root'))}>
                     <nav {...mergeProps({ 'aria-label': props.ariaLabel }, ptm('nav'))}>{createMenu(props.model || [])}</nav>
                 </aside>
             </div>

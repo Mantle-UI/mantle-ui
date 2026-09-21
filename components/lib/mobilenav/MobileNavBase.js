@@ -39,6 +39,13 @@ const styles = `
 
     @supports (background: color-mix(in srgb, black, transparent)) {
         .p-mobilenav {
+            /* Keep light surfaces legible while retaining their glass effect. */
+            background: color-mix(in srgb, var(--surface-overlay) 82%, transparent) !important;
+        }
+
+        /* The documentation layout provides a deliberately translucent dark
+         * surface, so preserve the stronger frosted treatment in dark mode. */
+        .layout-dark .p-mobilenav {
             background: color-mix(in srgb, var(--surface-overlay) 30%, transparent) !important;
         }
     }

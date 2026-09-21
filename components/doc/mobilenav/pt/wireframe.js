@@ -1,18 +1,12 @@
 import { DocSectionText } from '@/components/doc/common/docsectiontext';
 
-export const Wireframe = (props) => (
-    <DocSectionText {...props}>
-        <pre className="m-0 overflow-auto">{`MobileNav
-└─ mask
-   └─ root
-      └─ nav
-         └─ menu
-            └─ menuitem
-               ├─ action
-               │  ├─ icon
-               │  ├─ label
-               │  └─ toggleIcon
-               └─ submenuWrapper
-                  └─ submenu`}</pre>
-    </DocSectionText>
-);
+export const Wireframe = (props) => {
+    return (
+        <>
+            <DocSectionText {...props} />
+            <div>
+                <img className="w-full" src="/images/pt/mobilenav-wireframe.png" alt="MobileNav passthrough wireframe" />
+            </div>
+        </>
+    );
+};

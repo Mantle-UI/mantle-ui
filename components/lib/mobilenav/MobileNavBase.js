@@ -24,9 +24,11 @@ const styles = `
         z-index: 1102;
         height: 100%;
         width: 18.75rem;
-        background: var(--mobile-menu-bg, var(--surface-overlay)) !important;
+        /* Solid overlay fallback for browsers without color-mix support. */
+        background: var(--surface-overlay) !important;
         border: 0 none !important;
         box-shadow: none !important;
+        -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
         opacity: 0;
         transform: translateX(-100%);
@@ -34,6 +36,12 @@ const styles = `
     }
 
     .p-mobilenav-active { opacity: 1; transform: translateX(0); }
+
+    @supports (background: color-mix(in srgb, black, transparent)) {
+        .p-mobilenav {
+            background: color-mix(in srgb, var(--surface-overlay) 30%, transparent) !important;
+        }
+    }
 
     .p-mobilenav-mask {
         background-color: rgba(0, 0, 0, 0.4);

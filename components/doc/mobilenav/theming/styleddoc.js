@@ -2,7 +2,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 
 export function StyledDoc(props) {
     const rows = [
-        ['p-mobilenav', 'Overlay drawer root.'],
+        ['p-mobilenav', 'Glass overlay drawer root.'],
         ['p-mobilenav-list', 'Root navigation list.'],
         ['p-mobilenav-sublist', 'Nested navigation list.'],
         ['p-mobilenav-item', 'Navigation item.'],

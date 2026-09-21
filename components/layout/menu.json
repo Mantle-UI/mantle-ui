@@ -328,6 +328,10 @@
                             "to": "/menu"
                         },
                         {
+                            "name": "MobileNav",
+                            "to": "/mobilenav"
+                        },
+                        {
                             "name": "Menubar",
                             "to": "/menubar"
                         },

@@ -96,6 +96,7 @@ export * from './knob/Knob';
 export * from './listbox/ListBox';
 export * from './megamenu/MegaMenu';
 export * from './mention/Mention';
+export * from './mobilenav/MobileNav';
 export * from './menu/Menu';
 export * from './menubar/Menubar';
 export * from './message/Message';

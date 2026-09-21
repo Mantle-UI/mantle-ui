@@ -97,6 +97,7 @@ const ALIAS_COMPONENT_ENTRIES = [
     { find: '../progressbar/ProgressBar', replacement: '@mantle-ui/react/progressbar' },
     { find: '../dropdown/Dropdown', replacement: '@mantle-ui/react/dropdown' },
     { find: '../dialog/Dialog', replacement: '@mantle-ui/react/dialog' },
+    { find: '../sidebar/Sidebar', replacement: '@mantle-ui/react/sidebar' },
     { find: '../paginator/Paginator', replacement: '@mantle-ui/react/paginator' },
     { find: '../tree/Tree', replacement: '@mantle-ui/react/tree' },
     ...CORE_PASSTHROUGH_DEPENDENCIES

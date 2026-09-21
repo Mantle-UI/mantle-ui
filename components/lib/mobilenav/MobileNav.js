@@ -73,34 +73,35 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
             return [];
         }
 
-        return Array.from(rootRef.current.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(
-            (element) => element.tabIndex !== -1 && !element.closest('[aria-hidden="true"]')
-        );
+        return Array.from(rootRef.current.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter((element) => element.tabIndex !== -1 && !element.closest('[aria-hidden="true"]'));
     }, []);
 
     const focusFirstItem = React.useCallback(() => {
         DomHandler.focus(getFocusableItems()[0]);
     }, [getFocusableItems]);
 
-    const onKeyDown = React.useCallback((event) => {
-        if (event.key !== 'Tab') {
-            return;
-        }
+    const onKeyDown = React.useCallback(
+        (event) => {
+            if (event.key !== 'Tab') {
+                return;
+            }
 
-        const focusableItems = getFocusableItems();
+            const focusableItems = getFocusableItems();
 
-        if (!focusableItems.length) {
+            if (!focusableItems.length) {
+                event.preventDefault();
+
+                return;
+            }
+
+            const currentIndex = focusableItems.indexOf(document.activeElement);
+            const nextItem = event.shiftKey ? (currentIndex <= 0 ? focusableItems[focusableItems.length - 1] : focusableItems[currentIndex - 1]) : currentIndex === focusableItems.length - 1 ? focusableItems[0] : focusableItems[currentIndex + 1];
+
             event.preventDefault();
-
-            return;
-        }
-
-        const currentIndex = focusableItems.indexOf(document.activeElement);
-        const nextItem = event.shiftKey ? (currentIndex <= 0 ? focusableItems[focusableItems.length - 1] : focusableItems[currentIndex - 1]) : currentIndex === focusableItems.length - 1 ? focusableItems[0] : focusableItems[currentIndex + 1];
-
-        event.preventDefault();
-        DomHandler.focus(nextItem);
-    }, [getFocusableItems]);
+            DomHandler.focus(nextItem);
+        },
+        [getFocusableItems]
+    );
 
     const setRootRef = React.useCallback(
         (element) => {
@@ -208,7 +209,11 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
         const initiallyExpanded = hasItems && (getItemValue(item, 'expanded') || hasActiveDescendant(item));
         const label = getItemValue(item, 'label');
         const icon = createIcon(item);
-        const labelElement = <span key="label" {...mergeProps({ className: cx('label') }, ptm('label', { context: { item } }))}>{label}</span>;
+        const labelElement = (
+            <span key="label" {...mergeProps({ className: cx('label') }, ptm('label', { context: { item } }))}>
+                {label}
+            </span>
+        );
         const toggleElement = hasItems ? <ChevronDownIcon key="toggle" {...mergeProps({ className: cx('toggleIcon') }, ptm('toggleIcon', { context: { item, expanded } }))} /> : null;
         const actionProps = mergeProps(
             {
@@ -312,12 +317,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
                 }
             }}
         >
-            <div
-                ref={maskRef}
-                className={classNames('p-mobilenav-mask', props.maskClassName)}
-                style={props.maskStyle}
-                onMouseDown={(event) => props.dismissable && event.target === event.currentTarget && props.onHide && props.onHide(event)}
-            >
+            <div ref={maskRef} className={classNames('p-mobilenav-mask', props.maskClassName)} style={props.maskStyle} onMouseDown={(event) => props.dismissable && event.target === event.currentTarget && props.onHide && props.onHide(event)}>
                 <aside ref={setRootRef} id={props.id} className={cx('root')} style={props.style} onKeyDown={onKeyDown}>
                     <nav {...mergeProps({ 'aria-label': props.ariaLabel }, ptm('nav'))}>{createMenu(props.model || [])}</nav>
                 </aside>

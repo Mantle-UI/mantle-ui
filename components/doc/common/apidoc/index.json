@@ -36383,6 +36383,299 @@
             }
         }
     },
+    "mobilenav": {
+        "description": "MobileNav is an overlay navigation component for mobile interfaces.",
+        "components": {
+            "MobileNav": {
+                "description": "MobileNav displays a tree of navigation items in an overlay drawer.",
+                "methods": {
+                    "description": "Defines methods that can be accessed by the component's reference.",
+                    "values": []
+                },
+                "props": {
+                    "description": "Defines valid properties in MobileNav.",
+                    "values": [
+                        {
+                            "name": "activeItem",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string | MenuItem | null",
+                            "default": "null",
+                            "description": "Current item, item id, or item URL. Its ancestor branch is expanded automatically."
+                        },
+                        {
+                            "name": "appendTo",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "HTMLElement | \"self\" | (() => HTMLElement) | null",
+                            "default": "null",
+                            "description": "DOM element where the drawer is mounted. When null, it mounts to document.body."
+                        },
+                        {
+                            "name": "ariaLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "default": "Navigation",
+                            "description": "Accessible label for the navigation landmark."
+                        },
+                        {
+                            "name": "blockScroll",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "true",
+                            "description": "Blocks document scrolling while the drawer is open."
+                        },
+                        {
+                            "name": "closeOnSelect",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "true",
+                            "description": "Closes the drawer after a leaf item is selected."
+                        },
+                        {
+                            "name": "dismissable",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "true",
+                            "description": "Closes the drawer when its mask is clicked."
+                        },
+                        {
+                            "name": "maskClassName",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "default": "null",
+                            "description": "Additional CSS class for the overlay mask."
+                        },
+                        {
+                            "name": "maskStyle",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "CSSProperties",
+                            "default": "null",
+                            "description": "Inline style for the overlay mask."
+                        },
+                        {
+                            "name": "model",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MenuItem[]",
+                            "default": "null",
+                            "description": "Tree of navigation items to display."
+                        },
+                        {
+                            "name": "pt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughOptions",
+                            "default": "null",
+                            "description": "Pass-through attributes for internal DOM elements."
+                        },
+                        {
+                            "name": "ptOptions",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "PassThroughOptions",
+                            "default": "null",
+                            "description": "Configuration for pass-through merging."
+                        },
+                        {
+                            "name": "unstyled",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "When enabled, removes MobileNav's default navigation styles."
+                        },
+                        {
+                            "name": "visible",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "Controls whether the drawer is visible."
+                        }
+                    ]
+                },
+                "callbacks": {
+                    "description": "Defines callbacks that determine the behavior of the component based on a given condition or report the actions that the component takes.",
+                    "values": [
+                        {
+                            "name": "onHide",
+                            "parameters": [
+                                {
+                                    "name": "event",
+                                    "optional": true,
+                                    "type": "SyntheticEvent<Element, Event>"
+                                }
+                            ],
+                            "returnType": "void",
+                            "description": "Called when the drawer is dismissed."
+                        },
+                        {
+                            "name": "onItemSelect",
+                            "parameters": [
+                                {
+                                    "name": "event",
+                                    "optional": false,
+                                    "type": "MobileNavItemSelectEvent"
+                                }
+                            ],
+                            "returnType": "void",
+                            "description": "Called after a leaf navigation item is selected."
+                        }
+                    ]
+                }
+            }
+        },
+        "interfaces": {
+            "description": "Defines the custom interfaces used by the module.",
+            "values": {
+                "MobileNavPassThroughMethodOptions": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "props",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "MobileNavProps",
+                            "description": "The complete MobileNav props object."
+                        },
+                        {
+                            "name": "state",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "Record<string, never>",
+                            "description": "MobileNav has no additional persistent state."
+                        },
+                        {
+                            "name": "context",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "{ item?: MenuItem; active?: boolean; expanded?: boolean }",
+                            "description": "Context for the current item, when a PT slot is rendered for one."
+                        }
+                    ],
+                    "callbacks": []
+                },
+                "MobileNavPassThroughOptions": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "nav",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLElement>>",
+                            "description": "Attributes for the navigation landmark."
+                        },
+                        {
+                            "name": "menu",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<OlHTMLAttributes<HTMLOListElement>>",
+                            "description": "Attributes for the root navigation list."
+                        },
+                        {
+                            "name": "submenu",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<OlHTMLAttributes<HTMLOListElement>>",
+                            "description": "Attributes for nested navigation lists."
+                        },
+                        {
+                            "name": "submenuWrapper",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLDivElement>>",
+                            "description": "Attributes for the animated nested-list container."
+                        },
+                        {
+                            "name": "menuitem",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLLIElement>>",
+                            "description": "Attributes for a navigation list item."
+                        },
+                        {
+                            "name": "action",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLAnchorElement | HTMLButtonElement>>",
+                            "description": "Attributes for an item link or expandable button."
+                        },
+                        {
+                            "name": "label",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLSpanElement>>",
+                            "description": "Attributes for an item label."
+                        },
+                        {
+                            "name": "icon",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLSpanElement>>",
+                            "description": "Attributes for an item icon container."
+                        },
+                        {
+                            "name": "toggleIcon",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<SVGProps<SVGSVGElement>>",
+                            "description": "Attributes for an expandable item's toggle icon."
+                        },
+                        {
+                            "name": "groupLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLSpanElement>>",
+                            "description": "Attributes for a nested group label."
+                        },
+                        {
+                            "name": "separator",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MobileNavPassThroughType<HTMLAttributes<HTMLLIElement>>",
+                            "description": "Attributes for a separator item."
+                        }
+                    ],
+                    "callbacks": []
+                },
+                "MobileNavItemSelectEvent": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "originalEvent",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "SyntheticEvent",
+                            "description": "The browser event that selected the item."
+                        },
+                        {
+                            "name": "item",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "MenuItem",
+                            "description": "The selected leaf navigation item."
+                        }
+                    ],
+                    "callbacks": []
+                }
+            }
+        },
+        "types": {
+            "description": "Defines the custom types used by the module.",
+            "values": {
+                "MobileNavPassThroughType": {
+                    "values": "PassThroughType<T, MobileNavPassThroughMethodOptions>"
+                }
+            }
+        }
+    },
     "multiselect": {
         "description": "MultiSelect is used to select multiple items from a collection.\n\n[Live Demo](https://www.primereact.org/multiselect/)",
         "components": {

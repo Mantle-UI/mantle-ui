@@ -1,5 +1,38 @@
 # Changelog
 
+## [10.12.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.11.0...v10.12.0) (2026-09-22)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.11.0...v10.12.0)
+
+## enhancement
+
+- feat: add MobileNav component [#423](https://github.com/Mantle-UI/mantle-ui/pull/423) (issues: #422)
+## bug
+
+- fix(mobilenav): stabilize drawer follow-ups [#426](https://github.com/Mantle-UI/mantle-ui/pull/426)
+## dependencies
+
+- build(deps): bump dompurify from 3.4.12 to 3.4.13 in the npm_and_yarn group across 1 directory [#409](https://github.com/Mantle-UI/mantle-ui/pull/409)
+- build(deps-dev): bump @types/node from 26.1.2 to 26.4.0 [#414](https://github.com/Mantle-UI/mantle-ui/pull/414)
+- build(deps): bump next from 16.2.12 to 16.3.3 [#415](https://github.com/Mantle-UI/mantle-ui/pull/415)
+- build(deps-dev): bump rollup from 4.62.3 to 4.63.1 [#416](https://github.com/Mantle-UI/mantle-ui/pull/416)
+- build(deps-dev): bump @testing-library/jest-dom from 7.0.0 to 7.0.1 [#417](https://github.com/Mantle-UI/mantle-ui/pull/417)
+- build(deps-dev): bump jest from 30.4.2 to 30.5.0 [#418](https://github.com/Mantle-UI/mantle-ui/pull/418)
+- build(deps): bump the npm_and_yarn group across 1 directory with 3 updates [#421](https://github.com/Mantle-UI/mantle-ui/pull/421)
+## documentation
+
+- fix(docs): format API default values [#419](https://github.com/Mantle-UI/mantle-ui/pull/419) (issues: #413)
+- feat: add MobileNav component [#423](https://github.com/Mantle-UI/mantle-ui/pull/423) (issues: #422)
+## javascript
+
+- build(deps): bump dompurify from 3.4.12 to 3.4.13 in the npm_and_yarn group across 1 directory [#409](https://github.com/Mantle-UI/mantle-ui/pull/409)
+- build(deps-dev): bump @types/node from 26.1.2 to 26.4.0 [#414](https://github.com/Mantle-UI/mantle-ui/pull/414)
+- build(deps): bump next from 16.2.12 to 16.3.3 [#415](https://github.com/Mantle-UI/mantle-ui/pull/415)
+- build(deps-dev): bump rollup from 4.62.3 to 4.63.1 [#416](https://github.com/Mantle-UI/mantle-ui/pull/416)
+- build(deps-dev): bump @testing-library/jest-dom from 7.0.0 to 7.0.1 [#417](https://github.com/Mantle-UI/mantle-ui/pull/417)
+- build(deps-dev): bump jest from 30.4.2 to 30.5.0 [#418](https://github.com/Mantle-UI/mantle-ui/pull/418)
+- build(deps): bump the npm_and_yarn group across 1 directory with 3 updates [#421](https://github.com/Mantle-UI/mantle-ui/pull/421)
+
 ## [10.11.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.7...v10.11.0) (2026-08-03)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.10.7...v10.11.0)

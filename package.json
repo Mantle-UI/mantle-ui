@@ -96,7 +96,7 @@
         "jest": "^30.5.0",
         "jest-environment-jsdom": "^30.4.1",
         "postcss": "^8.5.24",
-        "prettier": "3.9.6",
+        "prettier": "3.9.9",
         "rollup": "^4.63.1",
         "rollup-plugin-postcss": "^4.0.2",
         "sass": "^1.79.4",

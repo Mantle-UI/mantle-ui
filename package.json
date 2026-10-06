@@ -99,7 +99,7 @@
         "prettier": "3.9.9",
         "rollup": "^4.63.1",
         "rollup-plugin-postcss": "^4.0.2",
-        "sass": "^1.79.4",
+        "sass": "^1.105.1",
         "typedoc": "^0.28.20",
         "typescript": "^6.0.3"
     },

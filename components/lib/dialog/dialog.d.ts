@@ -184,6 +184,19 @@ interface ContentProps {
      */
     hide(e: React.SyntheticEvent): void;
     /**
+     * Minimizes the dialog. This uses the same controlled or uncontrolled state behavior as the built-in minimize button.
+     */
+    minimize(e: React.SyntheticEvent): void;
+    /**
+     * Whether the dialog is currently minimized.
+     * @readonly
+     */
+    minimized: boolean;
+    /**
+     * Restores the dialog. This uses the same controlled or uncontrolled state behavior as the built-in restore button.
+     */
+    restore(e: React.SyntheticEvent): void;
+    /**
      * Dialog's props values.
      */
     message: ContentPropsMessage;

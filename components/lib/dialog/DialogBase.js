@@ -209,8 +209,22 @@ const styles = `
 
     /* Minimize */
     .p-dialog-minimized {
+        width: min(20rem, calc(100vw - 1.5rem)) !important;
+        min-width: 0 !important;
+        max-width: calc(100vw - 1.5rem);
         height: auto !important;
         max-height: none;
+    }
+
+    .p-dialog-minimized .p-dialog-header {
+        padding: 0.5rem 0.75rem !important;
+    }
+
+    .p-dialog-minimized .p-dialog-title {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .p-dialog-minimized .p-dialog-content,

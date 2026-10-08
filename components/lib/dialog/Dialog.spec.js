@@ -78,4 +78,53 @@ describe('Dialog', () => {
         await waitFor(() => expect(screen.getByLabelText('First')).toHaveClass('p-dialog-minimized'));
         expect(document.body).toHaveClass('p-overflow-hidden');
     });
+
+    test('keeps the configured size available after restoring a compact titlebar', async () => {
+        render(
+            <Dialog header="A very long dialog title that is compacted when minimized" visible minimizable style={{ width: '42rem', minWidth: '30rem' }} onHide={() => {}}>
+                Content
+            </Dialog>
+        );
+
+        const dialog = await screen.findByRole('dialog');
+
+        expect(dialog).toHaveStyle({ width: '42rem', minWidth: '30rem' });
+
+        fireEvent.click(screen.getByRole('button', { name: 'Minimize' }));
+        await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
+        expect(dialog).toHaveStyle({ width: '42rem', minWidth: '30rem' });
+
+        fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
+        await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
+        expect(dialog).toHaveStyle({ width: '42rem', minWidth: '30rem' });
+    });
+
+    test('exposes minimize state and actions to headless content', async () => {
+        render(
+            <Dialog
+                visible
+                onHide={() => {}}
+                content={({ minimized, minimize, restore }) => (
+                    <div>
+                        <span>{minimized ? 'Minimized' : 'Expanded'}</span>
+                        <button type="button" onClick={(event) => minimize(event)}>
+                            Minimize headless dialog
+                        </button>
+                        <button type="button" onClick={(event) => restore(event)}>
+                            Restore headless dialog
+                        </button>
+                    </div>
+                )}
+            />
+        );
+
+        await screen.findByText('Expanded');
+        fireEvent.click(screen.getByRole('button', { name: 'Minimize headless dialog' }));
+        await screen.findByText('Minimized');
+        expect(screen.getByRole('dialog')).toHaveClass('p-dialog-minimized');
+
+        fireEvent.click(screen.getByRole('button', { name: 'Restore headless dialog' }));
+        await screen.findByText('Expanded');
+        expect(screen.getByRole('dialog')).not.toHaveClass('p-dialog-minimized');
+    });
 });

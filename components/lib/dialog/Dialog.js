@@ -110,17 +110,33 @@ export const Dialog = React.forwardRef((inProps, ref) => {
         event.preventDefault();
     };
 
-    const toggleMinimize = (event) => {
+    const setMinimized = (event, nextMinimized) => {
         if (props.onMinimize) {
             props.onMinimize({
                 originalEvent: event,
-                minimized: !minimized
+                minimized: nextMinimized
             });
         } else {
-            setMinimizedState((prevMinimized) => !prevMinimized);
+            setMinimizedState(nextMinimized);
         }
 
         event.preventDefault();
+    };
+
+    const toggleMinimize = (event) => {
+        setMinimized(event, !minimized);
+    };
+
+    const minimize = (event) => {
+        if (!minimized) {
+            setMinimized(event, true);
+        }
+    };
+
+    const restore = (event) => {
+        if (minimized) {
+            setMinimized(event, false);
+        }
     };
 
     const onDragStart = (event) => {
@@ -671,7 +687,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             message: props?.children?.[1]?.props?.children
         };
 
-        const templateElementProps = { headerRef, contentRef, footerRef, closeRef, hide: onClose, message: messageProps };
+        const templateElementProps = { headerRef, contentRef, footerRef, closeRef, hide: onClose, minimize, minimized, restore, message: messageProps };
 
         return ObjectUtils.getJSXElement(inProps.content, templateElementProps);
     };

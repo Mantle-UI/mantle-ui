@@ -301,13 +301,13 @@ const Tailwind = {
         root: ({ state }) => ({
             className: classNames('rounded-lg shadow-lg border-0', 'max-h-[90%] transform scale-100', 'm-0 w-[50vw]', 'dark:border dark:border-blue-900/40', {
                 'transition-none transform-none !w-screen !h-screen !max-h-full !top-0 !left-0': state.maximized,
-                '!h-auto !max-h-none': state.minimized
+                '!w-80 !max-w-[calc(100vw-1.5rem)] !min-w-0 !h-auto !max-h-none': state.minimized
             })
         }),
-        header: {
-            className: classNames('flex items-center justify-between shrink-0', 'bg-white text-gray-800 border-t-0  rounded-tl-lg rounded-tr-lg p-6', 'dark:bg-gray-900  dark:text-white/80')
-        },
-        headerTitle: 'font-bold text-lg',
+        header: ({ state }) => ({
+            className: classNames('flex items-center justify-between shrink-0', 'bg-white text-gray-800 border-t-0  rounded-tl-lg rounded-tr-lg p-6', 'dark:bg-gray-900  dark:text-white/80', { '!p-2': state.minimized })
+        }),
+        headerTitle: 'min-w-0 truncate flex-1 font-bold text-lg',
         headerIcons: 'flex items-center',
         closeButton: {
             className: classNames(

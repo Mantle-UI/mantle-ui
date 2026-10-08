@@ -22815,6 +22815,13 @@
                             "description": "Allows you to specify the close button of the dialog."
                         },
                         {
+                            "name": "minimized",
+                            "optional": false,
+                            "readonly": true,
+                            "type": "boolean",
+                            "description": "Whether the dialog is currently minimized."
+                        },
+                        {
                             "name": "message",
                             "optional": false,
                             "readonly": false,
@@ -22834,6 +22841,30 @@
                             ],
                             "returnType": "void",
                             "description": "Callback for hiding the dialog."
+                        },
+                        {
+                            "name": "minimize",
+                            "parameters": [
+                                {
+                                    "name": "e",
+                                    "optional": false,
+                                    "type": "SyntheticEvent"
+                                }
+                            ],
+                            "returnType": "void",
+                            "description": "Minimizes the dialog. This uses the same controlled or uncontrolled state behavior as the built-in minimize button."
+                        },
+                        {
+                            "name": "restore",
+                            "parameters": [
+                                {
+                                    "name": "e",
+                                    "optional": false,
+                                    "type": "SyntheticEvent"
+                                }
+                            ],
+                            "returnType": "void",
+                            "description": "Restores the dialog. This uses the same controlled or uncontrolled state behavior as the built-in restore button."
                         }
                     ]
                 },

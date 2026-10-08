@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 export function HeadlessDoc(props) {
     const [visible, setVisible] = useState(false);
+    const [compactVisible, setCompactVisible] = useState(false);
 
     const code = {
         basic: `
@@ -144,6 +145,29 @@ export default function HeadlessDemo() {
         `
     };
 
+    const compactCode = {
+        basic: `
+<Dialog
+    visible={visible}
+    minimizable
+    style={{ width: '32rem' }}
+    onHide={() => setVisible(false)}
+    content={({ minimized, minimize, restore, hide }) => (
+        <div className="surface-card border-round shadow-3" style={{ maxWidth: '100%' }}>
+            <div className={minimized ? 'flex align-items-center justify-content-between p-2' : 'flex align-items-center justify-content-between p-4'}>
+                <span className="font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis">Account details</span>
+                <div className="flex gap-2">
+                    <Button icon={minimized ? 'pi pi-window-maximize' : 'pi pi-window-minimize'} text rounded aria-label={minimized ? 'Restore' : 'Minimize'} onClick={(event) => (minimized ? restore(event) : minimize(event))} />
+                    <Button icon="pi pi-times" text rounded aria-label="Close" onClick={(event) => hide(event)} />
+                </div>
+            </div>
+            {!minimized && <div className="px-4 pb-4">Your dialog content stays mounted while the compact header is shown.</div>}
+        </div>
+    )}
+/>
+        `
+    };
+
     return (
         <>
             <DocSectionText {...props}>
@@ -203,6 +227,36 @@ export default function HeadlessDemo() {
                 />
             </div>
             <DocSectionCode code={code} />
+            <DocSectionText id="compact-minimize" label="Compact Minimize">
+                <p>
+                    Headless content receives <i>minimized</i>, <i>minimize</i> and <i>restore</i>. Use them to render a custom compact header while preserving the same controlled and uncontrolled behavior as the built-in control.
+                </p>
+            </DocSectionText>
+            <div className="card flex justify-content-center">
+                <Button label="Show compact dialog" onClick={() => setCompactVisible(true)} />
+                <Dialog
+                    visible={compactVisible}
+                    minimizable
+                    style={{ width: '32rem' }}
+                    onHide={() => {
+                        if (!compactVisible) return;
+                        setCompactVisible(false);
+                    }}
+                    content={({ minimized, minimize, restore, hide }) => (
+                        <div className="surface-card border-round shadow-3" style={{ maxWidth: '100%' }}>
+                            <div className={minimized ? 'flex align-items-center justify-content-between p-2' : 'flex align-items-center justify-content-between p-4'}>
+                                <span className="font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis">Account details</span>
+                                <div className="flex gap-2">
+                                    <Button icon={minimized ? 'pi pi-window-maximize' : 'pi pi-window-minimize'} text rounded aria-label={minimized ? 'Restore' : 'Minimize'} onClick={(event) => (minimized ? restore(event) : minimize(event))} />
+                                    <Button icon="pi pi-times" text rounded aria-label="Close" onClick={(event) => hide(event)} />
+                                </div>
+                            </div>
+                            {!minimized && <div className="px-4 pb-4">Your dialog content stays mounted while the compact header is shown.</div>}
+                        </div>
+                    )}
+                />
+            </div>
+            <DocSectionCode code={compactCode} />
         </>
     );
 }

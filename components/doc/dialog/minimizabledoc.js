@@ -57,7 +57,8 @@ export default function MinimizableDemo() {
             <DocSectionText {...props}>
                 <p>
                     Adding <i>minimizable</i> displays a title bar button that toggles between minimize and restore. Minimizing keeps the dialog mounted, retains its state and disables its modal mask, focus trap and scroll blocking so that the page
-                    can be used. To keep full-screen behavior predictable, the minimize control is unavailable while a dialog is maximized.
+                    can be used. The minimized titlebar is compact and truncates long titles while retaining accessible restore and close controls. To keep full-screen behavior predictable, the minimize control is unavailable while a dialog is
+                    maximized.
                 </p>
             </DocSectionText>
             <div className="card flex justify-content-center">

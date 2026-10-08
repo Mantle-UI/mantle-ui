@@ -14372,6 +14372,22 @@
                             "description": "Defines a string that labels the close icon."
                         },
                         {
+                            "name": "ariaMinimizeIconLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "default": "'Minimize'",
+                            "description": "Defines a string that labels the minimize icon."
+                        },
+                        {
+                            "name": "ariaRestoreIconLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "default": "'Restore'",
+                            "description": "Defines a string that labels the restore icon."
+                        },
+                        {
                             "name": "baseZIndex",
                             "optional": true,
                             "readonly": false,
@@ -14612,6 +14628,30 @@
                             "description": "Message of the confirmation."
                         },
                         {
+                            "name": "minimizable",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "Whether the dialog can be minimized to its title bar. A minimized modal dialog becomes non-modal so that the page remains usable."
+                        },
+                        {
+                            "name": "minimizableIcon",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "IconType<DialogProps>",
+                            "default": "",
+                            "description": "Icon to display in the dialog minimize button."
+                        },
+                        {
+                            "name": "minimized",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "When enabled, the dialog is initially minimized. When used together with onMinimize, the dialog is controlled."
+                        },
+                        {
                             "name": "minimizeIcon",
                             "optional": true,
                             "readonly": false,
@@ -14683,6 +14723,13 @@
                             "optional": true,
                             "readonly": false,
                             "type": "(event: DialogMaximizeEvent) => void",
+                            "default": ""
+                        },
+                        {
+                            "name": "onMinimize",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "(event: DialogMinimizeEvent) => void",
                             "default": ""
                         },
                         {
@@ -14768,6 +14815,14 @@
                             "type": "boolean",
                             "default": "true",
                             "description": "Enables resizing of the content."
+                        },
+                        {
+                            "name": "restoreIcon",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "IconType<DialogProps>",
+                            "default": "",
+                            "description": "Icon to display in the dialog restore button."
                         },
                         {
                             "name": "rtl",
@@ -21980,6 +22035,22 @@
                             "description": "Defines a string that labels the close icon."
                         },
                         {
+                            "name": "ariaMinimizeIconLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "default": "'Minimize'",
+                            "description": "Defines a string that labels the minimize icon."
+                        },
+                        {
+                            "name": "ariaRestoreIconLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "default": "'Restore'",
+                            "description": "Defines a string that labels the restore icon."
+                        },
+                        {
                             "name": "baseZIndex",
                             "optional": true,
                             "readonly": false,
@@ -22188,6 +22259,30 @@
                             "description": "Icon to display in the dialog maximize button when dialog is not maximized."
                         },
                         {
+                            "name": "minimizable",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "Whether the dialog can be minimized to its title bar. A minimized modal dialog becomes non-modal so that the page remains usable."
+                        },
+                        {
+                            "name": "minimizableIcon",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "IconType<DialogProps>",
+                            "default": "",
+                            "description": "Icon to display in the dialog minimize button."
+                        },
+                        {
+                            "name": "minimized",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "When enabled, the dialog is initially minimized. When used together with onMinimize, the dialog is controlled."
+                        },
+                        {
                             "name": "minimizeIcon",
                             "optional": true,
                             "readonly": false,
@@ -22250,6 +22345,14 @@
                             "type": "boolean",
                             "default": "true",
                             "description": "Enables resizing of the content."
+                        },
+                        {
+                            "name": "restoreIcon",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "IconType<DialogProps>",
+                            "default": "",
+                            "description": "Icon to display in the dialog restore button."
                         },
                         {
                             "name": "rtl",
@@ -22397,6 +22500,19 @@
                             "description": "Callback to invoke when toggle maximize icon is clicked."
                         },
                         {
+                            "name": "onMinimize",
+                            "parameters": [
+                                {
+                                    "name": "event",
+                                    "optional": false,
+                                    "type": "DialogMinimizeEvent",
+                                    "description": "Custom click event."
+                                }
+                            ],
+                            "returnType": "void",
+                            "description": "Callback to invoke when the minimize or restore button is clicked. Providing this callback makes minimized controlled."
+                        },
+                        {
                             "name": "onResize",
                             "parameters": [
                                 {
@@ -22465,6 +22581,26 @@
                             "readonly": false,
                             "type": "boolean",
                             "description": "When enabled, the dialog is initially displayed full screen."
+                        }
+                    ]
+                },
+                "DialogMinimizeEvent": {
+                    "description": "Custom minimize method event.",
+                    "relatedProp": "DialogProps.onMinimize",
+                    "props": [
+                        {
+                            "name": "originalEvent",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "SyntheticEvent",
+                            "description": "Browser mouse event."
+                        },
+                        {
+                            "name": "minimized",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "boolean",
+                            "description": "Whether the dialog is minimized."
                         }
                     ]
                 }
@@ -22539,6 +22675,20 @@
                             "description": "Uses to pass attributes to the maximizable icon's DOM element."
                         },
                         {
+                            "name": "minimizableButton",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "DialogPassThroughType<HTMLAttributes<HTMLButtonElement>>",
+                            "description": "Uses to pass attributes to the minimizable button's DOM element."
+                        },
+                        {
+                            "name": "minimizableIcon",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "DialogPassThroughType<HTMLAttributes<HTMLSpanElement> | SVGProps<SVGSVGElement>>",
+                            "description": "Uses to pass attributes to the minimizable icon's DOM element."
+                        },
+                        {
                             "name": "closeButton",
                             "optional": true,
                             "readonly": false,
@@ -22607,6 +22757,13 @@
                             "readonly": false,
                             "type": "boolean",
                             "description": "Current maximized state as a boolean."
+                        },
+                        {
+                            "name": "minimized",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "boolean",
+                            "description": "Current minimized state as a boolean."
                         }
                     ],
                     "callbacks": []

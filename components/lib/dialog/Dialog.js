@@ -22,6 +22,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
     const [maskVisibleState, setMaskVisibleState] = React.useState(false);
     const [visibleState, setVisibleState] = React.useState(false);
     const [maximizedState, setMaximizedState] = React.useState(props.maximized);
+    const [minimizedState, setMinimizedState] = React.useState(props.minimized);
     const dialogRef = React.useRef(null);
     const maskRef = React.useRef(null);
     const pointerRef = React.useRef(null);
@@ -37,8 +38,9 @@ export const Dialog = React.forwardRef((inProps, ref) => {
     const attributeSelector = React.useRef(uniqueId);
     const focusElementOnHide = React.useRef(null);
     const maximized = props.onMaximize ? props.maximized : maximizedState;
-    const shouldBlockScroll = visibleState && (props.blockScroll || (props.maximizable && maximized));
-    const isCloseOnEscape = props.closable && props.closeOnEscape && visibleState;
+    const minimized = props.onMinimize ? props.minimized : minimizedState;
+    const shouldBlockScroll = visibleState && !minimized && (props.blockScroll || (props.maximizable && maximized));
+    const isCloseOnEscape = props.closable && props.closeOnEscape && visibleState && !minimized;
     const displayOrder = useDisplayOrder('dialog', isCloseOnEscape);
 
     const { ptm, cx, sx, isUnstyled } = DialogBase.setMetaData({
@@ -47,6 +49,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
         state: {
             id: idState,
             maximized: maximized,
+            minimized: minimized,
             containerVisible: maskVisibleState
         }
     });
@@ -102,6 +105,19 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             });
         } else {
             setMaximizedState((prevMaximized) => !prevMaximized);
+        }
+
+        event.preventDefault();
+    };
+
+    const toggleMinimize = (event) => {
+        if (props.onMinimize) {
+            props.onMinimize({
+                originalEvent: event,
+                minimized: !minimized
+            });
+        } else {
+            setMinimizedState((prevMinimized) => !prevMinimized);
         }
 
         event.preventDefault();
@@ -486,7 +502,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
 
         const toggleIcon = IconUtils.getJSXIcon(icon, maximizableIconProps, { props });
 
-        if (props.maximizable) {
+        if (props.maximizable && !minimized) {
             const maximizableButtonProps = mergeProps(
                 {
                     type: 'button',
@@ -507,10 +523,45 @@ export const Dialog = React.forwardRef((inProps, ref) => {
         return null;
     };
 
+    const createMinimizeIcon = () => {
+        if (!props.minimizable || maximized) {
+            return null;
+        }
+
+        const labelAria = minimized ? props.ariaRestoreIconLabel : props.ariaMinimizeIconLabel;
+        const minimizableIconProps = mergeProps(
+            {
+                className: cx('minimizableIcon'),
+                'aria-hidden': true
+            },
+            ptm('minimizableIcon')
+        );
+        const icon = minimized ? props.restoreIcon || <WindowMaximizeIcon {...minimizableIconProps} /> : props.minimizableIcon || <WindowMinimizeIcon {...minimizableIconProps} />;
+        const toggleIcon = IconUtils.getJSXIcon(icon, minimizableIconProps, { props });
+        const minimizableButtonProps = mergeProps(
+            {
+                type: 'button',
+                className: cx('minimizableButton'),
+                'aria-label': labelAria,
+                'aria-expanded': !minimized,
+                onClick: toggleMinimize
+            },
+            ptm('minimizableButton')
+        );
+
+        return (
+            <button {...minimizableButtonProps}>
+                {toggleIcon}
+                <Ripple />
+            </button>
+        );
+    };
+
     const createHeader = () => {
         if (props.showHeader) {
             const closeIcon = createCloseIcon();
             const maximizeIcon = createMaximizeIcon();
+            const minimizeIcon = createMinimizeIcon();
             const icons = ObjectUtils.getJSXElement(props.icons, props);
             const header = ObjectUtils.getJSXElement(props.header, props);
             const headerId = idState + '_header';
@@ -545,6 +596,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
                     <div {...headerTitleProps}>{header}</div>
                     <div {...headerIconsProps}>
                         {icons}
+                        {minimizeIcon}
                         {maximizeIcon}
                         {closeIcon}
                     </div>
@@ -562,7 +614,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             {
                 id: contentId,
                 ref: contentRef,
-                style: props.contentStyle,
+                style: { ...props.contentStyle, display: minimized ? 'none' : undefined },
                 className: cx('content')
             },
             ptm('content')
@@ -577,6 +629,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
         const footerProps = mergeProps(
             {
                 ref: footerRef,
+                style: { display: minimized ? 'none' : undefined },
                 className: cx('footer')
             },
             ptm('footer')
@@ -586,7 +639,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
     };
 
     const createResizer = () => {
-        if (props.resizable) {
+        if (props.resizable && !minimized) {
             return <span className="p-resizable-handle" style={{ zIndex: 90 }} onMouseDown={onResizeStart} />;
         }
 
@@ -651,8 +704,8 @@ export const Dialog = React.forwardRef((inProps, ref) => {
         const maskProps = mergeProps(
             {
                 ref: maskRef,
-                style: sx('mask'),
-                className: cx('mask'),
+                style: sx('mask', { minimized }),
+                className: cx('mask', { minimized, maskVisibleState }),
                 onPointerUp: onMaskPointerUp
             },
             ptm('mask')
@@ -663,13 +716,13 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             {
                 ref: dialogRef,
                 id: idState,
-                className: classNames(props.className, cx('root', { props, maximized, context })),
+                className: classNames(props.className, cx('root', { props, maximized, minimized, context })),
                 style: props.style,
                 onClick: props.onClick,
                 role: 'dialog',
                 'aria-labelledby': headerId,
-                'aria-describedby': contentId,
-                'aria-modal': props.modal,
+                'aria-describedby': minimized ? undefined : contentId,
+                'aria-modal': props.modal && !minimized ? true : undefined,
                 onPointerDown: onDialogPointerDown
             },
             DialogBase.getOtherProps(props)
@@ -702,7 +755,9 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             <div {...maskProps}>
                 <CSSTransition nodeRef={dialogRef} {...transitionProps}>
                     <div {...rootProps}>
-                        <FocusTrap autoFocus={props.focusOnShow}>{contentElement}</FocusTrap>
+                        <FocusTrap autoFocus={props.focusOnShow} disabled={minimized}>
+                            {contentElement}
+                        </FocusTrap>
                     </div>
                 </CSSTransition>
             </div>

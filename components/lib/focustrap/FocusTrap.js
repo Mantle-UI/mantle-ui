@@ -1,6 +1,6 @@
 import React from 'react';
 import { MantleContext } from '../api/Api';
-import { useMountEffect, useStyle } from '../hooks/Hooks';
+import { useMountEffect, useStyle, useUpdateEffect } from '../hooks/Hooks';
 import { DomHandler } from '../utils/Utils';
 import { FocusTrapBase } from './FocusTrapBase';
 
@@ -34,6 +34,13 @@ export const FocusTrap = React.memo(
                 setAutoFocus(targetRef.current, props);
             }
         });
+
+        useUpdateEffect(() => {
+            if (!props.disabled) {
+                targetRef.current = getTarget();
+                setAutoFocus(targetRef.current, props);
+            }
+        }, [props.disabled]);
 
         const getTarget = () => {
             return firstFocusableElementRef.current && firstFocusableElementRef.current.parentElement;
@@ -86,19 +93,19 @@ export const FocusTrap = React.memo(
         };
 
         const createHiddenFocusableElements = () => {
-            const { tabIndex = 0 } = props || {};
+            const { disabled, tabIndex = 0 } = props || {};
 
             const createFocusableElement = (inRef, onFocus, section) => {
                 return (
                     <span
                         ref={inRef}
                         className={'p-hidden-accessible p-hidden-focusable'}
-                        tabIndex={tabIndex}
+                        tabIndex={disabled ? -1 : tabIndex}
                         role={'presentation'}
                         aria-hidden={true}
                         data-p-hidden-accessible={true}
                         data-p-hidden-focusable={true}
-                        onFocus={onFocus}
+                        onFocus={disabled ? undefined : onFocus}
                         data-pc-section={section}
                     />
                 );

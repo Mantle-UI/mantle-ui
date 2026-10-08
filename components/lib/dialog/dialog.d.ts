@@ -55,6 +55,14 @@ export interface DialogPassThroughOptions {
      */
     maximizableIcon?: DialogPassThroughType<React.SVGProps<SVGSVGElement> | React.HTMLAttributes<HTMLSpanElement>>;
     /**
+     * Uses to pass attributes to the minimizable button's DOM element.
+     */
+    minimizableButton?: DialogPassThroughType<React.HTMLAttributes<HTMLButtonElement>>;
+    /**
+     * Uses to pass attributes to the minimizable icon's DOM element.
+     */
+    minimizableIcon?: DialogPassThroughType<React.SVGProps<SVGSVGElement> | React.HTMLAttributes<HTMLSpanElement>>;
+    /**
      * Uses to pass attributes to the close button's component.
      */
     closeButton?: DialogPassThroughType<React.HTMLAttributes<HTMLButtonElement>>;
@@ -99,6 +107,11 @@ export interface DialogState {
      * @defaultValue false
      */
     maximized: boolean;
+    /**
+     * Current minimized state as a boolean.
+     * @defaultValue false
+     */
+    minimized: boolean;
 }
 
 /**
@@ -126,6 +139,23 @@ interface DialogMaximizeEvent {
      * @defaultValue false
      */
     maximized: boolean;
+}
+
+/**
+ * Custom minimize method event.
+ * @see {@link DialogProps.onMinimize}
+ * @event
+ */
+interface DialogMinimizeEvent {
+    /**
+     * Browser mouse event.
+     */
+    originalEvent: React.SyntheticEvent;
+    /**
+     * Whether the dialog is minimized.
+     * @defaultValue false
+     */
+    minimized: boolean;
 }
 
 /**
@@ -195,6 +225,16 @@ export interface DialogProps {
      * Defines a string that labels the close icon.
      */
     ariaCloseIconLabel?: string | undefined;
+    /**
+     * Defines a string that labels the minimize icon.
+     * @defaultValue 'Minimize'
+     */
+    ariaMinimizeIconLabel?: string | undefined;
+    /**
+     * Defines a string that labels the restore icon.
+     * @defaultValue 'Restore'
+     */
+    ariaRestoreIconLabel?: string | undefined;
     /**
      * Base zIndex value to use in layering.
      * @defaultValue 0
@@ -351,6 +391,24 @@ export interface DialogProps {
      */
     minimizeIcon?: IconType<DialogProps> | undefined;
     /**
+     * Whether the dialog can be minimized to its title bar. A minimized modal dialog becomes non-modal so that the page remains usable.
+     * @defaultValue false
+     */
+    minimizable?: boolean | undefined;
+    /**
+     * Icon to display in the dialog minimize button.
+     */
+    minimizableIcon?: IconType<DialogProps> | undefined;
+    /**
+     * When enabled, the dialog is initially minimized. When used together with onMinimize, the dialog is controlled.
+     * @defaultValue false
+     */
+    minimized?: boolean | undefined;
+    /**
+     * Icon to display in the dialog restore button.
+     */
+    restoreIcon?: IconType<DialogProps> | undefined;
+    /**
      * Inline style of the component.
      */
     style?: React.CSSProperties | undefined;
@@ -412,6 +470,11 @@ export interface DialogProps {
      * @param {DialogMaximizeEvent} event - Custom click event.
      */
     onMaximize?(event: DialogMaximizeEvent): void;
+    /**
+     * Callback to invoke when the minimize or restore button is clicked. Providing this callback makes minimized controlled.
+     * @param {DialogMinimizeEvent} event - Custom click event.
+     */
+    onMinimize?(event: DialogMinimizeEvent): void;
     /**
      * Callback to invoke while resizing dialog.
      * @param {React.MouseEvent<HTMLElement>} event - Browser event.

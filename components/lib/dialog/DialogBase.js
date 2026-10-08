@@ -7,12 +7,14 @@ const classes = {
     closeButton: 'p-dialog-header-icon p-dialog-header-close p-link',
     maximizableIcon: 'p-dialog-header-maximize-icon',
     maximizableButton: 'p-dialog-header-icon p-dialog-header-maximize p-link',
+    minimizableIcon: 'p-dialog-header-minimize-icon',
+    minimizableButton: 'p-dialog-header-icon p-dialog-header-minimize p-link',
     header: ({ props }) => classNames('p-dialog-header', props.headerClassName),
     headerTitle: 'p-dialog-title',
     headerIcons: 'p-dialog-header-icons',
     content: ({ props }) => classNames('p-dialog-content', props.contentClassName),
     footer: ({ props }) => classNames('p-dialog-footer', props.footerClassName),
-    mask: ({ props, maskVisibleState }) => {
+    mask: ({ props, minimized, maskVisibleState }) => {
         const positions = ['center', 'left', 'right', 'top', 'top-left', 'top-right', 'bottom', 'bottom-left', 'bottom-right'];
         const pos = positions.find((item) => item === props.position || item.replace('-', '') === props.position);
 
@@ -20,7 +22,7 @@ const classes = {
             'p-dialog-mask',
             pos ? `p-dialog-${pos}` : '',
             {
-                'p-component-overlay p-component-overlay-enter': props.modal,
+                'p-component-overlay p-component-overlay-enter': props.modal && !minimized,
                 'p-dialog-visible': maskVisibleState,
                 'p-dialog-draggable': props.draggable,
                 'p-dialog-resizable': props.resizable
@@ -28,10 +30,11 @@ const classes = {
             props.maskClassName
         );
     },
-    root: ({ props, maximized, context }) =>
+    root: ({ props, maximized, minimized, context }) =>
         classNames('p-dialog p-component', {
             'p-dialog-rtl': props.rtl,
             'p-dialog-maximized': maximized,
+            'p-dialog-minimized': minimized,
             'p-dialog-default': !maximized,
             'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
             'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
@@ -204,6 +207,18 @@ const styles = `
         flex-grow: 1;
     }
 
+    /* Minimize */
+    .p-dialog-minimized {
+        height: auto !important;
+        max-height: none;
+    }
+
+    .p-dialog-minimized .p-dialog-content,
+    .p-dialog-minimized .p-dialog-footer,
+    .p-dialog-minimized .p-resizable-handle {
+        display: none;
+    }
+
     .p-confirm-dialog .p-dialog-content {
         display: flex;
         align-items: center;
@@ -228,7 +243,7 @@ const styles = `
 `;
 
 const inlineStyles = {
-    mask: ({ props }) => ({
+    mask: ({ props, minimized }) => ({
         position: 'fixed',
         height: '100%',
         width: '100%',
@@ -239,7 +254,7 @@ const inlineStyles = {
             props.position === 'left' || props.position === 'top-left' || props.position === 'bottom-left' ? 'flex-start' : props.position === 'right' || props.position === 'top-right' || props.position === 'bottom-right' ? 'flex-end' : 'center',
         alignItems:
             props.position === 'top' || props.position === 'top-left' || props.position === 'top-right' ? 'flex-start' : props.position === 'bottom' || props.position === 'bottom-left' || props.position === 'bottom-right' ? 'flex-end' : 'center',
-        pointerEvents: !props.modal && 'none',
+        pointerEvents: (!props.modal || minimized) && 'none',
         ...props.maskStyle
     })
 };
@@ -250,6 +265,8 @@ export const DialogBase = ComponentBase.extend({
         __parentMetadata: null,
         appendTo: null,
         ariaCloseIconLabel: null,
+        ariaMinimizeIconLabel: 'Minimize',
+        ariaRestoreIconLabel: 'Restore',
         baseZIndex: 0,
         blockScroll: false,
         breakpoints: null,
@@ -279,6 +296,9 @@ export const DialogBase = ComponentBase.extend({
         minX: 0,
         minY: 0,
         minimizeIcon: null,
+        minimizable: false,
+        minimizableIcon: null,
+        minimized: false,
         modal: true,
         onClick: null,
         onDrag: null,
@@ -287,12 +307,14 @@ export const DialogBase = ComponentBase.extend({
         onHide: null,
         onMaskClick: null,
         onMaximize: null,
+        onMinimize: null,
         onResize: null,
         onResizeEnd: null,
         onResizeStart: null,
         onShow: null,
         position: 'center',
         resizable: true,
+        restoreIcon: null,
         rtl: false,
         showHeader: true,
         showCloseIcon: true,

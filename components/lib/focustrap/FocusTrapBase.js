@@ -6,7 +6,8 @@ const styles = '';
 export const FocusTrapBase = ComponentBase.extend({
     defaultProps: {
         __TYPE: 'FocusTrap',
-        children: undefined
+        children: undefined,
+        disabled: false
     },
     css: {
         styles

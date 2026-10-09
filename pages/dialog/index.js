@@ -7,6 +7,7 @@ import { HeadlessDoc } from '@/components/doc/dialog/headlessdoc';
 import { ImportDoc } from '@/components/doc/dialog/importdoc';
 import { LongContentDoc } from '@/components/doc/dialog/longcontentdoc';
 import { MaximizableDoc } from '@/components/doc/dialog/maximizabledoc';
+import { MinimizableDoc } from '@/components/doc/dialog/minimizabledoc';
 import { PositionDoc } from '@/components/doc/dialog/positiondoc';
 import { Wireframe } from '@/components/doc/dialog/pt/wireframe';
 import { ResponsiveDoc } from '@/components/doc/dialog/responsivedoc';
@@ -41,6 +42,11 @@ const DialogDemo = () => {
             id: 'maximizable',
             label: 'Maximizable',
             component: MaximizableDoc
+        },
+        {
+            id: 'minimizable',
+            label: 'Minimizable',
+            component: MinimizableDoc
         },
         {
             id: 'longcontent',

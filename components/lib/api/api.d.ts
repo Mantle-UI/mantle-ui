@@ -1176,6 +1176,14 @@ export interface LocaleOptions {
          */
         listView?: string;
         /**
+         * Expand
+         */
+        expandLabel?: string;
+        /**
+         * Minimize
+         */
+        minimizeLabel?: string;
+        /**
          * Grid View
          */
         gridView?: string;

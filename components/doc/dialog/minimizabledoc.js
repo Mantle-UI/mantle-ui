@@ -54,7 +54,7 @@ export default function MinimizableDemo() {
         combined: `
 <Button label="Show both controls" icon="pi pi-external-link" onClick={() => setCombinedVisible(true)} />
 <Dialog header="Project notes" visible={combinedVisible} minimizable maximizable style={{ width: '50vw' }} onHide={() => setCombinedVisible(false)}>
-    <p className="m-0">Minimize this dialog to keep it nearby, or maximize it to work full screen.</p>
+    <p className="m-0">Minimize this dialog to keep it nearby. While minimized, restore it before using the maximize control again.</p>
 </Dialog>
         `,
         combinedJavascript: `
@@ -69,7 +69,7 @@ export default function CombinedDialogDemo() {
         <div className="card flex justify-content-center">
             <Button label="Show both controls" icon="pi pi-external-link" onClick={() => setVisible(true)} />
             <Dialog header="Project notes" visible={visible} minimizable maximizable style={{ width: '50vw' }} onHide={() => setVisible(false)}>
-                <p className="m-0">Minimize this dialog to keep it nearby, or maximize it to work full screen.</p>
+                <p className="m-0">Minimize this dialog to keep it nearby. While minimized, restore it before using the maximize control again.</p>
             </Dialog>
         </div>
     );
@@ -87,7 +87,7 @@ export default function CombinedDialogDemo() {
         <div className="card flex justify-content-center">
             <Button label="Show both controls" icon="pi pi-external-link" onClick={() => setVisible(true)} />
             <Dialog header="Project notes" visible={visible} minimizable maximizable style={{ width: '50vw' }} onHide={() => setVisible(false)}>
-                <p className="m-0">Minimize this dialog to keep it nearby, or maximize it to work full screen.</p>
+                <p className="m-0">Minimize this dialog to keep it nearby. While minimized, restore it before using the maximize control again.</p>
             </Dialog>
         </div>
     );
@@ -111,7 +111,7 @@ export default function CombinedDialogDemo() {
             </div>
             <DocSectionCode code={code} />
             <DocSectionText id="combined" label="Minimizable and Maximizable">
-                <p>Minimizing a full-screen dialog preserves its maximized state, so restoring it returns to full screen. Selecting the maximize control from a minimized dialog restores it and toggles full screen in one step.</p>
+                <p>Minimizing a full-screen dialog preserves its maximized state, so restoring it returns to full screen. While minimized, the header only displays restore and close controls; the maximize control returns after restore.</p>
             </DocSectionText>
             <div className="card flex justify-content-center">
                 <Button label="Show both controls" icon="pi pi-external-link" onClick={() => setCombinedVisible(true)} />
@@ -126,7 +126,7 @@ export default function CombinedDialogDemo() {
                         setCombinedVisible(false);
                     }}
                 >
-                    <p className="m-0">Minimize this dialog to keep it nearby, or maximize it to work full screen.</p>
+                    <p className="m-0">Minimize this dialog to keep it nearby. While minimized, restore it before using the maximize control again.</p>
                 </Dialog>
             </div>
             <DocSectionCode code={{ basic: code.combined, javascript: code.combinedJavascript, typescript: code.combinedTypescript }} />

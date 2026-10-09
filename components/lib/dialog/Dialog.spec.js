@@ -129,7 +129,7 @@ describe('Dialog', () => {
         expect(screen.getByRole('dialog')).not.toHaveClass('p-dialog-minimized');
     });
 
-    test('transitions directly between minimized and maximized states', async () => {
+    test('restores the prior maximized state while keeping the minimized header focused', async () => {
         render(
             <Dialog header="Details" visible minimizable maximizable onHide={() => {}}>
                 Content
@@ -139,23 +139,21 @@ describe('Dialog', () => {
         const dialog = await screen.findByRole('dialog');
         const maximizeButton = () => dialog.querySelector('.p-dialog-header-maximize');
 
-        fireEvent.click(screen.getByRole('button', { name: 'Minimize' }));
-        await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
-
         fireEvent.click(maximizeButton());
-        await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
         expect(dialog).toHaveClass('p-dialog-maximized');
 
         fireEvent.click(screen.getByRole('button', { name: 'Minimize' }));
         await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
         expect(dialog).not.toHaveClass('p-dialog-maximized');
+        expect(maximizeButton()).toBeNull();
 
         fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
         await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
         expect(dialog).toHaveClass('p-dialog-maximized');
+        expect(maximizeButton()).not.toBeNull();
     });
 
-    test('coordinates direct minimize and maximize transitions when both states are controlled', async () => {
+    test('coordinates controlled minimize and restore while preserving maximized state', async () => {
         const maximizeOn = jest.fn();
         const minimizeOn = jest.fn();
 
@@ -191,14 +189,19 @@ describe('Dialog', () => {
         const dialog = await screen.findByRole('dialog');
         const maximizeButton = () => dialog.querySelector('.p-dialog-header-maximize');
 
+        fireEvent.click(maximizeButton());
+        await waitFor(() => expect(dialog).toHaveClass('p-dialog-maximized'));
+        expect(maximizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ maximized: true }));
+
         fireEvent.click(screen.getByRole('button', { name: 'Minimize' }));
         await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
+        expect(maximizeButton()).toBeNull();
 
-        fireEvent.click(maximizeButton());
+        fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
         await waitFor(() => expect(dialog).toHaveClass('p-dialog-maximized'));
         expect(dialog).not.toHaveClass('p-dialog-minimized');
         expect(minimizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ minimized: false }));
-        expect(maximizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ maximized: true }));
+        expect(maximizeButton()).not.toBeNull();
     });
 
     test('uses pi-minus and pi-expand defaults for minimize and restore', async () => {

@@ -526,7 +526,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
 
         const toggleIcon = IconUtils.getJSXIcon(icon, maximizableIconProps, { props });
 
-        if (props.maximizable) {
+        if (props.maximizable && !minimized) {
             const maximizableButtonProps = mergeProps(
                 {
                     type: 'button',

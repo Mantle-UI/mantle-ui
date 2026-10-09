@@ -95,6 +95,7 @@ let locales = {
             lastPageLabel: 'Last Page',
             listLabel: 'Option List',
             listView: 'List View',
+            minimizeLabel: 'Minimize',
             moveAllToSource: 'Move All to Source',
             moveAllToTarget: 'Move All to Target',
             moveBottom: 'Move Bottom',

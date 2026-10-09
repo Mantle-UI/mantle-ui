@@ -240,12 +240,12 @@ export interface DialogProps {
     ariaCloseIconLabel?: string | undefined;
     /**
      * Defines a string that labels the minimize icon.
-     * @defaultValue 'Minimize'
+     * Defaults to the current locale's <i>minimizeLabel</i> value.
      */
     ariaMinimizeIconLabel?: string | undefined;
     /**
      * Defines a string that labels the restore icon.
-     * @defaultValue 'Restore'
+     * Defaults to the current locale's <i>expandLabel</i> value.
      */
     ariaRestoreIconLabel?: string | undefined;
     /**

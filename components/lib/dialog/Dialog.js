@@ -552,7 +552,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             return null;
         }
 
-        const labelAria = minimized ? props.ariaRestoreIconLabel : props.ariaMinimizeIconLabel;
+        const labelAria = minimized ? props.ariaRestoreIconLabel || ariaLabel('expandLabel') : props.ariaMinimizeIconLabel || ariaLabel('minimizeLabel');
         const minimizableIconProps = mergeProps(
             {
                 className: cx('minimizableIcon'),

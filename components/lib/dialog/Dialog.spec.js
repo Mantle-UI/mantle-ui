@@ -1,9 +1,14 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import * as React from 'react';
+import { MantleProvider, addLocale, locale } from '../api/Api';
 import { Dialog } from './Dialog';
 
 describe('Dialog', () => {
+    afterEach(() => {
+        locale('en');
+    });
+
     test('minimizes without unmounting its content and restores its modal behavior', async () => {
         const hideOn = jest.fn();
 
@@ -35,7 +40,7 @@ describe('Dialog', () => {
         fireEvent.keyDown(document, { key: 'Escape' });
         expect(hideOn).not.toHaveBeenCalled();
 
-        fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Expand' }));
 
         await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
         expect(dialog).toHaveAttribute('aria-modal', 'true');
@@ -95,7 +100,7 @@ describe('Dialog', () => {
         await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
         expect(dialog).toHaveStyle({ width: '42rem', minWidth: '30rem' });
 
-        fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Expand' }));
         await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
         expect(dialog).toHaveStyle({ width: '42rem', minWidth: '30rem' });
     });
@@ -147,7 +152,7 @@ describe('Dialog', () => {
         expect(dialog).not.toHaveClass('p-dialog-maximized');
         expect(maximizeButton()).toBeNull();
 
-        fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Expand' }));
         await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
         expect(dialog).toHaveClass('p-dialog-maximized');
         expect(maximizeButton()).not.toBeNull();
@@ -197,7 +202,7 @@ describe('Dialog', () => {
         await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
         expect(maximizeButton()).toBeNull();
 
-        fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Expand' }));
         await waitFor(() => expect(dialog).toHaveClass('p-dialog-maximized'));
         expect(dialog).not.toHaveClass('p-dialog-minimized');
         expect(minimizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ minimized: false }));
@@ -215,7 +220,55 @@ describe('Dialog', () => {
 
         expect(minimizeButton.querySelector('.pi-minus')).toBeInTheDocument();
         fireEvent.click(minimizeButton);
-        expect(screen.getByRole('button', { name: 'Restore' }).querySelector('.pi-expand')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Expand' }).querySelector('.pi-expand')).toBeInTheDocument();
+    });
+
+    test('uses locale defaults for minimize and restore labels', async () => {
+        render(
+            <Dialog header="Details" visible minimizable onHide={() => {}}>
+                Content
+            </Dialog>
+        );
+
+        const minimizeButton = await screen.findByRole('button', { name: 'Minimize' });
+
+        fireEvent.click(minimizeButton);
+        expect(screen.getByRole('button', { name: 'Expand' })).toBeInTheDocument();
+    });
+
+    test('uses registered locale labels selected by MantleProvider', async () => {
+        addLocale('de', {
+            aria: {
+                minimizeLabel: 'Minimieren',
+                expandLabel: 'Ausklappen'
+            }
+        });
+
+        render(
+            <MantleProvider value={{ locale: 'de' }}>
+                <Dialog header="Details" visible minimizable closable={false} onHide={() => {}}>
+                    Content
+                </Dialog>
+            </MantleProvider>
+        );
+
+        const minimizeButton = await screen.findByRole('button', { name: 'Minimieren' });
+
+        fireEvent.click(minimizeButton);
+        expect(screen.getByRole('button', { name: 'Ausklappen' })).toBeInTheDocument();
+    });
+
+    test('preserves explicit minimize and restore labels over locale defaults', async () => {
+        render(
+            <Dialog header="Details" visible minimizable ariaMinimizeIconLabel="Custom minimize" ariaRestoreIconLabel="Custom restore" onHide={() => {}}>
+                Content
+            </Dialog>
+        );
+
+        const minimizeButton = await screen.findByRole('button', { name: 'Custom minimize' });
+
+        fireEvent.click(minimizeButton);
+        expect(screen.getByRole('button', { name: 'Custom restore' })).toBeInTheDocument();
     });
 
     test('preserves custom minimize and restore icon overrides', async () => {
@@ -229,6 +282,6 @@ describe('Dialog', () => {
 
         expect(minimizeButton.querySelector('.custom-minimize')).toBeInTheDocument();
         fireEvent.click(minimizeButton);
-        expect(screen.getByRole('button', { name: 'Restore' }).querySelector('.custom-restore')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Expand' }).querySelector('.custom-restore')).toBeInTheDocument();
     });
 });

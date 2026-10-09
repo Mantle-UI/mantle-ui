@@ -1,10 +1,9 @@
 import * as React from 'react';
-import MantleUI, { MantleContext, ariaLabel } from '../api/Api';
+import MantleUI, { MantleContext, MantleIcons, ariaLabel } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import FocusTrap from '../focustrap/FocusTrap';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useEventListener, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
-import { MinusIcon } from '../icons/minus';
 import { TimesIcon } from '../icons/times';
 import { WindowMaximizeIcon } from '../icons/windowmaximize';
 import { WindowMinimizeIcon } from '../icons/windowminimize';
@@ -561,7 +560,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             },
             ptm('minimizableIcon')
         );
-        const icon = minimized ? props.restoreIcon || <WindowMaximizeIcon {...minimizableIconProps} /> : props.minimizableIcon || <MinusIcon {...minimizableIconProps} />;
+        const icon = minimized ? props.restoreIcon || MantleIcons.EXPAND : props.minimizableIcon || MantleIcons.MINUS;
         const toggleIcon = IconUtils.getJSXIcon(icon, minimizableIconProps, { props });
         const minimizableButtonProps = mergeProps(
             {

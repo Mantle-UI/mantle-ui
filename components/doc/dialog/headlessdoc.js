@@ -157,7 +157,7 @@ export default function HeadlessDemo() {
             <div className={minimized ? 'flex align-items-center justify-content-between p-2' : 'flex align-items-center justify-content-between p-4'}>
                 <span className="font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis">Account details</span>
                 <div className="flex gap-2">
-                    <Button icon={minimized ? 'pi pi-window-maximize' : 'pi pi-window-minimize'} text rounded aria-label={minimized ? 'Restore' : 'Minimize'} onClick={(event) => (minimized ? restore(event) : minimize(event))} />
+                    <Button icon={minimized ? 'pi pi-expand' : 'pi pi-minus'} text rounded aria-label={minimized ? 'Restore' : 'Minimize'} onClick={(event) => (minimized ? restore(event) : minimize(event))} />
                     <Button icon="pi pi-times" text rounded aria-label="Close" onClick={(event) => hide(event)} />
                 </div>
             </div>
@@ -247,7 +247,7 @@ export default function HeadlessDemo() {
                             <div className={minimized ? 'flex align-items-center justify-content-between p-2' : 'flex align-items-center justify-content-between p-4'}>
                                 <span className="font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis">Account details</span>
                                 <div className="flex gap-2">
-                                    <Button icon={minimized ? 'pi pi-window-maximize' : 'pi pi-window-minimize'} text rounded aria-label={minimized ? 'Restore' : 'Minimize'} onClick={(event) => (minimized ? restore(event) : minimize(event))} />
+                                    <Button icon={minimized ? 'pi pi-expand' : 'pi pi-minus'} text rounded aria-label={minimized ? 'Restore' : 'Minimize'} onClick={(event) => (minimized ? restore(event) : minimize(event))} />
                                     <Button icon="pi pi-times" text rounded aria-label="Close" onClick={(event) => hide(event)} />
                                 </div>
                             </div>

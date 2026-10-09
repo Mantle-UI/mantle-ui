@@ -200,4 +200,32 @@ describe('Dialog', () => {
         expect(minimizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ minimized: false }));
         expect(maximizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ maximized: true }));
     });
+
+    test('uses pi-minus and pi-expand defaults for minimize and restore', async () => {
+        render(
+            <Dialog header="Details" visible minimizable onHide={() => {}}>
+                Content
+            </Dialog>
+        );
+
+        const minimizeButton = await screen.findByRole('button', { name: 'Minimize' });
+
+        expect(minimizeButton.querySelector('.pi-minus')).toBeInTheDocument();
+        fireEvent.click(minimizeButton);
+        expect(screen.getByRole('button', { name: 'Restore' }).querySelector('.pi-expand')).toBeInTheDocument();
+    });
+
+    test('preserves custom minimize and restore icon overrides', async () => {
+        render(
+            <Dialog header="Details" visible minimizable minimizableIcon="custom-minimize" restoreIcon="custom-restore" onHide={() => {}}>
+                Content
+            </Dialog>
+        );
+
+        const minimizeButton = await screen.findByRole('button', { name: 'Minimize' });
+
+        expect(minimizeButton.querySelector('.custom-minimize')).toBeInTheDocument();
+        fireEvent.click(minimizeButton);
+        expect(screen.getByRole('button', { name: 'Restore' }).querySelector('.custom-restore')).toBeInTheDocument();
+    });
 });

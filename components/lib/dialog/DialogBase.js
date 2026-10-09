@@ -33,7 +33,7 @@ const classes = {
     root: ({ props, maximized, minimized, context }) =>
         classNames('p-dialog p-component', {
             'p-dialog-rtl': props.rtl,
-            'p-dialog-maximized': maximized,
+            'p-dialog-maximized': maximized && !minimized,
             'p-dialog-minimized': minimized,
             'p-dialog-default': !maximized,
             'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',

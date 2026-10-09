@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import * as React from 'react';
 import { Dialog } from './Dialog';
 
 describe('Dialog', () => {
@@ -126,5 +127,77 @@ describe('Dialog', () => {
         fireEvent.click(screen.getByRole('button', { name: 'Restore headless dialog' }));
         await screen.findByText('Expanded');
         expect(screen.getByRole('dialog')).not.toHaveClass('p-dialog-minimized');
+    });
+
+    test('transitions directly between minimized and maximized states', async () => {
+        render(
+            <Dialog header="Details" visible minimizable maximizable onHide={() => {}}>
+                Content
+            </Dialog>
+        );
+
+        const dialog = await screen.findByRole('dialog');
+        const maximizeButton = () => dialog.querySelector('.p-dialog-header-maximize');
+
+        fireEvent.click(screen.getByRole('button', { name: 'Minimize' }));
+        await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
+
+        fireEvent.click(maximizeButton());
+        await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
+        expect(dialog).toHaveClass('p-dialog-maximized');
+
+        fireEvent.click(screen.getByRole('button', { name: 'Minimize' }));
+        await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
+        expect(dialog).not.toHaveClass('p-dialog-maximized');
+
+        fireEvent.click(screen.getByRole('button', { name: 'Restore' }));
+        await waitFor(() => expect(dialog).not.toHaveClass('p-dialog-minimized'));
+        expect(dialog).toHaveClass('p-dialog-maximized');
+    });
+
+    test('coordinates direct minimize and maximize transitions when both states are controlled', async () => {
+        const maximizeOn = jest.fn();
+        const minimizeOn = jest.fn();
+
+        function ControlledDialog() {
+            const [maximized, setMaximized] = React.useState(false);
+            const [minimized, setMinimized] = React.useState(false);
+
+            return (
+                <Dialog
+                    header="Details"
+                    visible
+                    minimizable
+                    maximizable
+                    maximized={maximized}
+                    minimized={minimized}
+                    onHide={() => {}}
+                    onMaximize={(event) => {
+                        maximizeOn(event);
+                        setMaximized(event.maximized);
+                    }}
+                    onMinimize={(event) => {
+                        minimizeOn(event);
+                        setMinimized(event.minimized);
+                    }}
+                >
+                    Content
+                </Dialog>
+            );
+        }
+
+        render(<ControlledDialog />);
+
+        const dialog = await screen.findByRole('dialog');
+        const maximizeButton = () => dialog.querySelector('.p-dialog-header-maximize');
+
+        fireEvent.click(screen.getByRole('button', { name: 'Minimize' }));
+        await waitFor(() => expect(dialog).toHaveClass('p-dialog-minimized'));
+
+        fireEvent.click(maximizeButton());
+        await waitFor(() => expect(dialog).toHaveClass('p-dialog-maximized'));
+        expect(dialog).not.toHaveClass('p-dialog-minimized');
+        expect(minimizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ minimized: false }));
+        expect(maximizeOn).toHaveBeenLastCalledWith(expect.objectContaining({ maximized: true }));
     });
 });

@@ -4,6 +4,7 @@ import { useHandleStyle } from '../componentbase/ComponentBase';
 import { CSSTransition } from '../csstransition/CSSTransition';
 import FocusTrap from '../focustrap/FocusTrap';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useEventListener, useGlobalOnEscapeKey, useMergeProps, useMountEffect, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
+import { MinusIcon } from '../icons/minus';
 import { TimesIcon } from '../icons/times';
 import { WindowMaximizeIcon } from '../icons/windowmaximize';
 import { WindowMinimizeIcon } from '../icons/windowminimize';
@@ -97,17 +98,25 @@ export const Dialog = React.forwardRef((inProps, ref) => {
         pointerRef.current = null;
     };
 
-    const toggleMaximize = (event) => {
+    const setMaximized = (event, nextMaximized) => {
         if (props.onMaximize) {
             props.onMaximize({
                 originalEvent: event,
-                maximized: !maximized
+                maximized: nextMaximized
             });
         } else {
-            setMaximizedState((prevMaximized) => !prevMaximized);
+            setMaximizedState(nextMaximized);
         }
 
         event.preventDefault();
+    };
+
+    const toggleMaximize = (event) => {
+        if (minimized) {
+            setMinimized(event, false);
+        }
+
+        setMaximized(event, !maximized);
     };
 
     const setMinimized = (event, nextMinimized) => {
@@ -518,7 +527,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
 
         const toggleIcon = IconUtils.getJSXIcon(icon, maximizableIconProps, { props });
 
-        if (props.maximizable && !minimized) {
+        if (props.maximizable) {
             const maximizableButtonProps = mergeProps(
                 {
                     type: 'button',
@@ -540,7 +549,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
     };
 
     const createMinimizeIcon = () => {
-        if (!props.minimizable || maximized) {
+        if (!props.minimizable) {
             return null;
         }
 
@@ -552,7 +561,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             },
             ptm('minimizableIcon')
         );
-        const icon = minimized ? props.restoreIcon || <WindowMaximizeIcon {...minimizableIconProps} /> : props.minimizableIcon || <WindowMinimizeIcon {...minimizableIconProps} />;
+        const icon = minimized ? props.restoreIcon || <WindowMaximizeIcon {...minimizableIconProps} /> : props.minimizableIcon || <MinusIcon {...minimizableIconProps} />;
         const toggleIcon = IconUtils.getJSXIcon(icon, minimizableIconProps, { props });
         const minimizableButtonProps = mergeProps(
             {

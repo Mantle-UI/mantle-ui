@@ -2105,7 +2105,7 @@
                             "name": "aria",
                             "optional": true,
                             "readonly": false,
-                            "type": "{ trueLabel?: string; falseLabel?: string; nullLabel?: string; star?: string; stars?: string; selectAll?: string; unselectAll?: string; close?: string; previous?: string; next?: string; navigation?: string; scrollTop?: string; moveTop?: string; moveUp?: string; moveDown?: string; moveBottom?: string; moveToTarget?: string; moveToSource?: string; moveAllToTarget?: string; moveAllToSource?: string; pageLabel?: string; otpLabel?: string; firstPageLabel?: string; lastPageLabel?: string; nextPageLabel?: string; prevPageLabel?: string; rowsPerPageLabel?: string; jumpToPageDropdownLabel?: string; jumpToPageInputLabel?: string; selectRow?: string; unselectRow?: string; expandRow?: string; collapseRow?: string; showFilterMenu?: string; hideFilterMenu?: string; filterOperator?: string; filterConstraint?: string; editRow?: string; saveEdit?: string; cancelEdit?: string; listView?: string; gridView?: string; slide?: string; slideNumber?: string; zoomImage?: string; zoomIn?: string; zoomOut?: string; rotateRight?: string; rotateLeft?: string; listLabel?: string }",
+                            "type": "{ trueLabel?: string; falseLabel?: string; nullLabel?: string; star?: string; stars?: string; selectAll?: string; unselectAll?: string; close?: string; previous?: string; next?: string; navigation?: string; scrollTop?: string; moveTop?: string; moveUp?: string; moveDown?: string; moveBottom?: string; moveToTarget?: string; moveToSource?: string; moveAllToTarget?: string; moveAllToSource?: string; pageLabel?: string; otpLabel?: string; firstPageLabel?: string; lastPageLabel?: string; nextPageLabel?: string; prevPageLabel?: string; rowsPerPageLabel?: string; jumpToPageDropdownLabel?: string; jumpToPageInputLabel?: string; selectRow?: string; unselectRow?: string; expandRow?: string; collapseRow?: string; showFilterMenu?: string; hideFilterMenu?: string; filterOperator?: string; filterConstraint?: string; editRow?: string; saveEdit?: string; cancelEdit?: string; listView?: string; expandLabel?: string; minimizeLabel?: string; gridView?: string; slide?: string; slideNumber?: string; zoomImage?: string; zoomIn?: string; zoomOut?: string; rotateRight?: string; rotateLeft?: string; listLabel?: string }",
                             "description": "ARIA labels"
                         }
                     ],
@@ -14376,16 +14376,16 @@
                             "optional": true,
                             "readonly": false,
                             "type": "string",
-                            "default": "'Minimize'",
-                            "description": "Defines a string that labels the minimize icon."
+                            "default": "",
+                            "description": "Defines a string that labels the minimize icon.\nDefaults to the current locale's <i>minimizeLabel</i> value."
                         },
                         {
                             "name": "ariaRestoreIconLabel",
                             "optional": true,
                             "readonly": false,
                             "type": "string",
-                            "default": "'Restore'",
-                            "description": "Defines a string that labels the restore icon."
+                            "default": "",
+                            "description": "Defines a string that labels the restore icon.\nDefaults to the current locale's <i>expandLabel</i> value."
                         },
                         {
                             "name": "baseZIndex",
@@ -22039,16 +22039,16 @@
                             "optional": true,
                             "readonly": false,
                             "type": "string",
-                            "default": "'Minimize'",
-                            "description": "Defines a string that labels the minimize icon."
+                            "default": "",
+                            "description": "Defines a string that labels the minimize icon.\nDefaults to the current locale's <i>minimizeLabel</i> value."
                         },
                         {
                             "name": "ariaRestoreIconLabel",
                             "optional": true,
                             "readonly": false,
                             "type": "string",
-                            "default": "'Restore'",
-                            "description": "Defines a string that labels the restore icon."
+                            "default": "",
+                            "description": "Defines a string that labels the restore icon.\nDefaults to the current locale's <i>expandLabel</i> value."
                         },
                         {
                             "name": "baseZIndex",

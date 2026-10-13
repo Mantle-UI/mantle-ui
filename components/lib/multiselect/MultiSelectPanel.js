@@ -348,7 +348,7 @@ export const MultiSelectPanel = React.memo(
             return element;
         }
 
-        return <Portal element={element} appendTo={props.appendTo} />;
+        return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : ref} />;
     })
 );
 

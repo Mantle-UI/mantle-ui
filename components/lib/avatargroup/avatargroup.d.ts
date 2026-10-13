@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type AvatarGroupPassThroughType<T> = PassThroughType<T, AvatarGroupPassThroughMethodOptions>;
 
@@ -39,7 +40,7 @@ export interface AvatarGroupPassThroughOptions {
  * Defines valid properties in Avatar component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface AvatarGroupProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface AvatarGroupProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Used to get the child elements of the component.
      * @readonly

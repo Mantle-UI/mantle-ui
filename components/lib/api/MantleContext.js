@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FilterMatchMode } from './FilterMatchMode';
 import MantleUI from './MantleUI';
-import { applyPreset } from '../themes/themes';
+import { createPresetCss } from '../themes/themes';
+import { encodeThemeId, equalThemeValues, snapshotTheme, useThemeId } from '../themes/ThemeScope';
 
 export const MantleContext = React.createContext();
 
@@ -35,13 +36,91 @@ export const MantleProvider = (props) => {
     );
     const [pt, setPt] = useState(propsValue.pt ?? undefined);
     const [unstyled, setUnstyled] = useState(propsValue.unstyled ?? false);
-    const [theme, setTheme] = useState(propsValue.theme ?? undefined);
+    const [themeState, setThemeState] = useState(propsValue.theme ?? undefined);
+    const previousThemeConfig = React.useRef({ value: snapshotTheme(propsValue.theme), revision: props.themeRevision });
+    const controlledTheme = props.themeMode === 'controlled';
+    const theme = controlledTheme ? propsValue.theme : themeState;
+    const currentTheme = React.useRef();
+
+    currentTheme.current = { theme, controlled: controlledTheme, onChange: props.onThemeChange };
+
+    const setTheme = React.useCallback((update) => {
+        const current = currentTheme.current;
+        const next = typeof update === 'function' ? update(current.theme) : update;
+
+        if (!current.controlled) {
+            current.theme = next;
+            setThemeState(next);
+        }
+
+        current.onChange?.(next);
+    }, []);
+
+    const themeId = useThemeId();
+    const themeStyleId = themeId ? `mantle-theme-provider-${encodeThemeId(themeId)}` : undefined;
+    const themeScope = !unstyled && theme?.preset ? themeStyleId : undefined;
+    const themeRegistry = React.useRef({ names: new Set(), sheets: [], count: 0 });
+
+    themeRegistry.current.config = { theme, themeScope };
+
+    const registerThemeComponent = React.useCallback((name) => themeRegistry.current.names.add(name.toLowerCase()), []);
+    const flushThemeComponents = React.useCallback(() => {
+        const registry = themeRegistry.current;
+
+        if (registry.sheets.length && registry.count !== registry.names.size) {
+            const { theme, themeScope } = registry.config;
+            const css = createPresetCss(theme.preset, { ...theme.options, selector: `[data-mantle-theme-scope=${themeScope}]`, colorSchemeAttribute: true, componentRoots: [...registry.names] });
+
+            registry.sheets.forEach((sheet) => (sheet.textContent = css));
+            registry.count = registry.names.size;
+        }
+    }, []);
 
     React.useEffect(() => {
-        if (theme?.preset) {
-            applyPreset(theme.preset, { ...theme.options, styleContainer });
+        if (!equalThemeValues(previousThemeConfig.current.value, propsValue.theme) || !Object.is(previousThemeConfig.current.revision, props.themeRevision)) {
+            previousThemeConfig.current = { value: snapshotTheme(propsValue.theme), revision: props.themeRevision };
+
+            if (!controlledTheme) {
+                setThemeState(propsValue.theme);
+            }
         }
-    }, [styleContainer, theme]);
+    }, [propsValue.theme, controlledTheme, props.themeRevision]);
+
+    React.useEffect(() => {
+        if (themeScope && typeof document !== 'undefined') {
+            const registry = themeRegistry.current;
+            const container = styleContainer || theme.options?.styleContainer || document.head;
+            const documentHead = (container.ownerDocument || document).head;
+            const containers = container.getRootNode()?.host ? [container, documentHead] : [container];
+            const options = { ...theme.options, selector: `[data-mantle-theme-scope=${themeScope}]`, colorSchemeAttribute: true, componentRoots: [...registry.names] };
+            const css = createPresetCss(theme.preset, options);
+            // A sheet inside a shadow root cannot style a body portal. Its
+            // document copy is equally scoped and owned by this provider.
+            const styleElements = containers.map((target) => {
+                const styleElement = (target.ownerDocument || document).createElement('style');
+
+                styleElement.id = themeStyleId;
+                styleElement.setAttribute('data-mantle-theme', themeStyleId);
+                styleElement.textContent = css;
+
+                if (nonce || theme.options?.nonce) {
+                    styleElement.setAttribute('nonce', nonce || theme.options.nonce);
+                }
+
+                target.appendChild(styleElement);
+
+                return styleElement;
+            });
+
+            registry.sheets = styleElements;
+            registry.count = registry.names.size;
+
+            return () => {
+                styleElements.forEach((styleElement) => styleElement.remove());
+                registry.sheets = [];
+            };
+        }
+    }, [nonce, styleContainer, theme, themeScope, themeStyleId]);
     const [filterMatchModeOptions, setFilterMatchModeOptions] = useState(
         propsValue.filterMatchModeOptions ?? {
             text: [FilterMatchMode.STARTS_WITH, FilterMatchMode.CONTAINS, FilterMatchMode.NOT_CONTAINS, FilterMatchMode.ENDS_WITH, FilterMatchMode.EQUALS, FilterMatchMode.NOT_EQUALS],
@@ -94,6 +173,8 @@ export const MantleProvider = (props) => {
     }, [locale]);
 
     const value = {
+        registerThemeComponent,
+        flushThemeComponents,
         changeTheme,
         ripple,
         setRipple,
@@ -126,7 +207,8 @@ export const MantleProvider = (props) => {
         unstyled,
         setUnstyled,
         theme,
-        setTheme
+        setTheme,
+        themeScope
     };
 
     return <MantleContext.Provider value={value}>{props.children}</MantleContext.Provider>;

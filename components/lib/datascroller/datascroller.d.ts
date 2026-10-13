@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type DataScrollerPassThroughType<T> = PassThroughType<T, DataScrollerPassThroughMethodOptions>;
 
@@ -81,7 +82,7 @@ interface DataScrollerLazyLoadEvents {
  * Defines valid properties in DataScroller component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface DataScrollerProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface DataScrollerProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * Number of buffer size.
      * @defaultValue 0.9

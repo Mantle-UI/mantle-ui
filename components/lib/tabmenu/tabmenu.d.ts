@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TabMenuPassThroughType<T> = PassThroughType<T, TabMenuThroughMethodOptions>;
 
@@ -113,7 +114,7 @@ interface TabMenuTabChangeEvent {
  * Defines valid properties in TabMenu component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface TabMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface TabMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

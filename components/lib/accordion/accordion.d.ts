@@ -17,6 +17,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type AccordionPassThroughType<T> = PassThroughType<T, AccordionPassThroughMethodOptions>;
 export declare type AccordionTabPassThroughType<T> = PassThroughType<T, AccordionTabPassThroughMethodOptions>;
@@ -265,7 +266,7 @@ export interface AccordionState {
  * Defines valid properties in Accordion component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface AccordionProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface AccordionProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Active index or indexes of the element. Use an array of numbers for multiple indexes.
      * The {@link multiple} prop must be set to true in order to specify multiple indexes.

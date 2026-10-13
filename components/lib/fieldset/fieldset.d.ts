@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type FieldsetPassThroughType<T> = PassThroughType<T, FieldsetPassThroughMethodOptions>;
 export declare type FieldsetPassThroughTransitionType = ReactCSSTransitionProps | ((options: FieldsetPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -115,7 +116,7 @@ interface FieldsetToggleEvent {
  * Defines valid properties in Fieldset component. In addition to these, all properties of HTMLFieldSetElement can be used in this component.
  * @group Properties
  */
-export interface FieldsetProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement>, 'ref' | 'onToggle'> {
+export interface FieldsetProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement>, 'ref' | 'onToggle'>, ComponentThemeProps {
     /**
      * Header text of the fieldset.
      */

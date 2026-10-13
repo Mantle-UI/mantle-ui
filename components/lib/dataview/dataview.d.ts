@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { PaginatorPassThroughOptions, PaginatorTemplate } from '../paginator';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type DataViewPassThroughType<T> = PassThroughType<T, DataViewPassThroughMethodOptions>;
 export declare type DataViewLayoutOptionsPassThroughType<T> = PassThroughType<T, DataViewLayoutOptionsPassThroughMethodOptions>;
@@ -162,7 +163,7 @@ interface DataViewLayoutOptionsChangeEvent {
 /**
  * Custom data view layout options props
  */
-export interface DataViewLayoutOptionsProps {
+export interface DataViewLayoutOptionsProps extends ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */
@@ -209,7 +210,7 @@ export declare class DataViewLayoutOptions extends React.Component<DataViewLayou
  * Defines valid properties in DataView component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface DataViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface DataViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Header content of the component.
      */

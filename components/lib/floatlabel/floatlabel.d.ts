@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type FloatLabelPassThroughType<T> = PassThroughType<T, FloatLabelPassThroughMethodOptions>;
 
@@ -48,7 +49,7 @@ export interface FloatLabelPassThroughOptions {
  * Defines valid properties in FloatLabel component.
  * @group Properties
  */
-export interface FloatLabelProps {
+export interface FloatLabelProps extends ComponentThemeProps {
     /**
      * Used to get the child elements of the component.
      * @readonly

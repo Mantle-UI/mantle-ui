@@ -12,6 +12,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type VirtualScrollerPassThroughType<T> = PassThroughType<T, VirtualScrollerPassThroughMethodOptions>;
 
@@ -330,7 +331,7 @@ interface VirtualScrollerLazyEvent extends VirtualScrollerChangeEvent {}
  * Defines valid properties in VirtualScroller component.
  * @group Properties
  */
-export interface VirtualScrollerProps {
+export interface VirtualScrollerProps extends ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

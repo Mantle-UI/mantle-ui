@@ -16,6 +16,7 @@ import { KeyFilterType } from '../keyfilter/keyfilteroptions';
 import { PassThroughOptions } from '../passthrough';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type PasswordPassThroughType<T> = PassThroughType<T, PasswordPassThroughMethodOptions>;
 export declare type PasswordPassThroughTransitionType = ReactCSSTransitionProps | ((options: PasswordPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -150,7 +151,7 @@ interface PasswordIconEvent {
  * Defines valid properties in Password component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface PasswordProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onInput' | 'ref' | 'content' | 'pt'> {
+export interface PasswordProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onInput' | 'ref' | 'content' | 'pt'>, ComponentThemeProps {
     /**
      * Identifier of the input element.
      */

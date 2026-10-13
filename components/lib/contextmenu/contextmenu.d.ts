@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { MenuItem } from '../menuitem';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ContextMenuPassThroughType<T> = PassThroughType<T, ContextMenuPassThroughMethodOptions>;
 export declare type ContextMenuPassThroughTransitionType = ReactCSSTransitionProps | ((options: ContextMenuPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -128,7 +129,7 @@ export interface ContextMenuContext {
  * Defines valid properties in ContextMenu component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ContextMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface ContextMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

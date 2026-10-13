@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MessagesPassThroughType<T> = PassThroughType<T, MessagesPassThroughMethodOptions>;
 export declare type MessagesPassThroughTransitionType = ReactCSSTransitionProps | ((options: MessagesPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -149,7 +150,7 @@ export interface MessagesMessage {
  * Defines valid properties in Messages component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface MessagesProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface MessagesProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * The properties of CSSTransition can be customized, except for "nodeRef" and "in" properties.
      */

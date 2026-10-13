@@ -746,7 +746,7 @@ export const TieredMenu = React.memo(
 
         const element = createElement();
 
-        return props.popup ? <Portal element={element} appendTo={props.appendTo} /> : element;
+        return props.popup ? <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : containerRef} themeOrigin={targetRef} /> : element;
     })
 );
 

@@ -14,6 +14,7 @@ import { CSSTransitionProps } from '../csstransition';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TieredMenuPassThroughType<T> = PassThroughType<T, TieredMenuPassThroughMethodOptions>;
 export declare type TieredMenuPassThroughTransitionType = ReactCSSTransitionProps | ((options: TieredMenuPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -109,7 +110,7 @@ export interface TieredMenuContext {
  * Defines valid properties in TieredMenu component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface TieredMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface TieredMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

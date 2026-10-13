@@ -12,6 +12,7 @@ import { ButtonPassThroughOptions } from '../button/button';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type OrderListPassThroughType<T> = PassThroughType<T, OrderListPassThroughMethodOptions>;
 
@@ -162,7 +163,7 @@ interface OrderListFilterOptions {
  * Defines valid properties in OrderList component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface OrderListProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'> {
+export interface OrderListProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * An array of objects to reorder.
      */

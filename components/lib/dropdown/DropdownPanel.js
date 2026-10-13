@@ -345,7 +345,7 @@ export const DropdownPanel = React.memo(
 
         const element = createElement();
 
-        return <Portal element={element} appendTo={props.appendTo} />;
+        return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={props.unstyled ? undefined : ref} />;
     })
 );
 

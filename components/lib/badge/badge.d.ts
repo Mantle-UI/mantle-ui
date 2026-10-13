@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type BadgePassThroughType<T> = PassThroughType<T, BadgePassThroughMethodOptions>;
 
@@ -41,7 +42,7 @@ export interface BadgePassThroughOptions {
  * Defines valid properties in Badge component. In addition to these, all properties of HTMLSpanElement can be used in this component.
  * @group Properties
  */
-export interface BadgeProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'ref'> {
+export interface BadgeProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'ref'>, ComponentThemeProps {
     /**
      * Value to display inside the badge.
      *

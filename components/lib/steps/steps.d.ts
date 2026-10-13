@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type StepsPassThroughType<T> = PassThroughType<T, StepsThroughMethodOptions>;
 export declare type StepPassThroughType<T> = PassThroughType<T, StepPassThroughMethodOptions>;
@@ -130,7 +131,7 @@ interface StepsSelectEvent {
  * Defines valid properties in Steps component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface StepsProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onSelect' | 'ref'> {
+export interface StepsProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onSelect' | 'ref'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

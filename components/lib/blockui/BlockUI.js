@@ -111,7 +111,7 @@ export const BlockUI = React.forwardRef((inProps, ref) => {
                 </div>
             );
 
-            return <Portal element={mask} appendTo={appendTo} onMounted={onPortalMounted} />;
+            return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={mask} appendTo={appendTo} themeRootRef={isUnstyled() ? undefined : maskRef} themeOrigin={elementRef} onMounted={onPortalMounted} />;
         }
 
         return null;

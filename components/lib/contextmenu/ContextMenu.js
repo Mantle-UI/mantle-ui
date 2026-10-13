@@ -42,6 +42,7 @@ export const ContextMenu = React.memo(
         const menuRef = React.useRef(null);
         const listRef = React.useRef(null);
         const currentEvent = React.useRef(null);
+        const themeTargetRef = React.useRef(null);
         const searchValue = React.useRef('');
         const searchTimeout = React.useRef(null);
         const styleElementRef = React.useRef(null);
@@ -123,6 +124,8 @@ export const ContextMenu = React.memo(
         };
 
         const show = (event) => {
+            themeTargetRef.current = event.target || event.currentTarget;
+
             setActiveItemPath([]);
             setFocusedItemInfo({ index: -1, level: 0, parentKey: '' });
             event.stopPropagation();
@@ -750,7 +753,7 @@ export const ContextMenu = React.memo(
 
         const element = createContextMenu();
 
-        return <Portal element={element} appendTo={props.appendTo} />;
+        return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : menuRef} themeOrigin={themeTargetRef} />;
     })
 );
 

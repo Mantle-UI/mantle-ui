@@ -14,6 +14,7 @@ import { PassThroughOptions } from '../passthrough';
 import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ToggleButtonPassThroughType<T> = PassThroughType<T, ToggleButtonPassThroughMethodOptions>;
 
@@ -110,7 +111,7 @@ interface ToggleButtonChangeEvent {
  * Defines valid properties in ToggleButton component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ToggleButtonProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'> {
+export interface ToggleButtonProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * Specifies the on/off state of the button.
      * @defaultValue false

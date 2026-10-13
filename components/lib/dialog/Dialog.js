@@ -708,7 +708,7 @@ export const Dialog = React.forwardRef((inProps, ref) => {
             </div>
         );
 
-        return <Portal element={rootElement} appendTo={props.appendTo} visible />;
+        return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={rootElement} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : [dialogRef, maskRef]} themeOrigin={props.themeOrigin} visible />;
     };
 
     return maskVisibleState && createDialog();

@@ -4,13 +4,13 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import postcss from 'rollup-plugin-postcss';
-import terser from '@rollup/plugin-terser';
 
 import fs from 'fs-extra';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 import pkg from './package.json' with { type: 'json' };
+import { createMinifyPlugin } from './scripts/minify-plugin.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -77,6 +77,7 @@ const CORE_PASSTHROUGH_DEPENDENCIES = [
 
 const ALIAS_COMPONENT_ENTRIES = [
     { find: '../utils/Utils', replacement: '@mantle-ui/react/utils' },
+    { find: '../themes/themes', replacement: '@mantle-ui/react/themes' },
     { find: '../api/Api', replacement: '@mantle-ui/react/api' },
     { find: '../componentbase/ComponentBase', replacement: '@mantle-ui/react/componentbase' },
     { find: '../hooks/Hooks', replacement: '@mantle-ui/react/hooks' },
@@ -102,6 +103,14 @@ const ALIAS_COMPONENT_ENTRIES = [
     { find: '../tree/Tree', replacement: '@mantle-ui/react/tree' },
     ...CORE_PASSTHROUGH_DEPENDENCIES
 ];
+
+// Module entry points re-export public subpackages so root and subpath imports
+// share React contexts and the imperative theme state. The standalone IIFE
+// continues to inline the complete library.
+const ROOT_MODULE_ALIASES = [...new Set([...fs.readFileSync(path.resolve(__dirname, 'components/lib/mantle-ui-react.all.js'), 'utf8').matchAll(/from '(\.\/[^']+)'/g)].map((match) => match[1]))].map((find) => ({
+    find,
+    replacement: `@mantle-ui/react/${find.startsWith('./icons/') ? find.slice(2) : find.split('/')[1]}`
+}));
 
 // dependencies
 const GLOBAL_DEPENDENCIES = {
@@ -161,6 +170,7 @@ const POSTCSS_PLUGIN_OPTIONS = {
 };
 
 const TERSER_PLUGIN_OPTIONS = {
+    maxWorkers: 1,
     compress: {
         keep_infinity: true,
         pure_getters: true,
@@ -185,19 +195,21 @@ function addEntry(name, input, output, isComponent = true) {
         }
     };
 
-    const getEntry = (isMinify) => {
+    const getEntry = (isMinify, rootModule = false) => {
+        const sharedModules = rootModule && !NPM_LINK;
+
         return {
             onwarn,
             input,
-            plugins: [...plugins, isMinify && terser(TERSER_PLUGIN_OPTIONS), useCorePlugin && corePlugin()],
-            external,
+            plugins: [sharedModules && alias({ entries: ROOT_MODULE_ALIASES }), ...plugins, isMinify && createMinifyPlugin(TERSER_PLUGIN_OPTIONS), useCorePlugin && corePlugin()],
+            external: sharedModules ? [...external, ...ROOT_MODULE_ALIASES.map((entry) => entry.replacement)] : external,
             inlineDynamicImports
         };
     };
 
     const get_CJS_ESM = (isMinify) => {
         return {
-            ...getEntry(isMinify),
+            ...getEntry(isMinify, name === 'MantleUI'),
             output: [
                 ...(NPM_LINK
                     ? []
@@ -379,8 +391,9 @@ function addPackageJson() {
     ],
     "unpkg": "mantle-ui-react.all.min.js",
     "jsdelivr": "mantle-ui-react.all.min.js",
-    "main": "mantle-ui-react.all.min.js",
+    "main": "mantle-ui-react.all.cjs.min.js",
     "module": "mantle-ui-react.all.esm.min.js",
+    "types": "mantle-ui-react.all.d.ts",
     "web-types": "web-types.json",
     "bin": {
         "mantleui": "./bin/mantle-ui-migrate.cjs"

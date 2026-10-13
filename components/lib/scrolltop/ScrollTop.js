@@ -72,7 +72,7 @@ export const ScrollTop = React.memo(
 
         React.useImperativeHandle(ref, () => ({
             props,
-            getElement: () => elementRef.current
+            getElement: () => scrollElementRef.current
         }));
 
         React.useEffect(() => {

@@ -14,9 +14,11 @@ export const DataViewLayoutOptions = React.memo((inProps) => {
     const mergeProps = useMergeProps();
     const context = React.useContext(MantleContext);
     const props = DataViewLayoutOptionsBase.getProps(inProps, context);
-    const { ptm, cx } = DataViewLayoutOptionsBase.setMetaData({
+    const { ptm, cx, isUnstyled } = DataViewLayoutOptionsBase.setMetaData({
         props
     });
+
+    useHandleStyle('', isUnstyled, { name: 'dataview', styled: true });
 
     const changeLayout = (event, layoutMode) => {
         props.onChange({

@@ -161,7 +161,15 @@ export const SlideMenu = React.memo(
                 {
                     ref: backward,
                     className: cx('previous', { levelState }),
-                    onClick: (e) => navigateBack(e)
+                    role: 'button',
+                    tabIndex: levelState > 0 ? 0 : -1,
+                    onClick: (e) => navigateBack(e),
+                    onKeyDown: (event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            navigateBack(event);
+                        }
+                    }
                 },
                 ptm('previous')
             );
@@ -252,7 +260,7 @@ export const SlideMenu = React.memo(
 
         const element = createElement();
 
-        return props.popup ? <Portal element={element} appendTo={props.appendTo} /> : element;
+        return props.popup ? <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : menuRef} themeOrigin={targetRef} /> : element;
     })
 );
 

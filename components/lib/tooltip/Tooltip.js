@@ -551,7 +551,7 @@ export const Tooltip = React.memo(
         if (visibleState) {
             const element = createElement();
 
-            return <Portal element={element} appendTo={props.appendTo} visible />;
+            return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : elementRef} themeOrigin={currentTargetRef} visible />;
         }
 
         return null;

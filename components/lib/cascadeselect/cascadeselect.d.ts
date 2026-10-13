@@ -15,6 +15,7 @@ import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { SelectItemOptionsType } from '../selectitem/selectitem';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type CascadeSelectPassThroughType<T> = PassThroughType<T, CascadeSelectPassThroughMethodOptions>;
 export declare type CascadeSelectPassThroughTransitionType = ReactCSSTransitionProps | ((options: CascadeSelectPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -165,7 +166,7 @@ interface CascadeSelectGroupChangeEvent extends CascadeSelectChangeEvent {}
  * Defines valid properties in CascadeSelect component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface CascadeSelectProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'> {
+export interface CascadeSelectProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'>, ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TimelinePassThroughType<T> = PassThroughType<T, TimelinePassThroughMethodOptions>;
 
@@ -65,7 +66,7 @@ export interface TimelinePassThroughOptions {
  * Defines valid properties in Timeline component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface TimelineProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'content' | 'pt'> {
+export interface TimelineProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'content' | 'pt'>, ComponentThemeProps {
     /**
      * Position of the timeline bar relative to the content. Valid values are "left", "right for vertical layout and "top", "bottom" for horizontal layout.
      * @defaultValue left

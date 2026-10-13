@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MegaMenuPassThroughType<T> = PassThroughType<T, MegaMenuPassThroughMethodOptions>;
 
@@ -165,7 +166,7 @@ export interface MegaMenuContext {
  * Defines valid properties in MegaMenu component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface MegaMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface MegaMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

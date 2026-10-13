@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ProgressSpinnerPassThroughType<T> = PassThroughType<T, ProgressSpinnerPassThroughMethodOptions>;
 
@@ -49,7 +50,7 @@ export interface ProgressSpinnerPassThroughOptions {
  * Defines valid properties in ProgressSpinner component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ProgressSpinnerProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface ProgressSpinnerProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Width of the circle stroke.
      * @defaultValue 2

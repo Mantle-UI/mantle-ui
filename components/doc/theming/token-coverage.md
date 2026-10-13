@@ -1,0 +1,109 @@
+# Aura token coverage and verification
+
+Verified 2026-10-13 on `aura-token-foundation`. Aura exposes 94 component/shared groups and 3,506 resolved tokens in each color scheme. The styled suite now consumes primitive, semantic and component tokens through the Aura CSS bridge. This records implementation coverage and concrete regression checks; it does not imply exhaustive testing of every combination of component props, templates and interaction states.
+
+## Component mapping
+
+| Source module         | Token consumers                                                                                                                                                             |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AuraForms.js`        | InputText, InputMask, InputNumber, InputTextarea, InputOtp, Password, AutoComplete, Chips, Mention                                                                          |
+| `AuraSelections.js`   | MultiSelect, ListBox, TreeSelect, CascadeSelect, Slider, Rating, Knob, TriStateCheckbox, MultiStateCheckbox, Checkbox, RadioButton, InputSwitch, SelectButton, ToggleButton |
+| `AuraSpecialForms.js` | Button, SplitButton, FloatLabel, IconField, InputIcon, Calendar, ColorPicker, FileUpload, Editor                                                                            |
+| `AuraOverlays.js`     | Dialog, Sidebar, OverlayPanel, Tooltip, ConfirmPopup, ConfirmDialog, Menu, TieredMenu, ContextMenu, SlideMenu, MobileNav, BlockUI                                           |
+| `AuraContainers.js`   | Accordion, Card, Divider, Fieldset, Panel, ScrollPanel, Splitter, TabView, Toolbar                                                                                          |
+| `AuraData.js`         | DataTable, TreeTable, DataView, DataScroller, Tree, OrderList, PickList, Paginator, VirtualScroller                                                                         |
+| `AuraNavigation.js`   | BreadCrumb, Dock, MegaMenu, Menubar, PanelMenu, Steps, TabMenu                                                                                                              |
+| `AuraFeedback.js`     | Badge, Chip, Message, Messages, Toast, ProgressBar, ProgressSpinner, Skeleton, Tag                                                                                          |
+| `AuraMedia.js`        | Avatar, AvatarGroup, Carousel, Galleria, Image, Timeline, Inplace, Terminal                                                                                                 |
+| `AuraAdvanced.js`     | MeterGroup, OrganizationChart, ScrollTop, SpeedDial, Stepper                                                                                                                |
+| `AuraChart.js`        | Chart root plus canvas palette, axes, text, grid, borders and tooltip defaults                                                                                              |
+| `Aura.js`             | Dropdown and shared semantic/overlay aliases; merges the modules above                                                                                                      |
+
+The modules replace overlapping foundation groups, so the sum of module entries exceeds the distinct final group count. Structural utilities and data/model components do not need independent visual skins: API, ButtonGroup, Column, ColumnGroup, ComponentBase, CSSTransition, DeferredContent, FocusTrap, Hooks, IconBase/Icons, KeyFilter, MenuItem, OverlayService, Portal, Ripple, Row, SelectItem, StepperPanel, StyleClass, TerminalService, TreeNode and Utils. IconField and InputIcon do have token consumers.
+
+Jest verifies that all new component token leaves are consumed directly or through aliases, that every consumed custom-prefix variable exists, and that both schemes resolve without missing or cyclic references. It also parses provider/static CSS and verifies primitive, semantic and component override recomputation. Real browser tests measure actual painted parts and public interaction paths; they do not add fake component state classes.
+
+## Provider and portal isolation
+
+Each MantleProvider owns its style nodes and component scope. Provider variable sheets do not target global `:root`; the separate imperative `applyPreset` API intentionally supports a document theme. Update provider themes with `MantleContext.setTheme` or replacement `value.theme` configuration. Root and subpath imports share the provider context and imperative Theme state.
+
+All 24 built-in Portal call sites supply actual root refs. An inert template preserves declarative React origin without changing layout. Imperative overlays use current trigger ancestry. The shared hook propagates the originating light/dark state onto portal roots and watches local class changes, system preferences and shadow ancestry. It supports multiple roots and removes its attributes, observers and media listeners on cleanup. It does not clone component roots or change public refs.
+
+| Pattern                         | Adopted consumers                                                                            |
+| ------------------------------- | -------------------------------------------------------------------------------------------- |
+| Forwarded transition panel refs | AutoComplete, Dropdown, MultiSelect, Calendar, ColorPicker, TreeSelect                       |
+| Component-owned refs            | Dialog, Sidebar, MobileNav, CascadeSelect, Password, Toast, BlockUI, Galleria, Image         |
+| Imperative trigger ancestry     | Menu, TieredMenu, SlideMenu, ContextMenu, Tooltip, OverlayPanel, ConfirmPopup, ConfirmDialog |
+| Direct DOM roots                | DataTable ColumnFilter and drag-selection helper; Calendar touch mask                        |
+| Indirect/local paths            | ConfirmDialog delegates to Dialog with its origin; Mention remains self-mounted              |
+
+Regression checks cover differently themed sibling providers, nested providers, body portals, local dark-class toggles, custom prefix and preset replacement, preserved refs, shadow-origin portals, SSR hydration and StrictMode/unmount cleanup. The overlay matrix includes self-mounted Calendar with a body mask, Tooltip retargeting and the originating DataTable drag row.
+
+React 18/19 use server-stable provider IDs. The React 17 path assigns its scope after hydration, keeping the server and first client markup equal. `LegacyTheme.spec.js` exercises the absence of `React.useId`, including unthemed providers, sibling isolation, hydration and portal cleanup; it uses the installed React renderer rather than a separately installed React 17 runtime.
+
+## Canvas and state regressions
+
+Chart reads scoped renderer aliases, preserves explicit caller data/options and imperative instance changes, and updates existing instances when provider tokens, prefix, ancestor dark classes or system preferences change. Default modern CSS colors are normalized through an unattached sRGB canvas before Chart.js uses them, retaining alpha. Tests measure normal and hover pixels for mixed, translucent and display-P3 defaults. Caller-supplied colors retain caller/Chart.js behavior. Async imports and all theme observers are cleaned up.
+
+The dedicated audit fixture reproduces default and direct-template menu painting, translucent backgrounds, nested ordinary Dialog inside ConfirmDialog, footerless Dialog radii with focus sentinels/resizers, Messages/Toast exit margins, Galleria entering/disabled navigator opacity, selected Steps/TabMenu hover, striped TreeTable context selection, and vertical Stepper final-slot spacing. Other state checks cover invalid/focus/disabled precedence, native pointer hover/press, selection states, advanced surfaces and component-specific overrides.
+
+ProgressSpinner keeps its dash/rotation animation while using token color, and explicit passthrough stroke remains effective. Menubar responsive layout remains structural CSS. Disabled MobileNav/Inplace controls and SlideMenu back keyboard access now match their visual state. ScrollTop's public element ref and SpeedDial's sibling mask are covered.
+
+## Final checks
+
+| Command/check                                                   | Result                                                                                                                      |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `npm run build:check`                                           | Lint, formatting and generated declaration type check passed                                                                |
+| Explicit ESLint/Prettier checks on browser scripts and fixtures | Passed with zero warnings                                                                                                   |
+| `node scripts/test-minify-plugin.mjs`                           | Four assertions for CJS/ESM/IIFE ordering, option isolation, global retention and source maps                               |
+| `npm run test:check -- --runInBand --coverage=false`            | 39 suites, 370 tests, 145 snapshots passed                                                                                  |
+| `npm run test:portal:browser`                                   | 44 Chrome computed-style/lifecycle assertions                                                                               |
+| `npm run test:overlay:browser`                                  | 318 Chrome assertions                                                                                                       |
+| `npm run test:scoped-tokens:browser`                            | 804 Chrome assertions: provider 369, global 369, nested/composition/options 66                                              |
+| `npm run test:theme-regressions:browser`                        | 62 Chrome assertions                                                                                                        |
+| `npm run test:ssr:browser`                                      | 14 hydration assertions; no recoverable mismatch                                                                            |
+| `npm run test:chart:browser`                                    | 53 assertions including real canvas pixels and OS light/dark/light changes                                                  |
+| `npm run test:skin-regressions:browser`                         | 131 assertions against actual React components and selected transitions                                                     |
+| `npm run test:skins:browser`                                    | 520 assertions across eight bounded groups                                                                                  |
+| Same skin command with `MANTLE_TEST_STATIC_THEME=light`         | 520 assertions                                                                                                              |
+| Same skin command with `MANTLE_TEST_STATIC_THEME=dark`          | 520 assertions                                                                                                              |
+| `npm run build:lib:windows`                                     | Full production Rollup, Gulp, API and web-types pipeline passed                                                             |
+| Local `npm pack` from `dist`                                    | Tarball created for isolated consumption; no publication                                                                    |
+| Isolated packed CJS and standalone IIFE consumer                | 24 runtime/SSR/export-identity checks                                                                                       |
+| Isolated packed ESM browser consumer                            | 44 portal assertions using mixed root/subpath imports                                                                       |
+| Isolated strict TypeScript consumer                             | All 94 styled components at root and subpath entrypoints, plus API/theme/Portal/FocusTrap, passed with `skipLibCheck=false` |
+| Isolated packed scoped-token browser consumer                   | 804 assertions; packed independent review fixture also passed 62                                                            |
+
+Skin group totals are containers 41, data 45, navigation 33, feedback 41, media 37, controls 201, advanced 41 and states 81. The default command runs each group in a bounded browser process. Set `MANTLE_TEST_GROUP` to one group for focused reruns. `MANTLE_TEST_REPORT` saves assertion JSON, console output and browser diagnostics; `MANTLE_TEST_BROWSER` selects an installed Chromium executable. Failed runs capture a screenshot.
+
+The final package uses a CommonJS `main`, an ESM `module`, and generated root declarations. Module roots re-export subpackages so mixed imports share contexts and Theme state; the browser IIFE remains standalone. Declaration copying normalizes reference casing for portable package paths. The audit also repaired Portal/KeyFilter declaration coverage and the pre-existing missing FocusTrap declaration. Generated API metadata includes the theme helpers/options and portal bridge. Static Aura CSS in the package is hash-equal to generated public CSS; repeated theme/declaration generation is deterministic. Windows builds use the same Terser engine/options in the build process after repeated worker lifecycle caused native Node crashes; other platforms retain the Rollup Terser plugin. The supported production pipeline passed with this path.
+
+## Limits of the evidence
+
+Jest is jsdom/node coverage; CSS painting is established by the separate installed-Chrome checks. Firefox, WebKit and cross-document portal destinations have not been verified. The regressions exercise representative real component states and audit failures rather than every user template or animation. User-owned markup, inline data/value colors, passthrough styling and explicit Chart.js options can intentionally override theme defaults. Modern `color-mix` requires browser support; canvas fallback behavior is conservative when color normalization is unavailable. The generated static themes retain legacy compatibility CSS before the token bridge. Imperative document theming and provider theming remain separate APIs.
+
+Local evidence is saved under `C:\Develop\codex\2026-10-12\task-2`: final Jest/lint/type logs, per-suite browser JSON, production build log, packed consumer source/reports, package inspection and the local tarball. All pre-existing feature edits were preserved. No branch switch, reset, commit, push, PR or publication was performed.
+
+## Independent review corrections
+
+The five independently reproduced cases are covered by ReviewTheme.spec.js and test:theme-regressions:browser (62 real Chrome assertions). Runtime setTheme survives equivalent inline configurations; real token/option changes replace uncontrolled state, themeRevision explicitly reapplies equivalent inputs, and controlled mode with onThemeChange keeps props authoritative. Color-scheme markers belong to their provider and the closest owned marker wins; nested class-dark providers inside opposite-scheme portals retain their own colors. Structural primereact layers are declared before configurable theme layers, including an initially empty provider followed by a delayed Dialog. definePreset composes consuming CSS with additions, deduplicates repeated strings/callback identities, flattens global/component extend paths and executes CSS callbacks with a prefix-aware dt accessor. Provider/local identifiers encode punctuation injectively and independent server/hydrated roots retain distinct scopes.
+
+Local dt applies a component token group to its real root and internal portal parts. Owned component defaults reset at component roots; per-instance declarations have higher specificity. Composite metadata carries ownership into detached menus while ordinary nested components keep independent defaults. Both schemes are emitted as CSS, so split parts follow their own origin state. Tests cover local Button extensions/callbacks, two Dropdown panels, Dialog/mask and nested ordinary Dialog, InputMask, VirtualScroller, standalone DataView layout controls, composite SplitButton menu, self Dialog, prefix/token replacement/removal, StrictMode cleanup, shadow mirrors/CSP nonce and local SSR/hydration geometry. Types expose dt on styled surfaces, not nonvisual model helpers. Provider custom CSS is confined to Mantle roots and descendants; custom markup should be inside a Mantle container.
+
+A provider registry emits reset rules only for component types it uses and updates owned sheets for delayed mounts, avoiding duplicated unused declarations. Chart jsdom tests parse actual named variable rules rather than assume one declaration per scheme; separate Chrome canvas checks establish painting. After these fixes all eight groups passed in runtime/static light/static dark (520 each), and the final affected data group rerun passed 45 each. Full Jest passed 37 suites/358 tests/145 snapshots; portal 44, overlay 318, hydration 14, chart 53 and audit 131 browser assertions passed. Final evidence is recorded in review-*.json/logs under the existing evidence directory. Brief computer disconnects did not terminate observed commands.
+
+## Second independent review corrections
+
+Every styled public component now inherits the shared `ComponentThemeProps`. The source-derived strict consumer checks all 94 exports at both root and subpath entrypoints, including CSS callback contextual typing, extension tokens and generic components. It exposed missing root exports for ButtonGroup, InputIcon and InputOtp; these are now exported in JS and generated declarations. Nonvisual definition helpers are excluded. `npm run type:check` includes this 188-entrypoint guard; the fresh packed consumer repeats it with `skipLibCheck=false`.
+
+SpeedDial's sibling mask carries its local instance as well as provider scope. MobileNav now captures its own provider context and supplies instance ownership to its multiline Portal. An AST regression audits all 24 built-in Portal call sites, plus the direct DataTable drag-selection bridge. The shared hook can infer an instance from real roots, and global portals track active preset/dark-selector changes even without `dt`.
+
+Imperative `applyPreset` establishes default variables at actual styled component boundaries. Internal PT sections may also be named `root`, so the shared style lifecycle marks true boundaries with `data-mantle-theme-root` when a global preset is active. Each component resets its own token group: ordinary nested and sibling components receive their defaults, nested local instances stay independent, and composite children retain parent groups used for spacing (IconField/InputText/InputIcon). Global variable selectors and consuming rules exclude provider roots and descendants, including ordinary markup carrying a dark class. Providers with omitted theme options keep their own default prefix and system dark mode, independently of active global options. Mounted components acquire these boundaries when a global preset activates and remove them when it is removed; subscribers and owned sheets clean up in StrictMode.
+
+The new browser fixture checks 29 actual overlay/mask/imperative cases in both provider and global modes: local paint, live dark-class changes, custom-prefix and token replacement, root/ref stability, `dt` removal and cleanup. Nested tests reproduce the outer Card leak, check distinct component defaults and internal body tokens, verify same-prefix provider isolation, and exercise runtime activation and dark-selector replacement. `test:scoped-tokens:browser` runs provider, two global batches and nested checks by default; use `MANTLE_TEST_GROUP=provider`, `global` or `nested` to isolate one. Final source and fresh packed ESM runs each passed 804 assertions. The final full suite passed 39 suites/365 tests/145 snapshots; all four 520-assertion skin runs (provider, global, static light and static dark) and the full production package build passed again. Latest evidence uses `audit2-*` files and `packed-consumer-audit2-complete` under the existing evidence directory.
+
+## Custom imperative selector correction
+
+All imperative selectors now receive component boundaries, rather than enabling resets only for `:root`. The rules stay within the selected region and exclude provider subtrees. Each styled root resets its own component group, while composite parent groups remain available to children. Class, ID, attribute, complex descendant/child, comma-list, `:is`, `:where` and component-root selectors are covered with custom prefixes, replacement/removal, local dark descendants, same/different component nesting, independent local instances, composite spacing and outside-region isolation.
+
+The audit also normalized region grouping in consuming CSS and included dark-class descendants inside a custom region. Source and fresh packed ESM selector fixtures each pass 380 Chrome assertions; the existing scope matrix still passes 804 each. Five jsdom tests inspect the generated boundary declarations and cleanup; jsdom cannot evaluate these nested CSS4 selectors, so painting and matching are established by Chrome. Full Jest passes 39 suites/370 tests/145 snapshots. The production pipeline, strict 188-entrypoint packed type consumer and packed runtime checks pass. Latest evidence uses `audit3-*` and `packed-consumer-audit3` in the existing evidence directory.

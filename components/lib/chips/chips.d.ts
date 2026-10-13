@@ -15,6 +15,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ChipsPassThroughType<T> = PassThroughType<T, ChipsPassThroughMethodOptions>;
 
@@ -143,7 +144,7 @@ interface ChipsChangeEvent extends FormEvent<string[]> {}
  * Defines valid properties in Chips component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ChipsProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'onKeyDown' | 'ref'> {
+export interface ChipsProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'onKeyDown' | 'ref'>, ComponentThemeProps {
     /**
      * When present, it specifies that the component should automatically get focus on load.
      * @defaultValue false

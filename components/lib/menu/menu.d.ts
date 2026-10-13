@@ -14,6 +14,7 @@ import { CSSTransitionProps } from '../csstransition';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MenuPassThroughType<T> = PassThroughType<T, MenuPassThroughMethodOptions>;
 export declare type MenuPassThroughTransitionType = ReactCSSTransitionProps | ((options: MenuPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -122,7 +123,7 @@ export interface MenuState {
  * Defines valid properties in Menu component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface MenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface MenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

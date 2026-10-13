@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type InputIconPassThroughType<T> = PassThroughType<T, InputIconPassThroughMethodOptions>;
 
@@ -41,7 +42,7 @@ export interface InputIconPassThroughOptions {
  * Defines valid properties in InputIcon component. In addition to these, all properties of HTMLInputElement can be used in this component.
  * @group Properties
  */
-export interface InputIconProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface InputIconProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, ComponentThemeProps {
     /**
      * Used to get the child elements of the component.
      * @readonly

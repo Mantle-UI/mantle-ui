@@ -885,6 +885,7 @@ export const TreeSelect = React.memo(
                 {dropdownIcon}
                 <TreeSelectPanel
                     hostName="TreeSelect"
+                    unstyled={isUnstyled()}
                     ref={overlayRef}
                     appendTo={props.appendTo}
                     panelStyle={props.panelStyle}

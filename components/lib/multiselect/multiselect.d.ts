@@ -18,6 +18,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { IconType, PassThroughType } from '../utils';
 import { VirtualScrollerPassThroughOptions, VirtualScrollerProps } from '../virtualscroller';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MultiSelectPassThroughType<T> = PassThroughType<T, MultiSelectPassThroughMethodOptions>;
 export declare type MultiSelectPassThroughTransitionType = ReactCSSTransitionProps | ((options: MultiSelectPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -408,7 +409,7 @@ interface MultiSelectTemplateOptions {
  * Defines valid properties in MultiSelect component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface MultiSelectProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'> {
+export interface MultiSelectProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * DOM element instance where the overlay panel should be mounted. Valid values are any DOM Element and 'self'. The self value is used to render a component where it is located.
      * @defaultValue document.body

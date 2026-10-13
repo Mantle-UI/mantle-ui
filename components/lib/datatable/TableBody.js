@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { localeOption } from '../api/Api';
+import { MantleContext, localeOption } from '../api/Api';
 import { ColumnBase } from '../column/ColumnBase';
 import { useMergeProps, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
+import { usePortalTheme } from '../portal/Portal';
 import { DomHandler, ObjectUtils } from '../utils/Utils';
 import { BodyRow } from './BodyRow';
 import { RowTogglerButton } from './RowTogglerButton';
@@ -37,6 +38,20 @@ export const TableBody = React.memo(
             [props]
         );
         const dragSelectionHelper = React.useRef(null);
+        const dragSelectionOrigin = React.useRef(null);
+        const themeContext = React.useContext(MantleContext);
+
+        usePortalTheme({
+            themeEnabled: props.dragSelection && !isUnstyled() ? undefined : false,
+            themeScope: props.dragSelection && !isUnstyled() ? themeContext?.themeScope : undefined,
+            darkModeSelector: themeContext?.theme?.preset ? (themeContext.theme.options?.darkModeSelector ?? 'system') : undefined,
+            themeRootRef: dragSelectionHelper,
+            themeInstance: () => ptm('root')['data-mantle-theme-instance'],
+            themeOrigin: () => dragSelectionOrigin.current || elementRef.current,
+            isPortal: true,
+            mounted: true
+        });
+
         const initialDragPosition = React.useRef(null);
         const anchorRowIndex = React.useRef(null);
         const anchorCellIndex = React.useRef(null);
@@ -449,6 +464,7 @@ export const TableBody = React.memo(
 
         const enableDragSelection = (event) => {
             if (props.dragSelection && !dragSelectionHelper.current) {
+                dragSelectionOrigin.current = event.target;
                 dragSelectionHelper.current = document.createElement('div');
                 dragSelectionHelper.current.setAttribute('p-datatable-drag-selection-helper', 'true');
                 !isUnstyled() && DomHandler.addClass(dragSelectionHelper.current, 'p-datatable-drag-selection-helper');

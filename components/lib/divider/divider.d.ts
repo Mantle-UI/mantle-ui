@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type DividerPassThroughType<T> = PassThroughType<T, DividerPassThroughMethodOptions>;
 
@@ -45,7 +46,7 @@ export interface DividerPassThroughOptions {
  * Defines valid properties in Divider component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface DividerProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface DividerProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Alignment of the content, options are "left", "center", "right" for horizontal layout and "top", "center", "bottom" for vertical.
      */

@@ -918,7 +918,7 @@ export const ColumnFilter = React.memo((props) => {
         );
 
         return (
-            <Portal>
+            <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} themeRootRef={props.unstyled ? undefined : overlayRef} themeOrigin={iconRef}>
                 <CSSTransition nodeRef={overlayRef} {...transitionProps}>
                     <div ref={overlayRef} {...filterOverlayProps}>
                         <FocusTrap autoFocus>

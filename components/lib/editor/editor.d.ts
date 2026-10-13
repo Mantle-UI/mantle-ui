@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type EditorPassThroughType<T> = PassThroughType<T, EditorPassThroughMethodOptions>;
 
@@ -109,7 +110,7 @@ interface EditorSelectionChangeEvent {
  * Defines valid properties in Editor component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface EditorProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface EditorProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Value of the content.
      */

@@ -573,6 +573,8 @@ export const SpeedDial = React.memo(
                 const maskProps = mergeProps(
                     {
                         className: classNames(props.maskClassName, cx('mask', { visible })),
+                        'data-mantle-theme-scope': isUnstyled() ? undefined : context?.themeScope,
+                        'data-mantle-theme-instance': ptm('root')['data-mantle-theme-instance'],
                         style: props.maskStyle
                     },
                     ptm('mask')

@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type OverlayPanelPassThroughType<T> = PassThroughType<T, OverlayPanelPassThroughMethodOptions>;
 export declare type OverlayPanelPassThroughTransitionType = ReactCSSTransitionProps | ((options: OverlayPanelPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -82,7 +83,7 @@ interface OverlayPanelBreakpoints {
  * Defines valid properties in OverlayPanel component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface OverlayPanelProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface OverlayPanelProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Enables to hide the overlay when outside is clicked.
      * @defaultValue true

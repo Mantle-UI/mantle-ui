@@ -14,6 +14,7 @@ import { CSSTransitionProps } from '../csstransition';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type SlideMenuPassThroughType<T> = PassThroughType<T, SlideMenuPassThroughMethodOptions>;
 export declare type SlideMenuPassThroughTransitionType = ReactCSSTransitionProps | ((options: SlideMenuPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -138,7 +139,7 @@ interface SlideMenuNavigateEvent {
  * Defines valid properties in SlideMenu component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface SlideMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface SlideMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * DOM element instance where the overlay panel should be mounted. Valid values are any DOM Element and 'self'. The self value is used to render a component where it is located.
      * @defaultValue document.body

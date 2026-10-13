@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type SkeletonPassThroughType<T> = PassThroughType<T, SkeletonPassThroughMethodOptions>;
 
@@ -41,7 +42,7 @@ export interface SkeletonPassThroughOptions {
  * Defines valid properties in Skeleton component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface SkeletonProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface SkeletonProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * It specifies an alternate text for an image, if the image cannot be displayed.
      * @defaultValue rectangle

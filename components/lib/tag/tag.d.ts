@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TagPassThroughType<T> = PassThroughType<T, TagPassThroughMethodOptions>;
 
@@ -49,7 +50,7 @@ export interface TagPassThroughOptions {
  * Defines valid properties in Tag component. In addition to these, all properties of HTMLSpanElement can be used in this component.
  * @group Properties
  */
-export interface TagProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'ref'> {
+export interface TagProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'ref'>, ComponentThemeProps {
     /**
      * Value to display inside the tag.
      */

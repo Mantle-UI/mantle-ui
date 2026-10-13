@@ -1,5 +1,6 @@
 import React, { Children, cloneElement, useContext, useRef } from 'react';
 import { MantleContext } from '../api/Api';
+import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { classNames } from '../utils/Utils';
 import { IconFieldBase } from './IconFieldBase';
@@ -11,13 +12,15 @@ export const IconField = React.memo(
         const context = useContext(MantleContext);
         const props = IconFieldBase.getProps(inProps, context);
 
-        const { ptm, cx } = IconFieldBase.setMetaData({
+        const { ptm, cx, isUnstyled } = IconFieldBase.setMetaData({
             props,
             ...props.__parentMetadata,
             context: {
                 iconPosition: props.iconPosition
             }
         });
+
+        useHandleStyle(IconFieldBase.css.styles, isUnstyled, { name: 'iconfield', styled: true });
 
         const rootProps = mergeProps(
             ptm('root'),

@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MessagePassThroughType<T> = PassThroughType<T, MessagePassThroughMethodOptions>;
 
@@ -49,7 +50,7 @@ export interface MessagePassThroughOptions {
  * Defines valid properties in Message component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface MessageProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'content' | 'pt'> {
+export interface MessageProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'content' | 'pt'>, ComponentThemeProps {
     /**
      * Text of the message.
      */

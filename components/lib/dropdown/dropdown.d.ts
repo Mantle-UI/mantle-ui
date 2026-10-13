@@ -18,6 +18,7 @@ import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils';
 import { VirtualScroller, VirtualScrollerPassThroughOptions, VirtualScrollerProps } from '../virtualscroller';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type DropdownPassThroughType<T> = PassThroughType<T, DropdownPassThroughMethodOptions>;
 export declare type DropdownPassThroughTransitionType = ReactCSSTransitionProps | ((options: DropdownPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -235,7 +236,7 @@ interface DropdownFilterOptions {
  * Defines valid properties in Dropdown component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface DropdownProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'> {
+export interface DropdownProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'>, ComponentThemeProps {
     /**
      * DOM element instance where the overlay panel should be mounted. Valid values are any DOM Element and "self". The "self" value is used to render a component where it is located.
      * @defaultValue document.body

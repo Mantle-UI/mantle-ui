@@ -10,6 +10,7 @@
 import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ButtonGroupPassThroughOptionType = ButtonGroupPassThroughAttributes | ((options: ButtonGroupPassThroughMethodOptions) => ButtonGroupPassThroughAttributes | string) | string | null | undefined;
 
@@ -53,7 +54,7 @@ export interface ButtonGroupPassThroughAttributes {
 /**
  * Defines valid properties in ButtonGroup component.
  */
-export interface ButtonGroupProps {
+export interface ButtonGroupProps extends ComponentThemeProps {
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {ButtonGroupPassThroughOptions}

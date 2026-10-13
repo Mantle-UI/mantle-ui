@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from 'react';
+import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMergeProps } from '../hooks/Hooks';
 import { MantleContext } from '../api/Api';
 import { InputIconBase } from './InputIconBase';
@@ -11,13 +12,15 @@ export const InputIcon = React.memo(
         const context = useContext(MantleContext);
         const props = InputIconBase.getProps(inProps, context);
 
-        const { ptm, cx } = InputIconBase.setMetaData({
+        const { ptm, cx, isUnstyled } = InputIconBase.setMetaData({
             props,
             ...props.__parentMetadata,
             context: {
                 iconPosition: props.iconPosition
             }
         });
+
+        useHandleStyle(InputIconBase.css.styles, isUnstyled, { name: 'inputicon', styled: true });
 
         const rootProps = mergeProps(
             ptm('root'),

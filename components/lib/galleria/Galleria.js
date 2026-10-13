@@ -335,7 +335,7 @@ export const Galleria = React.memo(
                     </div>
                 );
 
-                return <Portal element={galleriaWrapper} />;
+                return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={galleriaWrapper} themeRootRef={isUnstyled() ? undefined : maskRef} />;
             }
 
             return element;

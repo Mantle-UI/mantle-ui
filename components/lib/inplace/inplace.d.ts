@@ -18,6 +18,7 @@ import { ButtonPassThroughOptions } from '../button';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type InplacePassThroughType<T> = PassThroughType<T, InplacePassThroughMethodOptions>;
 
@@ -89,7 +90,7 @@ interface InplaceToggleEvent {
  * Defines valid properties in Inplace component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface InplaceProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'onToggle'> {
+export interface InplaceProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'onToggle'>, ComponentThemeProps {
     /**
      * Whether the content is displayed or not. To use in controlled mode you must implement `onToggle` callback at a minimum.
      * @defaultValue false

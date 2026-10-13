@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType, TemplateType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type InputOtpPassThroughType<T> = PassThroughType<T, InputOtpPassThroughMethodOptions>;
 
@@ -73,7 +74,7 @@ interface InputOtpChangeEvent {
  * Defines valid properties in InputOtp component. In addition to these, all properties of HTMLInputElement can be used in this component.
  * @group Properties
  */
-export interface InputOtpProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onInput' | 'ref' | 'value' | 'size' | 'onChange'> {
+export interface InputOtpProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onInput' | 'ref' | 'value' | 'size' | 'onChange'>, ComponentThemeProps {
     /**
      * Specifies the value of the component.
      * @defaultValue null

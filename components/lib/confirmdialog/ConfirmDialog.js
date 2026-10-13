@@ -5,7 +5,6 @@ import { useHandleStyle } from '../componentbase/ComponentBase';
 import { Dialog } from '../dialog/Dialog';
 import { useMergeProps, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { OverlayService } from '../overlayservice/OverlayService';
-import { Portal } from '../portal/Portal';
 import { DomHandler, IconUtils, ObjectUtils, classNames } from '../utils/Utils';
 import { ConfirmDialogBase } from './ConfirmDialogBase';
 
@@ -169,6 +168,7 @@ export const ConfirmDialog = React.memo(
                     onClick: reject,
                     pt: ptm('rejectButton'),
                     unstyled: props.unstyled,
+                    __mantleThemeInstance: ptm('root')['data-mantle-theme-instance'],
                     __parentMetadata: {
                         parent: metaData
                     }
@@ -248,6 +248,7 @@ export const ConfirmDialog = React.memo(
                     pt: currentProps.pt,
                     unstyled: props.unstyled,
                     appendTo: getPropValue('appendTo'),
+                    themeOrigin: () => getPropValue('target') || (confirmProps.current && focusElementOnHide.current !== document.body ? focusElementOnHide.current : null),
                     __parentMetadata: {
                         parent: metaData
                     }
@@ -265,7 +266,7 @@ export const ConfirmDialog = React.memo(
 
         const element = createElement();
 
-        return <Portal element={element} appendTo={getPropValue('appendTo')} />;
+        return element;
     })
 );
 

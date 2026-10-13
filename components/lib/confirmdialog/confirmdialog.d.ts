@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { DialogProps } from '../dialog';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ConfirmDialogPassThroughType<T> = PassThroughType<T, ConfirmDialogPassThroughMethodOptions>;
 export declare type ConfirmDialogPassThroughTransitionType = ReactCSSTransitionProps | ((options: ConfirmDialogPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -158,7 +159,7 @@ interface ConfirmDialogOptions {
  * Defines valid properties in ConfirmDialog component. In addition to these, all properties of {@link dialog} can be used in this component.
  * @group Properties
  */
-export interface ConfirmDialogProps extends Omit<DialogProps, 'onHide' | 'footer' | 'pt'> {
+export interface ConfirmDialogProps extends Omit<DialogProps, 'onHide' | 'footer' | 'pt'>, ComponentThemeProps {
     /**
      * Optional key to match the key of the confirmation, useful to target a specific confirm dialog instance.
      */

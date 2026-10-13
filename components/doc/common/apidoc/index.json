@@ -171,6 +171,14 @@
                             "description": "Icon of an expanded tab."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "expandIcon",
                             "optional": true,
                             "readonly": false,
@@ -3584,6 +3592,12 @@
                 },
                 "StyleContainerType": {
                     "values": "ShadowRoot | HTMLElement | undefined | null"
+                },
+                "MantleThemeConfig": {
+                    "values": ""
+                },
+                "MantleProviderProps": {
+                    "values": ""
                 }
             }
         }
@@ -3760,6 +3774,14 @@
                             "type": "\"blank\" | \"current\"",
                             "default": "blank",
                             "description": "Specifies the behavior dropdown button. Default \"blank\" mode sends an empty string and \"current\" mode sends the input value."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "emptyMessage",
@@ -4690,6 +4712,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "icon",
                             "optional": true,
                             "readonly": false,
@@ -4936,6 +4966,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
@@ -5034,6 +5072,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "pt",
@@ -5217,6 +5263,14 @@
                             "description": "Inline style of the container element."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "fullScreen",
                             "optional": true,
                             "readonly": false,
@@ -5378,6 +5432,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "home",
@@ -5575,6 +5637,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the element should be disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "icon",
@@ -5940,9 +6010,17 @@
                             "readonly": false,
                             "type": "boolean",
                             "description": "When enabled, it removes component related styles in the core."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         }
                     ],
-                    "callbacks": []
+                    "callbacks": [],
+                    "extendedTypes": "ComponentThemeProps"
                 }
             }
         },
@@ -6144,6 +6222,14 @@
                             "type": "number[]",
                             "default": "",
                             "description": "Array with disabled weekday numbers."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only tokens scoped to this instance and its portal parts."
                         },
                         {
                             "name": "enabledDates",
@@ -7708,6 +7794,13 @@
                     "relatedProp": "",
                     "props": [
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "description": "Component-only tokens scoped to this instance and its portal parts."
+                        },
+                        {
                             "name": "id",
                             "optional": true,
                             "readonly": false,
@@ -8508,6 +8601,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "footer",
                             "optional": true,
                             "readonly": false,
@@ -8731,6 +8832,14 @@
                             "type": "string",
                             "default": "",
                             "description": "Style class of main content."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "footer",
@@ -9277,6 +9386,14 @@
                             "type": "IconType<CascadeSelectProps>",
                             "default": "",
                             "description": "Icon of the dropdown icon."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "id",
@@ -10132,6 +10249,14 @@
                             "description": "Data to display."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only tokens scoped to this instance and its portal parts."
+                        },
+                        {
                             "name": "height",
                             "optional": true,
                             "readonly": false,
@@ -10328,6 +10453,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the element value cannot be altered."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "falseValue",
@@ -10746,6 +10879,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "icon",
                             "optional": true,
                             "readonly": false,
@@ -11059,6 +11200,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the element should be disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "inputId",
@@ -11577,6 +11726,14 @@
                             "type": "string",
                             "default": "ff0000",
                             "description": "Default color to display when value is null."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "format",
@@ -14512,6 +14669,14 @@
                             "description": "Enables dragging to change the position using header."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "focusOnShow",
                             "optional": true,
                             "readonly": false,
@@ -15272,6 +15437,14 @@
                             "description": "Enables to hide the popup when outside is clicked."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "footer",
                             "optional": true,
                             "readonly": false,
@@ -15801,6 +15974,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "global",
                             "optional": true,
                             "readonly": false,
@@ -16153,6 +16334,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "emptyMessage",
@@ -16626,9 +16815,9 @@
                         },
                         {
                             "name": "cellSelection",
-                            "optional": false,
+                            "optional": true,
                             "readonly": false,
-                            "type": "true",
+                            "type": "boolean",
                             "default": "false",
                             "description": "Whether to cell selection is enabled or not."
                         },
@@ -16727,6 +16916,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When enabled, a rectangle that can be dragged can be used to make a range selection."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only tokens scoped to this instance and its portal parts."
                         },
                         {
                             "name": "editingRows",
@@ -17211,11 +17408,11 @@
                         },
                         {
                             "name": "selection",
-                            "optional": false,
+                            "optional": true,
                             "readonly": false,
-                            "type": "DataTableCellSelection<TValue>[] | null",
+                            "type": "TValue[number] | null",
                             "default": "",
-                            "description": "Selected cells."
+                            "description": "Selected single value."
                         },
                         {
                             "name": "selectionAriaLabel",
@@ -17235,9 +17432,9 @@
                         },
                         {
                             "name": "selectionMode",
-                            "optional": false,
+                            "optional": true,
                             "readonly": false,
-                            "type": "\"multiple\"",
+                            "type": "\"single\" | \"radiobutton\"",
                             "default": "",
                             "description": "Specifies the selection mode, valid values are \"single\", \"multiple\", \"radiobutton\" and \"checkbox\"."
                         },
@@ -17614,7 +17811,7 @@
                                 {
                                     "name": "event",
                                     "optional": false,
-                                    "type": "DataTableContextMenuMultipleSelectionChangeEvent<TValue>",
+                                    "type": "DataTableContextMenuSingleSelectionChangeEvent<TValue>",
                                     "description": "Custom row event."
                                 }
                             ],
@@ -17887,7 +18084,7 @@
                                 {
                                     "name": "event",
                                     "optional": false,
-                                    "type": "DataTableSelectionCellMultipleChangeEvent<TValue>",
+                                    "type": "DataTableSelectionSingleChangeEvent<TValue>",
                                     "description": "Custom selection change event."
                                 }
                             ],
@@ -19706,6 +19903,13 @@
                     "relatedProp": "",
                     "props": [
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "description": "Component-only tokens scoped to this instance and its portal parts."
+                        },
+                        {
                             "name": "id",
                             "optional": true,
                             "readonly": false,
@@ -21217,6 +21421,14 @@
                             "description": "Name of the field that uniquely identifies a record in the data. Should be a unique business key to prevent re-rendering."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "emptyMessage",
                             "optional": true,
                             "readonly": false,
@@ -21771,6 +21983,13 @@
                             "readonly": true,
                             "type": "ReactNode",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         }
                     ],
                     "callbacks": [
@@ -21787,7 +22006,8 @@
                             "returnType": "void",
                             "description": "Layout options change callback"
                         }
-                    ]
+                    ],
+                    "extendedTypes": "ComponentThemeProps"
                 }
             }
         },
@@ -22110,6 +22330,14 @@
                             "type": "boolean",
                             "default": "true",
                             "description": "Enables dragging to change the position using header."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "focusOnShow",
@@ -22786,6 +23014,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "layout",
                             "optional": true,
                             "readonly": false,
@@ -22914,6 +23150,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "footer",
@@ -23366,6 +23610,14 @@
                             "type": "IconType<DropdownProps>",
                             "default": "",
                             "description": "Icon of the dropdown."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "editable",
@@ -24337,6 +24589,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "formats",
                             "optional": true,
                             "readonly": false,
@@ -24676,6 +24936,14 @@
                             "type": "IconType<FieldsetProps>",
                             "default": "",
                             "description": "Icon of an expanded tab."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "expandIcon",
@@ -25127,6 +25395,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "Disables the upload functionality."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "emptyTemplate",
@@ -26152,6 +26428,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
@@ -26235,6 +26519,87 @@
             "values": {
                 "FloatLabelPassThroughType": {
                     "values": "PassThroughType<T, FloatLabelPassThroughMethodOptions>"
+                }
+            }
+        }
+    },
+    "focustrap": {
+        "description": "",
+        "interfaces": {
+            "description": "Defines the custom interfaces used by the module.",
+            "values": {
+                "FocusTrapProps": {
+                    "description": "Properties for the focus-boundary helper used by overlay components.",
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "children",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ReactNode"
+                        },
+                        {
+                            "name": "disabled",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "autoFocus",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "autoFocusSelector",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "firstFocusableSelector",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "lastFocusableSelector",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "tabIndex",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "number"
+                        }
+                    ],
+                    "callbacks": []
+                },
+                "FocusTrapRef": {
+                    "description": "Methods exposed by the focus-boundary helper.",
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "props",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "FocusTrapProps"
+                        }
+                    ],
+                    "callbacks": [
+                        {
+                            "name": "getInk",
+                            "parameters": [],
+                            "returnType": "HTMLSpanElement | null"
+                        },
+                        {
+                            "name": "getTarget",
+                            "parameters": [],
+                            "returnType": "HTMLElement | null"
+                        }
+                    ]
                 }
             }
         }
@@ -26343,6 +26708,14 @@
                             "type": "IconType<GalleriaProps>",
                             "default": "",
                             "description": "Icon to display in the galleria close button."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "footer",
@@ -27700,6 +28073,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "iconPosition",
@@ -29830,6 +30211,14 @@
                             "description": "Icon of the download button."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "height",
                             "optional": true,
                             "readonly": false,
@@ -30303,6 +30692,14 @@
                             "description": "When present, it specifies that the element should be disabled."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
@@ -30557,6 +30954,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
@@ -30684,6 +31089,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the element value cannot be altered."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "invalid",
@@ -31053,6 +31466,14 @@
                             "type": "boolean",
                             "default": "",
                             "description": "When present, it specifies that the element should be disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "format",
@@ -31606,6 +32027,14 @@
                             "description": "When present, it specifies that the component should be disabled."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "inputTemplate",
                             "optional": true,
                             "readonly": false,
@@ -31934,6 +32363,14 @@
                             "description": "When present, it specifies that the component should be disabled."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "falseValue",
                             "optional": true,
                             "readonly": false,
@@ -32218,6 +32655,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "invalid",
                             "optional": true,
                             "readonly": false,
@@ -32450,6 +32895,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "invalid",
                             "optional": true,
                             "readonly": false,
@@ -32658,6 +33111,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the component should be disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "id",
@@ -32989,6 +33450,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When specified, disables the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "emptyFilterMessage",
@@ -33645,6 +34114,7 @@
             }
         }
     },
+    "mantle-ui-react.all": {},
     "megamenu": {
         "description": "MegaMenu is navigation component that displays submenus together.\n\n[Live Demo](https://www.primereact.org/megamenu/)",
         "components": {
@@ -33679,6 +34149,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "end",
@@ -34139,6 +34617,14 @@
                             "type": "number",
                             "default": "0",
                             "description": "Delay between keystrokes to wait before sending a query."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "field",
@@ -34706,6 +35192,14 @@
                             "description": "Specifies if pressing escape key should hide the Menu Popup."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "model",
                             "optional": true,
                             "readonly": false,
@@ -35066,6 +35560,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "end",
@@ -35645,6 +36147,14 @@
                             "description": "Custom template of the message."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "icon",
                             "optional": true,
                             "readonly": false,
@@ -35830,6 +36340,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "pt",
@@ -36146,6 +36664,14 @@
                             "type": "string",
                             "default": "",
                             "description": "Additional CSS classes to apply to the MeterGroup."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "end",
@@ -36470,6 +36996,14 @@
                             "type": "boolean",
                             "default": "true",
                             "description": "Closes the drawer when its mask is clicked."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "maskClassName",
@@ -36862,6 +37396,14 @@
                             "type": "IconType<MultiSelectProps>",
                             "default": "",
                             "description": "Icon class of the dropdown icon."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "emptyFilterMessage",
@@ -38143,6 +38685,14 @@
                             "description": "When present, it specifies that the element value cannot be altered."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "empty",
                             "optional": true,
                             "readonly": false,
@@ -38584,6 +39134,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "Whether to enable dragdrop based reordering."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "filter",
@@ -39069,6 +39627,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "pt",
@@ -39601,6 +40167,14 @@
                             "description": "Enables to hide the overlay when outside is clicked."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
@@ -39917,6 +40491,14 @@
                             "type": "HTMLElement | \"self\" | (() => HTMLElement) | null",
                             "default": "document.body",
                             "description": "DOM element instance where the overlay panel should be mounted. Valid values are any DOM Element and 'self'. The self value is used to render a component where it is located."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "first",
@@ -41189,6 +41771,14 @@
                             "description": "Icon of a collapsed tab."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "expandIcon",
                             "optional": true,
                             "readonly": false,
@@ -41650,6 +42240,14 @@
                             "type": "IconType<PanelMenuProps>",
                             "default": "",
                             "description": "Icon used when a submenu is expanded."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "expandedKeys",
@@ -42156,6 +42754,14 @@
                             "type": "ReactNode | ((props: PasswordProps) => ReactNode)",
                             "default": "",
                             "description": "Template of panel content if \"feedback\" is enabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "feedback",
@@ -42693,6 +43299,14 @@
                             "type": "string",
                             "default": "",
                             "description": "Name of the field that uniquely identifies the a record in the data."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "filter",
@@ -43566,6 +44180,165 @@
             }
         }
     },
+    "portal/portal": {
+        "functions": {
+            "description": "Defines the custom functions used by the module.",
+            "values": {
+                "usePortalTheme": {
+                    "name": "usePortalTheme",
+                    "parameters": [
+                        {
+                            "name": "options",
+                            "type": "PortalThemeOptions"
+                        }
+                    ],
+                    "returnType": "RefObject<HTMLTemplateElement | null>"
+                }
+            }
+        },
+        "interfaces": {
+            "description": "Defines the custom interfaces used by the module.",
+            "values": {
+                "PortalProps": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "element",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ReactNode"
+                        },
+                        {
+                            "name": "children",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ReactNode"
+                        },
+                        {
+                            "name": "appendTo",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "DocumentFragment | Element | \"self\" | (() => DocumentFragment | Element | null) | null"
+                        },
+                        {
+                            "name": "visible",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "onMounted",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "() => void"
+                        },
+                        {
+                            "name": "onUnmounted",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "() => void"
+                        },
+                        {
+                            "name": "themeRootRef",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "PortalThemeRootTarget",
+                            "description": "Actual DOM roots whose provider scope and originating color scheme should be bridged."
+                        },
+                        {
+                            "name": "themeOrigin",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "PortalElementTarget",
+                            "description": "Current trigger or local origin for an imperative overlay."
+                        },
+                        {
+                            "name": "themeInstance",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string | (() => string | null | undefined) | null"
+                        }
+                    ],
+                    "callbacks": []
+                },
+                "PortalThemeOptions": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "themeEnabled",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "description": "Defaults to whether an imperative preset is active when actual roots are supplied."
+                        },
+                        {
+                            "name": "themeInstance",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string | (() => string | null | undefined) | null"
+                        },
+                        {
+                            "name": "themeScope",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "darkModeSelector",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string | false"
+                        },
+                        {
+                            "name": "themeRootRef",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "PortalThemeRootTarget"
+                        },
+                        {
+                            "name": "themeOrigin",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "PortalElementTarget"
+                        },
+                        {
+                            "name": "isPortal",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "isSelf",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "mounted",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean"
+                        }
+                    ],
+                    "callbacks": []
+                }
+            }
+        },
+        "types": {
+            "description": "Defines the custom types used by the module.",
+            "values": {
+                "PortalElement": {
+                    "values": "Element | null | undefined"
+                },
+                "PortalElementTarget": {
+                    "values": "PortalElement | React.RefObject<PortalElement> | (() => PortalElement)"
+                },
+                "PortalThemeRootTarget": {
+                    "values": "PortalElementTarget | PortalElementTarget[] | (() => PortalElementTarget[])"
+                }
+            }
+        }
+    },
     "progressbar": {
         "description": "ProgressBar is a process status indicator.\n\n[Live Demo](https://www.primereact.org/progressbar)",
         "components": {
@@ -43600,6 +44373,14 @@
                             "type": "string",
                             "default": "",
                             "description": "Color for the background of the progress."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "mode",
@@ -43781,6 +44562,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "fill",
@@ -43966,6 +44755,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the component should be disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "inputId",
@@ -44262,6 +45059,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the element should be disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "offIcon",
@@ -44787,6 +45592,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "pt",
                             "optional": true,
                             "readonly": false,
@@ -44936,6 +45749,14 @@
                             "type": "string",
                             "default": "",
                             "description": "Style class of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "icon",
@@ -45171,6 +45992,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the element should be disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "invalid",
@@ -45574,6 +46403,14 @@
                             "description": "Whether to dismiss sidebar on click of the mask."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "fullScreen",
                             "optional": true,
                             "readonly": false,
@@ -45897,6 +46734,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "height",
                             "optional": true,
                             "readonly": false,
@@ -46142,6 +46987,14 @@
                             "type": "boolean",
                             "default": "true",
                             "description": "Specifies if pressing escape key should hide the SlideMenu Popup."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "easing",
@@ -46530,6 +47383,14 @@
                             "description": "When present, it specifies that the component should be disabled."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "max",
                             "optional": true,
                             "readonly": false,
@@ -46822,6 +47683,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "Whether the component is disabled."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "hideIcon",
@@ -47242,6 +48111,14 @@
                             "type": "IconType<SplitButtonProps>",
                             "default": "",
                             "description": "Name of the dropdown icon or JSX.Element for dropdown icon."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "icon",
@@ -47733,6 +48610,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "gutterSize",
                             "optional": true,
                             "readonly": false,
@@ -48044,6 +48929,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "end",
@@ -48541,6 +49434,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "model",
                             "optional": false,
                             "readonly": false,
@@ -48969,6 +49870,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "model",
@@ -49409,6 +50318,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "panelContainerClassName",
@@ -49989,6 +50906,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "icon",
                             "optional": true,
                             "readonly": false,
@@ -50146,6 +51071,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "prompt",
@@ -50475,6 +51408,28 @@
                     ],
                     "returnType": "string"
                 },
+                "createComponentThemeCss": {
+                    "name": "createComponentThemeCss",
+                    "parameters": [
+                        {
+                            "name": "preset",
+                            "type": "MantleThemePreset"
+                        },
+                        {
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "name": "tokens",
+                            "type": "MantleComponentTokens"
+                        },
+                        {
+                            "name": "options",
+                            "type": "MantleThemeOptions & { colorScheme?: \"dark\" | \"light\"; ownerSelector?: string }"
+                        }
+                    ],
+                    "returnType": "string"
+                },
                 "applyPreset": {
                     "name": "applyPreset",
                     "parameters": [
@@ -50502,6 +51457,16 @@
                         }
                     ],
                     "returnType": "MantleThemePreset"
+                },
+                "removePreset": {
+                    "name": "removePreset",
+                    "parameters": [
+                        {
+                            "name": "options",
+                            "type": "Pick<MantleThemeOptions, \"styleContainer\" | \"styleId\">"
+                        }
+                    ],
+                    "returnType": "void"
                 },
                 "updatePreset": {
                     "name": "updatePreset",
@@ -50556,6 +51521,92 @@
         "interfaces": {
             "description": "Defines the custom interfaces used by the module.",
             "values": {
+                "MantleThemeCssContext": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "prefix",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "selector",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string"
+                        },
+                        {
+                            "name": "colorScheme",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "\"dark\" | \"light\""
+                        }
+                    ],
+                    "callbacks": [
+                        {
+                            "name": "dt",
+                            "parameters": [
+                                {
+                                    "name": "path",
+                                    "optional": false,
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "fallback",
+                                    "optional": true,
+                                    "type": "string"
+                                }
+                            ],
+                            "returnType": "string",
+                            "description": "Returns a CSS var() reference, respecting the configured prefix."
+                        }
+                    ]
+                },
+                "MantleComponentTokens": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "colorScheme",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "{ light?: Record<string, unknown>; dark?: Record<string, unknown> }"
+                        },
+                        {
+                            "name": "extend",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "Record<string, unknown>"
+                        },
+                        {
+                            "name": "css",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleThemeCss"
+                        },
+                        {
+                            "name": "[key: string]",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "unknown"
+                        }
+                    ],
+                    "callbacks": []
+                },
+                "ComponentThemeProps": {
+                    "relatedProp": "",
+                    "props": [
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        }
+                    ],
+                    "callbacks": [],
+                    "extendedBy": "AccordionProps,AutoCompleteProps,AvatarProps,AvatarGroupProps,BadgeProps,BlockUIProps,BreadCrumbProps,ButtonProps,ButtonGroupProps,CalendarProps,CardProps,CarouselProps,CascadeSelectProps,CheckboxProps,ChipProps,ChipsProps,ColorPickerProps,ConfirmDialogProps,ConfirmPopupProps,ContextMenuProps,DataScrollerProps,DataViewLayoutOptionsProps,DataViewProps,DialogProps,DividerProps,DockProps,DropdownProps,EditorProps,FieldsetProps,FileUploadProps,FloatLabelProps,GalleriaProps,IconFieldProps,ImageProps,InplaceProps,InputIconProps,InputMaskProps,InputNumberProps,InputOtpProps,InputSwitchProps,InputTextProps,InputTextareaProps,KnobProps,ListBoxProps,MegaMenuProps,MentionProps,MenuProps,MenubarProps,MessageProps,MessagesProps,MeterGroupProps,MobileNavProps,MultiSelectProps,MultiStateCheckboxProps,OrderListProps,OrganizationChartProps,OverlayPanelProps,PaginatorProps,PanelProps,PanelMenuProps,PasswordProps,PickListProps,ProgressBarProps,ProgressSpinnerProps,RadioButtonProps,RatingProps,ScrollPanelProps,ScrollTopProps,SelectButtonProps,SidebarProps,SkeletonProps,SlideMenuProps,SliderProps,SpeedDialProps,SplitButtonProps,SplitterProps,StepperProps,StepsProps,TabMenuProps,TabViewProps,TagProps,TerminalProps,TieredMenuProps,TimelineProps,ToastProps,ToggleButtonProps,ToolbarProps,TooltipProps,TreeProps,TreeSelectProps,TreeTableProps,TriStateCheckboxProps,VirtualScrollerProps"
+                },
                 "MantleThemePreset": {
                     "relatedProp": "",
                     "props": [
@@ -50575,13 +51626,20 @@
                             "name": "components",
                             "optional": true,
                             "readonly": false,
+                            "type": "Record<string, MantleComponentTokens>"
+                        },
+                        {
+                            "name": "extend",
+                            "optional": true,
+                            "readonly": false,
                             "type": "Record<string, unknown>"
                         },
                         {
                             "name": "css",
                             "optional": true,
                             "readonly": false,
-                            "type": "string | ((options: { prefix: string; selector?: string }) => string)"
+                            "type": "MantleThemeCss",
+                            "description": "Composed with inherited consuming CSS when using definePreset."
                         }
                     ],
                     "callbacks": []
@@ -50605,7 +51663,8 @@
                             "name": "selector",
                             "optional": true,
                             "readonly": false,
-                            "type": "string"
+                            "type": "string",
+                            "description": "Selector used by imperative theme CSS APIs. MantleProvider owns its component scope automatically."
                         },
                         {
                             "name": "cssLayer",
@@ -50617,7 +51676,21 @@
                             "name": "styleContainer",
                             "optional": true,
                             "readonly": false,
-                            "type": "HTMLElement"
+                            "type": "ShadowRoot | HTMLElement"
+                        },
+                        {
+                            "name": "styleId",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "description": "Identifier for the generated style element."
+                        },
+                        {
+                            "name": "nonce",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "description": "CSP nonce assigned to the generated style element."
                         }
                     ],
                     "callbacks": []
@@ -50645,6 +51718,14 @@
                         }
                     ],
                     "callbacks": []
+                }
+            }
+        },
+        "types": {
+            "description": "Defines the custom types used by the module.",
+            "values": {
+                "MantleThemeCss": {
+                    "values": "string | ((options: MantleThemeCssContext) => string)"
                 }
             }
         }
@@ -50719,6 +51800,14 @@
                             "type": "ReactNode",
                             "default": "",
                             "description": "Used to get the child elements of the component."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "model",
@@ -51058,6 +52147,14 @@
                             "description": "Name of the field that uniquely identifies a record in the data. Should be a unique business key to prevent re-rendering."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "layout",
                             "optional": true,
                             "readonly": false,
@@ -51303,6 +52400,14 @@
                             "type": "ReactNode | ((props: ContentProps) => ReactNode)",
                             "default": "",
                             "description": "Specifies a custom content for the toast. For more complex markup, use the \"content\" slot instead."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "position",
@@ -51805,6 +52910,14 @@
                             "description": "When present, it specifies that the element should be disabled."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "iconPos",
                             "optional": true,
                             "readonly": false,
@@ -52127,6 +53240,14 @@
                             "description": "Used to get the child elements of the component."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "end",
                             "optional": true,
                             "readonly": false,
@@ -52425,6 +53546,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "When present, it specifies that the tooltip should be hidden."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "event",
@@ -53321,6 +54450,14 @@
                             "type": "string",
                             "default": "false",
                             "description": "Unique key to enable dragdrop functionality."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "emptyMessage",
@@ -54661,6 +55798,14 @@
                             "description": "Icon of the dropdown."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "emptyMessage",
                             "optional": true,
                             "readonly": false,
@@ -55826,6 +56971,14 @@
                             "type": "0 | 1 | -1 | null",
                             "default": "1",
                             "description": "Default sort order of an unsorted column."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "emptyMessage",
@@ -57559,6 +58712,14 @@
                             "description": "When present, it specifies that the element value cannot be altered."
                         },
                         {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
+                        },
+                        {
                             "name": "invalid",
                             "optional": true,
                             "readonly": false,
@@ -58185,6 +59346,14 @@
                             "type": "boolean",
                             "default": "false",
                             "description": "If disabled, the VirtualScroller feature is eliminated and the content is displayed directly."
+                        },
+                        {
+                            "name": "dt",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "MantleComponentTokens",
+                            "default": "",
+                            "description": "Component-only token overrides, scoped to this instance and its portal parts. Requires a token preset."
                         },
                         {
                             "name": "id",

@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ToolbarPassThroughType<T> = PassThroughType<T, ToolbarPassThroughMethodOptions>;
 
@@ -53,7 +54,7 @@ export interface ToolbarPassThroughOptions {
  * Defines valid properties in Toolbar component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ToolbarProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface ToolbarProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * The template of left section.
      * @deprecated use start instead

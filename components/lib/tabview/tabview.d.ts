@@ -15,6 +15,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TabViewPassThroughType<T> = PassThroughType<T, TabViewPassThroughMethodOptions>;
 export declare type TabPanelPassThroughType<T> = PassThroughType<T, TabPanelPassThroughMethodOptions>;
@@ -373,7 +374,7 @@ export interface TabViewPassThroughOptions {
  * Defines valid properties in TabView component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface TabViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface TabViewProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Active index of the TabView.
      * @defaultValue 0

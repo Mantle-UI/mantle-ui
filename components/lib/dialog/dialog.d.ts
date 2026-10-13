@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type DialogPassThroughType<T> = PassThroughType<T, DialogPassThroughMethodOptions>;
 export declare type DialogPassThroughTransitionType = ReactCSSTransitionProps | ((options: DialogPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -185,7 +186,7 @@ interface ContentPropsMessage {
  * Defines valid properties in Dialog component.
  * @group Properties
  */
-export interface DialogProps {
+export interface DialogProps extends ComponentThemeProps {
     /**
      * DOM element instance where the overlay panel should be mounted. Valid values are any DOM Element and 'self'. The self value is used to render a component where it is located.
      * @defaultValue document.body

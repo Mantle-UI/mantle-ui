@@ -518,7 +518,7 @@ export const CascadeSelect = React.memo(
                 </CSSTransition>
             );
 
-            return <Portal element={overlay} appendTo={props.appendTo} />;
+            return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={overlay} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : overlayRef} themeOrigin={elementRef} />;
         };
 
         const createElement = () => {

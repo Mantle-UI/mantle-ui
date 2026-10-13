@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type GalleriaPassThroughType<T> = PassThroughType<T, GalleriaPassThroughMethodOptions>;
 export declare type GalleriaPassThroughTransitionType = ReactCSSTransitionProps | ((options: GalleriaPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -203,7 +204,7 @@ interface GalleriaItemChangeEvent {
  * Defines valid properties in Galleria component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface GalleriaProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface GalleriaProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * An array of objects to display.
      */

@@ -14,6 +14,7 @@ import { PassThroughOptions } from '../passthrough';
 import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type InputTextPassThroughType<T> = PassThroughType<T, InputTextPassThroughMethodOptions>;
 
@@ -67,7 +68,7 @@ export interface InputTextContext {
  * Defines valid properties in InputText component. In addition to these, all properties of HTMLInputElement can be used in this component.
  * @group Properties
  */
-export interface InputTextProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onInput' | 'ref' | 'value' | 'size'> {
+export interface InputTextProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onInput' | 'ref' | 'value' | 'size'>, ComponentThemeProps {
     /**
      * Format definition of the keys to block.
      */

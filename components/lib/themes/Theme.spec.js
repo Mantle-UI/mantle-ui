@@ -1,4 +1,4 @@
-import { $dt, applyPreset, Aura, createPresetCss, createThemeCss, definePreset, resolvePreset, updatePrimaryPalette } from './themes';
+import { $dt, applyPreset, Aura, createPresetCss, createThemeCss, definePreset, removePreset, resolvePreset, updatePrimaryPalette } from './themes';
 
 describe('Aura token foundation', () => {
     it('resolves primitive references for a color scheme', () => {
@@ -34,6 +34,22 @@ describe('Aura token foundation', () => {
         expect(resolvePreset(Aura)['primary.color']).toBe('#10b981');
     });
 
+    it('allows color-scheme tokens at component level', () => {
+        const preset = definePreset(Aura, {
+            components: {
+                button: {
+                    root: { background: 'orange' },
+                    colorScheme: {
+                        dark: { root: { background: 'black' } }
+                    }
+                }
+            }
+        });
+
+        expect(resolvePreset(preset)['button.root.background']).toBe('orange');
+        expect(resolvePreset(preset, 'dark')['button.root.background']).toBe('black');
+    });
+
     it('creates a light and class-selected dark theme', () => {
         const css = createPresetCss(Aura, { darkModeSelector: '.app-dark', prefix: 'p' });
 
@@ -57,6 +73,16 @@ describe('Aura token foundation', () => {
         expect(css).toContain('var(--p-button-root-icon-only-padding)');
         expect(css).toContain('.p-autocomplete.p-autocomplete-dd .p-autocomplete-dropdown.p-button');
         expect(css).toContain('.p-splitbutton > .p-button.p-button:first-child');
+        expect(css).toContain('--surface-card: var(--p-surface-card);');
+    });
+
+    it('omits unusable token values from CSS output', () => {
+        const css = createThemeCss({ semantic: { valid: 'red', missing: undefined, empty: null, values: ['red'] } });
+
+        expect(css).toContain('--mantle-valid: red;');
+        expect(css).not.toContain('missing');
+        expect(css).not.toContain('empty');
+        expect(css).not.toContain('values');
     });
 
     it('applies and updates a preset at runtime', () => {
@@ -65,5 +91,25 @@ describe('Aura token foundation', () => {
 
         expect(document.getElementById('mantle-theme')?.textContent).toContain('--mantle-primary-500: #000000;');
         expect($dt('primary.color').value).toBe('#000000');
+    });
+
+    it('keeps provider style instances isolated and removes an instance by container', () => {
+        const first = document.createElement('div');
+        const second = document.createElement('div');
+
+        document.body.append(first, second);
+        applyPreset(Aura, { styleContainer: first, styleId: 'first-theme', nonce: 'first-nonce' });
+        applyPreset(definePreset(Aura, { semantic: { primary: { 500: '#000000' } } }), { styleContainer: second, styleId: 'second-theme' });
+
+        expect(first.querySelector('style')?.getAttribute('nonce')).toBe('first-nonce');
+        expect(first.querySelector('style')?.textContent).toContain('--mantle-primary-500: #10b981;');
+        expect(second.querySelector('style')?.textContent).toContain('--mantle-primary-500: #000000;');
+
+        removePreset({ styleContainer: first, styleId: 'first-theme' });
+        expect(first.querySelector('style')).toBeNull();
+        expect(second.querySelector('style')).not.toBeNull();
+
+        first.remove();
+        second.remove();
     });
 });

@@ -14,6 +14,7 @@ import { DropdownPassThroughOptions } from '../dropdown/dropdown';
 import { InputNumberPassThroughOptions } from '../inputnumber/inputnumber';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type PaginatorPassThroughType<T> = PassThroughType<T, PaginatorPassThroughMethodOptions>;
 export declare type PaginatorPassThroughTransitionType = ReactCSSTransitionProps | ((options: PaginatorPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -631,7 +632,7 @@ export type PaginatorTemplate = PaginatorTemplateOptions | string | undefined;
  * Defines valid properties in Paginator component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface PaginatorProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface PaginatorProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * Number of total records.
      * @defaultValue 0

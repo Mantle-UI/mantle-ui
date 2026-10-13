@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type PanelPassThroughType<T> = PassThroughType<T, PanelPassThroughMethodOptions>;
 export declare type PanelPassThroughTransitionType = ReactCSSTransitionProps | ((options: PanelPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -184,7 +185,7 @@ export interface PanelState {
  * Defines valid properties in Panel component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface PanelProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'onToggle'> {
+export interface PanelProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'onToggle'>, ComponentThemeProps {
     /**
      * Custom header template of the panel.
      */

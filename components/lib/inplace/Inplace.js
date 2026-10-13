@@ -75,8 +75,9 @@ export const Inplace = React.forwardRef((inProps, ref) => {
                 onClick: open,
                 className: cx('display'),
                 onKeyDown: onDisplayKeyDown,
-                tabIndex: props.tabIndex || '0',
+                tabIndex: props.disabled ? -1 : props.tabIndex || '0',
                 role: 'button',
+                'aria-disabled': props.disabled || undefined,
                 'aria-label': props.ariaLabel
             },
             ptm('display')
@@ -95,6 +96,7 @@ export const Inplace = React.forwardRef((inProps, ref) => {
                 className: cx('closeButton'),
                 icon: closeIcon,
                 type: 'button',
+                disabled: props.disabled,
                 onClick: close,
                 'aria-label': closeAriaLabel,
                 pt: ptm('closeButton'),

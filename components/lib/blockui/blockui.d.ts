@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type BlockUIPassThroughType<T> = PassThroughType<T, BlockUIPassThroughMethodOptions>;
 
@@ -57,7 +58,7 @@ export interface BlockUIState {
  * Defines valid properties in BlockUI component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface BlockUIProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface BlockUIProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Whether to automatically manage layering.
      * @defaultValue true

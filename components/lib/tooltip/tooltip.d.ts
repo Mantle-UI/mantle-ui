@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
 import { TooltipEvent, TooltipOptions } from './tooltipoptions';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TooltipPassThroughType<T> = PassThroughType<T, TooltipPassThroughMethodOptions>;
 
@@ -99,7 +100,7 @@ export interface TooltipState {
  * @extends {TooltipOptions}
  * @group Properties
  */
-export interface TooltipProps extends TooltipOptions {
+export interface TooltipProps extends TooltipOptions, ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

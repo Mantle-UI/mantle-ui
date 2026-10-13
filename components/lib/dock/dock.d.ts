@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type DockPassThroughType<T> = PassThroughType<T, DockPassThroughMethodOptions>;
 
@@ -116,7 +117,7 @@ interface DockFooterTemplateOptions extends DockHeaderTemplateOptions {}
  * Defines valid properties in Dock component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface DockProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface DockProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * MenuModel instance to define the action items.
      */

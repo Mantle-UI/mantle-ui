@@ -7,6 +7,7 @@ import * as React from 'react';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MobileNavPassThroughType<T> = PassThroughType<T, MobileNavPassThroughMethodOptions>;
 
@@ -59,7 +60,7 @@ export interface MobileNavItemSelectEvent {
  * Defines valid properties in MobileNav.
  * @group Properties
  */
-export interface MobileNavProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onSelect' | 'ref'> {
+export interface MobileNavProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onSelect' | 'ref'>, ComponentThemeProps {
     /**
      * Tree of navigation items to display.
      * @defaultValue null

@@ -14,6 +14,7 @@ import { CSSTransitionProps } from '../csstransition';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type PanelMenuPassThroughType<T> = PassThroughType<T, PanelMenuPassThroughMethodOptions>;
 export declare type PanelMenuPassThroughTransitionType = ReactCSSTransitionProps | ((options: PanelMenuPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -167,7 +168,7 @@ interface PanelMenuHeaderItemClickEvent {
  * Defines valid properties in PanelMenu component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface PanelMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface PanelMenuProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

@@ -14,6 +14,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type CheckboxPassThroughType<T> = PassThroughType<T, CheckboxPassThroughMethodOptions>;
 
@@ -98,7 +99,7 @@ interface CheckboxChangeEvent extends FormEvent {}
  * Defines valid properties in Checkbox component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface CheckboxProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLDivElement>, 'onChange' | 'onClick' | 'ref'> {
+export interface CheckboxProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLDivElement>, 'onChange' | 'onClick' | 'ref'>, ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

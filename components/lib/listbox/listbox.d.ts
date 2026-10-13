@@ -16,6 +16,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { IconType, PassThroughType } from '../utils/utils';
 import { VirtualScroller, VirtualScrollerPassThroughOptions, VirtualScrollerProps } from '../virtualscroller';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ListBoxPassThroughType<T> = PassThroughType<T, ListBoxPassThroughMethodOptions>;
 
@@ -252,7 +253,7 @@ interface ListBoxFilterOptions {
  * Defines valid properties in ListBox component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ListBoxProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'> {
+export interface ListBoxProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
      */

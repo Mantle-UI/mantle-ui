@@ -15,6 +15,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TriStateCheckboxPassThroughType<T> = PassThroughType<T, TriStateCheckboxPassThroughMethodOptions>;
 
@@ -78,7 +79,7 @@ interface TriStateCheckboxChangeEvent extends FormEvent<boolean> {}
  * Defines valid properties in TriStateCheckbox component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface TriStateCheckboxProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'value' | 'ref'> {
+export interface TriStateCheckboxProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'value' | 'ref'>, ComponentThemeProps {
     /**
      * When present, it specifies that the component should automatically get focus on load.
      * @defaultValue false

@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ProgressBarPassThroughType<T> = PassThroughType<T, ProgressBarPassThroughMethodOptions>;
 
@@ -53,7 +54,7 @@ export interface ProgressBarPassThroughOptions {
  * Defines valid properties in ProgressBar component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ProgressBarProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface ProgressBarProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Current value of the progress.
      */

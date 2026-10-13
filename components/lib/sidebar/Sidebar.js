@@ -302,7 +302,7 @@ export const Sidebar = React.forwardRef((inProps, ref) => {
     const createSidebar = () => {
         const element = inProps?.content ? createTemplateElement() : createElement();
 
-        return <Portal element={element} appendTo={props.appendTo} visible />;
+        return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : [sidebarRef, maskRef]} visible />;
     };
 
     return maskVisibleState && createSidebar();

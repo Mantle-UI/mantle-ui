@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MantleContext } from '../api/Api';
 import { useHandleStyle } from '../componentbase/ComponentBase';
 import { ChevronDownIcon } from '../icons/chevrondown';
 import { ESC_KEY_HANDLING_PRIORITIES, useDisplayOrder, useGlobalOnEscapeKey, useMergeProps } from '../hooks/Hooks';
@@ -9,7 +10,8 @@ import { MobileNavBase } from './MobileNavBase';
 
 export const MobileNav = React.forwardRef((inProps, ref) => {
     const mergeProps = useMergeProps();
-    const props = MobileNavBase.getProps(inProps);
+    const context = React.useContext(MantleContext);
+    const props = MobileNavBase.getProps(inProps, context);
     const [idState] = React.useState(props.id || UniqueComponentId('mobilenav_'));
     const [expandedKeysState] = React.useState({});
     const [rendered, setRendered] = React.useState(props.visible);
@@ -166,7 +168,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
             if (submenu) {
                 submenu.setAttribute('aria-hidden', String(!expanded));
                 submenu.querySelectorAll('a, button').forEach((element) => {
-                    element.tabIndex = expanded ? 0 : -1;
+                    element.tabIndex = expanded && !element.disabled && element.getAttribute('aria-disabled') !== 'true' ? 0 : -1;
                 });
                 action.setAttribute('aria-expanded', String(expanded));
                 menuItem?.classList.toggle('p-mobilenav-item-expanded', expanded);
@@ -207,6 +209,7 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
         const items = getItems(item);
         const hasItems = items.length > 0;
         const active = isItemActive(item);
+        const disabled = getItemValue(item, 'disabled');
         const expanded = hasItems && isItemExpanded(item, key);
         const initiallyExpanded = hasItems && (getItemValue(item, 'expanded') || hasActiveDescendant(item));
         const label = getItemValue(item, 'label');
@@ -224,7 +227,8 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
                 'aria-current': active && !hasItems ? 'page' : undefined,
                 'aria-expanded': hasItems ? expanded : undefined,
                 'aria-controls': hasItems ? `${idState}_${key}_group` : undefined,
-                tabIndex: hidden ? -1 : undefined
+                'aria-disabled': disabled || undefined,
+                tabIndex: hidden || disabled ? -1 : undefined
             },
             ptm('action', { context: { item, active, expanded } })
         );
@@ -307,7 +311,9 @@ export const MobileNav = React.forwardRef((inProps, ref) => {
 
     return (
         <Portal
+            themeInstance={() => ptm('root')['data-mantle-theme-instance']}
             appendTo={props.appendTo}
+            themeRootRef={isUnstyled() ? undefined : [rootRef, maskRef]}
             visible
             onMounted={() => {
                 // A new Portal first mounts the inactive drawer, then activates it

@@ -15,6 +15,7 @@ import { PassThroughOptions } from '../passthrough';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent, Nullable } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type CalendarPassThroughType<T> = PassThroughType<T, CalendarPassThroughMethodOptions>;
 export declare type CalendarPassThroughTransitionType = ReactCSSTransitionProps | ((options: CalendarPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -511,6 +512,9 @@ interface CalendarYearNavigatorTemplateEvent extends CalendarNavigatorTemplateEv
  * Defines valid base properties in Calendar component.
  */
 interface CalendarBaseProps {
+    /** Component-only tokens scoped to this instance and its portal parts. */
+    dt?: import('../themes/themes').MantleComponentTokens;
+
     /**
      * Unique identifier of the element.
      */
@@ -972,7 +976,7 @@ export type CalendarSelectionMode = 'single' | 'range' | 'multiple';
  * Defines valid properties in Calendar component.
  * @group Properties
  */
-export interface CalendarProps<TMode extends CalendarSelectionMode = 'single', TValue = TMode extends 'multiple' ? Date[] : TMode extends 'range' ? (Date | null)[] : Date> extends CalendarBaseProps {
+export interface CalendarProps<TMode extends CalendarSelectionMode = 'single', TValue = TMode extends 'multiple' ? Date[] : TMode extends 'range' ? (Date | null)[] : Date> extends CalendarBaseProps, ComponentThemeProps {
     /**
      * Specifies the selection mode either "single", "range", or "multiple";
      * @defaultValue single

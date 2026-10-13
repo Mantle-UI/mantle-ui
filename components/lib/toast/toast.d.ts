@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ToastPassThroughType<T> = PassThroughType<T, ToastPassThroughMethodOptions>;
 export declare type ToastPassThroughTransitionType = ReactCSSTransitionProps | ((options: ToastPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -248,7 +249,7 @@ interface ContentProps {
  * Defines valid properties in Toast component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ToastProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt' | 'content'> {
+export interface ToastProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt' | 'content'>, ComponentThemeProps {
     /**
      * Base zIndex value to add to initial layering of MantleUI components which start from 1000.
      * @defaultValue 0

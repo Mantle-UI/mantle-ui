@@ -17,6 +17,7 @@ import { RowPassThroughOptions } from '../row/row';
 import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { IconType, PassThroughType } from '../utils/utils';
 import { VirtualScroller, VirtualScrollerPassThroughOptions, VirtualScrollerProps } from '../virtualscroller/virtualscroller';
+import { ComponentThemeProps } from '../themes/themes';
 
 type DataTableHeaderTemplateType<TValue extends DataTableValueArray> = React.ReactNode | ((options: DataTableHeaderTemplateOptions<TValue>) => React.ReactNode);
 
@@ -1107,6 +1108,9 @@ type SortOrder = 1 | 0 | -1 | null | undefined;
  * Defines valid properties in DataTable component. In addition to these, all properties of HTMLDivElement can be used in this component.
  */
 interface DataTableBaseProps<TValue extends DataTableValueArray> extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'size' | 'onContextMenu' | 'ref' | 'value'> {
+    /** Component-only tokens scoped to this instance and its portal parts. */
+    dt?: import('../themes/themes').MantleComponentTokens;
+
     /**
      * Unique identifier of the element.
      */
@@ -1935,7 +1939,7 @@ interface DataTablePropsCellMultiple<TValue extends DataTableValueArray> extends
  * Defines valid properties in DataTable component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export type DataTableProps<TValue extends DataTableValueArray> = DataTablePropsSingle<TValue> | DataTablePropsCellSingle<TValue> | DataTablePropsMultiple<TValue> | DataTablePropsCellMultiple<TValue>;
+export type DataTableProps<TValue extends DataTableValueArray> = (DataTablePropsSingle<TValue> | DataTablePropsCellSingle<TValue> | DataTablePropsMultiple<TValue> | DataTablePropsCellMultiple<TValue>) & ComponentThemeProps;
 
 /**
  * **MantleUI - DataTable<TValue**

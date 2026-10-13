@@ -46,7 +46,7 @@ export const ColorPickerPanel = React.forwardRef((props, ref) => {
 
     const element = createElement();
 
-    return props.inline ? element : <Portal element={element} appendTo={props.appendTo} />;
+    return props.inline ? element : <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={props.unstyled ? undefined : ref} />;
 });
 
 ColorPickerPanel.displayName = 'ColorPickerPanel';

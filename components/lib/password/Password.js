@@ -430,7 +430,7 @@ export const Password = React.memo(
                 </CSSTransition>
             );
 
-            return <Portal element={panel} appendTo={props.appendTo} />;
+            return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={panel} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : overlayRef} themeOrigin={elementRef} />;
         };
 
         const className = classNames(

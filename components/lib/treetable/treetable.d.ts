@@ -18,6 +18,7 @@ import { RowPassThroughOptions } from '../row/row';
 import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TreeNode } from '../treenode';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TreeTablePassThroughType<T> = PassThroughType<T, TreeTablePassThroughMethodOptions>;
 
@@ -580,7 +581,7 @@ interface TreeTableColReorderEvent {
  * Defines valid properties in TreeTable component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface TreeTableProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'size' | 'onContextMenu' | 'onSelect' | 'ref' | 'value' | 'onToggle'> {
+export interface TreeTableProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'size' | 'onContextMenu' | 'onSelect' | 'ref' | 'value' | 'onToggle'>, ComponentThemeProps {
     /**
      * Whether to show it even there is only one page.
      * @defaultValue true

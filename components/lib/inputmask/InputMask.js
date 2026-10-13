@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { MantleContext } from '../api/Api';
+import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useMountEffect, useUpdateEffect } from '../hooks/Hooks';
 import { InputText } from '../inputtext/InputText';
 import { DomHandler, ObjectUtils, classNames } from '../utils/Utils';
@@ -27,7 +28,9 @@ export const InputMask = React.memo(
             props
         };
 
-        const { cx } = InputMaskBase.setMetaData(metaData);
+        const { cx, isUnstyled, ptm } = InputMaskBase.setMetaData(metaData);
+
+        useHandleStyle(InputMaskBase.css.styles, isUnstyled, { name: 'inputmask', styled: true });
 
         const caret = (first, last) => {
             let range;
@@ -660,6 +663,7 @@ export const InputMask = React.memo(
                 pt={props.pt}
                 unstyled={props.unstyled}
                 __parentMetadata={{ parent: metaData }}
+                __mantleThemeInstance={ptm('root')['data-mantle-theme-instance']}
             />
         );
     })

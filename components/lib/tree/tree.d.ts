@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { TreeNode } from '../treenode';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TreePassThroughType<T> = PassThroughType<T, TreePassThroughMethodOptions>;
 
@@ -438,7 +439,7 @@ interface TreeNodeDoubleClickEvent extends TreeNodeClickEvent {}
  * Defines valid properties in TreeProps component.
  * @group Properties
  */
-export interface TreeProps {
+export interface TreeProps extends ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

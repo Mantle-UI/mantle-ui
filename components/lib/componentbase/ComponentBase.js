@@ -1,5 +1,8 @@
+import * as React from 'react';
 import MantleUI from '../api/Api';
 import { useMountEffect, useStyle, useUnmountEffect, useUpdateEffect } from '../hooks/Hooks';
+import { createComponentThemeCss, Theme } from '../themes/themes';
+import { encodeThemeId, useThemeId } from '../themes/ThemeScope';
 import { ObjectUtils, classNames, mergeProps } from '../utils/Utils';
 
 const baseStyle = `
@@ -418,6 +421,8 @@ export const ComponentBase = {
     cParams: undefined,
     cName: undefined,
     defaultProps: {
+        dt: undefined,
+        __mantleThemeInstance: undefined,
         pt: undefined,
         ptOptions: undefined,
         unstyled: false
@@ -434,8 +439,11 @@ export const ComponentBase = {
         const getProps = (props, context = {}) => {
             ComponentBase.context = context;
             ComponentBase.cProps = props;
+            const mergedProps = ObjectUtils.getMergedProps(props, defaultProps);
 
-            return ObjectUtils.getMergedProps(props, defaultProps);
+            ComponentBase.currentRender = { props: mergedProps, context };
+
+            return mergedProps;
         };
 
         const getOtherProps = (props) => ObjectUtils.getDiffProps(props, defaultProps);
@@ -501,11 +509,23 @@ export const ComponentBase = {
 
         const setMetaData = (metadata = {}) => {
             const { props, state } = metadata;
-            const ptm = (key = '', params = {}) => getPTValue((props || {}).pt, key, { ...metadata, ...params });
+            const render = ComponentBase.currentRender;
+            const context = render?.context || ComponentBase.context;
+
+            Object.defineProperty(metadata, 'themeInstance', { value: () => render?.themeInstance, configurable: true });
+            // Capture this component's provider before another component changes
+            // ComponentBase.context. Portal panels also retain this ptm closure.
+            const themeScope = !props?.unstyled && context.themeScope;
+            const ptm = (key = '', params = {}) => ({
+                ...getPTValue((props || {}).pt, key, { ...metadata, ...params }),
+                ...(key === 'root' && themeScope ? { 'data-mantle-theme-scope': themeScope } : {}),
+                ...(key === 'root' && render?.themeRoot ? { 'data-mantle-theme-root': render.themeRoot } : {}),
+                ...(key === 'root' && render?.themeInstance ? { 'data-mantle-theme-instance': render.themeInstance } : {})
+            });
             const ptmo = (obj = {}, key = '', params = {}) => getPTValue(obj, key, params, false);
 
             const isUnstyled = () => {
-                return ComponentBase.context.unstyled || MantleUI.unstyled || props.unstyled;
+                return context.unstyled || MantleUI.unstyled || props.unstyled;
             };
 
             const cx = (key = '', params = {}) => {
@@ -603,6 +623,16 @@ const _useDefaultPT = (callback, key, params) => {
 
 export const useHandleStyle = (styles, _isUnstyled = () => {}, config) => {
     const { name, styled = false, hostName = '' } = config;
+    const render = ComponentBase.currentRender;
+
+    // Cache only during render; the passive effect below writes owned sheets.
+    render?.context.registerThemeComponent?.(name);
+
+    useComponentTheme(render, name, _isUnstyled());
+
+    React.useEffect(() => {
+        render?.context.flushThemeComponents?.();
+    });
 
     const globalCSS = _useGlobalPT(getOptionValue, 'global.css', ComponentBase.cParams);
     const componentName = ObjectUtils.toFlatCase(name);
@@ -646,5 +676,61 @@ export const useHandleStyle = (styles, _isUnstyled = () => {}, config) => {
 
     useUnmountEffect(() => {
         hook('useUnmountEffect');
+    });
+};
+
+const useComponentTheme = (render, name, unstyled) => {
+    const id = useThemeId();
+    const [, update] = React.useReducer((value) => value + 1, 0);
+    const localId = id && `mantle-instance-${encodeThemeId(id)}`;
+    const context = render?.context;
+    const tokens = render?.props.dt;
+    const preset = context?.theme?.preset || Theme.preset;
+    const options = context?.theme?.preset ? context.theme.options || {} : Theme.options;
+    const enabled = !unstyled && !!tokens && !!preset && !!localId;
+
+    if (render) {
+        // PT may label internal parts as `root` too. Only styled component
+        // boundaries reset globally inherited instance tokens.
+        render.themeRoot = !unstyled && !!preset && !context?.themeScope ? name.toLowerCase() : undefined;
+        render.themeInstance = enabled ? localId : !unstyled ? render.props.__mantleThemeInstance || render.props.__parentMetadata?.parent?.themeInstance?.() : undefined;
+    }
+
+    React.useEffect(() => {
+        if (!unstyled && !context?.theme?.preset) {
+            return Theme.subscribe(update);
+        }
+    }, [unstyled, context?.theme?.preset]);
+
+    React.useEffect(() => {
+        if (!enabled || typeof document === 'undefined') {
+            return;
+        }
+
+        const ownerSelector = context?.themeScope ? `[data-mantle-theme-scope=${context.themeScope}]` : ':root';
+        const selector = `${ownerSelector === ':root' ? '' : ownerSelector}[data-mantle-theme-instance=${localId}]`;
+        const container = context?.styleContainer || options.styleContainer || document.head;
+        const ownerDocument = container.ownerDocument || document;
+        const containers = container.getRootNode()?.host ? [container, ownerDocument.head] : [container];
+        const sheets = containers.map((target) => {
+            const sheet = ownerDocument.createElement('style');
+
+            sheet.setAttribute('data-mantle-theme-local', localId);
+
+            if (context?.nonce || options.nonce) {
+                sheet.setAttribute('nonce', context?.nonce || options.nonce);
+            }
+
+            target.appendChild(sheet);
+
+            return sheet;
+        });
+        const css = createComponentThemeCss(preset, name, tokens, { ...options, selector, ownerSelector });
+
+        sheets.forEach((sheet) => (sheet.textContent = css));
+
+        return () => {
+            sheets.forEach((sheet) => sheet.remove());
+        };
     });
 };

@@ -19,6 +19,7 @@ import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils';
 import { VirtualScroller, VirtualScrollerPassThroughOptions, VirtualScrollerProps } from '../virtualscroller';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type AutoCompletePassThroughType<T> = PassThroughType<T, AutoCompletePassThroughMethodOptions>;
 export declare type AutoCompletePassThroughTransitionType = ReactCSSTransitionProps | ((options: AutoCompletePassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -230,7 +231,7 @@ export interface AutoCompleteContext {
  * Defines valid properties in AutoComplete component. In addition to these, all properties of HTMLSpanElement can be used in this component.
  * @group Properties
  */
-export interface AutoCompleteProps<T = any, M extends boolean = false> extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'onChange' | 'onSelect' | 'ref' | 'value'> {
+export interface AutoCompleteProps<T = any, M extends boolean = false> extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'onChange' | 'onSelect' | 'ref' | 'value'>, ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

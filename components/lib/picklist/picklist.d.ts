@@ -12,6 +12,7 @@ import { ButtonPassThroughOptions } from '../button/button';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type PickListPassThroughType<T> = PassThroughType<T, PickListPassThroughMethodOptions>;
 
@@ -238,7 +239,7 @@ interface PickListFilterInputProps {
  * Defines valid properties in PickList component.
  * @group Properties
  */
-export interface PickListProps {
+export interface PickListProps extends ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

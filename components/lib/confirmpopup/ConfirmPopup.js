@@ -417,7 +417,16 @@ export const ConfirmPopup = React.memo(
 
         const element = inProps?.content ? createTemplateElement() : createElement();
 
-        return <Portal element={element} appendTo={getPropValue('appendTo')} visible={getPropValue('visible')} />;
+        return (
+            <Portal
+                themeInstance={() => ptm('root')['data-mantle-theme-instance']}
+                element={element}
+                appendTo={getPropValue('appendTo')}
+                themeRootRef={isUnstyled() ? undefined : overlayRef}
+                themeOrigin={() => getPropValue('target')}
+                visible={getPropValue('visible')}
+            />
+        );
     })
 );
 

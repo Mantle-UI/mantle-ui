@@ -46,6 +46,9 @@ export interface ChartPassThroughOptions {
  * @group Properties
  */
 export interface ChartProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'content' | 'pt'> {
+    /** Component-only tokens scoped to this instance and its portal parts. */
+    dt?: import('../themes/themes').MantleComponentTokens;
+
     /**
      * Type of the chart.
      */

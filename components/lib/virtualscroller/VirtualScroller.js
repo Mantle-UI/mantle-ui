@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { MantleContext } from '../api/Api';
+import { useHandleStyle } from '../componentbase/ComponentBase';
 import { useEventListener, useMergeProps, usePrevious, useResizeListener, useStyle, useUpdateEffect } from '../hooks/Hooks';
 import { SpinnerIcon } from '../icons/spinner';
 import { DomHandler, IconUtils, ObjectUtils, classNames } from '../utils/Utils';
@@ -23,7 +24,7 @@ export const VirtualScroller = React.memo(
         const [numToleratedItemsState, setNumToleratedItemsState] = React.useState(props.numToleratedItems);
         const [loadingState, setLoadingState] = React.useState(props.loading || false);
         const [loaderArrState, setLoaderArrState] = React.useState([]);
-        const { ptm } = VirtualScrollerBase.setMetaData({
+        const { ptm, isUnstyled } = VirtualScrollerBase.setMetaData({
             props,
             state: {
                 first: firstState,
@@ -37,6 +38,7 @@ export const VirtualScroller = React.memo(
         });
 
         useStyle(VirtualScrollerBase.css.styles, { name: 'virtualscroller' });
+        useHandleStyle('', isUnstyled, { name: 'virtualscroller', styled: true });
         const elementRef = React.useRef(null);
         const contentRef = React.useRef(null);
         const spacerRef = React.useRef(null);

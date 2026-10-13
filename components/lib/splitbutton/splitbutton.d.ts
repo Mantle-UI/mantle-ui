@@ -17,6 +17,7 @@ import { PassThroughOptions } from '../passthrough';
 import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { IconType, PassThroughType, TemplateType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type SplitButtonPassThroughType<T> = PassThroughType<T, SplitButtonPassThroughMethodOptions>;
 export declare type SplitButtonPassThroughTransitionType = ReactCSSTransitionProps | ((options: SplitButtonPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -97,7 +98,7 @@ export interface SplitButtonPassThroughOptions {
  * Defines valid properties in SplitButton component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface SplitButtonProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface SplitButtonProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Text of the button.
      */

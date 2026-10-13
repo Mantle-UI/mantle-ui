@@ -15,6 +15,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type SelectButtonPassThroughType<T> = PassThroughType<T, SelectButtonPassThroughMethodOptions>;
 
@@ -87,7 +88,7 @@ interface SelectButtonChangeEvent extends FormEvent {}
  * Defines valid properties in SelectButton component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface SelectButtonProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'unselectable' | 'onChange' | 'ref' | 'pt'> {
+export interface SelectButtonProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'unselectable' | 'onChange' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * Value of the component.
      */

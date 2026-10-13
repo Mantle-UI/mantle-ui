@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType, TemplateType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ChipPassThroughType<T> = PassThroughType<T, ChipPassThroughMethodOptions>;
 
@@ -84,7 +85,7 @@ interface ChipRemoveEvent {
  * Defines valid properties in Chip component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface ChipProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface ChipProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Defines the text to display.
      */

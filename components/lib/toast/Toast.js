@@ -174,7 +174,7 @@ export const Toast = React.memo(
 
         const element = createElement();
 
-        return <Portal element={element} appendTo={props.appendTo} />;
+        return <Portal themeInstance={() => ptCallbacks.ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={ptCallbacks.isUnstyled() ? undefined : containerRef} />;
     })
 );
 

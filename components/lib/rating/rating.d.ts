@@ -14,6 +14,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type RatingPassThroughType<T> = PassThroughType<T, RatingPassThroughMethodOptions>;
 
@@ -89,7 +90,7 @@ interface RatingChangeEvent extends FormEvent<number> {}
  * Defines valid properties in Rating component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface RatingProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'> {
+export interface RatingProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'>, ComponentThemeProps {
     /**
      * Value of the rating.
      */

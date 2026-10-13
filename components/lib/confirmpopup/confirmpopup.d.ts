@@ -14,6 +14,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ConfirmPopupPassThroughType<T> = PassThroughType<T, ConfirmPopupPassThroughMethodOptions>;
 export declare type ConfirmPopupPassThroughTransitionType = ReactCSSTransitionProps | ((options: ConfirmPopupPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -169,7 +170,7 @@ interface ContentProps {
  * Defines valid properties in ConfirmPopup component.
  * @group Properties
  */
-export interface ConfirmPopupProps {
+export interface ConfirmPopupProps extends ComponentThemeProps {
     /**
      * Unique tag key used to separate the confirmPopup components in the page.
      */

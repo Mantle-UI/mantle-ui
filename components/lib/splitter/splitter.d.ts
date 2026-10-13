@@ -15,6 +15,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type SplitterPassThroughType<T> = PassThroughType<T, SplitterPassThroughMethodOptions>;
 export declare type SplitterPanelPassThroughType<T> = PassThroughType<T, SplitterPanelPassThroughMethodOptions>;
@@ -161,7 +162,7 @@ export declare class SplitterPanel extends React.Component<SplitterPanelProps, a
  * Defines valid properties in Splitter component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface SplitterProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface SplitterProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Orientation of the panels, valid values are "horizontal" and "vertical".
      * @defaultValue horizontal

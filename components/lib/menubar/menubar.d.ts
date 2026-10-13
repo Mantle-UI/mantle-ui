@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MenubarPassThroughType<T> = PassThroughType<T, MenubarPassThroughMethodOptions>;
 
@@ -140,7 +141,7 @@ export interface MenubarContext {
  * Defines valid properties in Menubar component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface MenubarProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface MenubarProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

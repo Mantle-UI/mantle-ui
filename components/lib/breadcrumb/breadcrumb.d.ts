@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { MenuItem } from '../menuitem';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type BreadCrumbPassThroughType<T> = PassThroughType<T, BreadCrumbPassThroughMethodOptions>;
 
@@ -69,7 +70,7 @@ export interface BreadCrumbPassThroughOptions {
  * Defines valid properties in BreadCrumb component. In addition to these, all properties of HTMLElement can be used in this component.
  * @group Properties
  */
-export interface BreadCrumbProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'ref'> {
+export interface BreadCrumbProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'ref'>, ComponentThemeProps {
     /**
      * An array of menuitems.
      */

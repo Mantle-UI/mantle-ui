@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type OrganizationChartPassThroughType<T> = PassThroughType<T, OrganizationChartPassThroughMethodOptions>;
 
@@ -190,7 +191,7 @@ interface OrganizationChartNodeData {
  * Defines valid properties in OrganizationChart component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface OrganizationChartProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'> {
+export interface OrganizationChartProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * An array of nested TreeNodes.
      */

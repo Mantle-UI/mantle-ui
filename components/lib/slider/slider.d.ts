@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type SliderPassThroughType<T> = PassThroughType<T, SliderPassThroughMethodOptions>;
 
@@ -73,7 +74,7 @@ interface SliderSlideEndEvent extends SliderChangeEvent {}
  * Defines valid properties in Slider component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface SliderProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'value' | 'ref' | 'pt'> {
+export interface SliderProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'value' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * Value of the component.
      * @defaultValue 0

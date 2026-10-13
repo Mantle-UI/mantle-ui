@@ -394,7 +394,7 @@ export const Image = React.memo(
             <span {...rootProps}>
                 {image}
                 {preview}
-                {maskVisibleState && <Portal element={element} appendTo={document.body} />}
+                {maskVisibleState && <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={document.body} themeRootRef={isUnstyled() ? undefined : maskRef} themeOrigin={elementRef} />}
             </span>
         );
     })

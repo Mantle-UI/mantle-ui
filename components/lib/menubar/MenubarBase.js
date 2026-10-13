@@ -93,6 +93,57 @@ const styles = `
         justify-content: center;
         text-decoration: none;
     }
+
+    /* Keep responsive navigation functional without a legacy theme stylesheet. */
+    @media screen and (max-width: 960px) {
+        .p-menubar {
+            position: relative;
+        }
+
+        .p-menubar .p-menubar-button {
+            display: flex;
+        }
+
+        .p-menubar > .p-menubar-root-list {
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            left: 0;
+        }
+
+        .p-menubar .p-menubar-root-list .p-menuitem {
+            width: 100%;
+            position: static;
+        }
+
+        .p-menubar .p-menubar-root-list .p-submenu-list {
+            width: 100%;
+            position: static;
+        }
+
+        .p-menubar .p-menubar-root-list .p-menuitem > .p-menuitem-content > .p-menuitem-link > .p-submenu-icon {
+            margin-left: auto;
+        }
+
+        .p-menubar .p-menubar-root-list > .p-menuitem-active > .p-menuitem-content > .p-menuitem-link > .p-submenu-icon {
+            transform: rotate(-180deg);
+        }
+
+        .p-menubar .p-menubar-root-list .p-submenu-list .p-submenu-icon {
+            transform: rotate(90deg);
+        }
+
+        .p-menubar .p-menubar-root-list .p-submenu-list > .p-menuitem-active > .p-menuitem-content > .p-menuitem-link > .p-submenu-icon {
+            transform: rotate(-90deg);
+        }
+
+        .p-menubar.p-menubar-mobile-active > .p-menubar-root-list {
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+    }
 }
 `;
 

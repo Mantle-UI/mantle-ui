@@ -12,6 +12,7 @@ import { CSSTransitionProps as ReactCSSTransitionProps } from 'react-transition-
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ImagePassThroughType<T> = PassThroughType<T, ImagePassThroughMethodOptions>;
 export declare type ImagePassThroughTransitionType = ReactCSSTransitionProps | ((options: ImagePassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -149,7 +150,7 @@ export interface ImageState {
  * Defines valid properties in Image component. In addition to these, all properties of HTMLSpanElement can be used in this component.
  * @group Properties
  */
-export interface ImageProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'ref' | 'pt'> {
+export interface ImageProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * Specifies an alternate text for an area, if the image cannot be displayed.
      */

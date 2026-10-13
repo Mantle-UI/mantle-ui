@@ -12,6 +12,7 @@ import { ReactNode } from 'react';
 import { CSSTransitionProps as ReactCSSTransitionProps } from 'react-transition-group/CSSTransition';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MeterGroupPassThroughType<T> = PassThroughType<T, MeterGroupPassThroughMethodOptions>;
 export declare type MeterGroupPassThroughTransitionType = ReactCSSTransitionProps | ((options: MeterGroupPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -87,7 +88,7 @@ interface CustomRenderProps {
  * Defines valid properties in MeterGroup component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-interface MeterGroupProps {
+interface MeterGroupProps extends ComponentThemeProps {
     /**
      * Additional CSS classes to apply to the MeterGroup.
      */

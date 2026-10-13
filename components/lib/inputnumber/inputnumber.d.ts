@@ -15,6 +15,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { IconType, PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type RoundingMode = 'ceil' | 'floor' | 'expand' | 'trunc' | 'halfCeil' | 'halfFloor' | 'halfExpand' | 'halfTrunc' | 'halfEven';
 
@@ -105,7 +106,7 @@ interface InputNumberChangeEvent {
  * Defines valid properties in InputNumber component. In addition to these, all properties of HTMLSpanElement can be used in this component.
  * @group Properties
  */
-export interface InputNumberProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'onChange' | 'ref'> {
+export interface InputNumberProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'onChange' | 'ref'>, ComponentThemeProps {
     /**
      * 	Value of the component.
      */

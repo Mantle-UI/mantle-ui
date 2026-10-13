@@ -14,6 +14,7 @@ import { PassThroughOptions } from '../passthrough';
 import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type InputTextareaPassThroughType<T> = PassThroughType<T, InputTextareaPassThroughMethodOptions>;
 
@@ -61,7 +62,7 @@ export interface InputTextareaContext {
  * Defines valid properties in InputTextarea component. In addition to these, all properties of HTMLTextAreaElement can be used in this component.
  * @group Properties
  */
-export interface InputTextareaProps extends Omit<React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, 'ref' | 'value' | 'pt'> {
+export interface InputTextareaProps extends Omit<React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, 'ref' | 'value' | 'pt'>, ComponentThemeProps {
     /**
      * When present, height of textarea changes as being typed.
      * @defaultValue false

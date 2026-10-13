@@ -14,6 +14,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormBooleanEvent } from '../ts-helpers';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type InputSwitchPassThroughType<T> = PassThroughType<T, InputSwitchPassThroughMethodOptions>;
 
@@ -65,7 +66,7 @@ interface InputSwitchChangeEvent extends FormBooleanEvent {}
  * Defines valid properties in InputMask component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface InputSwitchProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'> {
+export interface InputSwitchProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref'>, ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

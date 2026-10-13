@@ -12,6 +12,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { StepperPanelPassThroughOptionType } from '../stepperpanel/stepperpanel';
 import { PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type StepperPassThroughOptionType = StepperPassThroughAttributes | ((options: StepperPassThroughMethodOptions) => StepperPassThroughAttributes | string) | string | null | undefined;
 export declare type StepperPassThroughType<T> = PassThroughType<T, StepperPassThroughMethodOptions>;
@@ -96,7 +97,7 @@ export interface StepperChangeEvent {
  * Defines valid properties in Stepper component.
  * @group Properties
  */
-export interface StepperProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface StepperProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Active step index of stepper.
      * @defaultValue 0

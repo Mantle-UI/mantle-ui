@@ -4533,6 +4533,9 @@ export const Calendar = React.memo(
                 {content}
                 <CalendarPanel
                     hostName="Calendar"
+                    unstyled={isUnstyled()}
+                    touchUIMask={touchUIMask}
+                    themeOrigin={elementRef}
                     id={panelId}
                     locale={props.locale}
                     ref={overlayRef}

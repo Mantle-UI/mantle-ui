@@ -81,7 +81,7 @@ export default function MyApp({ Component, pageProps }) {
         } catch (error) {
             // Use the default theme when browser storage is unavailable.
         }
-    }, []); // The stored selection is restored once after the client mounts.
+    }, [theme]);
 
     return (
         <AppContentContext.Provider value={appState}>

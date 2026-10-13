@@ -15,6 +15,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type RadioButtonPassThroughType<T> = PassThroughType<T, RadioButtonPassThroughMethodOptions>;
 
@@ -70,7 +71,7 @@ interface RadioButtonChangeEvent extends FormEvent {}
  * Defines valid properties in RadioButton component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface RadioButtonProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'> {
+export interface RadioButtonProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onChange' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * When present, it specifies that the component should automatically get focus on load.
      * @defaultValue false

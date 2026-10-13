@@ -14,6 +14,7 @@ import { CSSTransitionProps } from '../csstransition';
 import { InputTextarea } from '../inputtextarea';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type MentionPassThroughType<T> = PassThroughType<T, MentionPassThroughMethodOptions>;
 export declare type MentionPassThroughTransitionType = ReactCSSTransitionProps | ((options: MentionPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -155,7 +156,7 @@ interface MentionSelectEvent {
  * Defines valid properties in Mention component. In addition to these, all properties of HTMLTextAreaElement can be used in this component.
  * @group Properties
  */
-export interface MentionProps extends Omit<React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, 'onSelect' | 'onChange' | 'onInput' | 'onFocus' | 'onBlur' | 'ref' | 'pt'> {
+export interface MentionProps extends Omit<React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, 'onSelect' | 'onChange' | 'onInput' | 'onFocus' | 'onBlur' | 'ref' | 'pt'>, ComponentThemeProps {
     /**
      * When enabled, highlights the first item in the list by default.
      * @defaultValue true

@@ -12,6 +12,7 @@ import { InputText, InputTextPassThroughOptions, InputTextProps } from '../input
 import { PassThroughOptions } from '../passthrough';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
+import { ComponentThemeProps } from '../themes/themes';
 
 /**
  * Custom complete event
@@ -41,7 +42,7 @@ interface InputMaskChangeEvent extends FormEvent<string> {}
  * Defines valid properties in InputMask component. In addition to these, all properties of {@link inputtext} can be used in this component.
  * @group Properties
  */
-export interface InputMaskProps extends Omit<InputTextProps, 'onChange' | 'pt'> {
+export interface InputMaskProps extends Omit<InputTextProps, 'onChange' | 'pt'>, ComponentThemeProps {
     /**
      * Mask pattern.
      */

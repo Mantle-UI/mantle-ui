@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type TerminalPassThroughType<T> = PassThroughType<T, TerminalPassThroughMethodOptions>;
 
@@ -88,7 +89,7 @@ export interface TerminalPassThroughOptions {
  * Defines valid properties in Terminal component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface TerminalProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'> {
+export interface TerminalProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref'>, ComponentThemeProps {
     /**
      * Initial text to display on terminal.
      */

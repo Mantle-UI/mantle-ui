@@ -528,7 +528,7 @@ export const Mention = React.memo(
                 </CSSTransition>
             );
 
-            return <Portal element={panel} appendTo="self" />;
+            return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={panel} appendTo="self" themeRootRef={isUnstyled() ? undefined : overlayRef} />;
         };
 
         const inputProps = MentionBase.getOtherProps(props);

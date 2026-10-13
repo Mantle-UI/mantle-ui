@@ -1,10 +1,23 @@
+import { auraAdvancedComponents, auraAdvancedCss } from './AuraAdvanced';
+import { auraChartComponents, auraChartCss } from './AuraChart';
+import { auraContainerComponents, auraContainerCss } from './AuraContainers';
+import { auraDataComponents, auraDataCss } from './AuraData';
+import { auraFeedbackComponents, auraFeedbackCss } from './AuraFeedback';
+import { auraFormComponents, auraFormCss } from './AuraForms';
+import { auraMediaComponents, auraMediaCss } from './AuraMedia';
+import { auraNavigationComponents, auraNavigationCss } from './AuraNavigation';
+import { auraOverlayComponents, auraOverlayCss } from './AuraOverlays';
+import { auraSelectionComponents, auraSelectionCss } from './AuraSelections';
+import { auraSpecialFormComponents, auraSpecialFormCss } from './AuraSpecialForms';
+import { definePreset } from './Theme';
+
 /**
  * Aura-inspired foundation preset for Mantle's legacy component DOM.
  *
  * This intentionally contains no component selectors. Components consume the
  * semantic and component tokens through the accompanying Aura CSS bridge.
  */
-export const Aura = {
+const basePreset = {
     primitive: {
         borderRadius: {
             sm: '4px',
@@ -129,7 +142,11 @@ export const Aura = {
                     300: '{slate.300}',
                     400: '{slate.400}',
                     500: '{slate.500}',
-                    700: '{slate.700}'
+                    700: '{slate.700}',
+                    border: '{surface.200}',
+                    card: '{surface.0}',
+                    ground: '{surface.50}',
+                    overlay: '{surface.0}'
                 },
                 primary: {
                     color: '{primary.500}',
@@ -169,7 +186,11 @@ export const Aura = {
                     700: '{zinc.700}',
                     800: '{zinc.800}',
                     900: '{zinc.900}',
-                    950: '{zinc.950}'
+                    950: '{zinc.950}',
+                    border: '{surface.700}',
+                    card: '{surface.900}',
+                    ground: '{surface.950}',
+                    overlay: '{surface.900}'
                 },
                 primary: {
                     color: '{primary.400}',
@@ -194,6 +215,22 @@ export const Aura = {
         }
     },
     components: {
+        overlay: {
+            root: {
+                background: '{overlay.background}',
+                borderColor: '{overlay.borderColor}',
+                color: '{overlay.color}',
+                borderRadius: '{borderRadius.md}',
+                shadow: '0 8px 24px rgba(15, 23, 42, 0.12)'
+            }
+        },
+        panel: { root: { background: '{surface.card}', borderColor: '{surface.border}', color: '{text.color}', borderRadius: '{borderRadius.md}' } },
+        menu: { item: { color: '{overlay.color}', focusBackground: 'color-mix(in srgb, {overlay.color}, transparent 94%)' } },
+        paginator: { root: { background: '{surface.card}', color: '{text.color}', borderColor: '{surface.border}' } },
+        datatable: { header: { background: '{surface.card}', color: '{text.color}', borderColor: '{surface.border}' }, row: { background: '{surface.card}', color: '{text.color}', borderColor: '{surface.border}' } },
+        message: { root: { borderRadius: '{borderRadius.md}' } },
+        tag: { root: { borderRadius: '{borderRadius.sm}' } },
+        badge: { root: { borderRadius: '{borderRadius.xl}' } },
         button: {
             root: {
                 background: '{primary.color}',
@@ -411,25 +448,21 @@ export const Aura = {
             }
         }
     },
-    css: ({ prefix = 'mantle', selector = ':root', colorScheme = 'light' } = {}) => {
-        const surfaceCard = colorScheme === 'dark' ? '900' : '0';
-        const surfaceGround = colorScheme === 'dark' ? '950' : '50';
-        const surfaceBorder = colorScheme === 'dark' ? '700' : '200';
-
-        return `
+    css: ({ prefix = 'mantle', selector = ':root' } = {}) => {
+        const legacyCss = `
 ${selector} {
     --primary-color: var(--${prefix}-primary-color);
     --primary-color-text: var(--${prefix}-primary-contrast-color);
-    --surface-ground: var(--${prefix}-surface-${surfaceGround});
-    --surface-card: var(--${prefix}-surface-${surfaceCard});
-    --surface-overlay: var(--${prefix}-surface-${surfaceCard});
-    --surface-border: var(--${prefix}-surface-${surfaceBorder});
+    --surface-ground: var(--${prefix}-surface-ground);
+    --surface-card: var(--${prefix}-surface-card);
+    --surface-overlay: var(--${prefix}-surface-overlay);
+    --surface-border: var(--${prefix}-surface-border);
     --text-color: var(--${prefix}-text-color);
     --text-color-secondary: var(--${prefix}-text-muted-color);
     --border-radius: var(--${prefix}-form-field-border-radius);
 }
 
-.p-button:not(.p-button-text):not(.p-button-link):not(.p-button-outlined) {
+.p-button:where(:not(.p-button-text):not(.p-button-link):not(.p-button-outlined)) {
     background: var(--${prefix}-button-root-background);
     border: 1px solid var(--${prefix}-button-root-background);
     border-radius: var(--${prefix}-button-root-border-radius);
@@ -502,12 +535,12 @@ ${selector} {
     border-top-right-radius: var(--${prefix}-form-field-border-radius);
 }
 
-.p-button:not(.p-button-text):not(.p-button-link):not(.p-button-outlined):not(:disabled):hover {
+.p-button:where(:not(.p-button-text):not(.p-button-link):not(.p-button-outlined)):not(:disabled):hover {
     background: var(--${prefix}-button-root-hover-background);
     border-color: var(--${prefix}-button-root-hover-background);
 }
 
-.p-button:not(.p-button-text):not(.p-button-link):not(.p-button-outlined):not(:disabled):active {
+.p-button:where(:not(.p-button-text):not(.p-button-link):not(.p-button-outlined)):not(:disabled):active {
     background: var(--${prefix}-button-root-active-background);
     border-color: var(--${prefix}-button-root-active-background);
 }
@@ -963,6 +996,67 @@ ${selector} {
 }
 
 .p-inputswitch.p-invalid .p-inputswitch-slider { border-color: var(--${prefix}-inputswitch-root-invalid-border-color); }
+
+/* Overlay, navigation and data-display foundations. Individual components retain
+   their structural Base CSS; these rules provide the shared token skin. */
+.p-dialog, .p-sidebar, .p-overlaypanel, .p-menu, .p-tieredmenu, .p-contextmenu, .p-megamenu, .p-listbox, .p-multiselect-panel, .p-datepicker {
+    background: var(--${prefix}-overlay-root-background);
+    border: 1px solid var(--${prefix}-overlay-root-border-color);
+    border-radius: var(--${prefix}-overlay-root-border-radius);
+    box-shadow: var(--${prefix}-overlay-root-shadow);
+    color: var(--${prefix}-overlay-root-color);
+}
+
+.p-panel, .p-card, .p-accordion .p-accordion-header .p-accordion-header-link, .p-tabview .p-tabview-panels {
+    background: var(--${prefix}-panel-root-background);
+    border-color: var(--${prefix}-panel-root-border-color);
+    color: var(--${prefix}-panel-root-color);
+}
+
+.p-menuitem-link:not(.p-disabled):hover, .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover, .p-contextmenu .p-menuitem-link:not(.p-disabled):hover {
+    background: var(--${prefix}-menu-item-focus-background);
+    color: var(--${prefix}-menu-item-color);
+}
+
+.p-paginator, .p-datatable .p-datatable-thead > tr > th, .p-datatable .p-datatable-tbody > tr > td {
+    background: var(--${prefix}-datatable-row-background);
+    border-color: var(--${prefix}-datatable-row-border-color);
+    color: var(--${prefix}-datatable-row-color);
+}
 `;
+        const css = [
+            legacyCss,
+            auraFormCss({ prefix }),
+            auraSelectionCss({ prefix }),
+            auraOverlayCss({ prefix }),
+            auraContainerCss({ prefix }),
+            auraDataCss({ prefix }),
+            auraNavigationCss({ prefix }),
+            auraFeedbackCss({ prefix }),
+            auraMediaCss({ prefix }),
+            auraAdvancedCss({ prefix }),
+            auraChartCss({ prefix }),
+            auraSpecialFormCss({ prefix })
+        ]
+            .join('\n')
+            .replace(/[ \t]+$/gm, '');
+
+        return css;
     }
 };
+
+export const Aura = definePreset(basePreset, {
+    components: {
+        ...auraSpecialFormComponents,
+        ...auraFormComponents,
+        ...auraSelectionComponents,
+        ...auraOverlayComponents,
+        ...auraContainerComponents,
+        ...auraDataComponents,
+        ...auraNavigationComponents,
+        ...auraFeedbackComponents,
+        ...auraMediaComponents,
+        ...auraAdvancedComponents,
+        ...auraChartComponents
+    }
+});

@@ -88,6 +88,21 @@ gulp.task('copy-d.ts', function () {
     return gulp
         .src(process.env.INPUT_DIR + '**/*.d.ts')
         .pipe(
+            new Transform({
+                objectMode: true,
+                transform: function (file, encoding, callback) {
+                    const source = file.contents.toString().replace(/from (['"])(\.\.?\/[^'"]+)\1/g, function (match, quote, reference) {
+                        const separator = reference.lastIndexOf('/');
+
+                        return 'from ' + quote + reference.slice(0, separator + 1) + reference.slice(separator + 1).toLowerCase() + quote;
+                    });
+
+                    file.contents = Buffer.from(source);
+                    callback(null, file);
+                }
+            })
+        )
+        .pipe(
             rename(function (path) {
                 path.basename = path.basename.toLowerCase();
             })
@@ -96,7 +111,10 @@ gulp.task('copy-d.ts', function () {
 });
 
 gulp.task('copy-package.json', function () {
-    return gulp.src(process.env.INPUT_DIR + '**/package.json').pipe(addPackageVersion()).pipe(gulp.dest('./' + process.env.OUTPUT_DIR));
+    return gulp
+        .src(process.env.INPUT_DIR + '**/package.json')
+        .pipe(addPackageVersion())
+        .pipe(gulp.dest('./' + process.env.OUTPUT_DIR));
 });
 
 gulp.task('copy-bin', function () {

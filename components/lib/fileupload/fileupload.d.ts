@@ -15,6 +15,7 @@ import { MessagePassThroughOptions } from '../message/message';
 import { PassThroughOptions } from '../passthrough';
 import { ProgressBarPassThroughOptions } from '../progressbar/progressbar';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type FileUploadPassThroughType<T> = PassThroughType<T, FileUploadPassThroughMethodOptions>;
 
@@ -423,7 +424,7 @@ interface FileUploadRemoveEvent {
  * Defines valid properties in FileUpload component.
  * @group Properties
  */
-interface FileUploadProps {
+interface FileUploadProps extends ComponentThemeProps {
     /**
      * Unique identifier of the element.
      */

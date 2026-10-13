@@ -13,6 +13,7 @@ import { ComponentHooks } from '../componentbase/componentbase';
 import { CSSTransitionProps } from '../csstransition';
 import { PassThroughOptions } from '../passthrough';
 import { IconType, PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ScrollTopPassThroughType<T> = PassThroughType<T, ScrollTopPassThroughMethodOptions>;
 export declare type ScrollTopPassThroughTransitionType = ReactCSSTransitionProps | ((options: ScrollTopPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -64,7 +65,7 @@ export interface ScrollTopState {
  * Defines valid properties in ScrollTop component.
  * @group Properties
  */
-export interface ScrollTopProps {
+export interface ScrollTopProps extends ComponentThemeProps {
     /**
      * Target of the ScrollTop, valid values are "window" and "parent".
      * @defaultValue window

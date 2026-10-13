@@ -327,7 +327,7 @@ export const OverlayPanel = React.forwardRef((inProps, ref) => {
 
     const element = createElement();
 
-    return <Portal element={element} appendTo={props.appendTo} />;
+    return <Portal themeInstance={() => ptm('root')['data-mantle-theme-instance']} element={element} appendTo={props.appendTo} themeRootRef={isUnstyled() ? undefined : overlayRef} themeOrigin={currentTargetRef} />;
 });
 
 OverlayPanel.displayName = 'OverlayPanel';

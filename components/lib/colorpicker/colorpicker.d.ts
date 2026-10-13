@@ -16,6 +16,7 @@ import { TooltipPassThroughOptions } from '../tooltip/tooltip';
 import { TooltipOptions } from '../tooltip/tooltipoptions';
 import { FormEvent } from '../ts-helpers';
 import { PassThroughType } from '../utils/utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type ColorPickerPassThroughType<T> = PassThroughType<T, ColorPickerPassThroughMethodOptions>;
 export declare type ColorPickerPassThroughTransitionType = ReactCSSTransitionProps | ((options: ColorPickerPassThroughMethodOptions) => ReactCSSTransitionProps) | undefined;
@@ -144,7 +145,7 @@ interface ColorPickerChangeEvent extends FormEvent<string | ColorPickerRGBType |
  * Defines valid properties in AutoComplete component. In addition to these, all properties of HTMLInputElement can be used in this component.
  * @group Properties
  */
-export interface ColorPickerProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onChange' | 'value' | 'ref'> {
+export interface ColorPickerProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onChange' | 'value' | 'ref'>, ComponentThemeProps {
     /**
      * DOM element instance where the overlay panel should be mounted. Valid values are any DOM Element and "self". The "self" value is used to render a component where it is located.
      * @defaultValue document.body

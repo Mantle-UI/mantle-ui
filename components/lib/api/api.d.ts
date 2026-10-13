@@ -693,11 +693,19 @@ declare const MantleUI: APIOptions;
 
 export default MantleUI;
 
-type MantleProviderProps = {
+export type MantleThemeConfig = { preset: MantleThemePreset; options?: MantleThemeOptions };
+
+export type MantleProviderProps = {
     /**
      * Any default global API options
      */
     value?: Partial<APIOptions>;
+    /** Default uncontrolled mode preserves setTheme updates across equivalent inline configurations; changed configuration values replace them. */
+    themeMode?: 'controlled' | 'uncontrolled';
+    /** Change this key to reapply an equivalent value.theme configuration in uncontrolled mode. */
+    themeRevision?: string | number;
+    /** Called with a requested theme update. In controlled mode, update value.theme in this callback to accept the request. */
+    onThemeChange?: (theme: MantleThemeConfig | undefined) => void;
     /**
      * Used to get the child elements of the component.
      * @readonly

@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentHooks } from '../componentbase/componentbase';
 import { PassThroughOptions } from '../passthrough';
 import { PassThroughType } from '../utils';
+import { ComponentThemeProps } from '../themes/themes';
 
 export declare type CardPassThroughType<T> = PassThroughType<T, CardPassThroughMethodOptions>;
 
@@ -65,7 +66,7 @@ export interface CardPassThroughOptions {
  * Defines valid properties in Card component. In addition to these, all properties of HTMLDivElement can be used in this component.
  * @group Properties
  */
-export interface CardProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'title'> {
+export interface CardProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'title'>, ComponentThemeProps {
     /**
      * Header of the card.
      */

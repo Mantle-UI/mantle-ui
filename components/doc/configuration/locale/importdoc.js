@@ -13,7 +13,7 @@ import { locale, addLocale, updateLocaleOption, updateLocaleOptions, localeOptio
         <>
             <DocSectionText {...props}>
                 <p>
-                    Configuration is managed by the <Link href="/configuration/#api.API.LocaleOptions">Locale API</Link> imported from <i>primereact/api</i>.
+                    Configuration is managed by the <Link href="/configuration/#api.API.LocaleOptions">Locale API</Link> imported from <i>@mantle-ui/react/api</i>.
                 </p>
             </DocSectionText>
             <DocSectionCode code={code} hideToggleCode import hideStackBlitz />

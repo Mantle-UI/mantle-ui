@@ -21,6 +21,9 @@ export function AccessibilityDoc() {
                 Close element is a <i>button</i> with an <i>aria-label</i> that refers to the <i>aria.close</i> property of the <Link href="/locale">locale</Link> API by default, you may use
                 <i>closeButtonProps</i> to customize the element and override the default <i>aria-label</i>.
             </p>
+            <p>
+                When <i>minimizable</i> is enabled, its button uses the <i>ariaMinimizeIconLabel</i> and <i>ariaRestoreIconLabel</i> labels. A minimized dialog does not trap focus, block scrolling or behave as a modal dialog until it is restored.
+            </p>
             <CodeHighlight>
                 {`
 <Button label="Show" icon="pi pi-external-link" onClick={() => setVisible(true)} aria-controls={visible ? 'dlg' : null} aria-expanded={visible ? true : false} />

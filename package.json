@@ -1,7 +1,7 @@
 {
     "name": "@mantle-ui/react",
     "private": false,
-    "version": "10.11.0",
+    "version": "10.12.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Mantle-UI/mantle-ui.git"
@@ -62,7 +62,7 @@
         "fs-extra": "^11.4.0",
         "jspdf": "4.2.1",
         "jspdf-autotable": "5.0.8",
-        "next": "^16.3.3",
+        "next": "^16.3.6",
         "path": "^0.12.7",
         "quill": "^2.0.2",
         "react": "19.2.8",
@@ -86,8 +86,8 @@
         "@svgr/webpack": "^8.1.0",
         "@testing-library/dom": "^10.4.1",
         "@testing-library/jest-dom": "^7.0.1",
-        "@testing-library/react": "^16.3.2",
-        "@testing-library/user-event": "^14.5.2",
+        "@testing-library/react": "^16.3.3",
+        "@testing-library/user-event": "^14.6.7",
         "@types/node": "^26.4.0",
         "@types/react": "^19.2.17",
         "@types/react-dom": "^19.2.3",
@@ -106,11 +106,11 @@
         "gulp-uglifycss": "^1.1.0",
         "jest": "^30.5.0",
         "jest-environment-jsdom": "^30.4.1",
-        "postcss": "^8.5.24",
-        "prettier": "3.9.6",
+        "postcss": "^8.5.28",
+        "prettier": "3.9.9",
         "rollup": "^4.63.1",
         "rollup-plugin-postcss": "^4.0.2",
-        "sass": "^1.79.4",
+        "sass": "^1.105.1",
         "terser": "^5.49.0",
         "typedoc": "^0.28.20",
         "typescript": "^6.0.3"
@@ -120,6 +120,7 @@
     },
     "overrides": {
         "postcss": "$postcss",
-        "sharp": "0.35.3"
+        "sharp": "0.35.5",
+        "postcss-selector-parser": "7.1.6"
     }
 }

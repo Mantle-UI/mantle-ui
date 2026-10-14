@@ -14,7 +14,17 @@ const field = () => ({
 });
 
 const panel = () => ({ background: '{overlay.background}', color: '{overlay.color}', borderColor: '{overlay.borderColor}', borderRadius: '{borderRadius.md}', padding: '0.75rem', shadow: '{overlay.root.shadow}' });
-const action = () => ({ color: '{text.mutedColor}', hoverColor: '{text.color}', hoverBackground: '{surface.100}', size: '2rem', borderRadius: '{borderRadius.md}', focusColor: '{focusRing.color}' });
+const action = () => ({
+    color: '{text.mutedColor}',
+    hoverColor: '{text.color}',
+    hoverBackground: '{surface.100}',
+    activeColor: '{text.color}',
+    activeBackground: '{surface.200}',
+    size: '2rem',
+    borderRadius: '{borderRadius.md}',
+    focusColor: '{focusRing.color}',
+    disabledOpacity: '{disabledOpacity}'
+});
 
 export const auraSpecialFormComponents = {
     button: {
@@ -33,7 +43,7 @@ export const auraSpecialFormComponents = {
     iconfield: { root: { iconOffset: '{formField.paddingX}', inputPadding: '2.75rem' } },
     inputicon: { root: { color: '{text.mutedColor}', size: '1rem' } },
     calendar: {
-        input: field(),
+        input: { ...field(), focusShadow: '0 0 0 {focusRing.width} {formField.focusBorderColor}', transitionDuration: '{formField.transitionDuration}' },
         panel: panel(),
         header: { background: '{overlay.background}', color: '{text.color}', borderColor: '{surface.border}', padding: '0.5rem', fontWeight: '600' },
         navigationButton: action(),
@@ -43,7 +53,7 @@ export const auraSpecialFormComponents = {
             hoverBackground: '{surface.100}',
             hoverColor: '{text.color}',
             selectedBackground: '{primary.color}',
-            selectedColor: '{primary.contrastColor}',
+            selectedColor: '{primary.950}',
             todayBackground: '{surface.200}',
             todayColor: '{text.color}',
             otherMonthColor: '{text.mutedColor}',
@@ -52,11 +62,25 @@ export const auraSpecialFormComponents = {
             focusColor: '{focusRing.color}',
             disabledOpacity: '{disabledOpacity}'
         },
-        month: { color: '{text.color}', hoverBackground: '{surface.100}', selectedBackground: '{primary.color}', selectedColor: '{primary.contrastColor}', padding: '0.5rem', borderRadius: '{borderRadius.md}' },
-        year: { color: '{text.color}', hoverBackground: '{surface.100}', selectedBackground: '{primary.color}', selectedColor: '{primary.contrastColor}', padding: '0.5rem', borderRadius: '{borderRadius.md}' },
+        month: { color: '{text.color}', hoverBackground: '{surface.100}', selectedBackground: '{primary.color}', selectedColor: '{primary.950}', padding: '0.5rem', borderRadius: '{borderRadius.md}' },
+        year: { color: '{text.color}', hoverBackground: '{surface.100}', selectedBackground: '{primary.color}', selectedColor: '{primary.950}', padding: '0.5rem', borderRadius: '{borderRadius.md}' },
         timePicker: { color: '{text.color}', borderColor: '{surface.border}', padding: '0.5rem', gap: '0.5rem', fontSize: '1.125rem' },
-        buttonbar: { borderColor: '{surface.border}', padding: '0.75rem 0 0', gap: '0.5rem' },
-        mask: { background: 'rgba(0, 0, 0, 0.4)' }
+        buttonbar: {
+            borderColor: '{surface.border}',
+            padding: '0.75rem 0 0',
+            gap: '0.5rem',
+            button: { background: 'transparent', color: '{text.color}', hoverBackground: '{surface.100}', hoverColor: '{text.color}', activeBackground: '{surface.200}', activeColor: '{text.color}', disabledOpacity: '{disabledOpacity}' }
+        },
+        mask: { background: 'rgba(0, 0, 0, 0.4)' },
+        colorScheme: {
+            dark: {
+                navigationButton: { hoverBackground: '{surface.800}', activeBackground: '{surface.700}' },
+                day: { hoverBackground: '{surface.800}', todayBackground: '{surface.700}' },
+                month: { hoverBackground: '{surface.800}' },
+                year: { hoverBackground: '{surface.800}' },
+                buttonbar: { button: { hoverBackground: '{surface.800}', activeBackground: '{surface.700}' } }
+            }
+        }
     },
     colorpicker: {
         root: { disabledOpacity: '{disabledOpacity}' },
@@ -120,16 +144,31 @@ export const auraSpecialFormCss = ({ prefix = 'mantle' } = {}) => {
     .p-calendar:not(.p-calendar-disabled) > .p-inputtext:hover { border-color: ${variable('calendar-input-hover-border-color')}; }
     .p-calendar > .p-inputtext:focus { border-color: ${variable('calendar-input-focus-border-color')}; }
     .p-calendar.p-invalid.p-invalid > .p-inputtext { border-color: ${variable('calendar-input-invalid-border-color')}; }
+    .p-calendar.p-invalid.p-invalid:not(.p-calendar-w-btn).p-focus > .p-inputtext,
+    .p-calendar.p-invalid.p-invalid:not(.p-calendar-w-btn) > .p-inputtext:focus { box-shadow: 0 0 0 var(--${prefix}-focus-ring-width) ${variable('calendar-input-invalid-border-color')}; outline-color: ${variable('calendar-input-invalid-border-color')}; }
     .p-calendar > .p-inputtext.p-variant-filled { background: ${variable('calendar-input-filled-background')}; }
     .p-calendar.p-calendar-disabled { opacity: ${variable('calendar-input-disabled-opacity')}; }
     .p-calendar.p-calendar-disabled > .p-inputtext, .p-calendar.p-calendar-disabled > .p-button { opacity: 1; }
     .p-calendar .p-datepicker-trigger { background: ${variable('calendar-dropdown-background')}; border-color: ${variable('calendar-dropdown-background')}; color: ${variable('calendar-dropdown-color')}; width: ${variable('calendar-dropdown-width')}; }
     .p-calendar .p-datepicker-trigger:not(:disabled):hover { background: ${variable('calendar-dropdown-hover-background')}; border-color: ${variable('calendar-dropdown-hover-background')}; }
+    .p-calendar.p-calendar-w-btn { border: 1px solid ${variable('calendar-input-border-color')}; border-radius: ${variable('calendar-input-border-radius')}; transition: border-color ${variable('calendar-input-transition-duration')}, box-shadow ${variable('calendar-input-transition-duration')}; }
+    .p-calendar.p-calendar-w-btn:not(.p-calendar-disabled):not(.p-invalid):hover { border-color: ${variable('calendar-input-hover-border-color')}; }
+    .p-calendar.p-calendar-w-btn:not(.p-calendar-disabled):not(.p-invalid):is(:focus-within, .p-focus) { border-color: ${variable('calendar-input-focus-border-color')}; box-shadow: ${variable('calendar-input-focus-shadow')}; }
+    .p-calendar.p-calendar-w-btn.p-invalid { border-color: ${variable('calendar-input-invalid-border-color')}; }
+    .p-calendar.p-calendar-w-btn.p-invalid:is(:focus-within, .p-focus) { box-shadow: 0 0 0 var(--${prefix}-focus-ring-width) ${variable('calendar-input-invalid-border-color')}; }
+    .p-calendar.p-calendar-w-btn > .p-inputtext, .p-calendar.p-calendar-w-btn > .p-inputtext:enabled:focus { border: 0; box-shadow: none; border-radius: max(0px, calc(${variable('calendar-input-border-radius')} - 1px)); }
+    .p-calendar.p-calendar-w-btn > .p-datepicker-trigger.p-button, .p-calendar.p-calendar-w-btn > .p-datepicker-trigger.p-button:focus-visible { border: 0; box-shadow: none; outline: 0; border-radius: max(0px, calc(${variable('calendar-input-border-radius')} - 1px)); }
+    .p-calendar.p-calendar-w-btn-right > .p-inputtext { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    .p-calendar.p-calendar-w-btn-right > .p-datepicker-trigger.p-button { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .p-calendar.p-calendar-w-btn-left > .p-inputtext { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .p-calendar.p-calendar-w-btn-left > .p-datepicker-trigger.p-button { border-top-right-radius: 0; border-bottom-right-radius: 0; }
     .p-datepicker { background: ${variable('calendar-panel-background')}; color: ${variable('calendar-panel-color')}; border: 1px solid ${variable('calendar-panel-border-color')}; border-radius: ${variable('calendar-panel-border-radius')}; padding: ${variable('calendar-panel-padding')}; box-shadow: ${variable('calendar-panel-shadow')}; }
     .p-datepicker .p-datepicker-header { background: ${variable('calendar-header-background')}; color: ${variable('calendar-header-color')}; border-bottom: 1px solid ${variable('calendar-header-border-color')}; padding: ${variable('calendar-header-padding')}; font-weight: ${variable('calendar-header-font-weight')}; }
     .p-datepicker .p-datepicker-title > button { color: ${variable('calendar-header-color')}; font-weight: ${variable('calendar-header-font-weight')}; }
     .p-datepicker .p-datepicker-prev, .p-datepicker .p-datepicker-next, .p-datepicker .p-timepicker button { color: ${variable('calendar-navigation-button-color')}; background: transparent; border: 0; width: ${variable('calendar-navigation-button-size')}; height: ${variable('calendar-navigation-button-size')}; border-radius: ${variable('calendar-navigation-button-border-radius')}; }
     .p-datepicker .p-datepicker-prev:not(:disabled):hover, .p-datepicker .p-datepicker-next:not(:disabled):hover, .p-datepicker .p-timepicker button:not(:disabled):hover { color: ${variable('calendar-navigation-button-hover-color')}; background: ${variable('calendar-navigation-button-hover-background')}; }
+    .p-datepicker .p-datepicker-prev:not(:disabled):active, .p-datepicker .p-datepicker-next:not(:disabled):active, .p-datepicker .p-timepicker button:not(:disabled):active { color: ${variable('calendar-navigation-button-active-color')}; background: ${variable('calendar-navigation-button-active-background')}; }
+    .p-datepicker .p-datepicker-prev:disabled, .p-datepicker .p-datepicker-next:disabled, .p-datepicker .p-timepicker button:disabled { opacity: ${variable('calendar-navigation-button-disabled-opacity')}; }
     .p-datepicker button:focus-visible { outline: 1px solid ${variable('calendar-navigation-button-focus-color')}; outline-offset: 2px; }
     .p-datepicker table td > span { color: ${variable('calendar-day-color')}; width: ${variable('calendar-day-size')}; height: ${variable('calendar-day-size')}; border-radius: ${variable('calendar-day-border-radius')}; }
     .p-datepicker table td > span:not(.p-disabled):not(.p-highlight):hover { background: ${variable('calendar-day-hover-background')}; color: ${variable('calendar-day-hover-color')}; }
@@ -140,6 +179,10 @@ export const auraSpecialFormCss = ({ prefix = 'mantle' } = {}) => {
     .p-datepicker table td > span:focus-visible { outline: 1px solid ${variable('calendar-day-focus-color')}; outline-offset: 2px; }
     .p-datepicker .p-timepicker { color: ${variable('calendar-time-picker-color')}; padding: ${variable('calendar-time-picker-padding')}; gap: ${variable('calendar-time-picker-gap')}; border-top: 1px solid ${variable('calendar-time-picker-border-color')}; font-size: ${variable('calendar-time-picker-font-size')}; }
     .p-datepicker .p-datepicker-buttonbar { border-top: 1px solid ${variable('calendar-buttonbar-border-color')}; padding: ${variable('calendar-buttonbar-padding')}; gap: ${variable('calendar-buttonbar-gap')}; }
+    .p-datepicker .p-datepicker-buttonbar > .p-button.p-button.p-button.p-button-text { background: ${variable('calendar-buttonbar-button-background')}; color: ${variable('calendar-buttonbar-button-color')}; border-color: transparent; opacity: 1; }
+    .p-datepicker .p-datepicker-buttonbar > .p-button.p-button.p-button.p-button-text:not(:disabled):not(.p-disabled):hover { background: ${variable('calendar-buttonbar-button-hover-background')}; color: ${variable('calendar-buttonbar-button-hover-color')}; }
+    .p-datepicker .p-datepicker-buttonbar > .p-button.p-button.p-button.p-button-text:not(:disabled):not(.p-disabled):active { background: ${variable('calendar-buttonbar-button-active-background')}; color: ${variable('calendar-buttonbar-button-active-color')}; }
+    .p-datepicker .p-datepicker-buttonbar > .p-button.p-button.p-button.p-button-text:disabled, .p-datepicker .p-datepicker-buttonbar > .p-button.p-button.p-button.p-button-text.p-disabled { opacity: ${variable('calendar-buttonbar-button-disabled-opacity')}; }
     .p-datepicker-mask { background: ${variable('calendar-mask-background')}; }`;
     const periods = ['month', 'year']
         .map((period) => {
@@ -171,7 +214,8 @@ export const auraSpecialFormCss = ({ prefix = 'mantle' } = {}) => {
     .p-fileupload .p-button:focus-visible, .p-fileupload .p-button.p-focus { outline: 1px solid ${variable('fileupload-button-focus-color')}; outline-offset: 2px; }`;
     const editor = `[data-pc-name="editor"] { border: 1px solid ${variable('editor-root-border-color')}; border-radius: ${variable('editor-root-border-radius')}; overflow: hidden; }
     [data-pc-name="editor"]:focus-within { border-color: ${variable('editor-root-focus-border-color')}; }
-    [data-pc-name="editor"].p-invalid { border-color: ${variable('editor-root-invalid-border-color')}; }
+    [data-pc-name="editor"].p-invalid.p-invalid { border-color: ${variable('editor-root-invalid-border-color')}; }
+    [data-pc-name="editor"].p-invalid:focus-within { outline: var(--${prefix}-focus-ring-width) solid ${variable('editor-root-invalid-border-color')}; outline-offset: var(--${prefix}-focus-ring-offset); }
     [data-pc-name="editor"]:has(.ql-disabled) { opacity: ${variable('editor-root-disabled-opacity')}; }
     [data-pc-name="editor"] .ql-toolbar { background: ${variable('editor-toolbar-background')}; border: 0; border-bottom: 1px solid ${variable('editor-toolbar-border-color')}; padding: ${variable('editor-toolbar-padding')}; }
     [data-pc-name="editor"] .ql-container { background: ${variable('editor-content-background')}; color: ${variable('editor-content-color')}; border: 0; font-family: ${variable('editor-content-font-family')}; font-size: ${variable('editor-content-font-size')}; }

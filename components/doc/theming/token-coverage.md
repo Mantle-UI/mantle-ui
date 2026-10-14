@@ -1,6 +1,6 @@
 # Aura token coverage and verification
 
-Verified 2026-10-13 on `aura-token-foundation`. Aura exposes 94 component/shared groups and 3,506 resolved tokens in each color scheme. The styled suite now consumes primitive, semantic and component tokens through the Aura CSS bridge. This records implementation coverage and concrete regression checks; it does not imply exhaustive testing of every combination of component props, templates and interaction states.
+Verified 2026-10-14 on `aura-token-foundation`. Aura exposes 94 component/shared groups, with 3,526 resolved light tokens and 3,530 resolved dark tokens. The styled suite consumes primitive, semantic and component tokens through the Aura CSS bridge. The actual documentation audit remains open; the checkpoints below cover the reported AutoComplete, Calendar, CascadeSelect, Checkbox and shared invalid-focus cases. This records implementation coverage and concrete regression checks; it does not imply exhaustive testing of every combination of component props, templates and interaction states.
 
 ## Component mapping
 
@@ -49,7 +49,7 @@ The dedicated audit fixture reproduces default and direct-template menu painting
 
 ProgressSpinner keeps its dash/rotation animation while using token color, and explicit passthrough stroke remains effective. Menubar responsive layout remains structural CSS. Disabled MobileNav/Inplace controls and SlideMenu back keyboard access now match their visual state. ScrollTop's public element ref and SpeedDial's sibling mask are covered.
 
-## Final checks
+## Earlier foundation checks
 
 | Command/check                                                   | Result                                                                                                                      |
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -82,7 +82,7 @@ The final package uses a CommonJS `main`, an ESM `module`, and generated root de
 
 Jest is jsdom/node coverage; CSS painting is established by the separate installed-Chrome checks. Firefox, WebKit and cross-document portal destinations have not been verified. The regressions exercise representative real component states and audit failures rather than every user template or animation. User-owned markup, inline data/value colors, passthrough styling and explicit Chart.js options can intentionally override theme defaults. Modern `color-mix` requires browser support; canvas fallback behavior is conservative when color normalization is unavailable. The generated static themes retain legacy compatibility CSS before the token bridge. Imperative document theming and provider theming remain separate APIs.
 
-Local evidence is saved under `C:\Develop\codex\2026-10-12\task-2`: final Jest/lint/type logs, per-suite browser JSON, production build log, packed consumer source/reports, package inspection and the local tarball. All pre-existing feature edits were preserved. No branch switch, reset, commit, push, PR or publication was performed.
+Local evidence is saved under `C:\Develop\codex\2026-10-12\task-2`: Jest/lint/type logs, per-suite browser JSON, production build log, packed consumer source/reports, package inspection and the local tarball. All pre-existing feature edits were preserved. At the user's request, local WIP commit `7d6f7d5ec0f10c372b69af31b0374f4939e224ed` saved the foundation and draft documentation audit. The later AutoComplete/Calendar corrections remain uncommitted. No branch switch, reset, push, PR or publication was performed. The package checks above predate those corrections and do not establish that the current package has been rebuilt.
 
 ## Independent review corrections
 
@@ -107,3 +107,50 @@ The new browser fixture checks 29 actual overlay/mask/imperative cases in both p
 All imperative selectors now receive component boundaries, rather than enabling resets only for `:root`. The rules stay within the selected region and exclude provider subtrees. Each styled root resets its own component group, while composite parent groups remain available to children. Class, ID, attribute, complex descendant/child, comma-list, `:is`, `:where` and component-root selectors are covered with custom prefixes, replacement/removal, local dark descendants, same/different component nesting, independent local instances, composite spacing and outside-region isolation.
 
 The audit also normalized region grouping in consuming CSS and included dark-class descendants inside a custom region. Source and fresh packed ESM selector fixtures each pass 380 Chrome assertions; the existing scope matrix still passes 804 each. Five jsdom tests inspect the generated boundary declarations and cleanup; jsdom cannot evaluate these nested CSS4 selectors, so painting and matching are established by Chrome. Full Jest passes 39 suites/370 tests/145 snapshots. The production pipeline, strict 188-entrypoint packed type consumer and packed runtime checks pass. Latest evidence uses `audit3-*` and `packed-consumer-audit3` in the existing evidence directory.
+
+## Actual docs checkpoint: AutoComplete and Calendar
+
+The five user screenshots were materialized through Library and inspected. The documentation uses static Aura CSS with a provider that has no token preset, so the new audit runs the actual Next app at `/autocomplete/` and `/calendar/`. It selects Aura through the real configurator and switches light/dark through the topbar. The computer-use bridge exposed no usable browser surface; the checks use an isolated installed Chrome profile through CDP, without controlling the user's existing browser.
+
+Icon-only Button labels previously remained invisible flex items, allowing the button gap to offset icons. They now leave flex layout. AutoComplete dropdown controls use one outer border and focus ring, including trigger keyboard focus; single and multiple fields keep their own token overrides. Invalid borders, disabled opacity, component refs and inner corner geometry remain covered. Calendar trigger controls retain square joined corners for both icon positions.
+
+Calendar's dark hover/today/navigation/time backgrounds previously resolved to pale numeric surface colors, while the text stayed white. Component dark overrides now use dark surfaces. Selected day/month/year text uses the primary 950 token, and the complete primary scale includes 800/900/950. Calendar Today/Clear buttons were enabled but inherited low-contrast secondary text colors; dedicated Calendar buttonbar tokens now keep enabled, hover and active states readable.
+
+Current source checks:
+
+| Command/check                                                                          | Result                                                                                                                                   |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run build:check`                                                                  | Repository lint, formatting and strict token types passed                                                                                |
+| Focused Jest: Theme, SkinTheme, Calendar and Button                                    | 4 suites, 35 tests, 14 snapshots passed; jsdom/token-resolution coverage                                                                 |
+| `node scripts/test-docs-controls.mjs` with the running Next docs                       | 122 real Chrome geometry, contrast and interaction assertions in light and dark                                                          |
+| `node scripts/test-portal-theming.mjs docs-controls.jsx`                               | 75 real Chrome assertions for custom prefix/local tokens, single/multiple, invalid/disabled, refs, joined corners and StrictMode cleanup |
+| Same compound fixture with `MANTLE_TEST_STATIC_THEME=light`, `MANTLE_TEST_GROUP=light` | 38 assertions with static CSS and no provider preset                                                                                     |
+| Same compound fixture with `MANTLE_TEST_STATIC_THEME=dark`, `MANTLE_TEST_GROUP=dark`   | 38 assertions with static CSS and no provider preset                                                                                     |
+| Explicit ESLint/Prettier for the two new/updated browser scripts                       | Passed                                                                                                                                   |
+
+The live-docs checks cover body-portaled suggestion selection, complete focus borders, default/custom trigger icon centers and heights, normal hover/today/selected/focused dates, selected ranges, min/max disabled dates, buttonbar actions, navigation hover/press/focus, and time hover/press/focus/increment/decrement. Assertions use computed styles and real mouse/keyboard input where the behavior needs it; screenshots wait for popup entry transitions to finish. Text states are checked against a 4.5:1 contrast floor and control icons against 3:1.
+
+Evidence for that first checkpoint is in `docs-batch-live.json` and its PNGs, `docs-batch-compound*.json`, `docs-batch-focused-jest.txt` and `docs-batch-build-check.txt` under the evidence directory. That run logged a Calendar list-key warning, fixed in the next checkpoint. The docs also load the landing-table Lara stylesheet globally, and the topbar dark-toggle icon has separate state wiring to investigate. These are recorded follow-ups, not claims that the entire documentation or component library is finished. No fresh production package build was performed for these source checkpoints.
+
+## Actual docs checkpoint: compound focus, menus and invalid states
+
+The October 14 follow-up preserves the restored AutoComplete and Calendar corrections. Calendar with `showIcon` now uses its existing outer span for one token border and focus ring across input and trigger, including the open-popup focus state. Stable keys on header, navigation, time and other factory slots remove the reproduced missing-key warning without adding DOM wrappers. The key regression renders and navigates eight built-in view configurations.
+
+CascadeSelect uses matching Aura surfaces on its root and nested menus. Legacy list and item paint is cleared so the content owns selection and hover states. Option vertical padding aliases the component label padding, giving root, state and city rows approximately the field height. A custom-prefix browser fixture checks small, default, large and replacement custom padding in both schemes. This uses component tokens; CascadeSelect does not expose a `size` prop.
+
+Checkbox retains its error fill, border, white checkmark and focus outline while checked, unchecked or hovered. Its invalid documentation example stays invalid while toggling. Shared form and selection rules resolve focused borders and rings from each control's error token. Keyboard focus remains visible, valid controls retain their primary indication, and local error colors win over explicitly primary-colored focus overrides. InputNumber and Chips use their public root error token for their internal input/container.
+
+The refreshed `node scripts/test-docs-controls.mjs` run passes 189 Chrome assertions across seven actual documentation pages in light and dark. It includes all three CascadeSelect row heights, compound Calendar focus, persistent Checkbox error states and native/selector error focus. No Calendar missing-key warning is logged. Popup geometry is measured after entry transitions, and fresh navigation waits for the app to restore its saved Aura theme before using the real topbar toggle.
+
+| Focused check                                                         | Result                                                                                                                       |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Theme, SkinTheme, PortalTheme, Calendar and CalendarKeys Jest suites  | 5 suites, 28 tests passed; jsdom coverage                                                                                    |
+| `node scripts/test-portal-theming.mjs docs-controls.jsx`              | 113 Chrome assertions for local tokens, custom prefix, refs, joined geometry, invalid/disabled states and StrictMode cleanup |
+| Compound fixture with static light/dark CSS                           | 57 assertions per scheme                                                                                                     |
+| `node scripts/test-portal-theming.mjs invalid-focus.jsx`              | 241 Chrome assertions across 20 invalid/valid control pairs in light and dark with a custom prefix and local error tokens    |
+| Invalid-focus fixture with static light/dark CSS                      | 121 assertions per scheme                                                                                                    |
+| `node scripts/test-portal-theming.mjs cascade-sizing.jsx`             | 73 Chrome assertions across four token sizes and all three menu levels in both schemes                                       |
+| Sizing fixture with static light/dark CSS                             | 10 assertions per scheme                                                                                                     |
+| `npm run build:check` and explicit browser-fixture lint/format checks | Passed, including strict root/subpath types for all 94 styled components                                                     |
+
+Evidence is in `docs-batch2-20261014` under the existing local evidence directory. Computed CSS painting and geometry are established by installed Chrome, separately from jsdom tests. The browser fixtures use real component markup and focus plus native pseudo-state forcing, without fabricated component state classes. Owned stylesheet cleanup is checked after StrictMode unmount. Firefox, WebKit and a fresh production package remain unverified for this batch. The installed dependency versions were not refreshed after merging main. The generated root declaration additionally synchronizes the existing `DialogMinimizeEvent` export from main. No commit, push or publication was performed for this batch.

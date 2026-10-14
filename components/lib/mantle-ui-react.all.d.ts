@@ -258,7 +258,18 @@ export type {
 export { DeferredContent } from './deferredcontent/deferredcontent';
 export type { DeferredContentPassThroughType, DeferredContentPassThroughMethodOptions, DeferredContentPassThroughOptions, DeferredContentState, DeferredContentProps } from './deferredcontent/deferredcontent';
 export { Dialog } from './dialog/dialog';
-export type { DialogPassThroughType, DialogPassThroughTransitionType, DialogPassThroughMethodOptions, DialogPassThroughOptions, DialogState, DialogBreakpoints, DialogMaximizeEvent, ContentPropsMessage, DialogProps } from './dialog/dialog';
+export type {
+    DialogPassThroughType,
+    DialogPassThroughTransitionType,
+    DialogPassThroughMethodOptions,
+    DialogPassThroughOptions,
+    DialogState,
+    DialogBreakpoints,
+    DialogMaximizeEvent,
+    DialogMinimizeEvent,
+    ContentPropsMessage,
+    DialogProps
+} from './dialog/dialog';
 export { Divider } from './divider/divider';
 export type { DividerPassThroughType, DividerPassThroughMethodOptions, DividerPassThroughOptions, DividerProps } from './divider/divider';
 export { Dock } from './dock/dock';

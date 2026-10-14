@@ -118,7 +118,10 @@ const basePreset = {
             400: '{emerald.400}',
             500: '{emerald.500}',
             600: '{emerald.600}',
-            700: '{emerald.700}'
+            700: '{emerald.700}',
+            800: '{emerald.800}',
+            900: '{emerald.900}',
+            950: '{emerald.950}'
         },
         formField: {
             paddingX: '0.75rem',
@@ -766,8 +769,9 @@ ${selector} {
     background: var(--${prefix}-dropdown-root-filled-background);
 }
 
-.p-dropdown.p-invalid {
+.p-dropdown.p-invalid.p-invalid.p-invalid {
     border-color: var(--${prefix}-dropdown-root-invalid-border-color);
+    --${prefix}-dropdown-root-focus-border-color: var(--${prefix}-dropdown-root-invalid-border-color);
 }
 
 .p-dropdown.p-disabled {

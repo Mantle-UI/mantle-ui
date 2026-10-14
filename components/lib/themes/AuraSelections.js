@@ -100,7 +100,7 @@ export const auraSelectionComponents = {
         checkbox: checkbox(),
         emptyMessage: emptyMessage()
     },
-    cascadeselect: { ...select('cascadeselect'), option: option(), groupIcon: { color: '{text.mutedColor}', selectedColor: '{primary.color}', size: '1rem' } },
+    cascadeselect: { ...select('cascadeselect'), option: { ...option(), paddingY: '{cascadeselect.label.paddingY}' }, groupIcon: { color: '{text.mutedColor}', selectedColor: '{primary.color}', size: '1rem' } },
     slider: {
         root: { background: '{surface.200}', hoverBackground: '{surface.300}', borderRadius: '{borderRadius.md}', size: '0.25rem', disabledOpacity: '{disabledOpacity}', transitionDuration: '{transitionDuration}' },
         range: { background: '{primary.color}', hoverBackground: '{primary.hoverColor}' },
@@ -141,7 +141,19 @@ export const auraSelectionComponents = {
         }
     },
     multistatecheckbox: { root: checkbox(), icon: { size: '0.875rem' } },
-    checkbox: { root: { filledBackground: '{formField.filledBackground}', disabledOpacity: '{disabledOpacity}', focusRing: focusRing() }, icon: { size: '0.875rem' } },
+    checkbox: {
+        root: {
+            filledBackground: '{formField.filledBackground}',
+            disabledOpacity: '{disabledOpacity}',
+            focusRing: focusRing(),
+            invalidCheckedBackground: '{checkbox.root.invalidBorderColor}',
+            invalidCheckedColor: '{surface.0}',
+            invalidCheckedHoverBackground: '{red.600}',
+            invalidHoverBorderColor: '{red.600}',
+            invalidFocusColor: '{checkbox.root.invalidBorderColor}'
+        },
+        icon: { size: '0.875rem' }
+    },
     radiobutton: { root: { filledBackground: '{formField.filledBackground}', disabledOpacity: '{disabledOpacity}', focusRing: focusRing() }, icon: { size: '0.625rem', color: '{radiobutton.root.checkedColor}' } },
     inputswitch: { root: { disabledOpacity: '{disabledOpacity}', focusRing: focusRing() }, handle: { size: '1.25rem', offset: '0.25rem', borderRadius: '50%' } },
     selectButton: {
@@ -164,6 +176,7 @@ export const auraSelectionCss = ({ prefix = 'mantle' } = {}) => {
             .replaceAll('.', '-')
             .toLowerCase()})`;
     const rule = (selectors, declarations) => `${Array.isArray(selectors) ? selectors.join(',\n') : selectors} {\n${declarations}\n}\n`;
+    const property = (path) => variable(path).slice(4, -1);
     const ring = (path) => `outline: ${variable(`${path}.width`)} ${variable(`${path}.style`)} ${variable(`${path}.color`)}; outline-offset: ${variable(`${path}.offset`)}; box-shadow: none;`;
 
     const fieldCss = ({ name, selector, part = 'root', focus = ':focus-visible' }) => {
@@ -177,14 +190,17 @@ export const auraSelectionCss = ({ prefix = 'mantle' } = {}) => {
             rule(`${selector}:not(.p-disabled):not(:disabled):hover`, `border-color: ${variable(`${path}.hoverBorderColor`)};`),
             rule(`${selector}.p-variant-filled`, `background: ${variable(`${path}.filledBackground`)};`),
             rule(`${selector}:not(.p-disabled):not(:disabled)${focus}`, `border-color: ${variable(`${path}.focusBorderColor`)}; ${ring(`${path}.focusRing`)}`),
-            rule(`${selector}.p-invalid.p-invalid.p-invalid`, `border-color: ${variable(`${path}.invalidBorderColor`)};`),
+            rule(
+                `${selector}.p-invalid.p-invalid.p-invalid`,
+                `border-color: ${variable(`${path}.invalidBorderColor`)}; --${prefix}-${name}-${part}-focus-border-color: ${variable(`${path}.invalidBorderColor`)}; --${prefix}-${name}-${part}-focus-ring-color: ${variable(`${path}.invalidBorderColor`)};`
+            ),
             rule([`${selector}.p-disabled`, `${selector}:disabled`], `opacity: ${variable(`${path}.disabledOpacity`)};`)
         ].join('\n');
     };
 
     const panelCss = (name) =>
         rule(
-            `${name === 'cascadeselect' ? 'div' : ''}.p-${name}-panel`,
+            name === 'cascadeselect' ? ['div.p-cascadeselect-panel', 'ul.p-cascadeselect-panel.p-cascadeselect-sublist'] : `.p-${name}-panel`,
             `background: ${variable(`${name}.panel.background`)}; border: 1px solid ${variable(`${name}.panel.borderColor`)}; border-radius: ${variable(`${name}.panel.borderRadius`)}; color: ${variable(`${name}.panel.color`)}; box-shadow: ${variable(`${name}.panel.shadow`)}; padding: ${variable(`${name}.panel.padding`)};`
         );
     const selectCss = (name) =>
@@ -291,7 +307,7 @@ export const auraSelectionCss = ({ prefix = 'mantle' } = {}) => {
             rule(`${checkedRoot} ${box}`, `background: ${variable(`${path}.checkedBackground`)}; border-color: ${variable(`${path}.checkedBorderColor`)}; color: ${variable(`${path}.checkedColor`)};`),
             rule(`${checkedRoot}:not(.p-disabled):hover ${box}`, `background: ${variable(`${path}.checkedHoverBackground`)}; border-color: ${variable(`${path}.checkedHoverBorderColor`)};`),
             rule(focusSelectors, `border-color: ${variable(`${path}.focusBorderColor`)}; ${ring(`${path}.focusRing`)}`),
-            rule(`${invalidRoot}.p-invalid.p-invalid ${box}`, `border-color: ${variable(`${path}.invalidBorderColor`)};`),
+            rule(`${invalidRoot}.p-invalid.p-invalid ${box}`, `border-color: ${variable(`${path}.invalidBorderColor`)}; --${prefix}-${name}-${part}-focus-ring-color: ${variable(`${path}.invalidBorderColor`)};`),
             rule(disabledRoot, `opacity: ${variable(`${path}.disabledOpacity`)};`)
         ].join('\n');
     };
@@ -308,7 +324,7 @@ export const auraSelectionCss = ({ prefix = 'mantle' } = {}) => {
             rule(checkedButton, `background: ${variable(`${path}.selectedBackground`)}; border-color: ${variable(`${path}.selectedBorderColor`)}; color: ${variable(`${path}.selectedColor`)};`),
             rule(`${checkedHoverButton}:hover`, `background: ${variable(`${path}.selectedHoverBackground`)}; border-color: ${variable(`${path}.selectedHoverBorderColor`)};`),
             rule(focusSelector, `border-color: ${variable(`${path}.focusBorderColor`)}; ${ring(`${path}.focusRing`)}`),
-            rule(invalidButton, `border-color: ${variable(`${path}.invalidBorderColor`)};`),
+            rule(invalidButton, `border-color: ${variable(`${path}.invalidBorderColor`)}; ${property(`${path}.focusRing.color`)}: ${variable(`${path}.invalidBorderColor`)};`),
             rule(disabledButton, `opacity: ${variable(`${path}.disabledOpacity`)};`),
             rule(`${button} .p-button-label`, `color: ${variable(`${name}.label.color`)}; font-weight: ${variable(`${name}.label.fontWeight`)};`),
             rule(`${checkedButton} .p-button-label`, `color: ${variable(`${name}.label.selectedColor`)};`),
@@ -362,9 +378,12 @@ export const auraSelectionCss = ({ prefix = 'mantle' } = {}) => {
         optionsCss({
             name: 'cascadeselect',
             selector: '.p-cascadeselect-panel .p-cascadeselect-item > .p-cascadeselect-item-content',
+            enabledSelector: '.p-cascadeselect-panel .p-cascadeselect-item:not(.p-highlight):not(.p-disabled) > .p-cascadeselect-item-content',
             focusSelectors: ['.p-cascadeselect-panel .p-cascadeselect-item:not(.p-highlight) > .p-cascadeselect-item-content:focus-visible'],
             selectedFocusSelectors: ['.p-cascadeselect-panel .p-cascadeselect-item.p-highlight > .p-cascadeselect-item-content:focus-visible']
         }),
+        rule('.p-cascadeselect-panel .p-cascadeselect-items:not(.p-cascadeselect-sublist)', 'background: transparent; color: inherit; border: 0; border-radius: 0; box-shadow: none; padding: 0;'),
+        rule('.p-cascadeselect-panel .p-cascadeselect-item.p-cascadeselect-item', 'background: transparent; color: inherit; border: 0; border-radius: 0;'),
         // CascadeSelect puts its highlight class on the list item, while focus
         // and its padded hit target belong to the immediate content child.
         rule('.p-cascadeselect-panel .p-cascadeselect-item.p-highlight > .p-cascadeselect-item-content', `background: ${variable('cascadeselect.option.selectedBackground')}; color: ${variable('cascadeselect.option.selectedColor')};`),
@@ -440,14 +459,25 @@ export const auraSelectionCss = ({ prefix = 'mantle' } = {}) => {
             rule(`.p-${name}.p-variant-filled:not(.p-highlight) > .p-${name}-box`, `background: ${variable(`${name}.root.filledBackground`)};`),
             rule(`.p-${name}.p-disabled`, `opacity: ${variable(`${name}.root.disabledOpacity`)};`),
             rule(`.p-${name}:not(.p-disabled):has(> .p-${name}-input:focus-visible) > .p-${name}-box`, ring(`${name}.root.focusRing`)),
-            rule(`.p-${name}.p-invalid.p-invalid.p-invalid > .p-${name}-box`, `border-color: ${variable(`${name}.root.invalidBorderColor`)};`),
+            rule(`.p-${name}.p-invalid.p-invalid.p-invalid > .p-${name}-box`, `border-color: ${variable(`${name}.root.invalidBorderColor`)}; ${property(`${name}.root.focusRing.color`)}: ${variable(`${name}.root.invalidBorderColor`)};`),
             rule(`.p-${name} .p-${name}-icon`, `width: ${variable(`${name}.icon.size`)}; height: ${variable(`${name}.icon.size`)}; font-size: ${variable(`${name}.icon.size`)};`)
         ]),
+        rule('.p-checkbox.p-invalid.p-invalid.p-highlight > .p-checkbox-box', `background: ${variable('checkbox.root.invalidCheckedBackground')}; color: ${variable('checkbox.root.invalidCheckedColor')};`),
+        rule('.p-checkbox.p-invalid.p-invalid.p-highlight > .p-checkbox-box .p-checkbox-icon', `color: ${variable('checkbox.root.invalidCheckedColor')};`),
+        rule('.p-checkbox.p-invalid.p-invalid:not(.p-disabled):has(> .p-checkbox-input:hover) > .p-checkbox-box', `border-color: ${variable('checkbox.root.invalidHoverBorderColor')};`),
+        rule('.p-checkbox.p-invalid.p-invalid.p-highlight:not(.p-disabled):has(> .p-checkbox-input:hover) > .p-checkbox-box', `background: ${variable('checkbox.root.invalidCheckedHoverBackground')};`),
+        rule(
+            '.p-checkbox.p-invalid.p-invalid:not(.p-disabled):has(> .p-checkbox-input:focus-visible) > .p-checkbox-box',
+            `border-color: ${variable('checkbox.root.invalidFocusColor')}; outline-color: ${variable('checkbox.root.invalidFocusColor')}; box-shadow: none;`
+        ),
         rule('.p-radiobutton .p-radiobutton-icon', `background: ${variable('radiobutton.icon.color')}; border-radius: 50%;`),
         rule('.p-inputswitch.p-disabled', `opacity: ${variable('inputswitch.root.disabledOpacity')};`),
         rule('.p-inputswitch .p-inputswitch-slider', 'border: 1px solid transparent;'),
         rule('.p-inputswitch:not(.p-disabled):has(> .p-inputswitch-input:focus-visible) > .p-inputswitch-slider', ring('inputswitch.root.focusRing')),
-        rule('.p-inputswitch.p-invalid.p-invalid.p-invalid .p-inputswitch-slider', `border-color: ${variable('inputswitch.root.invalidBorderColor')};`),
+        rule(
+            '.p-inputswitch.p-invalid.p-invalid.p-invalid .p-inputswitch-slider',
+            `border-color: ${variable('inputswitch.root.invalidBorderColor')}; ${property('inputswitch.root.focusRing.color')}: ${variable('inputswitch.root.invalidBorderColor')}; ${property('inputswitch.root.focusBorderColor')}: ${variable('inputswitch.root.invalidBorderColor')};`
+        ),
         rule(
             '.p-inputswitch .p-inputswitch-slider:before',
             `width: ${variable('inputswitch.handle.size')}; height: ${variable('inputswitch.handle.size')}; left: ${variable('inputswitch.handle.offset')}; margin-top: calc(${variable('inputswitch.handle.size')} / -2); border-radius: ${variable('inputswitch.handle.borderRadius')};`

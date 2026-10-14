@@ -8,7 +8,7 @@ export function InvalidDoc(props) {
 
     const code = {
         basic: `
-<Checkbox invalid={!checked} onChange={(e) => setChecked(e.checked)} checked={checked}></Checkbox>
+<Checkbox invalid onChange={(e) => setChecked(e.checked)} checked={checked}></Checkbox>
         `,
         javascript: `
 import React, { useState } from "react";
@@ -19,7 +19,7 @@ export default function InvalidDemo() {
 
     return (
         <div className="card flex justify-content-center">
-            <Checkbox invalid={!checked} onChange={(e) => setChecked(e.checked)} checked={checked}></Checkbox>
+            <Checkbox invalid onChange={(e) => setChecked(e.checked)} checked={checked}></Checkbox>
         </div>
     )
 }
@@ -33,7 +33,7 @@ export default function InvalidDemo() {
 
     return (
         <div className="card flex justify-content-center">
-            <Checkbox invalid={!checked} onChange={(e) => setChecked(e.checked)} checked={checked}></Checkbox>
+            <Checkbox invalid onChange={(e) => setChecked(e.checked)} checked={checked}></Checkbox>
         </div>
     )
 }
@@ -48,7 +48,7 @@ export default function InvalidDemo() {
                 </p>
             </DocSectionText>
             <div className="card flex justify-content-center">
-                <Checkbox invalid={!checked} onChange={(e) => setChecked(e.checked)} checked={checked} />
+                <Checkbox invalid onChange={(e) => setChecked(e.checked)} checked={checked} />
             </div>
             <DocSectionCode code={code} />
         </>

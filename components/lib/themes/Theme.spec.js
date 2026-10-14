@@ -27,6 +27,23 @@ describe('Aura token foundation', () => {
         expect(createThemeCss(Aura, { selector: '.aura' })).toContain('--mantle-primary-color: #10b981;');
     });
 
+    it('resolves Calendar state colors and updates selected text from the primary palette', () => {
+        const light = resolvePreset(Aura);
+        const dark = resolvePreset(Aura, 'dark');
+        const custom = resolvePreset(definePreset(Aura, { semantic: { primary: { 950: '#112233' } } }));
+
+        expect(light['calendar.day.hoverBackground']).toBe('#f1f5f9');
+        expect(dark['calendar.day.hoverBackground']).toBe('#27272a');
+        expect(dark['calendar.day.todayBackground']).toBe('#3f3f46');
+        expect(dark['calendar.navigationButton.activeBackground']).toBe('#3f3f46');
+        expect(dark['calendar.buttonbar.button.color']).toBe('#ffffff');
+        ['day', 'month', 'year'].forEach((period) => {
+            expect(light[`calendar.${period}.selectedColor`]).toBe('#022c22');
+            expect(dark[`calendar.${period}.selectedColor`]).toBe('#022c22');
+            expect(custom[`calendar.${period}.selectedColor`]).toBe('#112233');
+        });
+    });
+
     it('does not mutate the base preset when applying overrides', () => {
         const preset = definePreset(Aura, { semantic: { primary: { 500: '#000000' } } });
 

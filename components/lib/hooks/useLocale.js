@@ -1,7 +1,7 @@
 /* eslint-disable */
 import * as React from 'react';
-import { MantleContext } from '../../lib/api/Api';
-import MantleUI from '../api/Api';
+import { MantleContext } from '../../lib/api/api';
+import MantleUI from '../api/api';
 
 let locales = {
     en: {

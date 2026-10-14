@@ -60,6 +60,7 @@ const buttonStyles = `
 }
 
 .p-button-icon-only .p-button-label {
+    display: none;
     visibility: hidden;
     width: 0;
     flex: 0 0 auto;

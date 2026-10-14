@@ -3344,9 +3344,9 @@ export const Calendar = React.memo(
             );
 
             return (
-                <button ref={previousButton} {...previousButtonProps}>
-                    {backwardNavigatorIcon}
-                    <Ripple />
+                <button ref={previousButton} {...previousButtonProps} key="previous">
+                    <React.Fragment key="icon">{backwardNavigatorIcon}</React.Fragment>
+                    <Ripple key="ripple" />
                 </button>
             );
         };
@@ -3379,9 +3379,9 @@ export const Calendar = React.memo(
             );
 
             return (
-                <button ref={nextButton} {...nextButtonProps}>
-                    {forwardNavigatorIcon}
-                    <Ripple />
+                <button ref={nextButton} {...nextButtonProps} key="next">
+                    <React.Fragment key="icon">{forwardNavigatorIcon}</React.Fragment>
+                    <Ripple key="ripple" />
                 </button>
             );
         };
@@ -3417,7 +3417,7 @@ export const Calendar = React.memo(
                     ptm('select')
                 );
                 const content = (
-                    <select {...selectProps}>
+                    <select {...selectProps} key="month">
                         {displayedMonthOptions.map((option) => {
                             const optionProps = mergeProps(
                                 {
@@ -3463,7 +3463,13 @@ export const Calendar = React.memo(
                 ptm('monthTitle')
             );
 
-            return currentView === 'date' && <button {...monthTitleProps}>{monthNames[month]}</button>;
+            return (
+                currentView === 'date' && (
+                    <button {...monthTitleProps} key="month">
+                        {monthNames[month]}
+                    </button>
+                )
+            );
         };
 
         const createTitleYearElement = (metaYear) => {
@@ -3501,7 +3507,7 @@ export const Calendar = React.memo(
                 );
 
                 const content = (
-                    <select {...selectProps}>
+                    <select {...selectProps} key="year">
                         {displayedYearNames.map((year) => {
                             const optionProps = mergeProps(
                                 {
@@ -3547,7 +3553,13 @@ export const Calendar = React.memo(
                 ptm('yearTitle')
             );
 
-            return currentView !== 'year' && <button {...yearTitleProps}>{displayYear}</button>;
+            return (
+                currentView !== 'year' && (
+                    <button {...yearTitleProps} key="year">
+                        {displayYear}
+                    </button>
+                )
+            );
         };
 
         const createTitleDecadeElement = () => {
@@ -3562,7 +3574,11 @@ export const Calendar = React.memo(
             if (currentView === 'year') {
                 const decadeTitleTextProps = mergeProps(ptm('decadeTitleText'));
 
-                return <span {...decadeTitleProps}>{props.decadeTemplate ? props.decadeTemplate(years) : <span {...decadeTitleTextProps}>{`${yearPickerValues()[0]} - ${yearPickerValues()[yearPickerValues().length - 1]}`}</span>}</span>;
+                return (
+                    <span {...decadeTitleProps} key="decade">
+                        {props.decadeTemplate ? props.decadeTemplate(years) : <span {...decadeTitleTextProps}>{`${yearPickerValues()[0]} - ${yearPickerValues()[yearPickerValues().length - 1]}`}</span>}
+                    </span>
+                );
             }
 
             return null;
@@ -3581,7 +3597,7 @@ export const Calendar = React.memo(
             const showMonthAfterYear = localeOption('showMonthAfterYear', props.locale);
 
             return (
-                <div {...titleProps}>
+                <div {...titleProps} key="title">
                     {showMonthAfterYear ? year : month}
                     {showMonthAfterYear ? month : year}
                     {decade}
@@ -3796,9 +3812,9 @@ export const Calendar = React.memo(
             );
 
             return (
-                <div {...groupProps} key={monthKey}>
-                    <div {...headerProps} key={index}>
-                        {header}
+                <div key={monthKey} {...groupProps}>
+                    <div key={index} {...headerProps}>
+                        <React.Fragment key="custom-header">{header}</React.Fragment>
                         {backwardNavigator}
                         {title}
                         {forwardNavigator}
@@ -3818,7 +3834,11 @@ export const Calendar = React.memo(
                 ptm('groupContainer')
             );
 
-            return <div {...groupContainerProps}>{groups}</div>;
+            return (
+                <div {...groupContainerProps} key="date-view">
+                    {groups}
+                </div>
+            );
         };
 
         const createDateView = () => {
@@ -3885,12 +3905,12 @@ export const Calendar = React.memo(
             );
 
             return (
-                <>
+                <React.Fragment key="month-year-view">
                     <div {...groupContainerProps}>
                         <div {...groupProps}>
                             <div {...headerProps}>
                                 {backwardNavigator}
-                                <div {...titleProps}>
+                                <div {...titleProps} key="title">
                                     {yearElement}
                                     {decade}
                                 </div>
@@ -3898,7 +3918,7 @@ export const Calendar = React.memo(
                             </div>
                         </div>
                     </div>
-                </>
+                </React.Fragment>
             );
         };
 
@@ -3974,15 +3994,15 @@ export const Calendar = React.memo(
             );
 
             return (
-                <div {...hourPickerProps}>
+                <div key="hour" {...hourPickerProps}>
                     <button {...incrementButtonProps}>
-                        {incrementIcon}
-                        <Ripple />
+                        <React.Fragment key="icon">{incrementIcon}</React.Fragment>
+                        <Ripple key="ripple" />
                     </button>
                     <span {...hourProps}>{hourDisplay}</span>
                     <button {...decrementButtonProps}>
-                        {decrementIcon}
-                        <Ripple />
+                        <React.Fragment key="icon">{decrementIcon}</React.Fragment>
+                        <Ripple key="ripple" />
                     </button>
                 </div>
             );
@@ -4032,15 +4052,15 @@ export const Calendar = React.memo(
             );
 
             return (
-                <div {...minutePickerProps}>
+                <div key="minute" {...minutePickerProps}>
                     <button {...incrementButtonProps}>
-                        {incrementIcon}
-                        <Ripple />
+                        <React.Fragment key="icon">{incrementIcon}</React.Fragment>
+                        <Ripple key="ripple" />
                     </button>
                     <span {...minuteProps}>{minuteDisplay}</span>
                     <button {...decrementButtonProps}>
-                        {decrementIcon}
-                        <Ripple />
+                        <React.Fragment key="icon">{decrementIcon}</React.Fragment>
+                        <Ripple key="ripple" />
                     </button>
                 </div>
             );
@@ -4089,15 +4109,15 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <div {...secondPickerProps}>
+                    <div key="second" {...secondPickerProps}>
                         <button {...incrementButtonProps}>
-                            {incrementIcon}
-                            <Ripple />
+                            <React.Fragment key="icon">{incrementIcon}</React.Fragment>
+                            <Ripple key="ripple" />
                         </button>
                         <span {...secondProps}>{secondDisplay}</span>
                         <button {...decrementButtonProps}>
-                            {decrementIcon}
-                            <Ripple />
+                            <React.Fragment key="icon">{decrementIcon}</React.Fragment>
+                            <Ripple key="ripple" />
                         </button>
                     </div>
                 );
@@ -4149,15 +4169,15 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <div {...millisecondPickerProps}>
+                    <div key="millisecond" {...millisecondPickerProps}>
                         <button {...incrementButtonProps}>
-                            {incrementIcon}
-                            <Ripple />
+                            <React.Fragment key="icon">{incrementIcon}</React.Fragment>
+                            <Ripple key="ripple" />
                         </button>
                         <span {...millisecondProps}>{millisecondDisplay}</span>
                         <button {...decrementButtonProps}>
-                            {decrementIcon}
-                            <Ripple />
+                            <React.Fragment key="icon">{decrementIcon}</React.Fragment>
+                            <Ripple key="ripple" />
                         </button>
                     </div>
                 );
@@ -4201,15 +4221,15 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <div {...ampmPickerProps}>
+                    <div key="ampm" {...ampmPickerProps}>
                         <button {...incrementButtonProps}>
-                            {incrementIcon}
-                            <Ripple />
+                            <React.Fragment key="icon">{incrementIcon}</React.Fragment>
+                            <Ripple key="ripple" />
                         </button>
                         <span {...ampmProps}>{display}</span>
                         <button {...decrementButtonProps}>
-                            {decrementIcon}
-                            <Ripple />
+                            <React.Fragment key="icon">{decrementIcon}</React.Fragment>
+                            <Ripple key="ripple" />
                         </button>
                     </div>
                 );
@@ -4218,7 +4238,7 @@ export const Calendar = React.memo(
             return null;
         };
 
-        const createSeparator = (separator) => {
+        const createSeparator = (separator, key) => {
             const separatorContainerProps = mergeProps(
                 {
                     className: cx('separatorContainer')
@@ -4229,7 +4249,7 @@ export const Calendar = React.memo(
             const separatorProps = mergeProps(ptm('separator'));
 
             return (
-                <div {...separatorContainerProps}>
+                <div {...separatorContainerProps} key={key}>
                     <span {...separatorProps}>{separator}</span>
                 </div>
             );
@@ -4245,15 +4265,15 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <div {...timePickerProps}>
+                    <div {...timePickerProps} key="time-picker">
                         {createHourPicker()}
-                        {createSeparator(':')}
+                        {createSeparator(':', 'hour-minute')}
                         {createMinutePicker()}
-                        {props.showSeconds && createSeparator(':')}
+                        {props.showSeconds && createSeparator(':', 'minute-second')}
                         {createSecondPicker()}
-                        {props.showMillisec && createSeparator('.')}
+                        {props.showMillisec && createSeparator('.', 'second-millisecond')}
                         {createMiliSecondPicker()}
-                        {props.hourFormat === '12' && createSeparator(':')}
+                        {props.hourFormat === '12' && createSeparator(':', 'time-ampm')}
                         {createAmPmPicker()}
                     </div>
                 );
@@ -4367,7 +4387,7 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <div {...buttonbarProps}>
+                    <div key="button-bar" {...buttonbarProps}>
                         <Button
                             type="button"
                             label={props.showTime ? now : today}
@@ -4395,7 +4415,11 @@ export const Calendar = React.memo(
                     ptm('footer')
                 );
 
-                return <div {...footerProps}>{content}</div>;
+                return (
+                    <div {...footerProps} key="footer">
+                        {content}
+                    </div>
+                );
             }
 
             return null;
@@ -4411,7 +4435,7 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <div {...monthPickerProps}>
+                    <div {...monthPickerProps} key="month-picker">
                         {monthPickerValues().map((m, i) => {
                             const selected = isMonthSelected(i);
                             const monthProps = mergeProps(
@@ -4433,10 +4457,10 @@ export const Calendar = React.memo(
                             );
 
                             return (
-                                <span {...monthProps} key={`month${i + 1}`}>
+                                <span key={`month${i + 1}`} {...monthProps}>
                                     {m}
                                     {selected && (
-                                        <div aria-live="polite" className="p-hidden-accessible" data-p-hidden-accessible={true} pt={ptm('hiddenMonth')}>
+                                        <div key="selected-month" aria-live="polite" className="p-hidden-accessible" data-p-hidden-accessible={true} pt={ptm('hiddenMonth')}>
                                             {m}
                                         </div>
                                     )}
@@ -4460,7 +4484,7 @@ export const Calendar = React.memo(
                 );
 
                 return (
-                    <div {...yearPickerProps}>
+                    <div {...yearPickerProps} key="year-picker">
                         {yearPickerValues().map((y, i) => {
                             const selected = isYearSelected(y);
 
@@ -4483,10 +4507,10 @@ export const Calendar = React.memo(
                             );
 
                             return (
-                                <span {...yearProps} key={`year${i + 1}`}>
+                                <span key={`year${i + 1}`} {...yearProps}>
                                     {y}
                                     {selected && (
-                                        <div aria-live="polite" className="p-hidden-accessible" data-p-hidden-accessible={true} pt={ptm('hiddenYear')}>
+                                        <div key="selected-year" aria-live="polite" className="p-hidden-accessible" data-p-hidden-accessible={true} pt={ptm('hiddenYear')}>
                                             {y}
                                         </div>
                                     )}

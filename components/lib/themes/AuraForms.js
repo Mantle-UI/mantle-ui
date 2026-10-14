@@ -186,7 +186,9 @@ export const auraFormComponents = {
     }
 };
 
-const fieldCss = ({ prefix, token, selector, hoverSelector, focusSelector, invalidSelector, disabledSelector, filledSelector, placeholderSelector }) => `
+// Invalid state overrides local primary focus tokens only on the affected field.
+// Repeated state selectors outrank instance declarations without !important.
+const fieldCss = ({ prefix, token, invalidToken = token, selector, hoverSelector, focusSelector, invalidSelector, disabledSelector, filledSelector, placeholderSelector }) => `
 ${selector} {
     background: var(--${prefix}-${token}-background);
     border: 1px solid var(--${prefix}-${token}-border-color);
@@ -215,8 +217,10 @@ ${placeholderSelector} {
     opacity: 1;
 }
 
-${invalidSelector} {
-    border-color: var(--${prefix}-${token}-invalid-border-color);
+${invalidSelector.replaceAll('.p-invalid', '.p-invalid.p-invalid.p-invalid').replaceAll('[aria-invalid="true"]', '[aria-invalid="true"][aria-invalid="true"][aria-invalid="true"]')} {
+    border-color: var(--${prefix}-${invalidToken}-invalid-border-color);
+    --${prefix}-${token}-focus-border-color: var(--${prefix}-${invalidToken}-invalid-border-color);
+    --${prefix}-${token}-focus-shadow: 0 0 0 var(--${prefix}-focus-ring-width) var(--${prefix}-${invalidToken}-invalid-border-color);
 }
 
 ${disabledSelector} {
@@ -224,13 +228,14 @@ ${disabledSelector} {
 }
 `;
 
-const nativeFieldCss = ({ prefix, token, selector, root }) => {
+const nativeFieldCss = ({ prefix, token, invalidToken, selector, root }) => {
     const wrapperFocus = root ? `,\n${root}:focus-within ${selector.split(' ').pop()}:enabled` : '';
     const wrapperInvalid = root ? `,\n${root}.p-invalid ${selector.split(' ').pop()},\n${root}.p-invalid ${selector.split(' ').pop()}:hover,\n${root}.p-invalid ${selector.split(' ').pop()}:focus` : '';
 
     return fieldCss({
         prefix,
         token,
+        invalidToken,
         selector,
         hoverSelector: `${selector}:enabled:hover`,
         focusSelector: `${selector}:enabled:focus${wrapperFocus}`,
@@ -359,7 +364,7 @@ export const auraFormCss = ({ prefix = 'mantle' } = {}) => {
         { token: 'inputtext-root', selector: '.p-inputtext' },
         { token: 'inputmask-root', selector: '.p-inputmask.p-inputtext' },
         { token: 'inputtextarea-root', selector: '.p-inputtextarea.p-inputtext' },
-        { token: 'inputnumber-input', selector: '.p-inputnumber .p-inputnumber-input', root: '.p-inputnumber' },
+        { token: 'inputnumber-input', invalidToken: 'inputnumber-root', selector: '.p-inputnumber .p-inputnumber-input', root: '.p-inputnumber' },
         { token: 'inputotp-input', selector: '.p-inputotp .p-inputotp-input' },
         { token: 'password-input', selector: '.p-password .p-password-input', root: '.p-password' },
         { token: 'autocomplete-input', selector: '.p-autocomplete .p-autocomplete-input', root: '.p-autocomplete' },
@@ -386,6 +391,7 @@ ${fieldCss({
 ${fieldCss({
     prefix,
     token: 'chips-multiple-container',
+    invalidToken: 'chips-root',
     selector: chipsContainer,
     hoverSelector: `.p-chips:not(.p-disabled) .p-chips-multiple-container:hover`,
     focusSelector: `.p-chips:not(.p-disabled).p-focus .p-chips-multiple-container,\n.p-chips:not(.p-disabled) .p-chips-multiple-container[data-p-focus="true"],\n.p-chips:not(.p-disabled) .p-chips-multiple-container:focus-within`,
@@ -576,6 +582,91 @@ ${buttonCss({ prefix, token: 'autocomplete-dropdown', selector: '.p-autocomplete
 .p-autocomplete.p-autocomplete-dd .p-autocomplete-dropdown.p-button.p-button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+/* The joined input and trigger have one field boundary and focus indicator. */
+.p-autocomplete.p-autocomplete-dd {
+    border: 1px solid var(--${prefix}-autocomplete-input-border-color);
+    border-radius: var(--${prefix}-autocomplete-input-border-radius);
+    transition: border-color var(--${prefix}-autocomplete-input-transition-duration), box-shadow var(--${prefix}-autocomplete-input-transition-duration);
+}
+
+.p-autocomplete.p-autocomplete-dd:not(:has(:disabled)):not(.p-invalid):hover {
+    border-color: var(--${prefix}-autocomplete-input-hover-border-color);
+}
+
+.p-autocomplete.p-autocomplete-dd:not(:has(:disabled)):not(.p-invalid):focus-within {
+    border-color: var(--${prefix}-autocomplete-input-focus-border-color);
+    box-shadow: var(--${prefix}-autocomplete-input-focus-shadow);
+}
+
+.p-autocomplete.p-autocomplete-dd.p-autocomplete-multiple {
+    border-radius: var(--${prefix}-autocomplete-multiple-container-border-radius);
+    transition: border-color var(--${prefix}-autocomplete-multiple-container-transition-duration), box-shadow var(--${prefix}-autocomplete-multiple-container-transition-duration);
+}
+
+.p-autocomplete.p-autocomplete-dd.p-autocomplete-multiple:not(.p-invalid) {
+    border-color: var(--${prefix}-autocomplete-multiple-container-border-color);
+}
+
+.p-autocomplete.p-autocomplete-dd.p-autocomplete-multiple:not(:has(:disabled)):not(.p-invalid):hover {
+    border-color: var(--${prefix}-autocomplete-multiple-container-hover-border-color);
+}
+
+.p-autocomplete.p-autocomplete-dd.p-autocomplete-multiple:not(:has(:disabled)):not(.p-invalid):focus-within {
+    border-color: var(--${prefix}-autocomplete-multiple-container-focus-border-color);
+    box-shadow: var(--${prefix}-autocomplete-multiple-container-focus-shadow);
+}
+
+.p-autocomplete.p-autocomplete-dd.p-invalid {
+    border-color: var(--${prefix}-autocomplete-root-invalid-border-color);
+}
+
+.p-autocomplete.p-autocomplete-dd.p-invalid:focus-within {
+    box-shadow: 0 0 0 1px var(--${prefix}-autocomplete-root-invalid-border-color);
+}
+
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-input.p-inputtext,
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-input.p-inputtext:enabled:focus,
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-multiple-container.p-inputtext,
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-multiple-container.p-inputtext:focus-within,
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-multiple-container.p-inputtext.p-focus {
+    border: 0;
+    box-shadow: none;
+}
+
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-dropdown.p-button.p-button.p-button {
+    border: 0;
+    box-shadow: none;
+}
+
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-input.p-inputtext {
+    border-top-left-radius: max(0px, calc(var(--${prefix}-autocomplete-input-border-radius) - 1px));
+    border-bottom-left-radius: max(0px, calc(var(--${prefix}-autocomplete-input-border-radius) - 1px));
+}
+
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-multiple-container.p-inputtext {
+    border-top-left-radius: max(0px, calc(var(--${prefix}-autocomplete-multiple-container-border-radius) - 1px));
+    border-bottom-left-radius: max(0px, calc(var(--${prefix}-autocomplete-multiple-container-border-radius) - 1px));
+}
+
+.p-autocomplete.p-autocomplete-dd > .p-autocomplete-dropdown.p-button.p-button.p-button {
+    border-top-right-radius: max(0px, calc(var(--${prefix}-autocomplete-input-border-radius) - 1px));
+    border-bottom-right-radius: max(0px, calc(var(--${prefix}-autocomplete-input-border-radius) - 1px));
+}
+
+.p-autocomplete.p-autocomplete-dd.p-autocomplete-multiple > .p-autocomplete-dropdown.p-button.p-button.p-button {
+    border-top-right-radius: max(0px, calc(var(--${prefix}-autocomplete-multiple-container-border-radius) - 1px));
+    border-bottom-right-radius: max(0px, calc(var(--${prefix}-autocomplete-multiple-container-border-radius) - 1px));
+}
+
+.p-autocomplete.p-autocomplete-dd:has(:disabled) {
+    opacity: var(--${prefix}-autocomplete-root-disabled-opacity);
+}
+
+.p-autocomplete.p-autocomplete-dd .p-autocomplete-input:disabled,
+.p-autocomplete.p-autocomplete-dd .p-autocomplete-multiple-container.p-disabled {
+    opacity: 1;
 }
 
 .p-inputgroup > .p-inputtext.p-inputtext,

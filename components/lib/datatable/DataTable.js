@@ -31,6 +31,7 @@ export const DataTable = React.forwardRef((inProps, ref) => {
     const [frozenEditingMetaState, setFrozenEditingMetaState] = React.useState({});
     const [d_rowsState, setD_rowsState] = React.useState(props.rows);
     const [d_filtersState, setD_filtersState] = React.useState({});
+    const [isStateRestored, setIsStateRestored] = React.useState(false);
     const metaData = {
         props,
         state: {
@@ -83,7 +84,6 @@ export const DataTable = React.forwardRef((inProps, ref) => {
     const columnSortFunction = React.useRef(null);
     const columnField = React.useRef(null);
     const filterTimeout = React.useRef(null);
-    const restoredRef = React.useRef(false);
 
     if (props.rows !== d_rowsState && !props.onPage) {
         setRowsState(props.rows);
@@ -1523,19 +1523,24 @@ export const DataTable = React.forwardRef((inProps, ref) => {
         };
     }, [props.breakpoint]);
 
-    useUpdateEffect(() => {
-        if (!restoredRef.current && isStateful()) {
-            restoredRef.current = true;
-
+    useMountEffect(() => {
+        if (isStateful()) {
             restoreState();
 
             if (props.resizableColumns) {
                 restoreColumnWidths();
             }
+
+            setIsStateRestored(true);
         }
-    }, [context]);
+    });
 
     useUpdateEffect(() => {
+        // Effect replay must not replace restored filters with the initial props.
+        if (isStateful() && !isStateRestored) {
+            return;
+        }
+
         const filters = cloneFilters(props.filters);
 
         setFiltersState(filters);
@@ -1547,7 +1552,8 @@ export const DataTable = React.forwardRef((inProps, ref) => {
     }, [props.filters]);
 
     useUpdateEffect(() => {
-        if (isStateful()) {
+        // Wait for restored state and controlled props to reach the next render.
+        if (isStateful() && isStateRestored) {
             saveState();
         }
     });

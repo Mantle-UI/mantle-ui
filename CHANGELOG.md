@@ -1,5 +1,13 @@
 # Changelog
 
+## [10.13.1](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.0...v10.13.1) (2026-10-19)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.0...v10.13.1)
+
+## bug
+
+- fix(datatable): restore persisted state before initial saves [#442](https://github.com/Mantle-UI/mantle-ui/pull/442) (issues: #441)
+
 ## [10.13.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.12.0...v10.13.0) (2026-10-19)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.12.0...v10.13.0)

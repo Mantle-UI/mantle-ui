@@ -1,5 +1,40 @@
 # Changelog
 
+## [10.13.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.12.0...v10.13.0) (2026-10-19)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.12.0...v10.13.0)
+
+## enhancement
+
+- feat(dialog): add minimizable dialogs [#436](https://github.com/Mantle-UI/mantle-ui/pull/436) (issues: #254)
+## bug
+
+- fix(docs): correct icon loading and use the Mantle stylesheet entry point [#440](https://github.com/Mantle-UI/mantle-ui/pull/440) (issues: #439)
+## dependencies
+
+- build(deps-dev): bump markdown-it from 14.3.0 to 14.3.2 in the npm_and_yarn group across 1 directory [#433](https://github.com/Mantle-UI/mantle-ui/pull/433)
+- build(deps-dev): bump @testing-library/user-event from 14.6.1 to 14.6.7 [#430](https://github.com/Mantle-UI/mantle-ui/pull/430)
+- build(deps-dev): bump prettier from 3.9.6 to 3.9.9 [#432](https://github.com/Mantle-UI/mantle-ui/pull/432)
+- build(deps-dev): bump @testing-library/react from 16.3.2 to 16.3.3 [#431](https://github.com/Mantle-UI/mantle-ui/pull/431)
+- build(deps-dev): bump sass from 1.102.0 to 1.105.1 [#428](https://github.com/Mantle-UI/mantle-ui/pull/428)
+- build(deps-dev): bump postcss from 8.5.25 to 8.5.28 [#429](https://github.com/Mantle-UI/mantle-ui/pull/429)
+- build(deps): bump the npm_and_yarn group across 1 directory with 3 updates [#434](https://github.com/Mantle-UI/mantle-ui/pull/434)
+- build(deps): bump next from 16.3.6 to 16.3.8 in the npm_and_yarn group across 1 directory [#437](https://github.com/Mantle-UI/mantle-ui/pull/437)
+## documentation
+
+- feat(funding): add GitHub Sponsors [#438](https://github.com/Mantle-UI/mantle-ui/pull/438)
+- fix(docs): correct icon loading and use the Mantle stylesheet entry point [#440](https://github.com/Mantle-UI/mantle-ui/pull/440) (issues: #439)
+## javascript
+
+- build(deps-dev): bump markdown-it from 14.3.0 to 14.3.2 in the npm_and_yarn group across 1 directory [#433](https://github.com/Mantle-UI/mantle-ui/pull/433)
+- build(deps-dev): bump @testing-library/user-event from 14.6.1 to 14.6.7 [#430](https://github.com/Mantle-UI/mantle-ui/pull/430)
+- build(deps-dev): bump prettier from 3.9.6 to 3.9.9 [#432](https://github.com/Mantle-UI/mantle-ui/pull/432)
+- build(deps-dev): bump @testing-library/react from 16.3.2 to 16.3.3 [#431](https://github.com/Mantle-UI/mantle-ui/pull/431)
+- build(deps-dev): bump sass from 1.102.0 to 1.105.1 [#428](https://github.com/Mantle-UI/mantle-ui/pull/428)
+- build(deps-dev): bump postcss from 8.5.25 to 8.5.28 [#429](https://github.com/Mantle-UI/mantle-ui/pull/429)
+- build(deps): bump the npm_and_yarn group across 1 directory with 3 updates [#434](https://github.com/Mantle-UI/mantle-ui/pull/434)
+- build(deps): bump next from 16.3.6 to 16.3.8 in the npm_and_yarn group across 1 directory [#437](https://github.com/Mantle-UI/mantle-ui/pull/437)
+
 ## [10.12.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.11.0...v10.12.0) (2026-09-22)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.11.0...v10.12.0)

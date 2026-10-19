@@ -179,7 +179,7 @@ export default ThemeSwitcher;`
     const mainJsx = {
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '@mantle-ui/icons/primeicons.css';
+import '@mantle-ui/icons/mantleicons.css';
 import { MantleProvider } from '@mantle-ui/react/api';
 import Tailwind from '@mantle-ui/react/passthrough/tailwind';
 import ThemeSwitcher from './components/themeSwitcher';
@@ -231,7 +231,7 @@ body {
     const mainJsx = {
         content: `import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '@mantle-ui/icons/primeicons.css';
+import '@mantle-ui/icons/mantleicons.css';
 import { MantleProvider } from '@mantle-ui/react/api';
 import '@mantle-ui/flex/mantleflex.css';
 import '@mantle-ui/react/resources/mantle-ui-react.css';

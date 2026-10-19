@@ -4,7 +4,7 @@ import Layout from '@/components/layout/layout';
 import { MantleProvider } from '@/components/lib/api/MantleContext';
 import { applyBasePathCompatibility, switchTheme } from '@/components/utils/utils';
 import '@docsearch/css';
-import '@mantle-ui/icons/primeicons.css';
+import '@mantle-ui/icons/mantleicons.css';
 import '@mantle-ui/flex/mantleflex.css';
 import { useEffect, useState } from 'react';
 import '../styles/demo/demo.scss';

@@ -272,7 +272,7 @@
   color: #7b95a3;
 }
 
-@layer primereact {
+@layer mantle {
   * {
     box-sizing: border-box;
   }
@@ -6937,7 +6937,7 @@
     color: #262222;
   }
 }
-@layer primereact {
+@layer mantle {
   .p-panel .p-panel-header .p-panel-header-icon {
     color: #ffffff;
   }

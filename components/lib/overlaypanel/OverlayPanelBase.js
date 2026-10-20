@@ -15,7 +15,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-overlaypanel {
         position: absolute;
         margin-top: 10px;

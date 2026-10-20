@@ -38,7 +38,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-cascadeselect {
         display: inline-flex;
         cursor: pointer;

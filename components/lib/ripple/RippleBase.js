@@ -2,7 +2,7 @@ import { ComponentBase } from '../componentbase/ComponentBase';
 import { ObjectUtils } from '../utils/Utils';
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-ripple {
         overflow: hidden;
         position: relative;

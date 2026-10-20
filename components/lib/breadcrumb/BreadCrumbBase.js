@@ -14,7 +14,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-breadcrumb {
         overflow-x: auto;
         display: flex;

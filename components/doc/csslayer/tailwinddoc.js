@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function TailwindDoc(props) {
     const code = {
         basic: `
-@layer tailwind-base, primereact, tailwind-utilities;
+@layer tailwind-base, mantle, tailwind-utilities;
 
 @layer tailwind-base {
     @tailwind base;
@@ -24,7 +24,7 @@ export function TailwindDoc(props) {
                 <a href="https://tailwindcss.com/docs/preflight" target="_blank" rel="noopener noreferrer">
                     preflight
                 </a>
-                . If you are using this feature, wrap the base and utilities in separate layers and make sure primereact layer comes after the base.{' '}
+                . If you are using this feature, wrap the base and utilities in separate layers and make sure mantle layer comes after the base.{' '}
             </p>
             <DocSectionCode code={code} hideToggleCode importCode hideStackBlitz />
         </DocSectionText>

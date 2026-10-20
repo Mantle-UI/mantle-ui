@@ -37,7 +37,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-stepper .p-stepper-nav {
         position: relative;
         display: flex;

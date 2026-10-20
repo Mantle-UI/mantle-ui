@@ -60,7 +60,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-dropdown {
         display: inline-flex;
         cursor: pointer;

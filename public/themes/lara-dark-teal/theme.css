@@ -289,7 +289,7 @@
   color: #2dd4bf;
 }
 
-@layer primereact {
+@layer mantle {
   * {
     box-sizing: border-box;
   }
@@ -7002,7 +7002,7 @@
     color: #450a0a;
   }
 }
-@layer primereact {
+@layer mantle {
   .p-button-label {
     font-weight: 700;
   }

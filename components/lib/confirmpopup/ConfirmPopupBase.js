@@ -3,7 +3,7 @@ import { ComponentBase } from '../componentbase/ComponentBase';
 import { classNames } from '../utils/Utils';
 
 const styles = `
-@layer primereact {
+@layer mantle {
    .p-confirm-popup {
         margin-top: 10px;       
     }

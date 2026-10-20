@@ -4,7 +4,7 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function BootstrapDoc(props) {
     const code = {
         basic: `
-@layer bootstrap-reboot, primereact;
+@layer bootstrap-reboot, mantle;
 
 @import "bootstrap-reboot.css" layer(bootstrap-rebooot);
 `

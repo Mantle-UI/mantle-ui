@@ -33,7 +33,7 @@ export const ColorPicker = React.memo(
         });
         const elementRef = React.useRef(null);
         const overlayRef = React.useRef(null);
-        const inputRef = React.useRef(props.inputRef);
+        const inputRef = React.useRef(null);
         const colorSelectorRef = React.useRef(null);
         const colorHandleRef = React.useRef(null);
         const hueHandleRef = React.useRef(null);
@@ -104,16 +104,14 @@ export const ColorPicker = React.memo(
             event.preventDefault();
         };
 
-        const getPositionY = (event) => {
-            if (event.pageY !== undefined) return event.pageY;
-            else if (event.changedTouches !== undefined) return event.changedTouches[0].pageY;
-            else return 0;
-        };
+        const getPointer = (event) => (event.changedTouches ? event.changedTouches[0] : event);
 
         const pickHue = (event) => {
-            const top = hueViewRef.current.getBoundingClientRect().top + (window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
-            const yPos = getPositionY(event);
-            const hue = Math.floor((360 * (150 - Math.max(0, Math.min(150, yPos - top)))) / 150);
+            const rect = hueViewRef.current.getBoundingClientRect();
+
+            if (!rect.height) return;
+
+            const hue = Math.floor(360 * (1 - Math.max(0, Math.min(1, (getPointer(event).clientY - rect.top) / rect.height))));
 
             hsbValue.current = validateHSB({
                 h: hue,
@@ -123,6 +121,7 @@ export const ColorPicker = React.memo(
 
             updateColorSelector();
             updateHue();
+            updateInput();
             updateModel();
         };
 
@@ -177,10 +176,12 @@ export const ColorPicker = React.memo(
 
         const pickColor = (event) => {
             const rect = colorSelectorRef.current.getBoundingClientRect();
-            const top = rect.top + (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
-            const left = rect.left + document.body.scrollLeft;
-            const saturation = Math.floor((100 * Math.max(0, Math.min(150, (event.pageX || event.changedTouches[0].pageX) - left))) / 150);
-            const brightness = Math.floor((100 * (150 - Math.max(0, Math.min(150, (event.pageY || event.changedTouches[0].pageY) - top)))) / 150);
+
+            if (!rect.width || !rect.height) return;
+
+            const pointer = getPointer(event);
+            const saturation = Math.floor(100 * Math.max(0, Math.min(1, (pointer.clientX - rect.left) / rect.width)));
+            const brightness = Math.floor(100 * (1 - Math.max(0, Math.min(1, (pointer.clientY - rect.top) / rect.height))));
 
             hsbValue.current = validateHSB({
                 h: hsbValue.current.h,
@@ -272,14 +273,14 @@ export const ColorPicker = React.memo(
 
         const updateColorHandle = () => {
             if (colorHandleRef.current) {
-                colorHandleRef.current.style.left = Math.floor((150 * hsbValue.current.s) / 100) + 'px';
-                colorHandleRef.current.style.top = Math.floor((150 * (100 - hsbValue.current.b)) / 100) + 'px';
+                colorHandleRef.current.style.left = hsbValue.current.s + '%';
+                colorHandleRef.current.style.top = 100 - hsbValue.current.b + '%';
             }
         };
 
         const updateHue = () => {
             if (hueHandleRef.current) {
-                hueHandleRef.current.style.top = Math.floor(150 - (150 * hsbValue.current.h) / 360) + 'px';
+                hueHandleRef.current.style.top = 100 - (100 * hsbValue.current.h) / 360 + '%';
             }
         };
 
@@ -520,7 +521,7 @@ export const ColorPicker = React.memo(
             if (!colorDragging.current && !hueDragging.current) {
                 updateHSBValue(props.value);
             }
-        }, [props.value]);
+        }, [props.value, props.format, props.defaultColor]);
 
         useUpdateEffect(() => {
             updateUI();

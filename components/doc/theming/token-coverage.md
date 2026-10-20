@@ -1,6 +1,6 @@
 # Aura token coverage and verification
 
-Verified 2026-10-14 on `aura-token-foundation`. Aura exposes 94 component/shared groups, with 3,526 resolved light tokens and 3,530 resolved dark tokens. The styled suite consumes primitive, semantic and component tokens through the Aura CSS bridge. The actual documentation audit remains open; the checkpoints below cover the reported AutoComplete, Calendar, CascadeSelect, Checkbox and shared invalid-focus cases. This records implementation coverage and concrete regression checks; it does not imply exhaustive testing of every combination of component props, templates and interaction states.
+Verified 2026-10-14 on `aura-token-foundation`. Aura exposes 94 component/shared groups, with 3,527 resolved light tokens and 3,531 resolved dark tokens. The styled suite consumes primitive, semantic and component tokens through the Aura CSS bridge. The actual documentation audit remains open; the checkpoints below cover the reported AutoComplete, Calendar, CascadeSelect, Checkbox, ColorPicker, Dropdown and shared invalid-focus cases. This records implementation coverage and concrete regression checks; it does not imply exhaustive testing of every combination of component props, templates and interaction states.
 
 ## Component mapping
 
@@ -153,4 +153,33 @@ The refreshed `node scripts/test-docs-controls.mjs` run passes 189 Chrome assert
 | Sizing fixture with static light/dark CSS                             | 10 assertions per scheme                                                                                                     |
 | `npm run build:check` and explicit browser-fixture lint/format checks | Passed, including strict root/subpath types for all 94 styled components                                                     |
 
-Evidence is in `docs-batch2-20261014` under the existing local evidence directory. Computed CSS painting and geometry are established by installed Chrome, separately from jsdom tests. The browser fixtures use real component markup and focus plus native pseudo-state forcing, without fabricated component state classes. Owned stylesheet cleanup is checked after StrictMode unmount. Firefox, WebKit and a fresh production package remain unverified for this batch. The installed dependency versions were not refreshed after merging main. The generated root declaration additionally synchronizes the existing `DialogMinimizeEvent` export from main. No commit, push or publication was performed for this batch.
+Evidence is in `docs-batch2-20261014` under the existing local evidence directory. Computed CSS painting and geometry are established by installed Chrome, separately from jsdom tests. The browser fixtures use real component markup and focus plus native pseudo-state forcing, without fabricated component state classes. Owned stylesheet cleanup is checked after StrictMode unmount. Firefox, WebKit and a fresh production package remain unverified for this batch. The installed dependency versions were not refreshed after merging main. The generated root declaration additionally synchronizes the existing `DialogMinimizeEvent` export from main. These fixes were later preserved by the requested local checkpoint `09f47fafe812a051c0fe5bf0d6e7915a745c54b2`; no push or publication was performed.
+
+## Actual docs checkpoint: ColorPicker
+
+The two supplied screenshots and the actual documentation reproduced a collapsed `.p-colorpicker-panel`, measuring only 23px high while its 150px gradient and hue controls were absolutely positioned outside it. The small rectangle was the panel frame, not a second swatch. Inline mode therefore reserved almost no layout height, and the following code example covered its controls. Token CSS now lays the existing content out with flex, a component gap token and controls in normal flow. The panel sizes to those controls; no wrapper or stacking override was added.
+
+The real preview already reflected controlled values in the docs. Its fill remains selected data rather than a theme background. Hue selection now also updates the preview without a change handler. Pointer calculations use the rendered selector and hue dimensions, handles use percentages so resized tokens stay aligned, and mouse/touch coordinates share viewport space. The focused tests cover custom dimensions, hex/rgb/hsb callback values, controlled value/defaultColor replacements, disabled inline behavior, refs and StrictMode cleanup. The browser fixture exposed and fixed an inline inputRef initialization error: there is no preview input in inline mode, so its internal DOM ref must start empty.
+
+| ColorPicker browser check                                            | Result                                                                                                                          |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `node scripts/test-docs-colorpicker.mjs` against the actual Next app | 54 Chrome assertions in light/dark: panel bounds, hit testing, card flow, live selection, format model values and preview paint |
+| `node scripts/test-portal-theming.mjs colorpicker.jsx`               | 174 provider/local-token assertions, including custom prefix, dimensions, live resize, external values and cleanup              |
+| Same ColorPicker fixture with static light/dark themes               | 87 assertions per scheme                                                                                                        |
+
+Selected-color comparisons wait for the native InputText background transition to finish. Evidence and before/after PNGs are in `colorpicker-20261014` under the existing local evidence directory.
+
+## Actual docs checkpoint: Dropdown borders
+
+The two supplied screenshots match the reproduced double frame: the Dropdown root had a 1px border, and its visible `.p-dropdown-label.p-inputtext` had another 1px border, background and 6px radius from generic InputText rules. The empty floating-label example appeared correct because its label was hidden. Selecting a value made the duplicate frame visible there too.
+
+A targeted token-bridge reset makes the outer Dropdown own the frame and focus ring. The label remains transparent and borderless, including editable focus. Padding, font sizing, width and outer valid/error tokens are retained. Actual docs checks cover normal/floating empty and selected labels, menu selection, editable typing, filled/invalid focus and disabled behavior. Provider checks use three semantic padding sizes; static checks use the supported small/default/large classes. Both preserve increasing control heights, custom root tokens, refs and cleanup.
+
+| Dropdown browser check                                            | Result                                                  |
+| ----------------------------------------------------------------- | ------------------------------------------------------- |
+| `node scripts/test-docs-dropdown.mjs` against the actual Next app | 194 Chrome assertions across six variants in light/dark |
+| `node scripts/test-portal-theming.mjs dropdown-borders.jsx`       | 586 provider/local-token assertions in light/dark       |
+| Same Dropdown fixture with static light/dark themes               | 318 assertions per scheme                               |
+| Existing `invalid-focus.jsx` provider fixture                     | 241 assertions across 20 controls still pass            |
+
+Dropdown evidence is in `dropdown-20261014`. The final ColorPicker, Theme, SkinTheme and PortalTheme Jest run passes four suites and 33 tests. Repository lint, formatting and strict root/subpath types pass through `npm run build:check`; explicit lint/format checks also cover the new browser drivers and fixtures. A separate text-only edit changes all four read-only Editor example/source occurrences to `Always bet on Mantle!`. This batch is uncommitted on the existing checkpoint. Chromium establishes painted CSS and layout; Jest covers logic/DOM behavior. Firefox, WebKit, a fresh production package and a dependency refresh remain outside this bounded verification.

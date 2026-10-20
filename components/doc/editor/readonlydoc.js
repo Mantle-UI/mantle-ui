@@ -5,7 +5,7 @@ import { Editor } from '@/components/lib/editor/Editor';
 export function ReadOnlyDoc(props) {
     const code = {
         basic: `
-<Editor value="Always bet on Prime!" readOnly style={{ height: '320px' }} />
+<Editor value="Always bet on Mantle!" readOnly style={{ height: '320px' }} />
         `,
         javascript: `
 import React from "react";
@@ -15,7 +15,7 @@ export default function ReadOnlyDemo() {
 
     return (
         <div className="card">
-            <Editor value="Always bet on Prime!" readOnly style={{ height: '320px' }} />
+            <Editor value="Always bet on Mantle!" readOnly style={{ height: '320px' }} />
         </div>        
     )
 }
@@ -27,7 +27,7 @@ import { Editor } from "@mantle-ui/react/editor";
 export default function ReadOnlyDemo() {
     return (
         <div className="card">
-            <Editor value="Always bet on Prime!" readOnly style={{ height: '320px' }} />
+            <Editor value="Always bet on Mantle!" readOnly style={{ height: '320px' }} />
         </div>    
     )
 }
@@ -42,7 +42,7 @@ export default function ReadOnlyDemo() {
                 </p>
             </DocSectionText>
             <div className="card">
-                <Editor value="Always bet on Prime!" readOnly style={{ height: '320px' }} />
+                <Editor value="Always bet on Mantle!" readOnly style={{ height: '320px' }} />
             </div>
             <DocSectionCode code={code} dependencies={{ quill: '2.0.0' }} />
         </>

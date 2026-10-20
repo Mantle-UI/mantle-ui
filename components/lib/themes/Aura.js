@@ -782,6 +782,16 @@ ${selector} {
     color: var(--${prefix}-dropdown-label-color);
 }
 
+/* The Dropdown root owns its field frame; the legacy InputText label does not. */
+.p-dropdown .p-dropdown-label.p-inputtext,
+.p-dropdown .p-dropdown-label.p-inputtext:enabled:focus {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    outline: 0;
+}
+
 .p-dropdown .p-dropdown-label.p-placeholder {
     color: var(--${prefix}-dropdown-label-placeholder-color);
 }

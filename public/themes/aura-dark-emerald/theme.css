@@ -8015,6 +8015,7 @@
     --mantle-colorpicker-panel-border-radius: 6px;
     --mantle-colorpicker-panel-padding: 0.75rem;
     --mantle-colorpicker-panel-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    --mantle-colorpicker-content-gap: 0.5rem;
     --mantle-colorpicker-selector-width: 150px;
     --mantle-colorpicker-selector-height: 150px;
     --mantle-colorpicker-hue-width: 17px;
@@ -10933,6 +10934,16 @@
 
 .p-dropdown .p-dropdown-label {
     color: var(--mantle-dropdown-label-color);
+}
+
+/* The Dropdown root owns its field frame; the legacy InputText label does not. */
+.p-dropdown .p-dropdown-label.p-inputtext,
+.p-dropdown .p-dropdown-label.p-inputtext:enabled:focus {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    outline: 0;
 }
 
 .p-dropdown .p-dropdown-label.p-placeholder {
@@ -19277,9 +19288,11 @@ color: var(--mantle-virtualscroller-loading-color); width: var(--mantle-virtuals
     .p-colorpicker .p-colorpicker-preview { width: var(--mantle-colorpicker-preview-width); height: var(--mantle-colorpicker-preview-height); padding: 0; border: 1px solid var(--mantle-colorpicker-preview-border-color); border-radius: var(--mantle-colorpicker-preview-border-radius); }
     .p-colorpicker .p-colorpicker-preview:not(:disabled):hover { border-color: var(--mantle-colorpicker-preview-hover-border-color); }
     .p-colorpicker .p-colorpicker-preview:focus { border-color: var(--mantle-colorpicker-preview-focus-border-color); outline: 1px solid var(--mantle-colorpicker-preview-focus-border-color); }
-    .p-colorpicker-panel { background: var(--mantle-colorpicker-panel-background); color: var(--mantle-colorpicker-panel-color); border: 1px solid var(--mantle-colorpicker-panel-border-color); border-radius: var(--mantle-colorpicker-panel-border-radius); padding: var(--mantle-colorpicker-panel-padding); box-shadow: var(--mantle-colorpicker-panel-shadow); width: auto; height: auto; }
-    .p-colorpicker-panel .p-colorpicker-color-selector { width: var(--mantle-colorpicker-selector-width); height: var(--mantle-colorpicker-selector-height); }
-    .p-colorpicker-panel .p-colorpicker-hue { width: var(--mantle-colorpicker-hue-width); height: var(--mantle-colorpicker-hue-height); }
+    .p-colorpicker-panel { background: var(--mantle-colorpicker-panel-background); color: var(--mantle-colorpicker-panel-color); border: 1px solid var(--mantle-colorpicker-panel-border-color); border-radius: var(--mantle-colorpicker-panel-border-radius); padding: var(--mantle-colorpicker-panel-padding); box-shadow: var(--mantle-colorpicker-panel-shadow); width: max-content; height: auto; }
+    .p-colorpicker-panel .p-colorpicker-content { display: flex; align-items: flex-start; gap: var(--mantle-colorpicker-content-gap); }
+    .p-colorpicker-panel .p-colorpicker-color-selector { position: relative; top: auto; left: auto; flex: none; width: var(--mantle-colorpicker-selector-width); height: var(--mantle-colorpicker-selector-height); }
+    .p-colorpicker-panel .p-colorpicker-color { width: 100%; height: 100%; }
+    .p-colorpicker-panel .p-colorpicker-hue { position: relative; top: auto; left: auto; flex: none; width: var(--mantle-colorpicker-hue-width); height: var(--mantle-colorpicker-hue-height); }
     .p-colorpicker-panel .p-colorpicker-color-handle, .p-colorpicker-panel .p-colorpicker-hue-handle { border-color: var(--mantle-colorpicker-handle-border-color); box-shadow: var(--mantle-colorpicker-handle-shadow); }
 .p-fileupload { border-radius: var(--mantle-fileupload-root-border-radius); }
     .p-fileupload:has(input[type="file"]:disabled) { opacity: var(--mantle-fileupload-root-disabled-opacity); }

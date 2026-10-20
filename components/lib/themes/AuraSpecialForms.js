@@ -86,6 +86,7 @@ export const auraSpecialFormComponents = {
         root: { disabledOpacity: '{disabledOpacity}' },
         preview: { width: '2rem', height: '2rem', borderColor: '{formField.borderColor}', hoverBorderColor: '{formField.hoverBorderColor}', focusBorderColor: '{formField.focusBorderColor}', borderRadius: '{formField.borderRadius}' },
         panel: panel(),
+        content: { gap: '0.5rem' },
         selector: { width: '150px', height: '150px' },
         hue: { width: '17px', height: '150px' },
         handle: { borderColor: '#ffffff', shadow: '0 1px 3px rgba(0, 0, 0, 0.5)' }
@@ -199,9 +200,11 @@ export const auraSpecialFormCss = ({ prefix = 'mantle' } = {}) => {
     .p-colorpicker .p-colorpicker-preview { width: ${variable('colorpicker-preview-width')}; height: ${variable('colorpicker-preview-height')}; padding: 0; border: 1px solid ${variable('colorpicker-preview-border-color')}; border-radius: ${variable('colorpicker-preview-border-radius')}; }
     .p-colorpicker .p-colorpicker-preview:not(:disabled):hover { border-color: ${variable('colorpicker-preview-hover-border-color')}; }
     .p-colorpicker .p-colorpicker-preview:focus { border-color: ${variable('colorpicker-preview-focus-border-color')}; outline: 1px solid ${variable('colorpicker-preview-focus-border-color')}; }
-    .p-colorpicker-panel { background: ${variable('colorpicker-panel-background')}; color: ${variable('colorpicker-panel-color')}; border: 1px solid ${variable('colorpicker-panel-border-color')}; border-radius: ${variable('colorpicker-panel-border-radius')}; padding: ${variable('colorpicker-panel-padding')}; box-shadow: ${variable('colorpicker-panel-shadow')}; width: auto; height: auto; }
-    .p-colorpicker-panel .p-colorpicker-color-selector { width: ${variable('colorpicker-selector-width')}; height: ${variable('colorpicker-selector-height')}; }
-    .p-colorpicker-panel .p-colorpicker-hue { width: ${variable('colorpicker-hue-width')}; height: ${variable('colorpicker-hue-height')}; }
+    .p-colorpicker-panel { background: ${variable('colorpicker-panel-background')}; color: ${variable('colorpicker-panel-color')}; border: 1px solid ${variable('colorpicker-panel-border-color')}; border-radius: ${variable('colorpicker-panel-border-radius')}; padding: ${variable('colorpicker-panel-padding')}; box-shadow: ${variable('colorpicker-panel-shadow')}; width: max-content; height: auto; }
+    .p-colorpicker-panel .p-colorpicker-content { display: flex; align-items: flex-start; gap: ${variable('colorpicker-content-gap')}; }
+    .p-colorpicker-panel .p-colorpicker-color-selector { position: relative; top: auto; left: auto; flex: none; width: ${variable('colorpicker-selector-width')}; height: ${variable('colorpicker-selector-height')}; }
+    .p-colorpicker-panel .p-colorpicker-color { width: 100%; height: 100%; }
+    .p-colorpicker-panel .p-colorpicker-hue { position: relative; top: auto; left: auto; flex: none; width: ${variable('colorpicker-hue-width')}; height: ${variable('colorpicker-hue-height')}; }
     .p-colorpicker-panel .p-colorpicker-color-handle, .p-colorpicker-panel .p-colorpicker-hue-handle { border-color: ${variable('colorpicker-handle-border-color')}; box-shadow: ${variable('colorpicker-handle-shadow')}; }`;
     const upload = `.p-fileupload { border-radius: ${variable('fileupload-root-border-radius')}; }
     .p-fileupload:has(input[type="file"]:disabled) { opacity: ${variable('fileupload-root-disabled-opacity')}; }

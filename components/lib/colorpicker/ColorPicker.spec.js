@@ -1,7 +1,8 @@
 import * as React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { MantleProvider } from '../api/Api';
 import { ColorPicker } from './ColorPicker';
 
 beforeEach(() => {
@@ -39,6 +40,33 @@ const tabForwardFromPopup = async (user, slider, preview) => {
     expect(fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 })).toBe(true);
     expect(preview).toHaveFocus();
     await user.tab();
+};
+
+const dismissPopup = async (method, { user, api, preview, slider, outside }) => {
+    switch (method) {
+        case 'Tab':
+            expect(fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 })).toBe(true);
+            break;
+
+        case 'Escape':
+            fireEvent.keyDown(slider, { key: 'Escape', code: 'Escape', keyCode: 27 });
+            break;
+
+        case 'preview toggle':
+            await user.click(preview);
+            break;
+
+        case 'outside click':
+            await user.click(outside);
+            break;
+
+        case 'imperative hide':
+            act(() => api.current.hide());
+            break;
+
+        default:
+            throw new Error(`Unknown dismissal method: ${method}`);
+    }
 };
 
 describe('ColorPicker legacy value contract', () => {
@@ -492,50 +520,98 @@ describe('ColorPicker opacity interaction', () => {
         expect(screen.queryByRole('slider', { name: 'Opacity' })).not.toBeInTheDocument();
     });
 
-    it.each([
-        ['portalled', undefined],
-        ['self', 'self']
-    ])('excludes an exiting panel from Tab and restores it on reopening when appended %s', async (name, appendTo) => {
+    it.each(['portalled', 'self'].flatMap((name) => ['Tab', 'Escape', 'preview toggle', 'outside click', 'imperative hide'].map((method) => [name, method])))(
+        'isolates an exiting %s panel after %s and restores it on reopening',
+        async (name, method) => {
+            const user = userEvent.setup();
+            const inputRef = React.createRef();
+            const api = React.createRef();
+            const onChange = jest.fn();
+
+            render(
+                <>
+                    <ColorPicker alpha ref={api} inputRef={inputRef} value="ff000080" onChange={onChange} appendTo={name === 'self' ? 'self' : undefined} transitionOptions={{ timeout: { enter: 0, exit: 1000 } }} />
+                    <button type="button">Outside control</button>
+                </>,
+                { wrapper: MantleProvider }
+            );
+            inputRef.current.focus();
+            await user.keyboard('[Enter]');
+            const slider = screen.getByRole('slider', { name: 'Opacity' });
+            const panel = api.current.getOverlay();
+            const outside = screen.getByRole('button', { name: 'Outside control' });
+
+            await waitFor(() => expect(slider).toHaveFocus());
+            await dismissPopup(method, { user, api, preview: inputRef.current, slider, outside });
+
+            if (['Tab', 'Escape', 'preview toggle'].includes(method)) expect(inputRef.current).toHaveFocus();
+            if (method === 'outside click') expect(outside).toHaveFocus();
+
+            expect(panel).toBeInTheDocument();
+            expect(panel).toHaveAttribute('inert');
+            expect(slider).toHaveAttribute('tabindex', '-1');
+            await user.click(inputRef.current);
+            expect(api.current.getOverlay()).toBe(panel);
+            expect(panel).not.toHaveAttribute('inert');
+            expect(slider.tabIndex).toBe(0);
+            expect(slider).toHaveValue('50');
+            expect(onChange).not.toHaveBeenCalled();
+        }
+    );
+
+    it.each(['Tab', 'Escape', 'preview toggle', 'outside click', 'imperative hide'])('preserves consumer attributes after %s and repeated hide during an interrupted exit', async (method) => {
         const user = userEvent.setup();
         const inputRef = React.createRef();
         const api = React.createRef();
+        const onShow = jest.fn();
 
-        render(<ColorPicker alpha ref={api} inputRef={inputRef} value="ff000080" appendTo={appendTo} transitionOptions={{ timeout: { enter: 0, exit: 1000 } }} />);
-        inputRef.current.focus();
-        await user.keyboard('[Enter]');
-        const slider = screen.getByRole('slider', { name: 'Opacity' });
-        const panel = api.current.getOverlay();
-
-        await waitFor(() => expect(slider).toHaveFocus());
-        expect(fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 })).toBe(true);
-        expect(inputRef.current).toHaveFocus();
-        expect(panel).toBeInTheDocument();
-        expect(panel).toHaveAttribute('inert');
-        expect(slider).toHaveAttribute('tabindex', '-1');
-        await user.click(inputRef.current);
-        expect(api.current.getOverlay()).toBe(panel);
-        expect(panel).not.toHaveAttribute('inert');
-        expect(slider.tabIndex).toBe(0);
-    });
-
-    it('preserves consumer pass-through inert and tabindex settings on an interrupted exit', () => {
-        const inputRef = React.createRef();
-        const api = React.createRef();
-
-        render(<ColorPicker alpha ref={api} inputRef={inputRef} value="ff000080" transitionOptions={{ timeout: { enter: 0, exit: 1000 } }} pt={{ panel: { inert: true }, alphaSlider: { tabIndex: 4 } }} />);
+        render(
+            <>
+                <ColorPicker alpha ref={api} inputRef={inputRef} value="ff000080" onShow={onShow} transitionOptions={{ timeout: { enter: 0, exit: 1000 } }} pt={{ panel: { inert: true }, alphaSlider: { tabIndex: 4 } }} />
+                <button type="button">Outside control</button>
+            </>,
+            { wrapper: MantleProvider }
+        );
         fireEvent.click(inputRef.current);
         const panel = api.current.getOverlay();
         const slider = panel.querySelector('input[type="range"]');
+        const outside = screen.getByRole('button', { name: 'Outside control' });
 
+        await waitFor(() => expect(onShow).toHaveBeenCalledTimes(1));
         expect(panel).toHaveAttribute('inert');
         expect(slider).toHaveAttribute('tabindex', '4');
-        // A synthetic event exercises snapshot restoration while consumer-provided inert suppresses real interaction.
-        fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 });
+        // Synthetic key events exercise snapshot restoration while consumer-provided inert suppresses real interaction.
+        await dismissPopup(method, { user, api, preview: inputRef.current, slider, outside });
+        act(() => api.current.hide());
         expect(slider).toHaveAttribute('tabindex', '-1');
         fireEvent.click(inputRef.current);
         expect(api.current.getOverlay()).toBe(panel);
         expect(panel).toHaveAttribute('inert');
         expect(slider).toHaveAttribute('tabindex', '4');
+    });
+
+    it.each(['portalled', 'self'])('leaves the default alpha-off %s panel attributes unchanged on hide', async (name) => {
+        const inputRef = React.createRef();
+        const api = React.createRef();
+        const onShow = jest.fn();
+
+        render(<ColorPicker ref={api} inputRef={inputRef} value="ff0000" appendTo={name === 'self' ? 'self' : undefined} onShow={onShow} transitionOptions={{ timeout: { enter: 0, exit: 1000 } }} pt={{ hue: { tabIndex: 4 } }} />);
+        fireEvent.click(inputRef.current);
+        const panel = api.current.getOverlay();
+        const hue = panel.querySelector('.p-colorpicker-hue');
+
+        await waitFor(() => expect(onShow).toHaveBeenCalledTimes(1));
+        expect(panel).not.toHaveAttribute('inert');
+        expect(hue).toHaveAttribute('tabindex', '4');
+        act(() => api.current.hide());
+        expect(panel).toBeInTheDocument();
+        expect(panel).not.toHaveAttribute('inert');
+        expect(hue).toHaveAttribute('tabindex', '4');
+        expect(panel.querySelector('.p-colorpicker-alpha')).not.toBeInTheDocument();
+        fireEvent.click(inputRef.current);
+        expect(api.current.getOverlay()).toBe(panel);
+        expect(panel).not.toHaveAttribute('inert');
+        expect(hue).toHaveAttribute('tabindex', '4');
     });
 
     it('handles opacity edits in a popup and preserves the imperative/input refs', () => {

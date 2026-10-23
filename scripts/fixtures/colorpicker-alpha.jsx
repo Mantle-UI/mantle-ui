@@ -7,6 +7,7 @@ function Fixture() {
     const [value, setValue] = React.useState('00117780');
     const [options, setOptions] = React.useState({});
     const [nextTarget, setNextTarget] = React.useState('link');
+    const popupRef = React.useRef(null);
 
     const change = (event) => {
         window.alphaChanges.push(event.value);
@@ -15,7 +16,7 @@ function Fixture() {
 
     React.useEffect(() => {
         window.alphaChanges = [];
-        window.alphaFixture = { setValue, setOptions, setNextTarget };
+        window.alphaFixture = { setValue, setOptions, setNextTarget, hidePopup: () => popupRef.current.hide() };
     }, []);
 
     return (
@@ -30,7 +31,7 @@ function Fixture() {
                 <section>
                     <h2>Popup alpha</h2>
                     <button id="before">Before</button>
-                    <ColorPicker key={options.appendTo || 'body'} id="popup" inputId="popup-input" alpha value={value} onChange={change} {...options} />
+                    <ColorPicker key={options.appendTo || 'body'} ref={popupRef} id="popup" inputId="popup-input" alpha value={value} onChange={change} {...options} />
                     {nextTarget === 'summary' && (
                         <details>
                             <summary id="after">Next summary</summary>

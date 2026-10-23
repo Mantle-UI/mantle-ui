@@ -369,17 +369,8 @@ export const ColorPicker = React.memo(
                 event.preventDefault();
                 event.stopPropagation();
             } else if (event.key === 'Tab') {
-                const panel = overlayRef.current;
-                const slider = alphaSliderRef.current;
-
-                if (panel && !tabExitState.current) {
-                    tabExitState.current = { panel, slider, inert: panel.getAttribute('inert'), tabIndex: slider?.getAttribute('tabindex') };
-                }
-
                 // Let the browser choose the next native tab stop from the preview, skipping the exiting panel.
                 DomHandler.focus(inputRef.current);
-                panel?.setAttribute('inert', '');
-                slider?.setAttribute('tabindex', '-1');
                 hide();
 
                 if (event.shiftKey) event.preventDefault();
@@ -391,6 +382,18 @@ export const ColorPicker = React.memo(
         };
 
         const hide = () => {
+            const panel = overlayRef.current;
+            const slider = alphaSliderRef.current;
+
+            if (props.alpha && !props.inline && panel) {
+                if (!tabExitState.current || tabExitState.current.panel !== panel) {
+                    tabExitState.current = { panel, slider, inert: panel.getAttribute('inert'), tabIndex: slider?.getAttribute('tabindex') };
+                }
+
+                panel.setAttribute('inert', '');
+                slider?.setAttribute('tabindex', '-1');
+            }
+
             focusAlphaOnShow.current = false;
             setOverlayVisibleState(false);
         };

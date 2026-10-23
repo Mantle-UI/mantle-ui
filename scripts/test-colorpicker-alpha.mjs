@@ -13,6 +13,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rollup } from 'rollup';
+import { finalizeBrowserRun, recordRunnerFailure, writeRunnerOutput } from './browser-runner-cleanup.mjs';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const browser = [process.env.MANTLE_TEST_BROWSER, 'C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', '/usr/bin/chromium', '/usr/bin/google-chrome'].find(
@@ -60,6 +61,7 @@ let child;
 let browserExited;
 let stderr = '';
 let page;
+let send;
 const pending = new Map();
 const report = { passed: false, node: process.version, transport: 'pipe', theme: themeName, assertions, errors };
 
@@ -122,7 +124,7 @@ try {
             }
         }
     });
-    const send = (method, params = {}, sessionId) =>
+    send = (method, params = {}, sessionId) =>
         new Promise((resolve, reject) => {
             const messageId = ++id;
             const timer = setTimeout(() => {
@@ -396,6 +398,43 @@ try {
         await check(`${format} native opacity edit emits normalized a`, () => window.alphaChanges.at(-1).a === 0.51);
     }
 
+    for (const appendTo of [null, 'self']) {
+        for (const dismissal of ['Escape', 'preview', 'outside', 'imperative']) {
+            await evaluate(
+                (options) => {
+                    window.alphaFixture.setOptions(options);
+                    window.alphaFixture.setValue('00117780');
+                    window.alphaFixture.setNextTarget('link');
+
+                    return new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+                },
+                { appendTo, transitionOptions: { timeout: { enter: 0, exit: 1500 } } }
+            );
+            await focus('#popup-input');
+            await key('Enter');
+            await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider') && !document.querySelector('#inline').contains(document.activeElement));
+
+            if (dismissal === 'Escape') await key('Escape');
+            else if (dismissal === 'preview') await click('#popup-input');
+            else if (dismissal === 'outside') await click('#before');
+            else await evaluate(() => window.alphaFixture.hidePopup());
+
+            await check(`${appendTo || 'portal'} ${dismissal} makes the exiting panel inert`, () => {
+                const panel = document.querySelector('.p-colorpicker-overlay-panel');
+
+                return panel?.hasAttribute('inert') && panel.querySelector('input[type=range]').tabIndex === -1;
+            });
+            await key('Tab');
+            await check(`${appendTo || 'portal'} ${dismissal} keeps focus outside the exiting panel`, () => !document.activeElement.closest('.p-colorpicker-overlay-panel'));
+            await focus('#popup-input');
+            await key('Enter');
+            await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider') && !document.querySelector('#inline').contains(document.activeElement));
+            await check(`${appendTo || 'portal'} ${dismissal} restores opacity on rapid reopening`, () => !document.activeElement.closest('.p-colorpicker-overlay-panel').hasAttribute('inert') && document.activeElement.tabIndex === 0);
+            await key('Escape');
+            await waitFor(() => !document.querySelector('.p-colorpicker-overlay-panel'));
+        }
+    }
+
     await evaluate(() => {
         window.alphaFixture.setOptions({});
         window.alphaFixture.setValue('00117780');
@@ -489,34 +528,44 @@ try {
         return range.bottom <= panel.bottom && range.right <= panel.right;
     });
     report.passed = errors.length === 0;
-
-    if (process.env.MANTLE_TEST_SCREENSHOT) {
-        const { data } = await page('Page.captureScreenshot', { format: 'png' });
-
-        await writeFile(process.env.MANTLE_TEST_SCREENSHOT, Buffer.from(data, 'base64'));
-    }
-
-    await send('Browser.close');
-    await browserExited;
 } catch (error) {
-    report.error = error.stack;
+    recordRunnerFailure(report, error, 'test');
 } finally {
+    const canCapture = page && child?.exitCode === null && process.env.MANTLE_TEST_SCREENSHOT;
+    const exitCode = await finalizeBrowserRun({
+        report,
+        captureScreenshot: canCapture
+            ? async () => {
+                  const { data } = await page('Page.captureScreenshot', { format: 'png' });
+
+                  return Buffer.from(data, 'base64');
+              }
+            : undefined,
+        writeScreenshot: (data) => writeFile(process.env.MANTLE_TEST_SCREENSHOT, data),
+        closeBrowser: async () => {
+            if (child?.exitCode === null && send) {
+                await send('Browser.close');
+                await browserExited;
+            }
+        },
+        terminateBrowser: async () => {
+            if (child?.exitCode === null) {
+                if (!child.kill()) throw new Error('Unable to terminate Chromium.');
+
+                await browserExited;
+            }
+        },
+        closeServer: () => new Promise((resolve, reject) => server.close((error) => (error ? reject(error) : resolve()))),
+        removeProfile: async () => {
+            if (path.dirname(profile) !== path.resolve(tmpdir()) || !path.basename(profile).startsWith('mantle-alpha-browser-')) throw new Error('Refusing to remove an unexpected browser profile path.');
+
+            await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+        },
+        writeReport: process.env.MANTLE_TEST_REPORT ? (value) => writeFile(process.env.MANTLE_TEST_REPORT, JSON.stringify(value, null, 2)) : undefined,
+        outputReport: (value) => writeRunnerOutput(process.stdout, `${JSON.stringify(value, null, 2)}\n`)
+    });
+
     for (const request of pending.values()) clearTimeout(request.timer);
-
-    if (page && child?.exitCode === null && process.env.MANTLE_TEST_SCREENSHOT) {
-        const { data } = await page('Page.captureScreenshot', { format: 'png' });
-
-        await writeFile(process.env.MANTLE_TEST_SCREENSHOT, Buffer.from(data, 'base64'));
-    }
-
-    if (child && child.exitCode === null) {
-        child.kill();
-        await browserExited;
-    }
-
-    await new Promise((resolve) => server.close(resolve));
-    if (path.dirname(profile) === path.resolve(tmpdir()) && path.basename(profile).startsWith('mantle-alpha-browser-')) await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
-    if (process.env.MANTLE_TEST_REPORT) await writeFile(process.env.MANTLE_TEST_REPORT, JSON.stringify(report, null, 2));
-    process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
-    if (!report.passed) process.exitCode = 1;
+    pending.clear();
+    if (exitCode) process.exitCode = exitCode;
 }

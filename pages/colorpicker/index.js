@@ -1,10 +1,12 @@
 import { AccessibilityDoc } from '@/components/doc/colorpicker/accessibilitydoc';
+import { AlphaDoc } from '@/components/doc/colorpicker/alphadoc';
 import { BasicDoc } from '@/components/doc/colorpicker/basicdoc';
 import { DisabledDoc } from '@/components/doc/colorpicker/disableddoc';
 import { FormatDoc } from '@/components/doc/colorpicker/formatdoc';
 import { ImportDoc } from '@/components/doc/colorpicker/importdoc';
 import { InlineDoc } from '@/components/doc/colorpicker/inlinedoc';
 import { Wireframe } from '@/components/doc/colorpicker/pt/wireframe';
+import { ReadOnlyDoc } from '@/components/doc/colorpicker/readonlydoc';
 import { StyledDoc } from '@/components/doc/colorpicker/theming/styleddoc';
 import { TailwindDoc } from '@/components/doc/colorpicker/theming/tailwinddoc';
 import DocApiTable from '@/components/doc/common/docapitable';
@@ -33,9 +35,19 @@ const ColorPickerDemo = () => {
             component: FormatDoc
         },
         {
+            id: 'alpha',
+            label: 'Alpha',
+            component: AlphaDoc
+        },
+        {
             id: 'disabled',
             label: 'Disabled',
             component: DisabledDoc
+        },
+        {
+            id: 'readonly',
+            label: 'Read Only',
+            component: ReadOnlyDoc
         },
         {
             id: 'accessibility',

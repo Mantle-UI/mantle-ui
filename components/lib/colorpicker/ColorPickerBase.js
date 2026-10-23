@@ -5,7 +5,8 @@ import { classNames } from '../utils/Utils';
 const classes = {
     root: ({ props }) =>
         classNames('p-colorpicker p-component', {
-            'p-colorpicker-overlay': !props.inline
+            'p-colorpicker-overlay': !props.inline,
+            'p-colorpicker-alpha-enabled': props.alpha
         }),
     input: ({ props }) =>
         classNames('p-colorpicker-preview p-inputtext', props.inputClassName, {
@@ -14,11 +15,17 @@ const classes = {
     panel: ({ panelProps, context }) =>
         classNames('p-colorpicker-panel', panelProps.panelClassName, {
             'p-colorpicker-overlay-panel': !panelProps.inline,
+            'p-colorpicker-alpha-enabled': panelProps.alpha,
             'p-disabled': panelProps.disabled,
             'p-input-filled': (context && context.inputStyle === 'filled') || MantleUI.inputStyle === 'filled',
             'p-ripple-disabled': (context && context.ripple === false) || MantleUI.ripple === false
         }),
     content: 'p-colorpicker-content',
+    alpha: 'p-colorpicker-alpha',
+    alphaLabel: 'p-colorpicker-alpha-label',
+    alphaValue: 'p-colorpicker-alpha-value',
+    alphaPreview: 'p-colorpicker-alpha-preview',
+    alphaSlider: 'p-colorpicker-alpha-slider',
     hueHandle: 'p-colorpicker-hue-handle',
     hue: 'p-colorpicker-hue',
     colorHandle: 'p-colorpicker-color-handle',
@@ -117,12 +124,49 @@ const styles = `
     .p-colorpicker-panel .p-colorpicker-hue {
         background: linear-gradient(0deg, red 0, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, red)
     }
+    .p-colorpicker-panel.p-colorpicker-alpha-enabled {
+        height: 232px;
+    }
+    .p-colorpicker-alpha {
+        position: absolute;
+        top: 166px;
+        left: 8px;
+        right: 8px;
+        display: grid;
+        grid-template-columns: 24px 1fr auto;
+        align-items: center;
+        gap: 8px;
+        color: var(--p-colorpicker-alpha-color, #fff);
+    }
+    .p-colorpicker-alpha-label {
+        grid-column: 1 / 3;
+    }
+    .p-colorpicker-alpha-value {
+        text-align: end;
+    }
+    .p-colorpicker-alpha-preview {
+        width: 24px;
+        height: 24px;
+        border: 1px solid currentColor;
+    }
+    .p-colorpicker-alpha-slider {
+        grid-column: 2 / 4;
+        width: 100%;
+        margin: 0;
+    }
+    .p-colorpicker-alpha-preview,
+    .p-colorpicker-alpha-enabled .p-colorpicker-preview {
+        background-image: linear-gradient(var(--p-colorpicker-preview-color), var(--p-colorpicker-preview-color)), conic-gradient(#ddd 25%, #fff 0 50%, #ddd 0 75%, #fff 0);
+        background-size: 100% 100%, 8px 8px;
+    }
 }
 `;
 
 export const ColorPickerBase = ComponentBase.extend({
     defaultProps: {
         __TYPE: 'ColorPicker',
+        alpha: false,
+        alphaLabel: 'Opacity',
         appendTo: null,
         autoFocus: false,
         children: undefined,
@@ -141,6 +185,7 @@ export const ColorPickerBase = ComponentBase.extend({
         onShow: null,
         panelClassName: null,
         panelStyle: null,
+        readOnly: false,
         style: null,
         tabIndex: null,
         tooltip: null,

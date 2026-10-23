@@ -11516,8 +11516,24 @@
                     ]
                 },
                 "props": {
-                    "description": "Defines valid properties in AutoComplete component. In addition to these, all properties of HTMLInputElement can be used in this component.",
+                    "description": "Defines valid properties in ColorPicker component. In addition to these, all properties of HTMLInputElement can be used in this component.",
                     "values": [
+                        {
+                            "name": "alpha",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "Enables opacity selection and transparency previews. With alpha enabled, hex values are emitted as\nlowercase RRGGBBAA without a leading # and rgb/hsb objects include an a field from 0 to 1.\nExisting value and event contracts are unchanged when false."
+                        },
+                        {
+                            "name": "alphaLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string",
+                            "default": "Opacity",
+                            "description": "Accessible name and visible label of the opacity control."
+                        },
                         {
                             "name": "appendTo",
                             "optional": true,
@@ -11548,7 +11564,7 @@
                             "readonly": false,
                             "type": "string",
                             "default": "ff0000",
-                            "description": "Default color to display when value is null."
+                            "description": "Hex color to display when value is null. With alpha enabled, accepts RRGGBB or RRGGBBAA,\nwith an optional leading #; six digits imply full opacity."
                         },
                         {
                             "name": "format",
@@ -11631,6 +11647,14 @@
                             "description": "Used to configure passthrough(pt) options of the component."
                         },
                         {
+                            "name": "readOnly",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "boolean",
+                            "default": "false",
+                            "description": "Prevents changes to color, hue and opacity while keeping the preview focusable."
+                        },
+                        {
                             "name": "tooltip",
                             "optional": true,
                             "readonly": false,
@@ -11668,7 +11692,7 @@
                             "readonly": false,
                             "type": "string | ColorPickerRGBType | ColorPickerHSBType",
                             "default": "",
-                            "description": "Value of the component."
+                            "description": "Value of the component. With alpha enabled, hex accepts RRGGBB or RRGGBBAA (optional #)\nand emits lowercase RRGGBBAA without #. AA is rounded to the nearest byte (00 to ff).\nRGB/HSB objects accept optional a from 0 to 1 and always emit a when alpha is enabled.\nMissing/non-finite alpha defaults to 1; finite alpha is clamped to [0, 1].\nObject alpha precision is preserved during color/hue edits. Editing opacity uses whole percent\nsteps, emitting a = percent / 100, or the nearest alpha byte for hex.\nOpacity-only edits preserve the supplied RGB channels or hex RGB bytes."
                         }
                     ]
                 },
@@ -11829,6 +11853,41 @@
                             "description": "Uses to pass attributes to the hue handle's DOM element."
                         },
                         {
+                            "name": "alpha",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ColorPickerPassThroughType<HTMLAttributes<HTMLDivElement>>",
+                            "description": "Uses to pass attributes to the opacity section's DOM element."
+                        },
+                        {
+                            "name": "alphaLabel",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ColorPickerPassThroughType<HTMLAttributes<HTMLSpanElement>>",
+                            "description": "Uses to pass attributes to the opacity label's DOM element."
+                        },
+                        {
+                            "name": "alphaSlider",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ColorPickerPassThroughType<InputHTMLAttributes<HTMLInputElement>>",
+                            "description": "Uses to pass attributes to the native opacity range input."
+                        },
+                        {
+                            "name": "alphaValue",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ColorPickerPassThroughType<HTMLAttributes<HTMLSpanElement>>",
+                            "description": "Uses to pass attributes to the opacity percentage's DOM element."
+                        },
+                        {
+                            "name": "alphaPreview",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "ColorPickerPassThroughType<HTMLAttributes<HTMLDivElement>>",
+                            "description": "Uses to pass attributes to the checkerboard transparency preview."
+                        },
+                        {
                             "name": "tooltip",
                             "optional": true,
                             "readonly": false,
@@ -11875,21 +11934,28 @@
                             "optional": false,
                             "readonly": false,
                             "type": "number",
-                            "description": "red color number"
+                            "description": "Red channel from 0 to 255."
                         },
                         {
                             "name": "g",
                             "optional": false,
                             "readonly": false,
                             "type": "number",
-                            "description": "green color number"
+                            "description": "Green channel from 0 to 255."
                         },
                         {
                             "name": "b",
                             "optional": false,
                             "readonly": false,
                             "type": "number",
-                            "description": "blue color number"
+                            "description": "Blue channel from 0 to 255."
+                        },
+                        {
+                            "name": "a",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "number",
+                            "description": "Opacity from 0 (transparent) to 1 (opaque), used only when alpha is enabled.\nMissing or non-finite values default to 1; finite values are clamped to [0, 1]."
                         }
                     ],
                     "callbacks": []
@@ -11903,21 +11969,28 @@
                             "optional": false,
                             "readonly": false,
                             "type": "number",
-                            "description": "hue number"
+                            "description": "Hue from 0 to 360."
                         },
                         {
                             "name": "s",
                             "optional": false,
                             "readonly": false,
                             "type": "number",
-                            "description": "saturation number"
+                            "description": "Saturation from 0 to 100."
                         },
                         {
                             "name": "b",
                             "optional": false,
                             "readonly": false,
                             "type": "number",
-                            "description": "brightness number"
+                            "description": "Brightness from 0 to 100."
+                        },
+                        {
+                            "name": "a",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "number",
+                            "description": "Opacity from 0 (transparent) to 1 (opaque), used only when alpha is enabled.\nMissing or non-finite values default to 1; finite values are clamped to [0, 1]."
                         }
                     ],
                     "callbacks": []

@@ -38,6 +38,7 @@
         "type:check": "tsc -p ./api-scripts/tsconfig.json",
         "test": "jest --watch --coverage --silent",
         "test:check": "jest --watchAll=false --coverage --silent",
+        "test:colorpicker:browser": "node scripts/test-colorpicker-alpha.mjs",
         "test:debug": "jest --watch --coverage",
         "apidoc": "node ./api-scripts/build-apidoc.js",
         "apiwebtypes": "node ./api-scripts/build-webtypes.js"

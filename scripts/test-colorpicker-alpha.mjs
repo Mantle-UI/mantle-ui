@@ -174,23 +174,46 @@ try {
         return result;
     };
 
-    const evaluate = async (expression) => {
-        const response = await page('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true });
+    let globalObject;
+    const fixtureDeadline = Date.now() + 10000;
+
+    while (!globalObject && Date.now() < fixtureDeadline) {
+        try {
+            const { result } = await page('Runtime.evaluate', { expression: 'window.alphaFixture ? globalThis : undefined' });
+
+            if (result.objectId) globalObject = result;
+        } catch (error) {
+            if (!/Cannot find context|Execution context was destroyed/.test(error.message)) throw error;
+        }
+
+        if (!globalObject) await new Promise((resolve) => setTimeout(resolve, 40));
+    }
+
+    if (!globalObject) throw new Error('Chromium did not initialize the fixture.');
+
+    const evaluate = async (fn, ...args) => {
+        const response = await page('Runtime.callFunctionOn', {
+            objectId: globalObject.objectId,
+            functionDeclaration: fn.toString(),
+            arguments: args.map((value) => ({ value })),
+            returnByValue: true,
+            awaitPromise: true
+        });
 
         if (response.exceptionDetails) throw new Error(response.exceptionDetails.text + ': ' + response.exceptionDetails.exception?.description);
 
         return response.result.value;
     };
 
-    const waitFor = async (expression) => {
+    const waitFor = async (fn, ...args) => {
         const deadline = Date.now() + 5000;
 
         while (Date.now() < deadline) {
-            if (await evaluate(expression)) return;
+            if (await evaluate(fn, ...args)) return;
             await new Promise((resolve) => setTimeout(resolve, 40));
         }
 
-        throw new Error(`Timed out: ${expression}`);
+        throw new Error(`Timed out: ${fn.toString()}`);
     };
 
     const record = (name, passed) => {
@@ -198,7 +221,7 @@ try {
         if (!passed) throw new Error(name);
     };
 
-    const check = async (name, expression) => record(name, Boolean(await evaluate(expression)));
+    const check = async (name, fn, ...args) => record(name, Boolean(await evaluate(fn, ...args)));
 
     const key = async (name, modifiers = 0) => {
         const codes = { ArrowRight: 39, ArrowLeft: 37, Home: 36, End: 35, Enter: 13, ' ': 32, Escape: 27, Tab: 9 };
@@ -208,10 +231,21 @@ try {
         await page('Input.dispatchKeyEvent', { type: 'keyUp', ...params });
     };
 
-    const focus = (selector) => evaluate(`document.querySelector(${JSON.stringify(selector)}).focus()`);
+    const focus = (selector) => evaluate((target) => document.querySelector(target).focus(), selector);
 
     const click = async (selector, xRatio = 0.5, yRatio = 0.5) => {
-        const position = await evaluate(`(() => { const r = document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect(); return {x:r.left+r.width*${xRatio},y:r.top+r.height*${yRatio}}; })()`);
+        if (![xRatio, yRatio].every((ratio) => Number.isFinite(ratio) && ratio >= 0 && ratio <= 1)) throw new TypeError('Click ratios must be finite numbers in [0, 1].');
+
+        const position = await evaluate(
+            (target, x, y) => {
+                const bounds = document.querySelector(target).getBoundingClientRect();
+
+                return { x: bounds.left + bounds.width * x, y: bounds.top + bounds.height * y };
+            },
+            selector,
+            xRatio,
+            yRatio
+        );
 
         await page('Input.dispatchMouseEvent', { type: 'mouseMoved', ...position });
         await page('Input.dispatchMouseEvent', { type: 'mousePressed', ...position, button: 'left', clickCount: 1 });
@@ -220,14 +254,58 @@ try {
 
     const slider = '#inline .p-colorpicker-alpha-slider';
 
-    await waitFor('Boolean(window.alphaFixture)');
-    await check('Inline appear transition initializes without alpha', 'document.querySelector("#appear-opaque .p-colorpicker-color-selector").style.backgroundColor !== "" && !document.querySelector("#appear-opaque input[type=range]")');
+    await waitFor(() => Boolean(window.alphaFixture));
+
+    const argumentCases = ['\");globalThis.runnerInjected=true;//', '</script><script>globalThis.runnerInjected=true</script>', '` ${globalThis.runnerInjected=true}', 'quote" single\' backslash\\ newline\n', 'line\u2028separator\u2029paragraph'];
+
+    for (const [index, value] of argumentCases.entries()) {
+        record(`Structured argument ${index + 1} stays data`, (await evaluate((argument) => argument, value)) === value);
+    }
+
+    const probeSelector = await evaluate((id) => {
+        window.runnerInjected = false;
+        const button = document.createElement('button');
+
+        button.id = id;
+        button.textContent = 'Runner argument probe';
+        button.onclick = () => (button.dataset.clicked = 'true');
+        document.body.prepend(button);
+
+        return '#' + CSS.escape(id);
+    }, argumentCases.join(' '));
+
+    await focus(probeSelector);
+    await check('Focus accepts escaped selector data', (target) => document.activeElement === document.querySelector(target), probeSelector);
+    let rejectedRatios = 0;
+
+    for (const ratio of [NaN, Infinity, -Infinity, -0.1, 1.1, '0.5', null, true, {}]) {
+        for (const axes of [
+            [ratio, 0.5],
+            [0.5, ratio]
+        ]) {
+            try {
+                await click(probeSelector, ...axes);
+            } catch (error) {
+                if (!(error instanceof TypeError)) throw error;
+
+                rejectedRatios++;
+            }
+        }
+    }
+
+    record('Click rejects nonnumeric, nonfinite and out-of-range ratios on either axis', rejectedRatios === 18);
+    await check('Rejected ratios dispatch no clicks', (target) => !document.querySelector(target).dataset.clicked, probeSelector);
+    await click(probeSelector);
+    await check('Click accepts escaped selector data without code execution', (target) => document.querySelector(target).dataset.clicked === 'true' && window.runnerInjected === false, probeSelector);
+    await evaluate((target) => document.querySelector(target).remove(), probeSelector);
+
+    await check('Inline appear transition initializes without alpha', () => document.querySelector('#appear-opaque .p-colorpicker-color-selector').style.backgroundColor !== '' && !document.querySelector('#appear-opaque input[type=range]'));
     await check(
         'Inline appear transition initializes with alpha',
-        'document.querySelector("#appear-alpha input[type=range]").value === "50" && document.querySelector("#appear-alpha .p-colorpicker-alpha-preview").style.getPropertyValue("--p-colorpicker-preview-color").includes("rgba(0, 17, 119")'
+        () => document.querySelector('#appear-alpha input[type=range]').value === '50' && document.querySelector('#appear-alpha .p-colorpicker-alpha-preview').style.getPropertyValue('--p-colorpicker-preview-color').includes('rgba(0, 17, 119')
     );
-    await check('Default picker has no alpha UI', '!document.querySelector("#legacy input[type=range]")');
-    await check('Opacity range is named and in percent', `document.querySelector('${slider}').getAttribute('aria-label') === 'Opacity' && document.querySelector('${slider}').value === '50'`);
+    await check('Default picker has no alpha UI', () => !document.querySelector('#legacy input[type=range]'));
+    await check('Opacity range is named and in percent', (target) => document.querySelector(target).getAttribute('aria-label') === 'Opacity' && document.querySelector(target).value === '50', slider);
     report.range = await rangeParts();
     record(
         'Opacity track blends transparent to selected RGB over checkerboard',
@@ -235,137 +313,181 @@ try {
     );
     record('Opacity thumb has visible size and contrasting border', parseFloat(report.range.thumb.width) >= 12 && report.range.thumb['border-top-color'] === 'rgb(255, 255, 255)' && report.range.thumb['background-color'] === 'rgb(50, 50, 50)');
     await focus(slider);
-    await check('Keyboard focus has a visible outline', `getComputedStyle(document.querySelector('${slider}')).outlineStyle !== 'none' && parseFloat(getComputedStyle(document.querySelector('${slider}')).outlineWidth) >= 2`);
+    await check('Keyboard focus has a visible outline', (target) => getComputedStyle(document.querySelector(target)).outlineStyle !== 'none' && parseFloat(getComputedStyle(document.querySelector(target)).outlineWidth) >= 2, slider);
     await key('ArrowRight');
-    await waitFor('window.alphaChanges.length === 1');
-    await check('ArrowRight emits 51% without changing hex RGB', 'window.alphaChanges.at(-1) === "00117782"');
+    await waitFor(() => window.alphaChanges.length === 1);
+    await check('ArrowRight emits 51% without changing hex RGB', () => window.alphaChanges.at(-1) === '00117782');
     await key('ArrowLeft');
-    await check('ArrowLeft emits 50%', 'window.alphaChanges.at(-1) === "00117780"');
+    await check('ArrowLeft emits 50%', () => window.alphaChanges.at(-1) === '00117780');
     await key('Home');
-    await check('Home emits transparent', 'window.alphaChanges.at(-1) === "00117700"');
+    await check('Home emits transparent', () => window.alphaChanges.at(-1) === '00117700');
     const transparentRange = await rangeParts();
 
     record('Transparent endpoint places thumb at track start', Math.abs(transparentRange.thumb.bounds.left - transparentRange.track.bounds.left) <= 1);
     await key('End');
-    await check('End emits opaque', 'window.alphaChanges.at(-1) === "001177ff"');
+    await check('End emits opaque', () => window.alphaChanges.at(-1) === '001177ff');
     const opaqueRange = await rangeParts();
 
     record('Opaque endpoint places thumb at track end', Math.abs(opaqueRange.thumb.bounds.right - opaqueRange.track.bounds.right) <= 1);
-    await evaluate('window.alphaFixture.setValue("ff000080")');
-    await waitFor(`document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '255, 0, 0'`);
+    await evaluate(() => window.alphaFixture.setValue('ff000080'));
+    await waitFor((target) => document.querySelector(target).style.getPropertyValue('--p-colorpicker-alpha-rgb') === '255, 0, 0', slider);
     const redRange = await rangeParts();
 
     record('Controlled RGB replacement refreshes the opacity gradient', redRange.track['background-image'].includes('rgba(255, 0, 0, 0)') && redRange.track['background-image'].includes('rgb(255, 0, 0)'));
     await click('#inline .p-colorpicker-hue', 0.5, 2 / 3);
-    await waitFor(`document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 255, 0'`);
+    await waitFor((target) => document.querySelector(target).style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 255, 0', slider);
     const greenRange = await rangeParts();
 
     record('Hue selection refreshes the opacity gradient live', greenRange.track['background-image'].includes('rgba(0, 255, 0, 0)') && greenRange.track['background-image'].includes('rgb(0, 255, 0)'));
     await click('#inline .p-colorpicker-color-selector');
-    await waitFor(`document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '64, 128, 64'`);
+    await waitFor((target) => document.querySelector(target).style.getPropertyValue('--p-colorpicker-alpha-rgb') === '64, 128, 64', slider);
     const selectedRange = await rangeParts();
 
     record('Saturation and brightness refresh the opacity gradient live', selectedRange.track['background-image'].includes('rgba(64, 128, 64, 0)'));
-    await evaluate('window.alphaFixture.setValue("00117780")');
-    await waitFor(`document.querySelector('${slider}').value === '50' && document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 17, 119'`);
+    await evaluate(() => window.alphaFixture.setValue('00117780'));
+    await waitFor((target) => document.querySelector(target).value === '50' && document.querySelector(target).style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 17, 119', slider);
     await check(
         'Inline preview composites color over checkerboard',
-        'getComputedStyle(document.querySelector("#inline .p-colorpicker-alpha-preview")).backgroundImage.includes("conic-gradient") && getComputedStyle(document.querySelector("#inline .p-colorpicker-alpha-preview")).backgroundImage.includes("rgba(0, 17, 119")'
+        () =>
+            getComputedStyle(document.querySelector('#inline .p-colorpicker-alpha-preview')).backgroundImage.includes('conic-gradient') &&
+            getComputedStyle(document.querySelector('#inline .p-colorpicker-alpha-preview')).backgroundImage.includes('rgba(0, 17, 119')
     );
-    await check(
-        'Inline opacity UI fits panel bounds',
-        '(() => {const panel=document.querySelector("#inline .p-colorpicker-panel").getBoundingClientRect();const slider=document.querySelector("#inline input[type=range]").getBoundingClientRect();return slider.bottom <= panel.bottom && slider.right <= panel.right && slider.left >= panel.left;})()'
-    );
-    report.contrast = await evaluate(`(() => {
+    await check('Inline opacity UI fits panel bounds', () => {
+        const panel = document.querySelector('#inline .p-colorpicker-panel').getBoundingClientRect();
+        const range = document.querySelector('#inline input[type=range]').getBoundingClientRect();
+
+        return range.bottom <= panel.bottom && range.right <= panel.right && range.left >= panel.left;
+    });
+    report.contrast = await evaluate(() => {
         const text = getComputedStyle(document.querySelector('#inline .p-colorpicker-alpha-label')).color;
         const background = getComputedStyle(document.querySelector('#inline .p-colorpicker-panel')).backgroundColor;
-        const luminance = (color) => color.match(/[\\d.]+/g).slice(0, 3).map(Number).map((c) => c / 255).map((c) => c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4).reduce((sum, c, i) => sum + c * [.2126, .7152, .0722][i], 0);
-        const values = [luminance(text), luminance(background)].sort((a, b) => b-a);
-        return { text, background, ratio: (values[0] + .05) / (values[1] + .05) };
-    })()`);
+        const luminance = (color) =>
+            color
+                .match(/[\d.]+/g)
+                .slice(0, 3)
+                .map(Number)
+                .map((c) => c / 255)
+                .map((c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4))
+                .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
+        const values = [luminance(text), luminance(background)].sort((a, b) => b - a);
+
+        return { text, background, ratio: (values[0] + 0.05) / (values[1] + 0.05) };
+    });
     assertions.push({ name: 'Opacity text contrast reaches 4.5:1', passed: report.contrast.ratio >= 4.5 });
 
     if (report.contrast.ratio < 4.5) throw new Error('Opacity text contrast below 4.5:1');
 
     for (const format of ['rgb', 'hsb']) {
-        const value = format === 'rgb' ? '{r:0,g:17,b:119,a:.5}' : '{h:240,s:100,b:100,a:.5}';
+        const value = format === 'rgb' ? { r: 0, g: 17, b: 119, a: 0.5 } : { h: 240, s: 100, b: 100, a: 0.5 };
 
-        await evaluate(`window.alphaFixture.setOptions({format:'${format}'}); window.alphaFixture.setValue(${value}); new Promise(resolve => requestAnimationFrame(resolve))`);
-        await waitFor(`document.querySelector('${slider}').value === '50'`);
+        await evaluate(
+            (options, color) => {
+                window.alphaFixture.setOptions(options);
+                window.alphaFixture.setValue(color);
+
+                return new Promise((resolve) => requestAnimationFrame(resolve));
+            },
+            { format },
+            value
+        );
+        await waitFor((target) => document.querySelector(target).value === '50', slider);
         await focus(slider);
         await key('ArrowRight');
-        await check(`${format} native opacity edit emits normalized a`, 'window.alphaChanges.at(-1).a === .51');
+        await check(`${format} native opacity edit emits normalized a`, () => window.alphaChanges.at(-1).a === 0.51);
     }
 
-    await evaluate('window.alphaFixture.setOptions({}); window.alphaFixture.setValue("00117780")');
-    await waitFor(`document.querySelector('${slider}').value === '50' && document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 17, 119'`);
+    await evaluate(() => {
+        window.alphaFixture.setOptions({});
+        window.alphaFixture.setValue('00117780');
+    });
+    await waitFor((target) => document.querySelector(target).value === '50' && document.querySelector(target).style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 17, 119', slider);
     await focus('#popup-input');
     await key('Enter');
-    await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider") && !document.querySelector("#inline").contains(document.activeElement)');
-    await check('Enter focuses popup opacity', 'document.activeElement.value === "50"');
-    await check(
-        'Popup checkerboard preview is visible',
-        '(() => {const e=document.activeElement.closest(".p-colorpicker-panel").querySelector(".p-colorpicker-alpha-preview");return e.getBoundingClientRect().width > 0 && getComputedStyle(e).backgroundImage.includes("conic-gradient");})()'
-    );
+    await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider') && !document.querySelector('#inline').contains(document.activeElement));
+    await check('Enter focuses popup opacity', () => document.activeElement.value === '50');
+    await check('Popup checkerboard preview is visible', () => {
+        const preview = document.activeElement.closest('.p-colorpicker-panel').querySelector('.p-colorpicker-alpha-preview');
+
+        return preview.getBoundingClientRect().width > 0 && getComputedStyle(preview).backgroundImage.includes('conic-gradient');
+    });
     await key('ArrowRight');
-    await check('Popup native opacity edit emits updated value', 'window.alphaChanges.at(-1) === "00117782"');
+    await check('Popup native opacity edit emits updated value', () => window.alphaChanges.at(-1) === '00117782');
     await key('Escape');
-    await waitFor('document.activeElement.id === "popup-input"');
-    await check('Escape returns popup focus to trigger', 'document.activeElement.id === "popup-input"');
+    await waitFor(() => document.activeElement.id === 'popup-input');
+    await check('Escape returns popup focus to trigger', () => document.activeElement.id === 'popup-input');
     await key(' ');
-    await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider")');
-    await check('Space focuses popup opacity', 'document.activeElement.classList.contains("p-colorpicker-alpha-slider")');
+    await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider'));
+    await check('Space focuses popup opacity', () => document.activeElement.classList.contains('p-colorpicker-alpha-slider'));
     await key('Tab', 8);
-    await check('Shift+Tab closes popup and focuses trigger', 'document.activeElement.id === "popup-input"');
+    await check('Shift+Tab closes popup and focuses trigger', () => document.activeElement.id === 'popup-input');
     await key('Enter');
-    await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider")');
+    await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider'));
     await key('Tab');
-    await check('Tab leaves popup at next control', 'document.activeElement.id === "after"');
-    await waitFor('!Array.from(document.querySelectorAll(".p-colorpicker-overlay-panel")).some(e => e.getBoundingClientRect().height > 0)');
-    await evaluate('document.querySelector("#popup-input").click()');
-    await waitFor('Array.from(document.querySelectorAll(".p-colorpicker-overlay-panel")).some(e => e.getBoundingClientRect().height > 0)');
+    await check('Tab leaves popup at next control', () => document.activeElement.id === 'after');
+    await waitFor(() => !Array.from(document.querySelectorAll('.p-colorpicker-overlay-panel')).some((panel) => panel.getBoundingClientRect().height > 0));
+    await evaluate(() => document.querySelector('#popup-input').click());
+    await waitFor(() => Array.from(document.querySelectorAll('.p-colorpicker-overlay-panel')).some((panel) => panel.getBoundingClientRect().height > 0));
     await focus('#popup-input');
     await key('Tab');
-    await check('Tab from open trigger reaches popup opacity', 'document.activeElement.classList.contains("p-colorpicker-alpha-slider")');
+    await check('Tab from open trigger reaches popup opacity', () => document.activeElement.classList.contains('p-colorpicker-alpha-slider'));
     await key('Escape');
 
     for (const option of ['disabled', 'readOnly']) {
-        await evaluate(`window.alphaFixture.setOptions({${option}: true})`);
-        await waitFor(`document.querySelector('${slider}').disabled`);
-        await check(`${option} disables native opacity editing`, `document.querySelector('${slider}').disabled`);
-        await check(`${option} visibly dims the opacity control`, `Number(getComputedStyle(document.querySelector('${slider}')).opacity) < 1`);
-        const count = await evaluate('window.alphaChanges.length');
+        await evaluate((options) => window.alphaFixture.setOptions(options), { [option]: true });
+        await waitFor((target) => document.querySelector(target).disabled, slider);
+        await check(`${option} disables native opacity editing`, (target) => document.querySelector(target).disabled, slider);
+        await check(`${option} visibly dims the opacity control`, (target) => Number(getComputedStyle(document.querySelector(target)).opacity) < 1, slider);
+        const count = await evaluate(() => window.alphaChanges.length);
 
         await focus(slider);
         await key('Home');
-        await check(`${option} emits no keyboard changes`, `window.alphaChanges.length === ${count}`);
-        await evaluate('window.alphaFixture.setOptions({})');
-        await waitFor(`!document.querySelector('${slider}').disabled`);
+        await check(`${option} emits no keyboard changes`, (previousCount) => window.alphaChanges.length === previousCount, count);
+        await evaluate(() => window.alphaFixture.setOptions({}));
+        await waitFor((target) => !document.querySelector(target).disabled, slider);
     }
 
     for (const appendTo of [null, 'self']) {
         for (const nextTarget of ['summary', 'closedDetails', 'radio']) {
-            await evaluate(`window.alphaFixture.setOptions({appendTo:${JSON.stringify(appendTo)}}); window.alphaFixture.setNextTarget('${nextTarget}'); new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))`);
+            await evaluate(
+                (options, next) => {
+                    window.alphaFixture.setOptions(options);
+                    window.alphaFixture.setNextTarget(next);
+
+                    return new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+                },
+                { appendTo },
+                nextTarget
+            );
             await focus('#popup-input');
             await key('Enter');
-            await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider") && !document.querySelector("#inline").contains(document.activeElement)');
+            await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider') && !document.querySelector('#inline').contains(document.activeElement));
             await key('Tab');
-            await check(`${appendTo || 'portal'} popup Tab follows native ${nextTarget} order`, 'document.activeElement.id === "after"');
+            await check(`${appendTo || 'portal'} popup Tab follows native ${nextTarget} order`, () => document.activeElement.id === 'after');
             await key('Tab');
-            await check(`${appendTo || 'portal'} exiting popup range stays out of tab order`, '!document.activeElement.closest(".p-colorpicker-overlay-panel")');
+            await check(`${appendTo || 'portal'} exiting popup range stays out of tab order`, () => !document.activeElement.closest('.p-colorpicker-overlay-panel'));
             await focus('#popup-input');
             await key('Enter');
-            await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider") && !document.querySelector("#inline").contains(document.activeElement)');
-            await check(`${appendTo || 'portal'} popup restores opacity focus after ${nextTarget} exit`, 'document.activeElement.disabled === false');
+            await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider') && !document.querySelector('#inline').contains(document.activeElement));
+            await check(`${appendTo || 'portal'} popup restores opacity focus after ${nextTarget} exit`, () => document.activeElement.disabled === false);
             await key('Escape');
         }
     }
 
-    await evaluate('window.alphaFixture.setOptions({}); window.alphaFixture.setNextTarget("link"); new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+    await evaluate(() => {
+        window.alphaFixture.setOptions({});
+        window.alphaFixture.setNextTarget('link');
+
+        return new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    });
     await focus('#popup-input');
     await key('Enter');
-    await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider")');
-    await check('Popup opacity UI fits panel bounds', '(() => {const e=document.activeElement;const r=e.getBoundingClientRect();const p=e.closest(".p-colorpicker-panel").getBoundingClientRect();return r.bottom<=p.bottom && r.right<=p.right;})()');
+    await waitFor(() => document.activeElement.classList.contains('p-colorpicker-alpha-slider'));
+    await check('Popup opacity UI fits panel bounds', () => {
+        const range = document.activeElement.getBoundingClientRect();
+        const panel = document.activeElement.closest('.p-colorpicker-panel').getBoundingClientRect();
+
+        return range.bottom <= panel.bottom && range.right <= panel.right;
+    });
     report.passed = errors.length === 0;
 
     if (process.env.MANTLE_TEST_SCREENSHOT) {

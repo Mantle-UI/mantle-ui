@@ -8,6 +8,7 @@ export function StyledDoc(props) {
                 <p>
                     The opacity section uses <code>--p-colorpicker-alpha-color</code> for its text color, defaulting to <code>#fff</code> for the legacy dark ColorPicker panels. Override this CSS variable when using a light panel background.
                 </p>
+                <p>The opacity slider shows the current color from transparent to opaque over a checkerboard, updating as the selected color changes.</p>
             </DocSectionText>
             <div className="doc-tablewrapper">
                 <table className="doc-table">

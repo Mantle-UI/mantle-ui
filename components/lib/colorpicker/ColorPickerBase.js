@@ -152,7 +152,58 @@ const styles = `
     .p-colorpicker-alpha-slider {
         grid-column: 2 / 4;
         width: 100%;
+        height: 1rem;
         margin: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        background: transparent;
+        border-radius: 1rem;
+        direction: ltr;
+        cursor: pointer;
+    }
+    .p-colorpicker-alpha-slider::-webkit-slider-runnable-track {
+        height: 0.75rem;
+        border-radius: 1rem;
+        background-image: linear-gradient(to right, rgba(var(--p-colorpicker-alpha-rgb, 255, 0, 0), 0), rgba(var(--p-colorpicker-alpha-rgb, 255, 0, 0), 1)), conic-gradient(#ddd 25%, #fff 0 50%, #ddd 0 75%, #fff 0);
+        background-size: 100% 100%, 8px 8px;
+        box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.35);
+    }
+    .p-colorpicker-alpha-slider::-moz-range-track {
+        height: 0.75rem;
+        border-radius: 1rem;
+        background-image: linear-gradient(to right, rgba(var(--p-colorpicker-alpha-rgb, 255, 0, 0), 0), rgba(var(--p-colorpicker-alpha-rgb, 255, 0, 0), 1)), conic-gradient(#ddd 25%, #fff 0 50%, #ddd 0 75%, #fff 0);
+        background-size: 100% 100%, 8px 8px;
+        box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.35);
+    }
+    .p-colorpicker-alpha-slider::-webkit-slider-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 1rem;
+        height: 1rem;
+        margin-top: -0.125rem;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: #323232;
+        box-shadow: 0 0 0 1px #000;
+    }
+    .p-colorpicker-alpha-slider::-moz-range-thumb {
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: #323232;
+        box-shadow: 0 0 0 1px #000;
+    }
+    .p-colorpicker-alpha-slider::-moz-range-progress {
+        background: transparent;
+    }
+    .p-colorpicker-alpha-slider:focus-visible {
+        outline: 2px solid var(--p-colorpicker-alpha-color, #fff);
+        outline-offset: 3px;
+    }
+    .p-colorpicker-alpha-slider:disabled {
+        cursor: default;
+        opacity: 0.6;
     }
     .p-colorpicker-alpha-preview,
     .p-colorpicker-alpha-enabled .p-colorpicker-preview {

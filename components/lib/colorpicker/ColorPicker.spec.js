@@ -33,7 +33,27 @@ const selectPartialColor = (container) => {
     fireEvent.mouseUp(document);
 };
 
+const tabForwardFromPopup = async (user, slider, preview) => {
+    // user-event calculates Tab's destination from the original event target, ignoring focus changes in handlers.
+    // Test the handler's contract, then let its Tab utility continue from the restored preview focus.
+    expect(fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 })).toBe(true);
+    expect(preview).toHaveFocus();
+    await user.tab();
+};
+
 describe('ColorPicker legacy value contract', () => {
+    it.each([false, true])('initializes an inline appear transition with alpha=%s', (alpha) => {
+        const onChange = jest.fn();
+        const { container } = render(<ColorPicker inline alpha={alpha} value={alpha ? '00ff0080' : '00ff00'} onChange={onChange} pt={{ transition: { appear: true } }} />);
+
+        expect(container.querySelector('.p-colorpicker-color-selector')).toHaveStyle({ backgroundColor: 'rgb(0, 255, 0)' });
+        expect(container.querySelector('.p-colorpicker-color-handle')).toHaveStyle({ left: '150px', top: '0px' });
+
+        if (alpha) expect(screen.getByRole('slider', { name: 'Opacity' })).toHaveValue('50');
+
+        expect(onChange).not.toHaveBeenCalled();
+    });
+
     it.each([
         ['hex', 'ff0000', '00ff00'],
         ['rgb', { r: 255, g: 0, b: 0 }, { r: 0, g: 255, b: 0 }],
@@ -383,7 +403,10 @@ describe('ColorPicker opacity interaction', () => {
         const slider = screen.getByRole('slider', { name: 'Opacity' });
 
         expect(slider).toHaveFocus();
-        await user.tab({ shift });
+
+        if (shift) await user.tab({ shift: true });
+        else await tabForwardFromPopup(user, slider, inputRef.current);
+
         expect(screen.queryByRole('slider', { name: 'Opacity' })).not.toBeInTheDocument();
         expect(shift ? inputRef.current : screen.getByRole('button', { name: 'Next control' })).toHaveFocus();
     });
@@ -407,10 +430,112 @@ describe('ColorPicker opacity interaction', () => {
         );
         inputRef.current.focus();
         await user.keyboard('[Enter]');
-        expect(screen.getByRole('slider', { name: 'Opacity' })).toHaveFocus();
-        await user.tab();
+        const slider = screen.getByRole('slider', { name: 'Opacity' });
+
+        expect(slider).toHaveFocus();
+        await tabForwardFromPopup(user, slider, inputRef.current);
         expect(screen.queryByRole('slider', { name: 'Opacity' })).not.toBeInTheDocument();
         expect(screen.getByRole('link', { name: 'Next link' })).toHaveFocus();
+    });
+
+    it.each([
+        ['portalled', undefined],
+        ['self', 'self']
+    ])('tabs to the checked radio in the next group when appended %s', async (name, appendTo) => {
+        const user = userEvent.setup();
+        const inputRef = React.createRef();
+
+        render(
+            <>
+                <ColorPicker alpha inputRef={inputRef} value="ff000080" appendTo={appendTo} transitionOptions={{ disabled: true }} />
+                <input type="radio" name="next-option" aria-label="Unchecked option" />
+                <input type="radio" name="next-option" aria-label="Checked option" defaultChecked />
+                <button type="button">Later control</button>
+            </>
+        );
+        inputRef.current.focus();
+        await user.keyboard('[Enter]');
+        const slider = screen.getByRole('slider', { name: 'Opacity' });
+
+        expect(slider).toHaveFocus();
+        await tabForwardFromPopup(user, slider, inputRef.current);
+        expect(screen.getByRole('radio', { name: 'Checked option' })).toHaveFocus();
+        expect(screen.queryByRole('slider', { name: 'Opacity' })).not.toBeInTheDocument();
+    });
+
+    it.each([
+        ['portalled', undefined],
+        ['self', 'self']
+    ])('leaves forward Tab to the browser for a native details summary when appended %s', async (name, appendTo) => {
+        const user = userEvent.setup();
+        const inputRef = React.createRef();
+
+        render(
+            <>
+                <ColorPicker alpha inputRef={inputRef} value="ff000080" appendTo={appendTo} transitionOptions={{ disabled: true }} />
+                <details>
+                    <summary>Next disclosure</summary>
+                    <button type="button">Closed disclosure action</button>
+                </details>
+                <button type="button">Later control</button>
+            </>
+        );
+        inputRef.current.focus();
+        await user.keyboard('[Enter]');
+        const slider = screen.getByRole('slider', { name: 'Opacity' });
+
+        expect(slider).toHaveFocus();
+        // user-event omits native summary from its Tab candidates and does not model closed details content.
+        // Assert the component preserves default navigation here; the browser suite verifies the destination.
+        expect(fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 })).toBe(true);
+        expect(inputRef.current).toHaveFocus();
+        expect(screen.queryByRole('slider', { name: 'Opacity' })).not.toBeInTheDocument();
+    });
+
+    it.each([
+        ['portalled', undefined],
+        ['self', 'self']
+    ])('excludes an exiting panel from Tab and restores it on reopening when appended %s', async (name, appendTo) => {
+        const user = userEvent.setup();
+        const inputRef = React.createRef();
+        const api = React.createRef();
+
+        render(<ColorPicker alpha ref={api} inputRef={inputRef} value="ff000080" appendTo={appendTo} transitionOptions={{ timeout: { enter: 0, exit: 1000 } }} />);
+        inputRef.current.focus();
+        await user.keyboard('[Enter]');
+        const slider = screen.getByRole('slider', { name: 'Opacity' });
+        const panel = api.current.getOverlay();
+
+        await waitFor(() => expect(slider).toHaveFocus());
+        expect(fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 })).toBe(true);
+        expect(inputRef.current).toHaveFocus();
+        expect(panel).toBeInTheDocument();
+        expect(panel).toHaveAttribute('inert');
+        expect(slider).toHaveAttribute('tabindex', '-1');
+        await user.click(inputRef.current);
+        expect(api.current.getOverlay()).toBe(panel);
+        expect(panel).not.toHaveAttribute('inert');
+        expect(slider.tabIndex).toBe(0);
+    });
+
+    it('preserves consumer pass-through inert and tabindex settings on an interrupted exit', () => {
+        const inputRef = React.createRef();
+        const api = React.createRef();
+
+        render(<ColorPicker alpha ref={api} inputRef={inputRef} value="ff000080" transitionOptions={{ timeout: { enter: 0, exit: 1000 } }} pt={{ panel: { inert: true }, alphaSlider: { tabIndex: 4 } }} />);
+        fireEvent.click(inputRef.current);
+        const panel = api.current.getOverlay();
+        const slider = panel.querySelector('input[type="range"]');
+
+        expect(panel).toHaveAttribute('inert');
+        expect(slider).toHaveAttribute('tabindex', '4');
+        // A synthetic event exercises snapshot restoration while consumer-provided inert suppresses real interaction.
+        fireEvent.keyDown(slider, { key: 'Tab', code: 'Tab', keyCode: 9 });
+        expect(slider).toHaveAttribute('tabindex', '-1');
+        fireEvent.click(inputRef.current);
+        expect(api.current.getOverlay()).toBe(panel);
+        expect(panel).toHaveAttribute('inert');
+        expect(slider).toHaveAttribute('tabindex', '4');
     });
 
     it('handles opacity edits in a popup and preserves the imperative/input refs', () => {

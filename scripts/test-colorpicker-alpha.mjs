@@ -11,8 +11,10 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { rollup } from 'rollup';
 
+const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const browser = [process.env.MANTLE_TEST_BROWSER, 'C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', '/usr/bin/chromium', '/usr/bin/google-chrome'].find(
     (file) => file && existsSync(file)
 );
@@ -20,7 +22,7 @@ const browser = [process.env.MANTLE_TEST_BROWSER, 'C:/Program Files/Google/Chrom
 if (!browser) throw new Error('Set MANTLE_TEST_BROWSER to an installed Chromium executable.');
 
 const bundle = await rollup({
-    input: path.resolve(import.meta.dirname, 'fixtures/colorpicker-alpha.jsx'),
+    input: path.resolve(scriptDirectory, 'fixtures/colorpicker-alpha.jsx'),
     plugins: [
         replace({ preventAssignment: true, 'process.env.NODE_ENV': JSON.stringify('development') }),
         nodeResolve({ browser: true, extensions: ['.js', '.jsx', '.json'] }),
@@ -36,7 +38,7 @@ const themeName = process.env.MANTLE_TEST_THEME || 'lara-light-indigo';
 
 if (!['lara-light-indigo', 'lara-dark-indigo'].includes(themeName)) throw new Error('MANTLE_TEST_THEME must be lara-light-indigo or lara-dark-indigo.');
 
-const theme = await readFile(path.resolve(import.meta.dirname, `../public/themes/${themeName}/theme.css`));
+const theme = await readFile(path.resolve(scriptDirectory, `../public/themes/${themeName}/theme.css`));
 const server = createServer((request, response) => {
     if (request.url === '/fixture.js') {
         response.setHeader('Content-Type', 'text/javascript');
@@ -55,25 +57,14 @@ const profile = await mkdtemp(path.join(tmpdir(), 'mantle-alpha-browser-'));
 const assertions = [];
 const errors = [];
 let child;
-let socket;
 let browserExited;
 let stderr = '';
 let page;
-let readyTimer;
-const report = { passed: false, theme: themeName, assertions, errors };
+const pending = new Map();
+const report = { passed: false, node: process.version, transport: 'pipe', theme: themeName, assertions, errors };
 
 try {
     await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-    let ready;
-    const readyPromise = new Promise((resolve, reject) => {
-        readyTimer = setTimeout(() => reject(new Error('Chromium debugger did not start.')), 15000);
-
-        ready = (url) => {
-            clearTimeout(readyTimer);
-            resolve(url);
-        };
-    });
-
     child = spawn(
         browser,
         [
@@ -84,38 +75,51 @@ try {
             '--disable-background-networking',
             '--disable-extensions',
             '--disable-sync',
-            '--remote-debugging-port=0',
+            '--remote-debugging-pipe',
             '--window-size=1280,900',
             `--user-data-dir=${profile}`,
             `http://127.0.0.1:${server.address().port}`
         ],
-        { windowsHide: true }
+        { windowsHide: true, stdio: ['ignore', 'ignore', 'pipe', 'pipe', 'pipe'] }
     );
     browserExited = new Promise((resolve) => child.on('close', resolve));
     child.stderr.on('data', (chunk) => {
         stderr += chunk;
-        const url = stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/)?.[1];
-
-        if (url) ready(url);
-    });
-    socket = new WebSocket(await readyPromise);
-    await new Promise((resolve, reject) => {
-        socket.addEventListener('open', resolve, { once: true });
-        socket.addEventListener('error', reject, { once: true });
     });
     let id = 0;
-    const pending = new Map();
+    let incoming = '';
 
-    socket.addEventListener('message', ({ data }) => {
-        const message = JSON.parse(data);
-        const request = pending.get(message.id);
-
-        if (message.method === 'Runtime.exceptionThrown') errors.push(message.params);
-
-        if (request) {
-            pending.delete(message.id);
+    const rejectPending = (error) => {
+        for (const request of pending.values()) {
             clearTimeout(request.timer);
-            message.error ? request.reject(new Error(message.error.message)) : request.resolve(message.result);
+            request.reject(error);
+        }
+
+        pending.clear();
+    };
+
+    child.on('error', rejectPending);
+    child.stdio[3].on('error', rejectPending);
+    child.stdio[4].on('error', rejectPending);
+    child.stdio[4].setEncoding('utf8');
+    // Chrome's CDP pipe uses UTF-8 JSON separated by NUL on file descriptors 3/4.
+    // Native child-process streams work on Node 20.10 without a WebSocket global.
+    child.stdio[4].on('data', (chunk) => {
+        incoming += chunk;
+        let boundary;
+
+        while ((boundary = incoming.indexOf('\0')) !== -1) {
+            const message = JSON.parse(incoming.slice(0, boundary));
+            const request = pending.get(message.id);
+
+            incoming = incoming.slice(boundary + 1);
+            if (message.method === 'Runtime.exceptionThrown') errors.push(message.params);
+
+            if (request) {
+                pending.delete(message.id);
+                clearTimeout(request.timer);
+                message.error ? request.reject(new Error(message.error.message)) : request.resolve(message.result);
+            }
         }
     });
     const send = (method, params = {}, sessionId) =>
@@ -127,14 +131,48 @@ try {
             }, 10000);
 
             pending.set(messageId, { resolve, reject, timer });
-            socket.send(JSON.stringify({ id: messageId, method, params, sessionId }));
+            child.stdio[3].write(JSON.stringify({ id: messageId, method, params, sessionId }) + '\0');
         });
-    const { targetInfos } = await send('Target.getTargets');
-    const target = targetInfos.find((item) => item.type === 'page' && item.url.startsWith('http://127.0.0.1:'));
+    let target;
+    const deadline = Date.now() + 10000;
+
+    while (!target && Date.now() < deadline) {
+        const { targetInfos } = await send('Target.getTargets');
+
+        target = targetInfos.find((item) => item.type === 'page' && item.url.startsWith('http://127.0.0.1:'));
+        if (!target) await new Promise((resolve) => setTimeout(resolve, 40));
+    }
+
+    if (!target) throw new Error(`Chromium did not open the fixture page. ${stderr}`);
+
     const { sessionId } = await send('Target.attachToTarget', { targetId: target.targetId, flatten: true });
 
     page = (method, params) => send(method, params, sessionId);
     await page('Runtime.enable');
+    await page('DOM.enable');
+    await page('CSS.enable');
+
+    const rangeParts = async () => {
+        const { root } = await page('DOM.getDocument', { depth: -1, pierce: true });
+        const descendants = (node) => [node, ...(node.children || []).flatMap(descendants), ...(node.shadowRoots || []).flatMap(descendants)];
+        const nodes = descendants(root);
+        const input = nodes.find((node) => node.nodeName === 'INPUT' && node.attributes?.includes('p-colorpicker-alpha-slider'));
+        const parts = descendants(input).filter((node) => node.attributes?.includes('track') || node.attributes?.includes('thumb'));
+        const result = {};
+
+        for (const part of parts) {
+            const { computedStyle } = await page('CSS.getComputedStyleForNode', { nodeId: part.nodeId });
+            const { model } = await page('DOM.getBoxModel', { nodeId: part.nodeId });
+            const properties = ['background-image', 'background-color', 'background-size', 'width', 'height', 'border-top-color', 'border-top-width', 'border-radius', 'box-shadow'];
+
+            result[part.attributes.includes('track') ? 'track' : 'thumb'] = {
+                ...Object.fromEntries(computedStyle.filter(({ name }) => properties.includes(name)).map(({ name, value }) => [name, value])),
+                bounds: { left: model.border[0], right: model.border[2], top: model.border[1], bottom: model.border[5] }
+            };
+        }
+
+        return result;
+    };
 
     const evaluate = async (expression) => {
         const response = await page('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true });
@@ -155,12 +193,12 @@ try {
         throw new Error(`Timed out: ${expression}`);
     };
 
-    const check = async (name, expression) => {
-        const passed = Boolean(await evaluate(expression));
-
+    const record = (name, passed) => {
         assertions.push({ name, passed });
         if (!passed) throw new Error(name);
     };
+
+    const check = async (name, expression) => record(name, Boolean(await evaluate(expression)));
 
     const key = async (name, modifiers = 0) => {
         const codes = { ArrowRight: 39, ArrowLeft: 37, Home: 36, End: 35, Enter: 13, ' ': 32, Escape: 27, Tab: 9 };
@@ -171,12 +209,33 @@ try {
     };
 
     const focus = (selector) => evaluate(`document.querySelector(${JSON.stringify(selector)}).focus()`);
+
+    const click = async (selector, xRatio = 0.5, yRatio = 0.5) => {
+        const position = await evaluate(`(() => { const r = document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect(); return {x:r.left+r.width*${xRatio},y:r.top+r.height*${yRatio}}; })()`);
+
+        await page('Input.dispatchMouseEvent', { type: 'mouseMoved', ...position });
+        await page('Input.dispatchMouseEvent', { type: 'mousePressed', ...position, button: 'left', clickCount: 1 });
+        await page('Input.dispatchMouseEvent', { type: 'mouseReleased', ...position, button: 'left', clickCount: 1 });
+    };
+
     const slider = '#inline .p-colorpicker-alpha-slider';
 
     await waitFor('Boolean(window.alphaFixture)');
+    await check('Inline appear transition initializes without alpha', 'document.querySelector("#appear-opaque .p-colorpicker-color-selector").style.backgroundColor !== "" && !document.querySelector("#appear-opaque input[type=range]")');
+    await check(
+        'Inline appear transition initializes with alpha',
+        'document.querySelector("#appear-alpha input[type=range]").value === "50" && document.querySelector("#appear-alpha .p-colorpicker-alpha-preview").style.getPropertyValue("--p-colorpicker-preview-color").includes("rgba(0, 17, 119")'
+    );
     await check('Default picker has no alpha UI', '!document.querySelector("#legacy input[type=range]")');
     await check('Opacity range is named and in percent', `document.querySelector('${slider}').getAttribute('aria-label') === 'Opacity' && document.querySelector('${slider}').value === '50'`);
+    report.range = await rangeParts();
+    record(
+        'Opacity track blends transparent to selected RGB over checkerboard',
+        report.range.track['background-image'].includes('rgba(0, 17, 119, 0)') && report.range.track['background-image'].includes('rgb(0, 17, 119)') && report.range.track['background-image'].includes('conic-gradient')
+    );
+    record('Opacity thumb has visible size and contrasting border', parseFloat(report.range.thumb.width) >= 12 && report.range.thumb['border-top-color'] === 'rgb(255, 255, 255)' && report.range.thumb['background-color'] === 'rgb(50, 50, 50)');
     await focus(slider);
+    await check('Keyboard focus has a visible outline', `getComputedStyle(document.querySelector('${slider}')).outlineStyle !== 'none' && parseFloat(getComputedStyle(document.querySelector('${slider}')).outlineWidth) >= 2`);
     await key('ArrowRight');
     await waitFor('window.alphaChanges.length === 1');
     await check('ArrowRight emits 51% without changing hex RGB', 'window.alphaChanges.at(-1) === "00117782"');
@@ -184,10 +243,31 @@ try {
     await check('ArrowLeft emits 50%', 'window.alphaChanges.at(-1) === "00117780"');
     await key('Home');
     await check('Home emits transparent', 'window.alphaChanges.at(-1) === "00117700"');
+    const transparentRange = await rangeParts();
+
+    record('Transparent endpoint places thumb at track start', Math.abs(transparentRange.thumb.bounds.left - transparentRange.track.bounds.left) <= 1);
     await key('End');
     await check('End emits opaque', 'window.alphaChanges.at(-1) === "001177ff"');
+    const opaqueRange = await rangeParts();
+
+    record('Opaque endpoint places thumb at track end', Math.abs(opaqueRange.thumb.bounds.right - opaqueRange.track.bounds.right) <= 1);
+    await evaluate('window.alphaFixture.setValue("ff000080")');
+    await waitFor(`document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '255, 0, 0'`);
+    const redRange = await rangeParts();
+
+    record('Controlled RGB replacement refreshes the opacity gradient', redRange.track['background-image'].includes('rgba(255, 0, 0, 0)') && redRange.track['background-image'].includes('rgb(255, 0, 0)'));
+    await click('#inline .p-colorpicker-hue', 0.5, 2 / 3);
+    await waitFor(`document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 255, 0'`);
+    const greenRange = await rangeParts();
+
+    record('Hue selection refreshes the opacity gradient live', greenRange.track['background-image'].includes('rgba(0, 255, 0, 0)') && greenRange.track['background-image'].includes('rgb(0, 255, 0)'));
+    await click('#inline .p-colorpicker-color-selector');
+    await waitFor(`document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '64, 128, 64'`);
+    const selectedRange = await rangeParts();
+
+    record('Saturation and brightness refresh the opacity gradient live', selectedRange.track['background-image'].includes('rgba(64, 128, 64, 0)'));
     await evaluate('window.alphaFixture.setValue("00117780")');
-    await waitFor(`document.querySelector('${slider}').value === '50'`);
+    await waitFor(`document.querySelector('${slider}').value === '50' && document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 17, 119'`);
     await check(
         'Inline preview composites color over checkerboard',
         'getComputedStyle(document.querySelector("#inline .p-colorpicker-alpha-preview")).backgroundImage.includes("conic-gradient") && getComputedStyle(document.querySelector("#inline .p-colorpicker-alpha-preview")).backgroundImage.includes("rgba(0, 17, 119")'
@@ -210,7 +290,7 @@ try {
     for (const format of ['rgb', 'hsb']) {
         const value = format === 'rgb' ? '{r:0,g:17,b:119,a:.5}' : '{h:240,s:100,b:100,a:.5}';
 
-        await evaluate(`window.alphaFixture.setOptions({format:'${format}'}); window.alphaFixture.setValue(${value})`);
+        await evaluate(`window.alphaFixture.setOptions({format:'${format}'}); window.alphaFixture.setValue(${value}); new Promise(resolve => requestAnimationFrame(resolve))`);
         await waitFor(`document.querySelector('${slider}').value === '50'`);
         await focus(slider);
         await key('ArrowRight');
@@ -218,7 +298,7 @@ try {
     }
 
     await evaluate('window.alphaFixture.setOptions({}); window.alphaFixture.setValue("00117780")');
-    await waitFor(`document.querySelector('${slider}').value === '50'`);
+    await waitFor(`document.querySelector('${slider}').value === '50' && document.querySelector('${slider}').style.getPropertyValue('--p-colorpicker-alpha-rgb') === '0, 17, 119'`);
     await focus('#popup-input');
     await key('Enter');
     await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider") && !document.querySelector("#inline").contains(document.activeElement)');
@@ -253,6 +333,7 @@ try {
         await evaluate(`window.alphaFixture.setOptions({${option}: true})`);
         await waitFor(`document.querySelector('${slider}').disabled`);
         await check(`${option} disables native opacity editing`, `document.querySelector('${slider}').disabled`);
+        await check(`${option} visibly dims the opacity control`, `Number(getComputedStyle(document.querySelector('${slider}')).opacity) < 1`);
         const count = await evaluate('window.alphaChanges.length');
 
         await focus(slider);
@@ -262,6 +343,25 @@ try {
         await waitFor(`!document.querySelector('${slider}').disabled`);
     }
 
+    for (const appendTo of [null, 'self']) {
+        for (const nextTarget of ['summary', 'closedDetails', 'radio']) {
+            await evaluate(`window.alphaFixture.setOptions({appendTo:${JSON.stringify(appendTo)}}); window.alphaFixture.setNextTarget('${nextTarget}'); new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))`);
+            await focus('#popup-input');
+            await key('Enter');
+            await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider") && !document.querySelector("#inline").contains(document.activeElement)');
+            await key('Tab');
+            await check(`${appendTo || 'portal'} popup Tab follows native ${nextTarget} order`, 'document.activeElement.id === "after"');
+            await key('Tab');
+            await check(`${appendTo || 'portal'} exiting popup range stays out of tab order`, '!document.activeElement.closest(".p-colorpicker-overlay-panel")');
+            await focus('#popup-input');
+            await key('Enter');
+            await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider") && !document.querySelector("#inline").contains(document.activeElement)');
+            await check(`${appendTo || 'portal'} popup restores opacity focus after ${nextTarget} exit`, 'document.activeElement.disabled === false');
+            await key('Escape');
+        }
+    }
+
+    await evaluate('window.alphaFixture.setOptions({}); window.alphaFixture.setNextTarget("link"); new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
     await focus('#popup-input');
     await key('Enter');
     await waitFor('document.activeElement.classList.contains("p-colorpicker-alpha-slider")');
@@ -279,7 +379,7 @@ try {
 } catch (error) {
     report.error = error.stack;
 } finally {
-    clearTimeout(readyTimer);
+    for (const request of pending.values()) clearTimeout(request.timer);
 
     if (page && child?.exitCode === null && process.env.MANTLE_TEST_SCREENSHOT) {
         const { data } = await page('Page.captureScreenshot', { format: 'png' });
@@ -292,7 +392,6 @@ try {
         await browserExited;
     }
 
-    socket?.close();
     await new Promise((resolve) => server.close(resolve));
     if (path.dirname(profile) === path.resolve(tmpdir()) && path.basename(profile).startsWith('mantle-alpha-browser-')) await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
     if (process.env.MANTLE_TEST_REPORT) await writeFile(process.env.MANTLE_TEST_REPORT, JSON.stringify(report, null, 2));

@@ -40,6 +40,7 @@ export const ColorPicker = React.memo(
         const alphaValue = React.useRef(1);
         const rgbValue = React.useRef(null);
         const focusAlphaOnShow = React.useRef(false);
+        const tabExitState = React.useRef(null);
         const dragHandlers = React.useRef(null);
         const lastEmitted = React.useRef(null);
         const valueOptions = React.useRef({ alpha: props.alpha, format: props.format, defaultColor: props.defaultColor });
@@ -335,8 +336,11 @@ export const ColorPicker = React.memo(
             const percent = Math.round(alphaValue.current * 100);
 
             if (alphaSliderRef.current) {
+                const { r, g, b } = rgbValue.current || HSBtoRGB(hsbValue.current);
+
                 alphaSliderRef.current.value = percent;
                 alphaSliderRef.current.setAttribute('aria-valuetext', `${percent}%`);
+                alphaSliderRef.current.style.setProperty('--p-colorpicker-alpha-rgb', `${r}, ${g}, ${b}`);
             }
 
             if (alphaValueRef.current) alphaValueRef.current.textContent = `${percent}%`;
@@ -365,27 +369,20 @@ export const ColorPicker = React.memo(
                 event.preventDefault();
                 event.stopPropagation();
             } else if (event.key === 'Tab') {
-                const elements = Array.from(document.body.querySelectorAll('a[href], area[href], button, input, select, textarea, iframe, object, embed, [tabindex], [contenteditable]'))
-                    .filter((element) => {
-                        if (element.tabIndex < 0 || element.matches(':disabled') || element.type === 'hidden' || element.closest('[hidden], [inert]') || overlayRef.current?.contains(element)) return false;
+                const panel = overlayRef.current;
+                const slider = alphaSliderRef.current;
 
-                        for (let parent = element; parent; parent = parent.parentElement) {
-                            const style = getComputedStyle(parent);
+                if (panel && !tabExitState.current) {
+                    tabExitState.current = { panel, slider, inert: panel.getAttribute('inert'), tabIndex: slider?.getAttribute('tabindex') };
+                }
 
-                            if (style.display === 'none' || style.visibility === 'hidden') return false;
-                        }
-
-                        return true;
-                    })
-                    .sort((first, second) => (first.tabIndex || Number.MAX_SAFE_INTEGER) - (second.tabIndex || Number.MAX_SAFE_INTEGER));
-                const next = event.shiftKey ? inputRef.current : elements[elements.indexOf(inputRef.current) + 1];
-
+                // Let the browser choose the next native tab stop from the preview, skipping the exiting panel.
+                DomHandler.focus(inputRef.current);
+                panel?.setAttribute('inert', '');
+                slider?.setAttribute('tabindex', '-1');
                 hide();
 
-                if (next) {
-                    DomHandler.focus(next);
-                    event.preventDefault();
-                }
+                if (event.shiftKey) event.preventDefault();
             }
         };
 
@@ -400,11 +397,22 @@ export const ColorPicker = React.memo(
 
         const onOverlayEnter = () => {
             const styles = !props.inline ? { position: 'absolute', top: '0', left: '0' } : undefined;
+            const exitState = tabExitState.current;
+
+            if (exitState?.panel === overlayRef.current) {
+                exitState.inert === null ? exitState.panel.removeAttribute('inert') : exitState.panel.setAttribute('inert', exitState.inert);
+
+                if (exitState.slider && exitState.slider === alphaSliderRef.current) {
+                    exitState.tabIndex == null ? exitState.slider.removeAttribute('tabindex') : exitState.slider.setAttribute('tabindex', exitState.tabIndex);
+                }
+            }
+
+            tabExitState.current = null;
 
             ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
             DomHandler.addStyles(overlayRef.current, styles);
             alignOverlay();
-            updateUI();
+            hsbValue.current && updateUI();
         };
 
         const onOverlayEntered = () => {

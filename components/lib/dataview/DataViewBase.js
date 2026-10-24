@@ -20,7 +20,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-dataview-loading {
         position: relative;
         min-height: 4rem;

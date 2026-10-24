@@ -291,7 +291,7 @@
   color: #7254f3;
 }
 
-@layer primereact {
+@layer mantle {
   * {
     box-sizing: border-box;
   }
@@ -7005,7 +7005,7 @@
   }
 }
 /* Customizations to the designer theme should be defined here */
-@layer primereact {
+@layer mantle {
   .p-datepicker .p-datepicker-header .p-datepicker-prev,
   .p-datepicker .p-datepicker-header .p-datepicker-next {
     color: #ffffff;

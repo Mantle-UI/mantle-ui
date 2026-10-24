@@ -25,7 +25,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-dock {
         position: absolute;
         z-index: 1;

@@ -15,7 +15,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-avatar {
         display: inline-flex;
         align-items: center;

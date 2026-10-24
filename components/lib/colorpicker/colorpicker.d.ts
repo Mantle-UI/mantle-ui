@@ -70,6 +70,26 @@ export interface ColorPickerPassThroughOptions {
      */
     hueHandle?: ColorPickerPassThroughType<React.HTMLAttributes<HTMLDivElement>>;
     /**
+     * Uses to pass attributes to the opacity section's DOM element.
+     */
+    alpha?: ColorPickerPassThroughType<React.HTMLAttributes<HTMLDivElement>>;
+    /**
+     * Uses to pass attributes to the opacity label's DOM element.
+     */
+    alphaLabel?: ColorPickerPassThroughType<React.HTMLAttributes<HTMLSpanElement>>;
+    /**
+     * Uses to pass attributes to the native opacity range input.
+     */
+    alphaSlider?: ColorPickerPassThroughType<React.InputHTMLAttributes<HTMLInputElement>>;
+    /**
+     * Uses to pass attributes to the opacity percentage's DOM element.
+     */
+    alphaValue?: ColorPickerPassThroughType<React.HTMLAttributes<HTMLSpanElement>>;
+    /**
+     * Uses to pass attributes to the checkerboard transparency preview.
+     */
+    alphaPreview?: ColorPickerPassThroughType<React.HTMLAttributes<HTMLDivElement>>;
+    /**
      * Uses to pass attributes tooltip's DOM element.
      * @type {TooltipPassThroughOptions}
      */
@@ -101,17 +121,22 @@ export interface ColorPickerState {
  */
 interface ColorPickerRGBType {
     /**
-     * red color number
+     * Red channel from 0 to 255.
      */
     r: number;
     /**
-     * green color number
+     * Green channel from 0 to 255.
      */
     g: number;
     /**
-     * blue color number
+     * Blue channel from 0 to 255.
      */
     b: number;
+    /**
+     * Opacity from 0 (transparent) to 1 (opaque), used only when alpha is enabled.
+     * Missing or non-finite values default to 1; finite values are clamped to [0, 1].
+     */
+    a?: number;
 }
 
 /**
@@ -119,17 +144,22 @@ interface ColorPickerRGBType {
  */
 interface ColorPickerHSBType {
     /**
-     * hue number
+     * Hue from 0 to 360.
      */
     h: number;
     /**
-     * saturation number
+     * Saturation from 0 to 100.
      */
     s: number;
     /**
-     * brightness number
+     * Brightness from 0 to 100.
      */
     b: number;
+    /**
+     * Opacity from 0 (transparent) to 1 (opaque), used only when alpha is enabled.
+     * Missing or non-finite values default to 1; finite values are clamped to [0, 1].
+     */
+    a?: number;
 }
 
 /**
@@ -141,10 +171,22 @@ interface ColorPickerHSBType {
 interface ColorPickerChangeEvent extends FormEvent<string | ColorPickerRGBType | ColorPickerHSBType> {}
 
 /**
- * Defines valid properties in AutoComplete component. In addition to these, all properties of HTMLInputElement can be used in this component.
+ * Defines valid properties in ColorPicker component. In addition to these, all properties of HTMLInputElement can be used in this component.
  * @group Properties
  */
 export interface ColorPickerProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onChange' | 'value' | 'ref'> {
+    /**
+     * Enables opacity selection and transparency previews. With alpha enabled, hex values are emitted as
+     * lowercase RRGGBBAA without a leading # and rgb/hsb objects include an a field from 0 to 1.
+     * Existing value and event contracts are unchanged when false.
+     * @defaultValue false
+     */
+    alpha?: boolean | undefined;
+    /**
+     * Accessible name and visible label of the opacity control.
+     * @defaultValue Opacity
+     */
+    alphaLabel?: string | undefined;
     /**
      * DOM element instance where the overlay panel should be mounted. Valid values are any DOM Element and "self". The "self" value is used to render a component where it is located.
      * @defaultValue document.body
@@ -156,7 +198,8 @@ export interface ColorPickerProps extends Omit<React.DetailedHTMLProps<React.Inp
      */
     autoFocus?: boolean | undefined;
     /**
-     * Default color to display when value is null.
+     * Hex color to display when value is null. With alpha enabled, accepts RRGGBB or RRGGBBAA,
+     * with an optional leading #; six digits imply full opacity.
      * @defaultValue ff0000
      */
     defaultColor?: string | undefined;
@@ -195,6 +238,11 @@ export interface ColorPickerProps extends Omit<React.DetailedHTMLProps<React.Inp
      */
     panelStyle?: React.CSSProperties | undefined;
     /**
+     * Prevents changes to color, hue and opacity while keeping the preview focusable.
+     * @defaultValue false
+     */
+    readOnly?: boolean | undefined;
+    /**
      * Content of the tooltip.
      */
     tooltip?: string | undefined;
@@ -209,7 +257,13 @@ export interface ColorPickerProps extends Omit<React.DetailedHTMLProps<React.Inp
      */
     transitionOptions?: CSSTransitionProps | undefined;
     /**
-     * Value of the component.
+     * Value of the component. With alpha enabled, hex accepts RRGGBB or RRGGBBAA (optional #)
+     * and emits lowercase RRGGBBAA without #. AA is rounded to the nearest byte (00 to ff).
+     * RGB/HSB objects accept optional a from 0 to 1 and always emit a when alpha is enabled.
+     * Missing/non-finite alpha defaults to 1; finite alpha is clamped to [0, 1].
+     * Object alpha precision is preserved during color/hue edits. Editing opacity uses whole percent
+     * steps, emitting a = percent / 100, or the nearest alpha byte for hex.
+     * Opacity-only edits preserve the supplied RGB channels or hex RGB bytes.
      * @type {string | ColorPickerRGBType | ColorPickerHSBType}
      */
     value?: string | ColorPickerRGBType | ColorPickerHSBType | undefined;

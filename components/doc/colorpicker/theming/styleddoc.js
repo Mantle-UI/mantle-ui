@@ -5,6 +5,10 @@ export function StyledDoc(props) {
         <>
             <DocSectionText {...props}>
                 <p>List of class names used in the styled mode.</p>
+                <p>
+                    The opacity section uses <code>--p-colorpicker-alpha-color</code> for its text color, defaulting to <code>#fff</code> for the legacy dark ColorPicker panels. Override this CSS variable when using a light panel background.
+                </p>
+                <p>The opacity slider shows the current color from transparent to opaque over a checkerboard, updating as the selected color changes.</p>
             </DocSectionText>
             <div className="doc-tablewrapper">
                 <table className="doc-table">
@@ -54,6 +58,30 @@ export function StyledDoc(props) {
                         <tr>
                             <td>p-colorpicker-hue-handle</td>
                             <td>Handle of the hue slider.</td>
+                        </tr>
+                        <tr>
+                            <td>p-colorpicker-alpha-enabled</td>
+                            <td>Root and panel modifier when alpha is enabled.</td>
+                        </tr>
+                        <tr>
+                            <td>p-colorpicker-alpha</td>
+                            <td>Opacity section, present when alpha is enabled.</td>
+                        </tr>
+                        <tr>
+                            <td>p-colorpicker-alpha-label</td>
+                            <td>Visible opacity label.</td>
+                        </tr>
+                        <tr>
+                            <td>p-colorpicker-alpha-slider</td>
+                            <td>Native opacity range input.</td>
+                        </tr>
+                        <tr>
+                            <td>p-colorpicker-alpha-value</td>
+                            <td>Opacity percentage text.</td>
+                        </tr>
+                        <tr>
+                            <td>p-colorpicker-alpha-preview</td>
+                            <td>Selected color over a checkerboard transparency background.</td>
                         </tr>
                     </tbody>
                 </table>

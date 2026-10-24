@@ -33,7 +33,17 @@ export const ColorPicker = React.memo(
         });
         const elementRef = React.useRef(null);
         const overlayRef = React.useRef(null);
-        const inputRef = React.useRef(props.inputRef);
+        const inputRef = React.useRef(null);
+        const alphaSliderRef = React.useRef(null);
+        const alphaValueRef = React.useRef(null);
+        const alphaPreviewRef = React.useRef(null);
+        const alphaValue = React.useRef(1);
+        const rgbValue = React.useRef(null);
+        const focusAlphaOnShow = React.useRef(false);
+        const tabExitState = React.useRef(null);
+        const dragHandlers = React.useRef(null);
+        const lastEmitted = React.useRef(null);
+        const valueOptions = React.useRef({ alpha: props.alpha, format: props.format, defaultColor: props.defaultColor });
         const colorSelectorRef = React.useRef(null);
         const colorHandleRef = React.useRef(null);
         const hueHandleRef = React.useRef(null);
@@ -60,19 +70,14 @@ export const ColorPicker = React.memo(
         const [bindDocumentMouseMoveListener, unbindDocumentMouseMoveListener] = useEventListener({
             type: 'mousemove',
             listener: (event) => {
-                colorDragging.current && pickColor(event);
-                hueDragging.current && pickHue(event);
+                colorDragging.current && dragHandlers.current.pickColor(event);
+                hueDragging.current && dragHandlers.current.pickHue(event);
             }
         });
 
         const [bindDocumentMouseUpListener, unbindDocumentMouseUpListener] = useEventListener({
             type: 'mouseup',
-            listener: () => {
-                colorDragging.current = hueDragging.current = false;
-                DomHandler.removeClass(elementRef.current, 'p-colorpicker-dragging');
-                unbindDocumentMouseMoveListener();
-                unbindDocumentMouseUpListener();
-            }
+            listener: () => dragHandlers.current.onDragEnd()
         });
 
         const onPanelClick = (event) => {
@@ -85,7 +90,7 @@ export const ColorPicker = React.memo(
         };
 
         const onHueMousedown = (event) => {
-            if (props.disabled) {
+            if (props.disabled || props.readOnly) {
                 return;
             }
 
@@ -94,7 +99,7 @@ export const ColorPicker = React.memo(
         };
 
         const onHueDragStart = (event) => {
-            if (props.disabled) {
+            if (props.disabled || props.readOnly) {
                 return;
             }
 
@@ -111,6 +116,10 @@ export const ColorPicker = React.memo(
         };
 
         const pickHue = (event) => {
+            if (props.disabled || props.readOnly) return;
+
+            rgbValue.current = null;
+
             const top = hueViewRef.current.getBoundingClientRect().top + (window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
             const yPos = getPositionY(event);
             const hue = Math.floor((360 * (150 - Math.max(0, Math.min(150, yPos - top)))) / 150);
@@ -123,11 +132,13 @@ export const ColorPicker = React.memo(
 
             updateColorSelector();
             updateHue();
+            props.alpha && updateInput();
+            updateAlpha();
             updateModel();
         };
 
         const onColorMousedown = (event) => {
-            if (props.disabled) {
+            if (props.disabled || props.readOnly) {
                 return;
             }
 
@@ -136,7 +147,7 @@ export const ColorPicker = React.memo(
         };
 
         const onColorDragStart = (event) => {
-            if (props.disabled) {
+            if (props.disabled || props.readOnly) {
                 return;
             }
 
@@ -176,6 +187,10 @@ export const ColorPicker = React.memo(
         };
 
         const pickColor = (event) => {
+            if (props.disabled || props.readOnly) return;
+
+            rgbValue.current = null;
+
             const rect = colorSelectorRef.current.getBoundingClientRect();
             const top = rect.top + (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
             const left = rect.left + document.body.scrollLeft;
@@ -190,21 +205,32 @@ export const ColorPicker = React.memo(
 
             updateColorHandle();
             updateInput();
+            updateAlpha();
             updateModel();
         };
 
         const updateModel = () => {
+            const withAlpha = (value) => (props.alpha ? { ...value, a: alphaValue.current } : value);
+            const rgb = rgbValue.current || HSBtoRGB(hsbValue.current);
+
             switch (props.format) {
                 case 'hex':
-                    onChange(HSBtoHEX(hsbValue.current));
+                    onChange(
+                        RGBtoHEX(rgb) +
+                            (props.alpha
+                                ? Math.round(alphaValue.current * 255)
+                                      .toString(16)
+                                      .padStart(2, '0')
+                                : '')
+                    );
                     break;
 
                 case 'rgb':
-                    onChange(HSBtoRGB(hsbValue.current));
+                    onChange(withAlpha(rgb));
                     break;
 
                 case 'hsb':
-                    onChange(hsbValue.current);
+                    onChange(withAlpha(hsbValue.current));
                     break;
 
                 default:
@@ -241,9 +267,19 @@ export const ColorPicker = React.memo(
 
         const updateHSBValue = (value) => {
             hsbValue.current = toHSB(value);
+            const source = value || props.defaultColor;
+            const isHex = !value || props.format === 'hex';
+            const hex = isHex && typeof source === 'string' ? source.replace(/^#/, '') : '';
+            const opacity = isHex ? (hex.length === 8 ? parseInt(hex.slice(6), 16) / 255 : 1) : source.a;
+
+            alphaValue.current = props.alpha && Number.isFinite(opacity) ? Math.max(0, Math.min(1, opacity)) : 1;
+            // Keep exact source channels for opacity-only edits; the legacy HSB conversion rounds hue/saturation.
+            rgbValue.current = props.alpha ? (isHex ? HEXtoRGB(source) : props.format === 'rgb' ? { r: source.r, g: source.g, b: source.b } : null) : null;
         };
 
         const onChange = (value) => {
+            lastEmitted.current = { value, alpha: props.alpha, format: props.format };
+
             if (props.onChange) {
                 props.onChange({
                     value: value,
@@ -285,28 +321,110 @@ export const ColorPicker = React.memo(
 
         const updateInput = () => {
             if (inputRef.current) {
-                inputRef.current.style.backgroundColor = '#' + HSBtoHEX(hsbValue.current);
+                inputRef.current.style.backgroundColor = props.alpha ? 'transparent' : '#' + HSBtoHEX(hsbValue.current);
+                inputRef.current.style.setProperty('--p-colorpicker-preview-color', getPreviewColor());
+            }
+        };
+
+        const getPreviewColor = () => {
+            const { r, g, b } = rgbValue.current || HSBtoRGB(hsbValue.current);
+
+            return `rgba(${r}, ${g}, ${b}, ${alphaValue.current})`;
+        };
+
+        const updateAlpha = () => {
+            const percent = Math.round(alphaValue.current * 100);
+
+            if (alphaSliderRef.current) {
+                const { r, g, b } = rgbValue.current || HSBtoRGB(hsbValue.current);
+
+                alphaSliderRef.current.value = percent;
+                alphaSliderRef.current.setAttribute('aria-valuetext', `${percent}%`);
+                alphaSliderRef.current.style.setProperty('--p-colorpicker-alpha-rgb', `${r}, ${g}, ${b}`);
+            }
+
+            if (alphaValueRef.current) alphaValueRef.current.textContent = `${percent}%`;
+            if (alphaPreviewRef.current) alphaPreviewRef.current.style.setProperty('--p-colorpicker-preview-color', getPreviewColor());
+        };
+
+        const onAlphaChange = (event) => {
+            if (props.disabled || props.readOnly) {
+                updateAlpha();
+
+                return;
+            }
+
+            alphaValue.current = Math.max(0, Math.min(100, Number(event.target.value))) / 100;
+            updateInput();
+            updateAlpha();
+            updateModel();
+        };
+
+        const onAlphaKeyDown = (event) => {
+            if (props.inline) return;
+
+            if (event.key === 'Escape') {
+                hide();
+                DomHandler.focus(inputRef.current);
+                event.preventDefault();
+                event.stopPropagation();
+            } else if (event.key === 'Tab') {
+                // Let the browser choose the next native tab stop from the preview, skipping the exiting panel.
+                DomHandler.focus(inputRef.current);
+                hide();
+
+                if (event.shiftKey) event.preventDefault();
             }
         };
 
         const show = () => {
-            setOverlayVisibleState(true);
+            !props.disabled && setOverlayVisibleState(true);
         };
 
         const hide = () => {
+            const panel = overlayRef.current;
+            const slider = alphaSliderRef.current;
+
+            if (props.alpha && !props.inline && panel) {
+                if (!tabExitState.current || tabExitState.current.panel !== panel) {
+                    tabExitState.current = { panel, slider, inert: panel.getAttribute('inert'), tabIndex: slider?.getAttribute('tabindex') };
+                }
+
+                panel.setAttribute('inert', '');
+                slider?.setAttribute('tabindex', '-1');
+            }
+
+            focusAlphaOnShow.current = false;
             setOverlayVisibleState(false);
         };
 
         const onOverlayEnter = () => {
             const styles = !props.inline ? { position: 'absolute', top: '0', left: '0' } : undefined;
+            const exitState = tabExitState.current;
+
+            if (exitState?.panel === overlayRef.current) {
+                exitState.inert === null ? exitState.panel.removeAttribute('inert') : exitState.panel.setAttribute('inert', exitState.inert);
+
+                if (exitState.slider && exitState.slider === alphaSliderRef.current) {
+                    exitState.tabIndex == null ? exitState.slider.removeAttribute('tabindex') : exitState.slider.setAttribute('tabindex', exitState.tabIndex);
+                }
+            }
+
+            tabExitState.current = null;
 
             ZIndexUtils.set('overlay', overlayRef.current, (context && context.autoZIndex) || MantleUI.autoZIndex, (context && context.zIndex.overlay) || MantleUI.zIndex.overlay);
             DomHandler.addStyles(overlayRef.current, styles);
             alignOverlay();
+            hsbValue.current && updateUI();
         };
 
         const onOverlayEntered = () => {
             bindOverlayListener();
+
+            if (focusAlphaOnShow.current) {
+                DomHandler.focus(alphaSliderRef.current);
+                focusAlphaOnShow.current = false;
+            }
 
             props.onShow && props.onShow();
         };
@@ -330,6 +448,26 @@ export const ColorPicker = React.memo(
         };
 
         const onInputKeydown = (event) => {
+            if (props.alpha && (event.key === 'Enter' || event.key === ' ' || event.which === 32)) {
+                if (overlayVisibleState) {
+                    DomHandler.focus(alphaSliderRef.current);
+                } else {
+                    focusAlphaOnShow.current = true;
+                    show();
+                }
+
+                event.preventDefault();
+
+                return;
+            }
+
+            if (props.alpha && event.key === 'Tab' && !event.shiftKey && overlayVisibleState && !props.readOnly) {
+                DomHandler.focus(alphaSliderRef.current);
+                event.preventDefault();
+
+                return;
+            }
+
             switch (event.which) {
                 //space
                 case 32:
@@ -357,6 +495,8 @@ export const ColorPicker = React.memo(
         };
 
         const HEXtoRGB = (hex) => {
+            if (props.alpha) hex = hex.replace(/^#/, '').slice(0, 6);
+
             const hexValue = parseInt(hex.indexOf('#') > -1 ? hex.substring(1) : hex, 16);
 
             return { r: hexValue >> 16, g: (hexValue & 0x00ff00) >> 8, b: hexValue & 0x0000ff };
@@ -483,6 +623,7 @@ export const ColorPicker = React.memo(
             updateColorHandle();
             updateInput();
             updateColorSelector();
+            updateAlpha();
         };
 
         const alignOverlay = () => {
@@ -490,6 +631,8 @@ export const ColorPicker = React.memo(
                 DomHandler.alignOverlay(overlayRef.current, inputRef.current.parentElement, props.appendTo || (context && context.appendTo) || MantleUI.appendTo);
             }
         };
+
+        dragHandlers.current = { pickColor, pickHue, onDragEnd };
 
         React.useImperativeHandle(ref, () => ({
             props,
@@ -517,14 +660,27 @@ export const ColorPicker = React.memo(
         });
 
         useUpdateEffect(() => {
-            if (!colorDragging.current && !hueDragging.current) {
+            const previous = valueOptions.current;
+            const optionsChanged = previous.alpha !== props.alpha || previous.format !== props.format || previous.defaultColor !== props.defaultColor;
+            const isDragging = colorDragging.current || hueDragging.current;
+            const isFeedback = lastEmitted.current?.alpha === props.alpha && lastEmitted.current?.format === props.format && ObjectUtils.deepEquals(lastEmitted.current?.value, props.value);
+
+            if (!isDragging || ((props.alpha || previous.alpha) && (optionsChanged || !isFeedback))) {
+                // Accepted drag feedback preserves the precise HSB cursor; external replacements cancel the drag.
+                isDragging && onDragEnd();
                 updateHSBValue(props.value);
             }
-        }, [props.value]);
+
+            valueOptions.current = { alpha: props.alpha, format: props.format, defaultColor: props.defaultColor };
+        }, [props.value, props.format, props.defaultColor, props.alpha]);
 
         useUpdateEffect(() => {
             updateUI();
         });
+
+        useUpdateEffect(() => {
+            if (props.disabled || props.readOnly) onDragEnd();
+        }, [props.disabled, props.readOnly]);
 
         useUnmountEffect(() => {
             ZIndexUtils.clear(overlayRef.current);
@@ -593,6 +749,41 @@ export const ColorPicker = React.memo(
             );
         };
 
+        const createAlpha = () => {
+            if (!props.alpha) return null;
+
+            const alphaProps = mergeProps({ className: cx('alpha') }, ptm('alpha'));
+            const labelProps = mergeProps({ className: cx('alphaLabel') }, ptm('alphaLabel'));
+            const valueProps = mergeProps({ ref: alphaValueRef, className: cx('alphaValue'), 'aria-hidden': true }, ptm('alphaValue'));
+            const previewProps = mergeProps({ ref: alphaPreviewRef, className: cx('alphaPreview'), 'aria-hidden': true }, ptm('alphaPreview'));
+            const sliderProps = mergeProps(
+                {
+                    ref: alphaSliderRef,
+                    type: 'range',
+                    className: cx('alphaSlider'),
+                    min: 0,
+                    max: 100,
+                    step: 1,
+                    defaultValue: 100,
+                    disabled: props.disabled || props.readOnly,
+                    'aria-label': props.alphaLabel,
+                    'aria-readonly': props.readOnly || undefined,
+                    onChange: onAlphaChange,
+                    onKeyDown: onAlphaKeyDown
+                },
+                ptm('alphaSlider')
+            );
+
+            return (
+                <div {...alphaProps}>
+                    <span {...labelProps}>{props.alphaLabel}</span>
+                    <span {...valueProps}>100%</span>
+                    <div {...previewProps} />
+                    <input {...sliderProps} />
+                </div>
+            );
+        };
+
         const createContent = () => {
             const colorSelector = createColorSelector();
             const hue = createHue();
@@ -607,6 +798,7 @@ export const ColorPicker = React.memo(
                 <div {...contentProps}>
                     {colorSelector}
                     {hue}
+                    {createAlpha()}
                 </div>
             );
         };
@@ -660,6 +852,7 @@ export const ColorPicker = React.memo(
                         ref={overlayRef}
                         appendTo={props.appendTo}
                         inline={props.inline}
+                        alpha={props.alpha}
                         disabled={props.disabled}
                         panelStyle={props.panelStyle}
                         panelClassName={props.panelClassName}

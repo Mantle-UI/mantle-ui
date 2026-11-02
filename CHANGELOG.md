@@ -1,5 +1,42 @@
 # Changelog
 
+## [10.14.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.1...v10.14.0) (2026-11-02)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.1...v10.14.0)
+
+## enhancement
+
+- feat(colorpicker): add optional alpha channel support [#452](https://github.com/Mantle-UI/mantle-ui/pull/452) (issues: #446)
+## dependencies
+
+- build(deps-dev): bump markdown-it from 14.3.2 to 14.3.3 in the npm_and_yarn group across 1 directory [#445](https://github.com/Mantle-UI/mantle-ui/pull/445)
+- build(deps): bump fs-extra from 11.4.0 to 11.4.1 [#447](https://github.com/Mantle-UI/mantle-ui/pull/447)
+- build(deps-dev): bump @typescript-eslint/parser from 8.65.0 to 8.72.0 [#451](https://github.com/Mantle-UI/mantle-ui/pull/451)
+- build(deps): bump next from 16.3.8 to 16.4.2 [#449](https://github.com/Mantle-UI/mantle-ui/pull/449)
+- build(deps-dev): bump @typescript-eslint/eslint-plugin from 8.65.0 to 8.72.0 [#448](https://github.com/Mantle-UI/mantle-ui/pull/448)
+- build(deps): bump dompurify from 3.4.16 to 3.4.17 in the npm_and_yarn group across 1 directory [#453](https://github.com/Mantle-UI/mantle-ui/pull/453)
+- build(deps-dev): bump serialize-javascript from 7.0.7 to 7.1.4 in the npm_and_yarn group across 1 directory [#454](https://github.com/Mantle-UI/mantle-ui/pull/454)
+- build(deps-dev): bump @testing-library/dom from 10.4.1 to 10.4.2 [#456](https://github.com/Mantle-UI/mantle-ui/pull/456)
+- build(deps-dev): bump eslint-config-next from 16.2.12 to 16.4.3 [#457](https://github.com/Mantle-UI/mantle-ui/pull/457)
+- build(deps): bump chart.js from 4.5.1 to 4.6.1 [#458](https://github.com/Mantle-UI/mantle-ui/pull/458)
+- build(deps-dev): bump @rollup/plugin-alias from 6.0.0 to 6.0.1 [#459](https://github.com/Mantle-UI/mantle-ui/pull/459)
+## documentation
+
+- chore: update api docs [#455](https://github.com/Mantle-UI/mantle-ui/pull/455)
+## javascript
+
+- build(deps-dev): bump markdown-it from 14.3.2 to 14.3.3 in the npm_and_yarn group across 1 directory [#445](https://github.com/Mantle-UI/mantle-ui/pull/445)
+- build(deps): bump fs-extra from 11.4.0 to 11.4.1 [#447](https://github.com/Mantle-UI/mantle-ui/pull/447)
+- build(deps-dev): bump @typescript-eslint/parser from 8.65.0 to 8.72.0 [#451](https://github.com/Mantle-UI/mantle-ui/pull/451)
+- build(deps): bump next from 16.3.8 to 16.4.2 [#449](https://github.com/Mantle-UI/mantle-ui/pull/449)
+- build(deps-dev): bump @typescript-eslint/eslint-plugin from 8.65.0 to 8.72.0 [#448](https://github.com/Mantle-UI/mantle-ui/pull/448)
+- build(deps): bump dompurify from 3.4.16 to 3.4.17 in the npm_and_yarn group across 1 directory [#453](https://github.com/Mantle-UI/mantle-ui/pull/453)
+- build(deps-dev): bump serialize-javascript from 7.0.7 to 7.1.4 in the npm_and_yarn group across 1 directory [#454](https://github.com/Mantle-UI/mantle-ui/pull/454)
+- build(deps-dev): bump @testing-library/dom from 10.4.1 to 10.4.2 [#456](https://github.com/Mantle-UI/mantle-ui/pull/456)
+- build(deps-dev): bump eslint-config-next from 16.2.12 to 16.4.3 [#457](https://github.com/Mantle-UI/mantle-ui/pull/457)
+- build(deps): bump chart.js from 4.5.1 to 4.6.1 [#458](https://github.com/Mantle-UI/mantle-ui/pull/458)
+- build(deps-dev): bump @rollup/plugin-alias from 6.0.0 to 6.0.1 [#459](https://github.com/Mantle-UI/mantle-ui/pull/459)
+
 ## [10.13.1](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.0...v10.13.1) (2026-10-19)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.0...v10.13.1)

@@ -47,7 +47,7 @@
         "@docsearch/react": "^4.7.0",
         "@mantle-ui/flex": "^3.4.1",
         "@mantle-ui/icons": "^7.1.1",
-        "chart.js": "4.5.1",
+        "chart.js": "4.6.1",
         "file-saver": "2.0.5",
         "fs-extra": "^11.4.1",
         "jspdf": "4.2.1",

@@ -3,9 +3,38 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MantleProvider } from '../api/Api';
 import { Button } from '../button/Button';
 import { InputText } from '../inputtext/InputText';
+import { DomHandler } from '../utils/Utils';
 import { Tooltip } from './Tooltip';
 
 describe('Tooltip', () => {
+    test.each(['right', 'left'])('keeps a %s tooltip vertically centered on a tall target', async (position) => {
+        const { container } = render(
+            <MantleProvider>
+                <Tooltip target=".tall-target" content="Tall target tooltip" position={position} autoZIndex={false} />
+                <div className="tall-target">Target</div>
+            </MantleProvider>
+        );
+        const target = container.querySelector('.tall-target');
+        const targetRect = jest.spyOn(target, 'getBoundingClientRect').mockReturnValue({ left: 300, top: 50, width: 100, height: 600, right: 400, bottom: 650 });
+        const viewport = jest.spyOn(DomHandler, 'getViewport').mockReturnValue({ width: 1000, height: 800 });
+        const height = jest.spyOn(DomHandler, 'getOuterHeight').mockImplementation((element) => (element === target ? 600 : 40));
+        const width = jest.spyOn(DomHandler, 'getOuterWidth').mockReturnValue(100);
+
+        try {
+            fireEvent.mouseEnter(target);
+
+            const tooltip = (await screen.findByText('Tall target tooltip')).parentElement;
+
+            expect(tooltip).toHaveStyle({ top: '330px' });
+            expect(tooltip).toHaveClass(`p-tooltip-${position}`);
+        } finally {
+            targetRect.mockRestore();
+            viewport.mockRestore();
+            height.mockRestore();
+            width.mockRestore();
+        }
+    });
+
     test('when using tooltip with manual zindex should only be assigned from the style', async () => {
         // Arrange
         const tooltipText = /Manual zIndex/i;

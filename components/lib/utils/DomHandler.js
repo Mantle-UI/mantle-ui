@@ -521,7 +521,7 @@ export default class DomHandler {
                     element.style.top = top + scrollTop + 'px';
 
                     if (this.count.y === 2) {
-                        element.style.left = scrollTop + 'px';
+                        element.style.top = scrollTop + 'px';
                         this.count.y = 0;
                     } else if (top < 0) {
                         this.count.y++;
@@ -541,9 +541,9 @@ export default class DomHandler {
                     element.style.top = top + scrollTop + 'px';
 
                     if (this.count.y === 2) {
-                        element.style.left = viewport.height - DomHandler.getOuterHeight(element) + scrollTop + 'px';
+                        element.style.top = viewport.height - DomHandler.getOuterHeight(element) + scrollTop + 'px';
                         this.count.y = 0;
-                    } else if (top + DomHandler.getOuterHeight(target) > viewport.height) {
+                    } else if (top + DomHandler.getOuterHeight(element) > viewport.height) {
                         this.count.y++;
 
                         position.my.y = 'bottom';
@@ -562,7 +562,7 @@ export default class DomHandler {
 
                         if (top < 0) {
                             this.bottom();
-                        } else if (top + DomHandler.getOuterHeight(target) > viewport.height) {
+                        } else if (top + DomHandler.getOuterHeight(element) > viewport.height) {
                             this.top();
                         }
                     } else {

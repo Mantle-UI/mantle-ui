@@ -27743,7 +27743,7 @@
                             "name": "target",
                             "optional": true,
                             "readonly": false,
-                            "type": "\"window\" | \"document\" | Ref<HTMLElement>",
+                            "type": "\"window\" | Document | Window | \"document\" | Ref<HTMLElement> | (() => HTMLElement | Document | Window | null)",
                             "description": "The target element to listen to."
                         },
                         {
@@ -27854,6 +27854,13 @@
                     "description": "Custom resize event options.",
                     "relatedProp": "",
                     "props": [
+                        {
+                            "name": "target",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "\"window\" | Window | (() => Window | null)",
+                            "description": "The window to listen to."
+                        },
                         {
                             "name": "when",
                             "optional": true,

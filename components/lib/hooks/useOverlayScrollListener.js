@@ -22,9 +22,12 @@ export const useOverlayScrollListener = ({ target, listener, options, when = tru
             const hideOnScroll = context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling;
             const nodes = (scrollableParentsRef.current = DomHandler.getScrollableParents(targetRef.current));
 
-            // Ensure window/body is always included as fallback
-            if (!nodes.some((node) => node === document.body || node === window)) {
-                nodes.push(hideOnScroll ? window : document.body);
+            const ownerDocument = targetRef.current.ownerDocument;
+            const ownerWindow = ownerDocument.defaultView;
+
+            // Ensure the target's window/body is always included as fallback
+            if (!nodes.some((node) => node === ownerDocument.body || node === ownerWindow)) {
+                nodes.push(hideOnScroll ? ownerWindow : ownerDocument.body);
             }
 
             listenerRef.current = (event) => listener && listener(event);

@@ -647,7 +647,7 @@ export default class DomHandler {
              */
             const addScrollableParent = (node) => {
                 // For document/body/html elements, add window instead
-                scrollableParents.push(node.nodeName === 'BODY' || node.nodeName === 'HTML' || this.isDocument(node) ? window : node);
+                scrollableParents.push(node.nodeName === 'BODY' || node.nodeName === 'HTML' || this.isDocument(node) ? node.ownerDocument?.defaultView || node.defaultView || window : node);
             };
 
             // Iterate through all parent elements
@@ -1178,7 +1178,7 @@ export default class DomHandler {
         const isFunction = (obj) => !!(obj && obj.constructor && obj.call && obj.apply);
         const element = isFunction(target) ? target() : target;
 
-        return this.isDocument(element) || this.isExist(element) ? element : null;
+        return this.isDocument(element) || element?.window === element || this.isExist(element) ? element : null;
     }
 
     /**

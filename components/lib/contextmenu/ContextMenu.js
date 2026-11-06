@@ -48,6 +48,7 @@ export const ContextMenu = React.memo(
         const isMobileMode = useMatchMedia(`screen and (max-width: ${props.breakpoint})`, !!props.breakpoint);
 
         const [bindDocumentClickListener, unbindDocumentClickListener] = useEventListener({
+            target: () => menuRef.current?.ownerDocument || document,
             type: 'click',
             listener: (event) => {
                 if (isOutsideClicked(event) && event.button !== 2) {
@@ -58,6 +59,7 @@ export const ContextMenu = React.memo(
         });
 
         const [bindDocumentContextMenuListener] = useEventListener({
+            target: () => DomHandler.getTargetElement(props.appendTo || context?.appendTo)?.ownerDocument || document,
             type: 'contextmenu',
             when: props.global,
             listener: (event) => {
@@ -66,6 +68,7 @@ export const ContextMenu = React.memo(
         });
 
         const [bindDocumentResizeListener, unbindDocumentResizeListener] = useResizeListener({
+            target: () => menuRef.current?.ownerDocument?.defaultView || window,
             listener: (event) => {
                 if (visibleState && !DomHandler.isTouchDevice()) {
                     hide(event);
@@ -248,8 +251,8 @@ export const ContextMenu = React.memo(
         };
 
         const bindDocumentListeners = () => {
-            bindDocumentResizeListener();
-            bindDocumentClickListener();
+            bindDocumentResizeListener({ target: menuRef.current?.ownerDocument?.defaultView || window });
+            bindDocumentClickListener({ target: menuRef.current?.ownerDocument || document });
         };
 
         const unbindDocumentListeners = () => {

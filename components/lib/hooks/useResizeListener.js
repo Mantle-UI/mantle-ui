@@ -1,8 +1,8 @@
 import { useEventListener } from './useEventListener';
 
-export const useResizeListener = ({ listener, when = true }) =>
+export const useResizeListener = ({ target = 'window', listener, when = true }) =>
     useEventListener({
-        target: 'window',
+        target,
         type: 'resize',
         listener,
         when

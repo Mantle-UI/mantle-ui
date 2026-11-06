@@ -1,5 +1,14 @@
 # Changelog
 
+## [10.14.1](https://github.com/Mantle-UI/mantle-ui/compare/v10.14.0...v10.14.1) (2026-11-06)
+
+[Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.14.0...v10.14.1)
+
+## bug
+
+- fix(tooltip): preserve vertical centering for tall targets [#461](https://github.com/Mantle-UI/mantle-ui/pull/461) (issues: #460)
+- fix(overlay): close popup window overlays on outside click [#463](https://github.com/Mantle-UI/mantle-ui/pull/463) (issues: #462)
+
 ## [10.14.0](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.1...v10.14.0) (2026-11-02)
 
 [Full Changelog](https://github.com/Mantle-UI/mantle-ui/compare/v10.13.1...v10.14.0)

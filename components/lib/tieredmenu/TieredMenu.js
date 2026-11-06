@@ -49,6 +49,7 @@ export const TieredMenu = React.memo(
         const isMobileMode = useMatchMedia(`screen and (max-width: ${props.breakpoint})`, !!props.breakpoint);
 
         const [bindDocumentClickListener, unbindDocumentClickListener] = useEventListener({
+            target: () => containerRef.current?.ownerDocument || document,
             type: 'click',
             listener: (event) => {
                 const isOutsideContainer = containerRef.current && !containerRef.current.contains(event.target);
@@ -61,7 +62,8 @@ export const TieredMenu = React.memo(
         });
 
         const [bindDocumentResizeListener, unbindDocumentResizeListener] = useResizeListener({
-            listener: () => {
+            target: () => containerRef.current?.ownerDocument?.defaultView || window,
+            listener: (event) => {
                 !isMobileMode && hide(event, true);
             }
         });
@@ -588,8 +590,8 @@ export const TieredMenu = React.memo(
         };
 
         const onEntered = () => {
-            bindDocumentClickListener();
-            bindDocumentResizeListener();
+            bindDocumentClickListener({ target: containerRef.current.ownerDocument });
+            bindDocumentResizeListener({ target: containerRef.current.ownerDocument.defaultView });
         };
 
         const onExit = () => {
@@ -636,8 +638,8 @@ export const TieredMenu = React.memo(
         useUpdateEffect(() => {
             if (!props.popup) {
                 if (ObjectUtils.isNotEmpty(activeItemPath)) {
-                    bindDocumentClickListener();
-                    bindDocumentResizeListener();
+                    bindDocumentClickListener({ target: containerRef.current.ownerDocument });
+                    bindDocumentResizeListener({ target: containerRef.current.ownerDocument.defaultView });
                 } else {
                     unbindDocumentClickListener();
                     unbindDocumentResizeListener();

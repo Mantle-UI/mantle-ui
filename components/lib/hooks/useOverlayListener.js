@@ -9,6 +9,7 @@ import { useUnmountEffect } from './useUnmountEffect';
 export const useOverlayListener = ({ target, overlay, listener, when = true, type = 'click' }) => {
     const targetRef = React.useRef(null);
     const overlayRef = React.useRef(null);
+    const getOwnerWindow = () => DomHandler.getTargetElement(overlay)?.ownerDocument?.defaultView || DomHandler.getTargetElement(target)?.ownerDocument?.defaultView || window;
 
     /**
      * The parameters of the 'listener' method in the following event handlers;
@@ -17,7 +18,7 @@ export const useOverlayListener = ({ target, overlay, listener, when = true, typ
      * @param {boolean} options.valid It is controlled by MantleUI. It is determined whether it is valid or not according to some custom validation.
      */
     const [bindDocumentClickListener, unbindDocumentClickListener] = useEventListener({
-        target: 'window',
+        target: getOwnerWindow,
         type: type,
         listener: (event) => {
             listener && listener(event, { type: 'outside', valid: event.which !== 3 && isOutsideClicked(event) });
@@ -25,13 +26,14 @@ export const useOverlayListener = ({ target, overlay, listener, when = true, typ
         when
     });
     const [bindWindowResizeListener, unbindWindowResizeListener] = useResizeListener({
+        target: getOwnerWindow,
         listener: (event) => {
             listener && listener(event, { type: 'resize', valid: !DomHandler.isTouchDevice() });
         },
         when
     });
     const [bindWindowOrientationChangeListener, unbindWindowOrientationChangeListener] = useEventListener({
-        target: 'window',
+        target: getOwnerWindow,
         type: 'orientationchange',
         listener: (event) => {
             listener && listener(event, { type: 'orientationchange', valid: true });
@@ -51,10 +53,14 @@ export const useOverlayListener = ({ target, overlay, listener, when = true, typ
     };
 
     const bind = () => {
-        bindDocumentClickListener();
-        bindWindowResizeListener();
-        bindWindowOrientationChangeListener();
-        bindOverlayScrollListener();
+        targetRef.current = DomHandler.getTargetElement(target);
+        overlayRef.current = DomHandler.getTargetElement(overlay);
+        const ownerWindow = getOwnerWindow();
+
+        bindDocumentClickListener({ target: ownerWindow });
+        bindWindowResizeListener({ target: ownerWindow });
+        bindWindowOrientationChangeListener({ target: ownerWindow });
+        bindOverlayScrollListener({ target: targetRef.current });
     };
 
     const unbind = () => {

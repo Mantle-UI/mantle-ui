@@ -91,7 +91,7 @@ interface EventOptions {
     /**
      * The target element to listen to.
      */
-    target?: 'document' | 'window' | React.Ref<HTMLElement>;
+    target?: 'document' | 'window' | Document | Window | React.Ref<HTMLElement> | (() => Document | Window | HTMLElement | null);
     /**
      * The event type to listen to.
      */
@@ -152,6 +152,10 @@ interface OverlayEventOptions {
  * Custom resize event options.
  */
 interface ResizeEventOptions {
+    /**
+     * The window to listen to.
+     */
+    target?: 'window' | Window | (() => Window | null);
     /**
      * The event listener.
      * @param {Event} event - The browser event object.

@@ -53,11 +53,18 @@ export function SpecificityDemo() {
 
     return (
         <DocSectionText {...props}>
-            <p className="notification">A CSS layer is utilized in styled mode only, in unstyled mode the built-in CSS classes are not included and as a result no layer is defined. This documentation only applies to styled mode.</p>
+            <p className="notification">
+                The built-in common and component styles use the mantle layer in styled mode. Component or provider unstyled mode skips these styles; shared base styles may still be injected. Omit static theme imports separately when using unstyled
+                mode. There is no separate cssLayer: false option in this version.
+            </p>
             <p>
                 The <i>@layer</i> is a standard CSS feature to define cascade layers for a customizable order of precedence. If you need to become more familiar with layers, visit the documentation at&nbsp;
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">MDN</a> to begin with. In styled mode, MantleUI wraps the built-in style classes under the <i>primereact</i> cascade layer to make the library styles easy to override.
-                CSS in your app without a layer has the highest CSS specificity, so you'll be able to override styles regardless of the location or how strong a class is written.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">MDN</a> to begin with. In styled mode, MantleUI wraps the built-in style classes under the <i>mantle</i> cascade layer to make the library styles easy to override. For
+                normal declarations, unlayered application CSS takes precedence over layered CSS regardless of selector specificity. Important declarations reverse layer precedence.
+            </p>
+            <p className="notification">
+                Breaking migration: the previous layer name was <i>primereact</i>. Upgrade component code and bundled or custom themes together, rebuild cached CSS, and replace that name with <i>mantle</i> in application layer orders, explicit theme
+                imports such as <i>layer(mantle)</i>, and custom layer blocks targeting Mantle. Keep the relative order of reset, Mantle, and application layers and verify overrides in a browser. An old layer order no longer controls Mantle styles.
             </p>
             <p>
                 For example, let's assume you need to remove the rounded borders of the InputSwitch component defined by the theme in use. In order to achieve this, <i>.p-inputswitch .p-inputswitch-slider</i> selector needs to be overriden. Without

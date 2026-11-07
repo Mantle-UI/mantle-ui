@@ -272,7 +272,7 @@
   color: #1174c0;
 }
 
-@layer primereact {
+@layer mantle {
   * {
     box-sizing: border-box;
   }

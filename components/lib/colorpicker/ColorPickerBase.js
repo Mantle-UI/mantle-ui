@@ -35,7 +35,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-colorpicker {
         display: inline-block;
     }

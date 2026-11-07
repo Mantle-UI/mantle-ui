@@ -28,7 +28,7 @@ const inlineStyles = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-tieredmenu-overlay {
         position: absolute;
     }

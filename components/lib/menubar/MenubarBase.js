@@ -21,7 +21,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-menubar {
         display: flex;
         align-items: center;

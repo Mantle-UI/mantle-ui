@@ -3,7 +3,7 @@ import { ComponentBase } from '../componentbase/ComponentBase';
 import { ObjectUtils, classNames } from '../utils/Utils';
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-datatable {
         position: relative;
     }

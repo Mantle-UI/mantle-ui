@@ -13,7 +13,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-inputtextarea-resizable {
         overflow: hidden;
         resize: none;

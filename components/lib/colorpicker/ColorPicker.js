@@ -57,7 +57,7 @@ export const ColorPicker = React.memo(
             overlay: overlayRef,
             listener: (event, { valid, type }) => {
                 if (valid) {
-                    if (context.hideOverlaysOnDocumentScrolling || type === 'outside') {
+                    if ((context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling) || type === 'outside') {
                         hide();
                     } else if (!DomHandler.isDocument(event.target)) {
                         alignOverlay();

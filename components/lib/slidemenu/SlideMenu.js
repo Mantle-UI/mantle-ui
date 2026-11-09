@@ -50,7 +50,7 @@ export const SlideMenu = React.memo(
             overlay: menuRef,
             listener: (event, { valid, type }) => {
                 if (valid) {
-                    if (type === 'outside' || context.hideOverlaysOnDocumentScrolling) {
+                    if (type === 'outside' || (context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling)) {
                         hide(event);
                     } else if (!DomHandler.isDocument(event.target)) {
                         DomHandler.absolutePosition(menuRef.current, targetRef.current);

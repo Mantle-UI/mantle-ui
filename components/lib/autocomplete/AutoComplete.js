@@ -52,7 +52,7 @@ export const AutoComplete = React.memo(
                         if (!isInputClicked(event)) {
                             hide();
                         }
-                    } else if (context.hideOverlaysOnDocumentScrolling) {
+                    } else if (context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling) {
                         hide();
                     } else if (!DomHandler.isDocument(event.target)) {
                         alignOverlay();

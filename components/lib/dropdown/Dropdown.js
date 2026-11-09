@@ -55,7 +55,7 @@ export const Dropdown = React.memo(
                         if (!isClearClicked(event)) {
                             hide();
                         }
-                    } else if (context.hideOverlaysOnDocumentScrolling) {
+                    } else if (context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling) {
                         hide();
                     } else if (!DomHandler.isDocument(event.target)) {
                         alignOverlay();

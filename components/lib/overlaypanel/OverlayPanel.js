@@ -43,7 +43,7 @@ export const OverlayPanel = React.forwardRef((inProps, ref) => {
                     }
 
                     isPanelClicked.current = false;
-                } else if (context.hideOverlaysOnDocumentScrolling) {
+                } else if (context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling) {
                     hide();
                 } else if (!DomHandler.isDocument(event.target)) {
                     align();

@@ -53,7 +53,7 @@ export const Menu = React.memo(
             overlay: menuRef,
             listener: (event, { valid, type }) => {
                 if (valid) {
-                    if (context.hideOverlaysOnDocumentScrolling || type === 'outside') {
+                    if ((context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling) || type === 'outside') {
                         hide(event);
                         setFocusedOptionIndex(-1);
                     } else if (!DomHandler.isDocument(event.target)) {

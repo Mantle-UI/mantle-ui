@@ -61,7 +61,7 @@ export const ColumnFilter = React.memo((props) => {
                     }
 
                     selfClick.current = false;
-                } else if (context.hideOverlaysOnDocumentScrolling) {
+                } else if (context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling) {
                     hide();
                 } else if (!DomHandler.isDocument(event.target)) {
                     DomHandler.alignOverlay(overlayRef.current, iconRef.current, (context && context.appendTo) || MantleUI.appendTo, false);

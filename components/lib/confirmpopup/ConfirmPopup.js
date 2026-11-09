@@ -79,7 +79,7 @@ export const ConfirmPopup = React.memo(
                         }
 
                         isPanelClicked.current = false;
-                    } else if (context.hideOverlaysOnDocumentScrolling) {
+                    } else if (context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling) {
                         hide('hide');
                     } else if (!DomHandler.isDocument(event.target)) {
                         align();

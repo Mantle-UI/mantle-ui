@@ -63,7 +63,7 @@ export const Password = React.memo(
             overlay: overlayRef,
             listener: (event, { valid, type }) => {
                 if (valid) {
-                    if (type === 'outside' || context.hideOverlaysOnDocumentScrolling) {
+                    if (type === 'outside' || (context ? context.hideOverlaysOnDocumentScrolling : MantleUI.hideOverlaysOnDocumentScrolling)) {
                         hide();
                     } else if (!DomHandler.isDocument(event.target)) {
                         alignOverlay();

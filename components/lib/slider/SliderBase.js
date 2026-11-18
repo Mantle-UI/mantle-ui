@@ -18,7 +18,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-slider {
         position: relative;
     }

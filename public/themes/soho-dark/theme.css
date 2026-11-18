@@ -291,7 +291,7 @@
   color: #b19df7;
 }
 
-@layer primereact {
+@layer mantle {
   * {
     box-sizing: border-box;
   }
@@ -7004,7 +7004,7 @@
     color: #1d1e27;
   }
 }
-@layer primereact {
+@layer mantle {
   .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
     background-color: #b19df7;
   }

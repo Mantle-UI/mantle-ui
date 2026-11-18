@@ -4,13 +4,13 @@ import { DocSectionText } from '@/components/doc/common/docsectiontext';
 export function CSSLayerDoc(props) {
     const code1 = {
         basic: `
-@layer tailwind-base, primereact, tailwind-utilities;
+@layer tailwind-base, mantle, tailwind-utilities;
 
 /* VITE ONLY: In "styled" mode you must add the MantleUI Theme here. Do NOT include in "unstyled" mode */
 @import '@mantle-ui/react/resources/themes/lara-light-blue/theme.css';
 
-/* NEXT.JS ONLY: In "styled" mode you must also add the layer(primereact) */
-@import '@mantle-ui/react/resources/themes/lara-light-blue/theme.css' layer(primereact);
+/* NEXT.JS ONLY: In "styled" mode you must also add the layer(mantle) */
+@import '@mantle-ui/react/resources/themes/lara-light-blue/theme.css' layer(mantle);
 
 @layer tailwind-base {
   @tailwind base;

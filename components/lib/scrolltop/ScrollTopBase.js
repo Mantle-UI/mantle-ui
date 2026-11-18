@@ -11,7 +11,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-scrolltop {
         position: fixed;
         bottom: 20px;

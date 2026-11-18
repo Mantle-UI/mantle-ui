@@ -32,7 +32,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-listbox-list-wrapper {
         overflow: auto;
     }

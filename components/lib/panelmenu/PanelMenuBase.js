@@ -32,7 +32,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-panelmenu .p-panelmenu-header-link {
         display: flex;
         align-items: center;

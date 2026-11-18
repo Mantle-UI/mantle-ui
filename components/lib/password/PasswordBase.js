@@ -24,7 +24,7 @@ const classes = {
 };
 
 const styles = `
-@layer primereact {
+@layer mantle {
     .p-password {
         position: relative;
         display: inline-flex;

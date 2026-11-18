@@ -21,7 +21,7 @@ export const ToolbarBase = ComponentBase.extend({
             end: 'p-toolbar-group-end p-toolbar-group-right'
         },
         styles: `
-        @layer primereact {
+        @layer mantle {
             .p-toolbar {
                 display: flex;
                 align-items: center;

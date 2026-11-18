@@ -257,7 +257,7 @@ svg.p-icon g,
 }
 `;
 const commonStyle = `
-@layer primereact {
+@layer mantle {
     .p-component, .p-component * {
         box-sizing: border-box;
     }

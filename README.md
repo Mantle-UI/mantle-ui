@@ -71,6 +71,28 @@ yarn add @mantle-ui/react
 bun add @mantle-ui/react
 ```
 
+## CSS cascade layer migration
+
+Mantle's styled components and bundled themes use the `mantle` cascade layer.
+Renaming the previous `primereact` layer is a **breaking change** for applications
+that explicitly reference it: an old layer order no longer controls Mantle's
+styles and may change reset, theme, utility, or application override precedence.
+
+- Upgrade component code and bundled/custom themes together; rebuild cached or
+  vendored CSS so runtime and theme rules use the same layer.
+- Replace the old name in application layer orders, for example
+  `@layer reset, mantle, app;` or
+  `@layer tailwind-base, mantle, tailwind-utilities;`.
+- Update explicit theme imports from `layer(primereact)` to `layer(mantle)` and
+  custom `@layer primereact { ... }` blocks targeting Mantle to `@layer mantle`.
+  Preserve the relative layer order and verify overrides in a browser.
+
+For normal declarations, later layers win and unlayered application CSS outranks
+layered CSS; `!important` reverses layer precedence. There is no separate
+`cssLayer: false` option in this version. Component or provider `unstyled: true`
+still skips built-in common/component styles; omit static theme imports separately
+when using unstyled mode. Shared base styles may still be injected.
+
 ## Basic Usage
 
 Components can be imported individually:
